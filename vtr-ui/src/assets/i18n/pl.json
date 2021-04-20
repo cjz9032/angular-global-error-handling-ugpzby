@@ -2620,12 +2620,12 @@
 				"tab5": "Błędy rejestru"
 			},
 			"tabSet2": {
-				"tab1Heading": "TO ŁATWE",
-				"tab1Description": "Nie będziemy mydlić Ci oczy techniczną paplaniną",
-				"tab2Heading": "TO SZYBKIE",
-				"tab2Description": "Sprawdź 100 różnych aspektów wydajności w mniej niż 5 minut",
-				"tab3Heading": "TO BEZPIECZNE",
-				"tab3Description": "Nie zamierzamy Cię straszyć. W swoich działaniach opieramy się wyłącznie na sprawdzonych procedurach"
+				"tab1Heading": "Łatwo",
+				"tab1Description": "Zoptymalizuj wydajność swojego komputera jednym kliknięciem",
+				"tab2Heading": "Szybko",
+				"tab2Description": "Sprawdź 160 różnych aspektów wydajności w mniej niż 5 minut",
+				"tab3Heading": "Bezpiecznie",
+				"tab3Description": "Zaufana technologia oparta na najlepszych praktykach branżowych"
 			},
 			"summaryTitle": "Zoptymalizuj wydajność komputera"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Wydajność sieci Wi-Fi"
 			},
 			"tabSet2": {
-				"tab1Heading": "PROBLEMY Z PRZEGLĄDARKĄ",
-				"tab1Description": "Skonfigurujemy i naprawimy wszystkie Twoje popularne przeglądarki internetowe.",
-				"tab2Heading": "PROBLEMY Z ŁĄCZNOŚCIĄ",
-				"tab2Description": "Możemy zdiagnozować i rozwiązać problemy z łącznością.",
-				"tab3Heading": "POWOLNY INTERNET",
-				"tab3Description": "Pomożemy Ci uzyskać maksymalną wydajność."
+				"tab1Heading": "Problemy z przeglądarką",
+				"tab1Description": "Skonfiguruj i napraw wszystkie swoje popularne przeglądarki internetowe",
+				"tab2Heading": "Problemy z łącznością",
+				"tab2Description": "Zdiagnozuj i rozwiąż problemy z łącznością",
+				"tab3Heading": "Powolny Internet",
+				"tab3Description": "Zoptymalizuj prędkość Internetu i uzyskaj maksymalną wydajność"
 			},
 			"summaryTitle": "Wydajność połączenia internetowego"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Ustawienia zabezpieczeń"
 			},
 			"tabSet2": {
-				"tab1Heading": "WIRUS TYPU ZERO-DAY",
-				"tab1Description": "Usuwamy nawet infekcje wywołane przez najnowsze złośliwe oprogramowanie",
-				"tab2Heading": "USUWANIE OPROGRAMOWANIA SZPIEGUJĄCEGO",
-				"tab2Description": "Usuwamy wszelkie potencjalnie niechciane programy",
-				"tab3Heading": "SZYBKIE DZIAŁANIE BEZ OBCIĄŻANIA KOMPUTERA",
-				"tab3Description": "Skanowanie trwa zwykle 5–10 minut"
+				"tab1Heading": "Dni bez wirusów",
+				"tab1Description": "Usuwaj infekcje wywołane przez nawet najnowsze złośliwe oprogramowanie",
+				"tab2Heading": "Usuwanie oprogramowania szpiegującego",
+				"tab2Description": "Usuń wszelkie potencjalnie złośliwe i szkodliwe programy",
+				"tab3Heading": "Lekko i szybko",
+				"tab3Description": "Technologia oparta na chmurze nie obciąża komputera"
 			},
 			"summaryTitle": "Złośliwe oprogramowanie a bezpieczeństwo"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Ochrona 24 godziny na dobę, 7 dni w tygodniu"
 			},
 			"tabSet2": {
-				"tab1Heading": "TO ŁATWE",
-				"tab1Description": "Nie będziemy mydlić Ci oczy techniczną paplaniną",
-				"tab2Heading": "TO SZYBKIE",
-				"tab2Description": "Sprawdź 100 różnych aspektów wydajności w mniej niż 5 minut",
-				"tab3Heading": "TO BEZPIECZNE",
-				"tab3Description": "Nie zamierzamy Cię straszyć. W swoich działaniach opieramy się wyłącznie na sprawdzonych procedurach"
+				"tab1Heading": "Automatyzacja",
+				"tab1Description": "Ustaw zaplanowane skanowanie, aby automatycznie dostroić komputer",
+				"tab2Heading": "Proaktywność",
+				"tab2Description": "Upewnij się, że komputer zawsze wydajnie pracuje",
+				"tab3Heading": "Efektywność",
+				"tab3Description": "Innowacyjna, najnowocześniejsza technologia"
 			}
 		},
 		"noScanResults": "Kliknij przycisk SKANUJ I NAPRAW, aby uruchomić proces skanowania.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Ocena komputera na podstawie skanowania: ",
 			"summary": "Podsumowanie",
 			"foundIssues": "Podczas skanowania wykryto następującą liczbę problemów: {{issueCount}}",
+			"summaryDetailsMaintain": "Twój system jest w dobrej kondycji! Znaleźliśmy kilka możliwości optymalizacji. Zarejestruj się teraz, aby skorzystać, a nasze najnowocześniejsze oprogramowanie zapewni najwyższą wydajność komputera.",
 			"summaryDetailsOptimize": "Zarejestruj się teraz, aby rozwiązać te problemy i dalej cieszyć się płynnym działaniem systemu. Nasze oprogramowanie może aktywnie skanować te obszary komputera 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
+			"summaryDetailsFixNow": "Znaleźliśmy problemy, które znacząco wpływają na wydajność systemu. Zarejestruj się i napraw problemy teraz. Następnie oprogramowanie Smart Performance może aktywnie skanować system 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu komputer będzie zawsze działać z najwyższą wydajnością.",
 			"expiredSummaryDetails": "Twoja subskrypcja wygasła i obecnie możesz używać tylko funkcji skanowania w programie Smart Performance. Jeśli chcesz wznowić funkcję „Skanuj i napraw”, naciśnij poniższy przycisk „odnów i napraw”, aby odnowić subskrypcję.",
 			"signupRepairButton": "ZAREJESTRUJ SIĘ I ROZWIĄŻ PROBLEMY TERAZ",
 			"renewAndFix": "Odnów i napraw",
@@ -5429,7 +5431,8 @@
 			"security": "Czy wiesz? Nawet jeśli nie masz zainstalowanego oprogramowania antywirusowego, nadal zapewniamy podstawową ochronę twojego urządzenia.",
 			"connectedHomeSecurity": "Zyskaj monitorowanie w czasie rzeczywistym i otrzymuj alerty dotyczące bezpieczeństwa sieci w domu. Jako pierwszy dowiesz się, czy któreś z twoich inteligentnych urządzeń jest narażone na zagrożenia.",
 			"hardwareScan": "Teraz możesz uzyskać informacje o kondycji komponentu sprzętowego systemu.",
-			"appSearch": "Czy wiesz? W tym miejscu możesz wyszukać funkcje związane z Twoim urządzeniem."
+			"appSearch": "Czy wiesz? W tym miejscu możesz wyszukać funkcje związane z Twoim urządzeniem.",
+			"productivity": "Czy chcesz poprawić wydajność swojej pracy?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Ta sekcja umożliwia automatyczną optymalizację lub ręczną konfigurację ustawień spotkania z wykorzystaniem możliwości, jakie daje sztuczna inteligencja.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager obsługuje tłumaczenie, interpretację i dyktowanie głosowe w czasie rzeczywistym. Może również generować napisy do filmów.",
+					"description": "AI meeting manager oferuje tłumaczenie w czasie rzeczywistym, interpretację, dyktowanie głosowe i edytora notatek. Może również generować napisy do filmów.",
 					"download": "POBIERZ",
 					"launch": "URUCHOM",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Głos na Tekst",
 						"description": "Mów naturalnie, a funkcja Głos na Tekst wpisze tekst. Pisz wiadomości e-mail lub dokumenty albo rozmawiaj na czacie w swojej ulubionej aplikacji. Funkcja Głos na Tekst tłumaczy, gdy Ty mówisz, i robi za Ciebie notatki."
+					},
+					"noteEditor": {
+						"title": "Edytor notatek",
+						"description": "Edytor notatek pomaga edytować notatki ze spotkań, poprawiać teksty i odtwarzać nagrania."
 					},
 					"modalPopUp": {
 						"heading": "Rozpoczynanie pracy:",
@@ -5527,6 +5534,12 @@
 							"point3": "Kliknij ikonę AI meeting manager i wybierz pozycję Głos na Tekst.",
 							"point4": "Wybierz żądane języki i kliknij przycisk mikrofonu, aby rozpocząć.",
 							"point5": "Umieść kursor w otwartej aplikacji i zacznij mówić."
+						},
+						"noteEditor": {
+							"point1": "Upewnij się, że ikona AI meeting manager jest wyświetlana w obszarze powiadomień systemu Windows.",
+							"point2": "Kliknij ikonę i wybierz Edytor notatek.",
+							"point3": "Wybierz notatkę ze spotkania z listy.",
+							"point4": "Edytuj notatkę ze spotkania lub odtwórz nagranie."
 						},
 						"closeText": "zamknij"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Kalibracja kolorów",
 				"appName": "Aplikacja X-rite",
-				"summary": "Panel ekranu komputera jest fabrycznie kalibrowany przy użyciu profesjonalnych kolorymetrów najwyższej jakości firmy Minolta. Dane kalibracji są przechowywane w chmurze i można je pobrać, aby zresetować panel do ustawień fabrycznych. Aplikacja X-rite jest wstępnie instalowana w celu zarządzania przestrzeniami barwowymi.<br>- Ustawienia domyślne (gama natywna, jasność natywna, ale skalibrowana rampa szarości i charakterystyka ekranu zapisane w profilu). <br>- Profil domyślny jest domyślnie instalowany na komputerze. Ten profil jest ładowany przez system Windows podczas uruchamiania. <br>- Brak kalibracji (Zarządzanie kolorami wyłączone. Oznacza to użycie domyślnego profilu Lenovo.) <br>- sRGB (monitory komputerowe) - Adobe RGB (dla grafików planujących druk w CYMK) <br> - BT.709 (wideo HD) <br> - DCI P3 (powszechnie stosowane podczas odtwarzania filmów cyfrowych w USA)",
+				"descSection1": "Wysoki poziom dokładności kolorów ma kluczowe znaczenie dla twórczej pracy każdego profesjonalisty. Lenovo oferuje rozwiązanie do kalibracji kolorów dla wyświetlacza komputera, aby zapewnić najlepszą wydajność kolorów natychmiast po otwarciu opakowania. Dla komputera tworzony jest niestandardowy domyślny profil kolorów przy użyciu profesjonalnego urządzenia do kalibracji, które zapewnia, że obrazy wyświetlane z aparatu na ekranie komputera są dokładne i bez zniekształcenia kolorów.",
+				"descSection2": "Dzięki wstępnie zainstalowanemu asystentowi kolorów X-rite możesz dowolnie zmieniać profil kolorów:",
+				"profile1": "Ustawienia domyślne (gama natywna, jasność natywna, ale skalibrowana rampa szarości i charakterystyka ekranu zapisane w profilu). Ten profil jest przechowywany na komputerze i automatycznie ładowany przez system Windows. ",
+				"profile2": "Brak kalibracji (zarządzanie kolorami wyłączone)",
+				"profile3": "sRGB (standardowy czerwony, zielony, niebieski dla monitorów komputerowych)",
+				"profile4": "Rec. 709 (tylko w wybranych modelach, zoptymalizowany pod kątem filmów HD)",
 				"screenshotTitle": "Zrzuty ekranu",
-				"cardTitle": "Jak przywrócić profile?",
+				"cardTitle": "Jak przywrócić profile kolorów?",
 				"cardSummary": "Jeśli ponownie zainstalujesz system lub profile kolorów zostaną utracone, możesz przywrócić profile z tego miejsca:",
 				"learnMore": "Informacje",
 				"restoreProfileDesc": "Lenovo udostępnia zapasowe profile kolorów w chmurze Lenovo Cloud. Aby funkcja kalibracji kolorów działała na komputerze, może być konieczne przywrócenie lub zainstalowanie profili kolorów w następujących sytuacjach: jeśli profile kolorów zostaną utracone lub uszkodzone, zostanie wyświetlone okno przypominające o przywróceniu profili kolorów. Kliknij Tak w wyświetlonym oknie, a profile kolorów zostaną automatycznie przywrócone z chmury Lenovo Cloud. Jeśli ekran komputera zostanie wymieniony przez autoryzowanego dostawcę usług Lenovo, wykonaj następujące czynności:",

@@ -2620,12 +2620,12 @@
 				"tab5": "Kayıt Defteri Hataları"
 			},
 			"tabSet2": {
-				"tab1Heading": "KOLAY",
-				"tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
-				"tab2Heading": "HIZLI",
-				"tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
-				"tab3Heading": "GÜVENLİ",
-				"tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
+				"tab1Heading": "Çok Kolay",
+				"tab1Description": "Bilgisayarınızın performansını tek tıkla iyileştirin",
+				"tab2Heading": "Çok Hızlı",
+				"tab2Description": "5 dakikadan kısa bir sürede 160 puanlık bir kontrol yapın",
+				"tab3Heading": "Çok Güvenli",
+				"tab3Description": "Sektördeki en iyi uygulamalarla oluşturulmuş güvenilir teknoloji"
 			},
 			"summaryTitle": "Bilgisayar Performansını Ayarlayın"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Wi-Fi Performansı"
 			},
 			"tabSet2": {
-				"tab1Heading": "TARAYICI SORUNLARI",
-				"tab1Description": "Tüm popüler web tarayıcılarınızı yapılandırır ve düzeltiriz.",
-				"tab2Heading": "BAĞLANTI HATALARI",
-				"tab2Description": "Bağlantı sorunlarınızı teşhis edebilir ve onarabiliriz.",
-				"tab3Heading": "YAVAŞ İNTERNET",
-				"tab3Description": "Maksimum performans elde etmenize yardımcı olacağız."
+				"tab1Heading": "Tarayıcı Sorunları",
+				"tab1Description": "Tüm popüler web tarayıcılarınızı yapılandırır ve düzeltir",
+				"tab2Heading": "Bağlantı Hataları",
+				"tab2Description": "Bağlantı sorunlarınızı teşhis eder ve onarır",
+				"tab3Heading": "Yavaş İnternet",
+				"tab3Description": "İnternet hızını iyileştirir ve maksimum performans alır"
 			},
 			"summaryTitle": "İnternet Performansı"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Güvenlik ayarları"
 			},
 			"tabSet2": {
-				"tab1Heading": "SIFIR GÜN VİRÜSÜ",
-				"tab1Description": "En yeni kötü amaçlı yazılım bulaşmalarını bile kaldırıyoruz",
-				"tab2Heading": "CASUS YAZILIMI KALDIRMA",
-				"tab2Description": "İstenmeyen türden olabilecek tüm programları kaldırıyoruz",
-				"tab3Heading": "HAFİF VE HIZLI",
-				"tab3Description": "Tarama genellikle 5-10 dakika sürer"
+				"tab1Heading": "Sıfır Gün Virüsü",
+				"tab1Description": "En yeni kötü amaçlı yazılım bulaşmalarını bile kaldırır",
+				"tab2Heading": "Casus Yazılım Kaldırma",
+				"tab2Description": "Kötü amaçlı ve zararlı olabilecek tüm programları kaldırır",
+				"tab3Heading": "Hafif ve Hızlı",
+				"tab3Description": "Bulut tabanlı teknoloji bilgisayarınızda hafiftir"
 			},
 			"summaryTitle": "Kötü Amaçlı Yazılım ve Güvenlik"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "7/24 Koruma"
 			},
 			"tabSet2": {
-				"tab1Heading": "KOLAY",
-				"tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
-				"tab2Heading": "HIZLI",
-				"tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
-				"tab3Heading": "GÜVENLİ",
-				"tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
+				"tab1Heading": "Otomatik",
+				"tab1Description": "Bilgisayarı otomatik olarak ayarlamak üzere planlanmış taramalar ayarlar",
+				"tab2Heading": "Proaktif",
+				"tab2Description": "Bilgisayarınızın her zaman en yüksek performansa sahip olduğundan emin olur",
+				"tab3Heading": "Etkili",
+				"tab3Description": "Yenilikçi son teknoloji"
 			}
 		},
 		"noScanResults": "Tarama işlemini başlatmak için lütfen TARA VE DÜZELT düğmesine tıklayın.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Taramamıza göre bilgisayarınızın değerlendirmesi: ",
 			"summary": "Özet",
 			"foundIssues": "Tarama sonucunda {{issueCount}} sorun buldu",
+			"summaryDetailsMaintain": "Sisteminiz iyi durumda! Bazı iyileştirme fırsatları bulduk. Avantajlardan yararlanmak için şimdi kaydolun. Son teknoloji yazılımımız, bilgisayarınızın birinci sınıf performansla çalışmasını sağlayabilir.",
 			"summaryDetailsOptimize": "Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+			"summaryDetailsFixNow": "Sistem performansınızı önemli ölçüde etkileyen sorunlar bulduk. Şimdi kaydolun ve sorunları düzeltin. Ardından, Smart Performance proaktif olarak sisteminizi 7/24 tarayabilir ve sorunları ortaya çıktıkça düzeltebilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
 			"expiredSummaryDetails": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. “Tara ve Düzelt” özelliğini sürdürmek istiyorsanız lütfen aboneliğinizi yenilemek için aşağıdaki “yenile ve düzelt” düğmesine basın.",
 			"signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
 			"renewAndFix": "Yenile ve Düzelt",
@@ -5429,7 +5431,8 @@
 			"security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
 			"connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz.",
 			"hardwareScan": "Artık sistem donanımı bileşeninizin sağlık durumunu öğrenebilirsiniz.",
-			"appSearch": "Bunu biliyor muydunuz? Burada cihazınız için geçerli özellikleri arayabilirsiniz."
+			"appSearch": "Bunu biliyor muydunuz? Burada cihazınız için geçerli özellikleri arayabilirsiniz.",
+			"productivity": "Çalışma verimliliğinizi iyileştirmek istiyor musunuz?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Bu bölüm, AI toplantı ayarlarınızı otomatik olarak iyileştirmenizi veya manuel olarak yapılandırmanızı sağlar.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager gerçek zamanlı çeviriyi, sözlü çeviriyi ve sesli dikteyi destekler. Ayrıca, videolar için altyazı oluşturabilir.",
+					"description": "AI meeting manager gerçek zamanlı çeviri, sözlü çeviri, sesli dikte ve not düzenleyici sağlar. Ayrıca, videolar için altyazı oluşturabilir.",
 					"download": "İNDİR",
 					"launch": "BAŞLAT",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Sesten Metne",
 						"description": "Doğal bir şekilde konuşun. Sesten Metne işlevi yazımı gerçekleştirecektir. E-posta veya belgeler yazın ya da en sevdiğiniz uygulamada sohbet edin. Sesten Metne siz konuşurken çeviri yapar ve sizin için notlar alır."
+					},
+					"noteEditor": {
+						"title": "Not Düzenleyici",
+						"description": "Not Düzenleyici; toplantı notlarını düzenlemenize, metinleri düzeltmenize ve kayıtları oynatmanıza yardımcı olur."
 					},
 					"modalPopUp": {
 						"heading": "Başlarken:",
@@ -5527,6 +5534,12 @@
 							"point3": "AI meeting manager simgesine tıklayın ve Sesten Metne'yi seçin.",
 							"point4": "Gereksiniminize bağlı olarak dilleri seçin ve başlamak için mikrofon düğmesine tıklayın.",
 							"point5": "İmleci açtığınız uygulamaya yerleştirin ve konuşmaya başlayın."
+						},
+						"noteEditor": {
+							"point1": "Windows bildirim alanında AI meeting manager simgesinin görüntülendiğinden emin olun.",
+							"point2": "Simgeye tıklayın ve Not Düzenleyici'yi seçin.",
+							"point3": "Listeden bir toplantı notu seçin.",
+							"point4": "Toplantı notunu düzenleyin veya kaydı oynatın."
 						},
 						"closeText": "kapat"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Renk ayarı",
 				"appName": "X-rite uygulaması",
-				"summary": "Bilgisayarınızın ekran paneli, premium profesyonel özellikli Minolta kolorimetreler kullanılarak fabrikada ayarlanmıştır. Ayar verileri bulutta saklanır ve paneli fabrika ayarlarına sıfırlamak için indirilebilir. X-rite, renk uzaylarını yönetmek için önceden yüklenmiştir.<br>- Varsayılan (profilde depolanan yerel Gam, doğal parlaklık ancak ayarlanmış gri rampa ve ekran karakterizasyonu). <br>- Varsayılan profil, makineye varsayılan olarak yüklenir. Bu profil, başlangıçta Windows tarafından yüklenir. <br>- Ayarlanmadı (Renk yönetimi kapalı. Bu, varsayılan Lenovo Profilini kullanmak anlamına gelir.) <br>- sRGB (bilgisayar monitörleri) - Adobe RGB (CYMK olarak yazdırmayı planlayan grafik tasarımcıları için) <br>- BT.709 (HD video) <br>- DCI P3 (ABD'de yaygın olarak dijital film projeksiyonunda kullanılır)",
+				"descSection1": "Bir profesyonel olarak, yüksek düzeyde renk doğruluğu yaratıcı çalışmanız için kritik ve önemlidir. Lenovo, kutudan çıktığı anda en iyi renk performansını elde etmenizi sağlamak üzere bilgisayar ekranınız için bir renk ayarı çözümü sunar. Profesyonel ayar cihazı kullanılarak bilgisayarınız için özelleştirilmiş bir varsayılan renk profili oluşturulur; bu, fotoğraf makinesinden bilgisayar ekranına aktarılan görüntülerin doğru ve renk bozulması olmadan görüntülenmesini sağlar.",
+				"descSection2": "Önceden yüklenmiş X-rite renk asistanı ile renk profilini istediğiniz gibi değiştirebilirsiniz:",
+				"profile1": "Varsayılan (profilde depolanan yerel Gam, doğal parlaklık ancak ayarlanmış gri rampa ve ekran karakterizasyonu). Bu profil bilgisayarda saklanır ve Windows tarafından otomatik olarak yüklenir. ",
+				"profile2": "Ayarlanmadı (renk yönetimi kapalı)",
+				"profile3": "sRGB (bilgisayar monitörleri için standart Kırmızı Yeşil Mavi)",
+				"profile4": "Rec. 709 (yalnızca seçili modeller için; HD videolar için optimize edilmiştir)",
 				"screenshotTitle": "Ekran görüntüleri",
-				"cardTitle": "Profiller nasıl geri yüklenir?",
+				"cardTitle": "Renk profilleri nasıl geri yüklenir?",
 				"cardSummary": "Sisteminizi yeniden yüklerseniz veya renk profilleriniz kaybolursa, profilleri buradan geri yükleyebilirsiniz:",
 				"learnMore": "Ek bilgi",
 				"restoreProfileDesc": "Lenovo, Lenovo Cloud'da yedek renk profilleri sağlar. Renk ayarı özelliğinin bilgisayarınızda çalıştığından emin olmak için şu durumlarda renk profillerini geri yüklemeniz veya yüklemeniz gerekebilir: Renk profillerinin kaybolması veya hasar görmesi durumunda renk profillerini geri yüklemenizi hatırlatan bir pencere görüntülenir. Görüntülenen pencerede Evet'e tıklayın. Renk profilleri otomatik olarak Lenovo Cloud'dan geri yüklenir. Bilgisayar ekranınız Lenovo yetkili garanti hizmet çözüm ortağı tarafından değiştirilirse, aşağıdakileri yapın:",

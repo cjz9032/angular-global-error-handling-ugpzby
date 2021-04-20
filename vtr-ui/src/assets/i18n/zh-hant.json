@@ -2621,11 +2621,11 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "簡單",
-				"tab1Description": "我們不會滿口技術行話，使您困惑",
+				"tab1Description": "只要按一下，就可以最佳化電腦效能",
 				"tab2Heading": "迅速",
-				"tab2Description": "5 分鐘內百分之百完成檢查",
+				"tab2Description": "5 分鐘內完成 160 項檢查",
 				"tab3Heading": "安全",
-				"tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
+				"tab3Description": "備受信賴的技術，採用業界最佳實務建構而成"
 			},
 			"summaryTitle": "調校 PC 效能"
 		},
@@ -2643,11 +2643,11 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "瀏覽器問題",
-				"tab1Description": "我們會配置並修正您所有的常用 Web 瀏覽器。",
+				"tab1Description": "配置並修正所有常見的 Web 瀏覽器問題",
 				"tab2Heading": "連線錯誤",
-				"tab2Description": "我們可以診斷並修復您的連線問題。",
-				"tab3Heading": "網際網路速度緩慢",
-				"tab3Description": "我們會幫助您獲得最佳效能。"
+				"tab2Description": "診斷並修復連線問題",
+				"tab3Heading": "網際網路速度慢",
+				"tab3Description": "最佳化網際網路速度，獲得最佳效能"
 			},
 			"summaryTitle": "網際網路效能"
 		},
@@ -2664,11 +2664,11 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "零時差病毒",
-				"tab1Description": "甚至最新的惡意軟體感染我們都能移除",
+				"tab1Description": "移除最新的惡意軟體感染",
 				"tab2Heading": "移除間諜軟體",
-				"tab2Description": "我們會移除所有可能有害的程式",
-				"tab3Heading": "輕巧且快速",
-				"tab3Description": "掃描通常需要 5-10 分鐘"
+				"tab2Description": "移除所有潛在的惡意程式和有害程式",
+				"tab3Heading": "輕快",
+				"tab3Description": "雲端式技術，隨時隨地可從電腦存取"
 			},
 			"summaryTitle": "惡意軟體和安全性"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "全天候防護"
 			},
 			"tabSet2": {
-				"tab1Heading": "簡單",
-				"tab1Description": "我們不會滿口技術行話，使您困惑",
-				"tab2Heading": "迅速",
-				"tab2Description": "5 分鐘內百分之百完成檢查",
-				"tab3Heading": "安全",
-				"tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
+				"tab1Heading": "自動",
+				"tab1Description": "設定排程掃描以自動調整電腦",
+				"tab2Heading": "主動",
+				"tab2Description": "確保電腦始終處於最佳效能狀態",
+				"tab3Heading": "有效",
+				"tab3Description": "最先進的創新技術"
 			}
 		},
 		"noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
@@ -2906,7 +2906,9 @@
 			"scanRates": "我們對您的 PC 掃描評分為：",
 			"summary": "摘要",
 			"foundIssues": "我們的掃描找到 {{issueCount}} 個問題",
+			"summaryDetailsMaintain": "您的系統狀態良好！我們發現了一些最佳化的機會。立即註冊即可享有此一優勢，讓我們的先進軟體協助您的電腦保持一流的執行效能。",
 			"summaryDetailsOptimize": "立即註冊，以修正這些問題並保持系統執行順暢。我們的軟體可以全天候主動掃描系統的這些區域，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
+			"summaryDetailsFixNow": "我們發現了嚴重影響系統效能的問題。立即註冊並修正問題。然後，Smart Performance 可以全天候主動掃描系統，在問題開始出現時及早修正，讓您的電腦始終保持頂尖效能。",
 			"expiredSummaryDetails": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，如果您想回復「掃描並修復」功能，請按下下方的「續訂並修復」按鈕來續訂您的訂閱。",
 			"signupRepairButton": "立即註冊並修復",
 			"renewAndFix": "續訂並修復",
@@ -5429,7 +5431,8 @@
 			"security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
 			"connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。",
 			"hardwareScan": "現在，您可以取得系統硬體元件的性能狀態。",
-			"appSearch": "您知道嗎？您可以在此處搜尋適用於您裝置的功能。"
+			"appSearch": "您知道嗎？您可以在此處搜尋適用於您裝置的功能。",
+			"productivity": "您想要提升工作效率嗎？"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "此區段可讓您自動最佳化或手動配置您的 AI 會議設定。",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager 支援即時翻譯、口譯和語音聽寫。它還可以為視訊產生字幕。",
+					"description": "AI Meeting Manager 提供即時翻譯、口譯、語音聽寫和記事編輯器。它還可以為視訊產生字幕。",
 					"download": "下載",
 					"launch": "啟動",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "語音到文字",
 						"description": "自然地說話，然後「語音到文字」會進行打字。編寫電子郵件或文件，或者在您所喜愛的應用程式中聊天。「語音到文字」會在您講話時進行翻譯並為您做筆記。"
+					},
+					"noteEditor": {
+						"title": "記事編輯器",
+						"description": "記事編輯器可協助您編輯會議備忘、更正文字和播放錄製內容。"
 					},
 					"modalPopUp": {
 						"heading": "入門：",
@@ -5527,6 +5534,12 @@
 							"point3": "按一下 AI meeting manager 圖示，然後選擇「語音到文字」。",
 							"point4": "選取所需的語言，然後按一下麥克風按鈕開始。",
 							"point5": "將游標放在您開啟的應用程式上，然後開始說話。"
+						},
+						"noteEditor": {
+							"point1": "確定 AI Meeting Manager 圖示已顯示在 Windows 通知區域中。",
+							"point2": "按一下該圖示，然後選擇記事編輯器。",
+							"point3": "從清單中選取一個會議備忘。",
+							"point4": "編輯會議備忘或播放錄製內容。"
 						},
 						"closeText": "關閉"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "色彩校準",
 				"appName": "X-rite 應用程式",
-				"summary": "您電腦的顯示面板在出廠時已使用 Minolta 專業級色度計進行了校準。校準資料會儲存在雲端中並且可以下載，將面板重設為出廠設定。預先安裝了 X-rite 來管理色彩空間。<br>- 預設值（自然色域、自然亮度，但校準的灰色漸層和顯示特性儲存在設定檔中）。<br>- 預設設定檔根據預設是安裝在電腦上。Windows 在啟動時會載入此設定檔。<br>- 未校準（色彩管理關閉。這表示使用預設的 Lenovo 設定檔。）<br>- sRGB（電腦顯示器）- Adobe RGB（適用於計劃以 CYMK 列印的平面設計師）<br> - BT.709（HD 視訊）<br>- DCI P3（在美國通常用於數位電影放映）",
+				"descSection1": "身為專業人士，高水準的色彩精確度對您的創意工作至關重要。Lenovo 為您的電腦顯示器提供了色彩校準解決方案，讓您一開箱就能獲得最佳的色彩效能。此解決方案使用專業校準裝置為您的電腦建立了自訂預設色彩設定檔，確保在電腦顯示器上顯示攝影機中的影像時，可呈現精準無失真的色彩。",
+				"descSection2": "透過預先安裝的 X-rite Color Assistant，您可以視需要切換色彩設定檔：",
+				"profile1": "預設值（自然色域、自然亮度，但校準的灰色漸層和顯示特性儲存在設定檔中）。此設定檔儲存在電腦中，並由 Windows 自動載入。",
+				"profile2": "未校準（色彩管理關閉）",
+				"profile3": "sRGB（適用於電腦顯示器的標準紅綠藍色）",
+				"profile4": "Rec. 709（僅限特定型號，針對 HD 視訊最佳化）",
 				"screenshotTitle": "螢幕擷取畫面",
-				"cardTitle": "如何還原設定檔？",
+				"cardTitle": "如何還原色彩設定檔？",
 				"cardSummary": "如果您重新安裝系統或色彩設定檔遺失，則可以從此處還原設定檔：",
 				"learnMore": "進一步瞭解",
 				"restoreProfileDesc": "Lenovo 在 Lenovo Cloud 中提供備份色彩設定檔。為確保色彩校準功能在您的電腦上正常運作，在以下情況中，您可能需要還原或安裝色彩設定檔：如果色彩設定檔遺失或損壞，則會顯示一個視窗提醒您還原色彩設定檔。在提示視窗中按一下「是」，色彩設定檔將自動從 Lenovo Cloud 還原。如果您的電腦顯示器是由 Lenovo 授權服務供應商進行更換，請執行下列動作：",

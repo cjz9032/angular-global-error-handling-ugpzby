@@ -2620,12 +2620,12 @@
 				"tab5": "Napake v registru"
 			},
 			"tabSet2": {
-				"tab1Heading": "PREPROSTO",
-				"tab1Description": "Ne zmedemo vas s tehničnim žargonom",
-				"tab2Heading": "HITRO",
-				"tab2Description": "100-točkovni pregled v manj kot 5 minutah",
-				"tab3Heading": "VARNO",
-				"tab3Description": "Nobene strašilne programske opreme, zgolj najboljše prakse"
+				"tab1Heading": "Preprosto",
+				"tab1Description": "Z enim klikom optimizirajte delovanje računalnika.",
+				"tab2Heading": "Hitro",
+				"tab2Description": "Pregled s 160 točkami opravite v manj kot 5 minutah.",
+				"tab3Heading": "Varno",
+				"tab3Description": "Zaupanja vredna tehnologija, izdelana v skladu z najboljšimi praksami v panogi."
 			},
 			"summaryTitle": "Optimiziranje učinkovitosti delovanja računalnika"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Učinkovitost delovanja Wi-Fi-ja"
 			},
 			"tabSet2": {
-				"tab1Heading": "TEŽAVE Z BRSKALNIKOM",
-				"tab1Description": "Konfiguriramo in popravimo vse priljubljene spletne brskalnike.",
-				"tab2Heading": "NAPAKE POVEZAVE",
-				"tab2Description": "Diagnosticiramo in odpravimo lahko vaše težave s povezljivostjo.",
-				"tab3Heading": "POČASEN INTERNET",
-				"tab3Description": "Pomagali vam bomo doseči največjo učinkovitost delovanja."
+				"tab1Heading": "Težave z brskalnikom",
+				"tab1Description": "Konfigurirajte in odpravite napake pri vseh priljubljenih spletnih brskalnikih.",
+				"tab2Heading": "Napake pri povezavi",
+				"tab2Description": "Diagnosticirajte in odpravite težave s povezovanjem.",
+				"tab3Heading": "Počasen internet",
+				"tab3Description": "Optimizirajte hitrost interneta in si zagotovite kar najboljšo učinkovitost."
 			},
 			"summaryTitle": "Hitrost delovanja interneta"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Varnostne nastavitve"
 			},
 			"tabSet2": {
-				"tab1Heading": "VIRUSI Z NAPADOM NA NULTI DAN",
-				"tab1Description": "Odstranimo tudi najnovejše okužbe z zlonamerno programsko opremo",
-				"tab2Heading": "ODSTRANJEVANJE VOHUNSKE PROGRAMSKE OPREME",
-				"tab2Description": "Odstranimo vse potencialno neželene programe",
-				"tab3Heading": "LAHKO IN HITRO",
-				"tab3Description": "Pregled običajno traja 5–10 minut"
+				"tab1Heading": "Virus nultega dne",
+				"tab1Description": "Odstranite tudi najnovejše okužbe z zlonamerno programsko opremo.",
+				"tab2Heading": "Odstranjevanje vohunske programske opreme",
+				"tab2Description": "Odstranite vse programe, ki bi lahko bili zlonamerni in škodljivi.",
+				"tab3Heading": "Hitro in brez obremenitev",
+				"tab3Description": "Tehnologija, ki temelji na oblaku, vašega računalnika ne obremeni."
 			},
 			"summaryTitle": "Zlonamerna programska oprema in varnost"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Zaščita 24 ur dnevno vse dni v tednu"
 			},
 			"tabSet2": {
-				"tab1Heading": "PREPROSTO",
-				"tab1Description": "Ne zmedemo vas s tehničnim žargonom",
-				"tab2Heading": "HITRO",
-				"tab2Description": "100-točkovni pregled v manj kot 5 minutah",
-				"tab3Heading": "VARNO",
-				"tab3Description": "Nobene strašilne programske opreme, zgolj najboljše prakse"
+				"tab1Heading": "Avtomatizirano",
+				"tab1Description": "Vnaprej razporejene preglede nastavite tako, da samodejno poskrbijo za računalnik.",
+				"tab2Heading": "Proaktivno",
+				"tab2Description": "Zagotovite, da bo vaš računalnik kar najbolj učinkovit.",
+				"tab3Heading": "Učinkovito",
+				"tab3Description": "Inovativna, najsodobnejša tehnologija."
 			}
 		},
 		"noScanResults": "Postopek pregleda sprožite s klikom gumba PREGLEJ IN POPRAVI.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Naš pregled je vaš računalnik ocenil z: ",
 			"summary": "Povzetek",
 			"foundIssues": "Pregled je odkril toliko težav: {{issueCount}}",
+			"summaryDetailsMaintain": "Vaš sistem je v dobrem stanju! Našli smo nekaj priložnosti za optimizacijo. Prijavite se zdaj in izkoristite našo najsodobnejšo programsko opremo, ki bo poskrbela, da bo vaš računalnik ves čas v dobri formi.",
 			"summaryDetailsOptimize": "Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
+			"summaryDetailsFixNow": "Našli smo težave, ki občutno vplivajo na delovanje vašega sistema. Prijavite se zdaj in omenjene težave takoj odpravite. Nato lahko storitev Smart Performance vaš sistem nenehno proaktivno preverja ter odpravi težave, ko se pojavijo, da vaš računalnik ves čas kar najbolje deluje.",
 			"expiredSummaryDetails": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Če želite obnoviti funkcijo »Preglej in popravi«, pritisnite spodnji gumb »Obnovi in popravi«, da obnovite naročnino.",
 			"signupRepairButton": "REGISTRIRAJTE SE IN POPRAVITE ZDAJ",
 			"renewAndFix": "Obnovi in popravi",
@@ -5429,7 +5431,8 @@
 			"security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
 			"connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena.",
 			"hardwareScan": "Zdaj lahko pridobite stanje komponent strojne opreme vašega sistema.",
-			"appSearch": "Ali veste? Tukaj lahko poiščete funkcije za svojo napravo."
+			"appSearch": "Ali veste? Tukaj lahko poiščete funkcije za svojo napravo.",
+			"productivity": "Ali želite izboljšati svojo delovno učinkovitost?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Ta razdelek vam omogoča samodejno optimizacijo ali ročno konfiguriranje nastavitev v aplikaciji AI meeting.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager podpira sprotno prevajanje, tolmačenje in glasovno narekovanje. Prav tako lahko ustvari podnapise za videoposnetke.",
+					"description": "AI Meeting Manager zagotavlja sprotne prevod, razlago, glasovni narek in urejevalnik opomb. Prav tako lahko ustvari podnapise za videoposnetke.",
 					"download": "PRENESI",
 					"launch": "ZAŽENI",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Pretvorba glasu v besedilo",
 						"description": "Govorite naravno in funkcija pretvorbe glasu v besedilo bo natipkala izrečeno. V svoji najljubši aplikaciji pišite e-poštna sporočila ali dokumente ter klepetajte. Funkcija pretvorbe glasu v besedilo sproti prevaja vaš govor ter za vas ustvarja zapiske."
+					},
+					"noteEditor": {
+						"title": "Urejevalnik zapiskov",
+						"description": "Urejevalnik zapiskov je v pomoč pri urejanju zapiskov s sestanka, popravljanju besedil in predvajanju posnetkov."
 					},
 					"modalPopUp": {
 						"heading": "Začetek:",
@@ -5527,6 +5534,12 @@
 							"point3": "Kliknite ikono aplikacije AI meeting manager in izberite možnost »Pretvorba glasu v besedilo«.",
 							"point4": "Izberite želene jezike in nato za začetek kliknite gumb mikrofona.",
 							"point5": "Kazalnik postavite v aplikacijo, ki ste jo odprli, in začnite govoriti."
+						},
+						"noteEditor": {
+							"point1": "Prepričajte se, da je ikona za AI Meeting Manager prikazana v območju za obvestila Windows.",
+							"point2": "Kliknite ikono in izberite urejevalnik zapiskov.",
+							"point3": "S seznama izberite zapiske sestanka.",
+							"point4": "Uredite zapiske sestanka ali predvajajte posnetek."
 						},
 						"closeText": "zapri"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Umerjanje barv",
 				"appName": "Aplikacija X-rite",
-				"summary": "Zaslonska plošča vašega računalnika je kalibrirana na tovarniški liniji z vrhunskimi profesionalnimi barvnimi merilniki Minolta. Podatki o umerjanju so shranjeni v oblaku in jih lahko prenesete, da ploščo ponastavite na tovarniške nastavitve. Aplikacija X-rite je vnaprej nameščena za upravljanje barvnih prostorov.<br>– Privzeto (izvorna barvna lestvica, izvorna svetlost s kalibrirano sivo barvno gradacijo ter lastnosti zaslona, shranjene v profilu). <br>– Privzeti profil je privzeto nameščen v napravi. Ta profil sistem Windows naloži ob zagonu. <br>– Ni kalibrirano (Upravljanje barv je izklopljeno. To pomeni, da je uporabljen privzeti profil Lenovo.) <br>– sRGB (računalniški zasloni) – Adobe RGB (za grafične oblikovalce, ki načrtujejo tiskanje v CYMK)<br> – BT.709 (videoposnetki v kakovosti HD)<br> – DCI P3 (pogosto uporabljen pri digitalni filmski projekciji v ZDA)",
+				"descSection1": "Izredna barvna natančnost je pri vašem ustvarjalnem delu ključnega pomena. Lenovo zagotavlja rešitev za umerjanje barv na zaslonu vašega računalnika, s čimer je zagotovljena kar najboljša barvna učinkovitost. Za vaš računalnik se ustvari prilagojen privzeti barvni profil, ki uporablja profesionalno napravo za umerjanje, to pa zagotavlja točen prikaz fotografij, posnetih s fotoaparatom, na zaslonu računalnika brez popačenih barv.",
+				"descSection2": "S prednameščenim pomočnikom za barve X-rite lahko med barvnim profili preklapljate po želji, na voljo so:",
+				"profile1": "Privzeto (v profilu je shranjeno: izvorna barvna paleta, izvorna svetlost, a kalibrirana gradacija sive barve in karakterizacija zaslona). Ta profil je shranjen v računalniku in se prek sistema Windows samodejno naloži. ",
+				"profile2": "Brez kalibracije (upravljanje barv izklopljeno).",
+				"profile3": "sRGB (standardni model sRGB za računalniške zaslone).",
+				"profile4": "Rec. 709 (samo za izbrane modele, optimizirano za videoposnetke HD).",
 				"screenshotTitle": "Posnetki zaslona",
-				"cardTitle": "Kako je mogoče obnoviti profile?",
+				"cardTitle": "Kako se obnovi barvne profile?",
 				"cardSummary": "Če znova namestite sistem ali se izgubijo barvni profili, jih lahko obnovite tukaj:",
 				"learnMore": "Več o tem",
 				"restoreProfileDesc": "Lenovo zagotavlja varnostne kopije barvnih profilov v storitvi Lenovo Cloud. Če želite poskrbeti, da bo funkcija umerjanja barv delovala v računalniku, boste morda morali obnoviti ali namestiti barvne profile v naslednjih primerih: Če se barvni profili izgubijo ali poškodujejo, se prikaže okno, ki vas bo opozorilo, da morate obnoviti barvne profile. V pojavnem oknu kliknite »Da« in barvni profili bodo samodejno obnovljeni iz storitve Lenovo Cloud. Če računalniški zaslon zamenja pooblaščeni ponudnik storitev Lenovo, naredite naslednje:",

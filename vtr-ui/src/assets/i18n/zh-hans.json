@@ -2729,11 +2729,11 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "简单",
-				"tab1Description": "我们不会用艰深的高端技术把您搞糊涂",
-				"tab2Heading": "快捷",
-				"tab2Description": "短短 5 分钟就可以全部搞定",
+				"tab1Description": "一键优化电脑性能",
+				"tab2Heading": "快速",
+				"tab2Description": "不到 5 分钟即可完成 160 项检查",
 				"tab3Heading": "安全",
-				"tab3Description": "按照最佳实践而构建，杜绝恐吓性软件"
+				"tab3Description": "采用基于行业最佳实践构建的可信赖技术"
 			},
 			"summaryTitle": "优化电脑性能"
 		},
@@ -2751,11 +2751,11 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "浏览器问题",
-				"tab1Description": "我们将配置和修复所有您常用的 Web 浏览器。",
+				"tab1Description": "配置和修复所有常用的 Web 浏览器",
 				"tab2Heading": "连接错误",
-				"tab2Description": "我们可以诊断并修复您的连接问题。",
-				"tab3Heading": "因特网速度慢",
-				"tab3Description": "我们将帮助您获得最佳性能。"
+				"tab2Description": "诊断并修复连接问题",
+				"tab3Heading": "Internet 速度缓慢",
+				"tab3Description": "优化 Internet 速度并获得最佳性能"
 			},
 			"summaryTitle": "因特网性能"
 		},
@@ -2772,11 +2772,11 @@
 			},
 			"tabSet2": {
 				"tab1Heading": "零日病毒",
-				"tab1Description": "我们甚至会解决最新恶意软件感染",
+				"tab1Description": "杜绝新型恶意软件感染",
 				"tab2Heading": "删除间谍软件",
-				"tab2Description": "我们会删除所有可能不需要的程序",
-				"tab3Heading": "轻巧且快捷",
-				"tab3Description": "扫描通常需要 5-10 分钟"
+				"tab2Description": "删除所有潜在的恶意和有害程序",
+				"tab3Heading": "零负担快速运行",
+				"tab3Description": "基于云的技术不会给电脑带来运行负担"
 			},
 			"summaryTitle": "防止恶意软件侵入"
 		},
@@ -2792,12 +2792,12 @@
 				"tab5": "全天候保护"
 			},
 			"tabSet2": {
-				"tab1Heading": "简单",
-				"tab1Description": "我们不会用艰深的高端技术把您搞糊涂",
-				"tab2Heading": "快捷",
-				"tab2Description": "短短 5 分钟就可以全部搞定",
-				"tab3Heading": "安全",
-				"tab3Description": "按照最佳实践而构建，杜绝恐吓性软件"
+				"tab1Heading": "自动化",
+				"tab1Description": "设置计划扫描，自动优化电脑",
+				"tab2Heading": "主动",
+				"tab2Description": "确保电脑始终处于最佳性能状态",
+				"tab3Heading": "有效",
+				"tab3Description": "采用创新性前沿技术"
 			}
 		},
 		"noScanResults": "请单击“扫描并修复”按钮以触发扫描过程。",
@@ -3014,7 +3014,9 @@
 			"scanRates": "下面是我们的扫描对您电脑的评价结果：",
 			"summary": "摘要",
 			"foundIssues": "我们的扫描找到 {{issueCount}} 个问题",
+			"summaryDetailsMaintain": "您的系统状况良好！某些方面还可以进一步优化。立即注册并使用我们的先进软件，让电脑保持出色的性能状态。",
 			"summaryDetailsOptimize": "请立即注册以解决这些问题并保持系统顺利运行。我们的软件可以全天候主动扫描您的系统的这些区域以查找问题，并在发现时解决，所以您的电脑性能始终非常出色。",
+			"summaryDetailsFixNow": "发现一些问题，可能严重影响到系统性能。立即注册并解决这些问题。之后，Smart Performance 可以全天候主动扫描您的系统，并在问题出现时立即进行处理，让您的电脑始终保持出色的性能状态。",
 			"expiredSummaryDetails": "您的订阅已到期，当前只能使用 Smart Performance 中的扫描功能，如果您想恢复“扫描并修复”功能，请按下方的“续订并修复”按钮以续订您的订阅。",
 			"signupRepairButton": "立即注册并修复",
 			"renewAndFix": "续订并修复",
@@ -5537,7 +5539,8 @@
 			"security": "您知道吗？即使您没有安装反病毒软件，我们仍会为您的设备提供基本的安全保护。",
 			"connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。",
 			"hardwareScan": "现在，让我们看看硬件是不是都正常。",
-			"appSearch": "您知道吗？您可以在此处搜索适用于您设备的功能。"
+			"appSearch": "您知道吗？您可以在此处搜索适用于您设备的功能。",
+			"productivity": "想要提高工作效率吗？"
 		}
 	},
 	"appsForYou": {
@@ -5609,7 +5612,7 @@
 				"desc": "借助本部分，您可以自动优化或手动配置 AI 会议设置。",
 				"aiMeetingManager": {
 					"title": "智能会议助手",
-					"description": "智能会议助手支持实时笔译、口译和语音输入，还可以为视频生成字幕。",
+					"description": "智能会议助手提供实时笔译、口译、语音输入和文本编辑器。还可以为视频生成字幕。",
 					"download": "下载",
 					"launch": "启动",
 					"translation": {
@@ -5619,6 +5622,10 @@
 					"voiceToText": {
 						"title": "语音转文本",
 						"description": "自然讲话时，使用语音转文本功能即可实现输入。您可以使用此功能撰写电子邮件或文档，或使用惯用的应用程序进行聊天。语音转文本功能可在您讲话时进行翻译并做记录。"
+					},
+					"noteEditor": {
+						"title": "记录编辑器",
+						"description": "记录编辑器可帮助您编辑会议记录、更正文本并播放录音。"
 					},
 					"modalPopUp": {
 						"heading": "开始使用：",
@@ -5635,6 +5642,12 @@
 							"point3": "单击“智能会议助手”图标，然后选择“语音转文本”。",
 							"point4": "选择您需要的语言，然后单击“麦克风”按钮开始。",
 							"point5": "将光标放在打开的应用程序中，然后开始讲话。"
+						},
+						"noteEditor": {
+							"point1": "确保智能会议助手图标显示在 Windows 通知区域中。",
+							"point2": "单击该图标，然后选择“记录编辑器”。",
+							"point3": "从列表中选择一个会议记录。",
+							"point4": "编辑会议记录或播放录音。"
 						},
 						"closeText": "关闭"
 					}
@@ -5674,9 +5687,14 @@
 			"colorCalibration": {
 				"title": "颜色校准",
 				"appName": "X-rite 应用程序",
-				"summary": "计算机出厂时已使用优质的 Minolta 专业级色度计对显示面板进行校准。校准数据存储在云中，您可以下载该数据，以将面板重置为出厂设置。计算机预装有用于管理色域的 X-rite。<br>- 默认值（自然色域、自然亮度但灰色渐层经过校准、显示特性存储在配置文件中）。<br>- 默认情况下，计算机上已安装有默认配置文件。Windows 会在启动时加载此配置文件。<br>- 未校准（颜色管理关闭。这表示使用默认的 Lenovo 配置文件。）<br>- sRGB（计算机显示器）- Adobe RGB（适用于计划以 CYMK 打印的图形设计师）<br>- BT.709（高清视频）<br>- DCI P3（在美国通常用于数字影片投影）",
+				"descSection1": "作为专业人士，高色彩精确度对于创意工作至关重要。Lenovo 为您的计算机显示屏提供了颜色校准解决方案，以确保您开箱即可获得理想的色彩性能。我们使用专业的校准设备为您的计算机创建了定制的默认颜色配置文件，确保无论是相机还是计算机显示屏，呈现的图像均精确且没有色彩失真。",
+				"descSection2": "使用预装的 X-rite 色彩管理助手，您可以根据需要切换颜色配置文件：",
+				"profile1": "默认值（自然色域、自然亮度但灰色渐层经过校准、显示特性存储在配置文件中）。此配置文件存储在计算机上，并由 Windows 自动加载。",
+				"profile2": "未校准（颜色管理关闭）",
+				"profile3": "sRGB（对计算机显示器采用标准红绿蓝设置）",
+				"profile4": "Rec. 709（仅适用于特定型号，针对高清视频进行了优化）",
 				"screenshotTitle": "屏幕快照",
-				"cardTitle": "如何还原配置文件？",
+				"cardTitle": "如何还原颜色配置文件？",
 				"cardSummary": "如果重新安装系统或颜色配置文件丢失，可从此处还原配置文件：",
 				"learnMore": "了解更多",
 				"restoreProfileDesc": "Lenovo 在 Lenovo Cloud 中提供了备份颜色配置文件。当颜色配置文件丢失或损坏时，系统将显示一个窗口，提醒您还原颜色配置文件。为确保颜色校准功能在您的计算机上正常工作，您可能需要还原或安装颜色配置文件。在提示窗口中单击“是”，颜色配置文件将自动从 Lenovo Cloud 还原。如果您的计算机显示屏已由 Lenovo 授权服务提供商进行更换，请执行以下操作：",

@@ -2620,12 +2620,12 @@
 				"tab5": "Chyby v registru"
 			},
 			"tabSet2": {
-				"tab1Heading": "JE TO SNADNÉ",
-				"tab1Description": "Nepokoušíme se vás mást technickou hantýrkou",
-				"tab2Heading": "JE TO RYCHLÉ",
-				"tab2Description": "100bodová kontrola za méně než 5 minut",
-				"tab3Heading": "JE TO BEZPEČNÉ",
-				"tab3Description": "Žádné strašení, jen osvědčené postupy"
+				"tab1Heading": "Je to snadné",
+				"tab1Description": "Optimalizace výkonu vašeho počítače jedním kliknutím",
+				"tab2Heading": "Je to rychlé",
+				"tab2Description": "Kontrola 160 položek za méně než 5 minut",
+				"tab3Heading": "Je to bezpečné",
+				"tab3Description": "Důvěryhodná technologie, jen osvědčené postupy v oboru"
 			},
 			"summaryTitle": "Vyladit výkon počítače"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Výkon Wi-Fi"
 			},
 			"tabSet2": {
-				"tab1Heading": "PROBLÉMY S PROHLÍŽEČEM",
-				"tab1Description": "Nakonfigurujeme a opravíme všechny problémy v oblíbených webových prohlížečích.",
-				"tab2Heading": "PROBLÉMY S PŘIPOJENÍM",
-				"tab2Description": "Dokážeme diagnostikovat a opravit problémy s připojením.",
-				"tab3Heading": "POMALÝ INTERNET",
-				"tab3Description": "Pomůžeme vám dosáhnout maximálního výkonu."
+				"tab1Heading": "Problémy s prohlížečem",
+				"tab1Description": "Konfigurace a opravy všech oblíbených webových prohlížečů",
+				"tab2Heading": "Problémy s připojením",
+				"tab2Description": "Diagnostika a opravy problémů s připojením",
+				"tab3Heading": "Pomalý internet",
+				"tab3Description": "Optimalizace rychlosti internetu a maximální výkon"
 			},
 			"summaryTitle": "Výkon při práci na internetu"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Nastavení zabezpečení"
 			},
 			"tabSet2": {
-				"tab1Heading": "VIRY „ZERO DAY“",
-				"tab1Description": "Odstraníme i ty nejnovější malware infekce",
-				"tab2Heading": "ODSTRANĚNÍ SPYWARU",
-				"tab2Description": "Odstraníme všechny potenciálně nežádoucí programy",
-				"tab3Heading": "NENÁROČNÉ A RYCHLÉ",
-				"tab3Description": "Kontrola obvykle trvá 5-10 minut"
+				"tab1Heading": "Virus „zero-day“",
+				"tab1Description": "Odstranění i těch nejnovějších infekcí malwarem",
+				"tab2Heading": "Odstranění spywaru",
+				"tab2Description": "Odstranění všech potenciálně nebezpečných a škodlivých programů",
+				"tab3Heading": "Snadno a rychle",
+				"tab3Description": "Snadné využití cloudové technologie na vašem počítači"
 			},
 			"summaryTitle": "Malware a zabezpečení"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Neustálá ochrana"
 			},
 			"tabSet2": {
-				"tab1Heading": "JE TO SNADNÉ",
-				"tab1Description": "Nepokoušíme se vás mást technickou hantýrkou",
-				"tab2Heading": "JE TO RYCHLÉ",
-				"tab2Description": "100bodová kontrola za méně než 5 minut",
-				"tab3Heading": "JE TO BEZPEČNÉ",
-				"tab3Description": "Žádné strašení, jen osvědčené postupy"
+				"tab1Heading": "Automaticky",
+				"tab1Description": "Nastavení plánovaných kontrol k automatickému vyladění počítače",
+				"tab2Heading": "Aktivně",
+				"tab2Description": "Špičkový výkon vašeho počítače za všech okolností",
+				"tab3Heading": "Efektivně",
+				"tab3Description": "Inovativní nejmodernější technologie"
 			}
 		},
 		"noScanResults": "Klepnutím na tlačítko VYHLEDAT A OPRAVIT spusťte kontrolu.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Naše kontrola váš počítač vyhodnotila takto: ",
 			"summary": "Souhrn",
 			"foundIssues": "Během naší kontroly jsme našli následující počet problémů: {{issueCount}}",
+			"summaryDetailsMaintain": "Váš systém je v kondici! Našli jsme několik možností k optimalizaci. Využijte nabídky a zaregistrujte se hned teď! Váš počítač bude díky našemu modernímu softwaru podávat špičkový výkon.",
 			"summaryDetailsOptimize": "Pokud budete chtít tyto problémy odstranit a zajistit tak hladký chod systému, můžete se zaregistrovat. Náš software dokáže aktivně a nepřetržitě kontrolovat tyto oblasti ve vašem systému, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
+			"summaryDetailsFixNow": "Zjistili jsme problémy, které významně ovlivňují výkon vašeho systému. Zaregistrujte se a vyřešte problémy hned teď. Smart Performance potom dokáže aktivně a nepřetržitě kontrolovat váš systém, odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
 			"expiredSummaryDetails": "Platnost vašeho předplatného vypršela a v současné době můžete použít jen funkci kontroly v nástroji Smart Performance. Pokud chcete obnovit funkci „Zkontrolovat a opravit“, obnovte si předplatné stisknutím tlačítka „Obnovit a opravit“ níže.",
 			"signupRepairButton": "ZAREGISTROVAT A OPRAVIT",
 			"renewAndFix": "Obnovit a opravit",
@@ -5429,7 +5431,8 @@
 			"security": "Víte, že…? I když nemáte nainstalovaný antivirový software, stále poskytujeme základní bezpečnostní ochranu pro vaše zařízení.",
 			"connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku.",
 			"hardwareScan": "Nyní můžete zjistit stav hardwaru součásti systému.",
-			"appSearch": "Víte, že…? Zde můžete vyhledat funkce použitelné pro vaše zařízení."
+			"appSearch": "Víte, že…? Zde můžete vyhledat funkce použitelné pro vaše zařízení.",
+			"productivity": "Chcete zvýšit efektivitu práce?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Tato část umožňuje automaticky optimalizovat nebo ručně konfigurovat nastavení schůzky AI.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager podporuje překlady, tlumočení a hlasové diktování v reálném čase. Může také generovat titulky pro videa.",
+					"description": "AI Meeting Manager poskytuje překlady, tlumočení, hlasové diktování a editor poznámek v reálném čase. Může také generovat titulky pro videa.",
 					"download": "STÁHNOUT",
 					"launch": "SPUSTIT",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Hlas na text",
 						"description": "Mluvte přirozeně a psaní bude provádět nástroj Hlas na text. Pište e-maily nebo dokumenty nebo chatujte ve své oblíbené aplikaci. Hlas na text překládá, když mluvíte, a dělá pro vás poznámky."
+					},
+					"noteEditor": {
+						"title": "Editor poznámek",
+						"description": "Editor poznámek vám pomůže upravovat poznámky ze schůzek, opravovat texty a přehrávat nahrávky."
 					},
 					"modalPopUp": {
 						"heading": "Začínáme:",
@@ -5527,6 +5534,12 @@
 							"point3": "Klikněte na ikonu AI meeting manager a vyberte Hlas na text.",
 							"point4": "Podle své potřeby vyberte jazyky a začněte kliknutím na tlačítko mikrofonu.",
 							"point5": "Umístěte kurzor do aplikace, kterou jste otevřeli, a začněte mluvit."
+						},
+						"noteEditor": {
+							"point1": "Zkontrolujte, že je v oznamovací oblasti systému Windows zobrazena ikona AI Meeting Manager.",
+							"point2": "Klikněte na ikonu a vyberte Editor poznámek.",
+							"point3": "Ze seznamu vyberte poznámku ze schůzky.",
+							"point4": "Poznámku ze schůzky upravte nebo si přehrajte nahrávku."
 						},
 						"closeText": "Zavřít"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Kalibrace barev",
 				"appName": "Aplikace X-rite",
-				"summary": "Zobrazovací panel vašeho počítače je kalibrován na tovární lince pomocí špičkových kolorimetrů Minolta profesionální kvality. Kalibrační data jsou uložena v cloudu a lze je stáhnout a obnovit tak tovární nastavení panelu. X-rite je předinstalován pro správu barevných prostorů.<br>- Výchozí (nativní Gamut, nativní jas, ale kalibrovaná šedá rampa a charakteristika displeje uložená v profilu). <br>- Výchozí profil je ve výchozím nastavení nainstalován do zařízení. Tento profil se načte ve Windows při spuštění. <br>- Není kalibrováno (Správa barev vypnutá. To znamená použití výchozího profilu Lenovo.) <br>- sRGB (počítačové monitory) - Adobe RGB (pro grafické designéry, kteří plánují tisknout v CYMK) <br>- BT.709 (HD video) <br>- DCI P3 (běžně používané v digitální filmové projekci v USA)",
+				"descSection1": "Jste profesionál, a vysoká úroveň přesnosti barev je proto pro vaši práci zcela zásadní nutností. Lenovo poskytuje řešení kalibrace barev pro displej počítače, díky němuž získáte hned po spuštění nejlepší barevný rozsah. Profesionální kalibrační zařízení vytvoří pro váš počítač vlastní výchozí barevný profil, takže snímky z fotoaparátu zobrazované na displeji počítače budou přesné a nebudou mít zkreslené barvy.",
+				"descSection2": "S předinstalovaným X-rite Color Assistant můžete dle potřeby barevný profil přepínat:",
+				"profile1": "Výchozí (nativní Gamut, nativní jas, ale kalibrovaná šedá rampa a charakteristika displeje uložená v profilu). Tento profil je uložen v počítači a systém Windows jej automaticky načte. ",
+				"profile2": "Není kalibrováno (správa barev vypnutá)",
+				"profile3": "sRGB (standardní RGB pro počítačové monitory)",
+				"profile4": "Rec. 709 (pouze u vybraných modelů, optimalizováno pro HD videa)",
 				"screenshotTitle": "Snímky obrazovky",
-				"cardTitle": "Jak obnovit profily?",
+				"cardTitle": "Jak obnovit barevné profily?",
 				"cardSummary": "Pokud přeinstalujete systém nebo dojde ke ztrátě barevných profilů, můžete profily obnovit zde:",
 				"learnMore": "Další informace",
 				"restoreProfileDesc": "Společnost Lenovo poskytuje záložní barevné profily v Lenovo Cloud. Abyste zajistili, že funkce kalibrace barev ve vašem počítači funguje, budete možná muset obnovit nebo nainstalovat barevné profily v následujících situacích: pokud dojde ke ztrátě nebo poškození barevných profilů, zobrazí se okno, které vám připomene obnovení barevných profilů. V zobrazeném okně klikněte na Ano a barevné profily se z Lenovo Cloud obnoví automaticky. Pokud displej vašeho počítače vyměnil autorizovaný poskytovatel služeb Lenovo, postupujte takto:",

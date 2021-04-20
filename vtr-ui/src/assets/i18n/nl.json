@@ -2620,12 +2620,12 @@
 				"tab5": "Registerfouten"
 			},
 			"tabSet2": {
-				"tab1Heading": "HET IS MAKKELIJK",
-				"tab1Description": "We verwarren u niet met technische prietpraat",
-				"tab2Heading": "HET IS SNEL",
-				"tab2Description": "Een controle van 100 punten vindt binnen 5 minuten plaats",
-				"tab3Heading": "HET IS VEILIG",
-				"tab3Description": "Geen scareware en gemaakt met best practices"
+				"tab1Heading": "Het is makkelijk",
+				"tab1Description": "Optimaliseer de prestaties van uw pc met één klik",
+				"tab2Heading": "Het is snel",
+				"tab2Description": "Een controle van 160 punten vindt binnen 5 minuten plaats",
+				"tab3Heading": "Het is veilig",
+				"tab3Description": "Vertrouwde technologie die is gebaseerd op best practices uit de branche"
 			},
 			"summaryTitle": "Pc-prestaties optimaliseren"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Wi-Fi-prestaties"
 			},
 			"tabSet2": {
-				"tab1Heading": "BROWSERPROBLEMEN",
-				"tab1Description": "We configureren en corrigeren alle populaire webbrowsers.",
-				"tab2Heading": "VERBINDINGSFOUTEN",
-				"tab2Description": "We kunnen een diagnose van uw verbindingsproblemen maken en deze herstellen.",
-				"tab3Heading": "LANGZAAM INTERNET",
-				"tab3Description": "Wij helpen u een maximale snelheid te bereiken."
+				"tab1Heading": "Browserproblemen",
+				"tab1Description": "Configureer en herstel alle populaire webbrowsers",
+				"tab2Heading": "Verbindingsfouten",
+				"tab2Description": "Maak een diagnose van verbindingsproblemen en herstel deze",
+				"tab3Heading": "Langzaam internet",
+				"tab3Description": "Optimaliseer internetsnelheid en behaal maximale prestaties"
 			},
 			"summaryTitle": "Internetprestaties"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Beveiligingsinstellingen"
 			},
 			"tabSet2": {
-				"tab1Heading": "ZERO-DAY-VIRUS",
-				"tab1Description": "We verwijderen zelfs de nieuwste malware-infecties",
-				"tab2Heading": "SPYWARE VERWIJDEREN",
-				"tab2Description": "We verwijderen alle mogelijk ongewenste programma's",
-				"tab3Heading": "LICHT EN SNEL",
-				"tab3Description": "Een scan duurt doorgaans 5-10 minuten"
+				"tab1Heading": "Zero-day-virus",
+				"tab1Description": "Verwijder zelfs de nieuwste malware-infecties",
+				"tab2Heading": "Spyware verwijderen",
+				"tab2Description": "Verwijder alle mogelijk schadelijke programma's",
+				"tab3Heading": "Licht en snel",
+				"tab3Description": "Cloudtechnologie belast uw pc minimaal"
 			},
 			"summaryTitle": "Malware en beveiliging"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Bescherming 24/7"
 			},
 			"tabSet2": {
-				"tab1Heading": "HET IS MAKKELIJK",
-				"tab1Description": "We verwarren u niet met technische prietpraat",
-				"tab2Heading": "HET IS SNEL",
-				"tab2Description": "Een controle van 100 punten vindt binnen 5 minuten plaats",
-				"tab3Heading": "HET IS VEILIG",
-				"tab3Description": "Geen scareware en gemaakt met best practices"
+				"tab1Heading": "Geautomatiseerd",
+				"tab1Description": "Stel geplande schema's in die de pc automatisch afstemmen",
+				"tab2Heading": "Proactief",
+				"tab2Description": "Zorg dat uw pc altijd in topconditie is",
+				"tab3Heading": "Effectief",
+				"tab3Description": "Innovatieve, geavanceerde technologie"
 			}
 		},
 		"noScanResults": "Klik op de knop SCANNEN EN HERSTELLEN om het scanproces te starten.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Onze scan beoordeelt uw pc met: ",
 			"summary": "Overzicht",
 			"foundIssues": "Onze scan heeft {{issueCount}} problemen aangetroffen",
+			"summaryDetailsMaintain": "Uw systeem is in goede conditie! We hebben enkele optimalisatiemogelijkheden gevonden. Meld u nu aan om te profiteren en laat uw pc met topsnelheid werken dankzij onze hypermoderne software.",
 			"summaryDetailsOptimize": "Meld u nu aan om deze problemen te verhelpen en uw systeem goed te laten werken. Onze software kan deze gebieden van uw systeem 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties levert.",
+			"summaryDetailsFixNow": "We hebben problemen aangetroffen die aanzienlijke invloed hebben op uw systeemprestaties. Meld u aan en los de problemen nu op. Daarna kan Smart Performance uw systeem 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties biedt.",
 			"expiredSummaryDetails": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. Als u de functie \"Scannen en herstellen\" weer wilt gebruiken, klikt u op de knop \"Verlengen en herstellen\" hieronder om uw abonnement te verlengen.",
 			"signupRepairButton": "NU AANMELDEN EN HERSTELLEN",
 			"renewAndFix": "Verlengen en herstellen",
@@ -5429,7 +5431,8 @@
 			"security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
 			"connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd.",
 			"hardwareScan": "U kunt nu de conditie van het onderdeel van uw systeemhardware opvragen.",
-			"appSearch": "Wist u dat? Hierin vindt u de functies voor uw apparaat."
+			"appSearch": "Wist u dat? Hierin vindt u de functies voor uw apparaat.",
+			"productivity": "Wilt u uw werkefficiëntie verbeteren?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Dit onderdeel maakt het mogelijk om uw AI vergaderingsinstellingen te optimaliseren of handmatig te configureren.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager ondersteunt vertalen, interpreteren en dicteren in real-time. Het kan ook video's ondertitelen.",
+					"description": "AI Meeting Manager biedt vertalen, interpreteren, dicteren en notities bewerken in real-time. Het kan ook video's ondertitelen.",
 					"download": "DOWNLOADEN",
 					"launch": "STARTEN",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Spraak naar tekst",
 						"description": "Praat gewoon door en Spraak naar tekst typt het voor u uit. Schrijf aan e-mails of documenten of chat via uw favoriete app. Spraak naar tekst vertaalt terwijl u spreekt en maakt ook aantekeningen."
+					},
+					"noteEditor": {
+						"title": "Notitie-editor",
+						"description": "Met Notitie-editor kunt u notulen bewerken, teksten corrigeren en opnamen afspelen."
 					},
 					"modalPopUp": {
 						"heading": "Aan de slag:",
@@ -5527,6 +5534,12 @@
 							"point3": "Klik op het pictogram van AI meeting manager en selecteer Spraak naar tekst.",
 							"point4": "Selecteer de gewenste talen en klik vervolgens op het microfoon-pictogram om te beginnen.",
 							"point5": "Plaats de cursor in de geopende toepassing en begin met spreken."
+						},
+						"noteEditor": {
+							"point1": "Zorg dat het pictogram van AI Meeting Manager wordt weergegeven in het Windows-systeemvak.",
+							"point2": "Klik op het pictogram en kies Notitie-editor.",
+							"point3": "Selecteer een van de notulen in de lijst.",
+							"point4": "Bewerk de notulen of speel de opname af."
 						},
 						"closeText": "sluiten"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Beeldschermkleuren kalibreren",
 				"appName": "X-rite",
-				"summary": "Uw computerbeeldscherm is in de fabriek gekalibreerd met professionele Minolta-colorimeters van topklasse. De kalibratiegegevens worden opgeslagen in de cloud en kunnen worden gedownload om de fabrieksinstellingen van het scherm terug te zetten. X-rite is vooraf geïnstalleerd om kleurruimtes te beheren.<br>- Standaard (systeemeigen gamma, systeemeigen helderheid, maar met in het profiel opgeslagen grijswaarde kalibratie en schermkarakteristieken). <br>- Het standaardprofiel is standaard geïnstalleerd op de machine. Dit profiel wordt door Windows geladen als u opstart. <br>- Niet-gekalibreerd (kleurbeheer uit. Dit betekent dat u het standaard Lenovo-profiel gebruikt.) <br>- sRGB (computermonitors) - Adobe RGB (voor grafisch ontwerpers die in CYMK willen afdrukken) <br> - BT.709 (HD-video) <br> - DCI P3 (meestal in de VS toegepast voor het vertonen van digitale films)",
+				"descSection1": "Voor professionals is een hoge mate van kleurnauwkeurigheid van cruciaal belang en essentieel voor creatief werk. Lenovo biedt een oplossing voor kleurkalibratie op uw computerscherm om te zorgen dat u direct de beste kleurprestaties krijgt. Er wordt een aangepast standaardkleurprofiel voor uw computer gemaakt met behulp van een professional kalibratieapparaat. Dit zorgt ervoor dat de beelden die vanaf de camera op het beeldscherm worden weergegeven, nauwkeurig en zonder kleurvervorming zijn.",
+				"descSection2": "Met de vooraf geïnstalleerde X-rite Color Assistant kunt u het kleurprofiel naar wens wisselen:",
+				"profile1": "Standaard (systeemeigen gamma, systeemeigen helderheid, maar met in het profiel opgeslagen grijswaarde kalibratie en schermkarakteristieken). Dit profiel wordt opgeslagen op de computer en automatisch door Windows geladen. ",
+				"profile2": "Niet-gekalibreerd (kleurbeheer uit)",
+				"profile3": "sRGB (standaard Rood Groen Blauw voor computermonitors)",
+				"profile4": "Rec. 709 (alleen voor bepaalde modellen, geoptimaliseerd voor HD-video's)",
 				"screenshotTitle": "Schermopnames",
-				"cardTitle": "Een profiel herstellen",
+				"cardTitle": "Kleurprofielen herstellen",
 				"cardSummary": "Als het systeem opnieuw wordt geïnstalleerd of wanneer kleurprofielen zijn zoekgeraakt, kunt u vanaf hier profielen herstellen:",
 				"learnMore": "Meer info",
 				"restoreProfileDesc": "Lenovo heeft in Lenovo Cloud back-ups van kleurprofielen beschikbaar. Om er zeker van te zijn dat de functie voor het kalibreren van de beeldschermkleuren op uw computer werkt, kan het in de volgende situaties nodig zijn om kleurprofielen te herstellen of te installeren: als de kleurprofielen zoek of beschadigd zijn, ziet u een venster dat u eraan herinnert de kleurprofielen te herstellen. Klik in het venster op Ja en de kleurprofielen worden automatisch hersteld vanuit Lenovo Cloud. Als het beeldscherm van de computer wordt vervangen door een erkende serviceprovider van Lenovo, doet u het volgende:",
