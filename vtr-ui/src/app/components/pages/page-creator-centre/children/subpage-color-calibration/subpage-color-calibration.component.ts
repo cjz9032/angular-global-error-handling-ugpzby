@@ -192,6 +192,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 					} else {
 						resolve(true);
 					}
+					this.logger.info('color calibration query registry:', val);
 				}).catch((ex) => {
 					resolve(false);
 					this.logger.info('color calibration query registry failed', ex);
