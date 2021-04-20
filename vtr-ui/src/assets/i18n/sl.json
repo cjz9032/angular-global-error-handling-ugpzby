@@ -1340,8 +1340,9 @@
 					"title": "Orodna vrstica programa Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Orodna vrstica Lenovo Vantage in premium nastavitve",
-						"description": "Za preprost dostop do najpogosteje uporabljenih nastavitev pripnite orodno vrstico Lenovo Vantage v opravilno vrstico Windows ter si zagotovite premium ponudbe in posodobitve.",
-						"hint": "Možnosti na sliki so odvisne od zmogljivosti in lastnosti naprave. Nekatere naprave na primer podpirajo nastavitve osvetlitve tipkovnice, nekateri pa ne."
+						"description": "Za preprost dostop do najbolj priljubljenih nastavitev, za ogled garancijskih možnosti, pošiljanje povratnih informacij in zagon programa Lenovo Vantage pripnite orodno vrstico Lenovo Vantage v opravilno vrstico Windows, da pridobite prilagojene ponudbe in posodobitve.",
+						"hint": "Možnosti na sliki so odvisne od zmogljivosti in lastnosti naprave. Nekatere naprave na primer podpirajo nastavitve osvetlitve tipkovnice, nekateri pa ne.",
+						"hintNewOS": "Možnosti v orodni vrstici Vantage se lahko razlikujejo glede na model računalnika. Če želite odpeti orodno vrstico Vantage iz opravilne vrstice, z desno miškino tipko kliknite ikono orodne vrstice Vantage in izberite <b>Odpni iz opravilne vrstice</b>."
 					}
 				},
 				"batterySettings": {

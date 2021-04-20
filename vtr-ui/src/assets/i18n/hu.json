@@ -1340,8 +1340,9 @@
 					"title": "Lenovo Vantage eszköztár",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage eszköztár és prémium beállítások",
-						"description": "Rögzítse a Windows-tálcára a Lenovo Vantage eszköztárat, így könnyen hozzáfér a leggyakrabban használt beállításokhoz, a frissítésekhez és az Önnek szóló prémium ajánlatokhoz.",
-						"hint": "A képen látható lehetőségek az eszköz funkcióitól és jellemzőitől függően érhetők el. Például egyes gépek támogatják a billentyűzet háttérvilágításának beállítását, míg mások nem."
+						"description": "Rögzítse a Lenovo Vantage eszköztárát a Windows tálcájára, és könnyen elérheti a legtöbbször használt beállításokat, láthatja a jótállási információkat, visszajelzést küldhet, valamint elindíthatja a Lenovo Vantage alkalmazást, amellyel személyre szabott ajánlatokat és frissítéseket kaphat.",
+						"hint": "A képen látható lehetőségek az eszköz funkcióitól és jellemzőitől függően érhetők el. Például egyes gépek támogatják a billentyűzet háttérvilágításának beállítását, míg mások nem.",
+						"hintNewOS": "A Vantage eszköztárán rendelkezésre álló lehetőségek a különböző számítógéptípusok esetén eltérhetnek. Ha fel szeretné oldani a Vantage eszköztár tálcára rögzítését, kattintson a Vantage eszköztár tálcán megjelenő ikonjára, és válassza a <b>Levétel a tálcáról</b> lehetőséget."
 					}
 				},
 				"batterySettings": {

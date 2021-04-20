@@ -1340,8 +1340,9 @@
 					"title": "Lenovo Vantage-verktøylinje",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage-verktøylinje og Premium-innstillinger",
-						"description": "Fest Lenovo Vantage-verktøylinjen på oppgavelinjen i Windows for å få enkel tilgang til innstillingene du bruker oftest, og få Premium-tilbud og oppdateringer for deg.",
-						"hint": "Alternativene i bildet avhenger av kapasiteten og egenskapene til enheten. Noen maskiner støtter for eksempel innstillingene for bakgrunnsbelysning av tastatur, og noen gjør det ikke."
+						"description": "Pin Lenovo Vantage-verktøylinje til oppgavelinjen til Windows for å få lett tilgang til de mest populære innstillingene, se garantiopsjonene, levere tilbakemelding og lansere Lenovo Vantage for å få skreddersydde tilbud og oppdateringer.",
+						"hint": "Alternativene i bildet avhenger av kapasiteten og egenskapene til enheten. Noen maskiner støtter for eksempel innstillingene for bakgrunnsbelysning av tastatur, og noen gjør det ikke.",
+						"hintNewOS": "Opsjonene på din Vantage-verkøtylinje kan variere etter datamaskinens modell. For å fjerne Vantage-verktøylinje, høyreklikker du på Vantage-verktøylinje ikonet og velger <b>Fjern fra oppgavelinjen</b>."
 					}
 				},
 				"batterySettings": {

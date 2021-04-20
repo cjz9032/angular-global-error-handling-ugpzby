@@ -1340,8 +1340,9 @@
 					"title": "Barra degli strumenti di Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Barra degli strumenti e impostazioni premium di Lenovo Vantage",
-						"description": "Aggiungi la barra degli strumenti di Lenovo Vantage alla barra delle applicazioni di Windows per accedere facilmente alle impostazioni utilizzate più spesso e ottenere offerte e aggiornamenti premium.",
-						"hint": "Le opzioni nell'immagine dipendono dalle funzioni e dalle caratteristiche del dispositivo. Ad esempio, la retroilluminazione della tastiera potrebbe essere supportata solo da alcuni computer."
+						"description": "Aggiungi la barra degli strumenti di Lenovo Vantage alla barra delle applicazioni di Windows per accedere facilmente alle impostazioni più comuni, visualizzare le opzioni di garanzia, inoltrare feedback ed avviare Lenovo Vantage al fine di ottenere offerte e aggiornamenti personalizzati.",
+						"hint": "Le opzioni nell'immagine dipendono dalle funzioni e dalle caratteristiche del dispositivo. Ad esempio, la retroilluminazione della tastiera potrebbe essere supportata solo da alcuni computer.",
+						"hintNewOS": "Le opzioni della barra degli strumenti Vantage possono variare a seconda del modello di computer. Per rimuovere la barra degli strumenti Vantage, fai clic con il pulsante destro del mouse sulla relativa icona e seleziona <b>Rimuovi dalla barra delle applicazioni</b>."
 					}
 				},
 				"batterySettings": {

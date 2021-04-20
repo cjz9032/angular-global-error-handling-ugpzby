@@ -32,6 +32,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { BatteryHealthService } from './battery-health/battery-health.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -129,6 +130,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	powerSettingsGroup = [];
 	batteryHealthAvailable = false;
 	conservationModeDescriptionOption = '1';
+
+	// toolbar windows next
+	private windowsOSVersion: number = undefined;
+	public isWindowsNext: boolean = undefined;
+
 	constructor(
 		public powerService: PowerService,
 		public batteryService: BatteryDetailService,
@@ -141,7 +147,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		private activatedRoute: ActivatedRoute,
 		public deviceService: DeviceService,
 		private batteryHealthService: BatteryHealthService,
-	) { }
+		private windowsVersionService: WindowsVersionService
+	) {
+		this.windowsOSVersion = this.windowsVersionService.currentBuildVersion;
+		this.isWindowsNext = this.windowsOSVersion >= 21000;
+	}
 
 	ngOnInit() {
 		this.logger.info('Init Subpage Power');

@@ -1450,8 +1450,9 @@
 					"title": "Lenovo Vantage-Symbolleiste",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage-Symbolleiste und Premium-Einstellungen",
-						"description": "Heften Sie die Lenovo Vantage-Symbolleiste an die Windows-Taskleiste an, um einfach auf häufig verwendete Einstellungen zuzugreifen und Premium-Angebote und Aktualisierungen zu erhalten.",
-						"hint": "Die Optionen im Bild hängen von den Funktionen und Eigenschaften der Einheit ab. Einige Computer unterstützen beispielsweise Einstellungen für die Tastaturhintergrundbeleuchtung, andere möglicherweise nicht."
+						"description": "Heften Sie die Lenovo Vantage-Symbolleiste an die Windows-Taskleiste an, um einfach auf häufig verwendete Einstellungen zuzugreifen, Garantieoptionen zu sehen, Feedback zu geben und Lenovo Vantage zu starten, um passende Angebote und Aktualisierungen zu erhalten.",
+						"hint": "Die Optionen im Bild hängen von den Funktionen und Eigenschaften der Einheit ab. Einige Computer unterstützen beispielsweise Einstellungen für die Tastaturhintergrundbeleuchtung, andere möglicherweise nicht.",
+						"hintNewOS": "Die Optionen in Ihrer Vantage-Symbolleiste können sich je nach Computermodell unterscheiden. Um die Vantage-Symbolleiste von der Taskleiste zu lösen, klicken Sie mit der rechten Maustaste auf das Symbol der Vantage-Symbolleiste und wählen Sie <b>Von Taskleiste lösen</b> aus."
 					}
 				},
 				"batterySettings": {

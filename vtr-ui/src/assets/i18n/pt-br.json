@@ -1450,8 +1450,9 @@
 					"title": "Barra de ferramentas do Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Barra de ferramentas e configurações premium do Lenovo Vantage",
-						"description": "Fixe a barra de ferramentas do Lenovo Vantage na barra de tarefas do Windows para acessar facilmente as configurações mais usadas e obter ofertas e atualizações premium para você.",
-						"hint": "As opções na imagem dependem do recurso e da característica do dispositivo. Por exemplo, algumas máquinas oferecem suporte a configurações de retroiluminação do teclado, outras talvez não."
+						"description": "Fixe a barra de ferramentas do Lenovo Vantage na barra de tarefas do Windows para acessar facilmente as configurações mais populares, visualizar opções de garantia, enviar feedback e iniciar o Lenovo Vantage para obter ofertas e atualizações personalizadas.",
+						"hint": "As opções na imagem dependem do recurso e da característica do dispositivo. Por exemplo, algumas máquinas oferecem suporte a configurações de retroiluminação do teclado, outras talvez não.",
+						"hintNewOS": "As opções em sua barra de ferramentas do Vantage podem variar dependendo do modelo do computador. Para remover o Vantage da barra de ferramentas, clique com o botão direito do mouse no ícone de barra de ferramentas do Vantage e selecione <b>Remover da barra de tarefas</b>."
 					}
 				},
 				"batterySettings": {

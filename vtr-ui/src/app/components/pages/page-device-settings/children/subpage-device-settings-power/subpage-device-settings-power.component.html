@@ -40,11 +40,18 @@
 										<div class="col px-5">
 											<div class="row mt-4 ml-4">
 												<div class="toolbar-img">
-													<img *ngIf="isDesktopMachine"
+													<img *ngIf="isWindowsNext"
+														id="toolbar-img-windows-next"
+														alt="Pin Lenovo Vantage toolbar to Windows taskbar"
+														class="img-fluid mx-auto d-block"
+														src="assets/images/hardware-settings/pin_toolbar_windows_next.png">
+													<img *ngIf="!isWindowsNext && isDesktopMachine"
+														id="toolbar-img-windows10-desktop"
 														alt="Pin Lenovo Vantage toolbar to Windows taskbar"
 														class="img-fluid mx-auto d-block"
 														src="assets/images/hardware-settings/pin_toolbar_desktop.png">
-													<img *ngIf="!isDesktopMachine"
+													<img *ngIf="!isWindowsNext && !isDesktopMachine"
+														id="toolbar-img-windows10-laptop"
 														alt="Pin Lenovo Vantage toolbar to Windows taskbar"
 														class="img-fluid mx-auto d-block"
 														src="assets/images/hardware-settings/pin_toolbar_laptop.png">
@@ -52,9 +59,8 @@
 											</div>
 											<p role="text"
 												id="device.deviceSettings.power.otherSettings.vantageToolbar.hint"
-												class="auto-detection-note">
-												{{  'device.deviceSettings.power.otherSettings.vantageToolbar.hint' | translate }}
-											</p>
+												class="auto-detection-note"
+												[innerHTML]="'device.deviceSettings.power.otherSettings.vantageToolbar.hintNewOS' | translate"></p>
 										</div>
 									</div>
 								</vtr-ui-row-switch>

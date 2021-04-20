@@ -1451,8 +1451,9 @@
 					"title": "Lenovo Vantage toolbar",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage toolbar and premium settings",
-						"description": "Pin Lenovo Vantage toolbar to Windows taskbar to easily access to your most frequently-used settings and get premium offerings and updates for you.",
-						"hint": "The options in the image depend on the device capability and characteristic. For example, some machine support keyboard backlight settings, and some may not."
+						"description": "Pin Lenovo Vantage Toolbar to Windows taskbar to easily access the most popular settings, view warranty options, submit feedback, and launch Lenovo Vantage to get customized offerings and updates.",
+						"hint": "The options in the image depend on the device capability and characteristic. For example, some machine support keyboard backlight settings, and some may not.",
+						"hintNewOS": "The options on your Vantage Toolbar might vary depending on the computer model. To unpin Vantage Toolbar, right-click the Vantage Toolbar icon and select <b>Unpin from taskbar</b>."
 					}
 				},
 				"smartStandby": {

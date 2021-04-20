@@ -1340,8 +1340,9 @@
 					"title": "Panel s nástrojmi Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Panel s nástrojmi Lenovo Vantage a prémiové nastavenia",
-						"description": "Pripnite panel s nástrojmi Lenovo Vantage na panel úloh systému Windows, aby ste mali jednoduchý prístup k vašim najčastejšie používaným nastaveniam a mohli ste dostávať prémiové ponuky a aktualizácie.",
-						"hint": "Možnosti na obrázku závisia od schopností a vlastností zariadenia. Napríklad niektoré zariadenia podporujú nastavenie podsvietenia klávesnice, no iné ho podporovať nemusia."
+						"description": "Pripnite panel nástrojov aplikácie Lenovo Vantage na panel úloh systému Windows, aby ste mali jednoduchý prístup k najobľúbenejším nastaveniam a mohli zobraziť možnosti záruky, odoslať spätnú väzbu alebo spustiť aplikáciu Lenovo Vantage, ktorá poskytuje prispôsobené ponuky a aktualizácie.",
+						"hint": "Možnosti na obrázku závisia od schopností a vlastností zariadenia. Napríklad niektoré zariadenia podporujú nastavenie podsvietenia klávesnice, no iné ho podporovať nemusia.",
+						"hintNewOS": "Možnosti na paneli nástrojov aplikácie Vantage sa môžu líšiť v závislosti od modelu počítača. Ak chcete zrušiť pripnutie panela nástrojov aplikácie Vantage, kliknite pravým tlačidlom myši na ikonu panela nástrojov aplikácie Vantage a vyberte položku <b>Zrušiť pripnutie na panel úloh</b>."
 					}
 				},
 				"batterySettings": {
