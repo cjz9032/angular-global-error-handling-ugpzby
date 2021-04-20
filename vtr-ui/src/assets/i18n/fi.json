@@ -1340,8 +1340,9 @@
 					"title": "Lenovo Vantage -työkalurivi",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage -työkalurivi ja premium-asetukset",
-						"description": "Kiinnitä Lenovo Vantage -työkalurivi Windowsin tehtäväpalkkiin päästäksesi helposti käsiksi eniten käyttämiisi asetuksiin ja nähdäksesi sinulle sopivia tarjouksia ja päivityksiä.",
-						"hint": "Kuvassa esitetyt vaihtoehdot riippuvat laitteen ominaisuuksista. Esimerkiksi kaikki tietokoneet eivät välttämättä tue näppäimistön taustavalon asetuksia."
+						"description": "Kiinnitä Lenovo Vantage -työkalurivi Windowsin tehtäväpalkkiin päästäksesi nopeasti käsiksi suosituimpiin asetuksiin, nähdäksesi takuuvaihtoehdot, lähettääksesi palautetta ja käynnistääksesi Lenovo Vantagen, josta saat sinulle räätälöityjä tarjouksia ja päivityksiä.",
+						"hint": "Kuvassa esitetyt vaihtoehdot riippuvat laitteen ominaisuuksista. Esimerkiksi kaikki tietokoneet eivät välttämättä tue näppäimistön taustavalon asetuksia.",
+						"hintNewOS": "Vantage-työkalurivisi vaihtoehdot saattavat vaihdella tietokoneen mallin mukaan. Irrota Vantage-työkalurivi napsauttamalla Vantage-työkalurivin kuvaketta hiiren kakkospainikkeella ja valitsemalla <b>Irrota tehtäväpalkista</b>."
 					}
 				},
 				"batterySettings": {

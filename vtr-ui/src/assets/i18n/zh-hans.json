@@ -1448,8 +1448,9 @@
 					"title": "Lenovo Vantage 工具栏",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage 工具栏和高级设置",
-						"description": "将 Lenovo Vantage 工具栏固定到 Windows 任务栏，即可轻松访问您最常用的设置并为您获取高级产品和更新。",
-						"hint": "图像中的选项取决于设备功能和特性。例如，有些机型支持键盘背光设置，有些不支持。"
+						"description": "将 Lenovo Vantage 工具栏固定到 Windows 任务栏，以便轻松访问常用设置、查看保修选项、提交反馈和启动 Lenovo Vantage 以获取定制的产品和更新。",
+						"hint": "图像中的选项取决于设备功能和特性。例如，有些机型支持键盘背光设置，有些不支持。",
+						"hintNewOS": "Vantage 工具栏上的选项可能因计算机型号而异。要取消固定 Vantage 工具栏，请右键单击 Vantage 工具栏图标，然后选择<b>从任务栏取消固定</b>。"
 					}
 				},
 				"batterySettings": {

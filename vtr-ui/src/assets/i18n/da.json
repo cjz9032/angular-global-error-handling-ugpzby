@@ -1340,8 +1340,9 @@
 					"title": "Værktøjslinjen i Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Værktøjslinjen i Lenovo Vantage og indstillinger for førsteklasses kvalitet",
-						"description": "Fastgør værktøjslinjen i Lenovo Vantage til Windows-proceslinjen, så du nemt kan få adgang til de hyppigst anvendte indstillinger og få førsteklasses tilbud og opdateringer.",
-						"hint": "Valgmulighederne på billedet afhænger af enhedens funktioner og egenskaber. Visse maskiner understøtter f.eks. indstillinger for tastaturets baggrundslys, mens andre ikke gør det."
+						"description": "Fastgør Lenovo Vantage-værktøjslinjen til proceslinjen i Windows, så du nemt kan få adgang til de mest populære indstillinger, se garantimuligheder, sende feedback og starte Lenovo Vantage, der giver dig tilpassede tilbud og opdateringer.",
+						"hint": "Valgmulighederne på billedet afhænger af enhedens funktioner og egenskaber. Visse maskiner understøtter f.eks. indstillinger for tastaturets baggrundslys, mens andre ikke gør det.",
+						"hintNewOS": "Indstillingerne på Vantage-værktøjslinjen kan variere. De afhænger af computermodellen. For at frigøre Vantage-værktøjslinjen skal du højreklikke på ikonet for Vantage-værktøjslinjen og vælge <b>Frigør fra proceslinje</b>."
 					}
 				},
 				"batterySettings": {

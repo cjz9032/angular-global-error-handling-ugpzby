@@ -1340,8 +1340,9 @@
 					"title": "Panel nástrojů Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Panel nástrojů Lenovo Vantage a prémiová nastavení",
-						"description": "Připněte panel nástrojů Lenovo Vantage na hlavní panel systému Windows, abyste měli snadný přístup ke svým nejčastěji používaným nastavením, a získejte pro sebe prémiové nabídky a aktualizace.",
-						"hint": "Možnosti na obrázku závisí na schopnostech zařízení a jeho charakteristikách. Některé počítače například podporují nastavení podsvícení klávesnice a některé nemusí."
+						"description": "Připojte panel nástrojů Lenovo Vantage na hlavní panel systému Windows, abyste měli snadný přístup k nejpopulárnějším nastavením, zobrazili možnosti záruky, odeslali zpětnou vazbu a spustili Lenovo Vantage pro získání přizpůsobené nabídky a aktualizací.",
+						"hint": "Možnosti na obrázku závisí na schopnostech zařízení a jeho charakteristikách. Některé počítače například podporují nastavení podsvícení klávesnice a některé nemusí.",
+						"hintNewOS": "Možnosti na panelu nástrojů Vantage se mohou lišit v závislosti na modelu počítače. Chcete-li panel nástrojů Vantage odepnout, klikněte pravým tlačítkem na ikonu panelu nástrojů Vantage Toolbar a vyberte <b>Odepnout z hlavního panelu</b>."
 					}
 				},
 				"batterySettings": {

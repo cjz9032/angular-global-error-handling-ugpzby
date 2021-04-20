@@ -1340,8 +1340,9 @@
 					"title": "Bara de instrumente Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Bara de instrumente Lenovo Vantage și setările premium",
-						"description": "Fixați bara de instrumente Lenovo Vantage în bara de activități din Windows, pentru a accesa cu ușurință setările utilizate cel mai frecvent și pentru a primi ofertele și actualizările premium adresate dumneavoastră.",
-						"hint": "Opțiunile din imagine depind de caracteristicile și funcționalitatea dispozitivului. De exemplu, unele dispozitive acceptă setările pentru iluminarea de fundal a tastaturii, iar altele nu."
+						"description": "Fixați bara de instrumente Lenovo Vantage în bara de activități Windows pentru a accesa cu ușurință cele mai populare setări, pentru a vizualiza opțiunile de garanție, pentru a trimite feedback și pentru a lansa Lenovo Vantage pentru a obține oferte și actualizări personalizate.",
+						"hint": "Opțiunile din imagine depind de caracteristicile și funcționalitatea dispozitivului. De exemplu, unele dispozitive acceptă setările pentru iluminarea de fundal a tastaturii, iar altele nu.",
+						"hintNewOS": "Opțiunile din bara de instrumente Vantage pot varia în funcție de modelul computerului. Pentru a anula fixarea barei de instrumente Vantage, faceți clic dreapta pe pictograma barei de instrumente Vantage și selectați <b>Anulare fixare din bara de activități</b>."
 					}
 				},
 				"batterySettings": {

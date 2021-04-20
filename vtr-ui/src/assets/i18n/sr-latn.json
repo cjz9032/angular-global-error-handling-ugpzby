@@ -1340,8 +1340,9 @@
 					"title": "Lenovo Vantage traka sa alatkama",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage traka sa alatkama i vrhunske postavke",
-						"description": "Zakačite Lenovo Vantage traku sa alatkama na Windows traku zadataka da biste lakše pristupali najčešće korišćenim postavkama i dobili vrhunske ponude i ažuriranja namenjena vama.",
-						"hint": "Opcije na slici zavise od mogućnosti i karakteristika uređaja. Na primer, neki računari podržavaju postavke za pozadinsko svetlo tastature, a neki možda ne podržavaju."
+						"description": "Zakačite Lenovo Vantage traku sa alatkama na Windows traku zadataka kako biste lakše pristupali najpopularnijim postavkama, prikazali opcije garancije, prosledili povratne informacije i pokrenuli Lenovo Vantage da biste dobili prilagođene ponude i ispravke.",
+						"hint": "Opcije na slici zavise od mogućnosti i karakteristika uređaja. Na primer, neki računari podržavaju postavke za pozadinsko svetlo tastature, a neki možda ne podržavaju.",
+						"hintNewOS": "Opcije na Vantage traci sa alatkama mogu da se razlikuju u zavisnosti od modela računara. Da biste otkačili Vantage traku sa alatkama, kliknite desnim tasterom miša na ikonu Vantage trake sa alatkama i izaberite stavku <b>Otkači sa trake zadataka</b>."
 					}
 				},
 				"batterySettings": {

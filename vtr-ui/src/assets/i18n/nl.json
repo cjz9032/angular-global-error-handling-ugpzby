@@ -1340,8 +1340,9 @@
 					"title": "Lenovo Vantage-werkbalk",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage-werkbalk en premium-instellingen",
-						"description": "Zet de Lenovo Vantage-werkbalk vast op de Windows-taakbalk voor snelle toegang tot de meest gebruikte instellingen en om premium-aanbiedingen en updates voor u op te halen.",
-						"hint": "De opties in de afbeelding zijn afhankelijk van de mogelijkheden en eigenschappen van het apparaat. Sommige computers ondersteunen bijvoorbeeld instellingen voor achtergrondverlichting van het toetsenbord, andere niet."
+						"description": "Maak de Lenovo Vantage Toolbar vast aan de Windows taalbalk om snel bij de meest populaire instellingen te komen, garantieopties te bekijken, feedback te geven en Lenovo Vantage te starten voor persoonlijke aanbiedingen en updates.",
+						"hint": "De opties in de afbeelding zijn afhankelijk van de mogelijkheden en eigenschappen van het apparaat. Sommige computers ondersteunen bijvoorbeeld instellingen voor achtergrondverlichting van het toetsenbord, andere niet.",
+						"hintNewOS": "De opties op uw Vantage Toolbar kunnen variëren afhankelijk van het computermodel. Om de Vantage Toolbar los te maken, klikt u met de rechtermuisknop op het Vantage Toolbar icoontje en selecteert u <b>Van taakbalk losmaken</b>."
 					}
 				},
 				"batterySettings": {

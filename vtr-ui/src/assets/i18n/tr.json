@@ -1340,8 +1340,9 @@
 					"title": "Lenovo Vantage araç çubuğu",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage araç çubuğu ve premium ayarları",
-						"description": "En sık kullandığınız ayarlara kolayca erişmek ve size özel premium teklifleri ve güncellemeleri almak için Lenovo Vantage araç çubuğunu Windows görev çubuğuna sabitleyin.",
-						"hint": "Görüntüdeki seçenekler cihazın donanımına ve özelliklerine bağlıdır. Örneğin, bazı makineler klavye arka ışığı ayarlarını desteklerken bazıları desteklemeyebilir."
+						"description": "En popüler ayarlara kolayca erişmek, garanti seçeneklerini görüntülemek ve geri bildirim göndermek için Lenovo Vantage Araç Çubuğu'nu Windows görev çubuğuna sabitleyin. Özelleştirilmiş teklifler ve güncellemeler almak için Lenovo Vantage'ı başlatın.",
+						"hint": "Görüntüdeki seçenekler cihazın donanımına ve özelliklerine bağlıdır. Örneğin, bazı makineler klavye arka ışığı ayarlarını desteklerken bazıları desteklemeyebilir.",
+						"hintNewOS": "Vantage Araç Çubuğunuzdaki seçenekler, bilgisayar modeline bağlı olarak değişiklik gösterebilir. Vantage Araç Çubuğu'nu ayırmak için Vantage Araç Çubuğu simgesine sağ tıklayın ve <b>Görev çubuğundan ayır</b>'ı seçin."
 					}
 				},
 				"batterySettings": {

@@ -1450,8 +1450,9 @@
 					"title": "Barre d'outils de Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Barre d'outils et paramètres Premium de Lenovo Vantage",
-						"description": "Épinglez la barre d'outils de Lenovo Vantage à la barre des tâches Windows pour accéder facilement aux paramètres les plus fréquemment utilisés et obtenir des offres et mises à jour Premium.",
-						"hint": "Les options de l'image dépendent de la capacité et des caractéristiques du périphérique. Par exemple, certaines machines prennent en charge les paramètres de rétro-éclairage du clavier, d'autres non."
+						"description": "Ajoutez la barre d'outils Lenovo Vantage à la barre des tâches de Windows pour accéder facilement aux paramètres les plus populaires, afficher les options de garantie, faire part de vos commentaires et lancer Lenovo Vantage pour obtenir des offres et des mises à jour personnalisées.",
+						"hint": "Les options de l'image dépendent de la capacité et des caractéristiques du périphérique. Par exemple, certaines machines prennent en charge les paramètres de rétro-éclairage du clavier, d'autres non.",
+						"hintNewOS": "Les options de votre barre d'outils Vantage peuvent varier selon le modèle de l'ordinateur. Pour supprimer la barre d'outils Vantage, faites un clic droit sur l'icône de la barre d'outils Vantage et sélectionnez <b>Supprimer de la barre des tâches</b>."
 					}
 				},
 				"batterySettings": {

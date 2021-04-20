@@ -1340,8 +1340,9 @@
 					"title": "Pasek narzędzi Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Pasek narzędzi Lenovo Vantage i ustawienia premium",
-						"description": "Przypnij pasek narzędzi Lenovo Vantage do paska zadań systemu Windows, aby móc łatwo uzyskiwać dostęp do najczęściej używanych ustawień oraz obierać aktualizacje i oferty premium.",
-						"hint": "Wyświetlane opcje zależą od możliwości i cech urządzenia. Przykładowo, niektóre urządzenia obsługują ustawienia podświetlenia klawiatury, a inne nie."
+						"description": "Przypnij pasek narzędzi Lenovo Vantage do paska zadań systemu Windows, aby móc łatwo przejść do najpopularniejszych ustawień, przeglądać opcje gwarancji, przesyłać opinie i uruchamiać aplikację Lenovo Vantage w celu uzyskania dostępu do spersonalizowanych ofert i aktualizacji.",
+						"hint": "Wyświetlane opcje zależą od możliwości i cech urządzenia. Przykładowo, niektóre urządzenia obsługują ustawienia podświetlenia klawiatury, a inne nie.",
+						"hintNewOS": "Opcje dostępne z poziomu paska narzędzi Vantage mogą się różnić w zależności od modelu komputera. Aby odpiąć pasek narzędzi Vantage, kliknij prawym przyciskiem myszy ikonę paska narzędzi Vantage i wybierz opcję <b>Odepnij od paska zadań</b>."
 					}
 				},
 				"batterySettings": {

@@ -1340,8 +1340,9 @@
 					"title": "Alatna traka za Lenovo Vantage",
 					"vantageToolbar": {
 						"title": "Alatna traka za Lenovo Vantage i premium postavke",
-						"description": "Pričvrstite alatnu traku Lenovo Vantage na programskoj traci sustava Windows kako biste jednostavno pristupili najčešće korištenim postavkama i dobili premium ponude i ažuriranja za vas.",
-						"hint": "Mogućnosti u slici ovise o sposobnosti i karakteristikama uređaja. Na primjer, neki uređaji podržavaju postavke pozadinskog osvjetljenja tipkovnice, a neki ne."
+						"description": "Prikvačite alatnu traku za Lenovo Vantage na programsku traku sustava Windows za jednostavan pristup najpopularnijim postavkama, prikaz mogućnosti jamstva, slanje povratnih informacija i pokretanje Lenovo Vantage kako biste dobili prilagođene ponude i ažuriranja.",
+						"hint": "Mogućnosti u slici ovise o sposobnosti i karakteristikama uređaja. Na primjer, neki uređaji podržavaju postavke pozadinskog osvjetljenja tipkovnice, a neki ne.",
+						"hintNewOS": "Mogućnosti na alatnoj traci za Vantage mogu se razlikovati ovisno o modelu računala. Da biste otkvačili alatnu traku za Vantage, desnom tipkom miša kliknite ikonu alatne trake za Vantage i odaberite <b>Otkvači s programske trake</b>."
 					}
 				},
 				"batterySettings": {
