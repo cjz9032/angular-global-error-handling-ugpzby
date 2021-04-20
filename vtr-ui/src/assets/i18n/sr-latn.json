@@ -2620,12 +2620,12 @@
 				"tab5": "Greške u registru"
 			},
 			"tabSet2": {
-				"tab1Heading": "JEDNOSTAVNO",
-				"tab1Description": "Ne zbunjujemo vas tehničkim koještarijama",
-				"tab2Heading": "BRZO",
-				"tab2Description": "Proverite 100 tačaka za manje od 5 minuta",
-				"tab3Heading": "SIGURNO",
-				"tab3Description": "Napravljeno na osnovu najboljih iskustava bez zastrašujućeg softvera"
+				"tab1Heading": "Lako je",
+				"tab1Description": "Optimizujte performanse računara jednim klikom",
+				"tab2Heading": "Brzo je",
+				"tab2Description": "Proverite 160 tačaka za manje od 5 minuta",
+				"tab3Heading": "Bezbedno je",
+				"tab3Description": "Pouzdana tehnologija izgrađena uz pomoć najbolje prakse u industriji"
 			},
 			"summaryTitle": "Podešavanje performansi računara"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Performanse Wi-Fi veze"
 			},
 			"tabSet2": {
-				"tab1Heading": "PROBLEMI SA PREGLEDAČEM",
-				"tab1Description": "Konfigurišemo i popravljamo sve popularne veb pregledače.",
-				"tab2Heading": "GREŠKE PRILIKOM POVEZIVANJA",
-				"tab2Description": "Možemo da dijagnostikujemo i popravimo probleme koje imate prilikom povezivanja.",
-				"tab3Heading": "SPORI INTERNET",
-				"tab3Description": "Pomoći ćemo vam da postignete maksimalan učinak."
+				"tab1Heading": "Problemi sa pregledačem",
+				"tab1Description": "Konfigurisanje i popravljanje svih popularnih veb pregledača",
+				"tab2Heading": "Greške prilikom povezivanja",
+				"tab2Description": "Dijagnostikovanje i popravljanje problema prilikom povezivanja",
+				"tab3Heading": "Spor internet",
+				"tab3Description": "Optimizacija brzine Interneta i maksimalne performanse"
 			},
 			"summaryTitle": "Funkcionisanje interneta"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Bezbednosne postavke"
 			},
 			"tabSet2": {
-				"tab1Heading": "BEZ VIRUSA",
-				"tab1Description": "Uklanjamo čak i najnovije infekcije malverom",
-				"tab2Heading": "UKLANJANJE ŠPIJUNSKOG SOFTVERA",
-				"tab2Description": "Uklanjamo sve moguće neželjene programe",
-				"tab3Heading": "LAGANO I BRZO",
-				"tab3Description": "Skeniranje obično traje 5 do10 minuta"
+				"tab1Heading": "Novootkriveni virus",
+				"tab1Description": "Uklonite čak i najnovije zaraze malverom",
+				"tab2Heading": "Uklanjanje špijunskog softvera",
+				"tab2Description": "Uklonite sve moguće zlonamerne i štetne programe",
+				"tab3Heading": "Lagano i brzo",
+				"tab3Description": "Tehnologija zasnovana na oblaku je lagana na računaru"
 			},
 			"summaryTitle": "Malver i bezbednost"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Zaštita 24 sata svakog dana u nedelji"
 			},
 			"tabSet2": {
-				"tab1Heading": "JEDNOSTAVNO",
-				"tab1Description": "Ne zbunjujemo vas tehničkim koještarijama",
-				"tab2Heading": "BRZO",
-				"tab2Description": "Proverite 100 tačaka za manje od 5 minuta",
-				"tab3Heading": "SIGURNO",
-				"tab3Description": "Napravljeno na osnovu najboljih iskustava bez zastrašujućeg softvera"
+				"tab1Heading": "Automatski",
+				"tab1Description": "Podešavanje planiranih skeniranja za automatsko podešavanje računara",
+				"tab2Heading": "Proaktivno",
+				"tab2Description": "Postarajte se da računar uvek ima vrhunske performanse",
+				"tab3Heading": "Efektivno",
+				"tab3Description": "Inovativna vrhunska tehnologija"
 			}
 		},
 		"noScanResults": "Da biste pokrenuli postupak skeniranja, kliknite na dugme SCAN & FIX (SKENIRAJ I POPRAVI).",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Naše skeniranje ocenjuje vaš računar prema sledećem: ",
 			"summary": "Rezime",
 			"foundIssues": "Naše skeniranje je pronašlo {{issueCount}} problema",
+			"summaryDetailsMaintain": "Vaš sistem je u dobrom stanju. Pronašli smo neke mogućnosti za optimizaciju. Registrujte se odmah da biste iskoristili prednosti, a naš najsavremeniji softver će pomoći da računar tokom rada ima vrhunske performanse.",
 			"summaryDetailsOptimize": "Registrujte se odmah kako biste rešili ove probleme i održali neometani rad sistema. Naš softver može proaktivno da skenira ta područja sistema, 24 sata svakog dana u nedelji, kako bi pronašao i popravio probleme čim se jave, tako da vaš računar uvek ima vrhunske performanse.",
+			"summaryDetailsFixNow": "Pronašli smo probleme koji značajno utiču na performanse vašeg sistema. Registrujte se i rešite probleme odmah. Zatim će Smart Performance proaktivno skenirati vaš sistem 24 sata svakog dana u nedelji kako bi pronašao i rešio probleme čim se jave, tako da vaš računar uvek ima vrhunske performanse.",
 			"expiredSummaryDetails": "Vaša pretplata je istekla i trenutno možete da koristite samo funkciju skeniranja u usluzi Smart Performance. Ako želite da nastavite sa korišćenjem funkcije „Skeniranje i popravka“, pritisnite dugme obnovi i popravi“ u nastavku da biste obnovili pretplatu.",
 			"signupRepairButton": "ODMAH SE REGISTRUJTE I POPRAVITE",
 			"renewAndFix": "Obnovi i popravi",
@@ -5429,7 +5431,8 @@
 			"security": "Da li znate? Čak i da nemate instaliran antivirusni softver, mi vam i dalje pružamo osnovnu bezbednosnu zaštitu za uređaj.",
 			"connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom.",
 			"hardwareScan": "Sada možete dobiti status stanja hardverske komponente sistema.",
-			"appSearch": "Da li znate? Ovde možete potražiti funkcije primenljive na vaš uređaj."
+			"appSearch": "Da li znate? Ovde možete potražiti funkcije primenljive na vaš uređaj.",
+			"productivity": "Želite li odmah da poboljšate efikasnost na radu?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Ovaj odeljak vam omogućava da automatski optimizujete ili ručno konfigurišete postavke AI sastanka.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager podržava prevod i tumačenje u realnom vremenu, kao i diktiranje glasa. Takođe može da generiše titlove za video zapise.",
+					"description": "AI Meeting Manager pruža prevod i tumačenje, diktiranje teksta i uređivanje beležaka u realnom vremenu. Takođe može da generiše titlove za video zapise.",
 					"download": "PREUZMI",
 					"launch": "POKRENI",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Glas u tekst",
 						"description": "Izgovorite prirodno i „Glas u tekst“ ćete obaviti kucanje. Pišite e-poruke ili dokumente ili ćaskajte u omiljenoj aplikaciji. „Glas u tekst“ prevodi dok govorite i hvata beleške umesto vas."
+					},
+					"noteEditor": {
+						"title": "Uređivač beležaka",
+						"description": "Uređivač beležaka vam pomaže da uređujete beleške o sastanku, ispravljate tekstove i reprodukujete snimke."
 					},
 					"modalPopUp": {
 						"heading": "Prvi koraci:",
@@ -5527,6 +5534,12 @@
 							"point3": "Kliknite na ikonu AI meeting manager i izaberite stavku „Glas u tekst“.",
 							"point4": "Izaberite jezike prema svojoj potrebi, a zatim kliknite na dugme mikrofona za početak.",
 							"point5": "Postavite kursor u aplikaciju koju ste otvorili i počnite da govorite."
+						},
+						"noteEditor": {
+							"point1": "Uverite se da je ikona za AI Meeting Manager prikazana na sistemskoj traci poslova operativnog sistema Windows.",
+							"point2": "Kliknite na ikonu i odaberite Uređivač beležaka.",
+							"point3": "Izaberite belešku o sastanku sa liste.",
+							"point4": "Uredite belešku o sastanku ili reprodukujte snimak."
 						},
 						"closeText": "zatvori"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Kalibracija boja",
 				"appName": "X-rite aplikacija",
-				"summary": "Ploča ekrana računara je kalibrisana na fabričkoj liniji sa premijum profesionalnim kalibratorom Minolta koloritima. Podaci o kalibraciji se čuvaju u oblaku i možete ih preuzeti radi vraćanja panela na fabričke postavke. X-rite je unapred instaliran za upravljanje prostorima u boji.<br>- Podrazumevano (izvorni opseg boja, izvorna svetlina, ali kalibrisano pojačavanje sive i karakterizacija prikaza uskladišteni su u profilu). <br>- Podrazumevani profil je podrazumevano instaliran na računaru. Windows učitava ovaj profil pri pokretanju sistema. <br>- Nije kalibrisano (upravljanje bojama je isključeno. To znači korišćenje podrazumevanog Lenovo profila.) <br>- sRGB (monitori računara) - Adobe RGB (za grafičke dizajnere koji planiraju da štampaju u CYMK) <br> - BT.709 (HD video) <br> - DCI P3 (obično se koristi u projekciji digitalnog filma u SAD)",
+				"descSection1": "Kao profesionalcu, visok nivo tačnosti boja je presudan i važan za vaš kreativni rad. Lenovo nudi rešenje za kalibraciju boja za ekran računara kako biste bili sigurni da ćete od samog početka korišćenja imati najbolje performanse boja. Prilagođeni podrazumevani profil boje se kreira za računar pomoću profesionalnog uređaja za kalibraciju, što osigurava da su slike prikazane sa kamere na ekran računara tačne i bez izobličenja u reprodukciji boje.",
+				"descSection2": "Pomoću unapred instaliranog pomoćnika za boje X-rite možete da promenite profil boje po želji:",
+				"profile1": "Podrazumevano (izvorni opseg boja, izvorna svetlina, ali kalibrisano pojačavanje sive i karakterizacija prikaza uskladišteni su u profilu). Ovaj profil se skladišti na računar i automatski ga učitava sistem Windows. ",
+				"profile2": "Nije kalibrisano (upravljanje bojama je isključeno)",
+				"profile3": "sRGB (standardna crvena-zelena-plava za računarske monitore)",
+				"profile4": "Rec. 709 (samo na određenim modelima, optimizovano za video zapise HD kvaliteta)",
 				"screenshotTitle": "Snimci ekrana",
-				"cardTitle": "Kako da vratite profile u prethodno stanje?",
+				"cardTitle": "Kako da vratite profile boja u prethodno stanje?",
 				"cardSummary": "Ako ponovo instalirate sistem ili su profili boja izgubljeni, odavde možete vratiti profile u prethodno stanje:",
 				"learnMore": "Saznajte više",
 				"restoreProfileDesc": "Lenovo obezbeđuje rezervne profile boja u usluzi Lenovo Cloud. Da biste se uverili da funkcija kalibracije boja funkcioniše na računaru, možda ćete morati da vratite ili instalirate profile boja u sledećim situacijama: ako su profili boja izgubljeni ili oštećeni, prikazaće se prozor koji će vas podsetiti da vratite profile boja u prethodno stanje. Kliknite na dugme „Da“ u prozoru koji se pojavi i profili boja će automatski biti vraćeni iz usluge Lenovo Cloud. Ako je odobreni serviser kompanije Lenovo zamenio ekran računara, uradite sledeće:",

@@ -2730,12 +2730,12 @@
 				"tab5": "Erreurs de registre"
 			},
 			"tabSet2": {
-				"tab1Heading": "C’EST SIMPLE",
-				"tab1Description": "Nous n’employons pas de jargon informatique incompréhensible",
-				"tab2Heading": "C’EST RAPIDE",
-				"tab2Description": "Profitez d’une vérification en 100 points en moins de 5 minutes",
-				"tab3Heading": "C’EST SÉCURISÉ",
-				"tab3Description": "Aucun scareware ; une technologie conçue selon les meilleures pratiques"
+				"tab1Heading": "C'est simple",
+				"tab1Description": "Optimiser les performances de votre PC en un seul clic",
+				"tab2Heading": "C'est rapide",
+				"tab2Description": "Profiter d’une vérification en 160 points en moins de 5 minutes",
+				"tab3Heading": "C'est sécurisé",
+				"tab3Description": "Les meilleures pratiques de l'industrie intégrées à une technologie de confiance"
 			},
 			"summaryTitle": "Optimisation des performances du PC"
 		},
@@ -2752,12 +2752,12 @@
 				"tab5": "Performances Wi-Fi"
 			},
 			"tabSet2": {
-				"tab1Heading": "PROBLÈMES DE NAVIGATEUR",
-				"tab1Description": "Nous configurons et réparons tous les navigateurs Web les plus populaires.",
-				"tab2Heading": "ERREURS DE CONNECTIVITÉ",
-				"tab2Description": "Nous pouvons diagnostiquer et résoudre vos problèmes de connectivité.",
-				"tab3Heading": "INTERNET LENT",
-				"tab3Description": "Nous allons vous aider à optimiser les performances."
+				"tab1Heading": "Problèmes de navigateur",
+				"tab1Description": "Configurer et réparer tous les navigateurs Web les plus populaires",
+				"tab2Heading": "Erreurs de connectivité",
+				"tab2Description": "Diagnostiquer et résoudre vos problèmes de connectivité",
+				"tab3Heading": "Internet lent",
+				"tab3Description": "Optimiser la vitesse d'Internet et obtenir des performances maximales"
 			},
 			"summaryTitle": "Performances Internet"
 		},
@@ -2773,12 +2773,12 @@
 				"tab5": "Paramètres de sécurité"
 			},
 			"tabSet2": {
-				"tab1Heading": "VIRUS ZERO-DAY",
-				"tab1Description": "Nous supprimons même les logiciels malveillants les plus récents",
-				"tab2Heading": "SUPPRESSION DE LOGICIELS ESPIONS",
-				"tab2Description": "Nous supprimons tous les programmes potentiellement indésirables",
-				"tab3Heading": "LÉGER ET RAPIDE",
-				"tab3Description": "En général, une analyse prend 5 à 10 minutes"
+				"tab1Heading": "Virus zero-day",
+				"tab1Description": "Supprimer même les logiciels malveillants les plus récents",
+				"tab2Heading": "Suppression de logiciels espions",
+				"tab2Description": "Supprimer tous les programmes potentiellement malveillants ou dangereux",
+				"tab3Heading": "Léger et rapide",
+				"tab3Description": "La technologie basée sur le cloud est très légère pour votre PC"
 			},
 			"summaryTitle": "Logiciels malveillants et sécurité"
 		},
@@ -2794,12 +2794,12 @@
 				"tab5": "Protection 24 h/24, 7 j sur 7"
 			},
 			"tabSet2": {
-				"tab1Heading": "C’EST SIMPLE",
-				"tab1Description": "Nous n’employons pas de jargon informatique incompréhensible",
-				"tab2Heading": "C’EST RAPIDE",
-				"tab2Description": "Profitez d’une vérification en 100 points en moins de 5 minutes",
-				"tab3Heading": "C’EST SÉCURISÉ",
-				"tab3Description": "Aucun scareware ; une technologie conçue selon les meilleures pratiques"
+				"tab1Heading": "Automatisé",
+				"tab1Description": "Définir des scans programmés pour régler automatiquement le PC",
+				"tab2Heading": "Proactif",
+				"tab2Description": "Garantir que votre PC est toujours au maximum de ses performances",
+				"tab3Heading": "Efficace",
+				"tab3Description": "Une technologie dernier cri innovante"
 			}
 		},
 		"noScanResults": "Cliquez sur le bouton ANALYSER ET RÉPARER pour débuter l’analyse.",
@@ -3016,7 +3016,9 @@
 			"scanRates": "Voici notre analyse de votre PC : ",
 			"summary": "Récapitulatif",
 			"foundIssues": "Notre analyse a détecté {{issueCount}} problème(s)",
+			"summaryDetailsMaintain": "Votre système est en bon état ! Des possibilités d'optimisation ont été identifiées. Inscrivez-vous maintenant pour tirer parti de notre logiciel à la pointe de la technologie qui permet à votre PC de fonctionner avec des performances optimales.",
 			"summaryDetailsOptimize": "Inscrivez-vous dès maintenant pour résoudre ces incidents et assurer le bon fonctionnement de votre système. Notre logiciel peut analyser proactivement ces zones de votre système 24 h/24 et 7 j/7 afin d’identifier et de résoudre les incidents dès qu’ils surviennent. Ainsi, les performances de votre PC sont toujours de très haut niveau.",
+			"summaryDetailsFixNow": "Nous avons trouvé des problèmes qui ont un impact significatif sur vos performances système. Inscrivez-vous et corrigez les problèmes dès maintenant. Smart Performance pourra ensuite analyser votre système de manière proactive, 24 h/24 et 7 j/7 afin d’identifier et de résoudre les incidents dès qu’ils surviennent. Ainsi, les performances de votre PC sont toujours de très haut niveau.",
 			"expiredSummaryDetails": "Votre abonnement a expiré et il peut actuellement utiliser uniquement la fonction d'analyse dans Smart Performance. Si vous souhaitez reprendre la fonction \"Analyser et réparer\", cliquez sur le bouton \"Renouveler et réparer\" ci-dessous pour renouveler votre abonnement.",
 			"signupRepairButton": "S’INSCRIRE ET RÉPARER MAINTENANT",
 			"renewAndFix": "Renouveler et réparer",
@@ -5539,7 +5541,8 @@
 			"security": "Le saviez-vous ? Même si vous n'avez pas installé de logiciel antivirus, nous proposons toujours une protection de base pour votre périphérique.",
 			"connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité.",
 			"hardwareScan": "Vous pouvez maintenant accéder à l'état d'intégrité des composants matériels de votre système.",
-			"appSearch": "Le saviez-vous ? Vous pouvez rechercher ici les fonctions applicables à votre périphérique."
+			"appSearch": "Le saviez-vous ? Vous pouvez rechercher ici les fonctions applicables à votre périphérique.",
+			"productivity": "Vous souhaitez être plus efficace au travail ?"
 		}
 	},
 	"appsForYou": {
@@ -5611,7 +5614,7 @@
 				"desc": "Cette section vous permet d'optimiser ou de configurer automatiquement ou manuellement les paramètres de AI meeting.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager charge la traduction, l'interprétation et la dictée vocale en temps réel. Il peut également générer des sous-titres sur les vidéos.",
+					"description": "AI meeting manager fournit la traduction, l'interprétation, la dictée vocale et l'édition de notes en temps réel. Il peut également générer des sous-titres sur les vidéos.",
 					"download": "TÉLÉCHARGER",
 					"launch": "LANCER",
 					"translation": {
@@ -5621,6 +5624,10 @@
 					"voiceToText": {
 						"title": "Conversion de la Parole en Texte",
 						"description": "Parlez naturellement, et la Conversion de la Parole en Texte fera le travail. Écrivez des e-mails, des documents, ou discutez sur votre application favorite. La Conversion de la Parole en Texte traduit en temps réel et prend des notes pour vous."
+					},
+					"noteEditor": {
+						"title": "Éditeur de notes",
+						"description": "L'Éditeur de notes vous aide à éditer les notes de réunion, à corriger les textes et à lire les enregistrements."
 					},
 					"modalPopUp": {
 						"heading": "Prise en main :",
@@ -5637,6 +5644,12 @@
 							"point3": "Cliquez sur l'icône d'AI meeting manager et sélectionnez Conversion de la Parole en Texte.",
 							"point4": "Sélectionnez les langues de votre choix et cliquez sur l'icône du micro pour démarrer.",
 							"point5": "Placez le curseur dans l'application que vous avez ouverte et commencez à parler."
+						},
+						"noteEditor": {
+							"point1": "Assurez-vous que l'icône d'AI meeting manager est affichée dans la zone de notification Windows.",
+							"point2": "Cliquez sur l'icône et sélectionnez Éditeur de notes.",
+							"point3": "Sélectionnez une note de réunion à partir de la liste.",
+							"point4": "Éditez la note de réunion ou lisez l'enregistrement."
 						},
 						"closeText": "fermer"
 					}
@@ -5676,9 +5689,14 @@
 			"colorCalibration": {
 				"title": "Étalonnage des couleurs",
 				"appName": "Application X-rite",
-				"summary": "Le panneau d'affichage de votre ordinateur est calibré sur la ligne d'usine avec des colorimètres Minolta professionnelles de première qualité. Les données de calibrage sont stockées dans le cloud et peuvent être téléchargées pour réinitialiser le panneau aux paramètres d'usine. X-rite est préinstallé pour gérer les espaces de couleur.<br>- Par défaut (gamut natif, luminosité native mais rampe de gris calibrée et caractérisation de l'affichage stockées dans le profil). <br>- Le profil par défaut est installé par défaut sur le machine. Ce profil est chargé par Windows au démarrage. <br>- Non calibré (gestion des couleurs désactivée. Cela signifie que vous utilisez le profil Lenovo par défaut.) <br>- sRGB (moniteurs d'ordinateur) - Adobe RGB (pour les designers graphiques envisageant d'imprimer en CYMK) <br>- BT.709 (vidéo HD) <br>- DCI P3 (communément utilisé dans la projection de films numériques aux États-Unis)",
+				"descSection1": "En tant que professionnel, un haut niveau de précision des couleurs est crucial et essentiel pour votre travail de création. Lenovo propose une solution d'étalonnage des couleurs pour l'affichage de votre ordinateur afin de vous garantir les meilleures performances en couleur, directement accessibles. Un profil de couleur par défaut personnalisé est créé pour votre ordinateur à l'aide d'un périphérique d'étalonnage professionnel, ce qui garantit que les images affichées de la caméra vers l'affichage de l'ordinateur sont précises et sans distorsion des couleurs.",
+				"descSection2": "Grâce à l'assistant de couleur X-rite préinstallé, vous pouvez changer le profil de couleur comme vous le souhaitez :",
+				"profile1": "Par défaut (gamut natif, luminosité native mais rampe de gris calibrée et caractérisation de l'affichage stockées dans le profil). Ce profil est stocké sur l'ordinateur et chargé automatiquement par Windows. ",
+				"profile2": "Non calibré (gestion des couleurs désactivée)",
+				"profile3": "sRGB (rouge, vert, bleu standard pour les écrans d'ordinateur)",
+				"profile4": "Rec. 709 (sur certains modèles uniquement, optimisé pour les vidéos HD)",
 				"screenshotTitle": "Captures d'écran",
-				"cardTitle": "Comment restaurer les profils ?",
+				"cardTitle": "Comment restaurer les profils de couleur ?",
 				"cardSummary": "Si vous réinstallez votre système ou que vos profils de couleur ont disparu, vous pouvez les restaurer à partir d'ici :",
 				"learnMore": "Plus infos",
 				"restoreProfileDesc": "Lenovo fournit des profils de couleur de sauvegarde dans le Lenovo Cloud. Pour que la fonction de calibrage des couleurs fonctionne sur l'ordinateur, vous devrez peut-être restaurer ou installer des profils couleur dans les situations suivantes : si les profils de couleur sont perdus ou endommagés, une fenêtre s'affiche pour vous rappeler de restaurer les profils de couleur. Cliquez sur Oui dans la fenêtre d'invite et les profils de couleur seront restaurés automatiquement à partir du Lenovo Cloud. Si votre écran est remplacé par un fournisseur de services agréé Lenovo, faites les actions suivantes :",

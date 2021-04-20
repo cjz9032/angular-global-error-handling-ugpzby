@@ -2620,12 +2620,12 @@
 				"tab5": "Rekisterivirheet"
 			},
 			"tabSet2": {
-				"tab1Heading": "SE ON HELPPOA",
-				"tab1Description": "Emme hämmennä sinua teknisellä hölynpölyllä",
-				"tab2Heading": "SE ON NOPEAA",
-				"tab2Description": "Sadan kohdan tarkistus tehdään alle 5 minuutissa",
-				"tab3Heading": "SE ON TURVALLISTA",
-				"tab3Description": "Ei pelotteluohjelmia, luotu parhaita käytäntöjä noudattaen"
+				"tab1Heading": "Se on helppoa",
+				"tab1Description": "Optimoi tietokoneesi suorituskyky yhdellä napsautuksella",
+				"tab2Heading": "Se on nopeaa",
+				"tab2Description": "160 kohdan tarkistus tehdään alle 5 minuutissa",
+				"tab3Heading": "Se on turvallista",
+				"tab3Description": "Luotettava teknologia, joka on suunniteltu toimialan parhaiden toimintatapojen mukaisesti"
 			},
 			"summaryTitle": "Viritä tietokoneen suorituskykyä"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Wi-Fi-suorituskyky"
 			},
 			"tabSet2": {
-				"tab1Heading": "SELAIMEN ONGELMAT",
-				"tab1Description": "Määritämme ja korjaamme kaikki yleiset verkkoselaimet.",
-				"tab2Heading": "YHTEYSVIRHEET",
-				"tab2Description": "Voimme määrittää ja korjata yhteysongelmasi.",
-				"tab3Heading": "HIDAS INTERNET",
-				"tab3Description": "Me autamme sinua saamaan parhaan mahdollisen suorituskyvyn."
+				"tab1Heading": "Selainongelmat",
+				"tab1Description": "Määritä ja korjaa kaikki yleiset verkkoselaimet",
+				"tab2Heading": "Yhteysvirheet",
+				"tab2Description": "Diagnosoi ja korjaa yhteysongelmat",
+				"tab3Heading": "Hidas Internet-yhteys",
+				"tab3Description": "Optimoi Internet-yhteyden nopeus ja kasvata suorituskyky huippuunsa"
 			},
 			"summaryTitle": "Internetin suorituskyky"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Suojausasetukset"
 			},
 			"tabSet2": {
-				"tab1Heading": "NOLLAPÄIVÄN VIRUS",
-				"tab1Description": "Poistamme uusimmatkin haittaohjelmatartunnat",
-				"tab2Heading": "VAKOILUOHJELMIEN POISTO",
-				"tab2Description": "Poistamme kaikki mahdollisesti ei-toivotut ohjelmat",
-				"tab3Heading": "KEVYT JA NOPEA",
-				"tab3Description": "Tarkistus kestää yleensä 5–10 minuuttia"
+				"tab1Heading": "Nollapäivän virus",
+				"tab1Description": "Poista uusimmatkin haittaohjelmatartunnat",
+				"tab2Heading": "Vakoiluohjelmien poisto",
+				"tab2Description": "Poista kaikki mahdollisesti haitalliset ja vaaralliset ohjelmat",
+				"tab3Heading": "Kevyt ja nopea",
+				"tab3Description": "Pilvipohjainen teknologia ei rasita tietokonettasi"
 			},
 			"summaryTitle": "Haittaohjelmat ja suojaus"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Ympärivuorokautinen suojaus"
 			},
 			"tabSet2": {
-				"tab1Heading": "SE ON HELPPOA",
-				"tab1Description": "Emme hämmennä sinua teknisellä hölynpölyllä",
-				"tab2Heading": "SE ON NOPEAA",
-				"tab2Description": "Sadan kohdan tarkistus tehdään alle 5 minuutissa",
-				"tab3Heading": "SE ON TURVALLISTA",
-				"tab3Description": "Ei pelotteluohjelmia, luotu parhaita käytäntöjä noudattaen"
+				"tab1Heading": "Automatisoitu",
+				"tab1Description": "Ajoita tarkistuksia hienosäätääksesi tietokonettasi automaattisesti",
+				"tab2Heading": "Ennakoiva",
+				"tab2Description": "Varmista, että tietokoneesi toimii aina huipputeholla",
+				"tab3Heading": "Tehokas",
+				"tab3Description": "Innovatiivinen huippuluokan teknologia"
 			}
 		},
 		"noScanResults": "Aloita tarkistus napsauttamalla TARKISTA JA KORJAA -painiketta.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Tarkistuksemme pohjalta tehty arvio tietokoneestasi: ",
 			"summary": "Yhteenveto",
 			"foundIssues": "Tarkistus löysi {{issueCount}} ongelmaa",
+			"summaryDetailsMaintain": "Järjestelmäsi on hyvässä kunnossa! Löysimme joitakin optimointimahdollisuuksia. Rekisteröidy nyt hyödyntääksesi uusinta ohjelmistoamme, joka huolehtii tietokoneesi huippuluokan suorituskyvystä.",
 			"summaryDetailsOptimize": "Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
+			"summaryDetailsFixNow": "Havaitsimme ongelmia, jotka vaikuttavat merkittävästi järjestelmäsi suorituskykyyn. Rekisteröidy ja korjaa ongelmat heti. Smart Performance voi suorittaa järjestelmällesi ennakoivia tarkastuksia ympäri vuorokauden, jolloin ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
 			"expiredSummaryDetails": "Tilauksesi on vanhentunut ja voit käyttää tällä hetkellä vain Smart Performancen tarkastustoimintoa. Jos haluat jatkaa \"Tarkasta ja korjaa\" -toiminnon käyttöä, paina alla olevaa \"Uusi tilaus ja korjaa\" -painiketta uusiaksesi tilauksesi.",
 			"signupRepairButton": "REKISTERÖIDY JA KORJAA NYT",
 			"renewAndFix": "Uusi tilaus ja korjaa",
@@ -5429,7 +5431,8 @@
 			"security": "Tiedätkö? Vaikka tietokoneeseen ei ole asennettu virustentorjuntaohjelmistoa, se sisältää silti perussuojauksen.",
 			"connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi.",
 			"hardwareScan": "Nyt voit tarkastaa järjestelmäsi laitteistokomponentin kunnon.",
-			"appSearch": "Tiedätkö? Voit hakea laitteellesi sopivia ominaisuuksia täältä."
+			"appSearch": "Tiedätkö? Voit hakea laitteellesi sopivia ominaisuuksia täältä.",
+			"productivity": "Haluatko työskennellä tehokkaammin?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Tämä osio sallii sinun optimoida kokousten tekoälyasetukset automaattisesti tai määrittää ne manuaalisesti.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager tukee reaaliaikaista kääntämistä, tulkkausta ja sanelua. Se voi myös tekstittää videoita.",
+					"description": "AI meeting manager tarjoaa reaaliaikaista kääntämistä, tulkkausta ja sanelua sekä muistiinpanoeditorin. Se voi myös tekstittää videoita.",
 					"download": "LATAA",
 					"launch": "ALOITA",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Puhe tekstiksi",
 						"description": "Puhu luonnollisesti, niin Puhe tekstiksi -ominaisuus hoitaa kirjoittamisen. Kirjoita sähköposteja tai asiakirjoja tai chattaa suosikkisovelluksessasi. Puhe tekstiksi -ominaisuus kääntää puheesi ja tekee muistiinpanoja puolestasi."
+					},
+					"noteEditor": {
+						"title": "Muistiinpanoeditori",
+						"description": "Muistiinpanoeditori auttaa sinua muokkaamaan kokousten muistiinpanoja, korjaamaan tekstejä ja toistamaan tallenteita."
 					},
 					"modalPopUp": {
 						"heading": "Aloittaminen:",
@@ -5527,6 +5534,12 @@
 							"point3": "Napsauta AI meeting manager -kuvaketta ja valitse Puhe tekstiksi.",
 							"point4": "Valitse tarvitsemasi kielet ja aloita napsauttamalla mikrofonipainiketta.",
 							"point5": "Aseta kursori avaamaasi sovellukseen ja aloita puhuminen."
+						},
+						"noteEditor": {
+							"point1": "Varmista, että AI meeting manager -kuvake näkyy Windowsin ilmoitusalueella.",
+							"point2": "Napsauta kuvaketta ja valitse Muistiinpanoeditori.",
+							"point3": "Valitse kokouksen muistiinpano luettelosta.",
+							"point4": "Muokkaa kokouksen muistiinpanoa tai toista tallenne."
 						},
 						"closeText": "sulje"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Värikalibrointi",
 				"appName": "X-rite-sovellus",
-				"summary": "Tietokoneesi näyttöpaneeli on kalibroitu tehtaalla käyttämällä kalibrointiin tarkoitettuja ammattitason Minolta-värimittareita. Kalibrointitiedot on tallennettu pilvipalveluun, ja ne voidaan ladata paneelin palauttamiseksi tehdasasetuksiin. X-rite on asennettu valmiiksi väritilojen hallintaa varten.<br>- Oletus (oletusarvoinen väriasteikko, oletusarvoinen kirkkaus, mutta kalibroitu harmaa-asteikko ja näytön ominaisuudet tallennettu profiiliin). <br>- Oletusprofiili on asennettu koneelle oletusarvoisesti. Windows lataa tämän profiilin tietokoneen käynnistyessä. <br>- Ei kalibroitu (värienhallinta poissa käytössä. Tämä tarkoittaa oletusarvoisen Lenovo-profiilin käyttöä.) <br>- sRGB (tietokonenäytöt) - Adobe RGB (graafisille suunnittelijoille, jotka aikovat tulostaa CYMK-väreillä) <br>- BT.709 (HD-video) <br>- DCI P3 (käytetään yleisesti digitaalisten elokuvien projisointiin Yhdysvalloissa)",
+				"descSection1": "Ammattilaisena huippuluokan väritarkkuus on välttämätöntä luovan työsi kannalta. Lenovo tarjoaa tietokoneesi näytölle värikalibrointiratkaisun varmistaakseen, että voit nauttia tarkoista väreistä heti ensimmäisellä käyttökerralla. Tietokoneellesi luodaan mukautettu oletusarvoinen väriprofiili käyttämällä ammattitason kalibrointilaitetta. Tämä varmistaa, että kamerasta tietokoneen näytöllä esitetyt kuvat ovat tarkkoja ja etteivät niiden värit vääristy.",
+				"descSection2": "Valmiiksi asennetun X-rite-väriavustajan avulla voit vaihtaa väriprofiilia halutessasi:",
+				"profile1": "Oletus (oletusarvoinen väriasteikko, oletusarvoinen kirkkaus, mutta kalibroitu harmaa-asteikko ja näytön ominaisuudet tallennettu profiiliin). Tämä profiili tallennetaan tietokoneelle, ja Windows lataa sen automaattisesti. ",
+				"profile2": "Ei kalibroitu (värienhallinta poissa käytössä)",
+				"profile3": "sRGB (tietokonenäyttöjen RGB-standardivärimalli)",
+				"profile4": "Rec. 709 (vain tietyissä malleissa, optimoitu HD-videoille)",
 				"screenshotTitle": "Näyttökuvat",
-				"cardTitle": "Miten palauttaa profiileja?",
+				"cardTitle": "Miten palauttaa väriprofiileja?",
 				"cardSummary": "Jos asennat järjestelmäsi uudelleen tai menetät väriprofiileja, voit palauttaa profiileja täältä:",
 				"learnMore": "Lue lisää",
 				"restoreProfileDesc": "Lenovo tarjoaa väriprofiilien varmuuskopiot Lenovo Cloudissa. Jotta värikalibrointitoiminto toimii varmasti tietokoneellasi, sinun täytyy ehkä palauttaa tai asentaa väriprofiileja seuraavissa tilanteissa: Jos väriprofiilit häviävät tai vahingoittuvat, näet ikkunan, joka muistuttaa sinua väriprofiilien palautuksesta. Valitse vahvistusikkunasta Kyllä, niin väriprofiilit palautetaan Lenovo Cloudista automaattisesti. Jos Lenovon valtuuttama palveluntarjoaja vaihtaa tietokoneesi näytön, toimi näin:",

@@ -2620,12 +2620,12 @@
 				"tab5": "Registerfeil"
 			},
 			"tabSet2": {
-				"tab1Heading": "DET ER ENKELT",
-				"tab1Description": "Vi forvirrer deg ikke med teknisk prat",
-				"tab2Heading": "DET ER RASKT",
-				"tab2Description": "Få en 100-punkts sjekk fullført på under fem minutter",
-				"tab3Heading": "DET ER TRYGT",
-				"tab3Description": "Ingen skremmevare, bygd med mønsterpraksiser"
+				"tab1Heading": "Det er enkelt",
+				"tab1Description": "Optimaliser PC-ytelsen med ett klikk",
+				"tab2Heading": "Det er raskt",
+				"tab2Description": "Få en 160-punkters kontroll utført på under fem minutter",
+				"tab3Heading": "Det er trygt",
+				"tab3Description": "Klarert teknologi bygd med bransjens beste metoder"
 			},
 			"summaryTitle": "Juster PC-ytelsen"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Wi-Fi-ytelse"
 			},
 			"tabSet2": {
-				"tab1Heading": "NETTLESERPROBLEMER",
-				"tab1Description": "Vi konfigurerer og reparerer alle populære nettlesere.",
-				"tab2Heading": "TILKOBLINGSFEIL",
-				"tab2Description": "Vi kan diagnostisere og reparere tilkoblingsproblemer.",
-				"tab3Heading": "TREGT INTERNETT",
-				"tab3Description": "Vi kan hjelpe deg med å få maksimal ytelse."
+				"tab1Heading": "Nettleserproblemer",
+				"tab1Description": "Konfigurerer og reparerer alle dine populære nettlesere",
+				"tab2Heading": "Tilkoblingsfeil",
+				"tab2Description": "Diagnostiserer og løser tilkoblingsproblemer",
+				"tab3Heading": "Tregt Internett",
+				"tab3Description": "Optimaliserer Internett-hastighet og formidler maksimal ytelse"
 			},
 			"summaryTitle": "Internettytelse"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Sikkerhetsinnstillinger"
 			},
 			"tabSet2": {
-				"tab1Heading": "NULL-DAGERS VIRUS",
-				"tab1Description": "Vi fjerner også de nyeste skadevareinfeksjonene",
-				"tab2Heading": "FJERNING AV SPIONVARE",
-				"tab2Description": "Vi fjerner alle potensielt uønskede programmer",
-				"tab3Heading": "LETT OG RASKT",
-				"tab3Description": "Skanning tar vanligvis 5–10 minutter"
+				"tab1Heading": "Nulldagsvirus",
+				"tab1Description": "Fjerner også de nyeste skadevareinfeksjonene",
+				"tab2Heading": "Fjerning av spionvare",
+				"tab2Description": "Fjerner alle potensielt ondsinnede og skadelige programmer",
+				"tab3Heading": "Enkelt og raskt",
+				"tab3Description": "Skybasert teknologi er enkel å bruke på PC-en din"
 			},
 			"summaryTitle": "Skadevare og sikkerhet"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Beskyttelse døgnet rundt"
 			},
 			"tabSet2": {
-				"tab1Heading": "DET ER ENKELT",
-				"tab1Description": "Vi forvirrer deg ikke med teknisk prat",
-				"tab2Heading": "DET ER RASKT",
-				"tab2Description": "Få en 100-punkts sjekk fullført på under fem minutter",
-				"tab3Heading": "DET ER TRYGT",
-				"tab3Description": "Ingen skremmevare, bygd med mønsterpraksiser"
+				"tab1Heading": "Automatisert",
+				"tab1Description": "Angi planlagte søk slik at PC-en justeres automatisk",
+				"tab2Heading": "Proaktiv",
+				"tab2Description": "Sørg for at PC-en alltid har topp ytelse",
+				"tab3Heading": "Effektiv",
+				"tab3Description": "Innovativ avansert teknologi"
 			}
 		},
 		"noScanResults": "Klikk på SKANN OG REPARER hvis du vil utløse skanneprosessen.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Vårt skann rangerer PC-en din som: ",
 			"summary": "Sammendrag",
 			"foundIssues": "Skanningen fant {{issueCount}} problem(er)",
+			"summaryDetailsMaintain": "Systemet er i god stand! Vi har funnet noen optimaliseringsmuligheter. Registrer deg nå for å dra nytte av vår avanserte programvare, slik at PC-en din får best mulig ytelse.",
 			"summaryDetailsOptimize": "Registrer deg nå for å løse disse problemene og sørge for at systemet ditt kjører problemfritt. Programvaren vår kan proaktivt skanne disse områdene i systemet ditt døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
+			"summaryDetailsFixNow": "Vi fant problemer som har betydelig innvirkning på systemytelsen din. Registrer deg og løs problemene nå. Deretter kan Smart Performance proaktivt skanne systemet ditt døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
 			"expiredSummaryDetails": "Abonnementet ditt er utløpt og kan for øyeblikket bare bruke skannfunksjonen i Smart Performance. Hvis du vil gjenoppta funksjonen \"Skann og reparer\", trykker du på knappen \"forny og reparer\" nedenfor for å fornye abonnementet.",
 			"signupRepairButton": "REGISTRER OG REPARER NÅ",
 			"renewAndFix": "Forny og reparer",
@@ -5429,7 +5431,8 @@
 			"security": "Visste du dette? Selv om du ikke har installert antivirusprogramvare, leverer vi fortsatt grunnleggende sikkerhetsbeskyttelse for enheten din.",
 			"connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep.",
 			"hardwareScan": "Nå kan du få tilstandsstatusen til maskinvarekomponentene til systemet ditt.",
-			"appSearch": "Visste du dette? Du kan søke etter funksjoner som gjelder for enheten din her."
+			"appSearch": "Visste du dette? Du kan søke etter funksjoner som gjelder for enheten din her.",
+			"productivity": "Vil du forbedre arbeidseffektiviteten nå?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Denne seksjonen lar deg optimalisere AI møtekonfigurasjonsinnstillinger automatisk, eller konfigurere dem manuelt.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager støtter oversettelse, fortolkning og talediktering i sanntid. Den kan også generere undertekster for videoer.",
+					"description": "AI Meeting Manager formidler oversettelse, fortolkning og talediktering og notatredigering i sanntid. Den kan også generere undertekster for videoer.",
 					"download": "LAST NED",
 					"launch": "START",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Tale til Tekst",
 						"description": "Snakk på en naturlig måte, så vil Tale til Tekst sørge for skrivingen. Skriv e-poster eller dokumenter, eller prat i favorittappen din. Tale til Tekst oversetter og tar notater for deg når du snakker."
+					},
+					"noteEditor": {
+						"title": "Notatredigering",
+						"description": "Notatredigering hjelper deg med å redigere møtenotater, rette tekster og spille av opptak."
 					},
 					"modalPopUp": {
 						"heading": "Kom i gang:",
@@ -5527,6 +5534,12 @@
 							"point3": "Klikk på ikonet for AI meeting manager og velg Tale til Tekst.",
 							"point4": "Velg ønsket språk, og klikk deretter på mikrofonikonet for å starte.",
 							"point5": "Plasser markøren i programmet du åpner, og begynn å snakke."
+						},
+						"noteEditor": {
+							"point1": "Sørg for at ikonet for AI Meeting Manager blir vist i Windows-systemstatusfeltet.",
+							"point2": "Klikk på ikonet og velg Notatredigering.",
+							"point3": "Velg et møtenotat fra listen.",
+							"point4": "Rediger møtenotatet eller spill av opptaket."
 						},
 						"closeText": "Lukk"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Fargekalibrering",
 				"appName": "X-rite-program",
-				"summary": "Skjermpanelet på datamaskinen er kalibrert på fabrikken med førsteklasses profesjonelle Minolta-kolorimetre. Kalibreringsdataene er lagret i skyen og kan lastes ned for å tilbakestille skjermbildet til fabrikkinnstillingene. X-rite er forhåndsinstallert for å styre fargerom.<br>– Standard (opprinnelig fargeskala, opprinnelig lysstyrke, men kalibrert gråskala og skjermkarakteristika lagret i profilen). <br>– Standardprofilen er installert som standard på maskinen. Denne profilen er lastet inn av Windows ved oppstart. <br>– Ikke kalibrert (fargestyring av. Det betyr at du bruker standard Lenovo-profil.) <br>– sRGB (dataskjermer) – Adobe RGB (for grafiske designere som planlegger å skrive ut i CYMK) <br> – BT.709 (HD-video) <br> – DCI P3 (vanligvis brukt i digital filmprojeksjon i USA)",
+				"descSection1": "Som fagperson er høy fargenøyaktighet avgjørende og avgjørende for ditt kreative arbeid. Lenovo er en fargekalibreringsløsning for dataskjermen som sikrer at du får best mulig fargeytelse fra første klikk. Det opprettes en tilpasset standard fargeprofil for datamaskinen ved hjelp av en enhet for yrkeskalibrering, som sikrer at bildene som blir vist fra kameraet på dataskjermen, er nøyaktige og uten fargeforvrengning.",
+				"descSection2": "Med forhåndsinstallert X-rite Color Assistant kan du bytte fargeprofil etter behov:",
+				"profile1": "Standard (opprinnelig fargeskala, opprinnelig lysstyrke, men kalibrert gråskala og skjermkarakteristika lagret i profilen). Denne profilen blir lagret på maskinen og lastet inn automatisk av Windows. ",
+				"profile2": "Ikke kalibrert (fargestyring av)",
+				"profile3": "sRGB (standard rød grønn blå for dataskjermer)",
+				"profile4": "Rec. 709 (bare for utvalgte modeller, optimalisert for HD-videoer)",
 				"screenshotTitle": "Skjermbilder",
-				"cardTitle": "Hvordan gjenopprette profiler?",
+				"cardTitle": "Hvordan gjenopprette fargeprofiler?",
 				"cardSummary": "Hvis du installerer systemet eller fargeprofilene på nytt, kan du gjenopprette profilene her:",
 				"learnMore": "Les mer",
 				"restoreProfileDesc": "Lenovo sørger for sikkerhetskopierte fargeprofiler i Lenovo Cloud. For at fargekalibreringsfunksjonen skal fungere på maskinen din, kan det hende at du må gjenopprette eller installere fargeprofiler i følgende situasjoner: Hvis fargeprofilene blir borte eller skadet, blir det vist et vindu som minner deg om å gjenopprette fargeprofilene. Klikk på Ja i det vinduet du blir bedt om, så blir fargeprofilene gjenopprettet automatisk fra Lenovo Cloud. Hvis dataskjermen blir erstattet av den autoriserte Lenovo-tjenesteleverandøren, gjør du slik:",

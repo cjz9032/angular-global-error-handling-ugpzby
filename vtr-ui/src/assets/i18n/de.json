@@ -2730,12 +2730,12 @@
 				"tab5": "Registrierungsfehler"
 			},
 			"tabSet2": {
-				"tab1Heading": "EINFACH",
-				"tab1Description": "Wir verwenden keine komplizierten technischen Begriffe",
-				"tab2Heading": "SCHNELL",
-				"tab2Description": "Machen Sie einen 100-Punkte-Check in unter 5 Minuten",
-				"tab3Heading": "SICHER",
-				"tab3Description": "Keine Scareware, sondern bewährte Verfahren"
+				"tab1Heading": "Einfach",
+				"tab1Description": "PC-Leistung mit einem Klick optimieren",
+				"tab2Heading": "Schnell",
+				"tab2Description": "160-Punkte-Prüfung in unter 5 Minuten durchführen",
+				"tab3Heading": "Sicher",
+				"tab3Description": "Vertrauenswürdige Technologie, die auf branchenbewährten Verfahren basiert"
 			},
 			"summaryTitle": "PC-Leistung optimieren"
 		},
@@ -2752,12 +2752,12 @@
 				"tab5": "Wi-Fi-Leistung"
 			},
 			"tabSet2": {
-				"tab1Heading": "BROWSERPROBLEME",
-				"tab1Description": "Wir konfigurieren und optimieren alle bekannten Webbrowser.",
-				"tab2Heading": "VERBINDUNGSFEHLER",
-				"tab2Description": "Wir können Ihre Verbindungsprobleme diagnostizieren und reparieren.",
-				"tab3Heading": "LANGSAMES INTERNET",
-				"tab3Description": "Wir helfen Ihnen dabei, die maximale Leistung zu erzielen."
+				"tab1Heading": "Browserprobleme",
+				"tab1Description": "Alle bekannten Webbrowser konfigurieren und optimieren",
+				"tab2Heading": "Verbindungsfehler",
+				"tab2Description": "Verbindungsprobleme diagnostizieren und reparieren",
+				"tab3Heading": "Langsames Internet",
+				"tab3Description": "Geschwindigkeit der Internetverbindung optimieren und Leistung maximieren"
 			},
 			"summaryTitle": "Internetleistung"
 		},
@@ -2773,12 +2773,12 @@
 				"tab5": "Sicherheitseinstellungen"
 			},
 			"tabSet2": {
-				"tab1Heading": "ZERO-DAY-VIREN",
-				"tab1Description": "Wir entfernen sogar die neueste Malware",
-				"tab2Heading": "SPYWARE-ENTFERNUNG",
-				"tab2Description": "Wir entfernen alle potenziell unerwünschten Programme",
-				"tab3Heading": "SCHNELL ERLEDIGT",
-				"tab3Description": "Scan dauert normalerweise 5 bis 10 Minuten"
+				"tab1Heading": "Schutz vor Zero-Day-Viren",
+				"tab1Description": "Sogar neueste Malware entfernen",
+				"tab2Heading": "Spyware-Entfernung",
+				"tab2Description": "Alle potenziell schädlichen Programme entfernen",
+				"tab3Heading": "Unauffällig und schnell",
+				"tab3Description": "Keine Belastung der PC-Leistung dank cloudbasierter Technologie"
 			},
 			"summaryTitle": "Malware und Sicherheit"
 		},
@@ -2794,12 +2794,12 @@
 				"tab5": "Schutz rund um die Uhr"
 			},
 			"tabSet2": {
-				"tab1Heading": "EINFACH",
-				"tab1Description": "Wir verwenden keine komplizierten technischen Begriffe",
-				"tab2Heading": "SCHNELL",
-				"tab2Description": "Machen Sie einen 100-Punkte-Check in unter 5 Minuten",
-				"tab3Heading": "SICHER",
-				"tab3Description": "Keine Scareware, sondern bewährte Verfahren"
+				"tab1Heading": "Automatisiert",
+				"tab1Description": "Scans zur automatischen Optimierung der PC-Leistung planen",
+				"tab2Heading": "Proaktiv",
+				"tab2Description": "Sicherstellen, dass Ihr PC immer erstklassige Leistung bietet",
+				"tab3Heading": "Effektiv",
+				"tab3Description": "Innovative, hochmoderne Technologie"
 			}
 		},
 		"noScanResults": "Klicken Sie auf \"SCANNEN UND REPARIEREN\", um den Scan zu starten.",
@@ -3016,7 +3016,9 @@
 			"scanRates": "Unser Scan stuft Ihren PC ein als: ",
 			"summary": "Zusammenfassung",
 			"foundIssues": "Der Scan hat {{issueCount}} Probleme gefunden",
+			"summaryDetailsMaintain": "Ihr System ist in einem gutem Zustand! Wir haben einige Optimierungsmöglichkeiten gefunden. Registrieren Sie sich jetzt, um die Vorteile unserer ausgereiften Software zu nutzen, damit Ihr PC jederzeit optimale Leistung liefert.",
 			"summaryDetailsOptimize": "Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
+			"summaryDetailsFixNow": "Wir haben Probleme gefunden, die die Systemleistung erheblich beeinträchtigen. Registrieren Sie sich jetzt und beheben Sie die Probleme. Mit Smart Performance können Sie Ihr System rund um die Uhr proaktiv scannen und Probleme rasch finden und beheben, sodass Ihr PC immer eine erstklassige Leistung bietet.",
 			"expiredSummaryDetails": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Wenn Sie die Funktion \"Scannen und reparieren\" verwenden möchten, klicken Sie auf die unten angezeigte Schaltfläche \"Erneuern und reparieren\", um Ihr Abonnement zu erneuern.",
 			"signupRepairButton": "JETZT REGISTRIEREN UND REPARIEREN",
 			"renewAndFix": "Erneuern und reparieren",
@@ -5539,7 +5541,8 @@
 			"security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
 			"connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist.",
 			"hardwareScan": "Nun können Sie den Integritätsstatus Ihrer Systemhardwarekomponenten abrufen.",
-			"appSearch": "Schon gewusst? Hier können Sie nach Funktionen für Ihre Einheit suchen."
+			"appSearch": "Schon gewusst? Hier können Sie nach Funktionen für Ihre Einheit suchen.",
+			"productivity": "Möchten Sie effizienter arbeiten?"
 		}
 	},
 	"appsForYou": {
@@ -5611,7 +5614,7 @@
 				"desc": "Hier können Sie die KI-Konferenzeinstellungen automatisch optimieren lassen oder manuell konfigurieren.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "Der AI meeting manager unterstützt Übersetzung, Dolmetschen und Diktate in Echtzeit. Er kann zudem Untertitel für Videos erzeugen.",
+					"description": "Der AI Meeting Manager unterstützt Übersetzung, Dolmetschen, Diktate und Notizeditor in Echtzeit. Er kann zudem Untertitel für Videos erzeugen.",
 					"download": "DOWNLOAD",
 					"launch": "STARTEN",
 					"translation": {
@@ -5621,6 +5624,10 @@
 					"voiceToText": {
 						"title": "Sprache zu Text",
 						"description": "Sprechen Sie frei – die Sprache-zu-Text-Funktion übernimmt das Tippen für Sie. Verfassen Sie E‑Mails und Dokumente oder chatten Sie in Ihrer Lieblings-App. \"Sprache zu Text\" übersetzt, während Sie sprechen und macht Notizen für Sie."
+					},
+					"noteEditor": {
+						"title": "Notizeditor",
+						"description": "Unterstützt Sie beim Bearbeiten von Gesprächsnotizen, Korrigieren von Texten und Wiedergabe von Aufzeichnungen."
 					},
 					"modalPopUp": {
 						"heading": "Erste Schritte:",
@@ -5637,6 +5644,12 @@
 							"point3": "Klicken Sie auf das Symbol für den AI meeting manager und wählen Sie \"Sprache zu Text\" aus.",
 							"point4": "Wählen Sie die gewünschten Sprachen aus und klicken Sie dann zum Beginnen auf die Mikrofon-Schaltfläche.",
 							"point5": "Setzen Sie den Cursor an die gewünschte Stelle in der geöffneten Anwendung und beginnen Sie zu sprechen."
+						},
+						"noteEditor": {
+							"point1": "Stellen Sie sicher, dass das Symbol für den AI Meeting Manager im Windows-Infobereich angezeigt wird.",
+							"point2": "Klicken Sie auf das Symbol und wählen Sie \"Notizeditor\" aus.",
+							"point3": "Wählen Sie eine Gesprächsnotiz aus der Liste aus.",
+							"point4": "Bearbeiten Sie die Gesprächsnotiz oder spielen Sie die Aufzeichnung ab."
 						},
 						"closeText": "schließen"
 					}
@@ -5676,9 +5689,14 @@
 			"colorCalibration": {
 				"title": "Farbkalibrierung",
 				"appName": "X-rite-Anwendung",
-				"summary": "Die Anzeige Ihres Computers wird werkseitig mithilfe von Premium-Farbmessgeräten von Minolta kalibriert. Die Kalibrierungsdaten werden in der Cloud gespeichert und können heruntergeladen werden, um die Anzeige auf die Werkseinstellungen zurückzusetzen. X-rite ist zur Verwaltung von Farbbereichen vorinstalliert.<br>– Standard (nativer Gamut, native Helligkeit, aber kalibrierter Graukeil und Display-Charakterisierung im Profil gespeichert) <br>– Standardprofil ist standardmäßig im Computer installiert, dieses Profil wird beim Windows-Systemstart geladen <br>– Nicht kalibriert (Farbverwaltung ausgeschaltet, d. h. Verwendung des Lenovo Standardprofils) <br>– sRGB (Computerbildschirme) – Adobe RGB (für Grafikdesigner, die in CMYK drucken möchten)<br>– BT.709 (HD-Video)<br>– DCI P3 (wird in den USA häufig in der digitalen Filmprojektion verwendet)",
+				"descSection1": "Für Profis ist eine hohe Farbgenauigkeit wichtig und unerlässlich bei ihrer kreativen Arbeit. Lenovo bietet eine Lösung zur Farbkalibrierung Ihres Computerbildschirms, mit der Sie jederzeit eine optimale Farbleistung erhalten. Mithilfe einer speziellen Kalibrierungsvorrichtung wird ein angepasstes Standardfarbprofil für Ihren Computer erstellt, was sicherstellt, dass Bilder der Kamera auch auf dem Computer präzise und ohne Farbverfälschung dargestellt werden.",
+				"descSection2": "Mit dem vorinstallierten X-rite Color Assistant können Sie das Farbprofil nach Belieben wechseln:",
+				"profile1": "Standard (nativer Gamut, native Helligkeit, aber kalibrierter Graukeil und Display-Charakterisierung im Profil gespeichert); Profil ist auf dem Computer gespeichert und wird automatisch von Windows geladen ",
+				"profile2": "Nicht kalibriert (Farbverwaltung ausgeschaltet)",
+				"profile3": "sRGB (Standard-Rot-Grün-Blau für Computerbildschirme)",
+				"profile4": "Rec. 709 (nur für ausgewählte Modelle, optimiert für HD-Videos)",
 				"screenshotTitle": "Screenshots",
-				"cardTitle": "So stellen sie Profile wieder her",
+				"cardTitle": "Farbprofile wiederherstellen",
 				"cardSummary": "Wenn Sie das System neu installieren oder Farbprofile verloren gehen, können Sie Profile von hier aus wiederherstellen:",
 				"learnMore": "Mehr Infos",
 				"restoreProfileDesc": "Lenovo stellt Sicherungsfarbprofile in Lenovo Cloud bereit. Um sicherzustellen, dass die Farbkalibrierung auf Ihrem Computer funktioniert, müssen Sie möglicherweise Farbprofile in den folgenden Situationen wiederherstellen oder installieren: Wenn die Farbprofile verloren gehen oder beschädigt sind, wird ein Fenster angezeigt, das Sie an die Wiederherstellungsoption für Farbprofile erinnert. Klicken Sie im Fenster mit der Aufforderung auf \"Ja\" und die Farbprofile werden automatisch von Lenovo Cloud wiederhergestellt. Gehen Sie wie folgt vor, wenn Ihr Computerbildschirm durch einen von Lenovo autorisierten Service-Provider ersetzt wird:",

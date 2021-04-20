@@ -2620,12 +2620,12 @@
 				"tab5": "Registerfel"
 			},
 			"tabSet2": {
-				"tab1Heading": "DET ÄR ENKELT",
-				"tab1Description": "Vi gör dig inte förvirrad med en massa tekniska termer",
-				"tab2Heading": "DET ÄR SNABBT",
-				"tab2Description": "Kör en kontroll av 100-punkter på mindre än 5 minuter",
-				"tab3Heading": "DET ÄR SÄKERT",
-				"tab3Description": "Inga skrämselprogram, utvecklad enligt bästa praxis"
+				"tab1Heading": "Det är enkelt",
+				"tab1Description": "Optimera datorns prestanda med ett enda klick",
+				"tab2Heading": "Det är snabbt",
+				"tab2Description": "Kör en kontroll av 160 punkter på mindre än 5 minuter",
+				"tab3Heading": "Det är säkert",
+				"tab3Description": "Betrodd teknik byggd enligt bästa branschpraxis"
 			},
 			"summaryTitle": "Finjustera datorns prestanda"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Wi-Fi-prestanda"
 			},
 			"tabSet2": {
-				"tab1Heading": "WEBBLÄSARPROBLEM",
-				"tab1Description": "Vi konfigurerar och korrigerar alla dina populära webbläsare.",
-				"tab2Heading": "ANSLUTNINGSFEL",
-				"tab2Description": "Vi felsöker och åtgärdar anslutningsproblem.",
-				"tab3Heading": "LÅNGSAMT INTERNET",
-				"tab3Description": "Vi hjälper dig att få bästa möjliga prestanda."
+				"tab1Heading": "Webbläsarproblem",
+				"tab1Description": "Konfigurera och korrigera alla dina populära webbläsare",
+				"tab2Heading": "Anslutningsfel",
+				"tab2Description": "Felsök och åtgärda anslutningsproblem",
+				"tab3Heading": "Långsamt Internet",
+				"tab3Description": "Optimera Internethastigheten och få maximal prestanda"
 			},
 			"summaryTitle": "Internetprestanda"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Säkerhetsinställningar"
 			},
 			"tabSet2": {
-				"tab1Heading": "NOLLDAGSVIRUS",
-				"tab1Description": "Vi tar bort också den senaste skadliga koden",
-				"tab2Heading": "BORTTAGNING AV SPIONPROGRAM",
-				"tab2Description": "Vi tar bort alla potentiellt oönskade program",
-				"tab3Heading": "LÄTT OCH SNABBT",
-				"tab3Description": "Genomsökningen tar normalt 5–10 minuter"
+				"tab1Heading": "Nolldagsvirus",
+				"tab1Description": "Ta bort också den senaste skadliga koden",
+				"tab2Heading": "Borttagning av spionprogram",
+				"tab2Description": "Ta bort alla potentiella skadliga program",
+				"tab3Heading": "Lätt och snabbt",
+				"tab3Description": "Molnbaserad teknik är lätt på din dator"
 			},
 			"summaryTitle": "Skadlig kod och säkerhet"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Skydd dygnet runt"
 			},
 			"tabSet2": {
-				"tab1Heading": "DET ÄR ENKELT",
-				"tab1Description": "Vi gör dig inte förvirrad med en massa tekniska termer",
-				"tab2Heading": "DET ÄR SNABBT",
-				"tab2Description": "Kör en kontroll av 100-punkter på mindre än 5 minuter",
-				"tab3Heading": "DET ÄR SÄKERT",
-				"tab3Description": "Inga skrämselprogram, utvecklad enligt bästa praxis"
+				"tab1Heading": "Automatiserat",
+				"tab1Description": "Ställ in schemalagda genomsökningar för att justera datorn automatiskt",
+				"tab2Heading": "Proaktivt",
+				"tab2Description": "Se till att datorn alltid fungerar med bästa prestanda",
+				"tab3Heading": "Effektivt",
+				"tab3Description": "Innovativ och avancerad teknik"
 			}
 		},
 		"noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Enligt vår genomsökning är din dator: ",
 			"summary": "Översikt",
 			"foundIssues": "{{issueCount}} problem påträffades",
+			"summaryDetailsMaintain": "Systemet är i bra skick! Vi hittade vissa optimeringsmöjligheter. Registrera dig nu för att dra fördel av vår avancerade programvara och se till att din dator fungerar med bästa möjliga prestanda.",
 			"summaryDetailsOptimize": "Registrera dig nu för att åtgärda problemen och se till att datorn fungerar smidigt. Vår programvara kan proaktivt genomsöka dessa områden på din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
+			"summaryDetailsFixNow": "Vi hittade problem som avsevärt påverkar datorns prestanda. Registrera dig och åtgärda problemen nu. Då kan Smart Performance proaktivt genomsöka ditt system dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid fungerar med bästa möjliga prestanda.",
 			"expiredSummaryDetails": "Din prenumerationen har gått ut och du kan för närvarande endast använda genomsökningsfunktionen i Smart Performance. Om du vill återuppta funktionen Genomsök och åtgärda klickar du på Förnya och åtgärda nedan för att förnya prenumerationen.",
 			"signupRepairButton": "REGISTRERA DIG OCH REPARERA NU",
 			"renewAndFix": "Förnya och åtgärda",
@@ -5429,7 +5431,8 @@
 			"security": "Visste du detta? Även om du inte har ett antivirusprogram är din enhet fortfarande skyddad med grundläggande säkerhetsfunktioner.",
 			"connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack.",
 			"hardwareScan": "Nu kan du få reda på hälsostatusen för systemets maskinvarukomponent.",
-			"appSearch": "Visste du detta? Här kan du söka efter funktioner som gäller din enhet."
+			"appSearch": "Visste du detta? Här kan du söka efter funktioner som gäller din enhet.",
+			"productivity": "Vill du arbeta mer effektivt?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "I det här avsnittet kan du automatiskt optimera eller manuellt konfigurera AI-mötesinställningar.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager har stöd för översättning, tolkning och diktering i realtid. Den kan dessutom generera undertexter för video.",
+					"description": "AI Meeting Manager har funktioner för översättning, tolkning, diktering och anteckningar i realtid. Programmet kan dessutom generera undertext för video.",
 					"download": "HÄMTA",
 					"launch": "STARTA",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Röst till text",
 						"description": "Tala som vanligt så omvandlar Röst till text-funktionen det du säger till skriven text. Skriv e-postmeddelanden eller dokument eller chatta i din favoritapp. Funktionen översätter medan du talar och gör anteckningar åt dig."
+					},
+					"noteEditor": {
+						"title": "Anteckningsredigerare",
+						"description": "Med Anteckningsredigerare kan du redigera mötesanteckningar, korrigera text och spela upp inspelningar."
 					},
 					"modalPopUp": {
 						"heading": "Komma i gång:",
@@ -5527,6 +5534,12 @@
 							"point3": "Klicka på ikonen för AI meeting manager och välj Röst till text.",
 							"point4": "Välj önskade språk och klicka på mikrofonknappen för att starta.",
 							"point5": "Placera markören i appen du öppnade och börja prata."
+						},
+						"noteEditor": {
+							"point1": "Se till att ikonen för AI Meeting Manager visas i meddelandefältet i Windows.",
+							"point2": "Klicka på ikonen och välj Anteckningsredigerare.",
+							"point3": "Välj en mötesanteckning i listan.",
+							"point4": "Redigera anteckningen eller spela upp inspelningen."
 						},
 						"closeText": "stäng"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Färgkalibrering",
 				"appName": "Appen X-rite",
-				"summary": "Datorns bildskärm kalibreras på fabriken enligt professionellt kalibrerade Minolta-färgmätare. Kalibreringsdata lagras i molnet och kan hämtas för att återställa panelen till fabriksinställningarna. X-rite är förinstallerat för att hantera färgspektra.<br>- Standard (inbyggt färgspektrum och inbyggd ljusstyrka men kalibrerad gråskala och bildskärmsegenskaper lagras i en profil). <br>- Standardprofilen är installerad som standard på datorn. Profilen läses in av Windows när datorn startar. <br>- Inte kalibrerad (Färghantering är inaktiverad. Den standardinställda Lenovo-profilen används.) <br>- sRGB (datorbildskärmar) – Adobe RGB (för grafiska designer som vill skriva ut i CMYK) <br> - BT.709 (HD-video) <br> - DCI P3 (används vanligen vid digital filmprojicering i USA)",
+				"descSection1": "I din yrkesroll är hög färgnoggrannhet avgörande och nödvändig för ditt skapande arbete. Lenovo erbjuder en färgkalibreringslösning för din datorbildskärm så att du får bästa möjliga färgkapacitet utan att behöva göra några inställningar. En anpassad standardfärgprofil skapas för din dator med hjälp av en professionell kalibreringsenhet. Det gör att bilderna på kameran som visas på datorns bildskärm är korrekta och utan färgdistortion.",
+				"descSection2": "Med det förinstallerade programmet X-rite Color Assistant kan du byta färgprofil efter behov:",
+				"profile1": "Standard (inbyggt färgspektrum och inbyggd ljusstyrka men kalibrerad gråskala och bildskärmsegenskaper lagras i en profil). Profilen lagras på datorn och läses in automatiskt av Windows. ",
+				"profile2": "Inte kalibrerad (färghantering är inaktiverad)",
+				"profile3": "sRGB (standardinställningar för rött, grönt och blått för datorbildskärmar)",
+				"profile4": "Rek. 709 (endast vissa modeller, optimerat för HD-video)",
 				"screenshotTitle": "Skärmbilder",
-				"cardTitle": "Hur återställer jag profilerna?",
+				"cardTitle": "Hur återställer jag färgprofilerna?",
 				"cardSummary": "Om du installerar om systemet eller om färgprofilerna försvinner kan du återställa profilerna här:",
 				"learnMore": "Läs mer",
 				"restoreProfileDesc": "Lenovo tillhandahåller reservfärgprofiler i Lenovo Cloud. För att säkerställa att färgkalibreringsfunktionen fungerar på datorn kan du behöva återställa eller installera färgprofiler i följande situationer. Om färgprofilerna försvinner eller skadas visas ett fönster som påminner dig om att återställa färgprofilerna. Klicka på Ja i fönstret så återställs färgprofilerna automatiskt från Lenovo Cloud. Gör så här om datorns bildskärm har bytts ut av Lenovos auktoriserade serviceleverantör:",

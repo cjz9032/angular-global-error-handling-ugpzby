@@ -2620,12 +2620,12 @@
 				"tab5": "Erori în fișierele registry"
 			},
 			"tabSet2": {
-				"tab1Heading": "ESTE UȘOR DE UTILIZAT",
-				"tab1Description": "Nu vă inducem în eroare cu informații tehnice eronate",
-				"tab2Heading": "ESTE RAPIDĂ",
-				"tab2Description": "Efectuați o verificare completă în 100 de puncte în mai puțin de 5 minute",
-				"tab3Heading": "ESTE SIGURĂ",
-				"tab3Description": "Nu este un scareware și este concepută cu cele mai bune practici"
+				"tab1Heading": "Este ușor",
+				"tab1Description": "Optimizați performanțele computerului dvs. cu un singur clic",
+				"tab2Heading": "Este rapid",
+				"tab2Description": "Efectuați o verificare completă în 160 de puncte în mai puțin de 5 minute",
+				"tab3Heading": "Este sigur",
+				"tab3Description": "Tehnologie de încredere construită cu cele mai bune practici din industrie"
 			},
 			"summaryTitle": "Reglarea performanțelor PC-ului"
 		},
@@ -2642,12 +2642,12 @@
 				"tab5": "Performanțele rețelei Wi-Fi"
 			},
 			"tabSet2": {
-				"tab1Heading": "PROBLEME PRIVIND BROWSERTUL",
-				"tab1Description": "Vom configura și vom remedia toate browserele dumneavoastră web populare.",
-				"tab2Heading": "ERORI DE CONECTARE",
-				"tab2Description": "Vom efectua o diagnosticare și vom remedia problemele de conectare.",
-				"tab3Heading": "CONEXIUNE LENTĂ LA INTERNET",
-				"tab3Description": "Vă vom ajuta să obțineți performanțe maxime."
+				"tab1Heading": "Probleme privind browserul",
+				"tab1Description": "Configurați și remediați toate browserele dumneavoastră web populare",
+				"tab2Heading": "Erori de conectare",
+				"tab2Description": "Diagnosticați și remediați problemele de conectare",
+				"tab3Heading": "Viteză de internet redusă",
+				"tab3Description": "Optimizați viteza de internet și obțineți performanțe maxime"
 			},
 			"summaryTitle": "Performanțele pe internet"
 		},
@@ -2663,12 +2663,12 @@
 				"tab5": "Setări securitate"
 			},
 			"tabSet2": {
-				"tab1Heading": "VIRUȘI DE TIP ZERO-DAY",
-				"tab1Description": "Eliminăm chiar și cele mai recente infectări cu malware-uri",
-				"tab2Heading": "ELIMINAREA SPYWARE-URILOR",
-				"tab2Description": "Eliminați toate programele potențial nedorite",
-				"tab3Heading": "UȘOR DE UTILIZAT ȘI RAPIDĂ",
-				"tab3Description": "De obicei, scanarea durează 5 – 10 minute"
+				"tab1Heading": "Viruși de tip Zero Day",
+				"tab1Description": "Eliminați chiar și cele mai noi infectări cu malware",
+				"tab2Heading": "Eliminare spyware",
+				"tab2Description": "Eliminați toate programele posibil răuvoitoare și nedorite",
+				"tab3Heading": "Ușor și rapid",
+				"tab3Description": "Tehnologia bazată pe cloud nu vă solicită computerul"
 			},
 			"summaryTitle": "Malware-uri și securitate"
 		},
@@ -2684,12 +2684,12 @@
 				"tab5": "Protecție non-stop"
 			},
 			"tabSet2": {
-				"tab1Heading": "ESTE UȘOR DE UTILIZAT",
-				"tab1Description": "Nu vă inducem în eroare cu informații tehnice eronate",
-				"tab2Heading": "ESTE RAPIDĂ",
-				"tab2Description": "Efectuați o verificare completă în 100 de puncte în mai puțin de 5 minute",
-				"tab3Heading": "ESTE SIGURĂ",
-				"tab3Description": "Nu este un scareware și este concepută cu cele mai bune practici"
+				"tab1Heading": "Automatizat",
+				"tab1Description": "Setați scanările programate pentru a regla automat performanțele computerului",
+				"tab2Heading": "Proactiv",
+				"tab2Description": "Asigurați-vă că computerul dvs. funcționează întotdeauna cu performanțe maxime",
+				"tab3Heading": "Eficient",
+				"tab3Description": "Tehnologie inovatoare de ultimă generație"
 			}
 		},
 		"noScanResults": "Pentru a începe procesul de scanare, faceți clic pe butonul SCANARE ȘI REMEDIERE.",
@@ -2906,7 +2906,9 @@
 			"scanRates": "Scanarea noastră evaluează PC-ul dumneavoastră ca: ",
 			"summary": "Rezumat",
 			"foundIssues": "Scanarea noastră a găsită {{issueCount}} probleme",
+			"summaryDetailsMaintain": "Sistemul dvs. este în stare bună! Am găsit câteva oportunități de optimizare. Înregistrați-vă acum pentru a profita și software-ul nostru de ultimă generație vă poate menține computerul funcționând cu performanțe de top.",
 			"summaryDetailsOptimize": "Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
+			"summaryDetailsFixNow": "Am găsit probleme care afectează semnificativ performanțele sistemului dvs. Înregistrați-vă și remediați problemele acum. Apoi, Smart Performance poate scana în mod proactiv sistemul, non-stop, și poate remedia erorile pe măsură ce apar, astfel încât computerul dumneavoastră să aibă întotdeauna performanțe excelente.",
 			"expiredSummaryDetails": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Dacă doriți să reluați caracteristica „Scanare și remediere”, apăsați butonul „Reînnoire și remediere” din partea de jos pentru a reînnoi abonamentul.",
 			"signupRepairButton": "ÎNREGISTRAȚI-VĂ ȘI REMEDIAȚI ACUM",
 			"renewAndFix": "Reînnoire și remediere",
@@ -5429,7 +5431,8 @@
 			"security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
 			"connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate.",
 			"hardwareScan": "Acum puteți obține informații despre starea de sănătate a componentei hardware a sistemului dvs.",
-			"appSearch": "Știați că? Aici puteți căuta caracteristici aplicabile dispozitivului dvs."
+			"appSearch": "Știați că? Aici puteți căuta caracteristici aplicabile dispozitivului dvs.",
+			"productivity": "Doriți să lucrați mai eficient?"
 		}
 	},
 	"appsForYou": {
@@ -5501,7 +5504,7 @@
 				"desc": "Această secțiune vă permite să optimizați automat sau să configurați manual setările AI meeting.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
-					"description": "AI meeting manager acceptă traducerea, interpretarea și dictarea vocală în timp real. De asemenea, poate genera subtitrări pentru videoclipuri.",
+					"description": "AI Meeting Manager furnizează traducerea, interpretarea, dictarea vocală și editorul de note în timp real. De asemenea, poate genera subtitrări pentru videoclipuri.",
 					"download": "DESCĂRCARE",
 					"launch": "LANSARE",
 					"translation": {
@@ -5511,6 +5514,10 @@
 					"voiceToText": {
 						"title": "Voce în text",
 						"description": "Vorbiți natural și funcția Voce în text va realiza tastarea. Scrieți e-mailuri sau documente sau discutați prin chat în aplicația dvs. preferată. Funcția Voce în text traduce în timp ce vorbiți și ia notițe pentru dvs."
+					},
+					"noteEditor": {
+						"title": "Editor de note",
+						"description": "Editorul de note vă ajută să editați note de întâlnire, să corectați textele și să redați înregistrări."
 					},
 					"modalPopUp": {
 						"heading": "Ghid introductiv:",
@@ -5527,6 +5534,12 @@
 							"point3": "Faceți clic pe pictograma AI meeting manager și selectați Voce în text.",
 							"point4": "Pentru a începe, selectați limba dorită, apoi faceți clic pe butonul microfon.",
 							"point5": "Puneți cursorul în aplicația deschisă și începeți să vorbiți."
+						},
+						"noteEditor": {
+							"point1": "Asigurați-vă că pictograma AI Meeting Manager este afișată în zona de notificare Windows.",
+							"point2": "Faceți clic pe pictogramă și alegeți Editor de note.",
+							"point3": "Selectați o notă de întâlnire din listă.",
+							"point4": "Editați nota de întâlnire sau redați înregistrarea."
 						},
 						"closeText": "închidere"
 					}
@@ -5566,9 +5579,14 @@
 			"colorCalibration": {
 				"title": "Calibrarea culorii",
 				"appName": "Aplicația X-rite",
-				"summary": "Panoul ecranului computerului dvs. este calibrat din fabrică cu colorimetre premium Minolta de calibru profesional. Datele de calibrare sunt stocate în cloud și pot fi descărcate pentru a reseta panoul la setările din fabrică. X-rite este preinstalat pentru a gestiona spațiile de culoare.<br>- Implicit (gamă nativă, luminozitate nativă, dar rampă gri calibrată și caracterizarea ecranului stocată în profil). <br>- Profilul implicit este instalat în mod implicit pe unitate. Acest profil este încărcat de Windows la pornire. <br>- Nu este calibrat (Gestionarea culorii este dezactivată. Aceasta înseamnă utilizarea profilului Lenovo implicit.) <br>- sRGB (monitoare de computer) - Adobe RGB (pentru graficienii care intenționează să imprime în CYMK) <br>- BT.709 (video HD) <br>- DCI P3 (utilizat în mod obișnuit în proiecția de filme digitale în SUA)",
+				"descSection1": "Pentru dvs. ca profesionist, un nivel ridicat de precizie a culorilor este esențial în munca creativă. Lenovo oferă o soluție de calibrare a culorilor pentru afișajul computerului dvs. pentru a vă asigura că obțineți cele mai bune performanțe de culoare încă de la început. Un profil de culoare implicit personalizat este creat pentru computerul dvs. utilizând un dispozitiv de calibrare profesional, care asigură imagini afișate de pe cameră pe ecranul computerului cu exactitate și fără distorsiuni ale culorilor.",
+				"descSection2": "Cu ajutorul X-rite Color Assistant preinstalat, puteți schimba profilul de culoare după cum doriți:",
+				"profile1": "Implicit (gamă nativă, luminozitate nativă, dar rampă gri calibrată și caracterizarea ecranului stocată în profil). Acest profil este stocat pe computer și încărcat automat de Windows. ",
+				"profile2": "Nu este calibrat (gestionarea culorii este dezactivată)",
+				"profile3": "sRGB (Roșu Verde Albastru standard pentru monitoare de computer)",
+				"profile4": "Rec. 709 (numai pentru modelele selectate, optimizate pentru videoclipuri HD)",
 				"screenshotTitle": "Capturi de ecran",
-				"cardTitle": "Cum se restaurează profilurile?",
+				"cardTitle": "Cum se restaurează profilurile de culoare?",
 				"cardSummary": "Dacă reinstalați sistemul sau dacă sunt pierdute profilurile de culoare, puteți restaura profilurile de aici:",
 				"learnMore": "Mai multe",
 				"restoreProfileDesc": "Lenovo vă salvează copii de siguranță ale profilurilor de culoare în Lenovo Cloud. Pentru a vă asigura că funcția de calibrare a culorilor funcționează pe computerul dvs., poate fi necesar să restaurați sau să instalați profilurile de culoare în următoarele situații: Dacă profilurile de culoare sunt pierdute sau deteriorate, se va afișa o fereastră pentru a vă reaminti să restaurați profilurile de culoare. Faceți clic pe Da în fereastra afișată și profilurile de culoare vor fi restaurate automat din Lenovo Cloud. Dacă afișajul computerului dvs. este înlocuit de furnizorul de servicii autorizat Lenovo, procedați în felul următor:",
