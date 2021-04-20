@@ -104,7 +104,15 @@ export abstract class CommonExportLogService {
 			let dataFormatted: any;
 			this.currentLogType = logType;
 			const reportFileName = logType.valueOf();
-			const dataPrepared = await this.prepareData();
+
+			const timeoutPromise = new Promise((resolve, reject) => {
+				const timeout = setTimeout(() => {
+					clearTimeout(timeout);
+					reject('Timed out after 10s when tried to prepareData to export log!');
+				}, 10000);
+			});
+
+			const dataPrepared = await Promise.race([this.prepareData(), timeoutPromise]);
 
 			if (this.exportExtensionSelected === ExportLogExtensions.html) {
 				dataFormatted = await this.generateHtmlReport(dataPrepared);
