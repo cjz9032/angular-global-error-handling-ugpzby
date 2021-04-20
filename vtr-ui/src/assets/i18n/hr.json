@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "Inteligentna sigurnost",
 				"readMore": "Pročitajte više",
+				"image": {
+					"title": "Inteligentna sigurnost",
+					"description": "Spojite vaše računalo s tehnologijom inteligentnog očitavanja, štitite svoju privatnost i štedite energiju baterije."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "NAPREDNE POSTAVKE",
 					"hideAdvSettings": "SAKRIJ NAPREDNE POSTAVKE"

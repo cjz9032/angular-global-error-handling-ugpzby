@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "אבטחה חכמה",
 				"readMore": "פרטים נוספים",
+				"image": {
+					"title": "אבטחה חכמה",
+					"description": "שומרת על בטיחות המחשב באמצעות טכנולוגיית חישה חכמה, מגינה על הפרטיות וחוסכת בצריכת החשמל של הסוללה."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "הגדרות מתקדמות",
 					"hideAdvSettings": "הסתרת הגדרות מתקדמות"

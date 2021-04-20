@@ -2177,6 +2177,10 @@
 			"intelligentSecurity": {
 				"title": "インテリジェント・セキュリティー",
 				"readMore": "さらに読む",
+				"image": {
+					"title": "インテリジェント・セキュリティー",
+					"description": "お使いの PC でインテリジェント・センサー技術を使用し、プライバシーを保護し、バッテリーの電力を節約してください。"
+				},
 				"advancedSettings": {
 					"showAdvSettings": "詳細設定",
 					"hideAdvSettings": "詳細設定を非表示にする"

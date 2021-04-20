@@ -2178,6 +2178,10 @@
 			"intelligentSecurity": {
 				"title": "Segurança inteligente",
 				"readMore": "Ler mais",
+				"image": {
+					"title": "Segurança inteligente",
+					"description": "Prepara o seu PC com tecnologia de detecção inteligente, protege sua privacidade e economiza energia da bateria."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "CONFIGURAÇÕES AVANÇADAS",
 					"hideAdvSettings": "OCULTAR CONFIGURAÇÕES AVANÇADAS"

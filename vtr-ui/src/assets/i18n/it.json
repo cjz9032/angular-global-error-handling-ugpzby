@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "Protezione intelligente",
 				"readMore": "Ulteriori informazioni",
+				"image": {
+					"title": "Protezione intelligente",
+					"description": "La tecnologia di rilevamento intelligente aumenta le prestazioni del PC, protegge la privacy e riduce il consumo della batteria."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "IMPOSTAZIONI AVANZATE",
 					"hideAdvSettings": "NASCONDI IMPOSTAZIONI AVANZATE"

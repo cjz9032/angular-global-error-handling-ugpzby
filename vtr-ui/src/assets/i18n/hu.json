@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "Intelligens biztonság",
 				"readMore": "További információ",
+				"image": {
+					"title": "Intelligens biztonság",
+					"description": "Intelligens érzékelési technológiákkal vértezi fel a számítógépet, védi az Ön magánéletét és adatait, valamint takarékosan bánik az akkumulátor töltöttségével."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK",
 					"hideAdvSettings": "SPECIÁLIS BEÁLLÍTÁSOK ELREJTÉSE"

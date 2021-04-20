@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "Älykäs suojaus",
 				"readMore": "Lue lisää",
+				"image": {
+					"title": "Älykäs suojaus",
+					"description": "Tarjoaa tietokoneellesi älykkään tunnistustekniikan, pitää tietosi turvassa ja säästää akkua."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "LISÄASETUKSET",
 					"hideAdvSettings": "PIILOTA LISÄASETUKSET"

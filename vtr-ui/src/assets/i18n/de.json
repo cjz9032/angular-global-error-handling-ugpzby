@@ -2178,6 +2178,10 @@
 			"intelligentSecurity": {
 				"title": "Intelligente Sicherheit",
 				"readMore": "Weiterlesen",
+				"image": {
+					"title": "Intelligente Sicherheit",
+					"description": "Rüstet den PC mit intelligenter Sensorik auf, schützt Ihre Privatsphäre und spart Akkuleistung."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "ERWEITERTE EINSTELLUNGEN",
 					"hideAdvSettings": "ERWEITERTE EINSTELLUNGEN AUSBLENDEN"
