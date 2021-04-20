@@ -13,7 +13,7 @@ export enum ColorCalibrationInstallState {
 	Downloading = 'Downloading',
 	InstallerRunning = 'InstallerRunning',
 	NotFinished = 'NotFinished',
-	Unknow = 'Unknow'
+	Unknown = 'Unknown'
 };
 
 
