@@ -2189,7 +2189,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "User presence sensing",
-					"tooltip": "Click here to reset human presence detection settings."
+					"tooltip": "Click here to reset human presence detection settings.",
+					"sensorBroken": "Sensor has an issue. This feature is unavailable.",
+					"biosPriority": "You have configured this option in BIOS and cannot change it through Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Zero touch login",

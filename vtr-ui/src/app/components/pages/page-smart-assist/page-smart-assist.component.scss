@@ -26,6 +26,11 @@ $fontsize_xs: 1.4rem;
 			border: 0.1rem solid $note_border;
 			width: 100%;
 			border-radius: $border_radius;
+			&.error-message {
+				p {
+					color: $red_light;
+				}
+			}
 			p {
 				font-size: $fontsize_xs;
 				font-weight: $weight_light;

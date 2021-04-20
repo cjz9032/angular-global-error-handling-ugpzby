@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "사용자 존재 감지",
-					"tooltip": "사용자의 존재 감지 설정을 다시 설정하려면, 여기를 클릭하십시오."
+					"tooltip": "사용자의 존재 감지 설정을 다시 설정하려면, 여기를 클릭하십시오.",
+					"sensorBroken": "센서에 문제가 있습니다. 이 기능을 사용할 수 없습니다.",
+                    "biosPriority": "BIOS에서 이 옵션을 구성했지만 Lenovo Vantage를 통해 이를 변경할 수 없습니다."
 				},
 				"zeroTouchLogin": {
 					"title": "제로 터치 로그인",

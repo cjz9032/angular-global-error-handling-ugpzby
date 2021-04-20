@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Närvaroavkänning",
-					"tooltip": "Klicka här för att återställa inställningarna för närvaroavkänning."
+					"tooltip": "Klicka här för att återställa inställningarna för närvaroavkänning.",
+					"sensorBroken": "Ett sensorproblem har inträffat. Funktionen är inte tillgänglig.",
+                    "biosPriority": "Du har konfigurerat detta alternativ i BIOS och kan inte ändra det via Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Beröringsfri inloggning",

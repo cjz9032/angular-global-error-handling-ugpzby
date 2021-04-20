@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Rilevamento presenza utente",
-					"tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevamento presenza umana."
+					"tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevamento presenza umana.",
+					"sensorBroken": "Il sensore ha un problema. Questa funzione non è disponibile.",
+                    "biosPriority": "Questa opzione è stata configurata nel BIOS e non può essere modificata tramite Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Accesso automatico",

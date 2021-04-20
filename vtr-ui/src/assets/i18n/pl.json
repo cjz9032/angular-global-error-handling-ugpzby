@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Wykrywanie obecności użytkownika",
-					"tooltip": "Kliknij tutaj, aby zresetować ustawienia wykrywania obecności człowieka."
+					"tooltip": "Kliknij tutaj, aby zresetować ustawienia wykrywania obecności człowieka.",
+					"sensorBroken": "Problem z czujnikiem. Ta funkcja nie jest dostępna.",
+                    "biosPriority": "Opcję skonfigurowano w systemie BIOS i nie można jej zmienić w Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Logowanie bez dotyku",

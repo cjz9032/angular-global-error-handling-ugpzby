@@ -2187,7 +2187,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "ユーザー存在センサー",
-					"tooltip": "人物存在検知設定をリセットするには、ここをクリックしてください。"
+					"tooltip": "人物存在検知設定をリセットするには、ここをクリックしてください。",
+					"sensorBroken": "センサーに問題があります。この機能は使用できません。",
+                    "biosPriority": "BIOS でこのオプションを構成しましたが、Lenovo Vantage から変更することはできません。"
 				},
 				"zeroTouchLogin": {
 					"title": "ゼロ・タッチ・ログイン",
