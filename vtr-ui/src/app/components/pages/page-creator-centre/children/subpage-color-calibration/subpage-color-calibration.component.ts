@@ -1,5 +1,4 @@
-import { ElementRef, HostListener } from '@angular/core';
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { ElementRef, HostListener, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@lenovo/material/dialog';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { TranslateService } from '@ngx-translate/core';
@@ -7,6 +6,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { ColorCalibrationEnum, ColorCalibrationInstallState } from 'src/app/enums/color-calibration.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ColorCalibrationService } from 'src/app/services/smb/creator-centre/color-calibration.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
@@ -19,7 +19,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 export class SubpageColorCalibrationComponent implements OnInit {
 
 	ColorCalibrationInstallState = ColorCalibrationInstallState;
-	installStatus = ColorCalibrationInstallState.Unknow;
+	installStatus = ColorCalibrationInstallState.Unknown;
 	isOnline: boolean;
 	errorMessage = undefined;
 	clickedScreenshot: string;
@@ -39,8 +39,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 	{
 		url: 'assets/images/smb/colorcalibration/screenshot3.png',
 		metricsItem: 'ColorCalibrationScreenshot3',
-	}
-	];
+	}];
 
 
 	@ViewChild('storeProfileDlg', { static: true }) storeProfileDlgView: TemplateRef<any>;
@@ -53,13 +52,14 @@ export class SubpageColorCalibrationComponent implements OnInit {
 		private shellService: VantageShellService,
 		private colorCalibrationService: ColorCalibrationService,
 		private commonService: CommonService,
+		private logger: LoggerService,
 		private translateService: TranslateService) {
 		this.isOnline = this.commonService.isOnline;
 		this.installStarted = false;
 	}
 
 	ngOnInit(): void {
-		this.installStatus = ColorCalibrationInstallState.Unknow;
+		this.installStatus = ColorCalibrationInstallState.Unknown;
 		this.commonService.notification.subscribe(
 			(response: AppNotification) => {
 				this.onNotification(response);
@@ -150,7 +150,8 @@ export class SubpageColorCalibrationComponent implements OnInit {
 			case ColorCalibrationInstallState.InstallDone:
 				this.isSupportUriProtocol().then(async (support) => {
 					if (support) {
-						//WinRT.launchUri('lenovo-color-calibration:vantage');
+						WinRT.launchUri('xrite-color-assistant:');
+						this.logger.info('Launch X-rite by protocol');
 					} else {
 						// If color calibration does not support launch by URL protocol, try to launch it by GCP
 						const launchPath = await this.shellService.getSystemUpdate().getLaunchPath(
@@ -160,6 +161,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 							const paths = launchPath.split('|');
 							for (const path of paths) {
 								const result = await this.shellService.getSystemUpdate().launchApp(path);
+								this.logger.info(`Launch X-rite by path: ${path} result: ${result}`);
 								if (result) {
 									break;
 								}
@@ -177,12 +179,27 @@ export class SubpageColorCalibrationComponent implements OnInit {
 				}
 				break;
 		}
-
 	}
 
 	private isSupportUriProtocol() {
-		return new Promise((resovle) => {
-			resovle(false);
+		return new Promise((resolve) => {
+			const regUtil = this.shellService.getRegistryUtil();
+			if (regUtil) {
+				const regPath = 'HKEY_CLASSES_ROOT\\xrite-color-assistant\\shell\\open\\command';
+				regUtil.queryValue(regPath).then((val) => {
+					if (!val || (val.keyList || []).length === 0) {
+						resolve(false);
+					} else {
+						resolve(true);
+					}
+				}).catch((ex) => {
+					resolve(false);
+					this.logger.info('color calibration query registry failed', ex);
+				});
+			} else {
+				resolve(false);
+				this.logger.info('color calibration get registry failed');
+			}
 		});
 	}
 
@@ -190,8 +207,8 @@ export class SubpageColorCalibrationComponent implements OnInit {
 		if (status === ColorCalibrationInstallState.InstallBefore
 			|| status === ColorCalibrationInstallState.InstallDone) {
 			this.buttonLabel = this.translateService.instant('appsForYou.appDetails.installButton.launch');
-			this.buttonMetricsItem = 'button.lanuch';
-			this.buttonLinkId = 'color-calibration-button-lanuch';
+			this.buttonMetricsItem = 'button.launch';
+			this.buttonLinkId = 'color-calibration-button-launch';
 		}
 		else if (status === ColorCalibrationInstallState.Downloading) {
 			this.buttonLabel = this.translateService.instant('appsForYou.appDetails.installButton.downloading');
@@ -212,7 +229,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 
 	checkButtonEnable(status) {
 		this.buttonDisabled = this.isXRiteInstalling(status)
-			|| (!this.isOnline && !this.isXRiteIntalled(status));
+			|| (!this.isOnline && !this.isXRiteInstalled(status));
 	}
 
 	isXRiteInstalling(status) {
@@ -220,7 +237,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 			|| status === ColorCalibrationInstallState.InstallerRunning;
 	}
 
-	isXRiteIntalled(status) {
+	isXRiteInstalled(status) {
 		return status === ColorCalibrationInstallState.InstallBefore
 			|| status === ColorCalibrationInstallState.InstallDone;
 	}
@@ -269,7 +286,6 @@ export class SubpageColorCalibrationComponent implements OnInit {
 				true
 			);
 		}
-		
 	}
 
 	@HostListener('document:keydown.pagedown')
