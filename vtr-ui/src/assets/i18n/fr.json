@@ -5695,7 +5695,7 @@
 			},
 			"colorCalibration": {
 				"title": "Étalonnage des couleurs",
-				"appName": "Application X-rite",
+				"appName": "X-rite color assistant",
 				"descSection1": "En tant que professionnel, un haut niveau de précision des couleurs est crucial et essentiel pour votre travail de création. Lenovo propose une solution d'étalonnage des couleurs pour l'affichage de votre ordinateur afin de vous garantir les meilleures performances en couleur, directement accessibles. Un profil de couleur par défaut personnalisé est créé pour votre ordinateur à l'aide d'un périphérique d'étalonnage professionnel, ce qui garantit que les images affichées de la caméra vers l'affichage de l'ordinateur sont précises et sans distorsion des couleurs.",
 				"descSection2": "Grâce à l'assistant de couleur X-rite préinstallé, vous pouvez changer le profil de couleur comme vous le souhaitez :",
 				"profile1": "Par défaut (gamut natif, luminosité native mais rampe de gris calibrée et caractérisation de l'affichage stockées dans le profil). Ce profil est stocké sur l'ordinateur et chargé automatiquement par Windows. ",

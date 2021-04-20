@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Farvekalibrering",
-				"appName": "X-rite-program",
+				"appName": "X-rite color assistant",
 				"descSection1": "Som professionel er en høj grad af farvenøjagtighed afgørende for dit kreative arbejde. Lenovo tilbyder en farvekalibreringsløsning til din computerskærm, så du kan få de bedste farveresultater fra det øjeblik, du tager enheden i brug. Din computer har en tilpasset standardfarveprofil, der er oprettet ved hjælp af en professionel kalibreringsenhed. Den sikrer, at de billeder, der vises fra kameraet på computerskærmen, er præcise og uden farveforvrængning.",
 				"descSection2": "Med den forudinstallerede X-rite Color Assistant kan du skifte farveprofilen efter behov:",
 				"profile1": "Standard (oprindelig farveskala og oprindelig lysstyrke, men med kalibreret gråskala og skærmkarakteristik gemt i profilen). Denne profil er gemt på computeren, og den indlæses automatisk af Windows. ",

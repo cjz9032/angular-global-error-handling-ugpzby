@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Kalibracija boja",
-				"appName": "Aplikacija X-rite",
+				"appName": "X-rite color assistant",
 				"descSection1": "Kao profesionalcu, visoka razina točnosti boja presudna je i važna za vaš kreativni rad. Lenovo nudi rješenje za kalibraciju boja za zaslon vašeg računala kako biste bili sigurni da ćete od samog početka korištenja imati najbolje performanse boja. Prilagođeni zadani profil boje izrađuje se za vaše računalo pomoću profesionalnog uređaja za kalibraciju, što osigurava da su slike prikazane s kamere na zaslon računala točne i bez izobličenja u reprodukciji boje.",
 				"descSection2": "Pomoću unaprijed instaliranog pomoćnika za boje X-rite možete promijeniti profil boje po želji:",
 				"profile1": "Zadano (nativni gamut, nativna svjetlina, ali kalibrirani raspon nijansi sive boje i karakterizacija zaslona pohranjeni su u profilu). Ovaj se profil pohranjuje na računalo i automatski ga učitava sustav Windows. ",

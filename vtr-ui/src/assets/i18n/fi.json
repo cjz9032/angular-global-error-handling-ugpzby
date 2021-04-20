@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Värikalibrointi",
-				"appName": "X-rite-sovellus",
+				"appName": "X-rite color assistant",
 				"descSection1": "Ammattilaisena huippuluokan väritarkkuus on välttämätöntä luovan työsi kannalta. Lenovo tarjoaa tietokoneesi näytölle värikalibrointiratkaisun varmistaakseen, että voit nauttia tarkoista väreistä heti ensimmäisellä käyttökerralla. Tietokoneellesi luodaan mukautettu oletusarvoinen väriprofiili käyttämällä ammattitason kalibrointilaitetta. Tämä varmistaa, että kamerasta tietokoneen näytöllä esitetyt kuvat ovat tarkkoja ja etteivät niiden värit vääristy.",
 				"descSection2": "Valmiiksi asennetun X-rite-väriavustajan avulla voit vaihtaa väriprofiilia halutessasi:",
 				"profile1": "Oletus (oletusarvoinen väriasteikko, oletusarvoinen kirkkaus, mutta kalibroitu harmaa-asteikko ja näytön ominaisuudet tallennettu profiiliin). Tämä profiili tallennetaan tietokoneelle, ja Windows lataa sen automaattisesti. ",

@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Renk ayarı",
-				"appName": "X-rite uygulaması",
+				"appName": "X-rite color assistant",
 				"descSection1": "Bir profesyonel olarak, yüksek düzeyde renk doğruluğu yaratıcı çalışmanız için kritik ve önemlidir. Lenovo, kutudan çıktığı anda en iyi renk performansını elde etmenizi sağlamak üzere bilgisayar ekranınız için bir renk ayarı çözümü sunar. Profesyonel ayar cihazı kullanılarak bilgisayarınız için özelleştirilmiş bir varsayılan renk profili oluşturulur; bu, fotoğraf makinesinden bilgisayar ekranına aktarılan görüntülerin doğru ve renk bozulması olmadan görüntülenmesini sağlar.",
 				"descSection2": "Önceden yüklenmiş X-rite renk asistanı ile renk profilini istediğiniz gibi değiştirebilirsiniz:",
 				"profile1": "Varsayılan (profilde depolanan yerel Gam, doğal parlaklık ancak ayarlanmış gri rampa ve ekran karakterizasyonu). Bu profil bilgisayarda saklanır ve Windows tarafından otomatik olarak yüklenir. ",
