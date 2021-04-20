@@ -250,6 +250,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				if (container) {
 					self.renderer.addClass(container, 'mat-customize');
 				}
+				const cdkBackdrop = document.querySelector('.cdk-overlay-backdrop');
+				if (cdkBackdrop) {
+					self.renderer.addClass(cdkBackdrop, 'cdk-overlay-backdrop-showing');
+				}
 			}, 0);
 			return original.call(this, template, config);
 		};

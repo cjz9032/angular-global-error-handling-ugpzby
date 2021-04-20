@@ -572,15 +572,6 @@ button:focus {
 	}
 }
 
-.cdk-overlay-backdrop {
-	@media #{$white-on-black} {
-		opacity: 0.6;
-	}
-	@media #{$black-on-white} {
-		opacity: 0.6;
-	}
-}
-
 .cdk-high-contrast-active {
 	.mat-standard-chip {
 		&.vtr-material-tile {
