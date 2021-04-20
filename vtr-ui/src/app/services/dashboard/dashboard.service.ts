@@ -588,7 +588,7 @@ export class DashboardService {
 	}
 
 	public async isSmartPerformanceSubscripted(): Promise<boolean> {
-		await this.spService.getSubscriptionDataDetail(null);
+		await this.spService.getSubscriptionDataDetail();
 		return this.spService.subscriptionState === SubscriptionState.Active;
 	}
 

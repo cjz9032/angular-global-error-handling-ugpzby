@@ -7,14 +7,12 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-import { SupportService } from 'src/app/services/support/support.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { EnumSmartPerformance, ScanningState, SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -27,37 +25,37 @@ import { cloneDeep } from 'lodash';
 	styleUrls: ['./page-smart-performance.component.scss'],
 })
 export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
+	public issueCount = 0;
+	public scanResult: SPHistoryScanResultsDateTime;
+	public rating = 10;
+	public leftAnimator = '0%';
+	public hasSubscribedScanCompleted = false;
+	public isOnline = true;
+
+
 	private notificationSub: Subscription;
 	private protocalListener: Subscription;
+	private subscription: Subscription;
+	private subscriptionListener: Subscription;
+	private metrics: any;
+	private scanTimer: any;
+
 	eventName = 'SmartPerformance.ScheduleEventStarted';
 	retryCount = 0;
-
-	public hasSubscribedScanCompleted = false;
 	currentSubItemCategory: any = {};
 	isScheduleScanRunning = false;
 	isScanAlreadyStarted = false;
 	ScanningState = ScanningState;
 	SubscriptionState = SubscriptionState;
 
-	public issueCount = 0;
-	public scanResult: SPHistoryScanResultsDateTime;
-
-	public rating = 10;
-	public leftAnimator = '0%';
-
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
 	isOldVersion = false;
-	private subscription: Subscription;
 	days: any = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-	private metrics: any;
-	public isOnline = true;
-	private scanTimer: any;
 
 	constructor(
 		private systemEventService: SystemEventService,
 		private translate: TranslateService,
-		private localInfoService: LocalInfoService,
 		private commonService: CommonService,
 		public smartPerformanceService: SmartPerformanceService,
 		public smartPerformanceDialogService: SmartPerformanceDialogService,
@@ -65,7 +63,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		public shellServices: VantageShellService,
 		public metricsService: MetricService,
 		private localCacheService: LocalCacheService,
-		private supportService: SupportService,
 		private formatLocaleDate: FormatLocaleDatePipe,
 		private activatedRoute: ActivatedRoute
 	) {
@@ -100,14 +97,14 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			);
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
 			this.smartPerformanceService.unregisterScanSchedule(
-				EnumSmartPerformance.SCHEDULESCANANDFIX
+				EnumSmartPerformance.ScheduleScanAndFix
 			);
 		}
 		const isFreePCScanRun = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsFreePCScanRun
 		);
 
-		this.smartPerformanceService.getSubscriptionDataDetail((state) => {
+		this.subscriptionListener = this.smartPerformanceService.subscriptionObserver.subscribe((state) => {
 			if (state === SubscriptionState.Active) {
 				this.writeSmartPerformanceActivity('True', 'True', 'Active');
 			}
@@ -122,6 +119,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				}
 			}
 		});
+
+		this.smartPerformanceService.getSubscriptionDataDetail();
 
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.checkReadiness();
@@ -247,6 +246,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			this.protocalListener.unsubscribe();
 		}
 
+		this.subscriptionListener?.unsubscribe();
+
 		clearInterval(this.scanTimer);
 	}
 
@@ -365,9 +366,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
-				this.smartPerformanceService.subscriptionState = this.localCacheService.getLocalCacheValue(
-					LocalStorageKey.SmartPerformanceSubscriptionState
-				);
 				if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
 					res = await this.smartPerformanceService.launchScanAndFix();
 				} else {
@@ -521,10 +519,10 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 
 		this.smartPerformanceService.subscriptionState = subscriptionSate;
 		if (subscriptionSate === SubscriptionState.Active) {
-			this.smartPerformanceService.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(EnumSmartPerformance.ScheduleScan);
 		} else {
 			this.smartPerformanceService.unregisterScanSchedule(
-				EnumSmartPerformance.SCHEDULESCANANDFIX
+				EnumSmartPerformance.ScheduleScanAndFix
 			);
 		}
 	}

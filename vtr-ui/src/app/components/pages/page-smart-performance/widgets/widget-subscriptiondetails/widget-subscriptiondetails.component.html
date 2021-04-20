@@ -47,7 +47,7 @@
 					src="assets/icons/refresh.svg"
 					alt=""
 					class="refresh-icon"
-					(click)="isFirstLoad = true; getSubscriptionDetails()">
+					(click)="isFirstLoad = true; showCurrentSubscriptionDetails()">
 			</div>
 			<div *ngIf="isLoading && !strStatus">
 				<div class="container"
