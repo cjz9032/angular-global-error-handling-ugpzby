@@ -5,7 +5,6 @@ import { SubpageScanningComponent } from './subpage-scanning.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SPCategory, SPSubCategory } from 'src/app/enums/smart-performance.enum';
 
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { TranslateStore } from '@ngx-translate/core';
@@ -51,28 +50,24 @@ describe('SubpageScanningComponent', () => {
 
 	it('should create', () => {
 		shellService = TestBed.inject(VantageShellService);
-		spyOn(component, 'GetCurrentScanninRollingTexts');
+		spyOn(component, 'GetCurrentScanningRollingTexts');
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
 
 	it('should call updateScanResponse -category - 100 & subcategory -101', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		spyOn(component, 'GetCurrentScanninRollingTexts');
+		spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
 		event.payload.status.category = 100;
 		event.payload.status.subcategory = 101;
 		component.updateScanResponse(event);
-		expect(component.activegroup).toEqual('Tune up performance');
+		expect(component.activeGroup).toEqual('Tune up performance');
 	});
 
 	it('should call updateScanResponse -category - 100 & subcategory -102', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -83,9 +78,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 100 & subcategory -103', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -96,9 +89,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 100 & subcategory -104', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -109,9 +100,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 100 & subcategory -105', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -122,22 +111,18 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 200 & subcategory - 201', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		spyOn(component, 'GetCurrentScanninRollingTexts');
+		spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
 		event.payload.status.category = 200;
 		event.payload.status.subcategory = 201;
 		component.updateScanResponse(event);
-		expect(component.activegroup).toEqual('Internet performance');
+		expect(component.activeGroup).toEqual('Internet performance');
 	});
 
 	it('should call updateScanResponse -category - 200 & subcategory - 202', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -148,9 +133,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 200 & subcategory - 203', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -161,9 +144,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 200 & subcategory - 204', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -174,9 +155,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 200 & subcategory - 205', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -187,22 +166,18 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 300 -& subcategory - 301', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		spyOn(component, 'GetCurrentScanninRollingTexts');
+		spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
 		event.payload.status.category = 300;
 		event.payload.status.subcategory = 301;
 		component.updateScanResponse(event);
-		expect(component.activegroup).toEqual('Malware & Security');
+		expect(component.activeGroup).toEqual('Malware & Security');
 	});
 
 	it('should call updateScanResponse -category - 300 & subcategory - 302', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -213,9 +188,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 300 & subcategory - 303', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -226,9 +199,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 300 & subcategory - 304', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -239,9 +210,7 @@ describe('SubpageScanningComponent', () => {
 	});
 
 	it('should call updateScanResponse -category - 300 & subcategory - 305', () => {
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
-		const spy = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spy = spyOn(component, 'GetCurrentScanningRollingTexts');
 		spyOn(component, 'toggle');
 		fixture.detectChanges();
 		const event = { ...responseData };
@@ -251,13 +220,13 @@ describe('SubpageScanningComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call GetCurrentScanninRollingTexts when passing value', () => {
-		component.activegroup = 'Tune up performance';
-		component.GetCurrentScanninRollingTexts('Look for junk in 85 locations');
+	it('should call GetCurrentScanningRollingTexts when passing value', () => {
+		component.activeGroup = 'Tune up performance';
+		component.GetCurrentScanningRollingTexts('Look for junk in 85 locations');
 		const spyToggle = spyOn(component, 'toggle');
-		const spyGetCurrentScanninRollingTexts = spyOn(component, 'GetCurrentScanninRollingTexts');
+		const spyGetCurrentScanningRollingTexts = spyOn(component, 'GetCurrentScanningRollingTexts');
 		fixture.detectChanges();
-		expect(spyGetCurrentScanninRollingTexts).toHaveBeenCalled();
+		expect(spyGetCurrentScanningRollingTexts).toHaveBeenCalled();
 	});
 
 	it('should open cancel scan modal', () => {
@@ -278,10 +247,8 @@ describe('SubpageScanningComponent', () => {
 
 	it('should check scanData percentage', () => {
 		component.scanData = { ...responseData.payload };
-		component.spSubCategoryenum = SPSubCategory;
-		component.spCategoryenum = SPCategory;
 		spyOn(component, 'toggle');
-		spyOn(component, 'GetCurrentScanninRollingTexts');
+		spyOn(component, 'GetCurrentScanningRollingTexts');
 		component.updateScanResponse(responseData);
 		expect(component.isLoading).toBe(false);
 	});

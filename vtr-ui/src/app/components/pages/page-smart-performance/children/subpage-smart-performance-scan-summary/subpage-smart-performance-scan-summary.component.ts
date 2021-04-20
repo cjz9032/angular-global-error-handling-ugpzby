@@ -131,7 +131,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	customDate: any;
 	@Output() backToScan = new EventEmitter();
 	@Output() backToNonSubscriber = new EventEmitter();
-	// @Output() sendScanData = new EventEmitter();
 	@Output() sendScanData: EventEmitter<any> = new EventEmitter();
 	// scan settings
 	scheduleTab;
@@ -161,7 +160,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate(EnumSmartPerformance.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en'),
+			EndDate: formatDate(EnumSmartPerformance.ScheduleScanEndDate, 'yyyy/MM/dd', 'en'),
 		},
 	];
 	SPHeaderImageType = SPHeaderImageType;
@@ -303,7 +302,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 			this.tabIndex = value;
 			this.logger.info('scanSummaryTime.tabIndex', this.tabIndex);
 			if (value === 0) {
-				// this.yearsList = [];
 				const d = new Date();
 				this.currentYear = d.getFullYear();
 				this.lastYear = d.getFullYear() - 1;
@@ -312,19 +310,10 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 				const prevYear = new Date(this.lastYear, month, day);
 				const yearObj = this.getYearObj(prevYear, d);
 				if (yearObj) {
-					// this.yearsList.push(yearObj);
 					this.annualYear = yearObj.displayName;
 					this.getHistory(yearObj.startDate, yearObj.endDate, true);
 				}
 			}
-			/* Quarterly option is hidden for current 3.3 release */
-			// if (value === 1) {
-			// 	this.quarterlyMonth = this.quarterlyMenu[0];
-			// 	this.getHistory(
-			// 		this.quarterlyMonth.startDate,
-			// 		this.quarterlyMonth.endDate
-			// 	);
-			// }
 			if (value === 1) {
 				this.fromDate = this.calendar.getToday();
 				this.toDate = this.calendar.getToday();
@@ -487,12 +476,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		};
 	}
 	getYearObj(prevDate, currentDate) {
-		// const year = moment().add(yearCount, 'year');
-		// return {
-		// 	displayName: year.format('YYYY'),
-		// 	startDate: year.startOf('year').format('YYYY-MM-DD HH:mm:ss'),
-		// 	endDate: year.endOf('year').format('YYYY-MM-DD HH:mm:ss')
-		// };
 		return {
 			displayName: moment(prevDate).format('YYYY') + '-' + moment(currentDate).format('YYYY'),
 			startDate: moment(prevDate).format('YYYY-MM-DD HH:mm:ss'),
@@ -514,7 +497,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 			const scanRunTime = response.scanruntime;
 			const now = moment().format('YYYY-MM-DD HH:mm:ss');
 			const fiveMinutesFromRecentScan = moment(scanRunTime)
-				.add(EnumSmartPerformance.SUMMARYWAITINGTIME, 'm')
+				.add(EnumSmartPerformance.SummaryWaitingTime, 'm')
 				.format('YYYY-MM-DD HH:mm:ss');
 
 			if (now < fiveMinutesFromRecentScan) {

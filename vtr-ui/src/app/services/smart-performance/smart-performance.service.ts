@@ -269,7 +269,7 @@ export class SmartPerformanceService {
 			const priceData = (await this.httpClient.get(url).toPromise()) as any;
 			if (priceData && priceData.data) {
 				const yearlyPrices = priceData.data.filter(
-					(item) => item.code === SPPriceCode.YEAR
+					(item) => item.code === SPPriceCode.Year
 				);
 				const yearlyPriceData: SPYearPrice = yearlyPrices[0];
 				this.setLocalPriceData(yearlyPriceData, localInfo.GEO);
@@ -346,9 +346,9 @@ export class SmartPerformanceService {
 		this.subscriptionObserver.next(this.subscriptionState);
 
 		if (this.subscriptionState === SubscriptionState.Active) {
-			this.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCAN);
+			this.unregisterScanSchedule(EnumSmartPerformance.ScheduleScan);
 		} else {
-			this.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCANANDFIX);
+			this.unregisterScanSchedule(EnumSmartPerformance.ScheduleScanAndFix);
 		}
 		return subscriptionData;
 	}

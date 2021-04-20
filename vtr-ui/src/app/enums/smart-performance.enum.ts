@@ -1,53 +1,54 @@
 export enum SPCategory {
-	TUNEUPPERFORMANCE = 'Tune up performance',
-	INTERNETPERFORMANCE = 'Internet performance',
-	MALWARESECURITY = 'Malware & Security',
+	TuneUpPerformance = 'Tune up performance',
+	InternetPerformance = 'Internet performance',
+	MalwareSecurity = 'Malware & Security',
 }
 
 export enum SPSubCategory {
-	HUNDEREAD = 100,
-	HUNDEREADANDONE = 101,
-	HUNDEREADANDTWO = 102,
-	HUNDEREADANDTHREE = 103,
-	HUNDEREADANDFOUR = 104,
-	HUNDEREADANDFIVE = 105,
-	TWOHUNDEREAD = 200,
-	TWOHUNDEREADANDONE = 201,
-	TWOHUNDEREADANDTWO = 202,
-	TWOHUNDEREADANDTHREE = 203,
-	TWOHUNDEREADANDFOUR = 204,
-	TWOHUNDEREADANDFIVE = 205,
-	THREEHUNDEREAD = 300,
-	THREEHUNDEREADANDONE = 301,
-	THREEHUNDEREADANDTWO = 302,
-	THREEHUNDEREADANDTHREE = 303,
-	THREEHUNDEREADANDFOUR = 304,
-	THREEHUNDEREADANDFIVE = 305,
+	TunePC = 100,
+	TunePCAccumulateJunk = 101,
+	TunePCUsabilityIssues = 102,
+	TunePCWindowsSettings = 103,
+	TunePCSystemErrors = 104,
+	TunePCRegistryErrors = 105,
+	Boost = 200,
+	BoostEJunk = 201,
+	BoostNetworkSettings = 202,
+	BoostBrowserSettings = 203,
+	BoostBrowserSecurity = 204,
+	BoostWiFiPerformance = 205,
+	Malware = 300,
+	MalwareSan = 301,
+	MalwareZeroDayInfections = 302,
+	MalwareErrantPrograms = 303,
+	MalwareAnnoyingAdware = 304,
+	MalwareSecuritySettings = 305,
 }
+
 export enum EnumScanFrequency {
-	ONCEAMONTH = 'Once a month',
+	OnceAMonth = 'Once a month',
 }
 export enum EnumSmartPerformance {
-	SCHEDULESCANENDDATE = '2020/07/27',
-	SUMMARYWAITINGTIME = 5,
-	OLDSCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
-	OLDSCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
-	SCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.SScan',
-	SCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.SScanAndFix',
+	ScheduleScanEndDate = '2020/07/27',
+	SummaryWaitingTime = 5,
+	OldScheduleScan = 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
+	OldScheduleScanAndFix = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
+	ScheduleScan = 'Lenovo.Vantage.SmartPerformance.SScan',
+	ScheduleScanAndFix = 'Lenovo.Vantage.SmartPerformance.SScanAndFix',
 }
 export enum PaymentPage {
-	APPLICATIONNAME = 'COMPANION',
-	SMARTPERFORMANCE = '&smartperformance=',
-	SERIALQUERYPARAMETER = 'serial=',
-	MTQUERYPARAMETER = '&mt=',
-	SOURCEQUERYPARAMETER = '&source=',
-	SLASH = '/',
-	TRUE = 'true',
-	ORDERWAITINGTIME = 1.5, // MINUTES,
+	ApplicationName = 'COMPANION',
+	SmartPerformance = '&smartperformance=',
+	SerialQueryParameter = 'serial=',
+	MTQueryParameter = '&mt=',
+	SourceQueryParameter = '&source=',
+	Slash = '/',
+	True = 'true',
+	OrderWaitingTime = 1.5, // MINUTES,
 }
 export enum SpSubscriptionDetails {
-	MONTH = 31,
-	TWOMONTHS = 60,
+	Month = 31,
+	TwoMonths = 60,
 }
 
 export enum SPHeaderImageType {
@@ -71,10 +72,10 @@ export const actualDays: any = [
 export const actualMeridiem = ['AM', 'PM'];
 
 export enum SPPriceCode {
-	YEAR = '5WS0X58671',
-	TWOYEAR = '5WS0X58670',
-	THREEYEAR = '5WS0X58672',
-	FOURYEAR = '5WS0X58669',
+	Year = '5WS0X58671',
+	TwoYear = '5WS0X58670',
+	ThreeYear = '5WS0X58672',
+	FourYear = '5WS0X58669',
 }
 
 export enum ScanningState {

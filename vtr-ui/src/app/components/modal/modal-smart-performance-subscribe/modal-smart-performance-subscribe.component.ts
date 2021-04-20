@@ -39,7 +39,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	closeModal() {
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		const intervalTime = moment(currentTime)
-			.add(PaymentPage.ORDERWAITINGTIME, 'm')
+			.add(PaymentPage.OrderWaitingTime, 'm')
 			.format('YYYY-MM-DD HH:mm:ss');
 		this.smartPerformanceService.modalStatus.initiatedTime = intervalTime;
 		this.smartPerformanceService.modalStatus.isGettingStatus = true;

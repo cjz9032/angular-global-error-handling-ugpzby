@@ -97,7 +97,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			);
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
 			this.smartPerformanceService.unregisterScanSchedule(
-				EnumSmartPerformance.SCHEDULESCANANDFIX
+				EnumSmartPerformance.ScheduleScanAndFix
 			);
 		}
 		const isFreePCScanRun = this.localCacheService.getLocalCacheValue(
@@ -519,10 +519,10 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 
 		this.smartPerformanceService.subscriptionState = subscriptionSate;
 		if (subscriptionSate === SubscriptionState.Active) {
-			this.smartPerformanceService.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(EnumSmartPerformance.ScheduleScan);
 		} else {
 			this.smartPerformanceService.unregisterScanSchedule(
-				EnumSmartPerformance.SCHEDULESCANANDFIX
+				EnumSmartPerformance.ScheduleScanAndFix
 			);
 		}
 	}

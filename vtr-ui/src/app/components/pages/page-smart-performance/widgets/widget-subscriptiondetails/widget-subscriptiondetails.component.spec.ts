@@ -97,12 +97,12 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 			Promise.resolve({ initiatedTime: '08:30', isOpened: true })
 		);
 		smartPerformanceService.subscriptionState = SubscriptionState.Active;
-		await component.initSubscripionDetails();
+		await component.initSubscriptionDetails();
 		fixture.detectChanges();
 		expect(component.strStatus).toEqual('PROCESSING');
 	});
 
-	it('should create Widget Subscriptiondetails Component - settimeout', fakeAsync(() => {
+	it('should create Widget SubscriptionDetails Component - settimeout', fakeAsync(() => {
 		const res = {};
 		commonService = TestBed.inject(CommonService);
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
@@ -151,7 +151,7 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 	});
 
 	it('should get subscription details - settimeout else case', (done) => {
-		component.spFrstRunStatus = true;
+		component.spFirstRunStatus = true;
 		component.setTimeOutCallForSubDetails();
 		fixture.detectChanges();
 		expect(component.isLoading).toBe(false);

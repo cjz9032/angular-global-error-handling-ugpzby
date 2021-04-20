@@ -32,10 +32,10 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 	myDate = new Date();
 	currentTime: string;
 	intervalTime: string;
-	spFrstRunStatus: boolean;
+	spFirstRunStatus: boolean;
 	tempHide = false;
 	expiredMessage: any;
-	subScriptionListener: Subscription;
+	subscriptionListener: Subscription;
 	modelListener: Subscription;
 	public today = new Date();
 	public subscriptionDate: any;
@@ -57,47 +57,47 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 	public localSubscriptionDetails = {
 		UUID: uuid(),
 		startDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-		endDate: formatDate(EnumSmartPerformance.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en'),
+		endDate: formatDate(EnumSmartPerformance.ScheduleScanEndDate, 'yyyy/MM/dd', 'en'),
 	};
 
 	ngOnInit() {
 		this.isFirstLoad = true;
-		this.spFrstRunStatus = this.localCacheService.getLocalCacheValue(
+		this.spFirstRunStatus = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsSmartPerformanceFirstRun
 		);
 
 		this.modelListener = this.smartPerformanceService.scanningStopped.subscribe(() => {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
-			this.spFrstRunStatus = false;
+			this.spFirstRunStatus = false;
 			this.smartPerformanceService.getSubscriptionDataDetail();
 		});
 
-		this.subScriptionListener = this.smartPerformanceService.subscriptionObserver.subscribe(
+		this.subscriptionListener = this.smartPerformanceService.subscriptionObserver.subscribe(
 			(state) => {
-				this.proccessSubscriptionDetail(state);
+				this.processSubscriptionDetail(state);
 			}
 		);
 
-		if (this.spFrstRunStatus) {
+		if (this.spFirstRunStatus) {
 			this.showCurrentSubscriptionDetails();
 		} else {
-			this.initSubscripionDetails();
+			this.initSubscriptionDetails();
 		}
 	}
 
-	initSubscripionDetails() {
-		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
+	initSubscriptionDetails() {
+		let subscriptionDates: any = { startDate: '', endDate: '', status: '' };
 		if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
-			subScriptionDates = this.localCacheService.getLocalCacheValue(
+			subscriptionDates = this.localCacheService.getLocalCacheValue(
 				LocalStorageKey.SmartPerformanceSubscriptionDetails
 			);
-			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate) {
+			if (subscriptionDates && subscriptionDates.startDate && subscriptionDates.endDate) {
 				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(
-					subScriptionDates.startDate
+					subscriptionDates.startDate
 				);
 				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(
-					subScriptionDates.endDate
+					subscriptionDates.endDate
 				);
 			}
 		} else {
@@ -122,7 +122,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 		this.isFirstLoad = false;
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 		this.intervalTime = moment(currentTime)
-			.add(PaymentPage.ORDERWAITINGTIME, 'm')
+			.add(PaymentPage.OrderWaitingTime, 'm')
 			.format('YYYY-MM-DD HH:mm:ss');
 		const modalCancel = this.dialog.open(ModalSmartPerformanceSubscribeComponent, {
 			autoFocus: true,
@@ -130,26 +130,26 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 			disableClose: true,
 			panelClass: 'subscribe-modal',
 		});
-		this.spFrstRunStatus = false;
+		this.spFirstRunStatus = false;
 		modalCancel.componentInstance.cancelPaymentRequest.subscribe(() => {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
-			this.spFrstRunStatus = false;
+			this.spFirstRunStatus = false;
 			this.smartPerformanceService.getSubscriptionDataDetail();
 		});
 	}
 
 	showCurrentSubscriptionDetails() {
-		this.proccessSubscriptionDetail(this.smartPerformanceService.subscriptionState);
+		this.processSubscriptionDetail(this.smartPerformanceService.subscriptionState);
 	}
 
-	proccessSubscriptionDetail(state) {
+	processSubscriptionDetail(state) {
 		if (state === SubscriptionState.Inactive) {
 			this.resetSubscriptionDetails();
 		} else if (state === SubscriptionState.Active) {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 			this.strStatus = 'ACTIVE';
-			this.smartPerformanceService.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(EnumSmartPerformance.ScheduleScan);
 		} else if (state === SubscriptionState.Expired) {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.expiredStatus';
 			this.strStatus = 'EXPIRED';
@@ -179,7 +179,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 	}
 
 	setTimeOutCallForSubDetails() {
-		if (this.spFrstRunStatus) {
+		if (this.spFirstRunStatus) {
 			this.isLoading = false;
 			this.resetSubscriptionDetails();
 		} else {
@@ -250,7 +250,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.subScriptionListener?.unsubscribe();
+		this.subscriptionListener?.unsubscribe();
 		this.modelListener?.unsubscribe();
 	}
 }

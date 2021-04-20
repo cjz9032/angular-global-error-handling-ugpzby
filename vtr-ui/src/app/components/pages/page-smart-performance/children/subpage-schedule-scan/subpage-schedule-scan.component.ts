@@ -178,7 +178,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			if (
 				this.smartPerformanceService.subscriptionState === SubscriptionState.Active
 			) {
-				this.unregisterScheduleScan(EnumSmartPerformance.SCHEDULESCAN);
+				this.unregisterScheduleScan(EnumSmartPerformance.ScheduleScan);
 			} else {
 				this.scheduleScan(this.requestScanData);
 				this.localCacheService.setLocalCacheValue(
@@ -200,9 +200,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		) {
 			this.subscriptionListener = this.smartPerformanceService.subscriptionObserver.subscribe((state) => {
 				if (state === SubscriptionState.Active) {
-					this.getNextScanRunTime(EnumSmartPerformance.SCHEDULESCANANDFIX);
+					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScanAndFix);
 				} else {
-					this.getNextScanRunTime(EnumSmartPerformance.SCHEDULESCAN);
+					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScan);
 				}
 			});
 		}
@@ -299,9 +299,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		);
 		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
 		if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
-			this.getNextScanRunTime(EnumSmartPerformance.SCHEDULESCANANDFIX);
+			this.getNextScanRunTime(EnumSmartPerformance.ScheduleScanAndFix);
 		} else {
-			this.getNextScanRunTime(EnumSmartPerformance.SCHEDULESCAN);
+			this.getNextScanRunTime(EnumSmartPerformance.ScheduleScan);
 		}
 	}
 
@@ -389,10 +389,10 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 
 		if (!event.switchValue) {
 			if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
-				this.unregisterScheduleScan(EnumSmartPerformance.SCHEDULESCANANDFIX);
+				this.unregisterScheduleScan(EnumSmartPerformance.ScheduleScanAndFix);
 				this.setDefaultValWhenDisabled();
 			} else {
-				this.unregisterScheduleScan(EnumSmartPerformance.SCHEDULESCAN);
+				this.unregisterScheduleScan(EnumSmartPerformance.ScheduleScan);
 				this.setDefaultValWhenDisabled();
 			}
 
@@ -452,9 +452,9 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 				}
 
 				if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
-					this.getNextScanRunTime(EnumSmartPerformance.SCHEDULESCANANDFIX);
+					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScanAndFix);
 				} else {
-					this.getNextScanRunTime(EnumSmartPerformance.SCHEDULESCAN);
+					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScan);
 				}
 			} else {
 				this.logger.info('ui-smart-performance.scheduleScan', JSON.stringify(res));
@@ -608,11 +608,11 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 				};
 				if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
 					this.requestScanData = {
-						scantype: EnumSmartPerformance.SCHEDULESCANANDFIX,
+						scantype: EnumSmartPerformance.ScheduleScanAndFix,
 						...data,
 					};
 				} else {
-					this.requestScanData = { scantype: EnumSmartPerformance.SCHEDULESCAN, ...data };
+					this.requestScanData = { scantype: EnumSmartPerformance.ScheduleScan, ...data };
 				}
 				break;
 
@@ -679,10 +679,10 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			date: freq === 'onceamonth' ? [+this.selectedNumber] : [],
 		};
 		if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
-			this.requestScanData = { scantype: EnumSmartPerformance.SCHEDULESCANANDFIX, ...data };
+			this.requestScanData = { scantype: EnumSmartPerformance.ScheduleScanAndFix, ...data };
 		}
 		else {
-			this.requestScanData = { scantype: EnumSmartPerformance.SCHEDULESCAN, ...data };
+			this.requestScanData = { scantype: EnumSmartPerformance.ScheduleScan, ...data };
 		}
 	}
 

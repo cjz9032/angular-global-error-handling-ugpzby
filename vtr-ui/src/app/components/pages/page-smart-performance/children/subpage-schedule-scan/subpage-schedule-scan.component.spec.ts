@@ -51,7 +51,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('scheduleScanFrequency is defined - subscribed user', () => {
-		const payload = EnumSmartPerformance.SCHEDULESCANANDFIX;
+		const payload = EnumSmartPerformance.ScheduleScanAndFix;
 		commonService = TestBed.inject(CommonService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
 			true,
@@ -65,7 +65,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('scheduleScanFrequency is defined - non-subscribed user', () => {
-		const payload = EnumSmartPerformance.SCHEDULESCAN;
+		const payload = EnumSmartPerformance.ScheduleScan;
 		commonService = TestBed.inject(CommonService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
 			false,
@@ -230,7 +230,7 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should schedule scan - subscribed user', () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const payload = {
-			scantype: EnumSmartPerformance.SCHEDULESCANANDFIX,
+			scantype: EnumSmartPerformance.ScheduleScanAndFix,
 			frequency: 'onceaweek',
 			day: 'Wednesday',
 			time: '2020-06-17T17:45:00',
@@ -245,7 +245,7 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should schedule scan - non-subscribed user', () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const payload = {
-			scantype: EnumSmartPerformance.SCHEDULESCAN,
+			scantype: EnumSmartPerformance.ScheduleScan,
 			frequency: 'onceaweek',
 			day: 'Wednesday',
 			time: '2020-06-17T17:45:00',
@@ -258,7 +258,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should get record from task scheduler - onceaweek', () => {
-		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.ScheduleScanAndFix;
 		const res: any = { nextruntime: '2020-06-17T17:45:00' };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);
@@ -268,7 +268,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should get record from task scheduler - everyotherweek', () => {
-		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.ScheduleScanAndFix;
 		const res: any = { nextruntime: '2020-06-17T17:45:00' };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);
@@ -278,7 +278,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should get record from task scheduler - every month', () => {
-		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.ScheduleScanAndFix;
 		const res: any = { nextruntime: '2020-06-17T17:45:00' };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);
@@ -288,7 +288,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should set record task scheduler', () => {
-		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.ScheduleScanAndFix;
 		const res: any = { state: false };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);
