@@ -103,6 +103,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 			this.smartStandbyService.selectedDays.splice(index, 1);
 		}
 		this.smartStandbyService.checkedLength = this.smartStandbyService.selectedDays.length;
+		this.checkedLength = this.smartStandbyService.selectedDays.length;
 	}
 
 	navigateByKeys($event, index) {
