@@ -8,6 +8,7 @@ export class WindowsVersionService {
 	private readonly VERSION_19H1 = 18362;
 	private readonly VERSION_REDSTONE_5 = 17763;
 	private readonly VERSION_REDSTONE_4 = 17134;
+	private readonly VERSION_20H2 = 21000;
 
 	private regexp = /Edge\/(\d+).(\d+)$/gm;
 	private build: number = undefined;
@@ -27,6 +28,10 @@ export class WindowsVersionService {
 
 	public isOlderThan20H1(): boolean {
 		return this.currentBuildVersion <= this.VERSION_19H2;
+	}
+
+	public isNewerThan20H2(): boolean {
+		return this.currentBuildVersion >= this.VERSION_20H2;
 	}
 
 	public is19H2(): boolean {
