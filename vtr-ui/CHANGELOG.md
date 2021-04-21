@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.24](https://bitbucket.tc.lenovo.com///compare/v1.11.23...v1.11.24) (2021-04-21)
+
+
+### Features
+
+* **Date time picker:** VAN-27897 commit date time picker component ([d7762e6](https://bitbucket.tc.lenovo.com///commit/d7762e63b93402180f51671496262849db2d50d0))
+
 ### [1.11.23](https://bitbucket.tc.lenovo.com///compare/v1.11.22...v1.11.23) (2021-04-20)
 
 
