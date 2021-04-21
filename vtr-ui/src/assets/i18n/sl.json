@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Umerjanje barv",
-				"appName": "Aplikacija X-rite",
+				"appName": "X-rite color assistant",
 				"descSection1": "Izredna barvna natančnost je pri vašem ustvarjalnem delu ključnega pomena. Lenovo zagotavlja rešitev za umerjanje barv na zaslonu vašega računalnika, s čimer je zagotovljena kar najboljša barvna učinkovitost. Za vaš računalnik se ustvari prilagojen privzeti barvni profil, ki uporablja profesionalno napravo za umerjanje, to pa zagotavlja točen prikaz fotografij, posnetih s fotoaparatom, na zaslonu računalnika brez popačenih barv.",
 				"descSection2": "S prednameščenim pomočnikom za barve X-rite lahko med barvnim profili preklapljate po želji, na voljo so:",
 				"profile1": "Privzeto (v profilu je shranjeno: izvorna barvna paleta, izvorna svetlost, a kalibrirana gradacija sive barve in karakterizacija zaslona). Ta profil je shranjen v računalniku in se prek sistema Windows samodejno naloži. ",

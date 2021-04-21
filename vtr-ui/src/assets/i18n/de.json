@@ -5695,7 +5695,7 @@
 			},
 			"colorCalibration": {
 				"title": "Farbkalibrierung",
-				"appName": "X-rite-Anwendung",
+				"appName": "X-rite color assistant",
 				"descSection1": "Für Profis ist eine hohe Farbgenauigkeit wichtig und unerlässlich bei ihrer kreativen Arbeit. Lenovo bietet eine Lösung zur Farbkalibrierung Ihres Computerbildschirms, mit der Sie jederzeit eine optimale Farbleistung erhalten. Mithilfe einer speziellen Kalibrierungsvorrichtung wird ein angepasstes Standardfarbprofil für Ihren Computer erstellt, was sicherstellt, dass Bilder der Kamera auch auf dem Computer präzise und ohne Farbverfälschung dargestellt werden.",
 				"descSection2": "Mit dem vorinstallierten X-rite Color Assistant können Sie das Farbprofil nach Belieben wechseln:",
 				"profile1": "Standard (nativer Gamut, native Helligkeit, aber kalibrierter Graukeil und Display-Charakterisierung im Profil gespeichert); Profil ist auf dem Computer gespeichert und wird automatisch von Windows geladen ",

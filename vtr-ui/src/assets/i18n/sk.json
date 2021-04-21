@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Kalibrácia farieb",
-				"appName": "Aplikácia X-rite",
+				"appName": "X-rite color assistant",
 				"descSection1": "Vysoká úroveň presnosti farieb je pre vás ako profesionála kritická a nevyhnutná pre vašu kreatívnu prácu. Spoločnosť Lenovo ponúka riešenie kalibrácie farieb pre obrazovku vášho počítača, aby sme zaistili, že dostanete najlepší farebný výkon ihneď po vybraní zo škatule. Pomocou profesionálneho kalibračného zariadenia sa pre váš počítač vytvorí prispôsobený predvolený profil farieb, čo zaisťuje, že obrázky zobrazené z fotoaparátu na obrazovke počítača sú presné a bez skreslenia farieb.",
 				"descSection2": "S predinštalovanou aplikáciou na pomoc s úpravou farieb X-rite môžete prepnúť farebný profil podľa potreby:",
 				"profile1": "Predvolený (natívny gamut, natívny jas ale nakalibrovaná paleta šedej a charakteristika obrazovky uložené v profile). Tento profil je uložený na počítači a automaticky načítaný systémom Windows. ",

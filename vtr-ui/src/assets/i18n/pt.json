@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Calibração cromática",
-				"appName": "Aplicação X-rite",
+				"appName": "X-rite color assistant",
 				"descSection1": "Como profissional, é crítico e essencial contar com um elevado nível de precisão de cor para o seu trabalho criativo. A Lenovo fornece uma solução de calibração de cores para o ecrã do seu computador para assegurar o melhor desempenho cromático desde que liga o seu equipamento pela primeira vez. É criado um perfil de cor predefinido e personalizado para o seu computador através do dispositivo de calibração profissional, que assegura que as imagens da câmara apresentadas no ecrã do computador são exatas e não têm qualquer distorção de cor.",
 				"descSection2": "Com o assistente de cor X-rite pré-instalado, poderá mudar de perfil de cor como pretende:",
 				"profile1": "Predefinição (Gama nativa, luminosidade nativa, mas com rampa cinzenta calibrada e caracterização do ecrã armazenada no perfil). Este perfil está armazenado no computador e é carregado automaticamente pelo Windows. ",

@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Színkalibrálás",
-				"appName": "X-rite alkalmazás",
+				"appName": "X-rite color assistant",
 				"descSection1": "A szakemberek számára különösen fontos lehet a színhűség, ami különösen a kreatív feladatoknál elengedhetetlen. A Lenovo színkalibrálási megoldást kínál a számítógép képernyőjéhez, amellyel könnyedén, további eszközök nélkül elérheti a legjobb színteljesítményt. A számítógépéhez professzionális kalibrálási eszközök használatával létrehozunk egy alapértelmezett egyedi színprofilt, amely garantálja, hogy a számítógép képernyője hűségesen, a színek torzítása nélkül jeleníti meg a fényképezőgépekről feltöltött képeket.",
 				"descSection2": "Az előtelepített X-Rite Color Assistant segítségével tetszés szerint válthat a színprofilok között:",
 				"profile1": "Alapértelmezett (natív színtér, natív fényerő, de kalibrált szürkeskála és kijelzőjellemzők a profilban tárolva). Ezt a profilt a számítógép tárolja, és a Windows automatikusan betölti. ",

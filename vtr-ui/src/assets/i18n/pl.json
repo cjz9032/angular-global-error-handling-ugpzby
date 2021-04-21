@@ -5585,7 +5585,7 @@
 			},
 			"colorCalibration": {
 				"title": "Kalibracja kolorów",
-				"appName": "Aplikacja X-rite",
+				"appName": "X-rite color assistant",
 				"descSection1": "Wysoki poziom dokładności kolorów ma kluczowe znaczenie dla twórczej pracy każdego profesjonalisty. Lenovo oferuje rozwiązanie do kalibracji kolorów dla wyświetlacza komputera, aby zapewnić najlepszą wydajność kolorów natychmiast po otwarciu opakowania. Dla komputera tworzony jest niestandardowy domyślny profil kolorów przy użyciu profesjonalnego urządzenia do kalibracji, które zapewnia, że obrazy wyświetlane z aparatu na ekranie komputera są dokładne i bez zniekształcenia kolorów.",
 				"descSection2": "Dzięki wstępnie zainstalowanemu asystentowi kolorów X-rite możesz dowolnie zmieniać profil kolorów:",
 				"profile1": "Ustawienia domyślne (gama natywna, jasność natywna, ale skalibrowana rampa szarości i charakterystyka ekranu zapisane w profilu). Ten profil jest przechowywany na komputerze i automatycznie ładowany przez system Windows. ",
