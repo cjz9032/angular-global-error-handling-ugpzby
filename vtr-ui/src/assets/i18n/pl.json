@@ -2106,7 +2106,15 @@
 							"medium": "Średnia",
 							"slow": "Wolno"
 						},
-						"toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta. W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu."
+						"toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta. W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu.",
+						"checkbox": {
+                            "override": "Zastąp",
+                            "link": "Ustawienia limitu czasu ekranu systemu Windows.",
+                            "onBattery": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”.",
+                            "onPower": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu przy zasilaniu z sieci”.",
+                            "onBoth": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu”.",
+                            "onStatic": "Ta funkcja może nie działać, jeśli wyborem ustawienia limitu czasu ekranu systemu Windows jest „Nigdy nie wyłączaj ekranu”."
+                        }
 					},
 					"facialRecognition": {
 						"title": "ROZPOZNAWANIE TWARZY",

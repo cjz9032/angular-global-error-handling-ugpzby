@@ -16,4 +16,9 @@ export class IntelligentSecurity {
 	public facialRecognitionCameraPrivacyMode: boolean;
 	public isSensorBroken: boolean;
 	public isHPDConfiguredInBios: boolean;
+	public isAutoScreenTimeoutVisible: boolean;
+	public isAutoScreenTimeoutEnabled: boolean;
+	public currentTimerNeverCondition: boolean;
+	public isACTimerNeverCondition: boolean;
+	public isDCTimerNeverCondition: boolean;
 }

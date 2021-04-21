@@ -2106,7 +2106,15 @@
 							"medium": "Stredné",
 							"slow": "Pomalé"
 						},
-						"toolTipContent": "Vyberte požadovanú možnosť rýchleho, stredne rýchleho alebo pomalého uzamknutia obrazovky, keď sa nezistí vaša prítomnosť. Čas uzamknutia obrazovky však bude ovplyvnený aj aktuálnym používaním, možnosťami senzora a nastaveniami časového limitu obrazovky systému Windows. Preto dôrazne odporúčame, aby ste systém uzamkli bezprostredne pred odchodom."
+						"toolTipContent": "Vyberte požadovanú možnosť rýchleho, stredne rýchleho alebo pomalého uzamknutia obrazovky, keď sa nezistí vaša prítomnosť. Čas uzamknutia obrazovky však bude ovplyvnený aj aktuálnym používaním, možnosťami senzora a nastaveniami časového limitu obrazovky systému Windows. Preto dôrazne odporúčame, aby ste systém uzamkli bezprostredne pred odchodom.",
+						"checkbox": {
+                            "override": "Prepísať",
+                            "link": "Nastavenia časového limitu obrazovky systému Windows.",
+                            "onBattery": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku pri napájaní z batérie“.",
+                            "onPower": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku pri napájaní zo siete“.",
+                            "onBoth": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku“.",
+                            "onStatic": "Táto funkcia nemusí fungovať, keď je v systéme Windows nastavený časový limit obrazovky na hodnotu „Nikdy nevypínať obrazovku“."
+                        }
 					},
 					"facialRecognition": {
 						"title": "ROZPOZNÁVANIE TVÁRE",

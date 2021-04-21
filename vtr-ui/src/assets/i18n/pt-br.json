@@ -2216,7 +2216,15 @@
 							"medium": "Médio",
 							"slow": "Lento"
 						},
-						"toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada. No entanto, o momento em que a tela será bloqueada também é afetado pelo cenário real do usuário, a capacidade do sensor e as configurações de tempo limite da tela do Windows. Portanto, sugerimos que você bloqueie imediatamente o sistema antes de sair."
+						"toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada. No entanto, o momento em que a tela será bloqueada também é afetado pelo cenário real do usuário, a capacidade do sensor e as configurações de tempo limite da tela do Windows. Portanto, sugerimos que você bloqueie imediatamente o sistema antes de sair.",
+						"checkbox": {
+                            "override": "Substituir",
+                            "link": "Configurações de tempo limite de tela do Windows.",
+                            "onBattery": "Este recurso não funciona. Porque as configurações de tempo limite da tela do Windows estão definidas como \"Nunca desligue a tela quando estiver com a bateria\".",
+                            "onPower": "Este recurso não funciona. Porque as configurações de tempo limite da tela do Windows estão definidas como \"Nunca desligue a tela quando conectado\".",
+                            "onBoth": "Este recurso não funciona. Porque as configurações de tempo limite da tela do Windows estão definidas como \"Nunca desligue a tela\".",
+                            "onStatic": "Este recurso pode não funcionar quando as configurações de tempo limite da tela do Windows estão definidas como \"Nunca desligue a tela\"."
+                        }
 					},
 					"facialRecognition": {
 						"title": "RECONHECIMENTO FACIAL",

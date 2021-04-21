@@ -536,13 +536,77 @@
 											(selectionChange)="onZeroTouchLockTimerChange($event)">
 										</vtr-ui-rounded-rectangle-custom-radio-list>
 
-										<div class="pt-3">
-											<div class="feature-note p-4 ml-4">
+										<div *ngIf="intelligentSecurity.isAutoScreenTimeoutVisible"
+											class="pt-3 ml-4">
+											<mat-checkbox id="auto-screen-timeout-checkbox"
+												class="font-size-xs"
+												[ariaLabel]="'Override Windows screen time out settings'"
+												[name]="'OverrideWindowsIntelligentLock'"
+												[checked]="intelligentSecurity.isAutoScreenTimeoutEnabled"
+												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)"
+												(change)="onZeroTouchLockOverrideWindowsCheckbox($event)"
+												vtrMetrics
+												metricsEvent="FeatureClick"
+												metricsParent="{{metricsParent}}"
+												metricsItem="checkbox.zero-touch-lock.auto-screen-timeout'">
+												{{'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.checkbox.override' | translate}}
+											</mat-checkbox>
+											<a
+												class="link-text ml-1"
+												[ngClass]="{disabled: !intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)}"
+												(click)="launchScreenTimeout()"
+												(keydown.enter)="launchScreenTimeout()"
+												href="javascript:void()"
+											>
+												{{'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.checkbox.link' | translate}}
+											</a>
+										</div>
+
+										<div class="row pt-3"
+											*ngIf="!intelligentSecurity?.currentTimerNeverCondition">
+											<div class="feature-note default-note p-4">
 												<div class="row blur">
 													<div class="col">
-														<p id="smart-assist-zeroTouchLock-note"
-															role="text">
-															{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
+														<p role="text"
+															id="smart-assist-screen-timeout-note"
+															dir="ltr">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.checkbox.onStatic' | translate}}
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="row pt-3"
+											*ngIf="intelligentSecurity?.currentTimerNeverCondition && (intelligentSecurity?.isACTimerNeverCondition || intelligentSecurity?.isDCTimerNeverCondition)">
+											<div class="feature-note default-note p-4">
+												<div class="row blur">
+													<div class="col">
+														<!-- On battery power ‘Never’ case -->
+														<p role="text"
+															class="error-text"
+															*ngIf="!intelligentSecurity?.isACTimerNeverCondition && intelligentSecurity?.isDCTimerNeverCondition"
+															id="smart-assist-screen-timeout-note"
+															dir="ltr">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.checkbox.onBattery' | translate}}
+														</p>
+
+														<!-- Plugged in ‘Never’ case -->
+														<p role="text"
+															class="error-text"
+															*ngIf="!intelligentSecurity?.isDCTimerNeverCondition && intelligentSecurity?.isACTimerNeverCondition"
+															id="smart-assist-screen-timeout-note"
+															dir="ltr">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.checkbox.onPower' | translate}}
+														</p>
+
+														<!-- Both never case -->
+														<p role="text"
+															class="error-text"
+															*ngIf="intelligentSecurity?.isDCTimerNeverCondition && intelligentSecurity?.isACTimerNeverCondition"
+															id="smart-assist-screen-timeout-note"
+															dir="ltr">
+															{{'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.checkbox.onBoth' | translate}}
 														</p>
 													</div>
 												</div>

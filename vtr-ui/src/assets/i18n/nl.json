@@ -2106,7 +2106,15 @@
 							"medium": "Gemiddeld",
 							"slow": "Traag"
 						},
-						"toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat."
+						"toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat.",
+						"checkbox": {
+                            "override": "Negeer",
+                            "link": "Windows-instellingen voor schermtime-out.",
+                            "onBattery": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen Als de computer op een batterij werkt.",
+                            "onPower": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen Als de computer op netstroom werkt.",
+                            "onBoth": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen.",
+                            "onStatic": "Deze functie werkt mogelijk niet als de Windows-instelling voor time-out van het beeldscherm is ingesteld op \"Beeldscherm nooit uitschakelen\"."
+                        }
 					},
 					"facialRecognition": {
 						"title": "GEZICHTSHERKENNING",

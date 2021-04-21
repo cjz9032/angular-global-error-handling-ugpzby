@@ -2216,7 +2216,15 @@
 							"medium": "Medio",
 							"slow": "Lento"
 						},
-						"toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia. Sin embargo, el tiempo en el que se bloqueará la pantalla también se ve afectado por la situación real del usuario, la capacidad del sensor y los valores de tiempo de espera de pantalla de Windows. Por lo tanto, recomendamos encarecidamente que bloquee el sistema inmediatamente antes de salir."
+						"toolTipContent": "Seleccione la opción que desee para bloquear la pantalla a una velocidad rápida/intermedia/lenta cuando detecte su presencia. Sin embargo, el tiempo en el que se bloqueará la pantalla también se ve afectado por la situación real del usuario, la capacidad del sensor y los valores de tiempo de espera de pantalla de Windows. Por lo tanto, recomendamos encarecidamente que bloquee el sistema inmediatamente antes de salir.",
+						"checkbox": {
+                            "override": "Alteración temporal",
+                            "link": "Configuración de tiempo de espera de pantalla de Windows.",
+                            "onBattery": "Esta característica no funciona. Esto se debe a que la configuración de tiempo de espera de la pantalla de Windows está establecida como “No apagar nunca la pantalla cuando se conecte la batería”.",
+                            "onPower": "Esta característica no funciona. Esto se debe a que la configuración de tiempo de espera de la pantalla de Windows está establecida como “No apagar nunca la pantalla cuando esté enchufado”.",
+                            "onBoth": "Esta característica no funciona. Esto se debe a que la configuración de tiempo de espera de la pantalla de Windows está establecida como “No apagar nunca la pantalla”.",
+                            "onStatic": "Esta característica puede no funcionar cuando la configuración de tiempo de espera de la pantalla de Windows está establecida como “No apagar nunca la pantalla”."
+                        }
 					},
 					"facialRecognition": {
 						"title": "RECONOCIMIENTO FACIAL",

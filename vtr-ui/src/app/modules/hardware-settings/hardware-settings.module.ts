@@ -53,6 +53,7 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatIconModule } from '@lenovo/material/icon';
 import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
+import { MatCheckboxModule } from '@lenovo/material/checkbox';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
@@ -195,6 +196,7 @@ import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questio
 		MatIconModule,
 		MatSlideToggleModule,
 		MaterialChevronModule,
+		MatCheckboxModule,
 	],
 	exports: [
 		CommonModule,

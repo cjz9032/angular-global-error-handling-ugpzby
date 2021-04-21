@@ -2106,7 +2106,15 @@
 							"medium": "Keskikokoinen",
 							"slow": "Hidas"
 						},
-						"toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita. Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota."
+						"toolTipContent": "Valitse haluamasi vaihtoehto, jos haluat lukita näytön nopeasti, keskinopeasti tai hitaasti, kun läsnäoloasi ei havaita. Aikaan, jolloin näyttö on lukittuna, vaikuttaa myös todellinen käyttäjäskenaario, tunnistimen toimintakyky ja Windowsin näytön aikakatkaisuasetukset. Suosittelemme näin ollen, että lukitset järjestelmän ennen, kuin lähdet tietokoneen luota.",
+						"checkbox": {
+                            "override": "Ohita",
+                            "link": "Windowsin näytön aikakatkaisun asetukset.",
+                            "onBattery": "Tämä ominaisuus ei toimi. Koska Windowsin näytön aikakatkaisuasetukseksi on valittu \"Älä koskaan sammuta näyttöä akkuvirtaa käytettäessä\".",
+                            "onPower": "Tämä ominaisuus ei toimi. Koska Windowsin näytön aikakatkaisuasetukseksi on valittu \"Älä koskaan sammuta näyttöä verkkovirtaa käytettäessä\".",
+                            "onBoth": "Tämä ominaisuus ei toimi. Koska Windowsin näytön aikakatkaisuasetukseksi on valittu \"Älä koskaan sammuta näyttöä\".",
+                            "onStatic": "Tämä ominaisuus ei välttämättä toimi, kun Windowsin näytön aikakatkaisuasetukseksi on valittu \"Älä koskaan sammuta näyttöä\"."
+                        }
 					},
 					"facialRecognition": {
 						"title": "KASVOJENTUNNISTUS",
