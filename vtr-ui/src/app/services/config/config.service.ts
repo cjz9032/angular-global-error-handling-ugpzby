@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import cloneDeep from 'lodash/cloneDeep';
 import { MenuID, menuConfig } from 'src/assets/menu/menu';
@@ -25,6 +25,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { AppSearchService } from '../app-search/app-search.service';
 import { TestService } from '../test/test.service';
+import { DOCUMENT } from '@angular/common';
 
 export interface MenuItem {
 	id: string;
@@ -90,7 +91,8 @@ export class ConfigService {
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
 		private appSearchService: AppSearchService,
-		private testService: TestService // for PA test, need to remove after PA test complete
+		private testService: TestService, // for PA test, need to remove after PA test complete
+		@Inject(DOCUMENT) private document: Document
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
@@ -769,7 +771,7 @@ export class ConfigService {
 		let widthCount = 0;
 		const widthTimer = setInterval(() => {
 			widthCount++;
-			const width = window.innerWidth;
+			const width = this.document.documentElement.clientWidth
 			this.logger.info('Window inner width:', width);
 			if (width > 1) {
 				if (width < 1200 && 
