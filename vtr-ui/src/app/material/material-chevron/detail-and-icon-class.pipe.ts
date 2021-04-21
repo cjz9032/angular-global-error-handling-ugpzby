@@ -51,13 +51,7 @@ export class DetailAndIconClassPipe implements PipeTransform {
 				break;
 		}
 
-		switch (value.asLink) {
-			case true:
-				classes.push('highlight');
-				break;
-			default:
-				break;
-		}
+		classes.push(value.asLink ? 'highlight' : '');
 
 		return classes.toString().replace(new RegExp(',', 'gm'), ' ');
 	}

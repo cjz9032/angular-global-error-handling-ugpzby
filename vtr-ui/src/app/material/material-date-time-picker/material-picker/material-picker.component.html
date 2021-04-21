@@ -1,0 +1,49 @@
+<div class="select-trigger vtr-material-picker"
+	role="combobox"
+	#selectTrigger
+	[ngClass]="{'disabled': disabled}"
+	cdkOverlayOrigin
+	[tabindex]="disabled?-1:0"
+	#trigger="cdkOverlayOrigin"
+	[attr.aria-owns]="panelOpen?id+'-panel':null"
+	id="{{'select-'+id}}"
+	(click)="toggle()"
+	(keydown.enter)="toggle()"
+	vtrMetrics
+	[metricsItem]="metricsItemName?metricsItemName:id"
+	[metricsEvent]="metricsEvent"
+	[metricsItemID]="id"
+	>
+	<div class="select-value-container row justify-content-between align-items-center px-3">
+		<div class="select-value col-9 d-flex flex-column py-2 px-0">
+			<span class="title mb-2">{{title}}</span>
+			<span class="trigger-value" role="text" id="{{'trigger-value-'+selectedValue+'-'+id}}">{{selectedValue}}</span>
+		</div>
+		<div class="arrow-icon col-3 p-0 text-right d-flex align-items-center justify-content-center" [ngClass]="{'angle-up': panelOpen}">
+			<mat-icon>expand_more</mat-icon>
+		</div>
+
+	</div>
+
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  cdkConnectedOverlayHasBackdrop
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="panelOpen"
+  (attach)="scrollPosition()"
+  (detach)="close(id)"
+  (backdropClick)="close(id)"
+>
+  <ul class="panel" id="panel"
+	[style.max-height.px]="maxHeight"
+  	[style.width.px]="selectTrigger.clientWidth">
+	  <li class="panel-item" [ngClass]="{'active': selectedValue === item}"
+	  		*ngFor="let item of optionValue;let i = index"
+			id="{{'panel-item-'+id+'-'+i}}"
+			role="listitem"
+		  	(click)="selected(item, id)">{{item}}</li>
+  </ul>
+</ng-template>

@@ -1,0 +1,49 @@
+<div class="row vtr-date-time-picker" *ngIf="type==='date'; else time">
+	<vtr-material-picker class="select col-4"
+		[title]="'common.dateTime.month' | translate | uppercase"
+		[optionValue]="monthsString"
+		[selectedValue]="selectedMonth"
+		[id]="'month-'+id"
+		(selectionChange)="onMonthChange($event)"
+	 ></vtr-material-picker>
+	<vtr-material-picker class="select col-4"
+		[title]="'common.dateTime.day' | translate | uppercase"
+		[optionValue]="days"
+		[selectedValue]="selectedDay"
+		[id]="'day-'+id"
+		(selectionChange)="onDayChange($event)"
+	 ></vtr-material-picker>
+	<vtr-material-picker class="select col-4"
+		[title]="'common.dateTime.year' | translate | uppercase"
+		[optionValue]="years"
+		[selectedValue]="selectedYear"
+		[id]="'year-'+id"
+		(selectionChange)="onYearChange($event)"
+	 ></vtr-material-picker>
+</div>
+<ng-template #time>
+	<div class="row vtr-date-time-picker">
+		<vtr-material-picker class="select col-4"
+			[title]="'common.dateTime.hours' | translate | uppercase"
+			[optionValue]="hours"
+			[selectedValue]="selectHours!==undefined?selectHours:currentHour"
+			[id]="'hours-'+id"
+			(selectionChange)="onHoursChange($event)"
+		></vtr-material-picker>
+		<vtr-material-picker class="select col-4"
+			[title]="'common.dateTime.minutes' | translate | uppercase"
+			[optionValue]="minutes"
+			[selectedValue]="selectMinutes!==undefined?selectMinutes:currentMinutes"
+			[id]="'minutes-'+id"
+			(selectionChange)="onMinutesChange($event)"
+		></vtr-material-picker>
+		<vtr-material-picker class="select col-4"
+			[title]="amPm[0]+'/'+amPm[1] | uppercase"
+			[optionValue]="amPm"
+			[selectedValue]="(selectAmPm!==undefined?selectAmPm:currentAmPm) | uppercase"
+			[id]="'ampm-'+id"
+			(selectionChange)="onAmPmChange($event)"
+		></vtr-material-picker>
+	</div>
+</ng-template>
+
