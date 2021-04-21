@@ -972,7 +972,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			}
 			return ocTips;
 		} else {
-			// return this.translateService.instant('gaming.dashboard.device.quickSettings.title');
 			return '';
 		}
 	}

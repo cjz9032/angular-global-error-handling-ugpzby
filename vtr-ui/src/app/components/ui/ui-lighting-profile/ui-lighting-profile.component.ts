@@ -298,7 +298,6 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			if (response !== undefined) {
 				this.currentProfile = this.currentProfileId;
-				// this.profileBrightness = response.brightness;
 				if (response.lightInfo !== null && response.lightInfo.length > 0) {
 					if (
 						this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple
@@ -461,8 +460,6 @@ export class UiLightingProfileComponent implements OnInit {
 				}
 
 				this.getLightingProfileId();
-				// this.getLightingProfileById(this.currentProfileId);
-				// this.getLightingBrightness();
 			} else {
 				if (LocalStorageKey.LightingCapabilities !== undefined) {
 					response = this.localCacheService.getLocalCacheValue(
@@ -1146,7 +1143,6 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public getLightingProfileById(currProfileId) {
 		try {
-			// 1----profileid
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService
 					.getLightingProfileById(currProfileId)

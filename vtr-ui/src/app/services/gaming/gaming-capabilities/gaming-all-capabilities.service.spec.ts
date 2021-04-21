@@ -29,7 +29,6 @@ describe('Shared service:', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule],
-			//providers: [VantageShellService,BatteryDetailComponent]
 		});
 		service = TestBed.get(GamingAllCapabilitiesService);
 		shellService = TestBed.get(VantageShellService);
@@ -38,7 +37,6 @@ describe('Shared service:', () => {
 	describe('GamingAllCapabilitiesService', () => {
 		const setup = () => {
 			const getService = TestBed.get(GamingAllCapabilitiesService);
-			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
 			return { service: getService };
 		};
 		it('should be created', () => {

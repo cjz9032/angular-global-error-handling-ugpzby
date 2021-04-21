@@ -79,9 +79,6 @@ describe('GamingAccessoryService', () => {
 			const stubRegValue = {
 				queryValue: (regPath: string) => {
 					Promise.resolve(stubRes);
-					// return new Promise((resolve) => {
-					// 	resolve(stubRes);
-					// });
 				},
 			};
 			spy.getGamingAccessory.and.returnValue(

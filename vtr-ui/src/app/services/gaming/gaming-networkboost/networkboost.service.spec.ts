@@ -21,7 +21,6 @@ describe('Shared service:', () => {
 	describe(':', () => {
 		const setup = () => {
 			const setUpService = TestBed.get(NetworkBoostService);
-			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
 			return { setUpService };
 		};
 

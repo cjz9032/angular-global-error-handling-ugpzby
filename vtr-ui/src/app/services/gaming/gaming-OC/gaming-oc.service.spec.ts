@@ -49,9 +49,6 @@ describe('GamingOCService', () => {
 			const stubValue = {
 				getPerformanceOCSetting: () => {
 					Promise.resolve(performanceOCSetting);
-					// return new Promise((resolve) => {
-					// 	resolve(performanceOCSetting);
-					// });
 				},
 				setPerformanceOCSetting: (value: boolean) => {
 					if (setReturnValue) {

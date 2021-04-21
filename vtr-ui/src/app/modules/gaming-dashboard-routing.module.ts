@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GuardService } from '../services/guard/guardService.service';
 import { NonCommercialGuard } from '../services/guard/non-commercial-guard';
