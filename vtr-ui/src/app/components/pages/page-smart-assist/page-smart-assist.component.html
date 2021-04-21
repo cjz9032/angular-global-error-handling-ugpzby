@@ -178,6 +178,8 @@
 									[leftIcon]="['icomoon', 'icomoon-face-recognition']"
 									[showChildContent]="true"
 									[isSwitchChecked]="intelligentSecurity.isHPDEnabled"
+									(disabled)="hasUserPresenceErrorMessageToShow()"
+									(isLastChild)="hasUserPresenceErrorMessageToShow()"
 									(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
 									[theme]="'white'"
 									>

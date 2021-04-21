@@ -445,11 +445,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public isBiosNotConfigured() {
-		return !this.intelligentSecurity.isHPDConfiguredInBios && !this.intelligentSecurity.isSensorBroken;
+		return !this.intelligentSecurity.isHPDConfiguredInBios && this.intelligentSecurity.isSensorBroken;
 	}
 
 	public hasUserPresenceErrorMessageToShow() {
-		return this.isSensorBroken() || this.isBiosNotConfigured;
+		return this.isSensorBroken() || this.isBiosNotConfigured();
 	}
 
 	private apsAvailability() {
