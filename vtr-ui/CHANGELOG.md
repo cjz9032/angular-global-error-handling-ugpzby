@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.25](https://bitbucket.tc.lenovo.com///compare/v1.11.24...v1.11.25) (2021-04-22)
+
+
+### Features
+
+* **WelcomeTutorial:** VAN-27599 Hide toolbar when os is windows next and battery package not updated ([5a8f484](https://bitbucket.tc.lenovo.com///commit/5a8f484b2f61788bd4b63f22bc2b820e96e74dcc))
+* **WelcomeTutorial:** VAN-27599 update for code review comments ([d1b84e2](https://bitbucket.tc.lenovo.com///commit/d1b84e25aa9955c6f3def14212ff9dfbd859d7de))
+
+
+### Bug Fixes
+
+* **material-chevron:** VAN-28226 fix an id issue ([648d2cc](https://bitbucket.tc.lenovo.com///commit/648d2ccb23f9fb0ef71128432fad7881b59d3a15))
+
 ### [1.11.24](https://bitbucket.tc.lenovo.com///compare/v1.11.23...v1.11.24) (2021-04-21)
 
 
