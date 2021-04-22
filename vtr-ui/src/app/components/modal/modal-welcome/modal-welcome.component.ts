@@ -334,36 +334,34 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	private async getVantageToolBarCapability() {
-		if (this.deviceService.isArm
-			|| this.deviceService.isSMode) {
+		if (this.deviceService.isArm || this.deviceService.isSMode) {
 			return;
 		}
 		if (this.windowsVersionService.isNewerThan20H2()) {
-			var packageUpdated = await this.isBatteryGaugePackageUpdated();
-			if (!packageUpdated)
-			return;
+			if (!(await this.isBatteryGaugePackageUpdated())) {
+				return;
+			}
 		}
 		await this.getVantageToolBarStatus();
 	}
 
 	private async isBatteryGaugePackageUpdated() {
-		const regPath = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Lenovo\\ImController\\Packages\\LenovoBatteryGaugePackage'
-		if(this.regUtil) {
+		if (this.regUtil) {
 			try {
-				const val = await this.regUtil.queryValue(regPath);
-				if (!val || !val.keyList || val.keyList.length === 0 ) {
+				const val = await this.regUtil.queryValue(
+					'HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Lenovo\\ImController\\Packages\\LenovoBatteryGaugePackage'
+				);
+				if (!val || !val.keyList || val.keyList.length === 0) {
 					return false;
 				} else {
-					var updated = false;
+					let updated = false;
 					for (const key of val.keyList) {
 						const child = key.keyChildren.find(
 							(item) => item.name === 'CurrentInstalledVersion'
 						);
 						if (child && child.value) {
 							const version = child.value;
-							if (
-								this.commonService.compareVersion(version, '1.1.1.129') > 0
-							) {
+							if (this.commonService.compareVersion(version, '1.1.1.129') > 0) {
 								updated = true;
 							}
 							break;
