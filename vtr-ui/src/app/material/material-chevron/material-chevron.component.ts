@@ -9,9 +9,9 @@ import { Status } from 'src/app/data-models/widgets/status.model';
 export class MaterialChevronComponent implements OnInit {
 	@Input() title: string;
 	@Input() subtitle: string;
-	@Input() id: string;
+	@Input() linkId: string;
 	@Input() widgetData: Status[];
 	@Input() isLeftIcon: boolean;
 
-	ngOnInit(): void {}
+	ngOnInit(): void { }
 }
