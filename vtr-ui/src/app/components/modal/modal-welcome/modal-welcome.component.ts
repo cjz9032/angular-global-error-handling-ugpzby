@@ -27,6 +27,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { SettingsService } from 'src/app/services/settings/settings.service';
 import { MatDialogRef } from '@lenovo/material/dialog';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -44,6 +45,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	privacyPolicy = true;
 	vantageToolbar = true;
 	metrics: any;
+	regUtil: any;
 	data: any = {
 		page2: {
 			title: '',
@@ -152,9 +154,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public metricService: MetricService,
 		private localCacheService: LocalCacheService,
 		private initializerService: InitializerService,
+		private windowsVersionService: WindowsVersionService,
 		private dccService: DccService
 	) {
 		this.metrics = shellService.getMetrics();
+		this.regUtil = shellService.getRegistryUtil();
 
 		this.initMetricOption(shellService);
 		deviceService.getMachineInfo().then((val) => {
@@ -333,7 +337,45 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		if (this.deviceService.isArm || this.deviceService.isSMode) {
 			return;
 		}
+		if (this.windowsVersionService.isNewerThan20H2()) {
+			if (!(await this.isBatteryGaugePackageUpdated())) {
+				return;
+			}
+		}
 		await this.getVantageToolBarStatus();
+	}
+
+	private async isBatteryGaugePackageUpdated() {
+		if (this.regUtil) {
+			try {
+				const val = await this.regUtil.queryValue(
+					'HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Lenovo\\ImController\\Packages\\LenovoBatteryGaugePackage'
+				);
+				if (!val || !val.keyList || val.keyList.length === 0) {
+					return false;
+				} else {
+					let updated = false;
+					for (const key of val.keyList) {
+						const child = key.keyChildren.find(
+							(item) => item.name === 'CurrentInstalledVersion'
+						);
+						if (child && child.value) {
+							const version = child.value;
+							if (this.commonService.compareVersion(version, '1.1.1.129') > 0) {
+								updated = true;
+							}
+							break;
+						}
+					}
+					return updated;
+				}
+			} catch (error) {
+				this.logger.error(`isBatteryGaugePackageUpdated: ${error.errorMessage}`);
+				return false;
+			}
+		} else {
+			return false;
+		}
 	}
 
 	private async getVantageToolBarStatus() {
