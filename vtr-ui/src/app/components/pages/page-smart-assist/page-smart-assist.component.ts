@@ -69,6 +69,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 	isRegisterHPDRpcCallback = false;
 	isVideoPlaybackHsaAvailable = false;
+	isUserPresenceErrorMessageToShow = false;
+	isHPDCBiosAvailable = false;
 	private cameraAccessChangedHandler: any;
 	readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
@@ -227,6 +229,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initSmartAssist(true);
 			this.getHPDLeaveSensitivityVisibilityStatus();
 			this.startMonitorHsaIntelligentSecurityStatus();
+			this.hasUserPresenceErrorMessageToShow();
 		}
 
 		if (this.windowsObj) {
@@ -440,16 +443,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public isSensorBroken() {
-		return this.intelligentSecurity?.isSensorBroken;
-	}
-
-	public isBiosNotConfigured() {
-		return !this.intelligentSecurity.isHPDConfiguredInBios && this.intelligentSecurity.isSensorBroken;
-	}
-
-	public hasUserPresenceErrorMessageToShow() {
-		return this.isSensorBroken() || this.isBiosNotConfigured();
+	public hasUserPresenceErrorMessageToShow(): void {
+		this.isHPDCBiosAvailable = !this.intelligentSecurity.isHPDConfiguredInBios && !this.intelligentSecurity.isSensorBroken;
+		this.isUserPresenceErrorMessageToShow = this.intelligentSecurity.isSensorBroken || this.isHPDCBiosAvailable;
 	}
 
 	private apsAvailability() {

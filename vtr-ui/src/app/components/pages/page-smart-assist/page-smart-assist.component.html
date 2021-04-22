@@ -178,17 +178,17 @@
 									[leftIcon]="['icomoon', 'icomoon-face-recognition']"
 									[showChildContent]="true"
 									[isSwitchChecked]="intelligentSecurity.isHPDEnabled"
-									(disabled)="hasUserPresenceErrorMessageToShow()"
-									(isLastChild)="hasUserPresenceErrorMessageToShow()"
+									(disabled)="isUserPresenceErrorMessageToShow"
+									(isLastChild)="isUserPresenceErrorMessageToShow"
 									(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
 									[theme]="'white'"
 									>
-									<div class="row" *ngIf="hasUserPresenceErrorMessageToShow()">
+									<div class="row" *ngIf="isUserPresenceErrorMessageToShow">
 										<div class="feature-note error-message ml-5 p-4 pr-1">
-											<p *ngIf="isSensorBroken()" id="intelligent-security-hpd-sensor-note" role="text">
+											<p *ngIf="intelligentSecurity.isSensorBroken" id="intelligent-security-hpd-sensor-note" role="text">
 												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.sensorBroken' | translate}}
 											</p>
-											<p *ngIf="isBiosNotConfigured()" id="intelligent-security-hpd-biosPriority-note"  role="text">
+											<p *ngIf="isHPDCBiosAvailable" id="intelligent-security-hpd-biosPriority-note"  role="text">
 												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.biosPriority' | translate}}
 											</p>
 										</div>
