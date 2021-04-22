@@ -1,13 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Status } from 'src/app/data-models/widgets/status.model';
 
 @Pipe({
 	name: 'detailAndIconClass',
 })
 export class DetailAndIconClassPipe implements PipeTransform {
-	transform(value: Status): string {
+	transform(status: string, type: string, asLink: boolean): string {
 		const classes = [];
-		switch (value.status) {
+		switch (status) {
 			case 'enabled':
 				classes.push('good');
 				break;
@@ -39,7 +38,7 @@ export class DetailAndIconClassPipe implements PipeTransform {
 				classes.push('text-gray');
 				break;
 		}
-		switch (value.type) {
+		switch (type) {
 			case 'system':
 				classes.push('system');
 				break;
@@ -51,7 +50,7 @@ export class DetailAndIconClassPipe implements PipeTransform {
 				break;
 		}
 
-		classes.push(value.asLink ? 'highlight' : '');
+		classes.push(asLink ? 'highlight' : '');
 
 		return classes.toString().replace(new RegExp(',', 'gm'), ' ');
 	}

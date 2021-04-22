@@ -42,7 +42,7 @@
 						(mouseenter)="!titleTooltip.disabled ? ta.hide() : ''">
 						{{item.title}}
 					</span>
-					<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
+					<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item.status | detailAndIconClass: item.type:item.asLink}}"
 						[matTooltip]="item.detail"
 						matTooltipClass="vtr-system-tooltip"
 						[matTooltipDisabled]="!item.title && !item.subtitle"
@@ -124,7 +124,7 @@
 							(mouseenter)="!titleTooltip.disabled ? ta.hide() : ''">
 							{{item.title}}
 						</span>
-						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
+						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item.status | detailAndIconClass: item.type:item.asLink}}"
 							[matTooltip]="item.detail"
 							matTooltipClass="vtr-system-tooltip"
 							[matTooltipDisabled]="!item.title && !item.subtitle"
@@ -207,7 +207,7 @@
 							(mouseenter)="!titleTooltip.disabled ? ta.hide() : ''">
 							{{item.title}}
 						</span>
-						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
+						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item.status | detailAndIconClass: item.type:item.asLink}}"
 							[matTooltip]="item.detail"
 							matTooltipClass="vtr-system-tooltip"
 							[matTooltipDisabled]="!item.title && !item.subtitle"
