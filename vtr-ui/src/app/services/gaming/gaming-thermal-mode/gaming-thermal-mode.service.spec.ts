@@ -4,8 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GamingThermalModeService } from './gaming-thermal-mode.service';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { LoggerService } from '../../logger/logger.service';
-// use spy replace with mock-service
-// import { VantageShellService } from '../../vantage-shell/vantage-shell-mock.service';
+
 
 describe('GamingThermalModeService', () => {
 	let shellService: VantageShellService;
@@ -49,7 +48,7 @@ describe('GamingThermalModeService', () => {
 		it('regThermalModeChangeEvent should return undefined', () => {
 			expect(gamingThermalModeService.regThermalModeChangeEvent()).toBeUndefined();
 		});
-		// thermal mode 2
+		
 		it('getThermalModeRealStatus should return undefined', () => {
 			expect(gamingThermalModeService.getThermalModeRealStatus()).toBeUndefined();
 		});
@@ -188,20 +187,6 @@ describe('GamingThermalModeService', () => {
 					});
 				}
 			}
-			// gamingThermalModeService.setThermalModeSettingStatus(1).then( res => {
-			//     expect(res).toBe(true);
-			//     expect(thermalModeStatus).toBe(1);
-			// });
-			// tick();
-			// gamingThermalModeService.setThermalModeSettingStatus(2).then( res => {
-			//     expect(res).toBe(true);
-			//     expect(thermalModeStatus).toBe(2);
-			// });
-			// tick();
-			// gamingThermalModeService.setThermalModeSettingStatus(3).then( res => {
-			//     expect(res).toBe(true);
-			//     expect(thermalModeStatus).toBe(3);
-			// });
 		}));
 		it(
 			'regThermalModeChangeEvent should return boolean value',
@@ -216,7 +201,7 @@ describe('GamingThermalModeService', () => {
 				});
 			})
 		);
-		// thermal mode 2
+
 		it('getThermalModeRealStatus should return value',
 			waitForAsync(() => {
 				thermalModeStatus = 1;
@@ -407,7 +392,7 @@ describe('GamingThermalModeService', () => {
 				}
 			})
 		);
-		// thermal mode 2
+
 		it('getThermalModeRealStatus should return err',
 			waitForAsync(() => {
 				try {

@@ -762,7 +762,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
 				response.profileId
 			);
 			this.setCacheDafaultList();
-			// this.setCacheList(true);
 		}
 	}
 

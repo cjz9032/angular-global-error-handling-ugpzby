@@ -654,11 +654,6 @@ export const LightingDataList = {
 						metricitem: 'lighting_front_effect_wave',
 						value: 8,
 					},
-					// {
-					// 	header: 'gaming.lightingProfile.effect.option5.title',
-					// 	name: 'gaming.lightingProfile.effect.option5.title',
-					// 	value: 16
-					// },
 					{
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
@@ -731,11 +726,6 @@ export const LightingDataList = {
 						metricitem: 'lighting_side_effect_wave',
 						value: 8,
 					},
-					// {
-					// 	header: 'gaming.lightingProfile.effect.option5.title',
-					// 	name: 'gaming.lightingProfile.effect.option5.title',
-					// 	value: 16
-					// },
 					{
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',

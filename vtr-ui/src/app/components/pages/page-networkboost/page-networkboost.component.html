@@ -20,9 +20,6 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<!-- <vtr-ui-switch-onoff [value]="toggleStatus"
-											(toggle)="setNetworkBoostStatus($event)" [ariaLabel]="'Network boost'">
-										</vtr-ui-switch-onoff> -->
 										<vtr-ui-toggle *ngIf='toggleStatus !== undefined' [label]="'networkBoost'"
 											[toggleId]="'networkBoost'" [onOffSwitchId]="'networkboostSwitch'"
 											(toggle)="setNetworkBoostStatus($event)" [value]="toggleStatus" [parentId]="'Gaming.NetworkBoost'">

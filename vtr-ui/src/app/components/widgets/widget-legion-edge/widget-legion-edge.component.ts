@@ -972,7 +972,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			}
 			return ocTips;
 		} else {
-			// return this.translateService.instant('gaming.dashboard.device.quickSettings.title');
 			return '';
 		}
 	}
@@ -1053,7 +1052,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		if (event.type === 'gaming.dashboard.device.legionEdge.title') {
 			if (this.drop.hideDropDown) {
 				// TODO
-				// this.closeLegionEdgePopups();
 				this.legionUpdate[this.legionItemIndex.cpuOverclock].isDriverPopup = true;
 			}
 		}
@@ -1422,7 +1420,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	onIconClick(event: any) {
 		this.logger.info(`Widget-LegionEdge-onIconClick: event.name value is ${event.name}`);
 		// TODO
-		// this.closeLegionEdgePopups();
 		if (event.name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			if (this.gamingCapabilities.fbnetFilter) {
 				this.router.navigate(['/gaming/networkboost']);

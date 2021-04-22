@@ -15,8 +15,6 @@
 		@media #{$breakpoint_xl} {
 			padding: 4rem 2rem;
 		}
-		// remove once populated
-		// min-height: 20rem;
 		@media #{$high-contrast} {
 			border: 1px solid windowText;
 			border-radius: $border_radius;
@@ -27,7 +25,6 @@
 			margin-bottom: -1.4rem;
 			flex-wrap: wrap;
 			li {
-				//width: calc(100% / 5);
 				width: 33.3%;
 				min-width: 8rem;
 				a {
@@ -37,13 +34,6 @@
 					width: 100%;
 					background: transparent;
 					transition: all 0.3s ease-in-out;
-					// min-height: 18.5rem;
-					// @media #{$medium-screen} {
-					// 	padding: 2rem 0rem;
-					// }
-					// @media #{$small-screen} {
-					// 	padding: 2rem 0rem;
-					// }
 					&:hover {
 						background: $white5;
 						.system-icon::before {
@@ -115,7 +105,6 @@
 							-webkit-text-fill-color: transparent;
 							background-clip: text;
 							color: $blueFill;
-							// padding-top: 0.8rem;
 							@media #{$high-contrast} {
 								color: buttonText;
 							}

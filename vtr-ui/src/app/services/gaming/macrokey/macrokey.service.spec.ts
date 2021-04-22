@@ -211,9 +211,6 @@ describe('MacrokeyService', () => {
 			macrokeyService.getMacrokeyRecordedStatusCache();
 			expect(macrokeyService.getMacrokeyRecordedStatusCache).toHaveBeenCalled();
 		});
-
-		////
-
 		it('should call setMacrokeyInputChangeCache', async () => {
 			const macrokeyService = getService();
 			spyOn(macrokeyService, 'setMacrokeyInputChangeCache').and.callThrough();

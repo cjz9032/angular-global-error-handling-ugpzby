@@ -118,10 +118,8 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		component.currentDescription = 'description1';
 		component.changeDescription({ value: 1, description: 'description2' });
 		expect(component.currentDescription).toBe('description2');
-		//spyOn(component, 'changeDescription');
 		component.changeDescription({ value: 2, description: 'description3' });
 		expect(component.currentDescription).toBe('description2');
-		//expect(component.changeDescription).toHaveBeenCalled();
 	}));
 
 	it('Checking call have been made for resetDescription function', fakeAsync(() => {
@@ -129,10 +127,8 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		component.currentDescription = '';
 		component.resetDescription({ value: 1, description: 'description1' });
 		expect(component.currentDescription).toBe('description1');
-		//spyOn(component, 'resetDescription');
 		component.resetDescription({ value: 2, description: 'description2' });
 		expect(component.currentDescription).toBe('description1');
-		//expect(component.resetDescription).toHaveBeenCalled();
 	}));
 
 	it('should generate the click', () => {

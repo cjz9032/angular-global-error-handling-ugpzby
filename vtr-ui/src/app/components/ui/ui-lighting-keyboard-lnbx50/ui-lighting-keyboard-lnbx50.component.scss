@@ -5,13 +5,6 @@
 	background: #212b44;
 	overflow: hidden;
 }
-// .keyboard-description{
-//     height: 3rem;
-//     line-height: 3rem;
-//     color: $light;
-//     font-size: 2rem;
-//     margin-bottom: 3rem;;
-// }
 .keyboard-toggle {
 	display: flex;
 	color: $light;
@@ -149,10 +142,6 @@
 		width: 25%;
 		float: left;
 		cursor: pointer;
-
-		// &:hover{
-		//     opacity: 1;
-		// }
 		&.keyboard-area1 {
 			margin-left: -18.12%;
 		}

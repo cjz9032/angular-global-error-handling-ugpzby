@@ -538,7 +538,6 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 		this.sendFeatureClickMetrics(metricsData);
 	}
 
-	// fengxu start
 	openWaringModal() {
 		this.closeThermalMode2Modal();
 		const waringModalRef = this.dialog.open(ModalGamingPromptComponent, {
@@ -591,7 +590,6 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 			panelClass: 'modal-fun',
 		});
 	}
-	// fengxu end
 
 	/**
 	 * metrics collection for thermalmode feature

@@ -9,7 +9,6 @@
 	}
 	.widget-container {
 		border-radius: $border_radius;
-		//background: $dark_cell;
 		background: $darkCell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 2rem 4rem 3.5rem 4rem;
@@ -34,9 +33,6 @@
 			}
 			&.right {
 				padding-left: 0rem;
-				@media #{$breakpoint_xl} {
-					//padding-left:1rem;
-				}
 				@media #{$breakpoint_md} {
 					padding: 2rem 0;
 				}
@@ -433,7 +429,6 @@
 							fill: none;
 							stroke-width: 2.5rem;
 							stroke-linecap: butt;
-							//stroke-dasharray:3.5,1.5;
 							stroke-dasharray:4.75,2.25;
 							&.cpu-svgcircle-common {
 								stroke: url(#blueGradient);
@@ -565,7 +560,6 @@
 								left: 11.95rem;
 							}
 							.mask-obj {
-								//background-color: $gaming_darkest;
 								content: '';
 								position: absolute;
 								width: 17.25rem;
@@ -649,7 +643,6 @@
 						width: 26rem;
 						height: 26rem;
 						border-radius: 50%;
-						//border: 0.75rem solid $gaming_darkest;
 						@media #{$breakpoint_xl3} {
 							top: 4.5rem;
 							left: 4.5rem;
@@ -836,7 +829,6 @@
 						.hd-item {
 							text-align: center;
 							.hd-item-label {
-								//width:50%;
 								text-align: center;
 							}
 							.monitor-hd {
@@ -885,7 +877,6 @@
 							}
 						}
 					}
-					//hd-item-multiple
 					.hd-item {
 						margin-bottom: 3.4rem;
 						width: 100%;

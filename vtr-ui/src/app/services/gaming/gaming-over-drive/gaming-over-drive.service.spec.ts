@@ -51,9 +51,6 @@ describe('GamingOverDriveService', () => {
 			const stubValue = {
 				getOverDriveStatus: () => {
 					Promise.resolve(overDriveStatus);
-					// return new Promise((resolve) => {
-					// 	resolve(overDriveStatus);
-					// });
 				},
 				setOverDriveStatus: (value: boolean) => {
 					if (setReturnValue) {

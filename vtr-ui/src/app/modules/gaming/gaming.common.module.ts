@@ -5,16 +5,8 @@ import { SharedModule } from '../shared.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-	declarations: [
-		// UiGamingCollapsibleContainerComponent,
-		// UiGamingDriverPopupComponent,
-		// UiPopoverComponent
-	],
-	exports: [
-		// UiGamingCollapsibleContainerComponent,
-		// UiGamingDriverPopupComponent,
-		// UiPopoverComponent
-	],
+	declarations: [ ],
+	exports: [ ],
 	imports: [CommonModule, SharedModule, RouterModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

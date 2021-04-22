@@ -451,7 +451,6 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 				Promise.resolve({ didSuccess: true })
 			);
 			component.onToggleOnOff(true);
-			// tick();
 			expect(component.isDivideArea).toEqual(true);
 			expect(keyboardToggleStatusLNBx50Cache).toBeTruthy();
 		}));

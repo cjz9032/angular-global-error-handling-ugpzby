@@ -55,7 +55,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		name: '',
 		value: 1,
 	};
-	// end
+	
 
 	constructor(
 		private elementRef: ElementRef,

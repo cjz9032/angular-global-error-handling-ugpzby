@@ -1462,14 +1462,6 @@ export class VantageShellService {
 
 		gamingAllCapabilities.getCapabilities = this.getPromise(capablityObj);
 		return gamingAllCapabilities;
-		// if (this.phoenix) {
-		// 	if (!this.phoenix.gaming) {
-		// 		this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
-		// 	}
-		// 	console.log('CAP ############################', this.phoenix.gaming.gamingAllCapabilities);
-		// 	return this.phoenix.gaming.gamingAllCapabilities;
-		// }
-		// return undefined;
 	}
 
 	public getGamingLighting(): any {
@@ -1542,13 +1534,6 @@ export class VantageShellService {
 		return gamingLighting;
 	}
 	public getGamingOverClock(): any {
-		// if (this.phoenix) {
-		// 	if (!this.phoenix.gaming) {
-		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-		// 	}
-		// 	return this.phoenix.gaming.gamingOverclock;
-		// }
-		// return undefined;
 		const gamingOverClock = {
 			getCpuOCStatus: this.getPromise(true),
 			getRamOCStatus: this.getPromise(true),
@@ -1611,19 +1596,11 @@ export class VantageShellService {
 	}
 
 	public getGamingKeyLock() {
-		// if (this.phoenix) {
-		// 	if (!this.phoenix.gaming) {
-		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-		// 	}
-
-		// 	return this.phoenix.gaming.gamingKeyLock;
-		// }
 		const gamingKeyLock: any = {
 			getKeyLockStatus: this.getPromise(true),
 			setKeyLockStatus: this.getPromise(true),
 		};
 		return gamingKeyLock;
-		// return undefined;
 	}
 
 	public getGamingHybridMode() {
@@ -1650,13 +1627,6 @@ export class VantageShellService {
 		};
 		gamingHwInfo.getMachineInfomation = this.getPromise(hwINFOObj);
 		return gamingHwInfo;
-		// if (this.phoenix) {
-		// 	if (!this.phoenix.gaming) {
-		// 		this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
-		// 	}
-		// 	return this.phoenix.gaming.gamingHwInfo;
-		// }
-		// return undefined;
 	}
 
 	public getIntelligentMedia(): any {
@@ -1947,13 +1917,6 @@ export class VantageShellService {
 			start: null,
 		};
 		return gamingMacroKey;
-		// if (this.phoenix) {
-		// 	if (!this.phoenix.gaming) {
-		// 		this.phoenix.loadFeatures([ Phoenix.Features.Gaming ]);
-		// 	}
-		// 	console.log('MACROKEY ', JSON.stringify(this.phoenix.gaming.gamingMacroKey));
-		// 	return this.phoenix.gaming.gamingMacroKey;
-		// }
 	}
 
 	public getIntelligentCoolingForIdeaPad(): any {
@@ -1964,9 +1927,6 @@ export class VantageShellService {
 	}
 
 	public macroKeyInitializeEvent(): any {
-		// const initRes = true;
-		// const macrokeyInit.then = this.getPromise(initRes);
-		// return macrokeyInit;
 		return Promise.resolve(true);
 	}
 
@@ -2051,13 +2011,6 @@ export class VantageShellService {
 	}
 
 	public getGamingThermalMode() {
-		// if (this.phoenix) {
-		// 	if (!this.phoenix.gaming) {
-		// 		this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-		// 	}
-		// 	return this.phoenix.gaming.gamingThermalmode;
-		// }
-
 		const gamingThermalMode = {
 			getThermalModeStatus: this.getPromise(true),
 			setThermalModeStatus: this.getPromise(true),

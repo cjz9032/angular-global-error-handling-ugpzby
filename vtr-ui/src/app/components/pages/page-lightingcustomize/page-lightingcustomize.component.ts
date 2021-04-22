@@ -26,7 +26,6 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	cardContentPositionF: any = {};
 	startDateTime: any = new Date();
 	metrics: any;
-	// dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
 	notificationSubscription: Subscription;
 	capabilitySubscription: Subscription;

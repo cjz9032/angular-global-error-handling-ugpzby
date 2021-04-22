@@ -43,7 +43,6 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		headerText: '',
 		description: '',
 		closeButton: '',
-		// cancelButton: '',
 		okButton: '',
 	};
 

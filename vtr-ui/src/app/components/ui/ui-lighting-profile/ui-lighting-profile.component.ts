@@ -13,7 +13,6 @@ import {
 	LightEffectRGBFeature,
 	LightEffectSingleOrComplex,
 } from 'src/app/enums/light-effect-rgbfeature';
-import { DeviceService } from 'src/app/services/device/device.service';
 import { ColorWheelStatus } from 'src/app/enums/color-wheel-status.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LightingDataList } from './../../../data-models/gaming/lighting-new-version/lighting-data-list';
@@ -164,14 +163,10 @@ export class UiLightingProfileComponent implements OnInit {
 	constructor(
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
-		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService
+		private localCacheService: LocalCacheService
 	) {}
 
 	ngOnInit() {
-		this.deviceService.getMachineInfo().then((value: any) => {
-			//this.defaultLanguage = value.locale;
-		});
 		this.isProfileOff = false;
 		if (LocalStorageKey.LightingCapabilities !== undefined) {
 			const response = this.localCacheService.getLocalCacheValue(
@@ -303,7 +298,6 @@ export class UiLightingProfileComponent implements OnInit {
 		try {
 			if (response !== undefined) {
 				this.currentProfile = this.currentProfileId;
-				// this.profileBrightness = response.brightness;
 				if (response.lightInfo !== null && response.lightInfo.length > 0) {
 					if (
 						this.lightingCapabilities.RGBfeature === this.enumLightingRGBFeature.Simple
@@ -466,8 +460,6 @@ export class UiLightingProfileComponent implements OnInit {
 				}
 
 				this.getLightingProfileId();
-				// this.getLightingProfileById(this.currentProfileId);
-				// this.getLightingBrightness();
 			} else {
 				if (LocalStorageKey.LightingCapabilities !== undefined) {
 					response = this.localCacheService.getLocalCacheValue(
@@ -1151,7 +1143,6 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public getLightingProfileById(currProfileId) {
 		try {
-			// 1----profileid
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService
 					.getLightingProfileById(currProfileId)

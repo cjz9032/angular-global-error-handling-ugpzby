@@ -6,9 +6,6 @@
             <p *ngIf="isDivideArea" id="gaming_lighting_divide_area_description_on" role="text" title="{{'gaming.lightingNewversion.colorPicker.text7' | translate}}">{{'gaming.lightingNewversion.colorPicker.text7' | translate}}</p>
             <p *ngIf="!isDivideArea" id="gaming_lighting_divide_area_description_off" role="text" title="{{'gaming.lightingNewversion.colorPicker.text6' | translate}}">{{'gaming.lightingNewversion.colorPicker.text6' | translate}}</p>
         </div>
-        <!-- <div class="keyboard-description">
-            Click on keyboard image below to change colors.
-        </div> -->
     </div>
     <div *ngIf="isDisabled" id="gaming_lighting_color_description_unsupported" role="text" class="disabled-description">{{'gaming.lightingNewversion.colorPicker.text8' | translate}}</div>
     <div class="keyboard-main" role="text" [id]="!isDisabled ? 'gaming_lighting_keyboard_area_one' : 'gaming_lighting_unsupport_color_selection'">

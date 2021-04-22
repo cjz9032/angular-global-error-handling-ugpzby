@@ -38,7 +38,6 @@ export class ModalGamingPromptMockComponent {
 		cancelMetricEnabled: false,
 		cancelMetricsItemId: undefined,
 		id: undefined,
-		//emitService: of(1),
 		emitService: new EventEmitter(),
 		setAppList: (arg1, arg2) => undefined,
 	};
@@ -52,14 +51,6 @@ describe('PageAutocloseComponent', () => {
 	let gamingQuickSettingToolbarService: any;
 	let appnotification: AppNotification;
 	let modalService: any; // let modalService: NgbModal will throw error when spyon functions of modalService
-
-	// beforeEach(function() {
-	//     jasmine.clock().install();
-	// });
-
-	// afterEach(function() {
-	//     jasmine.clock().uninstall();
-	// });
 
 	describe('quick setting toolbar & toast event', () => {
 		const appDataList = {
@@ -233,8 +224,6 @@ describe('PageAutocloseComponent', () => {
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
-				//expect(component.openTargetModal).toHaveBeenCalled;
-				//expect().nothing();
 			}));
 
 			it('toggleAutoClose', fakeAsync(() => {
@@ -295,10 +284,7 @@ describe('PageAutocloseComponent', () => {
 			it('showTurnOn--showAddApps', fakeAsync(() => {
 				try {
 					const modalGamingPromptMock = new ModalGamingPromptMockComponent();
-					//modalService.open = modalGamingPromptMock;
 					spyOn(modalService, 'open').and.returnValue(modalGamingPromptMock);
-					//let modalGamingRunningAppListMock = new ModalGamingRunningAppListMockComponent();
-					//spyOn(modalService, 'open').and.returnValue(modalGamingRunningAppListMock);
 					component.showTurnOn();
 					setTimeout(() => {
 						modalGamingPromptMock.componentInstance.emitService.next(true);
