@@ -444,7 +444,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public hasUserPresenceErrorMessageToShow(): void {
-		this.isHPDCBiosAvailable = !this.intelligentSecurity.isHPDConfiguredInBios && !this.intelligentSecurity.isSensorBroken;
+		const isSensorReadyNotBroken = this.intelligentSecurity.isSensorBroken === false;
+		this.isHPDCBiosAvailable = !this.intelligentSecurity.isHPDConfiguredInBios && isSensorReadyNotBroken;
 		this.isUserPresenceErrorMessageToShow = this.intelligentSecurity.isSensorBroken || this.isHPDCBiosAvailable;
 	}
 
@@ -1336,16 +1337,16 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	private async initCurrentTimerNeverCondition() {
 		try {
-			const timerCondition = await this.smartAssist.getCurrentTimerNeverCondition()
+			const timerCondition = await this.smartAssist.getCurrentTimerNeverCondition();
 			this.logger.info('getCurrentTimerNeverCondition: ', timerCondition);
-				this.intelligentSecurity.currentTimerNeverCondition = timerCondition;
-				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.SmartAssistCache,
-					this.smartAssistCache
-				);
+			this.intelligentSecurity.currentTimerNeverCondition = timerCondition;
+			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCache,
+				this.smartAssistCache
+			);
 
-		} catch(error) {
+		} catch (error) {
 			this.logger.error('getCurrentTimerNeverCondition: ', error);
 			this.intelligentSecurity.currentTimerNeverCondition = false;
 		};
@@ -1355,14 +1356,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		try {
 			const timerCondition = await this.smartAssist.getACTimerNeverCondition();
 			this.logger.info('getACTimerNeverCondition: ', timerCondition);
-				this.intelligentSecurity.isACTimerNeverCondition = timerCondition;
-				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.SmartAssistCache,
-					this.smartAssistCache
-				);
+			this.intelligentSecurity.isACTimerNeverCondition = timerCondition;
+			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCache,
+				this.smartAssistCache
+			);
 
-		} catch(error) {
+		} catch (error) {
 			this.logger.error('getACTimerNeverCondition: ', error);
 			this.intelligentSecurity.isACTimerNeverCondition = false;
 		};
@@ -1372,14 +1373,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		try {
 			const timerCondition = await this.smartAssist.getDCTimerNeverCondition();
 			this.logger.info('getDCTimerNeverCondition: ', timerCondition);
-				this.intelligentSecurity.isDCTimerNeverCondition = timerCondition;
-				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.SmartAssistCache,
-					this.smartAssistCache
-				);
+			this.intelligentSecurity.isDCTimerNeverCondition = timerCondition;
+			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCache,
+				this.smartAssistCache
+			);
 
-		} catch(error) {
+		} catch (error) {
 			this.logger.error('getDCTimerNeverCondition: ', error);
 			this.intelligentSecurity.isDCTimerNeverCondition = false;
 		};
