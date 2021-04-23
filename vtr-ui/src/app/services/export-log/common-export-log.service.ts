@@ -94,6 +94,7 @@ export abstract class CommonExportLogService {
 							await this.loadFonts(this.currentLanguage);
 							resolve();
 						} catch (error) {
+							logger.error('[Export Log] Could not load fonts', error);
 							reject();
 						}
 					});
