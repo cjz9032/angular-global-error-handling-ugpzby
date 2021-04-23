@@ -15,12 +15,10 @@
 				*ngIf="dolbyModeResponse.available"
 				id="audio">
 				<div class="col-12 mx-auto">
-                    <vtr-container-collapsible componentName="Audio SmartSettings"
+                    <vtr-material-expansion-panel componentName="Audio SmartSettings"
                         [headerLevel]="3"
-						[tabIndex]="0"
 						[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
-						[isCollapsed]="false"
-						[allowCollapse]="true"
+						[panelOpenState]="true"
 						[theme]="'white'"
 						[collapseLinkId]="'audio-smart-settings'">
 						<ul class="list-group list-group-flush"
@@ -167,19 +165,17 @@
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<div class="row py-5 smart-settings-card"
 				id="microphone">
 				<div class="col-12 mx-auto container-card"
 					*ngIf="microphoneProperties.available">
-                    <vtr-container-collapsible componentName="Microphone"
+                    <vtr-material-expansion-panel componentName="Microphone"
                         [headerLevel]="3"
-						[tabIndex]="0"
 						[cardTitle]="'device.deviceSettings.audio.microphone.title' | translate"
-						[isCollapsed]="false"
-						[allowCollapse]="true"
+						[panelOpenState]="true"
 						[theme]="'white'"
 						[collapseLinkId]="'audio-microphone'">
 						<vtr-widget-permission-note
@@ -342,7 +338,7 @@
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 		</div>

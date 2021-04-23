@@ -13,10 +13,8 @@
 			<div class="row py-5 smartsettings-card"
 				id="display">
 				<div class="col-12 mx-auto  container-card">
-					<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.dpm.subtitle' | translate"
-						[tabIndex]="0"
-						[allowCollapse]="true"
-						[isCollapsed]="false"
+					<vtr-material-expansion-panel [cardTitle]="'device.deviceSettings.power.dpm.subtitle' | translate"
+						[panelOpenState]="true"
 						[collapseLinkId]="'device-settings-dpm-settings'"
 						[headerLevel]="3">
 						<div class="dpmpowersetting">
@@ -26,7 +24,7 @@
 							<hr />
 							<vtr-power-settings></vtr-power-settings>
 						</div>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 
 				</div>
 			</div>

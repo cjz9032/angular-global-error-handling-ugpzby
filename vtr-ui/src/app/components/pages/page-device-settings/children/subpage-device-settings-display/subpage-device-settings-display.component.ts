@@ -270,9 +270,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		);
 
 		this.cameraSessionId = this.route.queryParamMap
-			.pipe(
-				takeWhile((par) => par.get('cameraSession_id') === 'camera')
-			)
+			.pipe(takeWhile((par) => par.get('cameraSession_id') === 'camera'))
 			.subscribe(() => {
 				this.logger.debug(`get queryParamMap for navigation from smart assist`);
 				setTimeout(() => {
@@ -295,45 +293,43 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	async ngAfterViewInit() {
 		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 
-		this.inWhiteList()
-			.then((isSupport) => {
-				if (isSupport) {
-					this.initDisplayColorTempFromCache();
-					this.initEyeCareModeFromCache();
-					this.statusChangedLocationPermission();
-					this.initEyecaremodeSettings();
-					this.startEyeCareMonitor();
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.EyeCareModeResetStatus,
-						'false'
-					);
-					this.showECMReset = false;
+		this.inWhiteList().then((isSupport) => {
+			if (isSupport) {
+				this.initDisplayColorTempFromCache();
+				this.initEyeCareModeFromCache();
+				this.statusChangedLocationPermission();
+				this.initEyecaremodeSettings();
+				this.startEyeCareMonitor();
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.EyeCareModeResetStatus,
+					'false'
+				);
+				this.showECMReset = false;
+			} else {
+				if (machineType === 1 || this.deviceService.isGaming) {
+					this.showECMReset = true;
+					this.resetEyecaremodeAllSettings();
 				} else {
-					if (machineType === 1 || this.deviceService.isGaming) {
-						this.showECMReset = true;
-						this.resetEyecaremodeAllSettings();
-					} else {
-						this.displayService.initEyecaremodeSettings(true)
-							.then((apiCapability) => {
-								if (apiCapability) {
-									this.initDisplayColorTempFromCache();
-									this.initEyeCareModeFromCache();
-									this.statusChangedLocationPermission();
-									this.initEyecaremodeSettings();
-									this.startEyeCareMonitor();
-									this.localCacheService.setLocalCacheValue(
-										LocalStorageKey.EyeCareModeResetStatus,
-										'false'
-									);
-									this.showECMReset = false;
-								} else {
-									this.showECMReset = true;
-									this.resetEyecaremodeAllSettings();
-								}
-							});
-					}
+					this.displayService.initEyecaremodeSettings(true).then((apiCapability) => {
+						if (apiCapability) {
+							this.initDisplayColorTempFromCache();
+							this.initEyeCareModeFromCache();
+							this.statusChangedLocationPermission();
+							this.initEyecaremodeSettings();
+							this.startEyeCareMonitor();
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.EyeCareModeResetStatus,
+								'false'
+							);
+							this.showECMReset = false;
+						} else {
+							this.showECMReset = true;
+							this.resetEyecaremodeAllSettings();
+						}
+					});
 				}
-			});
+			}
+		});
 
 		this.initFeatures();
 	}
@@ -1389,8 +1385,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	public onCardCollapse(isCollapsed: boolean) {
-		if (!isCollapsed) {
+	public onCardCollapse(panelOpenState: boolean) {
+		if (panelOpenState) {
 			this.manualRefresh.emit();
 		}
 	}
@@ -1520,8 +1516,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.privacyGuardToggleStatus = event.switchValue || !this.privacyGuardToggleStatus;
 		this.displayService
 			.setPrivacyGuardStatus(event.switchValue)
-			.then((response: boolean) => {
-			})
+			.then((response: boolean) => {})
 			.catch((error) => {
 				this.logger.error('set privacy guard status error here', error.message);
 				return EMPTY;

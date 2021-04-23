@@ -1,0 +1,121 @@
+@import '../../app.theme.scss';
+@mixin theme($name, $background, $color, $border) {
+	.vtr-material-expansion-panel.#{$name} {
+		mat-expansion-panel {
+			background: $background;
+			@media #{$high-contrast} {
+				outline: none;
+			}
+			.border-bottom-theme {
+				border-radius: 0;
+				border-bottom: 1px solid $border;
+			}
+		}
+		.text-underline {
+			font-size: $fontsize_xs;
+			color: $color;
+			text-decoration: underline;
+			font-weight: $weight_regular;
+			z-index: 2;
+			@media #{$white-on-black} {
+				@include hyperlink-yellow-black;
+			}
+			@media #{$black-on-white} {
+				@include hyperlink-blue-white;
+			}
+			@if $color == $light {
+				&:hover {
+					color: $color;
+					outline: none;
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color;
+					}
+				}
+				&:focus {
+					color: $color;
+					outline-offset: 0.1rem;
+					@include outline-white;
+					@include outline-white-high-contrast;
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color;
+					}
+				}
+
+				&:active {
+					color: $color;
+					outline: none;
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color;
+					}
+				}
+			} @else {
+				&:hover {
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color;
+					}
+				}
+				&:focus {
+					@include outline-blue;
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color;
+					}
+				}
+
+				&:active {
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color;
+					}
+				}
+			}
+		}
+		::ng-deep {
+			.collapse-header {
+				margin: 0;
+				color: $color;
+				font-size: $fontsize_lg;
+				font-weight: $weight_light;
+				@include high-contrast-adjust;
+				@include high-contrast-color-reversal;
+			}
+			.mat-expansion-panel:not(.mat-expanded)
+				.mat-expansion-panel-header:hover:not([aria-disabled='true']),
+			.mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled='true']) {
+				background: $border;
+				@media #{$high-contrast} {
+					@include high-contrast-background-transparent;
+				}
+			}
+			.mat-expansion-indicator {
+				display: flex;
+				color: $color;
+				@media #{$white-on-black} {
+					@include hyperlink-yellow-black;
+				}
+				@media #{$black-on-white} {
+					@include hyperlink-blue-white;
+				}
+			}
+		}
+	}
+}
+
+@include theme(white-theme, transparent, $menu_hover, $screen_dark_10);
+@include theme(blue-theme, $gradient_main, $light, $screen_light_15);

@@ -6,9 +6,9 @@
 
 		<div class="row py-5" id="Creator Settings">
 			<div class="col-12 px-0 creator-settings-block">
-				<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
+				<vtr-material-expansion-panel [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
 					[cardTitle]="'smb.creatorCentre.creatorSettings.title' | translate" componentName="Creator Settings"
-					[isCollapsed]="false" [allowCollapse]="true" [theme]="'white'" [tabIndex]="0">
+					[panelOpenState]="true" [theme]="'white'">
 					<ul class="list-group list-group-flush">
 						<li class="common-li-padding" *ngIf="intelligentPerformanceVisible">
 							<vtr-intelligent-performance
@@ -20,7 +20,7 @@
 							<vtr-color-settings></vtr-color-settings>
                         </li>
 					</ul>
-				</vtr-container-collapsible>
+				</vtr-material-expansion-panel>
 			</div>
 		</div>
 	</div>
