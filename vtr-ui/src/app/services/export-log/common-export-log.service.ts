@@ -19,6 +19,8 @@ interface IFont {
 }
 
 export abstract class CommonExportLogService {
+	private areFontsLoaded: Promise<void>;
+
 	protected exportExtensionSelected = ExportLogExtensions.html;
 	protected currentLogType: LogType;
 
@@ -77,18 +79,20 @@ export abstract class CommonExportLogService {
 
 		// Consult Machine Information
 		try {
-			this.shellService
-				.getSysinfo()
-				.getMachineInfo()
-				.then((info) => {
-					this.machineModel = info?.family;
-					this.serialNumber = info?.serialnumber;
-					this.biosVersion = info?.biosVersion;
-					this.productName = info?.mtm;
-					this.currentLanguage = info?.locale;
-
-					this.loadFonts(this.currentLanguage);
-				});
+			this.areFontsLoaded = new Promise<void>((resolve) => {
+				this.shellService
+					.getSysinfo()
+					.getMachineInfo()
+					.then(async (info) => {
+						this.machineModel = info?.family;
+						this.serialNumber = info?.serialnumber;
+						this.biosVersion = info?.biosVersion;
+						this.productName = info?.mtm;
+						this.currentLanguage = info?.locale;
+						await this.loadFonts(this.currentLanguage);
+						resolve();
+					});
+			});
 		} catch (error) {
 			logger.error('[Export Log] Could not load environment info', error);
 		}
@@ -117,6 +121,7 @@ export abstract class CommonExportLogService {
 			if (this.exportExtensionSelected === ExportLogExtensions.html) {
 				dataFormatted = await this.generateHtmlReport(dataPrepared);
 			} else {
+				await this.areFontsLoaded;
 				dataFormatted = this.generatePdfReport(dataPrepared);
 			}
 
@@ -185,6 +190,19 @@ export abstract class CommonExportLogService {
 	}
 
 	private async loadFonts(currentLanguage: string) {
+		const fontsFolder = 'assets/fonts/export-log/';
+		const fontNames = ['noto-sc.ttf', 'noto.ttf', 'noto-kr.ttf', 'rubik.ttf', 'amiri.ttf'];
+
+		const convertBlobToBase64 = (blob) =>
+			new Promise((resolve, reject) => {
+				const reader = new FileReader();
+				reader.onerror = reject;
+				reader.onload = () => {
+					resolve((reader.result as string).split(',')[1]);
+				};
+				reader.readAsDataURL(blob);
+			});
+
 		switch (currentLanguage) {
 			case LanguageCode.japanese:
 			case LanguageCode.simplifiedChinese:
@@ -206,51 +224,28 @@ export abstract class CommonExportLogService {
 		}
 
 		try {
-			// this.fonts.push((await import('./utils/fonts/amiri.json')).default as IFont);
-			// this.fonts.push((await import('./utils/fonts/noto.json')).default as IFont);
-			// this.fonts.push((await import('./utils/fonts/rubik.json')).default as IFont);
-			// this.fonts.push((await import('./utils/fonts/noto-kr.json')).default as IFont);
-			// this.fonts.push((await import('./utils/fonts/noto-sc.json')).default as IFont);
-
-			this.loadFontsFromTtf();
+			fontNames.forEach(async (fontName) => {
+				await this.http
+					.get(fontsFolder + fontName, {
+						responseType: 'blob',
+					})
+					.toPromise()
+					.then((fontData) => {
+						convertBlobToBase64(fontData).then((fontBase64) => {
+							this.logger.info(`[Load Fonts Export Log] - ${fontName} loaded`);
+							this.fonts.push({
+								id: fontName.substring(0, fontName.length - 4),
+								data: fontBase64 as string,
+							});
+						});
+					})
+					.catch((error) => {
+						this.logger.exception(`[Load Fonts Export Log] - ${fontName}`, error);
+					});
+			});
 		} catch (error) {
 			this.logger.error('[Export Log] Error on loading font files', error);
 		}
-	}
-
-	private async loadFontsFromTtf() {
-		const fontsFolder = 'assets/fonts/export-log/';
-		const fontNames = ['noto-sc.ttf', 'noto.ttf', 'noto-kr.ttf', 'rubik.ttf', 'amiri.ttf'];
-
-		const convertBlobToBase64 = (blob) =>
-			new Promise((resolve, reject) => {
-				const reader = new FileReader();
-				reader.onerror = reject;
-				reader.onload = () => {
-					resolve((reader.result as string).split(',')[1]);
-				};
-				reader.readAsDataURL(blob);
-			});
-
-		fontNames.forEach((fontName) => {
-			this.http
-				.get(fontsFolder + fontName, {
-					responseType: 'blob',
-				})
-				.toPromise()
-				.then((fontData) => {
-					convertBlobToBase64(fontData).then((fontBase64) => {
-						this.logger.info(`[Load Fonts Export Log] - ${fontName} loaded`);
-						this.fonts.push({
-							id: fontName.substring(0, fontName.length - 4),
-							data: fontBase64 as string,
-						});
-					});
-				})
-				.catch((error) => {
-					this.logger.exception(`[Load Fonts Export Log] - ${fontName}`, error);
-				});
-		});
 	}
 
 	protected setCorrectFont(content: string): any {
