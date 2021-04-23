@@ -206,14 +206,51 @@ export abstract class CommonExportLogService {
 		}
 
 		try {
-			this.fonts.push((await import('./utils/fonts/amiri.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/noto.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/rubik.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/noto-kr.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/noto-sc.json')).default as IFont);
+			// this.fonts.push((await import('./utils/fonts/amiri.json')).default as IFont);
+			// this.fonts.push((await import('./utils/fonts/noto.json')).default as IFont);
+			// this.fonts.push((await import('./utils/fonts/rubik.json')).default as IFont);
+			// this.fonts.push((await import('./utils/fonts/noto-kr.json')).default as IFont);
+			// this.fonts.push((await import('./utils/fonts/noto-sc.json')).default as IFont);
+
+			this.loadFontsFromTtf();
 		} catch (error) {
 			this.logger.error('[Export Log] Error on loading font files', error);
 		}
+	}
+
+	private async loadFontsFromTtf() {
+		const fontsFolder = 'assets/fonts/export-log/';
+		const fontNames = ['noto-sc.ttf', 'noto.ttf', 'noto-kr.ttf', 'rubik.ttf', 'amiri.ttf'];
+
+		const convertBlobToBase64 = (blob) =>
+			new Promise((resolve, reject) => {
+				const reader = new FileReader();
+				reader.onerror = reject;
+				reader.onload = () => {
+					resolve((reader.result as string).split(',')[1]);
+				};
+				reader.readAsDataURL(blob);
+			});
+
+		fontNames.forEach((fontName) => {
+			this.http
+				.get(fontsFolder + fontName, {
+					responseType: 'blob',
+				})
+				.toPromise()
+				.then((fontData) => {
+					convertBlobToBase64(fontData).then((fontBase64) => {
+						this.logger.info(`[Load Fonts Export Log] - ${fontName} loaded`);
+						this.fonts.push({
+							id: fontName.substring(0, fontName.length - 4),
+							data: fontBase64 as string,
+						});
+					});
+				})
+				.catch((error) => {
+					this.logger.exception(`[Load Fonts Export Log] - ${fontName}`, error);
+				});
+		});
 	}
 
 	protected setCorrectFont(content: string): any {
