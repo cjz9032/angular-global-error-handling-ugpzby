@@ -79,20 +79,25 @@ export abstract class CommonExportLogService {
 
 		// Consult Machine Information
 		try {
-			this.areFontsLoaded = new Promise<void>((resolve) => {
-				this.shellService
-					.getSysinfo()
-					.getMachineInfo()
-					.then(async (info) => {
-						this.machineModel = info?.family;
-						this.serialNumber = info?.serialnumber;
-						this.biosVersion = info?.biosVersion;
-						this.productName = info?.mtm;
-						this.currentLanguage = info?.locale;
-						await this.loadFonts(this.currentLanguage);
-						resolve();
+			this.shellService
+				.getSysinfo()
+				.getMachineInfo()
+				.then((info) => {
+					this.machineModel = info?.family;
+					this.serialNumber = info?.serialnumber;
+					this.biosVersion = info?.biosVersion;
+					this.productName = info?.mtm;
+					this.currentLanguage = info?.locale;
+
+					this.areFontsLoaded = new Promise<void>(async (resolve, reject) => {
+						try {
+							await this.loadFonts(this.currentLanguage);
+							resolve();
+						} catch (error) {
+							reject();
+						}
 					});
-			});
+				});
 		} catch (error) {
 			logger.error('[Export Log] Could not load environment info', error);
 		}
