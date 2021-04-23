@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.26](https://bitbucket.tc.lenovo.com///compare/v1.11.25...v1.11.26) (2021-04-23)
+
+
+### Bug Fixes
+
+* **chevron:** VAN-28246 modify chevron pipe param ([0301180](https://bitbucket.tc.lenovo.com///commit/030118003bbee2ab306ce82922e74d7f796f0476))
+
 ### [1.11.25](https://bitbucket.tc.lenovo.com///compare/v1.11.24...v1.11.25) (2021-04-22)
 
 
