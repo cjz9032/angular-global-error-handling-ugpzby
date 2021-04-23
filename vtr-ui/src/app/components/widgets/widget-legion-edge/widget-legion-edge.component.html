@@ -16,25 +16,25 @@
 	</div>
 	<div class="row">
 		<div class="col legionEdge-list-items">
-			<div class="item" *ngIf = "(gamingCapabilities.thermalModeVersion === 2 || gamingCapabilities.thermalModeVersion === 4) && gamingCapabilities.smartFanFeature" >
-				<button class="button-container" [id]="getThermalModeAutomationId()" [title]="getOCTips()"
+			<div class="item" *ngIf="(gamingCapabilities.thermalModeVersion === 2 || gamingCapabilities.thermalModeVersion === 4) && gamingCapabilities.smartFanFeature" >
+				<button class="button-container" [id]="thermalModeAutomationId" [title]="getOCTips()"
 				tabindex="1"  (click)="openThermalMode2Modal()"
 				vtrMetrics metricsEvent="featureClick" metricsItem="legion_edge_thermalmode_link" metricsParent="Gaming.Dashboard">
 					<div class="item-left">
 						<div class="title">{{'gaming.dashboard.device.quickSettings.title' | translate}}</div>
 						<div class="mode-status">
-							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">{{'gaming.dashboard.device.legionEdge.thermalMode2.performance' | translate}}</span>
-							<span *ngIf = "gamingCapabilities.thermalModeVersion === 2 && thermalModeRealStatus === thermalMode2Enum.performance && performanceOCSettings"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
-							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.balance">{{'gaming.dashboard.device.legionEdge.thermalMode2.balance' | translate}}</span>
-							<span *ngIf = "gamingCapabilities.thermalModeVersion === 4 && thermalModeRealStatus !== thermalMode2Enum.quiet && this.ocRealStatus !== thermalMode2Enum.none"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
-							<span *ngIf = "thermalModeRealStatus === thermalMode2Enum.quiet">{{'gaming.dashboard.device.legionEdge.thermalMode2.quiet' | translate}}</span>
+							<span *ngIf="thermalModeRealStatus === thermalMode2Enum.performance">{{'gaming.dashboard.device.legionEdge.thermalMode2.performance' | translate}}</span>
+							<span *ngIf="gamingCapabilities.thermalModeVersion === 2 && thermalModeRealStatus === thermalMode2Enum.performance && performanceOCSettings"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
+							<span *ngIf="thermalModeRealStatus === thermalMode2Enum.balance">{{'gaming.dashboard.device.legionEdge.thermalMode2.balance' | translate}}</span>
+							<span *ngIf="gamingCapabilities.thermalModeVersion === 4 && thermalModeRealStatus !== thermalMode2Enum.quiet && this.ocRealStatus !== thermalMode2Enum.none"> | {{'gaming.dashboard.device.legionEdge.thermalMode2.OC_On' | translate}}</span>
+							<span *ngIf="thermalModeRealStatus === thermalMode2Enum.quiet">{{'gaming.dashboard.device.legionEdge.thermalMode2.quiet' | translate}}</span>
 						</div>
 					</div>
 					<div class="item-right">
 						<div  class="icon">
-							<img class="pngStatus performance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.performance">
-							<img class="pngStatus balance" *ngIf = "thermalModeRealStatus === thermalMode2Enum.balance">
-							<img class="pngStatus quiet" *ngIf = "thermalModeRealStatus === thermalMode2Enum.quiet">
+							<img class="pngStatus performance" *ngIf="thermalModeRealStatus === thermalMode2Enum.performance">
+							<img class="pngStatus balance" *ngIf="thermalModeRealStatus === thermalMode2Enum.balance">
+							<img class="pngStatus quiet" *ngIf="thermalModeRealStatus === thermalMode2Enum.quiet">
 						</div>
 					</div>
 				</button>

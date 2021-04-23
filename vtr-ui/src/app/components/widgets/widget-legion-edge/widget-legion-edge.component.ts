@@ -50,6 +50,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public ocRealStatus = this.thermalMode2Enum.none;
 	public ocRealStatusEvent: any;
 
+	public thermalModeAutomationId: string;
+
 	// use enum instead of hard code on 200319 by Guo Jing
 	public legionItemIndex = {
 		cpuOverclock: 0,
@@ -419,6 +421,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 					this.ocRealStatus += this.thermalMode2Enum.gpu;
 				}
 			}
+			this.refreshAutomationId();
 		}
 
 		if (
@@ -651,6 +654,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				this.ocRealStatus = this.thermalMode2Enum.none;
 			}
 		}
+		this.refreshAutomationId();
 
 		if (
 			this.gamingCapabilities.thermalModeVersion === 1 &&
@@ -708,12 +712,26 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	//////////////////////////////////////////////////////////////////////
 	getThermalModeAutomationId() {
 		const thermalStatus = {};
-		thermalStatus[GamingThermal2.performance] = this.performanceOCSettings
-			? AutomationId.PerformanceOverclockOn
-			: AutomationId.Performance;
-		thermalStatus[GamingThermal2.balance] = AutomationId.Balance;
-		thermalStatus[GamingThermal2.quiet] = AutomationId.Quiet;
-		return thermalStatus[this.thermalModeRealStatus];
+		const isOCOn =
+			(this.gamingCapabilities.thermalModeVersion === 2 &&
+				this.thermalModeRealStatus === GamingThermal2.performance &&
+				this.performanceOCSettings) ||
+			(this.gamingCapabilities.thermalModeVersion === 4 &&
+				this.thermalModeRealStatus !== GamingThermal2.quiet &&
+				this.ocRealStatus !== GamingThermal2.none);
+		if (this.thermalModeRealStatus === GamingThermal2.performance) {
+			return isOCOn ? AutomationId.PerformanceOverclockOn : AutomationId.Performance;
+		}
+		if (this.thermalModeRealStatus === GamingThermal2.balance) {
+			return AutomationId.Balance;
+		}
+		if (this.thermalModeRealStatus === GamingThermal2.quiet) {
+			return AutomationId.Quiet;
+		}
+	}
+
+	refreshAutomationId() {
+		this.thermalModeAutomationId = this.getThermalModeAutomationId();
 	}
 
 	//////////////////////////////////////////////////////////////////////
@@ -738,6 +756,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 						this.thermalModeRealStatus
 					);
 				}
+				this.refreshAutomationId();
 			});
 		} catch (error) {
 			this.logger.error(
@@ -785,6 +804,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 					LocalStorageKey.RealThermalModeStatus,
 					this.thermalModeRealStatus
 				);
+				this.refreshAutomationId();
 			}
 		});
 	}
@@ -838,6 +858,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				} else {
 					this.performanceOCSettings = false;
 				}
+				this.refreshAutomationId();
 			});
 		} catch (error) {
 			this.performanceOCSettings = false;
@@ -846,6 +867,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				error.message
 			);
 		}
+		this.refreshAutomationId();
 	}
 	openThermalMode2Modal() {
 		const modalRef = this.dialog.open(ModalGamingThermalMode2Component, {
@@ -857,6 +879,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		});
 		this.ocSettingsSubscription = modalRef.componentInstance.ocSettingsMsg.subscribe((res) => {
 			this.performanceOCSettings = res;
+			this.refreshAutomationId();
 		});
 		// Version 3.7 app search for gaming
 		this.modelMonitorSubcription = modalRef.componentInstance.closeMonitorMsg.subscribe(
@@ -947,6 +970,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 					);
 				}
 			}
+			this.refreshAutomationId();
 		});
 	}
 	getOCTips() {
@@ -1051,7 +1075,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	onShowDropdown(event) {
 		if (event.type === 'gaming.dashboard.device.legionEdge.title') {
 			if (this.drop.hideDropDown) {
-				// TODO
 				this.legionUpdate[this.legionItemIndex.cpuOverclock].isDriverPopup = true;
 			}
 		}
@@ -1419,7 +1442,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	//////////////////////////////////////////////////////////////////////
 	onIconClick(event: any) {
 		this.logger.info(`Widget-LegionEdge-onIconClick: event.name value is ${event.name}`);
-		// TODO
 		if (event.name === 'gaming.dashboard.device.legionEdge.networkBoost') {
 			if (this.gamingCapabilities.fbnetFilter) {
 				this.router.navigate(['/gaming/networkboost']);
