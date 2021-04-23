@@ -152,7 +152,7 @@ export class HardwareScanExportLogComponent {
 
 	private openExportLogComponentsModal(): MatDialogRef<ModalExportLogComponent> {
 		const modal = this.dialog.open(ModalExportLogComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'hardware-scan-modal-size',

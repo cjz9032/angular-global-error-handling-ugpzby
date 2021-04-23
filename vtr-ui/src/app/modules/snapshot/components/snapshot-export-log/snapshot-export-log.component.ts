@@ -131,6 +131,7 @@ export class SnapshotExportLogComponent {
 
 	private openExportLogComponentsModal(): MatDialogRef<ModalExportLogComponent> {
 		const modal = this.dialog.open(ModalExportLogComponent, {
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'hardware-scan-modal-size',

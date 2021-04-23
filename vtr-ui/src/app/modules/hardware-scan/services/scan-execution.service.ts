@@ -583,11 +583,10 @@ export class ScanExecutionService {
 
 		const modalCancel = this.dialog.open(ModalCancelComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'cancel-modal-hwscan',
-			ariaLabelledBy: 'hwscan-cancel-modal-title',
 		});
 
 		modalCancel.componentInstance.ItemParent = this.getMetricsParentValue();
@@ -725,11 +724,10 @@ export class ScanExecutionService {
 				if (this.batteryMessage !== '') {
 					const modal = this.dialog.open(ModalPreScanInfoComponent, {
 						maxWidth: '50rem',
-						autoFocus: true,
+						autoFocus: false,
 						hasBackdrop: true,
 						disableClose: true,
 						panelClass: 'hardware-scan-modal-size',
-						ariaLabelledBy: 'hwscan-pre-scan-info-modal-title',
 					});
 
 					this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
