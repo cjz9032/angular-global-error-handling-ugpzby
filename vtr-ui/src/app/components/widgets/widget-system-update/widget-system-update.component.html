@@ -4,13 +4,12 @@
 			<div class="col">
 				<div class="title"
 					id="widget-system-update-title"
-					attr.aria-label="{{title}}"
-					role="text">{{title}}</div>
+					role="text">{{'systemUpdates.title' | translate}}</div>
 				<div class="description"
 					id="widget-system-update-description"
-					attr.aria-label="{{subtitle}}"
+					role="text"
 					[dir]="'dir' | translate"
-					[innerHTML]="subtitle"></div>
+					[innerHTML]="'dashboard.systemUpdate.subtitle' | translate"></div>
 				<div class="button-box">
 					<vtr-ui-button linkId="btn-check-for-system-updates"
 						metricsEvent="FeatureClick"
