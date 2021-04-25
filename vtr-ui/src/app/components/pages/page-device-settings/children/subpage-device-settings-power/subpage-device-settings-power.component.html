@@ -36,7 +36,7 @@
 									[switchId]="'ds-power-otherSettings-toolBar'"
 									(toggleOnOff)="onVantageToolBarStatusToggle($event)">
 									<div class="row">
-										<div class="col px-5">
+										<div class="col px-4">
 											<div class="row mt-4 ml-4">
 												<div class="toolbar-img">
 													<img *ngIf="isWindowsNext"
@@ -223,7 +223,7 @@
 									[switchId]="'ds-power-battery-airplane'"
 									(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 									<div class="row">
-										<div class="col px-5">
+										<div class="col px-4">
 											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
 												[isMetricsEnabled]=true
 												[metricsParent]='metricsParent'
@@ -291,7 +291,7 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col px-5">
+										<div class="col px-4">
 											<vtr-ui-checkbox *ngIf="usbChargingInBatteryModeStatus"
 												[isMetricsEnabled]=true
 												[metricsParent]='metricsParent'

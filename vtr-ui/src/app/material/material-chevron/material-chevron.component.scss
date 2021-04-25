@@ -5,21 +5,27 @@
 	padding: 2.4rem;
 	background-color: $light;
 	box-shadow: $drop_shadow;
+	border-radius: $border_radius;
+
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
 		outline: none !important;
 	}
+
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
 		outline: none !important;
 	}
+
 	::ng-deep {
 		.mat-card-header {
 			.mat-card-header-text {
 				margin: 0;
+
 				.mat-card-title {
 					font-weight: $weight_600;
 				}
+
 				.mat-card-subtitle {
 					font-weight: $weight_light;
 				}

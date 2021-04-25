@@ -26,7 +26,7 @@ import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-
 import { SharedModule } from '../shared.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
-
+import { MaterialModule } from '../common/material.module';
 
 @NgModule({
 	declarations: [
@@ -53,6 +53,7 @@ import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questio
 		UiCustomSliderModule,
 		MatButtonModule,
 		MatTooltipModule,
+		MaterialModule,
 	],
 	providers: [
 		{
@@ -63,4 +64,4 @@ import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questio
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class SmbModule { }
+export class SmbModule {}

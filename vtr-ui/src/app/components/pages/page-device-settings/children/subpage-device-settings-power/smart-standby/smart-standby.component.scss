@@ -1,10 +1,13 @@
 @import '../../../../../../app.theme.scss';
+
 ul.list-group {
 	list-style-type: none;
 	padding-bottom: 1rem;
 }
+
 .schedule_header {
-	padding: 0 1rem;
+	padding: 0 0rem 1rem;
+
 	h5 {
 		font-size: $caption;
 		color: $shade_blue;
@@ -15,14 +18,16 @@ ul.list-group {
 		margin-bottom: 2.5rem;
 	}
 }
+
 .schedule {
 	margin-top: 2rem;
-	margin-left: 1rem;
+
 	span {
 		font-size: $body;
 		font-weight: $weight_light;
 		color: $main_darker;
 	}
+
 	h5 {
 		font-size: $caption;
 		color: $shade_blue;
@@ -32,18 +37,20 @@ ul.list-group {
 }
 
 .click-to-change-collapse {
-	margin-left: 1rem;
 	font-size: $body;
 	font-weight: $weight_600;
+
 	.collapse-header {
 		display: inline-flex;
 		color: $blueHyperLink;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		width: auto;
+
 		&:focus {
 			@include outline-blue;
 		}
+
 		@media #{$black-on-white} {
 			@include hyperlink-blue-white;
 		}
@@ -52,10 +59,12 @@ ul.list-group {
 			@include hyperlink-yellow-black;
 		}
 	}
+
 	.collapse-header-icon {
 		flex-wrap: nowrap;
 		margin-left: 1rem;
 		cursor: pointer;
+
 		@media #{$black-on-white} {
 			@include hyperlink-blue-white;
 		}
@@ -68,6 +77,7 @@ ul.list-group {
 	.collapse-text {
 		cursor: pointer;
 		text-decoration: underline;
+
 		&:focus {
 			@include outline-blue;
 		}
@@ -88,7 +98,6 @@ ul.list-group {
 }
 
 .hyperlink-to-graph {
-	margin-left: 1rem;
 	font-size: $body;
 	font-weight: $weight_light;
 	color: $blueHyperLink;
@@ -96,6 +105,7 @@ ul.list-group {
 	margin-top: 3rem;
 	display: inline-block;
 	cursor: pointer;
+
 	@media #{$black-on-white} {
 		@include hyperlink-blue-white;
 	}
@@ -103,18 +113,20 @@ ul.list-group {
 	@media #{$white-on-black} {
 		@include hyperlink-yellow-black;
 	}
+
 	&:focus {
 		@include outline-blue;
 	}
 }
+
 .disabled {
-	margin-left: 1rem;
 	font-size: $body;
 	font-weight: $weight_light;
 	color: black;
 	text-decoration: none;
 	margin-top: 3rem;
 	cursor: default;
+
 	@media #{$black-on-white} {
 		@include high-contrast-white-text-color-disabled;
 	}
@@ -123,6 +135,7 @@ ul.list-group {
 		@include high-contrast-black-text-color-disabled;
 	}
 }
+
 .container-border {
 	.collapse-header-icon {
 		flex-wrap: nowrap;
@@ -150,7 +163,6 @@ ul.list-group {
 }
 
 .hyperlink-to-graph {
-	margin-left: 1rem;
 	font-size: $body;
 	font-weight: $weight_light;
 	color: $blueHyperLink;
@@ -158,12 +170,13 @@ ul.list-group {
 	margin-top: 3rem;
 	display: inline-block;
 	cursor: pointer;
+
 	&:focus {
 		@include outline-blue;
 	}
 }
+
 .disabled {
-	margin-left: 1rem;
 	font-size: $body;
 	font-weight: $weight_light;
 	color: black;

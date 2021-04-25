@@ -37,6 +37,17 @@
 			font-size: 1.4rem;
 		}
 
+		vtr-material-expansion-panel {
+			::ng-deep {
+				.vtr-material-expansion-panel.white-theme {
+					.mat-expansion-panel {
+						background: transparent;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+
 		.wifi-security {
 			.card {
 				border-radius: $border_radius;
