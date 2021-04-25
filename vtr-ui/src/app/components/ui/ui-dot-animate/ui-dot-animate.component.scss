@@ -1,15 +1,15 @@
 @import '../../../app.theme.scss';
 .dot-content {
 	display: inline-block;
-	width: 3rem;
-	height: 1rem;
+	width: 4rem;
+	height: 0.8rem;
 	vertical-align: bottom;
 	.dot {
 		float: left;
 		font-size: 0;
-		width: 0.6rem;
-		height: 0.6rem;
-		margin-left: 0.4rem;
+		width: 0.4rem;
+		height: 0.4rem;
+		margin-left: 0.7rem;
 		.dot-svg {
 			circle {
 				fill: $light;
@@ -20,28 +20,64 @@
 		}
 		&.dot-1 {
 			margin-left: 0;
-			animation: 1.2s linear 0s infinite dotShow;
+			animation: 7s linear 0s infinite dotAnim1;
 		}
 		&.dot-2 {
-			animation: 1.2s linear 0.25s infinite dotShow;
+			animation: 7s linear 0s infinite dotAnim2;
 		}
 		&.dot-3 {
-			animation: 1.2s linear 0.5s infinite dotShow;
+			animation: 7s linear 0s infinite dotAnim3;
 		}
 	}
 }
 
-@keyframes dotShow {
+@mixin dot-small {
+	opacity: 0;
+	transform: scale(0.6);
+}
+@mixin dot-big {
+	opacity: 1;
+	transform: scale(1);
+}
+
+@keyframes dotAnim1 {
 	0% {
-		opacity: 0.1;
-		transform: scale(0.5);
+		@include dot-small;
 	}
-	50% {
-		opacity: 1;
-		transform: scale(1);
+	12.5%,
+	75% {
+		@include dot-big;
 	}
+	87.5%,
 	100% {
-		opacity: 0.1;
-		transform: scale(0.5);
+		@include dot-small;
+	}
+}
+@keyframes dotAnim2 {
+	0%,
+	12.5% {
+		@include dot-small;
+	}
+	25%,
+	62.5% {
+		@include dot-big;
+	}
+	75%,
+	100% {
+		@include dot-small;
+	}
+}
+@keyframes dotAnim3 {
+	0%,
+	25% {
+		@include dot-small;
+	}
+	37.5%,
+	50% {
+		@include dot-big;
+	}
+	62.5%,
+	100% {
+		@include dot-small;
 	}
 }
