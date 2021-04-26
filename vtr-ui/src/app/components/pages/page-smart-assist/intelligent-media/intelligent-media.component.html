@@ -1,13 +1,11 @@
 <div class="row pt-5 smart-assist-card">
 	<div class="col-12 px-0"
 		id="media">
-        <vtr-container-collapsible [collapseLinkId]="'intelligentMedia-collapse'"
+        <vtr-material-expansion-panel [collapseLinkId]="'intelligentMedia-collapse'"
             [headerLevel]="3"
-			[tabIndex]="0"
 			[cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
 			componentName="intelligentMediaCollapsible"
-			[isCollapsed]="false"
-			[allowCollapse]="true"
+			[panelOpenState]="true"
 			[theme]="'white'">
 			<ul class="list-group list-group-flush video-playback-group">
 				<li>
@@ -140,6 +138,6 @@
 					</div>
 				</li>
 			</ul>
-		</vtr-container-collapsible>
+		</vtr-material-expansion-panel>
 	</div>
 </div>

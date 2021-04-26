@@ -1,0 +1,23 @@
+<mat-accordion [id]="collapseLinkId" class="vtr-material-expansion-panel" [ngClass]="{'white-theme': theme==='white','blue-theme': theme==='blue'}">
+	<mat-expansion-panel
+		[id]="collapseLinkId+'-panel'"
+		[expanded]="panelOpenState"
+		(opened)="open()"
+		(closed)="close()">
+		<mat-expansion-panel-header id="{{collapseLinkId+'-expansion-panel-header'}}" [ngClass]="{'mb-3': panelOpenState, 'border-bottom-theme': panelOpenState}">
+			<mat-panel-title class="align-items-center" [innerHTML]="'&lt;h'+headerLevel + ' class=&quot;collapse-header&quot; ' + 'tabindex=&quot;-1&quot; ' +
+			'id=&quot;'+collapseLinkId+'-collapse-card-title&quot;' + '&gt;' + cardTitle + '&lt;/h'+headerLevel + '&gt;' | safe: 'html'">
+			</mat-panel-title>
+			<a mat-customize-button class="link-button mx-3 my-2 text-underline"
+				id="{{collapseLinkId+'-collapse-link'}}"
+				vtrMetrics
+				metricsEvent="itemClick"
+				[metricsValue]="panelOpenState"
+				metricsItem="btn.collapse"
+				[metricsParent]="metricsParent">
+				{{(panelOpenState ? 'common.ui.collapse':'common.ui.expand') | translate}}
+			</a>
+		</mat-expansion-panel-header>
+		<ng-content></ng-content>
+	</mat-expansion-panel>
+</mat-accordion>

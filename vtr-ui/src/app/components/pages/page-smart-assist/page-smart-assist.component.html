@@ -17,13 +17,11 @@
 				id="security"
 				*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 				<div class="col-12 px-0 intelligent-security-block">
-					<vtr-container-collapsible [collapseLinkId]="'intelligentSecurity'"
+					<vtr-material-expansion-panel [collapseLinkId]="'intelligentSecurity'"
 						[headerLevel]="3"
-						[tabIndex]="0"
 						[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
 						componentName="intelligent security"
-						[isCollapsed]="false"
-						[allowCollapse]="true"
+						[panelOpenState]="true"
 						[theme]="'white'">
 						<!-- zeroTouchLogin -- ideaPad section -->
 						<ul class="list-group list-group-flush"
@@ -675,7 +673,7 @@
 								metricsParent="Pages.SmartAssist.security"
 								metricsItem="btn.Reset To Default Settings"></vtr-ui-button>
 						</div>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<!-- End of Intelligent Security -->
@@ -692,13 +690,11 @@
 				id="screen"
 				*ngIf="intelligentScreen && intelligentScreen.isIntelligentScreenVisible">
 				<div class="col-12 px-0">
-					<vtr-container-collapsible [collapseLinkId]="'intelligentScreen'"
+					<vtr-material-expansion-panel [collapseLinkId]="'intelligentScreen'"
 						[headerLevel]="3"
-						[tabIndex]="0"
 						[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
 						componentName="intelligent screen"
-						[isCollapsed]="false"
-						[allowCollapse]="true"
+						[panelOpenState]="true"
 						[theme]="'white'">
 
 						<div class="intligent-screen">
@@ -772,7 +768,7 @@
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 
@@ -801,16 +797,14 @@
 				id="aps"
 				*ngIf='isAPSAvailable'>
 				<div class="col-12 px-0">
-					<vtr-container-collapsible [collapseLinkId]="'activeProtection'"
+					<vtr-material-expansion-panel [collapseLinkId]="'activeProtection'"
 						[headerLevel]="3"
-						[tabIndex]="0"
 						[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
 						componentName=""
-						[isCollapsed]="false"
-						[allowCollapse]="true"
+						[panelOpenState]="true"
 						[theme]="'white'">
 						<vtr-active-protection-system></vtr-active-protection-system>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<!-- End of Active Protection System -->
@@ -820,16 +814,14 @@
 				id="voice"
 				*ngIf="lenovoVoice.available">
 				<div class="col-12 px-0">
-					<vtr-container-collapsible [collapseLinkId]="'intelligentVoice'"
+					<vtr-material-expansion-panel [collapseLinkId]="'intelligentVoice'"
 						[headerLevel]="3"
-						[tabIndex]="0"
 						[cardTitle]="'device.smartAssist.voice.title' | translate"
-						[isCollapsed]="false"
-						[allowCollapse]="true"
+						[panelOpenState]="true"
 						[theme]="'white'"
 						[metricsParent]="'Device.SmartAssist'">
 						<vtr-voice></vtr-voice>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<!-- End of voice -->

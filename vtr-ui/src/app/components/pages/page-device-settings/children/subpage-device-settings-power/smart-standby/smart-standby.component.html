@@ -2,11 +2,10 @@
 	id="smartStandby"
 	*ngIf="smartStandby?.isCapable">
 	<div class="col-12 px-0 container-border">
-		<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.smartStandby.sectionTitle' | translate"
+		<vtr-material-expansion-panel [cardTitle]="'device.deviceSettings.power.smartStandby.sectionTitle' | translate"
 			[headerLevel]="3"
-			[isCollapsed]="false"
-			[collapseLinkId]="'smart-standby-collapse'"
-			[tabIndex]="0">
+			[panelOpenState]="true"
+			[collapseLinkId]="'smart-standby-collapse'">
 			<ul class="list-group list-group-flush">
 				<li>
 					<vtr-ui-row-switch [title]="'device.deviceSettings.power.smartStandby.title' | translate"
@@ -20,7 +19,7 @@
 						[isSwitchChecked]="smartStandby.isEnabled"
 						(toggleOnOff)="onSmartStandbyToggle($event)"
 						[switchId]="'smart-standby-toggle'">
-						<div class="pl-4 mt-3 ml-2">
+						<div class="pl-4 mt-3">
 							<div>
 								<div *ngIf="isAutonomicCapability"
 									class="schedule_header">
@@ -168,6 +167,6 @@
 					</vtr-ui-row-switch>
 				</li>
 			</ul>
-		</vtr-container-collapsible>
+		</vtr-material-expansion-panel>
 	</div>
 </div>

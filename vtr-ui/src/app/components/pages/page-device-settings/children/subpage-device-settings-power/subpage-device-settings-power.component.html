@@ -16,12 +16,11 @@
 				id="other"
 				*ngIf="vantageToolbarStatus.available">
 				<div class="col-12 mx-auto container-card">
-                    <vtr-container-collapsible
+                    <vtr-material-expansion-panel
                         [headerLevel]="3"
 						componentName="'device.deviceSettings.power.otherSettings.title' | translate"
-						[tabIndex]="0"
 						[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate"
-						[isCollapsed]="false"
+						[panelOpenState]="true"
 						[collapseLinkId]="'device-settings-otherSettings'">
 						<ul class="list-group list-group-flush">
 							<li class="">
@@ -37,7 +36,7 @@
 									[switchId]="'ds-power-otherSettings-toolBar'"
 									(toggleOnOff)="onVantageToolBarStatusToggle($event)">
 									<div class="row">
-										<div class="col px-5">
+										<div class="col px-4">
 											<div class="row mt-4 ml-4">
 												<div class="toolbar-img">
 													<img *ngIf="isWindowsNext"
@@ -66,7 +65,7 @@
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<!-- ************** End of Lenovo Vantage toolbar **************************** -->
@@ -89,11 +88,10 @@
 				id="battery">
 				<div class="col-12 mx-auto container-card battery-settings-block">
 
-                    <vtr-container-collapsible
+                    <vtr-material-expansion-panel
                         [headerLevel]="3"
 						[cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
-						[tabIndex]="0"
-						[isCollapsed]="false"
+						[panelOpenState]="true"
 						[collapseLinkId]="'device-settings-batterySettings'">
 						<ul class="list-group list-group-flush">
 							<li class="common-li-padding"
@@ -195,7 +193,7 @@
 							<!-- End Conservation Status -->
 
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<!-- ****************** End Battery Section ******************************** -->
@@ -205,11 +203,10 @@
 				id="power"
 				*ngIf="isPowerSectionAvailable">
 				<div class="col-12 mx-auto container-card power-settings-block">
-                    <vtr-container-collapsible
+                    <vtr-material-expansion-panel
                         [headerLevel]="3"
 						[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
-						[tabIndex]="0"
-						[isCollapsed]="false"
+						[panelOpenState]="true"
 						[collapseLinkId]="'device-settings-powerSettings'">
 						<ul class="list-group list-group-flush">
 							<!-- Start Airplane Power Mode -->
@@ -226,7 +223,7 @@
 									[switchId]="'ds-power-battery-airplane'"
 									(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 									<div class="row">
-										<div class="col px-5">
+										<div class="col px-4">
 											<vtr-ui-checkbox [componentId]="'cb-airplane-mode'"
 												[isMetricsEnabled]=true
 												[metricsParent]='metricsParent'
@@ -294,7 +291,7 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col px-5">
+										<div class="col px-4">
 											<vtr-ui-checkbox *ngIf="usbChargingInBatteryModeStatus"
 												[isMetricsEnabled]=true
 												[metricsParent]='metricsParent'
@@ -330,7 +327,7 @@
 							</li>
 							<!-- End Easy Resume -->
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<!-- ****************** End Power Section ******************************** -->
@@ -339,12 +336,11 @@
 			<div class="row pt-5 smart-settings-card"
 				*ngIf="isEnergyStarProduct">
 				<div class="col-12 mx-auto container-card">
-                    <vtr-container-collapsible
+                    <vtr-material-expansion-panel
                         [headerLevel]="3"
 						componentName="'device.deviceSettings.power.energyStar.title' | translate"
-						[tabIndex]="0"
 						[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
-						[isCollapsed]="false"
+						[panelOpenState]="true"
 						[collapseLinkId]="'device-settings-power-otherSettings'">
 						<div class="row energystar-container">
 							<div class="col-3 col-sm-4 col-md-2">
@@ -362,7 +358,7 @@
 							</div>
 						</div>
 
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 			<!-- ****************** End Energy Star Section ************************ -->

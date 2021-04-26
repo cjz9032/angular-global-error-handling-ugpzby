@@ -13,14 +13,12 @@
 				id="Input & Accessories">
 				<div class="col-12 px-0 intelligent-keyboard-block">
 					<!-- Input & Accessories -->
-					<vtr-container-collapsible [collapseLinkId]="'inputAccessories'"
+					<vtr-material-expansion-panel [collapseLinkId]="'inputAccessories'"
 						[headerLevel]="3"
 						[cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
 						componentName="Input & Accessories"
-						[isCollapsed]="false"
-						[allowCollapse]="true"
-						[theme]="'white'"
-						[tabIndex]="0">
+						[panelOpenState]="true"
+						[theme]="'white'">
 						<ul class="list-group list-group-flush">
 							<!-- Keyboard map & Hidden Functions -->
 							<li class="common-li-padding"
@@ -310,7 +308,7 @@
 								</div>
 							</div>
 						</div>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 		</div>

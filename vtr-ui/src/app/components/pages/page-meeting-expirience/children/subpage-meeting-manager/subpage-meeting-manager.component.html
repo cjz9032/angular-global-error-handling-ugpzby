@@ -13,11 +13,11 @@
 		<div class="row">
 			<div class="col">
 				<div class="pt-5 content-card" id="meetingManager">
-					<vtr-container-collapsible [collapseLinkId]="'ai-meeting-manager'" [headerLevel]="3"
+					<vtr-material-expansion-panel [collapseLinkId]="'ai-meeting-manager'" [headerLevel]="3"
 											[cardTitle]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
 											componentName="Meeting Manager"
-											[isCollapsed]="false" [allowCollapse]="true"
-											[theme]="'white'" [tabIndex]="0">
+											[panelOpenState]="true"
+											[theme]="'white'">
 						<div class="row">
 							<div class="d-flex justify-content-between w-100">
 								<p class="context" role="text" id="ai-meeting-manager-description">
@@ -87,13 +87,13 @@
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 				<div class="pt-5 content-card microphone-block" *ngIf="microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)" id="smb-microphone">
-					<vtr-container-collapsible [collapseLinkId]="'creatorSettings-microphone'" [headerLevel]="3"
+					<vtr-material-expansion-panel [collapseLinkId]="'creatorSettings-microphone'" [headerLevel]="3"
 											[cardTitle]="'smb.meetingExperience.meetingManager.microPhone.title' | translate"
 											componentName="Microphone"
-											[isCollapsed]="false" [allowCollapse]="true"
+											[panelOpenState]="true"
 											[theme]="'white'" [tabIndex]="0">
 						<div class="common-li-padding" *ngIf="!microphoneProperties.permission">
 							<vtr-widget-permission-note
@@ -171,13 +171,13 @@
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 				<div *ngIf="isSupportSmartAppearance" class="pt-5 content-card" id="smartAppearance">
-					<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
+					<vtr-material-expansion-panel [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
 						[cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
 						componentName="Smart Appearance"
-						[isCollapsed]="false" [allowCollapse]="true"
+						[panelOpenState]="true"
 						[theme]="'white'" [tabIndex]="0">
 						<vtr-ui-row-switch
 							[title]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
@@ -193,7 +193,7 @@
 							(customButtonClick)="smartAppearanceButtonClick()"
 							[disabledAll]="!commonService.isOnline && !isLSAInstalled">
 						</vtr-ui-row-switch>
-					</vtr-container-collapsible>
+					</vtr-material-expansion-panel>
 				</div>
 			</div>
 		</div>
