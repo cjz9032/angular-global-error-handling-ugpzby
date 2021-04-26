@@ -14,7 +14,7 @@ export class IntelligentSecurity {
 	public isZeroTouchLockFacialRecoEnabled: boolean;
 	public facilRecognitionCameraAccess: boolean;
 	public facialRecognitionCameraPrivacyMode: boolean;
-	public isSensorBroken: boolean;
+	public isSensorBroken = false;
 	public isHPDConfiguredInBios: boolean;
 	public isAutoScreenTimeoutVisible: boolean;
 	public isAutoScreenTimeoutEnabled: boolean;

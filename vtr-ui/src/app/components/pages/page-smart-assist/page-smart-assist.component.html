@@ -37,6 +37,7 @@
 									(toggleOnOff)="onZeroTouchLoginStatusToggle($event)"
 									[theme]="'white'"
 									[disabled]="!intelligentSecurity.isHPDEnabled"
+									[isLastChild]="!isUserPresenceErrorMessageToShow"
 									[rightIcon]="['far', 'question-circle']"
 									[tooltipText]=" 'device.smartAssist.intelligentSecurity.zeroTouchLoginForIdea.tooltip' | translate">
 								</vtr-ui-row-switch>
@@ -166,9 +167,8 @@
 							</li>
 						</ul>
 						<!-- zeroTouchLogin -- thinkPad section -->
-						<ul class="list-group list-group-flush"
-							*ngIf="isThinkPad">
-							<li class="common-li-padding">
+						<ul class="list-group list-group-flush" *ngIf="isThinkPad">
+							<li class="common-li-padding" [ngClass]="{'no-border-bottom': isUserPresenceErrorMessageToShow}">
 								<vtr-ui-row-switch [switchId]="'humanPresenceDetection'"
 									[title]="'device.smartAssist.intelligentSecurity.humanPresenceDetection.title' | translate"
 									[componentName]="'HumanPresenceDetection'"
@@ -176,14 +176,14 @@
 									[leftIcon]="['icomoon', 'icomoon-face-recognition']"
 									[showChildContent]="true"
 									[isSwitchChecked]="intelligentSecurity.isHPDEnabled"
-									(disabled)="isUserPresenceErrorMessageToShow"
+									[disabled]="isUserPresenceErrorMessageToShow"
 									(isLastChild)="isUserPresenceErrorMessageToShow"
 									(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
 									[theme]="'white'"
 									>
 									<div class="row" *ngIf="isUserPresenceErrorMessageToShow">
 										<div class="feature-note error-message ml-5 p-4 pr-1">
-											<p *ngIf="intelligentSecurity.isSensorBroken" id="intelligent-security-hpd-sensor-note" role="text">
+											<p *ngIf="intelligentSecurity?.isSensorBroken" id="intelligent-security-hpd-sensor-note" role="text">
 												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.sensorBroken' | translate}}
 											</p>
 											<p *ngIf="isHPDCBiosAvailable" id="intelligent-security-hpd-biosPriority-note"  role="text">
@@ -193,7 +193,7 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<li class="no-border-bottom common-li-padding">
+							<li class="no-border-bottom common-li-padding" *ngIf="!isUserPresenceErrorMessageToShow">
 								<vtr-ui-row-switch [switchId]="'thinkpadZeroTouchLogin'"
 									[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 									[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -458,7 +458,7 @@
 						<!-- zeroTouchLock -- thinkPad section -->
 						<ul class="list-group list-group-flush no-border-bottom"
 							[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
-							*ngIf="intelligentSecurity.isZeroTouchLockVisible && isThinkPad">
+							*ngIf="intelligentSecurity.isZeroTouchLockVisible && isThinkPad && !isUserPresenceErrorMessageToShow">
 							<li class="auto-screen-block common-li-padding">
 								<vtr-ui-row-switch [switchId]="'zeroTouchLock'"
 									[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
@@ -635,7 +635,7 @@
 							</div>
 						</div>
 						<!-- note -->
-						<div class="row">
+						<div class="row" *ngIf="!isUserPresenceErrorMessageToShow">
 							<div class="feature-note p-4 my-4 ml-4">
 								<p id="smart-assist-intelligent-security-note-desc1"
 									role="text">
@@ -665,7 +665,7 @@
 							</div>
 						</div>
 						<!-- reset -->
-						<div class="row ml-3">
+						<div class="row ml-3" *ngIf="!isUserPresenceErrorMessageToShow">
 							<vtr-ui-button [linkId]="'intelligentSecurity_reset_btn'"
 								(onClick)="onResetDefaultSettings($event)"
 								(keydown.enter)="onResetDefaultSettings($event)"
