@@ -548,7 +548,8 @@
 												vtrMetrics
 												metricsEvent="FeatureClick"
 												metricsParent="{{metricsParent}}"
-												metricsItem="checkbox.zero-touch-lock.auto-screen-timeout'">
+												metricsItem="checkbox.zero-touch-lock.auto-screen-timeout"
+												[metricsValue]="!intelligentSecurity.isAutoScreenTimeoutEnabled">
 												{{'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.checkbox.override' | translate}}
 											</mat-checkbox>
 											<a
