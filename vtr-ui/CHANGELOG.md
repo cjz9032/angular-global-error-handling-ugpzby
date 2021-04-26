@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.27](https://bitbucket.tc.lenovo.com///compare/v1.11.26...v1.11.27) (2021-04-26)
+
+
+### Features
+
+* **expansion panel:** VAN-28136 add expansion panel component ([31dafb7](https://bitbucket.tc.lenovo.com///commit/31dafb7d232f90c6da2d390406a90fad9364630f))
+* **SP:** VAN-28034 three dots use new animation ([4802ca8](https://bitbucket.tc.lenovo.com///commit/4802ca8e425bfbe8467f2a65ab91ab58b422eed4))
+
+
+### Bug Fixes
+
+* **dashboard:** VAN-28245 use pipe instead of instance in widget su ngOninit. ([41b0e87](https://bitbucket.tc.lenovo.com///commit/41b0e8726900900ce229999892e48b2d1c64d58f))
+
 ### [1.11.26](https://bitbucket.tc.lenovo.com///compare/v1.11.25...v1.11.26) (2021-04-23)
 
 
