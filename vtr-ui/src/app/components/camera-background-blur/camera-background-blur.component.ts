@@ -39,7 +39,6 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 					label: 'device.deviceSettings.displayCamera.camera.camerablur.blurMode',
 					value: this.BLUR,
 					isChecked: this.option.currentMode.toLowerCase() === this.BLUR.toLowerCase(),
-					isDisabled: false,
 					metricsItem: `radio.camera-blur.${this.BLUR}`,
 				},
 				{
@@ -47,7 +46,6 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 					label: 'device.deviceSettings.displayCamera.camera.camerablur.comicMode',
 					value: this.COMIC,
 					isChecked: this.option.currentMode.toLowerCase() === this.COMIC.toLowerCase(),
-					isDisabled: false,
 					metricsItem: `radio.camera-blur.${this.COMIC}`,
 				},
 				{
@@ -55,7 +53,6 @@ export class CameraBackgroundBlurComponent implements OnInit, OnChanges {
 					label: 'device.deviceSettings.displayCamera.camera.camerablur.sketchMode',
 					value: this.SKETCH,
 					isChecked: this.option.currentMode.toLowerCase() === this.SKETCH.toLowerCase(),
-					isDisabled: false,
 					metricsItem: `radio.camera-blur.${this.SKETCH}`,
 				},
 			];

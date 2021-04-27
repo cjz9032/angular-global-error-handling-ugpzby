@@ -255,7 +255,6 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
 				value: false,
 				isChecked: !stickyKeyEnabled,
-				isDisabled: false,
 				metricsItem: 'radio.top-row-fn.normal-key',
 			},
 			{
@@ -264,7 +263,6 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
 				value: true,
 				isChecked: stickyKeyEnabled,
-				isDisabled: false,
 				metricsItem: 'radio.top-row-fn.fn-sticky-Key',
 			},
 		];

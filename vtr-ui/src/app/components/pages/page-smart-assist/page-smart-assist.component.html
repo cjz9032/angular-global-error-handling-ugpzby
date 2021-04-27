@@ -382,7 +382,9 @@
 											[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled"
 											[groupName]="'Zero-Touch-Lock-Timer-radio-group'"
 											[radioDetails]="zeroTouchLockTimersUIModel"
-											(selectionChange)="onZeroTouchLockTimerChange($event)">
+											(selectionChange)="onZeroTouchLockTimerChange($event)"
+											[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)"
+										>
 										</vtr-ui-rounded-rectangle-custom-radio-list>
 									</div>
 								</div>

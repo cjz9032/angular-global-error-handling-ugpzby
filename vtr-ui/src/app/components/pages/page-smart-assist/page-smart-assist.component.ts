@@ -100,9 +100,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast',
 			value: this.FAST,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.FAST,
-			isDisabled:
-				!this.intelligentSecurity.isZeroTouchLockEnabled ||
-				(this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
 			metricsItem: 'radio.screen-lock-timer.fast',
 		},
 		{
@@ -111,9 +108,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium',
 			value: this.MEDIUM,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.MEDIUM,
-			isDisabled:
-				!this.intelligentSecurity.isZeroTouchLockEnabled ||
-				(this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
 			metricsItem: 'radio.screen-lock-timer.medium',
 		},
 		{
@@ -122,9 +116,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow',
 			value: this.SLOW,
 			isChecked: this.intelligentSecurity.autoScreenLockTimer === this.SLOW,
-			isDisabled:
-				!this.intelligentSecurity.isZeroTouchLockEnabled ||
-				(this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
 			metricsItem: 'radio.screen-lock-timer.slow',
 		},
 	];
@@ -1282,9 +1273,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.zeroTouchLockTimersUIModel && this.zeroTouchLockTimersUIModel.length > 0) {
 			this.zeroTouchLockTimersUIModel.forEach((model) => {
 				model.isChecked = this.intelligentSecurity.autoScreenLockTimer === model.value;
-				model.isDisabled =
-					!this.intelligentSecurity.isZeroTouchLockEnabled ||
-					(this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
 			});
 		}
 	}

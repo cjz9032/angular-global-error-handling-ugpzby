@@ -8,7 +8,6 @@ export class UiRoundedRectangleRadioModel {
 		public label: string,
 		public value: any,
 		public isChecked: boolean,
-		public isDisabled: boolean,
 		public metricsItem: string
 	) {}
 }
