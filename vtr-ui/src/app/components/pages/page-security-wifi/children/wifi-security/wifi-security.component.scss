@@ -43,6 +43,9 @@
 					.mat-expansion-panel {
 						background: transparent;
 						box-shadow: none;
+						@media #{$high-contrast} {
+							border: none !important;
+						}
 					}
 				}
 			}
@@ -174,34 +177,6 @@
 				border-bottom-left-radius: $border_radius;
 				border-bottom-right-radius: $border_radius;
 				border-top: none;
-
-				::ng-deep .vtr-container-collapsible.white-theme {
-					box-shadow: none !important;
-					background: none !important;
-					border: 0 !important;
-
-					.card-header {
-						border: none !important;
-						.header {
-							color: inherit !important;
-							.collapse-header {
-								font-size: 2rem;
-								font-weight: $weight_light;
-							}
-						}
-
-						.collapse-control {
-							.collapse-text {
-								color: $blueHyperLink !important;
-								font-weight: $weight_medium;
-
-								&:hover {
-									color: $blueHyperLink !important;
-								}
-							}
-						}
-					}
-				}
 
 				.border-top-none {
 					border-radius: $border_radius;
