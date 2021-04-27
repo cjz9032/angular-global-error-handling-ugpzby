@@ -2269,45 +2269,9 @@ vtr-ui-smart-performance-scanning {
 .vtr-page-smart-assist,
 .subpage-meeting-manager,
 .subpage-creator-settings {
-	.vtr-container-collapsible.blue-theme,
-	.vtr-container-collapsible.white-theme {
-		.card-header {
-			padding: 0.75rem 0.7rem;
-
-			.header {
-				padding: 0 2rem;
-			}
-		}
-
-		.card-body {
-			padding-left: 0.7rem !important;
-			padding-right: 2.4rem !important;
-			padding-top: 2rem !important;
-		}
-
-		.collapse-header {
-			&:focus {
-				outline: none;
-			}
-		}
-	}
-
 	.vtr-ui-switch-row.blue-theme,
 	.vtr-ui-switch-row.white-theme {
 		padding: 0 0 1.5rem !important;
-	}
-
-	.intelligent-security-block,
-	.power-settings-block,
-	.battery-settings-block,
-	.intelligent-keyboard-block,
-	.creator-settings-block,
-	.microphone-block {
-		.vtr-container-collapsible.white-theme {
-			.card-body {
-				padding-top: 0 !important;
-			}
-		}
 	}
 }
 
