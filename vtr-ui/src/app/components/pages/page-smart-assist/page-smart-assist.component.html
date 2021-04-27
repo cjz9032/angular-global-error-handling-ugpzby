@@ -181,8 +181,8 @@
 									(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
 									[theme]="'white'"
 									>
-									<div class="row" *ngIf="isUserPresenceErrorMessageToShow">
-										<div class="feature-note error-message ml-5 p-4 pr-1">
+									<div class="row pr-3" *ngIf="isUserPresenceErrorMessageToShow">
+										<div class="feature-note error-message ml-4 p-4 pr-1">
 											<p *ngIf="intelligentSecurity?.isSensorBroken" id="intelligent-security-hpd-sensor-note" role="text">
 												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.sensorBroken' | translate}}
 											</p>
