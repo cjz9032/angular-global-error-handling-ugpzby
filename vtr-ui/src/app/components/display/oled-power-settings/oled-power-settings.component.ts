@@ -34,21 +34,11 @@ export class OledPowerSettingsComponent implements OnInit {
 		this.populateIntervals();
 		this.initOledDataFromCache();
 		this.initOledSettings();
-	}
-
-	private initOledDataFromCache() {
-		this.oledPowerSettingsCache = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.OledPowerSettings,
-			undefined
-		);
-		if (this.oledPowerSettingsCache !== undefined) {
-			this.oledPowerSettings = this.oledPowerSettingsCache;
-		} else {
-			this.oledPowerSettingsCache = new OledPowerSettings(false, 0, 0, 0);
-		}
+		this.logger.debug('initOledDataFromCache - ngOnInit ', this.oledPowerSettingsCache);
 	}
 
 	private populateIntervals() {
+		this.logger.info('populateIntervals');
 		const seconds = this.translate.instant(
 			'device.deviceSettings.displayCamera.display.oledPowerSettings.dropDown.seconds'
 		); // '';
@@ -149,6 +139,22 @@ export class OledPowerSettingsComponent implements OnInit {
 		];
 	}
 
+	private initOledDataFromCache() {
+		this.logger.debug('initOledDataFromCache');
+		this.oledPowerSettingsCache = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.OledPowerSettings,
+			undefined
+		);
+		this.logger.debug('initOledDataFromCache - BEFORE IF ', this.oledPowerSettingsCache);
+		if (this.oledPowerSettingsCache !== undefined) {
+			this.oledPowerSettings = this.oledPowerSettingsCache;
+			this.logger.debug('initOledDataFromCache - IF ', this.oledPowerSettingsCache);
+		} else {
+			this.oledPowerSettingsCache = new OledPowerSettings(false, 0, 0, 0);
+			this.logger.debug('oledPowerSettingsCache - ELSE ', this.oledPowerSettingsCache);
+		}
+	}
+
 	public initOledSettings() {
 		if (this.displayService.isShellAvailable) {
 			this.logger.info('OLED-Power-Settings : before getOLEDPowerControlCapability');
@@ -208,7 +214,7 @@ export class OledPowerSettingsComponent implements OnInit {
 			this.displayService
 				.getTaskbarDimmerSetting()
 				.then((result: any) => {
-					this.logger.info('OLED-Power-Settings : getTaskbarDimmerSetting.then', result);
+					this.logger.info('OLED-Power-Settings : getTaskbarDimmerSetting.then2', result);
 					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
 					this.oledPowerSettings.taskBarDimmerValue = value;
 					this.oledPowerSettingsCache.taskBarDimmerValue = value;
@@ -396,5 +402,6 @@ export class OledPowerSettingsComponent implements OnInit {
 
 	private updateCache() {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
+		this.logger.debug('OLED-Power-Settings : updateCache', this.oledPowerSettingsCache);
 	}
 }
