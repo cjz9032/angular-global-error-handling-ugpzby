@@ -248,7 +248,7 @@ export class WarrantyService {
 		this.deviceService.getMachineInfo().then(async (machineInfo) => {
 			if (machineInfo && machineInfo.serialnumber) {
 				const localInfo = await this.localInfoService.getLocalInfo();
-				// machineInfo.serialnumber = 'PF1HVYM5'; // for test 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' 'MP1NW0D2' 'PF1HVYM5'
+				// for test 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' 'MP1NW0D2' 'PF1HVYM5'
 				const sn = machineInfo.serialnumber;
 				const mtm = machineInfo.mtm;
 				this.setWarrantyUrl(sn, mtm);

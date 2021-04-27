@@ -91,21 +91,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsEvent: 'FeatureClick',
 	};
 
-	// lenaUrls = [
-	// 	{ url: 'https://in.lena.lenovo.com/lena', lang: 'en', geo: ['in', 'lk', 'bd'] },
-	// 	{ url: 'https://us.lena.lenovo.com/lena', lang: 'en', geo: ['us', 'ca'] },
-	// 	{ url: 'https://uki.lena.lenovo.com/lena', lang: 'en', geo: ['gb', 'ie'] },
-	// 	{ url: 'https://lena.lenovo.com/lena', lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph'] },
-	// 	{
-	// 		url: 'https://las.lena.lenovo.com/lena',
-	// 		lang: 'es',
-	// 		geo: ['mx', 'co', 'ar', 'pe', 'cl', 'cr', 'do', 'sv', 'gt', 'hn', 'ni', 'pa', 'bo', 'ec', 'py',
-	// 			'uy', 've'],
-	// 	},
-	// 	{ url: 'https://jp.lena.lenovo.com/lena', lang: 'ja', geo: ['jp'] },
-	// 	{ url: 'https://eu.lena.lenovo.com/lena', lang: 'de', geo: ['de', 'at'] },
-	// ];
-
 	listFindUs = {
 		icon: ['fal', 'heart'],
 		title: 'support.needHelp.listFindUs',
@@ -258,22 +243,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.supportService.getSerialnumber().then((sn) => {
 			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
 			this.supportDatas.needHelp.push(this.listContactCustomerService);
-			this.localInfoService.getLocalInfo().then((info) => {
-				// const GEO = info.GEO;
-				// const Lang = info.Lang;
-				// const data = window.btoa(`Brand=${info.Brand}&SourcePage=Lenovo Vantage`);
-				// const findUrlItem = this.lenaUrls.find(
-				// 	(item) => item.geo.indexOf(GEO) >= 0 && item.lang === Lang
-				// );
-				// if (findUrlItem) {
-				// 	this.listYourVirtualAssistant.url =
-				// 		findUrlItem.url + `?country=${GEO}&language=${Lang}&data=${data}`;
-				// 	this.supportDatas.needHelp.push(this.listYourVirtualAssistant);
-				// }
-
-				this.supportDatas.needHelp.push(this.listFindUs);
-				this.supportService.supportDatas = this.supportDatas;
-			});
+			this.supportDatas.needHelp.push(this.listFindUs);
+			this.supportService.supportDatas = this.supportDatas;
 		});
 
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
@@ -307,7 +278,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					});
 					this.sliceArticles(response);
 					this.backupContentArticles = this.copyObjectArray(this.articles);
-					// console.log(this.articles);
 					this.articlesType = SupportContentStatus.Content;
 					const msg = `Performance: Support page get content articles, ${contentUseTime}ms`;
 					this.loggerService.info(msg);

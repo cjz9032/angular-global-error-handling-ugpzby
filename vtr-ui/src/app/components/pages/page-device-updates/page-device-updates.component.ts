@@ -497,7 +497,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.lastInstallTime
 					);
 				}
-				// this.lastScanTime = new Date(value.lastScanTime);
 				this.nextScheduleScanTime = value.nextScheduleScanTime;
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.SystemUpdateNextScheduleScanTime,
@@ -505,10 +504,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				);
 				this.isScheduleScanEnabled = value.scheduleScanEnabled;
 				this.getNextUpdatedScanText();
-				// lastInstallTime: "2019-03-01T10:09:53"
-				// lastScanTime: "2019-03-12T18:24:03"
-				// nextScheduleScanTime: "2019-03-15T10:07:42"
-				// scheduleScanEnabled: true
 			});
 		}
 	}
@@ -593,57 +588,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 		this.systemUpdateService.ignoreFocusIds = focusIds;
 	}
-
-	// private getAvailablePackageId(packageName) {
-	// 	let packId = this.getPackageId(this.criticalUpdates, packageName);
-	// 	if (packId === '') {
-	// 		packId = this.getPackageId(this.recommendedUpdates, packageName);
-	// 	}
-	// 	if (packId === '') {
-	// 		packId = this.getPackageId(this.optionalUpdates, packageName);
-	// 	}
-	// 	if (packId === '') {
-	// 		packId = this.getPackageId(this.ignoredUpdates, packageName);
-	// 	}
-	// 	return packId;
-	// }
-
-	// private getPackageId(updateList:AvailableUpdateDetail[], packageName) {
-	// 	if (updateList && updateList.length > 0) {
-	// 		const pack = updateList.find(update => {
-	// 			return update.packageName === packageName;
-	// 		});
-	// 		if (pack && pack.packageID) {
-	// 			return pack.packageID;
-	// 		}
-	// 	}
-	// 	return '';
-	// }
-
-	// private getNextIgnoreAvailablePackageId(packageName) {
-	// 	let packId = this.getNextPackageId(this.recommendedUpdates, packageName);
-	// 	if (packId === '') {
-	// 		packId = this.getNextPackageId(this.optionalUpdates, packageName);
-	// 	} else if (packId === 'last') {
-	// 		if( this.optionalUpdates && this.optionalUpdates.length > 0) {
-	// 			packId = this.optionalUpdates[0].packageID;
-	// 		}
-	// 	}
-	// 	return packId;
-	// }
-
-	// private getNextPackageId(updateList:AvailableUpdateDetail[], packageName) {
-	// 	let packId = '';
-	// 	if(updateList && updateList.length > 0) {
-	// 		const index = updateList.findIndex(update => update.packageName === packageName);
-	// 		if (index !== -1 && index + 1 < updateList.length) {
-	// 			packId = updateList[index+1].packageID;
-	// 		} else if (index + 1 === updateList.length) {
-	// 			packId = 'last';
-	// 		}
-	// 	}
-	// 	return packId;
-	// }
 
 	private installUpdates(
 		removeDelayedUpdates: boolean,
@@ -788,9 +732,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		);
 		const diskSpaceEnough = await this.checkDiskSpaceEnough(this.updatesToInstall);
 
-		if(diskSpaceEnough && rebootType !== UpdateRebootType.RebootDelayed &&
-			rebootType !== UpdateRebootType.RebootForced && rebootType !== UpdateRebootType.PowerOffForced)
-		{
+		if (diskSpaceEnough && rebootType !== UpdateRebootType.RebootDelayed &&
+			rebootType !== UpdateRebootType.RebootForced && rebootType !== UpdateRebootType.PowerOffForced) {
 			// its normal update type installation which doesn't require rebooting/power-off
 			document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
 			this.focusOnElement(this.backButton);
@@ -819,7 +762,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				this.showRebootForceModal(modalRef);
 			} else if (rebootType === UpdateRebootType.PowerOffForced) {
 				this.showPowerOffForceModal(modalRef);
-			} 
+			}
 			modalRef.componentInstance.packages = packages;
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';

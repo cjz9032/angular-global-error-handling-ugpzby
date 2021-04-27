@@ -3,7 +3,6 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Subscription } from 'rxjs';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { AppsForYouService, AppDetails } from 'src/app/services/apps-for-you/apps-for-you.service';
@@ -50,15 +49,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		FAILED_INSTALL: -1,
 	};
 
-	// mockScreenShots = [
-	// 	{
-	// 		id: 'apps-for-you-screenshot-1',
-	// 		imageUrl: 'assets/images/apps-for-you/screenshot1(1).png',
-	// 		position: 1,
-	// 		isRepeat: false,
-	// 		show: 'show',
-	// 	},
-	// ];
 	screenshotInterval: any;
 	showArrows = false;
 	arrowClickable = true;
@@ -66,7 +56,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	constructor(
 		private route: ActivatedRoute,
 		private commonService: CommonService,
-		private loggerService: LoggerService,
 		private vantageShellService: VantageShellService,
 		public dialog: MatDialog,
 		private appsForYouService: AppsForYouService,
@@ -127,7 +116,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	clickLeftArrow() {
 		clearInterval(this.screenshotInterval);
 		this.swipeLeftToRight();
-		// this.startScreenshotAutoSwipe();
 	}
 
 	swipeRightToLeft() {
@@ -202,7 +190,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					if (
 						this.appDetails &&
 						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
-							-1
+						-1
 					) {
 						if (notification.payload < 85) {
 							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
@@ -217,7 +205,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					if (
 						this.appDetails &&
 						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
-							-1
+						-1
 					) {
 						if (
 							notification.payload === 'InstallDone' ||
@@ -391,9 +379,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		});
 		screenshotModal.componentInstance.metricsParent = this.metricsParent;
 		screenshotModal.componentInstance.image = imgUrl;
-		// setTimeout(() => {
-		// 	(document.querySelector('.apps-for-you-dialog') as HTMLElement).focus();
-		// }, 0);
 	}
 
 	copyObjectArray(obj: any) {

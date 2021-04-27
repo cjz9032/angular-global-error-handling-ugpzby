@@ -1,13 +1,4 @@
-import {
-	Component,
-	Input,
-	OnInit,
-	NgZone,
-	Output,
-	EventEmitter,
-	OnChanges,
-	SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -49,7 +40,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 		this.translateString();
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onCheckForUpdates() {
 		this.checkForUpdate.emit();

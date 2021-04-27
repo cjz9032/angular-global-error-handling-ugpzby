@@ -5,13 +5,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('SmartPerformanceService', () => {
-	// beforeEach(() => TestBed.configureTestingModule({}));
-
-	// it('should be created', () => {
-	//   const service: SmartPerformanceService = TestBed.get(SmartPerformanceService);
-	//   expect(service).toBeTruthy();
-	// });
-	//describe('SmartPerformanceService:', () => {
 	let shellService: VantageShellService;
 	let service: SmartPerformanceService;
 
@@ -24,14 +17,7 @@ describe('SmartPerformanceService', () => {
 		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {
-		function setup() {
-			const service = TestBed.get(SmartPerformanceService);
-
-			return { service };
-		}
-
 		it('should call getReadiness', () => {
-			const { service } = setup();
 
 			spyOn(service, 'getReadiness').and.callThrough();
 			service.getReadiness();
@@ -42,20 +28,17 @@ describe('SmartPerformanceService', () => {
 			expect(service.getReadiness).toHaveBeenCalled();
 		});
 
-		// it('should call startScan', () => {
-		//   const { service } = setup();
-		//     spyOn(service,'startScan').and.callThrough();
-		//     service.startScan();
-		//     expect(service.startScan).toHaveBeenCalled();
+		it('should call startScan', () => {
+			spyOn(service, 'startScan').and.callThrough();
+			service.startScan();
+			expect(service.startScan).toHaveBeenCalled();
 
-		//     service.isShellAvailable=false;
-		//     service.startScan();
-		//     expect(service.launchScan).toHaveBeenCalled();
-		// });
+			service.isShellAvailable = false;
+			service.startScan();
+			expect(service.startScan).toHaveBeenCalled();
+		});
 
 		it('should call launchScanAndFix', () => {
-			const { service } = setup();
-
 			spyOn(service, 'launchScanAndFix').and.callThrough();
 			service.launchScanAndFix();
 			expect(service.launchScanAndFix).toHaveBeenCalled();
@@ -66,8 +49,6 @@ describe('SmartPerformanceService', () => {
 		});
 
 		it('should call cancelScan', () => {
-			const { service } = setup();
-
 			spyOn(service, 'cancelScan').and.callThrough();
 			service.cancelScan();
 			expect(service.cancelScan).toHaveBeenCalled();
@@ -77,44 +58,38 @@ describe('SmartPerformanceService', () => {
 			expect(service.cancelScan).toHaveBeenCalled();
 		});
 
-		it('should call getSubscriptionDetails', () => {
-			const { service } = setup();
+		it('should call getSubscriptionDataDetail', () => {
 
-			spyOn(service, 'getSubscriptionDetails').and.callThrough();
-			service.getSubscriptionDetails();
-			expect(service.getSubscriptionDetails).toHaveBeenCalled();
+			spyOn(service, 'getSubscriptionDataDetail').and.callThrough();
+			service.getSubscriptionDataDetail();
+			expect(service.getSubscriptionDataDetail).toHaveBeenCalled();
 
 			service.isShellAvailable = false;
-			service.getSubscriptionDetails();
-			expect(service.getSubscriptionDetails).toHaveBeenCalled();
+			service.getSubscriptionDataDetail();
+			expect(service.getSubscriptionDataDetail).toHaveBeenCalled();
 		});
 
 		it('should call getScanSettings', () => {
-			const { service } = setup();
-
 			spyOn(service, 'getScanSettings').and.callThrough();
-			service.getScanSettings();
+			service.getScanSettings('{}');
 			expect(service.getScanSettings).toHaveBeenCalled();
 
 			service.isShellAvailable = false;
-			service.getScanSettings();
+			service.getScanSettings('{}');
 			expect(service.getScanSettings).toHaveBeenCalled();
 		});
 
 		it('should call getScanSummary', () => {
-			const { service } = setup();
-
 			spyOn(service, 'getScanSummary').and.callThrough();
-			service.getScanSummary();
+			service.getScanSummary('');
 			expect(service.getScanSummary).toHaveBeenCalled();
 
 			service.isShellAvailable = false;
-			service.getScanSummary();
+			service.getScanSummary('');
 			expect(service.getScanSummary).toHaveBeenCalled();
 		});
 
 		it('should call getSubscriptionDataDetail', () => {
-			const { service } = setup();
 
 			spyOn(service, 'getSubscriptionDataDetail').and.callThrough();
 			service.getSubscriptionDataDetail();
@@ -122,17 +97,15 @@ describe('SmartPerformanceService', () => {
 		});
 
 		it('should call getExpiredStatus', () => {
-			const { service } = setup();
-
 			spyOn(service, 'getExpiredStatus').and.callThrough();
+			const data = {
+				currentTime: '2020-11-04T07:46:26.899+0000',
+				expiredTime: '2021-11-04T07:46:26.899+0000'
+			};
 			service.getExpiredStatus(
-				new Date(),
-				{ currentTime: '2020-11-04T07:46:26.899+0000' },
-				null
+				data
 			);
 			expect(service.getExpiredStatus).toHaveBeenCalled();
 		});
 	});
-
-	// });
 });

@@ -100,8 +100,6 @@
 					#selectedFrequencyList>
 					{{selectedFrequency | translate}}
 					<span class="ml-3">
-						<!-- <fa-icon  *ngIf="scheduleTab != 1"
-                        [icon]="['fas', 'chevron-down']"></fa-icon> -->
 						<fa-icon [icon]="scheduleTab === 1 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>
 					</span>
 				</a>
@@ -136,8 +134,6 @@
 					#selectedNumberList>
 					{{selectedNumber}}
 					<span class="ml-3">
-						<!-- <fa-icon *ngIf="scheduleTab != 3"
-                        [icon]="['fas', 'chevron-down']"></fa-icon> -->
 						<fa-icon [icon]="scheduleTab === 3 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>
 					</span>
 				</a>
@@ -172,8 +168,6 @@
 					#selectedDayList>
 					{{selectedDay | translate}}
 					<span class="ml-3">
-						<!-- <fa-icon *ngIf="scheduleTab != 3" [icon]="['fas', 'chevron-down']"
-                        ></fa-icon> -->
 						<fa-icon [icon]="scheduleTab === 3 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>
 					</span>
 				</a>
@@ -207,8 +201,6 @@
 					{{scanTime.hour}}:{{scanTime.min}} {{selectedMeridiem | translate}}
 					<span class="ml-3">
 						<fa-icon [icon]="scheduleTab === 2 ? ['fas', 'chevron-up'] : ['fas', 'chevron-down']"></fa-icon>
-						<!-- <fa-icon *ngIf="scheduleTab !== 2"
-                    [icon]="['fas', 'chevron-down']"></fa-icon> -->
 					</span>
 				</a>
 				<div *ngIf="scheduleTab === 2"

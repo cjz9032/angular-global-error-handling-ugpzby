@@ -145,9 +145,6 @@
 					margin-left: -0.4rem;
 				}
 
-				// fa-icon {
-				// 	cursor: pointer;
-				// }
 				&::ng-deep {
 					vtr-ui-custom-switch {
 						.custom-switch {
@@ -199,9 +196,6 @@
 
 			.status {
 				cursor: default;
-				// fa-icon {
-				// 	cursor: default;
-				// }
 			}
 		}
 	}
@@ -407,7 +401,6 @@
 			z-index: 9999;
 			padding-top: 2rem;
 			margin-top: 4rem;
-			// top: 66%;
 			right: 9%;
 			box-shadow: $drop_shadow;
 			border-radius: 0.5rem;

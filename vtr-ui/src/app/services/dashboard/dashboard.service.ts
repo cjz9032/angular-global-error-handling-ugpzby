@@ -204,18 +204,6 @@ export class DashboardService {
 		}
 	}
 
-	// public getEyeCareMode(): Promise<FeatureStatus> {
-	// 	try {
-	// 		if (this.dashboard) {
-	// 			return this.dashboard.getEyecareMode();
-	// 		}
-	// 		return undefined;
-	// 	} catch (error) {
-	// 		throw Error(error.message);
-	// 	}
-
-	// }
-
 	public getEyeCareMode(): Promise<FeatureStatus> {
 		try {
 			if (this.eyeCareMode) {

@@ -43,7 +43,7 @@ export class SmartStandbyGraphComponent implements OnInit, OnDestroy {
 		24,
 	];
 	activitySubscription: Subscription;
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient) { }
 
 	ngOnInit() {
 		this.activitySubscription = this.getActivities().subscribe(
@@ -67,12 +67,9 @@ export class SmartStandbyGraphComponent implements OnInit, OnDestroy {
 	private renderChart(data: SmartStandbyActivityModel[]) {
 		const element = this.chartContainer.nativeElement;
 		const margin: any = { top: 20, bottom: 20, left: 20, right: 20 };
-		// const width = element.offsetWidth - (margin.left - margin.right);
-		// const height = element.offsetHeight - (margin.top - margin.bottom);
 		const boxWidth = Math.floor(35);
 		const boxHeight = 25;
 		const cellWidth = boxWidth / 4;
-		// const hours = data[0].activities.map((d) => d.hour);
 
 		const svg = d3
 			.select(element)

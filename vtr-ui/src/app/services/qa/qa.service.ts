@@ -55,7 +55,7 @@ export class QaService {
 		},
 	];
 
-	constructor(private translate: TranslateService) {}
+	constructor(private translate: TranslateService) { }
 
 	setCurrentLangTranslations() {
 		this.translate
@@ -75,8 +75,6 @@ export class QaService {
 	}
 
 	getById(id: number): QA {
-		return this.qas.find((element, index, array) => {
-			return element.id === id;
-		});
+		return this.qas.find((element, index, array) => element.id === id);
 	}
 }

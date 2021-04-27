@@ -139,28 +139,6 @@
 			background-color: #f5f7f8;
 		}
 	}
-
-	// .tooltip-container {
-	// 	.read {
-	// 		color: $menu_hover;
-	// 		text-decoration: underline;
-
-	// 		&:focus {
-	// 			outline: 0.1rem solid $menu_hover;
-	// 			outline-offset: 0.2rem;
-	// 		}
-	// 	}
-
-	// 	.ignore {
-	// 		color: $menu_hover;
-	// 		text-decoration: underline;
-
-	// 		&:focus ::before{
-	// 			outline: 0.1rem solid $menu_hover;
-	// 			outline-offset: 0.2rem;
-	// 		}
-	// 	}
-	// }
 }
 
 :host-context(.is-gaming) {

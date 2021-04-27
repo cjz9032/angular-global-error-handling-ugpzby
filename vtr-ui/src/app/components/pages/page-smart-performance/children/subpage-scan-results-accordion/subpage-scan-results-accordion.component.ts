@@ -276,9 +276,6 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	switchToResultCard(element: any, isExpanded: boolean, result: SPResult) {
 		if (isExpanded) {
 			this.currentContent = result.contents[0];
-			// setTimeout(() => {
-			// 	element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
-			// }, 0);
 		}
 	}
 
