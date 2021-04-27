@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Pentru a utiliza această caracteristică, trebuie să vă conectați la internet"
+		},
+		"dateTime": {
+			"year": "An",
+			"month": "Lună",
+			"day": "Zi",
+			"hours": "Ore",
+			"minutes": "Minute",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "Ianuarie",
+			"feb": "Februarie",
+			"mar": "Martie",
+			"apr": "Aprilie",
+			"may": "Mai",
+			"jun": "Iunie",
+			"jul": "Iulie",
+			"aug": "August",
+			"sep": "Septembrie",
+			"oct": "Octombrie",
+			"nov": "Noiembrie",
+			"dec": "Decembrie"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Detectarea prezenței utilizatorului",
 					"tooltip": "Faceți clic aici pentru a reseta setările pentru detecția prezenței umane.",
 					"sensorBroken": "Senzorul are o problemă. Această caracteristică nu este disponibilă.",
-                    "biosPriority": "Ați configurat această opțiune în BIOS și nu o puteți schimba prin intermediul aplicației Lenovo Vantage."
+					"biosPriority": "Ați configurat această opțiune în BIOS și nu o puteți schimba prin intermediul aplicației Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Conectare fără atingere",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Selectați opțiunea dorită pentru a bloca ecranul la o viteză mică/medie/mare, atunci când nu vi se detectează prezența. Cu toate acestea, timpul în care ecranul va fi blocat este influențat și de scenariul actual al utilizatorului, de abilitatea senzorului și setările Windows de expirare a ecranului. Vă recomandăm să vă blocați imediat sistemul înainte de a pleca.",
 						"checkbox": {
-                            "override": "Suprascriere",
-                            "link": "Setări expirare ecran Windows.",
-                            "onBattery": "Această caracteristică nu funcționează. Deoarece setarea din Windows de expirare a ecranului este configurată la „Nu se oprește niciodată ecranul atunci când PC-ul este alimentat de la baterie”.",
-                            "onPower": "Această caracteristică nu funcționează. Deoarece setarea din Windows de expirare a ecranului este configurată la „Nu se oprește niciodată ecranul atunci când PC-ul este conectat la o sursă de alimentare”.",
-                            "onBoth": "Această caracteristică nu funcționează. Deoarece setarea din Windows de expirare a ecranului este configurată la „Nu se oprește niciodată ecranul”.",
-                            "onStatic": "Această caracteristică ar putea să nu funcționeze când setarea din Windows privind expirarea ecranului este configurată la „Nu se oprește niciodată ecranul”."
-                        }
+							"override": "Suprascriere",
+							"link": "Setări expirare ecran Windows.",
+							"onBattery": "Această caracteristică nu funcționează. Deoarece setarea din Windows de expirare a ecranului este configurată la „Nu se oprește niciodată ecranul atunci când PC-ul este alimentat de la baterie”.",
+							"onPower": "Această caracteristică nu funcționează. Deoarece setarea din Windows de expirare a ecranului este configurată la „Nu se oprește niciodată ecranul atunci când PC-ul este conectat la o sursă de alimentare”.",
+							"onBoth": "Această caracteristică nu funcționează. Deoarece setarea din Windows de expirare a ecranului este configurată la „Nu se oprește niciodată ecranul”.",
+							"onStatic": "Această caracteristică ar putea să nu funcționeze când setarea din Windows privind expirarea ecranului este configurată la „Nu se oprește niciodată ecranul”."
+						}
 					},
 					"facialRecognition": {
 						"title": "RECUNOAȘTEREA FACIALĂ",

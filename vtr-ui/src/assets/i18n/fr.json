@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Connectez-vous à Internet pour utiliser cette fonction"
+		},
+		"dateTime": {
+			"year": "Année",
+			"month": "Mois",
+			"day": "Jour",
+			"hours": "Heures",
+			"minutes": "Minutes",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "Janvier",
+			"feb": "Février",
+			"mar": "Mars",
+			"apr": "Avril",
+			"may": "Mai",
+			"jun": "Juin",
+			"jul": "Juillet",
+			"aug": "Août",
+			"sep": "Septembre",
+			"oct": "Octobre",
+			"nov": "Novembre",
+			"dec": "Décembre"
 		}
 	},
 	"tutorial": {
@@ -2194,7 +2215,7 @@
 					"title": "Détection de présence de l'utilisateur",
 					"tooltip": "Cliquez ici pour réinitialiser les paramètres de détection de présence humaine.",
 					"sensorBroken": "Le détecteur a un problème. Cette fonction n'est pas disponible.",
-                    "biosPriority": "Vous avez configuré cette option dans le BIOS et vous ne pouvez pas la modifier via Lenovo Vantage."
+					"biosPriority": "Vous avez configuré cette option dans le BIOS et vous ne pouvez pas la modifier via Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Connexion sans pression tactile",
@@ -2218,13 +2239,13 @@
 						},
 						"toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée. Cependant, le moment auquel l'écran sera verrouillé est également influencé par le scénario utilisateur réel, la fonction du capteur et les paramètres Windows de mise en veille de l'écran. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez.",
 						"checkbox": {
-                            "override": "Remplacer",
-                            "link": "Paramètres de mise en veille de l'écran Windows.",
-                            "onBattery": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran lors de l'exécution sur batterie\".",
-                            "onPower": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran en cas de branchement sur secteur\".",
-                            "onBoth": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran\".",
-                            "onStatic": "Cette fonction peut ne pas fonctionner lorsque les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran\"."
-                        }
+							"override": "Remplacer",
+							"link": "Paramètres de mise en veille de l'écran Windows.",
+							"onBattery": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran lors de l'exécution sur batterie\".",
+							"onPower": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran en cas de branchement sur secteur\".",
+							"onBoth": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran\".",
+							"onStatic": "Cette fonction peut ne pas fonctionner lorsque les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran\"."
+						}
 					},
 					"facialRecognition": {
 						"title": "RECONNAISSANCE FACIALE",

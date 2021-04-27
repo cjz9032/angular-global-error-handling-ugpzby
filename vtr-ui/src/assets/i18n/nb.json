@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Koble til Internett for å bruke denne funksjonen"
+		},
+		"dateTime": {
+			"year": "År",
+			"month": "Måned",
+			"day": "Dag",
+			"hours": "Timer",
+			"minutes": "Minutter",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "januar",
+			"feb": "februar",
+			"mar": "mars",
+			"apr": "april",
+			"may": "mai",
+			"jun": "juni",
+			"jul": "juli",
+			"aug": "august",
+			"sep": "september",
+			"oct": "oktober",
+			"nov": "november",
+			"dec": "desember"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Oppdagelse av brukerens tilstedeværelse",
 					"tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede.",
 					"sensorBroken": "Det er et problem med sensoren. Denne funksjonen er ikke tilgjengelig.",
-                    "biosPriority": "Du har konfigurert dette alternativet i BIOS og kan ikke endre det gjennom Lenovo Vantage."
+					"biosPriority": "Du har konfigurert dette alternativet i BIOS og kan ikke endre det gjennom Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Pålogging uten berøring",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det.",
 						"checkbox": {
-                            "override": "Overstyr",
-                            "link": "Innstillingene for skjermtidsavbrudd i Windows.",
-                            "onBattery": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen ved batteristrøm\".",
-                            "onPower": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen når den er plugget i\".",
-                            "onBoth": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Slå aldri av skjermen\".",
-                            "onStatic": "Det er mulig funksjonen ikke virker når innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen\"."
-                        }
+							"override": "Overstyr",
+							"link": "Innstillingene for skjermtidsavbrudd i Windows.",
+							"onBattery": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen ved batteristrøm\".",
+							"onPower": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen når den er plugget i\".",
+							"onBoth": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Slå aldri av skjermen\".",
+							"onStatic": "Det er mulig funksjonen ikke virker når innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen\"."
+						}
 					},
 					"facialRecognition": {
 						"title": "ANSIKTSGJENKJENNING",

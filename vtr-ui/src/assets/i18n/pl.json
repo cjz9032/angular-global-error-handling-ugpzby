@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Połącz się z Internetem, aby korzystać z tej funkcji"
+		},
+		"dateTime": {
+			"year": "Rok",
+			"month": "Miesiąc",
+			"day": "Dzień",
+			"hours": "Godziny",
+			"minutes": "Minuty",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "styczeń",
+			"feb": "luty",
+			"mar": "marzec",
+			"apr": "kwiecień",
+			"may": "maj",
+			"jun": "czerwiec",
+			"jul": "lipiec",
+			"aug": "sierpień",
+			"sep": "wrzesień",
+			"oct": "październik",
+			"nov": "listopad",
+			"dec": "grudzień"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Wykrywanie obecności użytkownika",
 					"tooltip": "Kliknij tutaj, aby zresetować ustawienia wykrywania obecności człowieka.",
 					"sensorBroken": "Problem z czujnikiem. Ta funkcja nie jest dostępna.",
-                    "biosPriority": "Opcję skonfigurowano w systemie BIOS i nie można jej zmienić w Lenovo Vantage."
+					"biosPriority": "Opcję skonfigurowano w systemie BIOS i nie można jej zmienić w Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Logowanie bez dotyku",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Wybierz żądaną opcję, aby szybko/umiarkowanie/wolno zablokować ekran, gdy Twoja obecność nie zostanie wykryta. W rzeczywistości czas, w którym ekran zostanie zablokowany, zależy również od danego przypadku, możliwości czujnika i ustawienia limitu czasu ekranu systemu Windows. Dlatego przed odejściem od komputera zdecydowanie zalecamy natychmiastowe zablokowanie systemu.",
 						"checkbox": {
-                            "override": "Zastąp",
-                            "link": "Ustawienia limitu czasu ekranu systemu Windows.",
-                            "onBattery": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”.",
-                            "onPower": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu przy zasilaniu z sieci”.",
-                            "onBoth": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu”.",
-                            "onStatic": "Ta funkcja może nie działać, jeśli wyborem ustawienia limitu czasu ekranu systemu Windows jest „Nigdy nie wyłączaj ekranu”."
-                        }
+							"override": "Zastąp",
+							"link": "Ustawienia limitu czasu ekranu systemu Windows.",
+							"onBattery": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu na zasilaniu akumulatorowym”.",
+							"onPower": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu przy zasilaniu z sieci”.",
+							"onBoth": "Ta funkcja nie działa. Powodem jest wybór ustawienia limitu czasu ekranu systemu Windows „nigdy nie wyłączaj ekranu”.",
+							"onStatic": "Ta funkcja może nie działać, jeśli wyborem ustawienia limitu czasu ekranu systemu Windows jest „Nigdy nie wyłączaj ekranu”."
+						}
 					},
 					"facialRecognition": {
 						"title": "ROZPOZNAWANIE TWARZY",

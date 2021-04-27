@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "連接到網際網路以使用此功能"
+		},
+		"dateTime": {
+			"year": "年",
+			"month": "月",
+			"day": "天",
+			"hours": "小時",
+			"minutes": "分鐘",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "1月",
+			"feb": "2月",
+			"mar": "3月",
+			"apr": "4月",
+			"may": "5月",
+			"jun": "6月",
+			"jul": "7月",
+			"aug": "8月",
+			"sep": "9月",
+			"oct": "10月",
+			"nov": "11月",
+			"dec": "12月"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "使用者在場感應",
 					"tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。",
 					"sensorBroken": "感應器有問題。此功能無法使用。",
-                    "biosPriority": "您已在 BIOS 中配置此選項，而且無法透過 Lenovo Vantage 進行變更。"
+					"biosPriority": "您已在 BIOS 中配置此選項，而且無法透過 Lenovo Vantage 進行變更。"
 				},
 				"zeroTouchLogin": {
 					"title": "零接觸登入",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "選取您所需的選項，即可在未偵測到人員在場時以快/中/慢等速度鎖定螢幕。然而，螢幕遭到鎖定的時間也會受到實際使用情況、感應器功能，以及 Windows 螢幕逾時設定的影響。因此、我們強烈建議您在離開座位前立即將系統上鎖。",
 						"checkbox": {
-                            "override": "覆寫",
-                            "link": "Windows 螢幕逾時設定。",
-                            "onBattery": "此功能無法運作。因為 Windows 螢幕逾時設定已設定為「使用電池時永不關閉顯示器」。",
-                            "onPower": "此功能無法運作。因為 Windows 螢幕逾時設定已設定為「插電時永不關閉顯示器」。",
-                            "onBoth": "此功能無法運作。因為 Windows 螢幕逾時設定已設定為「永不關閉顯示器」。",
-                            "onStatic": "當 Windows 螢幕逾時設定已設定為「永不關閉顯示器」時，此功能無法運作。"
-                        }
+							"override": "覆寫",
+							"link": "Windows 螢幕逾時設定。",
+							"onBattery": "此功能無法運作。因為 Windows 螢幕逾時設定已設定為「使用電池時永不關閉顯示器」。",
+							"onPower": "此功能無法運作。因為 Windows 螢幕逾時設定已設定為「插電時永不關閉顯示器」。",
+							"onBoth": "此功能無法運作。因為 Windows 螢幕逾時設定已設定為「永不關閉顯示器」。",
+							"onStatic": "當 Windows 螢幕逾時設定已設定為「永不關閉顯示器」時，此功能無法運作。"
+						}
 					},
 					"facialRecognition": {
 						"title": "臉部辨識",

@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Csatlakozzon az internethez a funkció használatához"
+		},
+		"dateTime": {
+			"year": "Év",
+			"month": "Hónap",
+			"day": "nap",
+			"hours": "Óra",
+			"minutes": "Perc",
+			"am": "de.",
+			"pm": "du.",
+			"jan": "január",
+			"feb": "február",
+			"mar": "március",
+			"apr": "április",
+			"may": "május",
+			"jun": "június",
+			"jul": "július",
+			"aug": "augusztus",
+			"sep": "szeptember",
+			"oct": "október",
+			"nov": "november",
+			"dec": "december"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Felhasználói jelenlét észlelése",
 					"tooltip": "Ide kattintva alaphelyzetbe állíthatja az emberi jelenlét észlelésének beállításait.",
 					"sensorBroken": "Érzékelőprobléma lépett fel. A szolgáltatás nem áll rendelkezésre.",
-                    "biosPriority": "Ezt a lehetőséget a BIOS-ban állította be, és a Lenovo Vantage segítségével nem módosíthatja."
+					"biosPriority": "Ezt a lehetőséget a BIOS-ban állította be, és a Lenovo Vantage segítségével nem módosíthatja."
 				},
 				"zeroTouchLogin": {
 					"title": "Érintés nélküli bejelentkezés",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Válassza ki, hogyan szeretné zárolni a képernyőt (Gyorsan/Közepes sebességgel/Lassan), ha Ön nincs a közelben. A képernyő zárolási sebességére a tényleges felhasználói alkalmazás, a szenzor tulajdonságai és a Windows képernyőre vonatkozó időtúllépési beállításai is hatással vannak. Ezért határozottan azt javasoljuk, hogy azonnal zárolja a rendszert, amikor magára hagyja az eszközt.",
 						"checkbox": {
-                            "override": "Felülírás",
-                            "link": "Windows-képernyőre vonatkozó időtúllépési beállítások.",
-                            "onBattery": "Ez a funkció nem működik. Mivel a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt akkumulátor használatakor”.",
-                            "onPower": "Ez a funkció nem működik. Mivel a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt, ha áramforráshoz van csatlakoztatva”.",
-                            "onBoth": "Ez a funkció nem működik. Mivel a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt”.",
-                            "onStatic": "Ez a funkció nem működik, ha a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt”."
-                        }
+							"override": "Felülírás",
+							"link": "Windows-képernyőre vonatkozó időtúllépési beállítások.",
+							"onBattery": "Ez a funkció nem működik. Mivel a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt akkumulátor használatakor”.",
+							"onPower": "Ez a funkció nem működik. Mivel a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt, ha áramforráshoz van csatlakoztatva”.",
+							"onBoth": "Ez a funkció nem működik. Mivel a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt”.",
+							"onStatic": "Ez a funkció nem működik, ha a Windows-képernyőre vonatkozó időtúllépési beállítás a következő: „Soha ne kapcsolja ki a képernyőt”."
+						}
 					},
 					"facialRecognition": {
 						"title": "ARCFELISMERÉS",

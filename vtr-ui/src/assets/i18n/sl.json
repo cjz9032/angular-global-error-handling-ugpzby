@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Za uporabo te funkcije se povežite v internet"
+		},
+		"dateTime": {
+			"year": "Leto",
+			"month": "Mesec",
+			"day": "Dan",
+			"hours": "h",
+			"minutes": "min",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "januar",
+			"feb": "februar",
+			"mar": "marec",
+			"apr": "april",
+			"may": "maj",
+			"jun": "junij",
+			"jul": "julij",
+			"aug": "avgust",
+			"sep": "september",
+			"oct": "oktober",
+			"nov": "november",
+			"dec": "december"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Zaznavanje prisotnosti uporabnika",
 					"tooltip": "Kliknite tukaj za ponastavitev zaznavanja človeške prisotnosti.",
 					"sensorBroken": "Prišlo je do napake senzorja. Ta funkcija ni na voljo.",
-                    "biosPriority": "To možnost ste konfigurirali v sistemu BIOS in je ni mogoče spremeniti prek storitve Lenovo Vantage."
+					"biosPriority": "To možnost ste konfigurirali v sistemu BIOS in je ni mogoče spremeniti prek storitve Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Prijava brez dotika",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Izberite želeno možnost, da zaklenete zaslon pri hitro/srednje/počasni hitrosti, ko vaša prisotnost ni zaznana. Na čas, ko bo zaslon zaklenjen, vpliva tudi dejanska situacija uporabnika, zmožnost senzorja in nastavitve časa za izklop zaslona Windows. Zato priporočamo, da sistem takoj zaklenete, preden odidete.",
 						"checkbox": {
-                            "override": "Preglasitev",
-                            "link": "Nastavitve časa za izklop zaslona Windows.",
-                            "onBattery": "Ta funkcija ne deluje. Nastavitve časovne omejitve zaslona Windows so nastavljene na »Nikoli ne izklopi zaslona, ko je uporabljeno baterijsko napajanje«.",
-                            "onPower": "Ta funkcija ne deluje. Nastavitve časovne omejitve zaslona Windows so nastavljene na »Nikoli ne izklopi zaslona, ko je uporabljeno omrežno napajanje«.",
-                            "onBoth": "Ta funkcija ne deluje. Nastavitve časovne omejitve zaslona Windows so nastavljene na »Nikoli ne izklopi zaslona«.",
-                            "onStatic": "Ta funkcija morda ne bo delovala, ko so nastavitve časovne omejitve zaslona Windows nastavljene na »Nikoli ne izklopi zaslona«."
-                        }
+							"override": "Preglasitev",
+							"link": "Nastavitve časa za izklop zaslona Windows.",
+							"onBattery": "Ta funkcija ne deluje. Nastavitve časovne omejitve zaslona Windows so nastavljene na »Nikoli ne izklopi zaslona, ko je uporabljeno baterijsko napajanje«.",
+							"onPower": "Ta funkcija ne deluje. Nastavitve časovne omejitve zaslona Windows so nastavljene na »Nikoli ne izklopi zaslona, ko je uporabljeno omrežno napajanje«.",
+							"onBoth": "Ta funkcija ne deluje. Nastavitve časovne omejitve zaslona Windows so nastavljene na »Nikoli ne izklopi zaslona«.",
+							"onStatic": "Ta funkcija morda ne bo delovala, ko so nastavitve časovne omejitve zaslona Windows nastavljene na »Nikoli ne izklopi zaslona«."
+						}
 					},
 					"facialRecognition": {
 						"title": "PREPOZNAVANJE OBRAZA",

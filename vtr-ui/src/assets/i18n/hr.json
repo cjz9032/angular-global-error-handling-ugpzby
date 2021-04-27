@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Povežite se s internetom da biste koristili ovu značajku"
+		},
+		"dateTime": {
+			"year": "Godina",
+			"month": "Mjesec",
+			"day": "Dan",
+			"hours": "Sati",
+			"minutes": "Minuta",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "Siječanj",
+			"feb": "Veljača",
+			"mar": "Ožujak",
+			"apr": "Travanj",
+			"may": "Svibanj",
+			"jun": "Lipanj",
+			"jul": "Srpanj",
+			"aug": "Kolovoz",
+			"sep": "Rujan",
+			"oct": "Listopad",
+			"nov": "Studeni",
+			"dec": "Prosinac"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Prepoznavanje prisutnosti korisnika",
 					"tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti.",
 					"sensorBroken": "Postoji problem sa senzorom. Ova značajka je nedostupna.",
-                    "biosPriority": "Konfigurirali ste ovu mogućnost u BIOS-u i ne možete je promijeniti putem aplikacije Lenovo Vantage."
+					"biosPriority": "Konfigurirali ste ovu mogućnost u BIOS-u i ne možete je promijeniti putem aplikacije Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Automatska prijava",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Odaberite željenu opciju za zaključavanje zaslona na brzini Brzo/Srednje/Sporo kada nije otkrivena vaša prisutnost. Međutim, na vrijeme kada će zaslon biti zaključan utječe i stvarni korisnički scenarij, mogućnost senzora i postavke isteka vremena za zaslon sustava Windows. Stoga vam preporučujemo da sustav odmah zaključate prije odlaska.",
 						"checkbox": {
-                            "override": "Nadjačaj",
-                            "link": "Postavke isteka vremena za zaslon Windows.",
-                            "onBattery": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon kada je uključeno baterijsko napajanje\".",
-                            "onPower": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon kada je priključeno\".",
-                            "onBoth": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon\".",
-                            "onStatic": "Ova značajka možda neće raditi kada su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon\"."
-                        }
+							"override": "Nadjačaj",
+							"link": "Postavke isteka vremena za zaslon Windows.",
+							"onBattery": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon kada je uključeno baterijsko napajanje\".",
+							"onPower": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon kada je priključeno\".",
+							"onBoth": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon\".",
+							"onStatic": "Ova značajka možda neće raditi kada su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon\"."
+						}
 					},
 					"facialRecognition": {
 						"title": "PREPOZNAVANJE LICA",

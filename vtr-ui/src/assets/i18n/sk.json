@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Na používanie tejto funkcie sa pripojte k internetu"
+		},
+		"dateTime": {
+			"year": "Rok",
+			"month": "Mesiac",
+			"day": "Deň",
+			"hours": "Hodiny",
+			"minutes": "Minúty",
+			"am": "dop.",
+			"pm": "pop.",
+			"jan": "Január",
+			"feb": "Február",
+			"mar": "Marec",
+			"apr": "Apríl",
+			"may": "Máj",
+			"jun": "Jún",
+			"jul": "Júl",
+			"aug": "August",
+			"sep": "September",
+			"oct": "Október",
+			"nov": "November",
+			"dec": "December"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Snímanie prítomnosti používateľa",
 					"tooltip": "Kliknite sem na obnovenie predvolených nastavení zisťovania prítomnosti človeka.",
 					"sensorBroken": "Vyskytol sa problém so senzorom. Táto funkcia nie je k dispozícii.",
-                    "biosPriority": "Túto možnosť ste nakonfigurovali v systéme BIOS a nemôžete ju zmeniť pomocou aplikácie Lenovo Vantage."
+					"biosPriority": "Túto možnosť ste nakonfigurovali v systéme BIOS a nemôžete ju zmeniť pomocou aplikácie Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Bezdotykové prihlásenie",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Vyberte požadovanú možnosť rýchleho, stredne rýchleho alebo pomalého uzamknutia obrazovky, keď sa nezistí vaša prítomnosť. Čas uzamknutia obrazovky však bude ovplyvnený aj aktuálnym používaním, možnosťami senzora a nastaveniami časového limitu obrazovky systému Windows. Preto dôrazne odporúčame, aby ste systém uzamkli bezprostredne pred odchodom.",
 						"checkbox": {
-                            "override": "Prepísať",
-                            "link": "Nastavenia časového limitu obrazovky systému Windows.",
-                            "onBattery": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku pri napájaní z batérie“.",
-                            "onPower": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku pri napájaní zo siete“.",
-                            "onBoth": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku“.",
-                            "onStatic": "Táto funkcia nemusí fungovať, keď je v systéme Windows nastavený časový limit obrazovky na hodnotu „Nikdy nevypínať obrazovku“."
-                        }
+							"override": "Prepísať",
+							"link": "Nastavenia časového limitu obrazovky systému Windows.",
+							"onBattery": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku pri napájaní z batérie“.",
+							"onPower": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku pri napájaní zo siete“.",
+							"onBoth": "Táto funkcia nefunguje. Pretože časový limit obrazovky je v systéme Windows nastavený na hodnotu „Nikdy nevypínať obrazovku“.",
+							"onStatic": "Táto funkcia nemusí fungovať, keď je v systéme Windows nastavený časový limit obrazovky na hodnotu „Nikdy nevypínať obrazovku“."
+						}
 					},
 					"facialRecognition": {
 						"title": "ROZPOZNÁVANIE TVÁRE",

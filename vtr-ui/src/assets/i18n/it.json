@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Esegui la connessione a Internet per utilizzare questa funzione"
+		},
+		"dateTime": {
+			"year": "Anno",
+			"month": "Mese",
+			"day": "Giorno",
+			"hours": "Ore",
+			"minutes": "Minuti",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "Gennaio",
+			"feb": "Febbraio",
+			"mar": "Marzo",
+			"apr": "Aprile",
+			"may": "Mag.",
+			"jun": "Giugno",
+			"jul": "Luglio",
+			"aug": "Agosto",
+			"sep": "Settembre",
+			"oct": "Ottobre",
+			"nov": "Novembre",
+			"dec": "Dicembre"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Rilevamento presenza utente",
 					"tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevamento presenza umana.",
 					"sensorBroken": "Il sensore ha un problema. Questa funzione non è disponibile.",
-                    "biosPriority": "Questa opzione è stata configurata nel BIOS e non può essere modificata tramite Lenovo Vantage."
+					"biosPriority": "Questa opzione è stata configurata nel BIOS e non può essere modificata tramite Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Accesso automatico",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Selezionare l'opzione desiderata per bloccare lo schermo a una velocità Rapida/Media/Lenta quando non viene rilevata la propria presenza. Tuttavia, l'ora in cui lo schermo verrà bloccato è influenzata dallo scenario effettivo dell'utente, dalla capacità del sensore e dalle impostazioni del timeout dello schermo di Windows. Pertanto, si consiglia di bloccare immediatamente il sistema prima di uscire.",
 						"checkbox": {
-                            "override": "Sovrascrittura",
-                            "link": "Impostazioni di timeout dello schermo Windows.",
-                            "onBattery": "Questa funzione non può essere utilizzata. Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo con alimentazione a batteria\".",
-                            "onPower": "Questa funzione non può essere utilizzata. Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo quando collegato alla rete elettrica\".",
-                            "onBoth": "Questa funzione non può essere utilizzata. Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo\".",
-                            "onStatic": "Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo con alimentazione a batteria\" questa opzione potrebbe non funzionare."
-                        }
+							"override": "Sovrascrittura",
+							"link": "Impostazioni di timeout dello schermo Windows.",
+							"onBattery": "Questa funzione non può essere utilizzata. Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo con alimentazione a batteria\".",
+							"onPower": "Questa funzione non può essere utilizzata. Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo quando collegato alla rete elettrica\".",
+							"onBoth": "Questa funzione non può essere utilizzata. Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo\".",
+							"onStatic": "Poiché le impostazioni di timeout dello schermo di Windows sono configurate su \"Non spegnere mai lo schermo con alimentazione a batteria\" questa opzione potrebbe non funzionare."
+						}
 					},
 					"facialRecognition": {
 						"title": "RICONOSCIMENTO FACCIALE",

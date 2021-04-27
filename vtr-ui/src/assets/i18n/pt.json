@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Ligue-se à Internet para utilizar esta funcionalidade"
+		},
+		"dateTime": {
+			"year": "Ano",
+			"month": "Mês",
+			"day": "Dia",
+			"hours": "Horas",
+			"minutes": "Minutos",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "Janeiro",
+			"feb": "Fevereiro",
+			"mar": "Março",
+			"apr": "Abril",
+			"may": "Maio",
+			"jun": "Junho",
+			"jul": "Julho",
+			"aug": "Agosto",
+			"sep": "Setembro",
+			"oct": "Outubro",
+			"nov": "Novembro",
+			"dec": "Dezembro"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Deteção de presença do utilizador",
 					"tooltip": "Clique aqui para repor as definições de deteção de presença humana.",
 					"sensorBroken": "O sensor tem um problema. Esta funcionalidade não está disponível.",
-                    "biosPriority": "Configurou esta opção no BIOS e não pode alterá-la através do Lenovo Vantage."
+					"biosPriority": "Configurou esta opção no BIOS e não pode alterá-la através do Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Login Zero Touch",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Seleccione a opção pretendida para bloquear o ecrã a uma velocidade rápida/média/baixa quando a sua presença não é detetada. Contudo, o tempo em que o ecrã será bloqueado também é afetado pelo cenário real do utilizador, pela capacidade do sensor e pelas definições de tempo limite do ecrã do Windows. Por isso, sugerimos que bloqueie instantaneamente o seu sistema antes de sair.",
 						"checkbox": {
-                            "override": "Substituir",
-                            "link": "Definições de tempo de espera do ecrã do Windows.",
-                            "onBattery": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã em bateria”.",
-                            "onPower": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã quando ligado à tomada”.",
-                            "onBoth": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã”.",
-                            "onStatic": "Esta funcionalidade poderá não funcionar quando o tempo limite do ecrã do Windows estiver definido como “Nunca desligar o ecrã”."
-                        }
+							"override": "Substituir",
+							"link": "Definições de tempo de espera do ecrã do Windows.",
+							"onBattery": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã em bateria”.",
+							"onPower": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã quando ligado à tomada”.",
+							"onBoth": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã”.",
+							"onStatic": "Esta funcionalidade poderá não funcionar quando o tempo limite do ecrã do Windows estiver definido como “Nunca desligar o ecrã”."
+						}
 					},
 					"facialRecognition": {
 						"title": "RECONHECIMENTO FACIAL",

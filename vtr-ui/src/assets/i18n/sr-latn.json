@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Povežite se sa internetom da biste koristili ovu funkciju"
+		},
+		"dateTime": {
+			"year": "Godina",
+			"month": "Mesec",
+			"day": "Dan",
+			"hours": "Sati",
+			"minutes": "Minuti",
+			"am": "pre podne",
+			"pm": "popodne",
+			"jan": "januar",
+			"feb": "februar",
+			"mar": "mart",
+			"apr": "april",
+			"may": "maj",
+			"jun": "jun",
+			"jul": "jul",
+			"aug": "avgust",
+			"sep": "septembar",
+			"oct": "oktobar",
+			"nov": "novembar",
+			"dec": "decembar"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Osetljivost na ljudsko prisustvo",
 					"tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskog prisustva.",
 					"sensorBroken": "Senzor ima grešku. Ova funkcija nije dostupna.",
-                    "biosPriority": "Ovu opciju ste konfigurisali u BIOS-u i ne možete je promeniti u aplikaciji Lenovo Vantage."
+					"biosPriority": "Ovu opciju ste konfigurisali u BIOS-u i ne možete je promeniti u aplikaciji Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Prijavljivanje bez dodira",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Izaberite željenu opciju da biste zaključali ekran Brzom/Srednjom/Sporom brzinom kada vaše prisustvo nije otkriveno. Međutim, na vreme kada će ekran biti zaključan utiče i stvarni korisnički scenario, mogućnosti senzora i postavke vremenskog ograničenja ekrana operativnog sistema Windows. Zato vam preporučujemo da smesta zaključate sistem pred odlazak.",
 						"checkbox": {
-                            "override": "Prepiši",
-                            "link": "Windows postavke vremena čekanja za ekran.",
-                            "onBattery": "Ova funkcija ne radi. Zato što su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran kada je aktivirano napajanje preko baterije“.",
-                            "onPower": "Ova funkcija ne radi. Zato što su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran kada je aktivirano napajanje preko utičnice“.",
-                            "onBoth": "Ova funkcija ne radi. Zato što su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran“.",
-                            "onStatic": "Ova funkcija možda neće raditi kada su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran“."
-                        }
+							"override": "Prepiši",
+							"link": "Windows postavke vremena čekanja za ekran.",
+							"onBattery": "Ova funkcija ne radi. Zato što su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran kada je aktivirano napajanje preko baterije“.",
+							"onPower": "Ova funkcija ne radi. Zato što su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran kada je aktivirano napajanje preko utičnice“.",
+							"onBoth": "Ova funkcija ne radi. Zato što su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran“.",
+							"onStatic": "Ova funkcija možda neće raditi kada su Windows postavke za istek vremena ekrana podešene kao „Nikad ne isključuj ekran“."
+						}
 					},
 					"facialRecognition": {
 						"title": "PREPOZNAVANJE LICA",

@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Anslut till Internet om du vill använda den här funktionen"
+		},
+		"dateTime": {
+			"year": "År",
+			"month": "Månad",
+			"day": "Dag",
+			"hours": "Timmar",
+			"minutes": "Minuter",
+			"am": "förmiddag",
+			"pm": "eftermiddag",
+			"jan": "Januari",
+			"feb": "Februari",
+			"mar": "Mars",
+			"apr": "April",
+			"may": "Maj",
+			"jun": "Juni",
+			"jul": "Juli",
+			"aug": "Augusti",
+			"sep": "September",
+			"oct": "Oktober",
+			"nov": "November",
+			"dec": "December"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Närvaroavkänning",
 					"tooltip": "Klicka här för att återställa inställningarna för närvaroavkänning.",
 					"sensorBroken": "Ett sensorproblem har inträffat. Funktionen är inte tillgänglig.",
-                    "biosPriority": "Du har konfigurerat detta alternativ i BIOS och kan inte ändra det via Lenovo Vantage."
+					"biosPriority": "Du har konfigurerat detta alternativ i BIOS och kan inte ändra det via Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Beröringsfri inloggning",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den.",
 						"checkbox": {
-                            "override": "Ersätt",
-                            "link": "Windows-inställningar för skärmens tidsgräns.",
-                            "onBattery": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen med batteridrift.",
-                            "onPower": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen vid nätdrift.",
-                            "onBoth": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen.",
-                            "onStatic": "Denna funktion kanske inte fungerar när Windows-inställningarna för skärmtidsgräns har angetts till Stäng aldrig av skärmen."
-                        }
+							"override": "Ersätt",
+							"link": "Windows-inställningar för skärmens tidsgräns.",
+							"onBattery": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen med batteridrift.",
+							"onPower": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen vid nätdrift.",
+							"onBoth": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen.",
+							"onStatic": "Denna funktion kanske inte fungerar när Windows-inställningarna för skärmtidsgräns har angetts till Stäng aldrig av skärmen."
+						}
 					},
 					"facialRecognition": {
 						"title": "ANSIKTSIGENKÄNNING",

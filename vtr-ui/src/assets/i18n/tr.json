@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Bu özelliği kullanmak için İnternet'e bağlanın"
+		},
+		"dateTime": {
+			"year": "Yıl",
+			"month": "Ay",
+			"day": "Gün",
+			"hours": "Saat",
+			"minutes": "Dakika",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "Ocak",
+			"feb": "Şubat",
+			"mar": "Mart",
+			"apr": "Nisan",
+			"may": "May.",
+			"jun": "Haziran",
+			"jul": "Temmuz",
+			"aug": "Ağustos",
+			"sep": "Eylül",
+			"oct": "Ekim",
+			"nov": "Kasım",
+			"dec": "Aralık"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Kullanıcı varlığını algılama",
 					"tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için buraya tıklayın.",
 					"sensorBroken": "Algılayıcıda bir sorun var. Bu özellik kullanılamıyor.",
-                    "biosPriority": "Bu seçeneği BIOS'ta yapılandırdınız ve Lenovo Vantage aracılığıyla değiştiremezsiniz."
+					"biosPriority": "Bu seçeneği BIOS'ta yapılandırdınız ve Lenovo Vantage aracılığıyla değiştiremezsiniz."
 				},
 				"zeroTouchLogin": {
 					"title": "Sıfır dokunma ile oturum açma",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Varlığınız algılanmadığında ekranınızı Hızlı/Orta/Yavaş hızda kilitlemek için istediğiniz seçeneği belirleyin. Ancak, ekranın kilitlenme süresi gerçek kullanıcı senaryosu, sensör kapasitesi ve Windows ekranı zaman aşımı ayarlarından da etkilenir. Bu yüzden, bilgisayarınızın başından ayrılmadan önce sisteminizi hemen kilitlemenizi önemle tavsiye ederiz.",
 						"checkbox": {
-                            "override": "Geçersiz kıl",
-                            "link": "Windows ekran zaman aşımı ayarları.",
-                            "onBattery": "Bu özellik çalışmıyor. Çünkü Windows ekran zaman aşımı ayarları “Pil gücüyle çalışırken asla ekranı kapatma” şeklinde ayarlanmıştır.",
-                            "onPower": "Bu özellik çalışmıyor. Çünkü Windows ekran zaman aşımı ayarları “Prize takılıyken asla ekranı kapatma” şeklinde ayarlanmıştır.",
-                            "onBoth": "Bu özellik çalışmıyor. Çünkü Windows ekran zaman aşımı ayarları “Asla ekranı kapatma” şeklinde ayarlanmıştır.",
-                            "onStatic": "Windows ekran zaman aşımı ayarları “Ekranı hiçbir zaman kapatma” şeklinde ayarlandığında bu özellik çalışmayabilir."
-                        }
+							"override": "Geçersiz kıl",
+							"link": "Windows ekran zaman aşımı ayarları.",
+							"onBattery": "Bu özellik çalışmıyor. Çünkü Windows ekran zaman aşımı ayarları “Pil gücüyle çalışırken asla ekranı kapatma” şeklinde ayarlanmıştır.",
+							"onPower": "Bu özellik çalışmıyor. Çünkü Windows ekran zaman aşımı ayarları “Prize takılıyken asla ekranı kapatma” şeklinde ayarlanmıştır.",
+							"onBoth": "Bu özellik çalışmıyor. Çünkü Windows ekran zaman aşımı ayarları “Asla ekranı kapatma” şeklinde ayarlanmıştır.",
+							"onStatic": "Windows ekran zaman aşımı ayarları “Ekranı hiçbir zaman kapatma” şeklinde ayarlandığında bu özellik çalışmayabilir."
+						}
 					},
 					"facialRecognition": {
 						"title": "YÜZ TANIMA",

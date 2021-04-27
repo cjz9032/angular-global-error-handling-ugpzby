@@ -881,6 +881,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Verbinding maken met internet om deze functie te gebruiken"
+		},
+		"dateTime": {
+			"year": "Jaar",
+			"month": "Maand",
+			"day": "Dag",
+			"hours": "Uur",
+			"minutes": "Minuten",
+			"am": "VM",
+			"pm": "NM",
+			"jan": "Januari",
+			"feb": "Februari",
+			"mar": "Maart",
+			"apr": "April",
+			"may": "Mei",
+			"jun": "Juni",
+			"jul": "Juli",
+			"aug": "Augustus",
+			"sep": "September",
+			"oct": "Oktober",
+			"nov": "November",
+			"dec": "December"
 		}
 	},
 	"tutorial": {
@@ -2084,7 +2105,7 @@
 					"title": "Aanwezigheidssensor van gebruiker",
 					"tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen.",
 					"sensorBroken": "Er is een probleem met de sensor. Deze functie is niet beschikbaar.",
-                    "biosPriority": "U hebt deze optie geconfigureerd in het BIOS en kunt u deze niet wijzigen in Lenovo Vantage."
+					"biosPriority": "U hebt deze optie geconfigureerd in het BIOS en kunt u deze niet wijzigen in Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Aanmelding bij nul aanraken",
@@ -2108,13 +2129,13 @@
 						},
 						"toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd. Het moment waarop het scherm wordt vergrendeld, wordt echter ook beïnvloed door het feitelijke gebruikersscenario, het sensorvermogen en de Windows-instellingen voor time-out voor het scherm. Het is dus raadzaam om het systeem meteen te vergrendelen voordat u weggaat.",
 						"checkbox": {
-                            "override": "Negeer",
-                            "link": "Windows-instellingen voor schermtime-out.",
-                            "onBattery": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen Als de computer op een batterij werkt.",
-                            "onPower": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen Als de computer op netstroom werkt.",
-                            "onBoth": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen.",
-                            "onStatic": "Deze functie werkt mogelijk niet als de Windows-instelling voor time-out van het beeldscherm is ingesteld op \"Beeldscherm nooit uitschakelen\"."
-                        }
+							"override": "Negeer",
+							"link": "Windows-instellingen voor schermtime-out.",
+							"onBattery": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen Als de computer op een batterij werkt.",
+							"onPower": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen Als de computer op netstroom werkt.",
+							"onBoth": "Deze functie werkt niet. Reden: de Windows-instelling voor time-out van beeldscherm is ingesteld op Beeldscherm nooit uitschakelen.",
+							"onStatic": "Deze functie werkt mogelijk niet als de Windows-instelling voor time-out van het beeldscherm is ingesteld op \"Beeldscherm nooit uitschakelen\"."
+						}
 					},
 					"facialRecognition": {
 						"title": "GEZICHTSHERKENNING",
