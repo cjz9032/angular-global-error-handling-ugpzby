@@ -298,12 +298,6 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 			},
 		};
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-
-		// spyOn(smartPerformanceService, 'getLastScanResult').and.returnValue(
-		// 	Promise.resolve(response)
-		// );
-		// component.getLastScanResult();
-		// expect(smartPerformanceService.isScanning).toBe(false);
 	});
 
 	it('should clear date input fields', () => {

@@ -167,7 +167,6 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		} else {
 			this.scanToggleValue = false;
 			// when no record is present and scan is disabled setting default day.
-			// this.selectedDay = this.days[0];
 			this.setDefaultValWhenDisabled();
 		}
 		if (this.isFirstVisit) {

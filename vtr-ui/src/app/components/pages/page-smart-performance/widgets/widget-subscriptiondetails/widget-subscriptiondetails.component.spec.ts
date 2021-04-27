@@ -144,7 +144,6 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 			initiatedTime: '08:30',
 			isOpened: true,
 		});
-		// const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(response));
 		await component.showCurrentSubscriptionDetails();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
@@ -161,7 +160,6 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 	it('should call subscriptionDataProcess', async () => {
 		commonService = TestBed.inject(CommonService);
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		//component.spProcessStatus = true;
 		const subscriptionData = [...response.data];
 		await component.subscriptionDataProcess(subscriptionData);
 		fixture.detectChanges();

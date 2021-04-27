@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ColorCalibrationEnum } from 'src/app/enums/color-calibration.enum';
 import { CommonService } from '../../common/common.service';
-import { LocalInfoService } from '../../local-info/local-info.service';
-import { LoggerService } from '../../logger/logger.service';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 
 @Injectable({

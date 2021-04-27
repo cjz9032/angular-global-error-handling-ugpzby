@@ -13,7 +13,7 @@ export class UiSmartPerformanceScanningDetailComponent implements OnInit, OnChan
 	@Input() items: { key: string; isCurrent: boolean }[] = [];
 	detailItems: { key: string; isCurrent: boolean }[] = [];
 
-	constructor(public smartPerformanceService: SmartPerformanceService) {}
+	constructor(public smartPerformanceService: SmartPerformanceService) { }
 
 	ngOnInit() {
 		this.setDetailItems();

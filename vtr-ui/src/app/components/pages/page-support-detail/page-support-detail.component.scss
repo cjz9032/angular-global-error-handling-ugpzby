@@ -1,19 +1,5 @@
 @import '../../../app.theme';
 
-// .vtr-page-support {
-//   .vtr-page-content {
-//     .vtr-page-left-column {
-//       background: $shade_lightest;
-//     }
-
-//     .vtr-page-right-column {
-//       @media #{$mediaquery_X8} {
-//         padding: 4rem 4rem 4rem 8.5rem !important;
-//       }
-//     }
-//   }
-// }
-
 .card {
 	border-radius: $border_radius;
 	box-shadow: $drop_shadow;
@@ -45,16 +31,6 @@
 			font-size: 3.6rem;
 			font-weight: $weight_light;
 			margin-bottom: 2rem;
-
-			// &.smaller {
-			//   font-size: $fontsize_xl;
-			//   margin-bottom: 1.5rem;
-			// }
-
-			// &.bolder {
-			//   font-weight: $weight_medium;
-			//   color: $main_darker;
-			// }
 		}
 
 		.subtitle {

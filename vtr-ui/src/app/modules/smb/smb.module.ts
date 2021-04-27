@@ -64,4 +64,4 @@ import { MaterialModule } from '../common/material.module';
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class SmbModule {}
+export class SmbModule { }

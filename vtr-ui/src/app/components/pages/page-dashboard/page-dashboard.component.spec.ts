@@ -29,37 +29,28 @@ import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { PageDashboardComponent } from './page-dashboard.component';
-import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 
 class TranslateServiceStub {
 	public onTranslationChange: EventEmitter<any> = new EventEmitter();
 	public onDefaultLangChange: EventEmitter<any> = new EventEmitter();
-	instant(data: string) {}
+	instant(data: string) { }
 	stream(data: string) {
 		return of(data);
 	}
 	get(key: string) {
 		return of(key);
 	}
-	setDefaultLang(lang: string) {}
-	use(lang: string) {}
+	setDefaultLang(lang: string) { }
+	use(lang: string) { }
 	get onLangChange() {
 		return of({ lang: 'en' });
 	}
 }
-/* const fakeActivatedRoute = {
-	snapshot: { data: { ... } }
-} as ActivatedRoute; */
 
 describe('PageDashboardComponent', () => {
 	let component: PageDashboardComponent;
 	let fixture: ComponentFixture<PageDashboardComponent>;
-	// let audioService: AudioService;
 	let commonService: CommonService;
-	/* 	let logger: LoggerService;
-		let deviceService: DeviceService;
-		let cmsService: CMSService;
-		let qaService: QaService; */
 
 	let translate: TranslateService;
 	let originalTimeout;
@@ -82,7 +73,6 @@ describe('PageDashboardComponent', () => {
 				{ provide: TranslateService, useClass: TranslateServiceStub },
 				VantageShellService,
 				AndroidService,
-				/* { provide: ActivatedRoute, useValue: fakeActivatedRoute }, */
 				DialogService,
 				LoggerService,
 				HypothesisService,
@@ -113,10 +103,7 @@ describe('PageDashboardComponent', () => {
 		translate = TestBed.inject(TranslateService);
 		commonService = TestBed.inject(CommonService);
 		spyOn(component, 'ngOnInit');
-		// const welcomeTut: WelcomeTutorial = { page: 2, tutorialVersion: 'someVersion', isDone: true };
-		// spyOn(commonService, 'getLocalStorageValue').and.returnValue(welcomeTut);
 		spyOnProperty(translate, 'onLangChange', 'get').and.returnValue(of({ lang: 'fr' }));
-		// fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
 
@@ -127,7 +114,6 @@ describe('PageDashboardComponent', () => {
 		commonService = TestBed.inject(CommonService);
 		const spy = spyOn(component, 'ngOnDestroy');
 
-		// fixture.detectChanges();
 		component.ngOnDestroy();
 		expect(spy).toHaveBeenCalled();
 	});

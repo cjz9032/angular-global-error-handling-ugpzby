@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./support-detail-article-c.component.scss'],
 })
 export class SupportDetailArticleCComponent implements OnInit {
-	constructor() {}
+	constructor() { }
 
-	ngOnInit(): void {}
+	ngOnInit(): void { }
 }

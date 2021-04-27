@@ -37,7 +37,6 @@ describe('SmartStandbyGraphComponent', () => {
 		function setup() {
 			const fixture = TestBed.createComponent(SmartStandbyGraphComponent);
 			const component = fixture.debugElement.componentInstance;
-			// const powerService = fixture.debugElement.injector.get(PowerService);
 
 			const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
 
@@ -78,7 +77,6 @@ describe('SmartStandbyGraphComponent', () => {
 			const dom = fixture.debugElement.nativeElement.querySelector(
 				'div[class^="app-smart-standby-activity"]'
 			);
-			// console.log(dom);
 			expect(dom).toBeTruthy();
 		});
 
@@ -97,10 +95,5 @@ describe('SmartStandbyGraphComponent', () => {
 
 			req.flush(mockActivities);
 		});
-
-		// afterEach(() => {
-		// 	const { httpTestingController } = setup();
-		// 	httpTestingController.verify();
-		// });
 	});
 });

@@ -301,7 +301,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
 		private windowsHelloService: WindowsHelloService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
@@ -673,7 +673,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 		warranty.path = '/support';
 		warranty.asLink = false;
-		/* warranty.isSystemLink = true; */
 		warranty.isSystemLink = false;
 		warranty.type = 'system';
 		warranty.isHidden = !this.deviceService.showWarranty;
@@ -990,8 +989,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.securityInfo.statusText =
 			this.securityInfo.status !== undefined
 				? this.translate.instant(
-						this.positionCData[this.securityInfo.status + 1].statusText
-				  )
+					this.positionCData[this.securityInfo.status + 1].statusText
+				)
 				: '--';
 	}
 }

@@ -224,10 +224,6 @@
 							margin-right: 0.8rem;
 							color: $menu_hover;
 
-							// @media #{$breakpoint_xl} {
-							// 	font-size: 2.2rem;
-							// 	margin-right: 0.5rem;
-							// }
 							@media #{$breakpoint_xl} {
 								font-size: 1.8rem;
 								margin-right: 0.2rem;
@@ -306,13 +302,11 @@
 									font-size: $fontsize_xs2;
 									padding: 1.5rem;
 									height: 16rem;
-									//word-break: break-all;
 								}
 								@media #{$breakpoint_sm} {
 									font-size: 0.9rem;
 									line-height: 1.2rem;
 									height: 12rem;
-									//word-break: break-all;
 								}
 
 								@media #{$white-on-black} {
@@ -345,11 +339,8 @@
 									content: '';
 									position: absolute;
 									display: block;
-									// height: 4rem;
-									// height: 4rem;
 									font-size: 6rem;
 									color: $main_darkest;
-									//transform: rotate(90deg);
 									bottom: -3rem;
 									left: calc(50% - 2rem);
 									z-index: 0;

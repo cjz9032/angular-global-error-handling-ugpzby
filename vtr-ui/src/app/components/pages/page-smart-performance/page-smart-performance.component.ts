@@ -32,9 +32,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	public hasSubscribedScanCompleted = false;
 	public isOnline = true;
 
-
 	private notificationSub: Subscription;
-	private protocalListener: Subscription;
+	private protocolListener: Subscription;
 	private subscription: Subscription;
 	private subscriptionListener: Subscription;
 	private metrics: any;
@@ -74,7 +73,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.smartPerformanceService.isEnterSmartPerformance = true;
 		this.registerScanEvent();
 		this.isOnline = this.commonService.isOnline;
-		this.listenProtocal();
+		this.listenProtocol();
 
 		this.smartPerformanceService.subscriptionState = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.SmartPerformanceSubscriptionState
@@ -242,8 +241,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			this.notificationSub.unsubscribe();
 		}
 
-		if (this.protocalListener) {
-			this.protocalListener.unsubscribe();
+		if (this.protocolListener) {
+			this.protocolListener.unsubscribe();
 		}
 
 		this.subscriptionListener?.unsubscribe();
@@ -301,9 +300,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		try {
 			if (response && response.payload) {
 				this.smartPerformanceService.scheduleScanObj = response;
-
-				// 	this.smartPerformanceService.isScanningCompleted = true;
-				// 	this.smartPerformanceService.isScanning = false;
 			}
 		} catch (err) {
 			this.logger.error('ui-smart-performance.updateScheduleScanStatus.then', err);
@@ -317,9 +313,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		let res;
 		if (this.smartPerformanceService.isShellAvailable) {
 			try {
-				// this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
-				// 	LocalStorageKey.SmartPerformanceSubscriptionState
-				// );
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus !== 'Idle') {
 					const spSubscribeCancelModel = this.localCacheService.getLocalCacheValue(
@@ -607,8 +600,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.smartPerformanceService.enableNextText = !$event;
 	}
 
-	listenProtocal() {
-		this.protocalListener = this.activatedRoute.queryParamMap.subscribe(
+	listenProtocol() {
+		this.protocolListener = this.activatedRoute.queryParamMap.subscribe(
 			async (params: ParamMap) => {
 				if (
 					params.has('action') &&

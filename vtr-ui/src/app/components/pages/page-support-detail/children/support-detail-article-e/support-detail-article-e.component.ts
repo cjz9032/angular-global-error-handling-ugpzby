@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SupportDetailArticleEComponent implements OnInit {
 	@Input() langCode: string;
 
-	constructor() {}
+	constructor() { }
 
-	ngOnInit(): void {}
+	ngOnInit(): void { }
 }
