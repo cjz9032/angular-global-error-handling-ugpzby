@@ -182,11 +182,11 @@
 									[theme]="'white'"
 									>
 									<div class="row pr-3" *ngIf="isUserPresenceErrorMessageToShow">
-										<div class="feature-note error-message ml-4 p-4 pr-1">
-											<p *ngIf="intelligentSecurity?.isSensorBroken" id="intelligent-security-hpd-sensor-note" role="text">
+										<div class="feature-note error-message ml-4 pr-1">
+											<p class="mb-0" *ngIf="intelligentSecurity?.isSensorBroken" id="intelligent-security-hpd-sensor-note" role="text">
 												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.sensorBroken' | translate}}
 											</p>
-											<p *ngIf="isHPDCBiosAvailable" id="intelligent-security-hpd-biosPriority-note"  role="text">
+											<p class="mb-0" *ngIf="isHPDCBiosAvailable" id="intelligent-security-hpd-biosPriority-note"  role="text">
 												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.biosPriority' | translate}}
 											</p>
 										</div>

@@ -26,6 +26,7 @@ $fontsize_xs: 1.4rem;
 			width: 100%;
 			border-radius: $border_radius;
 			&.error-message {
+				padding: 1.6rem;
 				p {
 					color: $red_light;
 				}
