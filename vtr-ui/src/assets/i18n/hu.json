@@ -2964,7 +2964,7 @@
 				"title": "Ajánlott Lépések",
 				"description": "Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten",
 				"expiredDesc": "Újítsa meg az előfizetését, hogy a jövőben is kijavíthassuk az észlelt problémákat",
-				"yearlyPricing": "{{yearlyPrice}}/év",
+				"yearlyPricing": "{{yearlyPrice}} / év",
 				"monthlyPricing": "KEVESEBB MINT HAVI {{monthlyPrice}}",
 				"longerTerm": "Hosszabb távban gondolkodik? Még több megtakarításra vágyik?",
 				"newDescription": "A regisztráció után minden héten automatikusan megoldjuk ezeket a problémákat.",
