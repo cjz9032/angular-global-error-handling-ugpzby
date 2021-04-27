@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { SuperResolutionResponse } from 'src/app/data-models/smart-assist/superResolution/superResolution.model';
@@ -229,7 +229,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.initSmartAssist(true);
 			this.getHPDLeaveSensitivityVisibilityStatus();
 			this.startMonitorHsaIntelligentSecurityStatus();
-			this.hasUserPresenceErrorMessageToShow();
 		}
 
 		if (this.windowsObj) {
@@ -1056,10 +1055,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.smartAssist.isShellAvailable) {
 			this.logger.info('HPDSensorNotReadyStatus API call');
 			this.smartAssist.getHPDSensorNotReadyStatus()
-				.then((sensorReady: boolean) => this.intelligentSecurity.isSensorBroken = sensorReady)
+				.then((sensorReady: boolean) => {
+					this.intelligentSecurity.isSensorBroken = sensorReady;
+					this.logger.info('HPDSensorNotReadyStatus - isSensorBroken', sensorReady);
+				})
 				.catch((error) => {
 					this.logger.error('HPDSensorNotReadyStatus error', error);
 				});
+			this.logger.info('HPDSensorNotReadyStatus - this.intelligentSecurity', this.intelligentSecurity);
 		}
 	}
 
@@ -1068,7 +1071,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssist.isShellAvailable) {
 				this.logger.info('GetHPDGlobalEnabled - ConfiguredInBios API call');
 				this.smartAssist.GetHPDGlobalEnabled()
-					.then((globalEnabled: boolean) => this.intelligentSecurity.isHPDConfiguredInBios = globalEnabled)
+					.then((globalEnabled: boolean) => {
+						this.intelligentSecurity.isHPDConfiguredInBios = globalEnabled;
+						this.hasUserPresenceErrorMessageToShow();
+						this.logger.info('GetHPDGlobalEnabled - isHPDConfiguredInBios', globalEnabled);
+					})
 					.catch((error) => {
 						this.logger.error('GetHPDGlobalEnabled - ConfiguredInBios error', error);
 					});
