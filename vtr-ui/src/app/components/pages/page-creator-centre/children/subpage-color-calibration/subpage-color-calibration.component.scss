@@ -3,7 +3,6 @@
 :host ::ng-deep .vtr-subpage-colorCalibration {
 	.vtr-subpage-left-column {
 		background: $shade_lightest;
-		min-height: calc(-31.5rem + 100vh);
 		padding: 0 $padding_side;
 
 		@media #{$mediaquery_X4} {
@@ -115,7 +114,6 @@
 
 		.app-content {
 			padding: 2.4rem;
-			min-height: 20rem;
 			font-size: 1.4rem;
 
 			.title {
@@ -181,7 +179,6 @@
 
 	.vtr-subpage-right-column {
 		background: $shade_lightest;
-		min-height: calc(-31.5rem + 100vh);
 
 		.card-content {
 			margin-top: -8rem;
