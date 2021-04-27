@@ -235,6 +235,15 @@
 	}
 }
 
+.installation-history-container {
+	margin-top: 2.4rem;
+	::ng-deep {
+		vtr-material-expansion-panel mat-expansion-panel mat-expansion-panel-header {
+			border-bottom: none !important;
+		}
+	}
+}
+
 .is-gaming {
 	vtr-autoupdate-settings {
 		display: none;
