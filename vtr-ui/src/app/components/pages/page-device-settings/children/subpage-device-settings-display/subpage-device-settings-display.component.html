@@ -15,11 +15,12 @@
 				id="display">
 				<div class="col-12 mx-auto  container-card">
 					<!-- Display -->
-                    <vtr-material-expansion-panel
+                    <vtr-container-collapsible [tabIndex]="0"
                         [headerLevel]="3"
 						[cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 						componentName="display"
-						[panelOpenState]="true"
+						[isCollapsed]="false"
+						[allowCollapse]="true"
 						[theme]="'white'"
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-display'">
@@ -237,7 +238,7 @@
 								</vtr-ui-row-switch>
 							</li> -->
 						</ul>
-					</vtr-material-expansion-panel>
+					</vtr-container-collapsible>
 				</div>
 			</div>
 
@@ -247,11 +248,13 @@
 				id="camera"
 				[hidden]="isCameraHidden">
 				<div class="col-12 mx-auto  container-card ">
-                    <vtr-material-expansion-panel
+                    <vtr-container-collapsible
                         [headerLevel]="3"
 						[cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
+						[tabIndex]="0"
 						componentName="Camera"
-						[panelOpenState]="true"
+						[isCollapsed]="false"
+						[allowCollapse]="true"
 						[theme]="'white'"
 						(toggle)="onCardCollapse($event)"
 						[collapseLinkId]="'device-settings-camera'">
@@ -354,7 +357,7 @@
 								</vtr-ui-row-switch>
 							</li>
 						</ul>
-					</vtr-material-expansion-panel>
+					</vtr-container-collapsible>
 				</div>
 			</div>
 		</div>

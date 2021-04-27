@@ -1,0 +1,58 @@
+<div class="vtr-container-collapsible"
+	[ngClass]="{'white-theme': theme === 'white', 'blue-theme': theme === 'blue'}">
+	<div class="row">
+		<div class="col">
+			<div class="card">
+				<div class="card-header"
+					[class.hide-border-bottom]="isCollapsed">
+					<div class="container-fluid">
+						<div class="row flex-nowrap align-items-center py-2">
+                            <div class="col-auto text-left mr-auto mb-0 header"
+                                [innerHTML]="'&lt;h'+headerLevel + ' class=&quot;collapse-header&quot; ' + 'tabindex=&quot;-1&quot; ' + 
+                                'id=&quot;'+collapseLinkId+'-collapse-card-title&quot;' + '&gt;' + cardTitle + '&lt;/h'+headerLevel + '&gt;' | safe: 'html'">
+                            </div>
+							<div class="col-auto"
+								*ngIf="allowCollapse">
+								<div class="collapse-control"
+									[tabindex]="tabIndex ? tabIndex : 0"
+									vtrMetrics
+									id="{{collapseLinkId+'-collapse-link'}}"
+									[attr.aria-label]="!isCollapsed ? cardTitle+' card':cardTitle+' card'"
+									metricsEvent="itemClick"
+									[metricsValue]="!isCollapsed"
+									[metricsItem]="'btn.collapse'"
+									[metricsParent]="metricsParent"
+									(click)="onToggle()"
+									(keyup.enter)="onToggle()"
+									role="button"
+									[attr.aria-expanded]="!isCollapsed">
+									<div *ngIf="isCollapsed"
+										class="collapse-text"
+										id="{{collapseLinkId+'-expand-title'}}">
+										<!-- Expand -->
+										{{'common.ui.expand' | translate}}
+									</div>
+									<div *ngIf="!isCollapsed"
+										class="collapse-text"
+										id="{{collapseLinkId+'-collapse-title'}}">
+										<!-- Collapse -->
+										{{'common.ui.collapse' | translate}}
+									</div>
+									<fa-icon *ngIf="isCollapsed"
+										[icon]="['fal', 'chevron-down']"></fa-icon>
+									<fa-icon *ngIf="!isCollapsed"
+										[icon]="['fal', 'chevron-up']"></fa-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body"
+					[ngbCollapse]="isCollapsed">
+					<!-- what ever content is inside the component tags, goes here -->
+					<ng-content></ng-content>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
