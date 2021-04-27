@@ -30,12 +30,12 @@
 	</left-content>
 	<right-content>
 		<div class="container-fluid smart-performance-right-content">
-			<div class="row align-items-stretch no-gutters"	>
-				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
+			<div class="row align-items-stretch no-gutters">
+				<div class="col-12 col-md-6 col-lg-12 mb-24 widget-card"
 					*ngIf="smartPerformanceService.subscriptionState !== SubscriptionState.Active">
 					<vtr-widget-recommend-action [isDisabled]="!isOnline || smartPerformanceService.scanningState===ScanningState.Running"></vtr-widget-recommend-action>
 				</div>
-				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
+				<div class="col-12 col-md-6 col-lg-12 mb-24 widget-card"
 					*ngIf="!isOldVersion">
 					<vtr-subpage-schedule-scan [isOnline]="isOnline"
 						[isClickDisabled]="smartPerformanceService.scanningState===ScanningState.Running"
@@ -44,7 +44,7 @@
 						(hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)">
 					</vtr-subpage-schedule-scan>
 				</div>
-				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
+				<div class="col-12 col-md-6 col-lg-12 mb-24 widget-card"
 					*ngIf="smartPerformanceService.subscriptionState !== SubscriptionState.Inactive">
 					<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"
 						[isClickDisabled]="smartPerformanceService.scanningState===ScanningState.Running"
