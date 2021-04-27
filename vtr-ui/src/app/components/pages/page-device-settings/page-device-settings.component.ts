@@ -397,7 +397,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				this.menuItems.push({
 					id: 'smart-assist',
 					label: this.translate.instant('device.smartAssist.title'),
-					path: 'device-settings/smart-assist',
+					path: '/device/device-settings/smart-assist',
 					icon: 'smart-assist',
 					iconClass: 'icomoon-Smart-Assist',
 					canDeactivate: [GuardService],
