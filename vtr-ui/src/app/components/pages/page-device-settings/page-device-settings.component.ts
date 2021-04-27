@@ -377,25 +377,27 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	getSmartAssistCapability(isAvaliable: boolean) {
+		// === from cache ===
 		let smartAssistCap = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsSmartAssistSupported
 		);
-		if (smartAssistCap !== undefined) {
-			if (!smartAssistCap) {
-				this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
-			}
+		if (smartAssistCap !== undefined && !smartAssistCap) {
+			this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
 		}
 
-		smartAssistCap = isAvaliable;
-		if (!smartAssistCap) {
+		// === from the real data ===
+		// filter out the invalid value
+		if (isAvaliable === null) return;
+
+		if (!isAvaliable) {
 			this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
 		} else {
 			const smartAssistMenuItem = this.menuItems.find(item => item.id === 'smart-assist');
 			if (!smartAssistMenuItem) {
 				this.menuItems.push({
 					id: 'smart-assist',
-					label: 'device.smartAssist.title',
-					path: 'device-settings/smart-assist',
+					label: this.translate.instant('device.smartAssist.title'),
+					path: '/device/device-settings/smart-assist',
 					icon: 'smart-assist',
 					iconClass: 'icomoon-Smart-Assist',
 					canDeactivate: [GuardService],

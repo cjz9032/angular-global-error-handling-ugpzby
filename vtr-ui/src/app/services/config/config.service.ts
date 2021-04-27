@@ -70,7 +70,7 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	subscription: Subscription;
 	public isSmartAssistAvailable = false;
-	public isSmartAssistAvailableSub$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+	public isSmartAssistAvailableSub$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
 	public isSmartPerformanceAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
