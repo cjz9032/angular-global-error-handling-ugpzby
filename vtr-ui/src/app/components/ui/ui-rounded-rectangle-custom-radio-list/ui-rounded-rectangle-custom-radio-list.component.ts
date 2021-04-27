@@ -13,7 +13,6 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.model';
 
@@ -28,13 +27,14 @@ import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.
 })
 export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnChanges {
 
-	@Input() isDisabled = false;
-	@Input() groupName: string;
-	@Input() isVertical = false;
+	@Input() public isDisabled = false;
+	@Input() public groupName: string;
+	@Input() public isVertical = false;
+	@Input() public radioDetails: Array<UiRoundedRectangleRadioModel>;
+
 	@Input() sendMetrics = true;
 	@Input() metricsEvent = 'ItemClick';
 	@Input() metricsParent;
-	@Input() radioDetails: Array<UiRoundedRectangleRadioModel>;
 
 	@Output() selectionChange = new EventEmitter<UiRoundedRectangleRadioModel>();
 
@@ -44,7 +44,6 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 	public focusedComponentId = '';
 
 	constructor(
-		logger: LoggerService,
 		private metrics: MetricService,
 		private activatedRoute: ActivatedRoute
 	) { }
@@ -57,7 +56,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		}
 	}
 
-	onClick($event) {
+	public onClick($event): void {
 		const { id } = $event.target;
 		const radio = this.updateSelection(id);
 		this.invokeSelectionChangeEvent(radio);
@@ -65,11 +64,21 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		$event.preventDefault();
 	}
 
-	onKeyDown($event) {
-		if (this.radioDetails && this.radioDetails.length > 0) {
+	public onKeyDown($event): void {
+		const canHandleKeyPressEvent = this.radioDetails && this.radioDetails.length > 0 && !this.isDisabled;
+
+		if (canHandleKeyPressEvent) {
 			this.handleKeyPressEvent($event);
 			this.setFocusComponentId();
 		}
+	}
+
+	public onRadioGroupFocus($event): void {
+		this.setFocusComponentId();
+	}
+
+	public onRadioGroupBlur($event): void {
+		this.focusedComponentId = '';
 	}
 
 	private updateSelection(radioId: string, hasFocus = false): UiRoundedRectangleRadioModel {
@@ -170,13 +179,6 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		}
 	}
 
-	onRadioGroupFocus($event) {
-		this.setFocusComponentId();
-	}
-
-	onRadioGroupBlur($event) {
-		this.focusedComponentId = '';
-	}
 
 	private setFocusComponentId() {
 		this.focusedComponentId = this.getSelectedRadioId();

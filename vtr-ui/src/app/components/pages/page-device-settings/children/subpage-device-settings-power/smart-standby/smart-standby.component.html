@@ -32,7 +32,9 @@
 										[isDisabled]="!smartStandby.isEnabled"
 										[groupName]="'smart-standby-schedule-computer-mode-radio-group'"
 										[radioDetails]="scheduleComputerModesUIModel"
-										(selectionChange)="onCheckboxClicked($event)">
+										(selectionChange)="onCheckboxClicked($event)"
+										[isDisabled]="!smartStandby.isEnabled"
+									>
 									</vtr-ui-rounded-rectangle-custom-radio-list>
 								</div>
 							</div>
