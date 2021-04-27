@@ -129,7 +129,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(
 				this.data,
 				() => this.containerCarousel,
-				1
+				this.order,
 			);
 		}
 		setTimeout(() => {
