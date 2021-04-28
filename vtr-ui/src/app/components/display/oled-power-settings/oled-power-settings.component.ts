@@ -34,7 +34,6 @@ export class OledPowerSettingsComponent implements OnInit {
 		this.populateIntervals();
 		this.initOledDataFromCache();
 		this.initOledSettings();
-		this.logger.debug('initOledDataFromCache - ngOnInit ', this.oledPowerSettingsCache);
 	}
 
 	private populateIntervals() {
@@ -172,10 +171,7 @@ export class OledPowerSettingsComponent implements OnInit {
 						this.getDisplayDimmerSetting();
 					}
 					this.oledPowerSettingsCache.isCapable = this.oledPowerSettings.isCapable;
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.OledPowerSettings,
-						this.oledPowerSettingsCache
-					);
+					this.updateCache();
 				})
 				.catch((error) => {
 					this.logger.error(
@@ -218,10 +214,7 @@ export class OledPowerSettingsComponent implements OnInit {
 					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
 					this.oledPowerSettings.taskBarDimmerValue = value;
 					this.oledPowerSettingsCache.taskBarDimmerValue = value;
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.OledPowerSettings,
-						this.oledPowerSettingsCache
-					);
+					this.updateCache();
 				})
 				.catch((error) => {
 					this.logger.error(
@@ -246,10 +239,7 @@ export class OledPowerSettingsComponent implements OnInit {
 					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
 					this.oledPowerSettings.backgroundDimmerValue = value;
 					this.oledPowerSettingsCache.backgroundDimmerValue = value;
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.OledPowerSettings,
-						this.oledPowerSettingsCache
-					);
+					this.updateCache();
 				})
 				.catch((error) => {
 					this.logger.error(
@@ -271,10 +261,7 @@ export class OledPowerSettingsComponent implements OnInit {
 					const value = result.displayStrIndex >= 0 ? result.displayStrIndex : undefined;
 					this.oledPowerSettings.displayDimmerValue = value;
 					this.oledPowerSettingsCache.displayDimmerValue = value;
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.OledPowerSettings,
-						this.oledPowerSettingsCache
-					);
+					this.updateCache();
 				})
 				.catch((error) => {
 					this.logger.error(
