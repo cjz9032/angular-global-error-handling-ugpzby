@@ -47,7 +47,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	ScanningState = ScanningState;
 	SubscriptionState = SubscriptionState;
 
-	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
 	isOldVersion = false;
 	days: any = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -75,12 +74,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 		this.listenProtocol();
 
-		this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.IsSmartPerformanceFirstRun
-		);
-
-		if (this.IsSmartPerformanceFirstRun === undefined) {
-			this.smartPerformanceService.isFirstRunSmartPerformance = true;
+		if (this.smartPerformanceService.isFirstRunSmartPerformance) {
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.SmartPerformanceSubscriptionState,
 				SubscriptionState.Inactive
@@ -98,9 +92,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			this.smartPerformanceService.unregisterScanSchedule(
 				EnumSmartPerformance.ScheduleScanAndFix
 			);
-		}
-		else {
-			this.smartPerformanceService.isFirstRunSmartPerformance = false;
 		}
 
 		const isFreePCScanRun = this.localCacheService.getLocalCacheValue(
