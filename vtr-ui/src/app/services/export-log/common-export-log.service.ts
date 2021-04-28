@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import jsPDF from 'jspdf';
+import _ from 'lodash';
 import {
 	ExportLogErrorStatus,
 	ExportLogExtensions,
@@ -195,19 +196,59 @@ export abstract class CommonExportLogService {
 		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g, '');
 	}
 
+	private async fetchAndJoinFile(filePieces: string[]) {
+		const data: Blob[] = [];
+
+		for (const piece of filePieces) {
+			data.push(
+				await this.http
+					.get(piece, {
+						responseType: 'blob',
+					})
+					.toPromise()
+			);
+		}
+
+		return new Blob(data, { type: 'blob' });
+	}
+
+	private async convertBlobToBase64(blob: Blob): Promise<string> {
+		return new Promise((resolve, reject) => {
+			const reader = new FileReader();
+			reader.onerror = reject;
+			reader.onload = () => {
+				resolve((reader.result as string).split(',')[1]);
+			};
+			reader.readAsDataURL(blob);
+		});
+	}
+
 	private async loadFonts(currentLanguage: string) {
 		const fontsFolder = 'assets/fonts/export-log/';
-		const fontNames = ['noto-sc.ttf', 'noto.ttf', 'noto-kr.ttf', 'rubik.ttf', 'amiri.ttf'];
-
-		const convertBlobToBase64 = (blob) =>
-			new Promise((resolve, reject) => {
-				const reader = new FileReader();
-				reader.onerror = reject;
-				reader.onload = () => {
-					resolve((reader.result as string).split(',')[1]);
-				};
-				reader.readAsDataURL(blob);
-			});
+		// The fonts having more than 3Mb were split into 3Mb pieces using the Linux split command.
+		//   e.g. $ split -b 3M noto-sc.ttf noto-sc
+		const fontInfo = [
+			{
+				name: FontTypes.noto,
+				splitCount: 1,
+			},
+			{
+				name: FontTypes.notosc,
+				splitCount: 4,
+			},
+			{
+				name: FontTypes.notokr,
+				splitCount: 2,
+			},
+			{
+				name: FontTypes.rubik,
+				splitCount: 1,
+			},
+			{
+				name: FontTypes.amiri,
+				splitCount: 1,
+			},
+		];
 
 		switch (currentLanguage) {
 			case LanguageCode.japanese:
@@ -230,25 +271,19 @@ export abstract class CommonExportLogService {
 		}
 
 		try {
-			fontNames.forEach(async (fontName) => {
-				await this.http
-					.get(fontsFolder + fontName, {
-						responseType: 'blob',
-					})
-					.toPromise()
-					.then((fontData) => {
-						convertBlobToBase64(fontData).then((fontBase64) => {
-							this.logger.info(`[Load Fonts Export Log] - ${fontName} loaded`);
-							this.fonts.push({
-								id: fontName.substring(0, fontName.length - 4),
-								data: fontBase64 as string,
-							});
-						});
-					})
-					.catch((error) => {
-						this.logger.exception(`[Load Fonts Export Log] - ${fontName}`, error);
-					});
-			});
+			for (const font of fontInfo) {
+				const fontPiecesNames = _.range(font.splitCount).map(
+					(pieceNumber) => `${fontsFolder}${font.name}.ttf.${pieceNumber}`
+				);
+				const fontData = await this.fetchAndJoinFile(fontPiecesNames);
+				this.logger.info(`[Load Fonts Export Log] - ${font.name} fetched`);
+
+				this.fonts.push({
+					id: font.name,
+					data: await this.convertBlobToBase64(fontData),
+				});
+				this.logger.info(`[Load Fonts Export Log] - ${font.name} loaded`);
+			}
 		} catch (error) {
 			this.logger.error('[Export Log] Error on loading font files', error);
 		}
