@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.29](https://bitbucket.tc.lenovo.com///compare/v1.11.28...v1.11.29) (2021-04-28)
+
+
+### Bug Fixes
+
+* **carousel:** VAN-28155 fix muti carousel not report current position ([69f73d1](https://bitbucket.tc.lenovo.com///commit/69f73d10c1a4a83633b66c3d788dd5893461856d))
+* **container collapsible:** VAN-28452 revert smart standby and setting-dispaly ([331e7da](https://bitbucket.tc.lenovo.com///commit/331e7dad42c22f075fd4def383ba237b24168b0f))
+* **expansion panel:** VAN-28435 add module and fit with new material expansion panel. ([7ff8b4b](https://bitbucket.tc.lenovo.com///commit/7ff8b4bf27e833aed385033929d6d855f2d99207))
+* **support:** VAN-27713 update a ja string in support page ([36357fe](https://bitbucket.tc.lenovo.com///commit/36357fe303dffdd5a58532d17d01166b9c6caa88))
+
 ### [1.11.28](https://bitbucket.tc.lenovo.com///compare/v1.11.27...v1.11.28) (2021-04-27)
 
 
