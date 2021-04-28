@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplikacija Smart appearance",
-					"launch": "Zaženite",
-					"download": "Prenesi",
+					"download": "PRENESI",
+					"launch": "ZAŽENI",
 					"caption": "Aplikacija na osnovi umetne inteligence za boljšo izkušnjo z video konferencami. Deluje kot navidezni gonilnik in lahko jo naložijo več konferenčnih aplikacij ter odjemalci za spletno poučevanje ali pretakanje v živo."
 				}
 			}

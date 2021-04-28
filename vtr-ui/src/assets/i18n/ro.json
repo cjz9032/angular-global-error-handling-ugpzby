@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplicație Smart appearance",
-					"launch": "Lansare",
-					"download": "Descărcare",
+					"download": "DESCĂRCARE",
+					"launch": "LANSARE",
 					"caption": "O aplicație bazată pe AI pentru a îmbunătăți experiența conferințelor video. Funcționează ca un driver virtual și poate fi încărcată de mai multe aplicații de conferință și predare online sau din clienți de redare în flux live."
 				}
 			}

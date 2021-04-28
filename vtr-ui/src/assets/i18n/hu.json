@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Smart appearance alkalmazás",
-					"launch": "Indítás",
-					"download": "Letöltés",
+					"download": "LETÖLTÉS",
+					"launch": "INDÍTÁS",
 					"caption": "AI-alapú alkalmazás a videokonferencia-élmény javítására. Virtuális illesztőprogramként működik, amelyet több különböző konferenciaalkalmazás, valamint online oktatási és élő streamelési kliens is képes betölteni."
 				}
 			}

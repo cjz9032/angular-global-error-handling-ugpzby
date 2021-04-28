@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplikacja Smart appearance",
-					"launch": "Uruchom",
-					"download": "Pobierz",
+					"download": "POBIERZ",
+					"launch": "URUCHOM",
 					"caption": "Oparta na sztucznej inteligencji aplikacja, która przydaje się podczas wideokonferencji. Pełni rolę wirtualnego sterownika, który może zostać załadowany przez wiele aplikacji konferencyjnych oraz klientów do nauczania online lub transmisji na żywo."
 				}
 			}

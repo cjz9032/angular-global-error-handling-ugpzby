@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Applicazione Smart appearance",
-					"launch": "Avvia",
-					"download": "Scarica",
+					"download": "SCARICA",
+					"launch": "AVVIA",
 					"caption": "Applicazione basata sull'AI per migliorare l'esperienza di conferenza video. Funziona come driver virtuale e può essere caricata da più applicazioni per conferenza e da clienti online che utilizzano il live streaming o insegnano."
 				}
 			}

@@ -5695,8 +5695,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplicativo de Smart appearance",
-					"launch": "Iniciar",
-					"download": "Baixar",
+					"download": "BAIXAR",
+					"launch": "INICIAR",
 					"caption": "Um aplicativo baseado em IA para melhorar a experiência de videoconferência. Ele funciona como um driver virtual e pode ser carregado por vários aplicativos de conferência e clientes de ensino online ou streaming ao vivo."
 				}
 			}

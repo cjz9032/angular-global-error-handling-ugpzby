@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplikacija za Smart appearance",
-					"launch": "Pokretanje",
-					"download": "Preuzimanje",
+					"download": "PREUZIMANJE",
+					"launch": "POKRETANJE",
 					"caption": "Aplikacija temeljena na AI-u za poboljšanje iskustva videokonferencija. Radi kao virtualni upravljački program i može se učitati putem nekoliko aplikacija za konferencijske pozive te klijenata za mrežno podučavanje ili strujanje sadržaja uživo."
 				}
 			}

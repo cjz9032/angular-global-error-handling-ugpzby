@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Smart appearance -sovellus",
-					"launch": "Aloita",
-					"download": "Lataa",
+					"download": "LATAA",
+					"launch": "ALOITA",
 					"caption": "Tekoälyyn perustuva sovellus, joka parantaa videokokousten käyttökokemusta. Se toimii virtuaalisena ajurina, ja se voidaan ladata useilla kokous-, verkkokoulutus- tai live-suoratoistosovelluksilla."
 				}
 			}

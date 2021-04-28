@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplikácia Smart appearance",
-					"launch": "Spustiť",
-					"download": "Prevziať",
+					"download": "STIAHNUŤ",
+					"launch": "SPUSTIŤ",
 					"caption": "Aplikácia založená na umelej inteligencii na zlepšenie zážitku z videokonferencií. Funguje ako virtuálny ovládač a môžu ju načítať viaceré aplikácie pre konferencie a klienti online vyučovania alebo živého vysielania."
 				}
 			}
