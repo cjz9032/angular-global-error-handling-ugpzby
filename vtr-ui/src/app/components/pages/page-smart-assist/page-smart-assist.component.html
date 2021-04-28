@@ -639,7 +639,7 @@
 							</div>
 						</div>
 						<!-- note -->
-						<div class="row" *ngIf="!isUserPresenceErrorMessageToShow">
+						<div class="row" *ngIf="!(isUserPresenceErrorMessageToShow && isThinkPad)">
 							<div class="feature-note p-4 my-4 ml-4">
 								<p id="smart-assist-intelligent-security-note-desc1"
 									role="text">
@@ -669,7 +669,7 @@
 							</div>
 						</div>
 						<!-- reset -->
-						<div class="row ml-3" *ngIf="!isUserPresenceErrorMessageToShow">
+						<div class="row ml-3" *ngIf="!(isUserPresenceErrorMessageToShow && isThinkPad)">
 							<vtr-ui-button [linkId]="'intelligentSecurity_reset_btn'"
 								(onClick)="onResetDefaultSettings($event)"
 								(keydown.enter)="onResetDefaultSettings($event)"
