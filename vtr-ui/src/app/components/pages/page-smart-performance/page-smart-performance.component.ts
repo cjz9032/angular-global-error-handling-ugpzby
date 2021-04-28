@@ -75,30 +75,34 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 		this.listenProtocol();
 
-		this.smartPerformanceService.subscriptionState = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.SmartPerformanceSubscriptionState
+		this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsSmartPerformanceFirstRun
 		);
-		if (this.smartPerformanceService.subscriptionState === undefined) {
+
+		if (this.IsSmartPerformanceFirstRun === undefined) {
+			this.smartPerformanceService.isFirstRunSmartPerformance = true;
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.SmartPerformanceSubscriptionState,
 				SubscriptionState.Inactive
 			);
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.IsSmartPerformanceFirstRun,
-				true
+				false
 			);
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.IsSPScheduleScanEnabled,
 				true
 			);
-			this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(
-				LocalStorageKey.IsSmartPerformanceFirstRun
-			);
+
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
 			this.smartPerformanceService.unregisterScanSchedule(
 				EnumSmartPerformance.ScheduleScanAndFix
 			);
 		}
+		else {
+			this.smartPerformanceService.isFirstRunSmartPerformance = false;
+		}
+
 		const isFreePCScanRun = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsFreePCScanRun
 		);
@@ -364,6 +368,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				} else {
 					res = await this.smartPerformanceService.startScan();
 				}
+				this.logger.info('ui-smart-performance.scanAndFixInformation ', JSON.stringify(res));
 				if (res && res.state === true) {
 					// Subscriber Scan cancel model
 					const spSubscribeCancelModel = this.localCacheService.getLocalCacheValue(
@@ -389,7 +394,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 								this.updateScheduleScanStatus(event);
 							});
 						}
-						this.logger.info('ui-smart-performance.scanAndFixInformation ', JSON.stringify(res));
 					}
 				}
 			} catch (error) {

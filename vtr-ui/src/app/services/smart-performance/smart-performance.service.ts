@@ -39,6 +39,7 @@ export class SmartPerformanceService {
 	isShowPrice = false;
 	localPriceData: SPLocalPriceData;
 	isLocalPriceOnlineChecked = false;
+	isFirstRunSmartPerformance = false;
 
 	constructor(
 		shellService: VantageShellService,
@@ -53,6 +54,9 @@ export class SmartPerformanceService {
 			this.isShellAvailable = true;
 		}
 		this.getLocalYearPrice();
+		this.isFirstRunSmartPerformance = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsSmartPerformanceFirstRun
+		) === undefined;
 	}
 
 	getReadiness(): Promise<boolean> {
