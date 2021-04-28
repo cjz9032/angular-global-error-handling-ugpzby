@@ -290,6 +290,12 @@ $van-ui-layout: (
 	}
 }
 
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+	@media #{$high-contrast} {
+		opacity: 0.6 !important;
+	}
+}
+
 @media (min-width: 768px) {
 	.modal-sm {
 		max-width: 300px !important;
@@ -571,6 +577,7 @@ button:focus {
 		}
 	}
 }
+
 .cdk-high-contrast-active {
 	.mat-standard-chip {
 		&.vtr-material-tile {
