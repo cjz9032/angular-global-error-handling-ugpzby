@@ -99,7 +99,6 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		amPmId: 0,
 	};
 	IsScheduleScanEnabled: any;
-	IsSmartPerformanceFirstRun: any;
 	selectedFrequencyCopy: any;
 	scheduleScanFrequency: any;
 	nextScheduleScanDate: any;
@@ -131,9 +130,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		this.scheduleScanFrequency = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.SPScheduleScanFrequency
 		);
-		this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.IsSmartPerformanceFirstRun
-		);
+
 		this.IsScheduleScanEnabled = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsSPScheduleScanEnabled
 		);
@@ -152,7 +149,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		}
 
 		// when it is SP first run setting type and also formatted payload for backend as prescribed in confluence page.
-		if (this.IsSmartPerformanceFirstRun) {
+		if (this.smartPerformanceService.isFirstRunSmartPerformance) {
 			this.isFirstVisit = true;
 			this.type = 'firstRun';
 			this.payloadData(this.type);
@@ -173,17 +170,13 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			this.metricService.sendSetScanSchedule(taskParam, response);
 		}
 
-		if (this.IsSmartPerformanceFirstRun === true) {
+		if (this.smartPerformanceService.isFirstRunSmartPerformance) {
 			if (
 				this.smartPerformanceService.subscriptionState === SubscriptionState.Active
 			) {
 				this.unregisterScheduleScan(EnumSmartPerformance.ScheduleScan);
 			} else {
 				this.scheduleScan(this.requestScanData);
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.IsSmartPerformanceFirstRun,
-					false
-				);
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.SPScheduleScanFrequency,
 					actualScanFrequency[0]
@@ -195,7 +188,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		if (
 			this.scheduleScanFrequency !== undefined &&
 			this.IsScheduleScanEnabled &&
-			!this.IsSmartPerformanceFirstRun
+			!this.smartPerformanceService.isFirstRunSmartPerformance
 		) {
 			this.subscriptionListener = this.smartPerformanceService.subscriptionObserver.subscribe((state) => {
 				if (state === SubscriptionState.Active) {
@@ -439,11 +432,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			const res: any = await this.smartPerformanceService.setScanSchedule(payload);
 			// when saving schedule scan is successful, fetching next scan runtime from backend and updating respective fields
 			if (res.state) {
-				if (this.IsSmartPerformanceFirstRun) {
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.IsSmartPerformanceFirstRun,
-						false
-					);
+				if (this.smartPerformanceService.isFirstRunSmartPerformance) {
+					this.smartPerformanceService.isFirstRunSmartPerformance = false;
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.SPScheduleScanFrequency,
 						actualScanFrequency[0]

@@ -39,6 +39,7 @@ export class SmartPerformanceService {
 	isShowPrice = false;
 	localPriceData: SPLocalPriceData;
 	isLocalPriceOnlineChecked = false;
+	isFirstRunSmartPerformance = false;
 
 	constructor(
 		shellService: VantageShellService,

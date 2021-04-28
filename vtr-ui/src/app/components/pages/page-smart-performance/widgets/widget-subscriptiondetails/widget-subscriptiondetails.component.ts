@@ -62,9 +62,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.isFirstLoad = true;
-		this.spFirstRunStatus = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.IsSmartPerformanceFirstRun
-		);
+		this.spFirstRunStatus = this.smartPerformanceService.isFirstRunSmartPerformance;
 
 		this.modelListener = this.smartPerformanceService.scanningStopped.subscribe(() => {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
@@ -130,7 +128,6 @@ export class WidgetSubscriptionDetailsComponent implements OnInit, OnDestroy {
 			disableClose: true,
 			panelClass: 'subscribe-modal',
 		});
-		this.spFirstRunStatus = false;
 		modalCancel.componentInstance.cancelPaymentRequest.subscribe(() => {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 			this.strStatus = 'PROCESSING';
