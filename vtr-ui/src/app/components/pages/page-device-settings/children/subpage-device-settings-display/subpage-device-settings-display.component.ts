@@ -1385,8 +1385,8 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		}
 	}
 
-	public onCardCollapse(panelOpenState: boolean) {
-		if (panelOpenState) {
+	public onCardCollapse(isCollapsed) {
+		if (!isCollapsed) {
 			this.manualRefresh.emit();
 		}
 	}

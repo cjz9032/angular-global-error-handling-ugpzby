@@ -1,0 +1,100 @@
+@import '../../app.theme';
+
+@mixin theme($name, $background, $color, $border) {
+	.vtr-container-collapsible.#{$name} {
+		box-shadow: $drop_shadow;
+		border-radius: $border_radius;
+		background: $background;
+
+		.card {
+			border: none;
+			background: none;
+
+			.card-header {
+				background: none;
+				border-color: $border;
+				&.hide-border-bottom {
+					border-bottom: none;
+				}
+
+				.header {
+					color: $color;
+					font-size: $fontsize_lg;
+					line-height: 3rem;
+					font-weight: $weight_light;
+					text-transform: none;
+					max-width: calc(100% - 15rem);
+					outline: none;
+				}
+
+				.collapse-control {
+					cursor: pointer;
+
+					.collapse-text {
+						display: inline-block;
+						color: $grey_dark;
+						font-size: $fontsize_xs;
+						font-weight: $weight_light;
+						margin-right: 0.6rem;
+						vertical-align: middle;
+						text-decoration: underline;
+						cursor: pointer;
+						@media #{$white-on-black} {
+							@include hyperlink-yellow-black;
+						}
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
+					}
+
+					fa-icon {
+						font-size: 2rem;
+						color: $color;
+						vertical-align: middle;
+						@media #{$white-on-black} {
+							@include hyperlink-yellow-black;
+						}
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
+					}
+
+					&:hover {
+						opacity: 1;
+
+						.collapse-text {
+							text-decoration: underline;
+						}
+					}
+					&:focus {
+						@include outline-blue;
+					}
+				}
+
+				.card-body {
+					.list-group {
+						li {
+							.vtr-ui-switch-row {
+								.row {
+									flex-wrap: nowrap;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@media #{$black-on-white} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid;
+			border-radius: 1rem;
+		}
+	}
+}
+
+@include theme(white-theme, $light, $menu_hover, $screen_dark_10);
+@include theme(blue-theme, $gradient_main, $light, $screen_light_15);
