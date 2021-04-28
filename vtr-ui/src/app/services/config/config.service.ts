@@ -443,6 +443,7 @@ export class ConfigService {
 		if (machineType === 0 || machineType === 1) {
 			this.showSmartAssist();
 		} else {
+			this.isSmartAssistAvailableSub$.next(false);
 			this.removeSmartAssistMenu(this.menu);
 		}
 	}
