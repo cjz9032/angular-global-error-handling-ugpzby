@@ -55,6 +55,7 @@ import { MaterialModule } from './material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatButtonModule } from '@lenovo/material/button';
 
+
 @NgModule({
 	declarations: [
 		UiCheckboxComponent,

@@ -26,7 +26,7 @@ import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-
 import { SharedModule } from '../shared.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
-import { MaterialModule } from '../common/material.module';
+
 
 @NgModule({
 	declarations: [
@@ -53,7 +53,6 @@ import { MaterialModule } from '../common/material.module';
 		UiCustomSliderModule,
 		MatButtonModule,
 		MatTooltipModule,
-		MaterialModule,
 	],
 	providers: [
 		{

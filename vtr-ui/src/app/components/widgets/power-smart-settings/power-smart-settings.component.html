@@ -4,11 +4,13 @@
 		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
-                <vtr-material-expansion-panel
+                <vtr-container-collapsible
                     [headerLevel]="3"
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
-					[panelOpenState]="true"
+					[isCollapsed]="false"
+					[allowCollapse]="true"
 					[theme]="'white'"
+					[tabIndex]="0"
 					[collapseLinkId]="'device-settings-powerSmartSettings'">
 					<ul class="list-group list-group-flush">
 						<li class="">
@@ -131,7 +133,7 @@
 							</vtr-ui-row-switch>
 						</li>
 					</ul>
-				</vtr-material-expansion-panel>
+				</vtr-container-collapsible>
 			</div>
 		</div>
 	</div>
@@ -140,14 +142,14 @@
 		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
-                <vtr-material-expansion-panel
+                <vtr-container-collapsible
                     [headerLevel]="3"
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
-					[panelOpenState]="true"
+					[isCollapsed]="false"
 					[collapseLinkId]="'device-settings-powerSmartSettings'"
 					[theme]="'white'">
 					<div class="row">
-						<div class="col-auto left-icon pl-0">
+						<div class="col-auto left-icon">
 							<span [ngClass]="'icomoon icomoon-ic'"
 								role="img"
 								attr.aria-label="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}"></span>
@@ -218,7 +220,7 @@
 							</p>
 						</div>
 					</div>
-				</vtr-material-expansion-panel>
+				</vtr-container-collapsible>
 			</div>
 		</div>
 	</div>
@@ -226,14 +228,14 @@
 		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
-                <vtr-material-expansion-panel
+                <vtr-container-collapsible
                     [headerLevel]="3"
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
-					[panelOpenState]="true"
+					[isCollapsed]="false"
 					[collapseLinkId]="'device-settings-powerSmartSettings'"
 					[theme]="'white'">
 					<div class="row">
-						<div class="col-auto left-icon pl-0">
+						<div class="col-auto left-icon">
 							<span [ngClass]="'icomoon icomoon-ic'"
 								role="img"
 								attr.aria-label="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}"></span>
@@ -331,7 +333,7 @@
 							</div>
 						</div>
 					</div>
-				</vtr-material-expansion-panel>
+				</vtr-container-collapsible>
 			</div>
 		</div>
 	</div>
@@ -339,14 +341,14 @@
 		<div class="row pt-5 smart-settings-card"
 			id="smartSettings">
 			<div class="col mx-auto ">
-                <vtr-material-expansion-panel
+                <vtr-container-collapsible
                     [headerLevel]="3"
 					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
-					[panelOpenState]="true"
+					[isCollapsed]="false"
 					[collapseLinkId]="'device-settings-powerSmartSettings'"
 					[theme]="'white'">
 					<div class="row">
-						<div class="col-auto left-icon pl-0">
+						<div class="col-auto left-icon">
 							<span [ngClass]="'icomoon icomoon-ic'"
 								role="img"
 								attr.aria-label="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}"></span>
@@ -441,7 +443,7 @@
 							</div>
 						</div>
 					</div>
-				</vtr-material-expansion-panel>
+				</vtr-container-collapsible>
 			</div>
 		</div>
 	</div>

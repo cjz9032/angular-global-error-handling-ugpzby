@@ -11,7 +11,7 @@
 				<div *ngIf="batteryService.gaugeResetInfo?.length>0">
 					<div class="row pt-1"
 						*ngFor="let battery of batteryService.gaugeResetInfo; let i=index;">
-						<div class="col px-4">
+						<div class="col px-5">
 							<h5 *ngIf="batteryService.gaugeResetInfo?.length==1"
 								id="deviceSettings-batteryGauge-subtitle">
 								{{'device.deviceSettings.batteryGauge.subtitle'| translate}}

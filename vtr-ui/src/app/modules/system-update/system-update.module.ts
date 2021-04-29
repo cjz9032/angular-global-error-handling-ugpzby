@@ -24,7 +24,6 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { UiListSystemUpdateCheckboxComponent } from 'src/app/components/pages/page-device-updates/children/ui-list-system-update-checkbox/ui-list-system-update-checkbox.component';
 import { SharedModule } from '../shared.module';
 import { MatCheckboxModule } from '@lenovo/material/checkbox';
-import { MaterialModule } from '../common/material.module';
 
 @NgModule({
 	declarations: [
@@ -50,7 +49,6 @@ import { MaterialModule } from '../common/material.module';
 		NgbCollapseModule,
 		PageLayoutModule,
 		MatTooltipModule,
-		MaterialModule,
 		OverlayModule,
 		CdkScrollableModule,
 		MatCheckboxModule,
