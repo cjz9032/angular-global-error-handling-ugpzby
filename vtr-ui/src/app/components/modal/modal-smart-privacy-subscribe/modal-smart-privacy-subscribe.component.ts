@@ -13,7 +13,6 @@ import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 
-
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
 	templateUrl: './modal-smart-privacy-subscribe.component.html',
@@ -28,7 +27,7 @@ export class ModalSmartPrivacySubscribeComponent implements OnInit {
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((machineInfo) => {
-			this.paymentUrl = `${environment.pcSupportApiRoot}/upgradewarranty?serial=${machineInfo?.serialnumber}&mtm=${machineInfo?.mtm}&smartperformance=true&source=COMPANION`;
+			this.paymentUrl = `${environment.pcSupportApiRoot}/smartprivacy?serial=${machineInfo?.serialnumber}&mtm=${machineInfo?.mtm}`;
 		});
 	}
 

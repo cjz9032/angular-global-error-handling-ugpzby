@@ -7,14 +7,14 @@
 	vtrMetrics
 	metricsItem="btn.close"
 	metricsEvent="FeatureClick"
-	metricsParent="Dialog.SmartPerformance.Subscribe"
+	metricsParent="Dialog.SmartPrivacy.Subscribe"
 >
 	<fa-icon [icon]="['fal', 'times']"></fa-icon>
 </button>
 <div class="modal-smart-privacy-subscribe">
 	<div class="container-fluid">
 		<div class="payment-options">
-			Smart privacy iframe
+			<iframe id="smart-privacy-payment-iframe" [src]="paymentUrl | sanitize : 'resourceUrl'" sandbox="allow-forms allow-scripts allow-same-origin" frameborder="0" ></iframe>
 		</div>
 	</div>
 </div>

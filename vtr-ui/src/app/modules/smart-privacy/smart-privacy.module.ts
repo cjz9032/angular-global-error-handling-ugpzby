@@ -23,6 +23,7 @@ import { CommonUiModule } from '../common/common-ui.module';
 import { PageLayoutModule } from '../../components/page-layout/page-layout.module';
 import { TranslationModule } from '../translation.module';
 import { ModalSmartPrivacySubscribeComponent } from '../../components/modal/modal-smart-privacy-subscribe/modal-smart-privacy-subscribe.component';
+import { SanitizeModule } from '../sanitize.module';
 
 @NgModule({
 	declarations: [
@@ -35,7 +36,8 @@ import { ModalSmartPrivacySubscribeComponent } from '../../components/modal/moda
 		SmartPrivacyRoutingModule,
 		PageLayoutModule,
 		TranslationModule.forChild(),
-		FontAwesomeModule
+		FontAwesomeModule,
+		SanitizeModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [
