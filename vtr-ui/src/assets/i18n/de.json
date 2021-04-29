@@ -5695,8 +5695,8 @@
 				},
 				"smartAppearance": {
 					"title": "Smart Appearance-Anwendung",
-					"launch": "Starten",
-					"download": "Herunterladen",
+					"download": "DOWNLOAD",
+					"launch": "STARTEN",
 					"caption": "Eine KI-basierte Anwendung zur Optimierung des Videokonferenzerlebnisses. Sie fungiert als virtueller Treiber und kann von mehreren Konferenzanwendungen und Clients für Online-Unterricht oder Livestreams geladen werden."
 				}
 			}

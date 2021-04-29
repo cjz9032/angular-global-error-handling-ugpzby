@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Smart appearance toepassen",
-					"launch": "Starten",
-					"download": "Downloaden",
+					"download": "DOWNLOADEN",
+					"launch": "STARTEN",
 					"caption": "Een AI-ondersteunde applicatie die de videoconference-ervaring verbetert. Het werkt als een virtuele drive die kan worden geladen door meerdere conference-applicaties voor online lesgeven of live streaming clients."
 				}
 			}

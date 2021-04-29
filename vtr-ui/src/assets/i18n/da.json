@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Program til Smart appearance",
-					"launch": "Start",
-					"download": "Download",
+					"download": "DOWNLOAD",
+					"launch": "START",
 					"caption": "Et AI-baseret program, der forbedrer oplevelsen i videokonferencer. Det fungerer som en virtuel driver og kan indlæses af flere konferenceprogrammer samt klienter til onlineundervisning eller livestreaming."
 				}
 			}

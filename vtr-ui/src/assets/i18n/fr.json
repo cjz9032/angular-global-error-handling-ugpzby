@@ -5695,8 +5695,8 @@
 				},
 				"smartAppearance": {
 					"title": "Application Smart appearance",
-					"launch": "Lancer",
-					"download": "Télécharger",
+					"download": "TÉLÉCHARGER",
+					"launch": "LANCER",
 					"caption": "Une application basée sur l'IA afin d'améliorer l'expérience de vidéo-conférence. Il fonctionne comme un pilote virtuel et peut être chargé par de multiples applications de conférence et par des clients d'enseignement en ligne ou de diffusion en direct."
 				}
 			}

@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplikace s Smart appearance",
-					"launch": "Spustit",
-					"download": "Stáhnout",
+					"download": "STÁHNOUT",
+					"launch": "SPUSTIT",
 					"caption": "Aplikace založená na AI sloužící ke zlepšení zážitku z videokonferencí. Funguje jako virtuální ovladač a lze jej načíst několika konferenčními aplikacemi a online výukou nebo klienty živého přenosu."
 				}
 			}

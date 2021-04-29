@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Appen Smart appearance",
-					"launch": "Starta",
-					"download": "Hämta",
+					"download": "HÄMTA",
+					"launch": "STARTA",
 					"caption": "En AI-baserad app för att förbättra videokonferensupplevelsen. Den fungerar som en virtuell drivrutin och kan läsas in av flera konferensapplikationer och onlineundervisnings- eller livestreamingklienter."
 				}
 			}

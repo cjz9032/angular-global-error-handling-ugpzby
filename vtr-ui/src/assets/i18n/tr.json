@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Smart appearance uygulaması",
-					"launch": "Başlat",
-					"download": "İndir",
+					"download": "İNDİR",
+					"launch": "BAŞLAT",
 					"caption": "Video konferans deneyimini iyileştirmek için yapay zeka tabanlı bir uygulama. Sanal bir sürücü olarak çalışır ve birden çok konferans uygulaması ve çevrimiçi öğretim veya canlı akış istemcisi tarafından yüklenebilir."
 				}
 			}

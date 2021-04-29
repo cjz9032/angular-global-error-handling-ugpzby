@@ -5585,8 +5585,8 @@
 				},
 				"smartAppearance": {
 					"title": "Smart appearance 應用程式",
-					"launch": "啟動",
 					"download": "下載",
+					"launch": "啟動",
 					"caption": "可改善視訊會議體驗的 AI 應用程式。它是作為虛擬驅動程式，可由多個會議應用程式和線上教學或即時串流用戶端載入。"
 				}
 			}

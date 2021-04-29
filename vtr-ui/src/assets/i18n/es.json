@@ -5695,8 +5695,8 @@
 				},
 				"smartAppearance": {
 					"title": "Aplicación Smart appearance",
-					"launch": "Inicie",
-					"download": "Descargar",
+					"download": "DESCARGAR",
+					"launch": "INICIAR",
 					"caption": "Aplicación basada en IA para mejorar la experiencia de conferencias de video. Funciona como un controlador virtual y puede ser cargado por múltiples aplicaciones de conferencias y clientes de aprendizaje en línea o clientes de transmisión en directo."
 				}
 			}
