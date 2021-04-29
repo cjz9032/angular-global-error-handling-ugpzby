@@ -24,7 +24,6 @@ import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { AppSearchService } from '../app-search/app-search.service';
-import { TestService } from '../test/test.service';
 import { DOCUMENT } from '@angular/common';
 
 export interface MenuItem {
@@ -91,7 +90,6 @@ export class ConfigService {
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
 		private appSearchService: AppSearchService,
-		private testService: TestService, // for PA test, need to remove after PA test complete
 		@Inject(DOCUMENT) private document: Document
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
