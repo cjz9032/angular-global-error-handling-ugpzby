@@ -93,8 +93,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				LocalStorageKey.IsSPScheduleScanEnabled,
 				true
 			);
-
-			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
+			this.writeSmartPerformanceActivity('False');
 			this.smartPerformanceService.unregisterScanSchedule(
 				EnumSmartPerformance.ScheduleScanAndFix
 			);
@@ -108,18 +107,11 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		);
 
 		this.subscriptionListener = this.smartPerformanceService.subscriptionObserver.subscribe((state) => {
-			if (state === SubscriptionState.Active) {
-				this.writeSmartPerformanceActivity('True', 'True', 'Active');
-			}
-			else if (state === SubscriptionState.Expired) {
-				this.writeSmartPerformanceActivity('True', 'True', 'Expired');
+			if (!isFreePCScanRun && state === SubscriptionState.Inactive) {
+				this.writeSmartPerformanceActivity('False');
 			}
 			else {
-				if (!isFreePCScanRun) {
-					this.writeSmartPerformanceActivity('True', 'False', 'InActive');
-				} else {
-					this.writeSmartPerformanceActivity('True', 'True', 'InActive');
-				}
+				this.writeSmartPerformanceActivity('True');
 			}
 		});
 
@@ -329,7 +321,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
 						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
-
 					}
 					else {
 						this.setScanResultsAndStatus(res);
@@ -423,6 +414,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 								LocalStorageKey.IsFreePCScanRun,
 								true
 							);
+							this.writeSmartPerformanceActivity('True');
 							this.isScheduleScanRunning = false;
 							this.shellServices.registerEvent(
 								EventTypes.smartPerformanceScanStatus,
@@ -531,28 +523,25 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	}
 
 	async writeSmartPerformanceActivity(
-		issmartperformanceopened,
-		hasuserrunfreepcscan,
-		issubscribed
+		hasuserrunfreepcscan
 	) {
+		let issubscribed = 'InActive';
+		if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
+			issubscribed = 'Active';
+		} else if (this.smartPerformanceService.subscriptionState === SubscriptionState.Expired) {
+			issubscribed = 'Expired';
+		}
+
 		const payload = {
-			issmartperformanceopened,
+			issmartperformanceopened: 'True',
 			hasuserrunfreepcscan,
-			issubscribed,
+			issubscribed
 		};
-		this.logger.info(
-			'subpage-smart-performance-dashboard.writeSmartPerformanceActivity.payload',
-			payload
-		);
+		this.logger.info('page-smart-performance.writeSmartPerformanceActivity.payload', payload);
 		try {
-			const res: any = await this.smartPerformanceService.writeSmartPerformanceActivity(
-				payload
-			);
+			await this.smartPerformanceService.writeSmartPerformanceActivity(payload);
 		} catch (err) {
-			this.logger.error(
-				'subpage-smart-performance-dashboard.writeSmartPerformanceActivity.then',
-				err
-			);
+			this.logger.error('page-smart-performance.writeSmartPerformanceActivity.then', err);
 		}
 	}
 
