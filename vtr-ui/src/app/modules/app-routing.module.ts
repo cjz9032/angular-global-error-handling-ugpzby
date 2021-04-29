@@ -120,7 +120,7 @@ const routes: Routes = [
 			),
 	},
 	{
-		path: 'support/smart-privacy',
+		path: 'smart-privacy',
 		loadChildren: () =>
 			import('./smart-privacy/smart-privacy.module').then(
 				(m) => m.SmartPrivacyModule

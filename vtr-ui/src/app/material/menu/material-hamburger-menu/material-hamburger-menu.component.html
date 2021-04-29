@@ -6,12 +6,6 @@
 	backdropClass="hamburger-backdrop">
 	<nav class="hambuger-menu">
 		<ul>
-			<li class="d-block">
-				<button mat-menu-item class="m-0 px-3 w-100 text-left color-light border-radius-0 min-width-0 outline-none font-size-sm menu-item smart-privacy menu-item-color"
-						routerLink="/support/smart-privacy">
-					<span class="menu-item-text">Smart Privacy</span>
-				</button>
-			</li>
 			<ng-container *ngFor="let item of items">
 				<li *ngIf="item && !item.hide && (!item.subitems || item.subitems.length === 0) && item.id !== 'user'"
 					class="d-block">
