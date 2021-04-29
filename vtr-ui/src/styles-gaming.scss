@@ -769,15 +769,15 @@
 						}
 					}
 					vtr-widget-questions {
-						.vtr-widget-questions {
+						.vtr-material-chevron {
 							background-color: auto;
 							background: $gaming-darkest !important;
 
-							.title {
+							.mat-card-title {
 								color: $gaming_lightest !important;
 							}
 
-							.description {
+							.mat-card-subtitle {
 								color: $gaming_grey_lightest;
 								font-size: 1.2rem;
 							}
@@ -787,21 +787,23 @@
 								border: none;
 								overflow: hidden;
 								@media #{$black-on-white} {
-									background-color: white;
+									background-color: $light;
 								}
 								@media #{$white-on-black} {
-									background-color: black;
-								}
-								.good {
-									color: $gaming_lightest;
-									border-bottom: 1px solid $gaming_darkest !important;
+									background-color: $dark;
 								}
 
 								.chevron-list-item {
+									color: $gaming_lightest;
+									border-bottom: 1px solid $gaming_darkest !important;
 									a {
 										.title {
 											font-weight: $weight_regular !important;
 											font-size: 1.6rem !important;
+											color: $gaming_lightest;
+										}
+										.arrowIcon {
+											color: $menu_hover;
 										}
 									}
 								}

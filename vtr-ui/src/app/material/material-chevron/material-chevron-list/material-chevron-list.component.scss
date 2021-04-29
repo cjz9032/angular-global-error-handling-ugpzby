@@ -7,9 +7,19 @@
 	border: 0.1rem solid $grey_light;
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
+		.item-icon-image {
+			img {
+				filter: brightness(0);
+			}
+		}
 	}
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
+		.item-icon-image {
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
 	}
 	.chevron-list-item {
 		padding: 1.5rem 2rem;
@@ -120,6 +130,9 @@
 			&:focus {
 				@include outline-blue;
 			}
+		}
+		.arrowIcon {
+			@include high-contrast-color-reversal;
 		}
 	}
 	.disabled {
