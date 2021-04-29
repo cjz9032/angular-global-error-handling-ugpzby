@@ -616,6 +616,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		if (this.windowsObj) {
 			this.windowsObj.removeEventListener('accesschanged', this.cameraAccessChangedHandler);
 		}
+		this.displayService.stopMonitorForCameraPermission();
 	}
 
 	/**
