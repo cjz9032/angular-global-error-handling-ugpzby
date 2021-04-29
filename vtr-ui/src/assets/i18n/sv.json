@@ -2964,7 +2964,7 @@
 				"title": "Rekommenderad Åtgärd",
 				"description": "Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka.",
 				"expiredDesc": "Förnya din prenumerationen för att fortsätta åtgärda problem som påträffas",
-				"yearlyPricing": "{{yearlyPrice}}/år",
+				"yearlyPricing": "{{yearlyPrice}} / år",
 				"monthlyPricing": "MINDRE ÄN {{monthlyPrice}} PER MÅNAD.",
 				"longerTerm": "Längre period? Spara ännu mer pengar?",
 				"newDescription": "Efter registreringen kommer vi att lösa dessa problem automatiskt varje vecka.",
