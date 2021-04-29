@@ -1,7 +1,6 @@
 <div class="vtr-wifi-security mb-40">
 	<div class="container-fluid security-card">
 		<vtr-ui-feature-heading
-			id="securiry-wifi"
 			featureTitle="security.wifisecurity.container.title"
 			[description]="data.isLWSEnabled ? 'security.wifisecurity.container.enabledDescribe' : 'security.wifisecurity.container.disableDescribe'"
 			[imgAlt]="deviceService.isGaming ? '' : 'coronet logo'"
@@ -67,10 +66,11 @@
 					</div>
 					<div *ngIf="data.isLWSEnabled"
 						class="card-history">
-						<vtr-material-expansion-panel [collapseLinkId]="'sa-ws-lnk'"
+						<vtr-container-collapsible [tabIndex]="0" [collapseLinkId]="'sa-ws-lnk'"
 							[cardTitle]="'security.wifisecurity.container.networkHistory' | translate"
 							componentName="wifiHistoriesCollapsible"
-							[panelOpenState]="isShowMore"
+							[isCollapsed]="!isShowMore"
+							[allowCollapse]="true"
 							[headerLevel]="4">
 							<div class="border-top-none show">
 								<div class="card-body p-0 show"
@@ -121,7 +121,7 @@
 										{{ isShowMoreLink ? showMoreText : showLessText }}
 								</button>
 							</div>
-						</vtr-material-expansion-panel>
+						</vtr-container-collapsible>
 					</div>
 				</div>
 			</div>

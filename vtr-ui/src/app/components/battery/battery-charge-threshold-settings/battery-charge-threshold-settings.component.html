@@ -3,7 +3,7 @@
 		<!--start of display title in row-->
 		<div class="row"
 			*ngIf="title && !displayNoteOnly">
-			<div class="col px-4 pb-4">
+			<div class="col px-5 pb-4">
 				<h5 class="threshold-for-built-in-battery"
 					id="{{textId}}-title">
 					{{ title }}
@@ -165,7 +165,7 @@
 					<div class="row"
 						*ngIf="!displayNoteOnly"
 						[class.disabled]="isDisabled">
-						<div class="col px-4">
+						<div class="col px-5">
 							<vtr-ui-checkbox [componentId]="'cb' + textId"
 								[isMetricsEnabled]=true
 								[metricsParent]='metricsParent'
@@ -194,7 +194,7 @@
 		<!--start of Note -->
 		<div class="row"
 			*ngIf="showBCTWarningNote">
-			<div class="col px-4">
+			<div class="col px-5">
 				<div class="note-box">
 					<div class="note"
 						id="battery-threshold-note"

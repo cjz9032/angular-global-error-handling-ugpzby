@@ -107,7 +107,7 @@ $button_gradient_start: #2e62d9;
 $button_gradient_end: #4980fc;
 $button_red_start: #db221f;
 $button_red_end: #ff5b4d;
-$red_light: #e13836;
+$red_light:#E13836;
 $grey_dark: #667481;
 $grey_light: #e6eaeb;
 $grey_lighter: #f5f7f8;
@@ -473,10 +473,10 @@ $high-contrast-sky-blue: #81bbf5;
 	outline: 0.1rem solid $menu_hover;
 	outline-offset: 0.2rem;
 	@media #{$black-on-white} {
-		outline: 0.1rem solid $dark !important;
+		outline: 0.1rem solid $dark;
 	}
 	@media #{$white-on-black} {
-		outline: 0.1rem solid $light !important;
+		outline: 0.1rem solid $light;
 	}
 }
 @mixin border-blue-high-contrast {
@@ -493,12 +493,12 @@ $high-contrast-sky-blue: #81bbf5;
 	outline-offset: 0.2rem;
 }
 @mixin outline-white-high-contrast {
-	outline: 0.1rem solid $light !important;
+	outline: 0.1rem solid $light;
 	@media #{$black-on-white} {
-		outline: 0.1rem solid $dark !important;
+		outline: 0.1rem solid $dark;
 	}
 	@media #{$white-on-black} {
-		outline: 0.1rem solid $light !important;
+		outline: 0.1rem solid $light;
 	}
 }
 @mixin outline-blue-gaming {

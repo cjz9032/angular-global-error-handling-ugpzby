@@ -5,39 +5,34 @@
 		.col-auto {
 			height: 100%;
 		}
-
+		.vtr-col-pad {
+			padding: 0 1.5rem;
+		}
 		.vtr-row-switch {
 			// padding-right: 3rem;
 			padding-right: 0;
 			display: flex;
 			align-content: flex-start;
-
 			//min-width: 8rem;
 			@media #{$mediaquery_X42} {
 				padding-left: 0;
 			}
-
-			>div.right-align {
+			> div.right-align {
 				float: right;
-
 				::ng-deep span.switch {
 					margin-right: 0;
 				}
 			}
-
-			&.mw-50 {
+			&.mw-50{
 				max-width: 50%;
 			}
 		}
-
 		.vtr-disabled {
 			opacity: 0.65;
 			pointer-events: none !important;
-
 			@media #{$white-on-black} {
 				@include high-contrast-black-text-color-disabled;
 			}
-
 			@media #{$black-on-white} {
 				@include high-contrast-white-text-color-disabled;
 			}
@@ -97,7 +92,6 @@
 			// top: .7em; // commented out to match the UI Mocukp
 			line-height: 2.5rem;
 		}
-
 		.top-pad-03 {
 			padding-top: 0rem;
 		}
@@ -107,15 +101,12 @@
 			color: $icon_color;
 			cursor: pointer;
 			border: 0.1rem solid transparent;
-
 			@media #{$white-on-black} {
 				@include black-border;
 			}
-
 			@media #{$black-on-white} {
 				@include white-border;
 			}
-
 			&:hover {
 				color: $highlight;
 			}
@@ -174,7 +165,6 @@
 			// 	margin-left: 3.5rem;
 			// }
 		}
-
 		// .right-align{
 		// 	padding-left: 3.5rem;
 		// }
@@ -202,11 +192,9 @@
 			&:focus {
 				outline: 0;
 				box-shadow: none;
-
 				&::after {
 					@include button-outline-blue;
 				}
-
 				@media #{$black-on-white} {
 					&::after {
 						@include button-outline-blue($dark);
@@ -219,11 +207,9 @@
 					}
 				}
 			}
-
 			&:hover {
 				background: $blue_gradient;
 			}
-
 			@include ui-button-high-contrast-black;
 			@include ui-button-high-contrast-white;
 			@include high-contrast-adjust;
@@ -235,19 +221,16 @@
 					@include high-contrast-black-text-color-disabled;
 					border-width: 0.2rem;
 				}
-
 				@media #{$black-on-white} {
 					@include high-contrast-white-disabled-border;
 					@include high-contrast-background-transparent;
 					@include high-contrast-white-text-color-disabled;
 					border-width: 0.2rem;
 				}
-
 				span {
 					@media #{$white-on-black} {
 						opacity: 0.5;
 					}
-
 					@media #{$black-on-white} {
 						opacity: 0.5;
 					}
@@ -256,16 +239,13 @@
 		}
 	}
 }
-
 .smart-tooltip-list {
 	padding: 0;
 	list-style: none;
-
 	.custom-padding {
 		padding-right: 4px;
 		margin-top: 1px;
 	}
-
 	fa-icon {
 		color: $dark;
 		font-size: 0.5rem;
@@ -279,19 +259,15 @@
 	width: 28rem !important;
 	font-size: 1.2rem;
 	margin-bottom: 0;
-
 	th {
 		width: auto;
 		white-space: nowrap;
-
 		td {
 			width: auto;
 		}
 	}
 }
-
 .table-bordered {
-
 	th,
 	td {
 		border: 0.1rem solid $dark;
@@ -305,27 +281,22 @@
 .vtr-ui-switch-row.white-theme {
 	.caption {
 		color: $grey_dark;
-
 		span {
 			color: $grey_dark;
 		}
 	}
-
 	.right-icon {
 		&:focus {
 			@include outline-border-blue;
-
 			@media #{$white-on-black} {
 				@include white-border;
 			}
-
 			@media #{$black-on-white} {
 				@include black-border;
 			}
 		}
 	}
 }
-
 .vtr-ui-switch-row.blue-theme {
 	.right-icon {
 		&:focus {

@@ -2138,6 +2138,18 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
+.installation-history-container {
+	.vtr-container-collapsible.white-theme {
+		border-radius: 1rem !important;
+		box-shadow: 0 0.7rem 1.5rem 0 rgba(0, 0, 0, 0.15) !important;
+		margin-top: 2.4rem;
+
+		.card-header {
+			border-bottom: none;
+		}
+	}
+}
+
 .no-border-bottom {
 	.vtr-ui-switch-row.white-theme {
 		border-bottom: none !important;
@@ -2286,7 +2298,7 @@ vtr-ui-smart-performance-scanning {
 
 			.vtr-ui-switch-row {
 				.vtr-col-pad {
-					padding: 0 2rem !important;
+					padding: 0 2rem;
 				}
 			}
 		}
@@ -2301,6 +2313,19 @@ vtr-ui-smart-performance-scanning {
 	.vtr-ui-switch-row.blue-theme,
 	.vtr-ui-switch-row.white-theme {
 		padding: 0 0 1.5rem !important;
+	}
+
+	.intelligent-security-block,
+	.power-settings-block,
+	.battery-settings-block,
+	.intelligent-keyboard-block,
+	.creator-settings-block,
+	.microphone-block {
+		.vtr-container-collapsible.white-theme {
+			.card-body {
+				padding-top: 0 !important;
+			}
+		}
 	}
 }
 
@@ -2617,6 +2642,14 @@ ngb-tooltip-window.schedule-scan.tooltip {
 
 	@media #{$white-on-black} {
 		@include hyperlink-yellow-black;
+	}
+}
+
+.vtr-container-collapsible {
+	.header {
+		.collapse-header {
+			font-size: $fontsize_lg;
+		}
 	}
 }
 

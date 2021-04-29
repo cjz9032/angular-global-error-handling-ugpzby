@@ -55,12 +55,14 @@
 			<div class="row"
 				id="X-rite application">
 				<div class="col-12 px-0 app-content">
-					<vtr-material-expansion-panel [collapseLinkId]="'colorCalibration'"
+					<vtr-container-collapsible [collapseLinkId]="'colorCalibration'"
 						[headerLevel]="3"
 						[cardTitle]="'smb.creatorCentre.colorCalibration.appName' | translate"
 						componentName="colorCalibration"
-						[panelOpenState]="true"
-						[theme]="'white'">
+						[isCollapsed]="false"
+						[allowCollapse]="true"
+						[theme]="'white'"
+						[tabIndex]="0">
 						<div class="summary-box">
 							<p id="colorCalibration-descSection1" role="text" [innerHTML]="'smb.creatorCentre.colorCalibration.descSection1' | translate"></p>
 							<p id="colorCalibration-descSection2" role="text" [innerHTML]="'smb.creatorCentre.colorCalibration.descSection2' | translate"></p>
@@ -93,7 +95,7 @@
 								</a>
 							</div>
 						</div>
-					</vtr-material-expansion-panel>
+					</vtr-container-collapsible>
 				</div>
 			</div>
 		</div>

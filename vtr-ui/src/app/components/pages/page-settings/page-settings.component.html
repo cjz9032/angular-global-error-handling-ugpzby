@@ -26,11 +26,12 @@
 							<div class="card-pt"
 								*ngIf="!deviceService.isArm && !deviceService.isSMode && isMessageSettings"
 								id="settings-messages">
-								<vtr-material-expansion-panel name="SettingsMessage"
+								<vtr-container-collapsible name="SettingsMessage"
 									[headerLevel]="3"
+									[tabIndex]="0"
 									collapseLinkId="settings-message"
 									[cardTitle]="'settings.messagesInLenovoVantage' | translate"
-									[panelOpenState]="true">
+									[isCollapsed]="false">
 									<ul class="list-group list-group-flush">
 										<li>
 											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
@@ -75,17 +76,17 @@
 											</vtr-ui-row-switch>
 										</li>
 									</ul>
-								</vtr-material-expansion-panel>
+								</vtr-container-collapsible>
 							</div>
 
 							<div class="card-pt beta-setting"
 								*ngIf="segmentTag !== segmentConst.Commercial && betaService.betaFeatureAvailable">
-								<vtr-material-expansion-panel
+								<vtr-container-collapsible [tabIndex]="0"
 									[headerLevel]="3"
 									name="SettingsBeta"
 									collapseLinkId="settings-beta"
 									[cardTitle]="'settings.betaSettingTitle' | translate "
-									[panelOpenState]="true">
+									[isCollapsed]="false">
 									<ul class="list-group list-group-flush">
 										<li>
 											<vtr-ui-row-switch [title]="'settings.betaProgram' | translate"
@@ -101,7 +102,7 @@
 											</vtr-ui-row-switch>
 										</li>
 									</ul>
-								</vtr-material-expansion-panel>
+								</vtr-container-collapsible>
 							</div>
 						</div>
 
@@ -110,12 +111,12 @@
 							<div class="card-pt"
 								id="settings-other-settings"
 								*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics">
-								<vtr-material-expansion-panel
+								<vtr-container-collapsible [tabIndex]="0"
 									[headerLevel]="3"
 									name="SettingsOther"
 									collapseLinkId="settings-other"
 									[cardTitle]="'settings.OtherSettings' | translate "
-									[panelOpenState]="true">
+									[isCollapsed]="false">
 									<ul class="list-group list-group-flush">
 										<li *ngIf="isToggleUsageStatistics">
 											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
@@ -148,7 +149,7 @@
 											</vtr-ui-row-switch>
 										</li>
 									</ul>
-								</vtr-material-expansion-panel>
+								</vtr-container-collapsible>
 							</div>
 
 							<div class="card-pt user-profile-section"
@@ -158,13 +159,13 @@
 										'white-theme': !deviceService.isGaming,
 										'blue-theme': deviceService.isGaming
 									}">
-								<vtr-material-expansion-panel
+								<vtr-container-collapsible [tabIndex]="0"
 									[headerLevel]="3"
 									name="SettingsUserProfile"
 									collapseLinkId="settings-user-profile"
 									[cardTitle]=" 'settings.userProfile' | translate "
-									[panelOpenState]="true">
-									<div class="row m-0 vtr-col-pad pl-0"
+									[isCollapsed]="false">
+									<div class="row m-0 vtr-col-pad"
 										[hidden]="deviceService.isGaming">
 										<div class="col-auto left-icon-column">
 											<div class="left-icon-block">
@@ -209,7 +210,7 @@
 										</div>
 									</div>
 									<hr [hidden]="deviceService.isGaming">
-									<div class="row m-0 vtr-col-pad pl-0">
+									<div class="row m-0 vtr-col-pad">
 										<div class="col-auto left-icon-column">
 											<div class="left-icon-block">
 												<fa-icon class="left-icon"
@@ -252,7 +253,7 @@
 											(onClick)="saveUserProfile()">
 										</vtr-ui-button>
 									</div>
-								</vtr-material-expansion-panel>
+								</vtr-container-collapsible>
 							</div>
 						</div>
 					</div>

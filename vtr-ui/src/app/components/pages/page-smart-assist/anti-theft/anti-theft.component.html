@@ -2,10 +2,11 @@
 	*ngIf="antiTheft?.available">
 	<div class="col-12 px-0"
 		id="smartAssist-intelligentSensing-smartMotionAlert-div">
-		<vtr-material-expansion-panel
+		<vtr-container-collapsible [tabIndex]="0"
 			[headerLevel]="3"
 			[cardTitle]="'device.smartAssist.antiTheft.heading' | translate"
-			[panelOpenState]="true"
+			[isCollapsed]="false"
+			[allowCollapse]="true"
 			[collapseLinkId]="'smartAssist-intelligentSensing-smartMotionAlert'">
 			<ul class="list-group list-group-flush"
 				role="list"
@@ -221,6 +222,6 @@
 
 				</li>
 			</ul>
-		</vtr-material-expansion-panel>
+		</vtr-container-collapsible>
 	</div>
 </div>

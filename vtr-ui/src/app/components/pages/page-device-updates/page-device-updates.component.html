@@ -64,14 +64,15 @@
 
 			<div class="row">
 				<div class="col col-12 installation-history-container">
-					<vtr-material-expansion-panel name="SystemUpdateHistory"
+					<vtr-container-collapsible name="SystemUpdateHistory"
 						[headerLevel]="3"
+						[tabIndex]="0"
 						[cardTitle]="'systemUpdates.history' | translate"
-						[panelOpenState]="true"
+						[isCollapsed]="false"
 						[collapseLinkId]="'su-history'">
 						<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 						</vtr-installation-history>
-					</vtr-material-expansion-panel>
+					</vtr-container-collapsible>
 				</div>
 			</div>
 		</div>
