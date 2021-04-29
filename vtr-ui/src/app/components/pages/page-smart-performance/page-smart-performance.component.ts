@@ -93,7 +93,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				LocalStorageKey.IsSPScheduleScanEnabled,
 				true
 			);
-			this.writeSmartPerformanceActivity('False',);
+			this.writeSmartPerformanceActivity('False');
 			this.smartPerformanceService.unregisterScanSchedule(
 				EnumSmartPerformance.ScheduleScanAndFix
 			);
@@ -321,7 +321,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
 						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
-
 					}
 					else {
 						this.setScanResultsAndStatus(res);
