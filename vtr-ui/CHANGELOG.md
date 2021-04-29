@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.30](https://bitbucket.tc.lenovo.com///compare/v1.11.29...v1.11.30) (2021-04-29)
+
+
+### Bug Fixes
+
+* **Expantion panel:** Revert expansion panel 60fe63 7ff8b4 f211d4 ([96fceb8](https://bitbucket.tc.lenovo.com///commit/96fceb8a12d49b354d9b315480a41f4ee851676c))
+
 ### [1.11.29](https://bitbucket.tc.lenovo.com///compare/v1.11.28...v1.11.29) (2021-04-28)
 
 
