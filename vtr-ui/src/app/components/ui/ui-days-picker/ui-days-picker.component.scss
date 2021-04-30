@@ -69,9 +69,11 @@
 				}
 			}
 		}
-		color: #f12e2e;
+		color: $red_light2;
 		padding: 0 2.5rem;
-		font: normal normal normal 13px/16px Segoe UI;
+		font-size: $fontsize_xs4;
+		line-height: $fontsize_sm;
+		font-weight: normal;
 	}
 	.weekdays-block {
 		border-radius: 0.5rem;
