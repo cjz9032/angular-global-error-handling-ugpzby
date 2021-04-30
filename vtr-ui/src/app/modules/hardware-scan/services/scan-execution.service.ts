@@ -42,7 +42,6 @@ export class ScanExecutionService {
 	private metrics: any;
 	private culture: any;
 	private modulesStored: any;
-	private batteryMessage: string;
 	private lastModules: HardwareScanProtocolModule;
 	private cancelWatcher;
 
@@ -710,7 +709,6 @@ export class ScanExecutionService {
 	// Otherwise this device is plugged
 	private batteryChargingStatus() {
 		if (typeof Windows !== 'undefined') {
-			const power = Windows.System.Power;
 			return power.PowerManager.powerSupplyStatus !== power.PowerSupplyStatus.notPresent;
 		}
 		return false;
@@ -719,7 +717,10 @@ export class ScanExecutionService {
 	private validateBatteryModal(requests: any) {
 		const minimalBatteryLevelAllowed = 20;
 
-		if (power.PowerManager.remainingChargePercent < minimalBatteryLevelAllowed && !this.batteryChargingStatus()) {
+		if (
+			power.PowerManager.remainingChargePercent < minimalBatteryLevelAllowed &&
+			!this.batteryChargingStatus()
+		) {
 			const modal = this.dialog.open(ModalPreScanInfoComponent, {
 				maxWidth: '50rem',
 				autoFocus: false,
@@ -736,7 +737,8 @@ export class ScanExecutionService {
 			modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
 			modal.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
 
-			modal.afterClosed().subscribe(() => {
+			modal.afterClosed().subscribe(
+				() => {
 					this.getDoScan(requests);
 					// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
 					this.startScanClicked = false;
