@@ -704,22 +704,19 @@ export class ScanExecutionService {
 		});
 	}
 
-	// Returns if is a plugged machine.
-	// If powerSupplyStatus === notPresent, machine is not plugged.
-	// Otherwise this device is plugged
-	private batteryChargingStatus() {
-		if (typeof Windows !== 'undefined') {
-			return power.PowerManager.powerSupplyStatus !== power.PowerSupplyStatus.notPresent;
-		}
-		return false;
+	private isDevicePluggedIn() {
+		// If powerSupplyStatus === notPresent, machine is not plugged.
+		// Otherwise this device is plugged
+
+		return power?.PowerManager.powerSupplyStatus !== power?.PowerSupplyStatus.notPresent;
 	}
 
 	private validateBatteryModal(requests: any) {
 		const minimalBatteryLevelAllowed = 20;
 
 		if (
-			power.PowerManager.remainingChargePercent < minimalBatteryLevelAllowed &&
-			!this.batteryChargingStatus()
+			power?.PowerManager.remainingChargePercent < minimalBatteryLevelAllowed &&
+			!this.isDevicePluggedIn()
 		) {
 			const modal = this.dialog.open(ModalPreScanInfoComponent, {
 				maxWidth: '50rem',
@@ -731,8 +728,10 @@ export class ScanExecutionService {
 
 			this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
-			modal.componentInstance.error = this.translate.instant('hardwareScan.warning');
+			// This CONNECT_POWER string is a token that originally came from the HardwareScan plugin and it's used
+			// to indicated that the System is running on low battery and, therefore should be plugged in before starting a new scan.
 			modal.componentInstance.description = 'CONNECT_POWER';
+			modal.componentInstance.error = this.translate.instant('hardwareScan.warning');
 			modal.componentInstance.ItemParent = this.getMetricsParentValue();
 			modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
 			modal.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
