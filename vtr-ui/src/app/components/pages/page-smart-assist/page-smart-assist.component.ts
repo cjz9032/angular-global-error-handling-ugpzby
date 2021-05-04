@@ -28,7 +28,7 @@ import { MatCheckboxChange } from '@lenovo/material/checkbox';
 @Component({
 	selector: 'vtr-page-smart-assist',
 	templateUrl: './page-smart-assist.component.html',
-	styleUrls: ['./page-smart-assist.component.scss']
+	styleUrls: ['./page-smart-assist.component.scss'],
 })
 export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	@Output() distanceChange: any = new EventEmitter();
@@ -278,6 +278,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 			this.smartAssistCache.intelligentSecurity.isIntelligentSecuritySupported = this.smartAssistCapability.isIntelligentSecuritySupported;
 			this.updateZeroTouchLockTimersUIModel();
+			this.hasUserPresenceErrorMessageToShow();
 		} catch (error) {
 			this.logger.exception('initDataFromCache', error);
 		}
@@ -435,8 +436,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	public hasUserPresenceErrorMessageToShow(): void {
 		const isSensorReadyNotBroken = this.intelligentSecurity.isSensorBroken === false;
-		this.isHPDCBiosAvailable = !this.intelligentSecurity.isHPDConfiguredInBios && isSensorReadyNotBroken;
-		this.isUserPresenceErrorMessageToShow = this.intelligentSecurity.isSensorBroken || this.isHPDCBiosAvailable;
+		this.isHPDCBiosAvailable =
+			!this.intelligentSecurity.isHPDConfiguredInBios && isSensorReadyNotBroken;
+		this.isUserPresenceErrorMessageToShow =
+			this.intelligentSecurity.isSensorBroken || this.isHPDCBiosAvailable;
 	}
 
 	private apsAvailability() {
@@ -1045,15 +1048,20 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	private isSensorReady() {
 		if (this.smartAssist.isShellAvailable) {
 			this.logger.info('HPDSensorNotReadyStatus API call');
-			this.smartAssist.getHPDSensorNotReadyStatus()
+			this.smartAssist
+				.getHPDSensorNotReadyStatus()
 				.then((sensorReady: boolean) => {
 					this.intelligentSecurity.isSensorBroken = sensorReady;
+					this.hasUserPresenceErrorMessageToShow();
 					this.logger.info('HPDSensorNotReadyStatus - isSensorBroken', sensorReady);
 				})
 				.catch((error) => {
 					this.logger.error('HPDSensorNotReadyStatus error', error);
 				});
-			this.logger.info('HPDSensorNotReadyStatus - this.intelligentSecurity', this.intelligentSecurity);
+			this.logger.info(
+				'HPDSensorNotReadyStatus - this.intelligentSecurity',
+				this.intelligentSecurity
+			);
 		}
 	}
 
@@ -1061,17 +1069,21 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.logger.info('GetHPDGlobalEnabled - ConfiguredInBios API call');
-				this.smartAssist.GetHPDGlobalEnabled()
+				this.smartAssist
+					.GetHPDGlobalEnabled()
 					.then((globalEnabled: boolean) => {
 						this.intelligentSecurity.isHPDConfiguredInBios = globalEnabled;
 						this.hasUserPresenceErrorMessageToShow();
-						this.logger.info('GetHPDGlobalEnabled - isHPDConfiguredInBios', globalEnabled);
+						this.logger.info(
+							'GetHPDGlobalEnabled - isHPDConfiguredInBios',
+							globalEnabled
+						);
 					})
 					.catch((error) => {
 						this.logger.error('GetHPDGlobalEnabled - ConfiguredInBios error', error);
 					});
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	public getSuperResolutionStatus() {
@@ -1340,11 +1352,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				LocalStorageKey.SmartAssistCache,
 				this.smartAssistCache
 			);
-
 		} catch (error) {
 			this.logger.error('getCurrentTimerNeverCondition: ', error);
 			this.intelligentSecurity.currentTimerNeverCondition = false;
-		};
+		}
 	}
 
 	private async initACTimerNeverCondition() {
@@ -1357,11 +1368,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				LocalStorageKey.SmartAssistCache,
 				this.smartAssistCache
 			);
-
 		} catch (error) {
 			this.logger.error('getACTimerNeverCondition: ', error);
 			this.intelligentSecurity.isACTimerNeverCondition = false;
-		};
+		}
 	}
 
 	private async initDCTimerNeverCondition() {
@@ -1374,11 +1384,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				LocalStorageKey.SmartAssistCache,
 				this.smartAssistCache
 			);
-
 		} catch (error) {
 			this.logger.error('getDCTimerNeverCondition: ', error);
 			this.intelligentSecurity.isDCTimerNeverCondition = false;
-		};
+		}
 	}
 
 	public async setAutoScreenTimeoutStatus(status: boolean): Promise<void> {
