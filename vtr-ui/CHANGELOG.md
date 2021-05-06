@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.30...v1.12.0) (2021-05-06)
+
+
+### Bug Fixes
+
+* **Chevron:** VAN-28425 modify chevron list metrics event name ([ee8ffc9](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ee8ffc9e0708cbe7645d39dbdb50a907f9ec9999))
+
 ### [1.11.30](https://bitbucket.tc.lenovo.com///compare/v1.11.29...v1.11.30) (2021-04-29)
 
 
