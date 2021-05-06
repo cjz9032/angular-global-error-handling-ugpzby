@@ -18,7 +18,7 @@ export class MaterialChevronListComponent extends BaseComponent {
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
 	@Input() clickable = true;
-	@Input() metricsEvent: string;
+	@Input() metricsEvent = 'featureClick';
 	@Input() blockPosition: string;
 	@Input() linkId: string;
 
