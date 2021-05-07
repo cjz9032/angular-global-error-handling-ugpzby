@@ -1,14 +1,12 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@lenovo/material/dialog';
 import {
-	NOTIFICATION_MESSAGES,
 	REQUEST_MESSAGES,
 	SmartPrivacyMessengerService
 } from '../../../services/smart-privacy/smart-privacy-messenger.service';
 import { ModalSmartPrivacySubscribeComponent } from '../../modal/modal-smart-privacy-subscribe/modal-smart-privacy-subscribe.component';
 import { ActivatedRoute } from '@angular/router';
 import { SmartPrivacyListenService } from '../../../services/smart-privacy/smart-privacy-listen.service';
-import { debounceTime, filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -29,20 +27,13 @@ export class PageSmartPrivacyComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.listenOpenBuyNow();
+		this.subs.push(this.smartPrivacyListenService.listenOpenBuyNow().subscribe(() => this.openBuyNow()));
 		this.subs.push(this.smartPrivacyListenService.listenOpenPage(this.route.queryParams)
 			.subscribe((message) => this.sendMessageToIframe(message)));
 	}
 
 	ngOnDestroy() {
 		this.subs.forEach(s => s.unsubscribe())
-	}
-
-	private listenOpenBuyNow() {
-		this.subs.push(this.smartPrivacyMessengerService.getMessages().pipe(
-			debounceTime(200),
-			filter((message) => message.data === NOTIFICATION_MESSAGES.openBuyNow),
-		).subscribe(() => this.openBuyNow()));
 	}
 
 	private openBuyNow() {

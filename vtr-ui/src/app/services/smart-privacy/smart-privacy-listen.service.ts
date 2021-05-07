@@ -29,4 +29,11 @@ export class SmartPrivacyListenService {
 			map((queryParams) => messages[queryParams['page']])
 		)
 	}
+
+	listenOpenBuyNow() {
+		return this.smartPrivacyMessengerService.getMessages().pipe(
+			debounceTime(200),
+			filter((message) => message.data === NOTIFICATION_MESSAGES.openBuyNow),
+		)
+	}
 }
