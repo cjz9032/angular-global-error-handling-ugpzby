@@ -662,7 +662,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		// microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)
 		if (
 			!(
-				this.microphoneProperties.available &&
+				this.microphoneProperties?.available &&
 				((this.microphoneProperties?.currentMode &&
 					this.microphoneProperties?.currentMode !== 'NotSupported' &&
 					!this.isDTmachine &&
@@ -776,5 +776,4 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			}
 		});
 	}
-
 }

@@ -37,7 +37,7 @@ export enum MenuID {
 
 export class RoutePath {
 	static readonly deviceGaming = 'device-gaming';
-	static readonly smartPerfomance = 'smart-performance';
+	static readonly smartPerformance = 'smart-performance';
 	static readonly smartPerformanceBaseArm = 'support/smart-performance';
 	static readonly facebook = 'https://www.facebook.com/LenovoLegion/';
 	static readonly instagram = 'https://www.instagram.com/lenovolegion/';
