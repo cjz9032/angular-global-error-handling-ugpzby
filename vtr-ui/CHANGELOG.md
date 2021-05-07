@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.33](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.32...v1.11.33) (2021-05-07)
+
+
+### Bug Fixes
+
+* **chevron:** VAN-28793 VAN-28425 add metrics default value ([ff7f7b6](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ff7f7b641ba1f5011ab4712dac65205850cecd26))
+* **overall:** fix coverity issue ([3282201](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/3282201b81cc40989d16e2cf8341e4489f98fca0))
+* **overall:** fix coverity issue ([f990f00](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/f990f008b360427c0a0b36eb280f2109ee1f6e7e))
+* **SU:** VAN-28722 remove action if checked action complete in su page. ([d4df4ec](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/d4df4ec1478a3e1e3b851a0c27a471d7f10ad1ce))
+
 ### [1.11.32](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.31...v1.11.32) (2021-05-06)
 
 ### [1.11.31](https://bitbucket.tc.lenovo.com///compare/v1.11.30...v1.11.31) (2021-04-30)
