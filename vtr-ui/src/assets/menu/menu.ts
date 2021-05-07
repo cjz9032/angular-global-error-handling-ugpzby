@@ -143,7 +143,7 @@ export const menuConfig = {
 			routerLinkActiveOptions: {
 				exact: true,
 			},
-			icon: ['fal', 'search'],
+			icon: [],
 			subitems: [],
 			shellSupport: true,
 		},
@@ -726,7 +726,7 @@ export const menuConfig = {
 			routerLinkActiveOptions: {
 				exact: true,
 			},
-			icon: ['fal', 'search'],
+			icon: [],
 			subitems: [],
 			shellSupport: true,
 		},
