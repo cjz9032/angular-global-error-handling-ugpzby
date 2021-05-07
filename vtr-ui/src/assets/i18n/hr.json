@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "Radna okolina",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Addin verzija",
 				"experienceVersion": "Experience verzija",
 				"shellVersion": "Shell verzija",
 				"bridgeVersion": "Bridge verzija"

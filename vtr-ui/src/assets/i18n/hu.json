@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "Környezet",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Addin verziója",
 				"experienceVersion": "Experience verziója",
 				"shellVersion": "Shell verziója",
 				"bridgeVersion": "Bridge verziója"

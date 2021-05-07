@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "Prostředí",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Verze Addin",
 				"experienceVersion": "Verze Experience",
 				"shellVersion": "Verze Shell",
 				"bridgeVersion": "Verze Bridge"

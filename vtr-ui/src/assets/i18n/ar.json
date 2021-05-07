@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "البيئة",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "إصدار Addin",
 				"experienceVersion": "إصدار Experience",
 				"shellVersion": "إصدار Shell",
 				"bridgeVersion": "إصدار Bridge"

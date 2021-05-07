@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "Prostredie",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Verzia Addin",
 				"experienceVersion": "Verzia Experience",
 				"shellVersion": "Verzia Shell",
 				"bridgeVersion": "Verzia Bridge"

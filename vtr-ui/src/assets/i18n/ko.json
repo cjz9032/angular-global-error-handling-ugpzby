@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "환경",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Addin 버전",
 				"experienceVersion": "Experience 버전",
 				"shellVersion": "Shell 버전",
 				"bridgeVersion": "Bridge 버전"

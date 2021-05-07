@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "Käyttöympäristö",
 			"environment": {
-				"addinVersion": "Laajennusosan versio",
+				"addinVersion": "Addin-versio",
 				"experienceVersion": "Experience-versio",
 				"shellVersion": "Shell-versio",
 				"bridgeVersion": "Bridge-versio"

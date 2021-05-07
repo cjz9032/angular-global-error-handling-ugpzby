@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "Okolje",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Različica addin",
 				"experienceVersion": "Različica experience",
 				"shellVersion": "Različica shell",
 				"bridgeVersion": "Različica bridge"
