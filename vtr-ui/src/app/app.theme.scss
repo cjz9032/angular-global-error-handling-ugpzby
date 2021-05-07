@@ -107,8 +107,8 @@ $button_gradient_start: #2e62d9;
 $button_gradient_end: #4980fc;
 $button_red_start: #db221f;
 $button_red_end: #ff5b4d;
-$red_light:#E13836;
-$red_light2: #D6261D;
+$red_light: #e13836;
+$red_light2: #d6261d;
 $grey_dark: #667481;
 $grey_light: #e6eaeb;
 $grey_lighter: #f5f7f8;
@@ -997,6 +997,7 @@ $high-contrast-sky-blue: #81bbf5;
 	color: $blueHyperLink;
 	text-decoration: underline;
 	display: inline-block;
+	font-weight: $weight_regular;
 
 	&:hover {
 		cursor: pointer;

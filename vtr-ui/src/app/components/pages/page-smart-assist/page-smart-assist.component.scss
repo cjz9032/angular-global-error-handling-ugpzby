@@ -36,7 +36,7 @@ $fontsize_xs: 1.4rem;
 				font-weight: $weight_light;
 				color: $shade_blue;
 			}
-			a {
+			a:not(.link-text) {
 				text-decoration: underline;
 				color: $blueHyperLink;
 				&:hover {
@@ -253,9 +253,6 @@ $fontsize_xs: 1.4rem;
 					margin: 20px 0 15px;
 				}
 			}
-		}
-		.hello-link {
-			outline-offset: 0;
 		}
 		.radio-group {
 			&:focus {
