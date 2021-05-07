@@ -386,15 +386,6 @@ export class HardwareScanService {
 		return undefined;
 	}
 
-	public getPreScanInfo(payload) {
-		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge
-				.getPreScanInformation(payload)
-				.then((response) => response);
-		}
-		return undefined;
-	}
-
 	public getDoScan(payload, modules, cancelHandler) {
 		if (this.hardwareScanBridge) {
 			this.cancelRequestByUser = false;

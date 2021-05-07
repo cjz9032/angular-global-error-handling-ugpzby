@@ -20,6 +20,9 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { MatDialog } from '@lenovo/material/dialog';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
+declare const Windows;
+const power = Windows.System.Power;
+
 const RootParent = 'HardwareScan';
 const CancelButton = 'Cancel';
 const ConfirmButton = 'Confirm';
@@ -39,7 +42,6 @@ export class ScanExecutionService {
 	private metrics: any;
 	private culture: any;
 	private modulesStored: any;
-	private batteryMessage: string;
 	private lastModules: HardwareScanProtocolModule;
 	private cancelWatcher;
 
@@ -389,12 +391,7 @@ export class ScanExecutionService {
 			}
 		}
 
-		const preScanInformationRequest = {
-			lang: this.culture,
-			tests: testList,
-		};
-
-		this.validateBatteryModal(preScanInformationRequest, taskType, requests);
+		this.validateBatteryModal(requests);
 	}
 
 	public async showSupportPopupIfNeeded() {
@@ -707,56 +704,53 @@ export class ScanExecutionService {
 		});
 	}
 
-	private validateBatteryModal(preScanInfo: any, taskType: TaskType, requests: any) {
-		this.batteryMessage = '';
+	private isDevicePluggedIn() {
+		// If powerSupplyStatus === notPresent, machine is not plugged.
+		// Otherwise this device is plugged
 
-		this.hardwareScanService
-			.getPreScanInfo(preScanInfo)
-			.then((response) => {
-				if (response && response.MessageList) {
-					for (const message of response.MessageList) {
-						if (message.id === 'connect-power') {
-							this.batteryMessage = message.description;
-						}
-					}
-				}
+		return power?.PowerManager.powerSupplyStatus !== power?.PowerSupplyStatus.notPresent;
+	}
 
-				if (this.batteryMessage !== '') {
-					const modal = this.dialog.open(ModalPreScanInfoComponent, {
-						maxWidth: '50rem',
-						autoFocus: false,
-						hasBackdrop: true,
-						disableClose: true,
-						panelClass: 'hardware-scan-modal-size',
-					});
+	private validateBatteryModal(requests: any) {
+		const minimalBatteryLevelAllowed = 20;
 
-					this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
+		if (
+			power?.PowerManager.remainingChargePercent < minimalBatteryLevelAllowed &&
+			!this.isDevicePluggedIn()
+		) {
+			const modal = this.dialog.open(ModalPreScanInfoComponent, {
+				maxWidth: '50rem',
+				autoFocus: false,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'hardware-scan-modal-size',
+			});
 
-					modal.componentInstance.error = this.translate.instant('hardwareScan.warning');
-					modal.componentInstance.description = this.batteryMessage;
-					modal.componentInstance.ItemParent = this.getMetricsParentValue();
-					modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
-					modal.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
+			this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
-					modal.afterClosed().subscribe(
-						(result) => {
-							this.getDoScan(requests);
-							// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
-							this.startScanClicked = false;
-						},
-						() => {
-							this.hardwareScanService.cleanCustomTests();
-							// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
-							this.startScanClicked = false;
-						}
-					);
-				} else {
+			// This CONNECT_POWER string is a token that originally came from the HardwareScan plugin and it's used
+			// to indicated that the System is running on low battery and, therefore should be plugged in before starting a new scan.
+			modal.componentInstance.description = 'CONNECT_POWER';
+			modal.componentInstance.error = this.translate.instant('hardwareScan.warning');
+			modal.componentInstance.ItemParent = this.getMetricsParentValue();
+			modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
+			modal.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
+
+			modal.afterClosed().subscribe(
+				() => {
 					this.getDoScan(requests);
+					// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
+					this.startScanClicked = false;
+				},
+				() => {
+					this.hardwareScanService.cleanCustomTests();
+					// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
+					this.startScanClicked = false;
 				}
-			})
-			.catch((error) =>
-				this.logger.exception('[ScanExecutionService] validateBatteryModal', error)
 			);
+		} else {
+			this.getDoScan(requests);
+		}
 	}
 
 	/*
