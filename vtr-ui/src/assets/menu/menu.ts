@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 
 export enum MenuID {
 	smartPerformance = 'smart-performance',
+	smartPrivacy = 'smart-privacy',
 	facebook = 'facebook',
 	instagram = 'instagram',
 	appSearch = 'app-search',
@@ -39,6 +40,7 @@ export class RoutePath {
 	static readonly deviceGaming = 'device-gaming';
 	static readonly smartPerfomance = 'smart-performance';
 	static readonly smartPerformanceBaseArm = 'support/smart-performance';
+	static readonly smartPrivacy = 'smart-privacy';
 	static readonly facebook = 'https://www.facebook.com/LenovoLegion/';
 	static readonly instagram = 'https://www.instagram.com/lenovolegion/';
 	static readonly search = 'search';
@@ -129,6 +131,21 @@ export const menuConfig = {
 					shellSupport: true,
 				},
 			],
+		},
+		{
+			id: MenuID.smartPrivacy,
+			label: 'common.menu.smartPrivacy',
+			beta: false,
+			path: RoutePath.smartPrivacy,
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.app-search',
+			routerLinkActiveOptions: {
+				exact: true,
+			},
+			icon: ['fal', 'search'],
+			subitems: [],
+			shellSupport: true,
 		},
 		{
 			id: MenuID.support,
@@ -696,6 +713,21 @@ export const menuConfig = {
 			},
 			subitems: [],
 			pre: ['assets/images/coronet-logo.svg'],
+			shellSupport: true,
+		},
+		{
+			id: MenuID.smartPrivacy,
+			label: 'common.menu.smartPrivacy',
+			beta: false,
+			path: RoutePath.smartPrivacy,
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.app-search',
+			routerLinkActiveOptions: {
+				exact: true,
+			},
+			icon: ['fal', 'search'],
+			subitems: [],
 			shellSupport: true,
 		},
 		{
