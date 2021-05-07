@@ -1152,7 +1152,7 @@ export class ExportResultsService extends CommonExportLogService {
 				2: { halign: 'right' },
 			},
 			didParseCell: (data) => {
-				if (data.column.index === 1) {
+				if (data.column.index === 1 && data.cell.raw && data.section !== 'head') {
 					data.cell.styles.font = this.setCorrectFont(
 						data.cell.raw.content ?? data.cell.raw
 					);
@@ -1310,7 +1310,7 @@ export class ExportResultsService extends CommonExportLogService {
 					fillColor: null,
 				},
 				didParseCell: (data) => {
-					if (data.column.index === 1) {
+					if (data.column.index === 1 && data.cell.raw && data.section !== 'head') {
 						data.cell.styles.font = this.setCorrectFont(
 							data.cell.raw.content ?? data.cell.raw
 						);
@@ -1416,6 +1416,10 @@ export class ExportResultsService extends CommonExportLogService {
 		startY = (doc as any).lastAutoTable.finalY;
 
 		jsonData.testSummary = this.calculateTestSummaryInfo(jsonData);
+		const totalTestsAmount = Object.values(jsonData.testSummary).reduce(
+			(a: number, b: number) => a + b
+		);
+
 		(doc as any).autoTable({
 			margin: this.startX,
 			headStyles: { halign: 'center' },
@@ -1428,7 +1432,9 @@ export class ExportResultsService extends CommonExportLogService {
 			head: [
 				[
 					{
-						content: this.translate.transform('hardwareScan.report.totalModulesTested'),
+						content: `${this.translate.transform(
+							'hardwareScan.report.totalModulesTested'
+						)}: ${totalTestsAmount}`,
 						styles: { halign: 'left' },
 					},
 					{
