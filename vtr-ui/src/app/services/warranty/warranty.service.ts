@@ -29,7 +29,7 @@ export class WarrantyService {
 		private translate: TranslateService,
 		private localInfoService: LocalInfoService,
 		private deviceService: DeviceService
-	) {}
+	) { }
 
 	warrantyUrl = `${environment.pcSupportApiRoot}/warrantylookup`;
 
@@ -67,51 +67,58 @@ export class WarrantyService {
 
 	warrantyLevels: WarrantyLevel[] = [];
 
-	offlineWarrantyLevels: WarrantyLevel[] = [
-		{
-			id: 'good',
-			isRecommended: false,
-			levelText: this.translate.instant('warranty.upgradeLevels.good.levelText'),
-			warrantyCode: WarrantyCodeEnum.Depot,
-			warrantyCodeText: this.translate.instant(
-				'warranty.upgradeLevels.good.warrantyCodeText'
-			),
-			points: [
-				this.translate.instant('warranty.upgradeLevels.good.point1'),
-				this.translate.instant('warranty.upgradeLevels.good.point2'),
-				this.translate.instant('warranty.upgradeLevels.good.point3'),
-			],
-		},
-		{
-			id: 'better',
-			isRecommended: false,
-			levelText: this.translate.instant('warranty.upgradeLevels.better.levelText'),
-			warrantyCode: WarrantyCodeEnum.Onsite,
-			warrantyCodeText: this.translate.instant(
-				'warranty.upgradeLevels.better.warrantyCodeText'
-			),
-			points: [
-				this.translate.instant('warranty.upgradeLevels.better.point1'),
-				this.translate.instant('warranty.upgradeLevels.better.point2'),
-				this.translate.instant('warranty.upgradeLevels.better.point3'),
-			],
-		},
-		{
-			id: 'best',
-			isRecommended: true,
-			levelText: this.translate.instant('warranty.upgradeLevels.best.levelText'),
-			warrantyCode: WarrantyCodeEnum.Premier,
-			warrantyCodeText: this.translate.instant(
-				'warranty.upgradeLevels.best.warrantyCodeText'
-			),
-			points: [
-				this.translate.instant('warranty.upgradeLevels.best.point1'),
-				this.translate.instant('warranty.upgradeLevels.best.point2'),
-				this.translate.instant('warranty.upgradeLevels.best.point3'),
-				this.translate.instant('warranty.upgradeLevels.best.point4'),
-			],
-		},
-	];
+	offlineWarrantyLevels: WarrantyLevel[] = [];
+
+	getOfflineWarrantyLevels() {
+		if (this.offlineWarrantyLevels.length === 0) {
+			this.offlineWarrantyLevels = [
+				{
+					id: 'good',
+					isRecommended: false,
+					levelText: this.translate.instant('warranty.upgradeLevels.good.levelText'),
+					warrantyCode: WarrantyCodeEnum.Depot,
+					warrantyCodeText: this.translate.instant(
+						'warranty.upgradeLevels.good.warrantyCodeText'
+					),
+					points: [
+						this.translate.instant('warranty.upgradeLevels.good.point1'),
+						this.translate.instant('warranty.upgradeLevels.good.point2'),
+						this.translate.instant('warranty.upgradeLevels.good.point3'),
+					],
+				},
+				{
+					id: 'better',
+					isRecommended: false,
+					levelText: this.translate.instant('warranty.upgradeLevels.better.levelText'),
+					warrantyCode: WarrantyCodeEnum.Onsite,
+					warrantyCodeText: this.translate.instant(
+						'warranty.upgradeLevels.better.warrantyCodeText'
+					),
+					points: [
+						this.translate.instant('warranty.upgradeLevels.better.point1'),
+						this.translate.instant('warranty.upgradeLevels.better.point2'),
+						this.translate.instant('warranty.upgradeLevels.better.point3'),
+					],
+				},
+				{
+					id: 'best',
+					isRecommended: true,
+					levelText: this.translate.instant('warranty.upgradeLevels.best.levelText'),
+					warrantyCode: WarrantyCodeEnum.Premier,
+					warrantyCodeText: this.translate.instant(
+						'warranty.upgradeLevels.best.warrantyCodeText'
+					),
+					points: [
+						this.translate.instant('warranty.upgradeLevels.best.point1'),
+						this.translate.instant('warranty.upgradeLevels.best.point2'),
+						this.translate.instant('warranty.upgradeLevels.best.point3'),
+						this.translate.instant('warranty.upgradeLevels.best.point4'),
+					],
+				},
+			];
+		}
+		return this.offlineWarrantyLevels;
+	}
 
 	convertWarrantyData(data: WarrantyData) {
 		if (data.warrantyStatus === WarrantyStatusEnum.WarrantyNotFound) {
@@ -241,7 +248,7 @@ export class WarrantyService {
 
 	convertWarrantyLevels(data: any): WarrantyLevel[] {
 		if (!data?.good) {
-			return this.offlineWarrantyLevels;
+			return this.getOfflineWarrantyLevels();
 		}
 		const levels: WarrantyLevel[] = [];
 		const dataLevels = [
@@ -268,7 +275,7 @@ export class WarrantyService {
 
 	setWarrantyLevelsNotFound() {
 		if (!this.isOnlineWarrantyLevelsAvailable) {
-			this.warrantyLevels = this.offlineWarrantyLevels;
+			this.warrantyLevels = this.getOfflineWarrantyLevels();
 			this.hasFetchWarrantyLevels = true;
 		}
 	}
