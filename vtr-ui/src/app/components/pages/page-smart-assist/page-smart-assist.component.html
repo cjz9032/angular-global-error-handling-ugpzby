@@ -153,7 +153,7 @@
 															(keydown.enter)="launchFaceEnrollment()"
 															[tabindex]="intelligentSecurity.isZeroTouchLoginEnabled ? 0 : -1"
 															href="javascript:void()"
-															class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+															class="link-text">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 														</a>
 													</p>
 												</div>
@@ -248,7 +248,7 @@
 																(keydown.enter)="launchFaceEnrollment()"
 																role="link"
 																href="javascript:void()"
-																class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
+																class="link-text">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 															</a>
 														</p>
 													</div>
@@ -546,7 +546,7 @@
 											class="pt-3 ml-4">
 											<mat-checkbox id="auto-screen-timeout-checkbox"
 												class="font-size-xs"
-												[ariaLabel]="'Override Windows screen time out settings'"
+												[ariaLabel]="'Override Windows screen timeout settings'"
 												[name]="'OverrideWindowsIntelligentLock'"
 												[checked]="intelligentSecurity.isAutoScreenTimeoutEnabled"
 												[disabled]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)"
