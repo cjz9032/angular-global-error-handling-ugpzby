@@ -5485,7 +5485,7 @@
 			},
 			"environmentTitle": "Среда",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Версия addin",
 				"experienceVersion": "Версия experience",
 				"shellVersion": "Версия shell",
 				"bridgeVersion": "Версия bridge"

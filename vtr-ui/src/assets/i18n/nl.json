@@ -5375,7 +5375,7 @@
 			},
 			"environmentTitle": "Omgeving",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Versie addin",
 				"experienceVersion": "Versie experience",
 				"shellVersion": "Versie shell",
 				"bridgeVersion": "Versie bridge"
