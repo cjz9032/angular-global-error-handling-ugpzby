@@ -94,7 +94,11 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	}
 
 	private hasSecondaryMenu(item: any) {
-		if (Array.isArray(item?.subitems)) {
+		if (!item) {
+			return;
+		}
+
+		if (Array.isArray(item.subitems)) {
 			for (const element of item.subitems) {
 				if (
 					Array.isArray(element?.subitems) &&

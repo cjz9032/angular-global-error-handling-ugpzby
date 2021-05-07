@@ -304,7 +304,7 @@ export abstract class CommonExportLogService {
 
 	// Method used as workaround when content is in hebrew, because jspdf print it reversed
 	protected reverseForHebrew(data: any): string {
-		const content = data.cell.raw?.content ?? data.cell?.raw;
+		const content = data.cell?.raw?.content ?? data.cell?.raw;
 
 		if (this.currentLanguage === LanguageCode.hebrew && this.hebrewUnicodeRange.test(content)) {
 			// Avoid wrong positioning of : and () characters
@@ -324,7 +324,7 @@ export abstract class CommonExportLogService {
 			};
 
 			return content
-				.split(' ')
+				?.split(' ')
 				.map((word: string) => specialCharacters(word).reverse().join(''))
 				.join(' ');
 		}
