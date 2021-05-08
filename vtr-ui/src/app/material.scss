@@ -42,6 +42,7 @@ $mat-van-theme-background: (
 		bg-disabled: $shade_blue,
 	),
 	form-field: (
+		bg-form: $light,
 		bg-form-invalid: $text_light,
 		bg-form-disabled: $grey_lighter,
 		bg-select-panel: $light,
@@ -120,7 +121,7 @@ $mat-van-theme-foreground: (
 	),
 	form-field: (
 		color-select-text: $grey_darker,
-		color-select-disabled-text: $grey_darker,
+		color-select-disabled-text: $grey_dark,
 		color-select-option-text: $grey_darker,
 		color-select-arrow: $grey_dark,
 		style-select-panel-border: 0.1rem solid $dim_gray,
@@ -216,10 +217,11 @@ $van-ui-layout: (
 		layout-ripple-radius: 0,
 	),
 	form-field: (
+		layout-select-width: 15rem,
 		layout-select-panel-max-height: 25.6rem,
 		layout-select-item-height: 2.5rem,
-		layout-select-panel-padding: 1.5rem,
-		layout-select-arrow-size: 0.5rem,
+		layout-select-panel-padding: 2.6rem,
+		layout-select-arrow-size: 2rem,
 		layout-select-arrow-length: 1.2rem,
 		layout-select-arrow-margin: 0.4rem,
 		layout-form-title-font-weight: 600,
