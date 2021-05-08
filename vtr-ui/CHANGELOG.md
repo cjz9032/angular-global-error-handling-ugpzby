@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.34](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.33...v1.11.34) (2021-05-08)
+
+
+### Features
+
+* **overall:** fix npm vulnerabilities issue ([aa9fe63](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/aa9fe634800bb6888766cff036f84a72c0463b5c))
+
+
+### Bug Fixes
+
+* **support:** VAN-28833 if no warranty level from service show correct local text. ([4bddc00](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/4bddc00b7e62905542ba7f106faca8ab531a0cdd))
+
 ### [1.11.33](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.32...v1.11.33) (2021-05-07)
 
 
