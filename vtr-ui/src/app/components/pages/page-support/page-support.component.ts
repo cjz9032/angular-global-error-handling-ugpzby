@@ -83,13 +83,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
 		metricsEvent: 'FeatureClick',
 	};
-	listYourVirtualAssistant = {
-		icon: ['fal', 'robot'],
-		title: 'support.needHelp.listYourVirtualAssistant',
-		url: 'https://lena.lenovo.com/lena',
-		metricsItem: 'NeedHelp.YourVirtualAssistantButton',
-		metricsEvent: 'FeatureClick',
-	};
 
 	listFindUs = {
 		icon: ['fal', 'heart'],
