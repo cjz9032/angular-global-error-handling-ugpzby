@@ -296,6 +296,9 @@ export class SmartPerformanceService {
 					style: 'currency',
 					currency: 'CLP',
 				}).format(mpVal);
+			} else if (GEO === 'sg') {
+				mpVal = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
+				monthlyPrice = symbol + mpVal;
 			} else {
 				mpVal = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
 				monthlyPrice = currencyFormater.format(mpVal, { code: isoCode });
