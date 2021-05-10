@@ -53,11 +53,17 @@
 	</div>
 	<div *ngIf="!isLargeWidget"
 		class="button-box">
-		<vtr-ui-button linkId="warranty-explore-options"
+		<button mat-customize-button
+			color="primary"
+			id="warranty-explore-options"
+			class="w-100 uppercase btn-size-lg m-0"
+			vtrMetrics
 			metricsEvent="FeatureClick"
 			metricsItem="WarrantyExploreOptionsButton"
-			[isFullWidth]="true"
-			[label]="'warranty.exploreOptions' | translate"
-			[routerPath]="'/support'"></vtr-ui-button>
+			matTooltipClass="vtr-system-tooltip"
+			[matTooltip]="'warranty.exploreOptions' | translate"
+			(click)="exploreOptionsClicked()">
+			{{ 'warranty.exploreOptions' | translate }}
+		</button>
 	</div>
 </div>
