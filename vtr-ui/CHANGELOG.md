@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.3](https://bitbucket.tc.lenovo.com///compare/v1.12.2...v1.12.3) (2021-05-10)
+
+
+### Features
+
+* add deeplinks support ([18337ff](https://bitbucket.tc.lenovo.com///commit/18337fff3da0843b2087f9482ab059259fecdc45))
+* add new smart privacy ([b84fd0c](https://bitbucket.tc.lenovo.com///commit/b84fd0cfd7d0bcbd0c5d5457337d1c86765a1698))
+* **smart-privacy:** add iframe messenger ([45fddf6](https://bitbucket.tc.lenovo.com///commit/45fddf68295d343e8c503f0f5aebbd9657b21bd3))
+* **smart-privacy:** update smart privacy ([0129e4d](https://bitbucket.tc.lenovo.com///commit/0129e4d06f33f07c6f6cdfba7c73a423a8dc1b95))
+
+
+### Bug Fixes
+
+* add unsubscribe for the open buy now method ([66bdfbb](https://bitbucket.tc.lenovo.com///commit/66bdfbb04d7b35022c4a4d3a029b95f187ab1d32))
+
 ### [1.12.2](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.12.1...v1.12.2) (2021-05-08)
 
 
