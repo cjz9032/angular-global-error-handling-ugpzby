@@ -5013,7 +5013,7 @@
 			"INTERNET_CONNECTION_TEST_DESCRIPTION": "该测试检查无线适配器是否能通过因特网交换数据。",
 			"LOCAL_CONNECTION_TEST": "本地连接测试",
 			"LOCAL_CONNECTION_TEST_DESCRIPTION": "验证无线适配器是否能在本地网络上建立连接。",
-			"MACADDRESS": "MAC 位址",
+			"MACADDRESS": "MAC 地址",
 			"MANUFACTURER": "制造商",
 			"NAME": "名称",
 			"NET_CONNECTION_STATUS": "网络连接状态",
