@@ -3,7 +3,7 @@ import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { WidgetLegionEdgeComponent } from './widget-legion-edge.component';
@@ -28,6 +28,7 @@ import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 import { AutomationId } from 'src/app/enums/automation-id.enum';
 
 import { GAMING_DATA } from './../../../../testing/gaming-data';
+import { MatDialog, MatDialogModule } from '@lenovo/material/dialog';
 
 describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
@@ -188,6 +189,9 @@ describe('WidgetLegionEdgeComponent', () => {
 					return winKeyLockFeatureCache;
 			}
 		},
+		getGamingThermalModeNotification: () => {
+			return new Observable();
+		},
 	};
 
 	const translateServiceMock = { instant: (name) => name };
@@ -261,21 +265,22 @@ describe('WidgetLegionEdgeComponent', () => {
 		let performanceOCStatus = false;
 		const gamingThermalModeServiceMock = {
 			getThermalModeRealStatus: () => {
-				Promise.resolve(thermalModeRealStatus);
+				return Promise.resolve(thermalModeRealStatus);
 			},
 			regThermalModeRealStatusChangeEvent: () => {
-				Promise.resolve(setReturnValue);
+				return Promise.resolve(setReturnValue);
 			},
 		};
 		const gamingOCServiceMoke = {
 			getPerformanceOCSetting: () => {
-				Promise.resolve(performanceOCStatus);
+				return Promise.resolve(performanceOCStatus);
 			},
 		};
 
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -317,7 +322,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -372,8 +377,8 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 
 		it('ngOnInit support thermalMode 2', fakeAsync(() => {
-			spyOn(component, 'renderThermalMode2RealStatus').and.callThrough();
-			spyOn(component, 'registerThermalModeRealStatusChangeEvent').and.callThrough();
+			spyOn(component, 'renderThermalMode2RealStatus').and.returnValue();
+			spyOn(component, 'registerThermalModeRealStatusChangeEvent').and.returnValue();
 			smartFanFeatureCache = true;
 			thermalModeVersionCache = 2;
 			thermalModeRealStatusCache = undefined;
@@ -478,7 +483,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 
 		it('ngOnInit not support OC', () => {
-			spyOn(component, 'renderThermalMode2OCSettings').and.callThrough();
+			spyOn(component, 'renderThermalMode2OCSettings').and.returnValue();
 			smartFanFeatureCache = true;
 			thermalModeVersionCache = 2;
 			cpuOCFeatureCache = false;
@@ -537,13 +542,13 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 
 		it('ngOnInit cpu OC', () => {
-			spyOn(component, 'renderThermalMode2OCSettings').and.callThrough();
+			spyOn(component, 'renderThermalMode2OCSettings').and.returnValue();
 			smartFanFeatureCache = true;
 			thermalModeVersionCache = 2;
 			cpuOCFeatureCache = true;
+			xtuServiceCache = true;
 			cpuOCStatusCache = 3;
 			gpuOCFeatureCache = false;
-			xtuServiceCache = true;
 			component.ngOnInit();
 			expect(component.performanceOCSettings).toBe(
 				false,
@@ -556,7 +561,6 @@ describe('WidgetLegionEdgeComponent', () => {
 				true,
 				'component.performanceOCSettings should be true'
 			);
-
 			xtuServiceCache = false;
 			component.performanceOCSettings = false;
 			component.ngOnInit();
@@ -778,6 +782,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('get thermal_mode_performance_overclock_on as automationId', fakeAsync(() => {
+			component.gamingCapabilities.thermalModeVersion = 2;
 			component.performanceOCSettings = true;
 			component.thermalModeRealStatus = GamingThermal2.performance;
 			const res = component.getThermalModeAutomationId();
@@ -805,21 +810,22 @@ describe('WidgetLegionEdgeComponent', () => {
 		const performanceOCStatus = false;
 		const gamingThermalModeServiceMock = {
 			getThermalModeRealStatus: () => {
-				Promise.resolve(thermalModeRealStatus);
+				return Promise.resolve(thermalModeRealStatus);
 			},
 			regThermalModeRealStatusChangeEvent: () => {
-				Promise.resolve(setReturnValue);
+				return Promise.resolve(setReturnValue);
 			},
 		};
 		const gamingOCServiceMoke = {
 			getPerformanceOCSetting: () => {
-				Promise.resolve(performanceOCStatus);
+				return Promise.resolve(performanceOCStatus);
 			},
 		};
 
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -838,6 +844,8 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						// TranslateService,
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -933,23 +941,23 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('renderOCSupported', () => {
-			spyOn(component, 'renderThermalMode2RealStatus').and.callThrough();
-			spyOn(component, 'registerThermalModeRealStatusChangeEvent').and.callThrough();
-			spyOn(component, 'onRegOCRealStatusChangeEvent').and.callThrough();
-			spyOn(component, 'registerOCRealStatusChangeEvent').and.callThrough();
+			spyOn(component, 'onRegOCRealStatusChangeEvent').and.returnValue();
+			spyOn(component, 'renderThermalMode2RealStatus').and.returnValue();
+			spyOn(component, 'registerThermalModeRealStatusChangeEvent').and.returnValue();
+			spyOn(component, 'registerOCRealStatusChangeEvent').and.returnValue();
 			smartFanFeatureCache = true;
 			thermalModeVersionCache = 4;
 			cpuOCFeatureCache = false;
 			gpuOCFeatureCache = false;
-			component.performanceOCSettings = false;
+			component.ocRealStatus = component.thermalMode2Enum.none;
 			component.ngOnInit();
 			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.none,
 				`cpuOCFeatureCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`
 			);
-			expect(component.performanceOCSettings).toBe(
-				false,
-				`cpuOCFeatureCache&gpuOCFeatureCache are false, component.performanceOCSettings should be false`
+			expect(component.ocRealStatus).toBe(
+				component.thermalMode2Enum.none,
+				`cpuOCFeatureCache&gpuOCFeatureCache are false, component.ocRealStatus should be thermalMode2Enum.none`
 			);
 			cpuOCFeatureCache = true;
 			gpuOCFeatureCache = false;
@@ -988,19 +996,19 @@ describe('WidgetLegionEdgeComponent', () => {
 				component.thermalMode2Enum.cpu_gpu,
 				`cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.cpu_gpu`
 			);
-			xtuServiceCache = false;
-			nvDriverCache = true;
-			component.ngOnInit();
-			expect(component.ocSupported).toBe(
-				component.thermalMode2Enum.none,
-				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&nvDriverCache are true, xtuServiceCache is false, component.OCSupported should be thermalMode2Enum.none`
-			);
 			xtuServiceCache = true;
 			nvDriverCache = false;
 			component.ngOnInit();
 			expect(component.ocSupported).toBe(
-				component.thermalMode2Enum.none,
-				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&xtuServiceCache are true, nvDriverCache is false, component.OCSupported should be thermalMode2Enum.none`
+				component.thermalMode2Enum.cpu,
+				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&nvDriverCache are true, xtuServiceCache is false, component.OCSupported should be thermalMode2Enum.none`
+			);
+			xtuServiceCache = false;
+			nvDriverCache = true;
+			component.ngOnInit();
+			expect(component.ocSupported).toBe(
+				component.thermalMode2Enum.gpu,
+				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&nvDriverCache are true, xtuServiceCache is false, component.OCSupported should be thermalMode2Enum.none`
 			);
 			xtuServiceCache = false;
 			nvDriverCache = false;
@@ -1025,35 +1033,50 @@ describe('WidgetLegionEdgeComponent', () => {
 			);
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.performance;
-			component.performanceOCSettings = false;
+			component.ocRealStatus = component.thermalMode2Enum.none;
 			expect(component.getOCTips()).toBe(
 				'',
-				'thermalModeVersion is 4, component.thermalModeRealStatus is performance, component.performanceOCSettings is false, getOCTips should be a null string'
+				'thermalModeVersion is 4, component.thermalModeRealStatus is performance, component.ocRealStatus is thermalMode2Enum.none, getOCTips should be a null string'
 			);
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.balance;
-			component.performanceOCSettings = false;
+			component.ocRealStatus = component.thermalMode2Enum.none;
 			expect(component.getOCTips()).toBe(
 				'',
-				'thermalModeVersion is 4, component.thermalModeRealStatus is balance, component.performanceOCSettings is false, getOCTips should be a null string'
+				'thermalModeVersion is 4, component.thermalModeRealStatus is balance, component.ocRealStatus is thermalMode2Enum.none, getOCTips should be a null string'
 			);
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.performance;
-			component.performanceOCSettings = true;
-			component.ocSupported = component.thermalMode2Enum.cpu_gpu;
+			component.ocRealStatus = component.thermalMode2Enum.cpu_gpu;
 			expect(component.getOCTips()).toBe(
-				'CPU & GPU overclocking activated',
-				'getOCTips should be CPU & GPU overclocking activated'
+				'gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_GPU_ON',
+				'component.thermalModeRealStatus is performance, getOCTips should be CPU & GPU overclocking activated'
 			);
-			component.ocSupported = component.thermalMode2Enum.cpu;
+			component.ocRealStatus = component.thermalMode2Enum.cpu;
 			expect(component.getOCTips()).toBe(
-				'CPU overclocking activated',
-				'getOCTips should be CPU overclocking activated'
+				'gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_ON',
+				'component.thermalModeRealStatus is performance, getOCTips should be CPU overclocking activated'
 			);
-			component.ocSupported = component.thermalMode2Enum.gpu;
+			component.ocRealStatus = component.thermalMode2Enum.gpu;
 			expect(component.getOCTips()).toBe(
-				'GPU overclocking activated',
-				'getOCTips should be GPU overclocking activated'
+				'gaming.dashboard.device.legionEdge.thermalMode3Tips.GPU_ON',
+				'component.thermalModeRealStatus is performance, getOCTips should be GPU overclocking activated'
+			);
+			component.thermalModeRealStatus = component.thermalMode2Enum.balance;
+			component.ocRealStatus = component.thermalMode2Enum.cpu_gpu;
+			expect(component.getOCTips()).toBe(
+				'gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_GPU_ON',
+				'component.thermalModeRealStatus is balance, getOCTips should be CPU & GPU overclocking activated'
+			);
+			component.ocRealStatus = component.thermalMode2Enum.cpu;
+			expect(component.getOCTips()).toBe(
+				'gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_ON',
+				'component.thermalModeRealStatus is balance, getOCTips should be CPU overclocking activated'
+			);
+			component.ocRealStatus = component.thermalMode2Enum.gpu;
+			expect(component.getOCTips()).toBe(
+				'gaming.dashboard.device.legionEdge.thermalMode3Tips.GPU_ON',
+				'component.thermalModeRealStatus is balance, getOCTips should be GPU overclocking activated'
 			);
 		});
 	});
@@ -1062,7 +1085,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		let cpuOCStatus = 3;
 		const gamingSystemUpdateServiceMock = {
 			getCpuOCStatus: () => {
-				Promise.resolve(cpuOCStatus);
+				return Promise.resolve(cpuOCStatus);
 			},
 			setCpuOCStatus: (value: number) => {
 				if (setReturnValue) {
@@ -1073,12 +1096,13 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 			getRamOCStatus: () => {
-				Promise.resolve(false);
+				return Promise.resolve(false);
 			},
 		};
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -1097,6 +1121,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -1279,7 +1304,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		let ramOCStatus = false;
 		const gamingSystemUpdateServiceMock = {
 			getRamOCStatus: () => {
-				Promise.resolve(ramOCStatus);
+				return Promise.resolve(ramOCStatus);
 			},
 			setRamOCStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -1293,6 +1318,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -1311,6 +1337,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -1538,7 +1565,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		let networkBoostModeStatus = false;
 		const networkBoostServiceMoke = {
 			getNetworkBoostStatus: () => {
-				Promise.resolve(networkBoostModeStatus);
+				return Promise.resolve(networkBoostModeStatus);
 			},
 			setNetworkBoostStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -1552,6 +1579,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -1570,6 +1598,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -1816,7 +1845,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		let autoCloseModeStatus = false;
 		const gamingAutoCloseServiceMock = {
 			getAutoCloseStatus: () => {
-				Promise.resolve(autoCloseModeStatus);
+				return Promise.resolve(autoCloseModeStatus);
 			},
 			setAutoCloseStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -1830,6 +1859,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -1848,6 +1878,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -2030,7 +2061,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		let hybridModeStatus = false;
 		const gamingHybridModeServiceMock = {
 			getHybridModeStatus: () => {
-				Promise.resolve(hybridModeStatus);
+				return Promise.resolve(hybridModeStatus);
 			},
 			setHybridModeStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -2044,6 +2075,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -2062,6 +2094,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -2243,7 +2276,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		let overDriveStatus = true;
 		const gamingOverDriveServiceMock = {
 			getOverDriveStatus: () => {
-				Promise.resolve(overDriveStatus);
+				return Promise.resolve(overDriveStatus);
 			},
 			setOverDriveStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -2257,6 +2290,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -2275,6 +2309,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -2467,7 +2502,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		let touchpadLockStatus = false;
 		const gamingKeyLockServiceMock = {
 			getKeyLockStatus: () => {
-				Promise.resolve(touchpadLockStatus);
+				return Promise.resolve(touchpadLockStatus);
 			},
 			setKeyLockStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -2481,6 +2516,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -2499,6 +2535,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
@@ -2695,6 +2732,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -2704,6 +2742,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					providers: [
 						{ provide: HttpClient },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{ provide: HttpHandler },
 						{
 							provide: GamingAllCapabilitiesService,
@@ -3017,6 +3056,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -3026,6 +3066,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					providers: [
 						{ provide: HttpClient },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{ provide: HttpHandler },
 						{
 							provide: GamingAllCapabilitiesService,
@@ -3084,6 +3125,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		beforeEach(
 			waitForAsync(() => {
 				TestBed.configureTestingModule({
+					imports: [MatDialogModule],
 					declarations: [
 						WidgetLegionEdgeComponent,
 						SvgInlinePipe,
@@ -3102,6 +3144,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: CommonService, useValue: commonServiceMock },
 						{ provide: LocalCacheService, useValue: localCacheServiceMock },
 						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
 						{
 							provide: GamingAllCapabilitiesService,
 							useValue: gamingAllCapabilitiesServiceMock,
