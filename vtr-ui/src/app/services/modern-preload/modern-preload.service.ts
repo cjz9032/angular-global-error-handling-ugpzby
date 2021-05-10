@@ -226,6 +226,7 @@ export class ModernPreloadService {
 	private installApp(i: number, appList: AppItem[], responseHandler) {
 		if (this.isInitialized && i < appList.length && !this.IsCancelInstall) {
 			this.cancelToken = {};
+			this.sendFirstDownloadingProgress(appList[i], responseHandler);
 			this.modernPreloadBridge
 				.downloadOrInstallEntitledApps(
 					[appList[i]],
@@ -313,6 +314,22 @@ export class ModernPreloadService {
 					}
 				});
 		}
+	}
+
+	private sendFirstDownloadingProgress(appItem, responseHandler: any) {
+		if (!appItem || !appItem.appID) {
+			return;
+		}
+		const firstProgressResponse = [
+			{
+				appID: appItem.appID,
+				process: 0,
+				status: ModernPreloadEnum.StatusDownloading
+			}
+		];
+		this.sendResponseNotification(ModernPreloadEnum.InstallEntitledAppProgress,
+			firstProgressResponse,
+			responseHandler);
 	}
 
 	private sendResponseNotification(type: ModernPreloadEnum, payload: any, responseHandler: any) {
