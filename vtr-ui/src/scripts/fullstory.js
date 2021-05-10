@@ -4,6 +4,19 @@ window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
 window['_fs_org'] = '11WJMB';
 window['_fs_namespace'] = 'FS';
 (function (m, n, e, t, l, o, g, y) {
+	var db, uuid;
+	var DBOpenRequest = window.indexedDB.open('VantageExperience');
+	DBOpenRequest.onsuccess = function (event) {
+		db = DBOpenRequest.result;
+		var transaction = db.transaction(['VantageExperience'], 'readwrite');
+		var objectStore = transaction.objectStore('VantageExperience');
+
+		var objectStoreRequest = objectStore.get('VantageExperienceCache');
+		objectStoreRequest.onsuccess = function (event) {
+			uuid = objectStoreRequest.result['[LocalStorageKey] LidUserFirstName'];
+		};
+	};
+
 	if (e in m) {
 		if (m.console && m.console.log) {
 			m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
@@ -21,7 +34,8 @@ window['_fs_namespace'] = 'FS';
 	y = n.getElementsByTagName(t)[0];
 	y.parentNode.insertBefore(o, y);
 	g.identify = function (i, v, s) {
-		g(l, { uid: i }, s);
+		if (uuid) g(l, { uid: uuid }, s);
+		else g(l, { uid: i }, s);
 		if (v) g(l, v, s);
 	};
 	g.setUserVars = function (v, s) {
