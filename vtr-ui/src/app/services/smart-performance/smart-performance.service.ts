@@ -213,13 +213,7 @@ export class SmartPerformanceService {
 						const resultJson = JSON.parse(result);
 						if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
 							this.logger.info('Fetch smartPerformance payment detail result: ', resultJson);
-
-							const smartTest = sessionStorage.getItem('smartTest');
-							if (smartTest) {
-								resolve(JSON.parse(smartTest));
-							} else {
-								resolve(resultJson);
-							}
+							resolve(resultJson);
 						} else {
 							resolve(undefined);
 							this.logger.info('Fetch smartPerformance payment detail failed response: ', resultJson);
