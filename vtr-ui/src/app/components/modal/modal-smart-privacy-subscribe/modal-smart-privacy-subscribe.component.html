@@ -1,0 +1,20 @@
+<button
+	mat-dialog-close
+	class="position-relative float-right closeButton"
+	id="smart-performance-subscribe-dialog-close-button"
+	attr.aria-label="{{'common.ui.close' | translate}}"
+	(click)="closeModal()"
+	vtrMetrics
+	metricsItem="btn.close"
+	metricsEvent="FeatureClick"
+	metricsParent="Dialog.SmartPrivacy.Subscribe"
+>
+	<fa-icon [icon]="['fal', 'times']"></fa-icon>
+</button>
+<div class="modal-smart-privacy-subscribe">
+	<div class="container-fluid">
+		<div class="payment-options">
+			<iframe id="smart-privacy-payment-iframe" [src]="paymentUrl | sanitize : 'resourceUrl'" sandbox="allow-forms allow-scripts allow-same-origin" frameborder="0" ></iframe>
+		</div>
+	</div>
+</div>

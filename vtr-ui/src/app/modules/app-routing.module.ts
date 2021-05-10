@@ -120,6 +120,13 @@ const routes: Routes = [
 			),
 	},
 	{
+		path: 'smart-privacy',
+		loadChildren: () =>
+			import('./smart-privacy/smart-privacy.module').then(
+				(m) => m.SmartPrivacyModule
+			),
+	},
+	{
 		path: '**',
 		canActivate: [ProtocolGuardService],
 		component: DoNotUseComponent,
