@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.36](https://bitbucket.tc.lenovo.com///compare/v1.11.35...v1.11.36) (2021-05-11)
+
+
+### Features
+
+* **feedback:** VAN-28876 remove all feedback in Vantage. ([199d3b2](https://bitbucket.tc.lenovo.com///commit/199d3b228a79b0d7af0a2b97c980597e615c55dd))
+
+
+### Bug Fixes
+
+* fix lid dialog padding to avoid white cube below ([e9d984d](https://bitbucket.tc.lenovo.com///commit/e9d984defa56d94ea8d6bbc0d5082a08b2c1c627))
+* **dashboard:** VAN-28840 open browser instead of goto support on arm machine ([a817bff](https://bitbucket.tc.lenovo.com///commit/a817bffdaf6be7725b8cf3d21aa38f49b4dbe535))
+* **ModernPreload:** VAN-28457 show first downloading progress ([f1ead34](https://bitbucket.tc.lenovo.com///commit/f1ead34b0e08d39e3a96bc83a6863794e75b1fd8))
+* **vsp:** VAN-29064 remove action if action used complete in sp page. ([b58d67a](https://bitbucket.tc.lenovo.com///commit/b58d67a739387859dad291947b3a309cc575be0a))
+* **vsp:** VAN-29064 Removed incorrect auto description string. ([c8115a7](https://bitbucket.tc.lenovo.com///commit/c8115a709db2d2ea7ccbaa20c974fde2fdcbf804))
+
 ### [1.11.35](https://bitbucket.tc.lenovo.com///compare/v1.11.34...v1.11.35) (2021-05-10)
 
 ### [1.11.34](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.33...v1.11.34) (2021-05-08)
