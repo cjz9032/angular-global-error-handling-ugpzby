@@ -15,9 +15,10 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { SPHistoryScanResultsDateTime } from './interface/smart-performance.interface';
 import { cloneDeep } from 'lodash';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'vtr-page-smart-performance',
@@ -59,6 +60,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		public smartPerformanceService: SmartPerformanceService,
 		public smartPerformanceDialogService: SmartPerformanceDialogService,
 		private logger: LoggerService,
+		private router: Router,
+		private location: Location,
 		public shellServices: VantageShellService,
 		public metricsService: MetricService,
 		private localCacheService: LocalCacheService,
@@ -601,6 +604,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 					this.activatedRoute.snapshot.queryParams.action === 'start'
 				) {
 					this.scanNow();
+					this.location.go(this.router.url.split('?')[0]);
 				}
 			}
 		);
