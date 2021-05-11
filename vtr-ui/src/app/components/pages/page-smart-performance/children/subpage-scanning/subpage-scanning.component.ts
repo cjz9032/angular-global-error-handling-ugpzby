@@ -66,11 +66,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		this.headerTitle = `${this.translate.instant(
 			'smartPerformance.scanningPage.scanningSystem'
 		)}`;
-		if (this.isAutoScanRunning) {
-			this.headerTitle += ` <span class="small">(${this.translate.instant(
-				'smartPerformance.auto'
-			)})</span>`;
-		}
 
 		this.activeGroup = SPCategory.TuneUpPerformance;
 
