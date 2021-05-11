@@ -243,4 +243,7 @@
 .lenovo-id-modal-size {
 	width: 0px;
 	height: 0px;
+	.mat-dialog-container {
+		padding: 0;
+	}
 }
