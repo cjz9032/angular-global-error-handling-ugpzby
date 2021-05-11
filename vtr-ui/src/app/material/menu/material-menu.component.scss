@@ -78,6 +78,7 @@
 				outline: none;
 				.menu-angle-down-icon {
 					font-size: $fontsize_xl;
+					display: inline-block;
 				}
 				&::after {
 					border: 0 !important;
