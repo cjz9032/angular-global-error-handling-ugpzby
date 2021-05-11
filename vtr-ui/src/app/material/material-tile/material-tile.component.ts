@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { TileItem } from 'src/app/feature/types/auto-close';
+import { TileItem } from 'src/app/feature/auto-close/types/auto-close';
 
 @Component({
 	selector: 'vtr-material-tile',

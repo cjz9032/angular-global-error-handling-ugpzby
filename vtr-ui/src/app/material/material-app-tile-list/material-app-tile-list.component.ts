@@ -8,7 +8,7 @@ import {
 	Renderer2,
 	ViewChild,
 } from '@angular/core';
-import { TileItem, MaxSelected } from 'src/app/feature/types/auto-close';
+import { TileItem, MaxSelected } from 'src/app/feature/auto-close/types/auto-close';
 
 @Component({
 	selector: 'vtr-material-app-tile-list',

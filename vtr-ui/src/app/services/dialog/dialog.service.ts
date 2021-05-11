@@ -25,7 +25,7 @@ import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { MaterialAppListDialogComponent } from 'src/app/material/material-app-list-dialog/material-app-list-dialog.component';
-import { TileItem, MaxSelected } from 'src/app/feature/types/auto-close';
+import { TileItem, MaxSelected } from 'src/app/feature/auto-close/types/auto-close';
 
 @Injectable({
 	providedIn: 'root',

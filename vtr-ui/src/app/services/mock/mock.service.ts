@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { App, TileItem } from 'src/app/feature/types/auto-close';
+import { App, TileItem } from 'src/app/feature/auto-close/types/auto-close';
 
 @Injectable({
 	providedIn: 'root',

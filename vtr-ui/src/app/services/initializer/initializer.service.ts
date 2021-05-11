@@ -7,7 +7,7 @@ import { SegmentConst } from '../self-select/self-select.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { TranslateService } from '@ngx-translate/core';
-import { BoostService, Profile } from 'src/app/feature/service/boost.service';
+import { BoostService, Profile } from 'src/app/feature/auto-close/service/boost.service';
 
 @Injectable({
 	providedIn: 'root',
