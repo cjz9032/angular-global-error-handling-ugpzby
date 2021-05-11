@@ -206,6 +206,16 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 									this.everSignIn,
 									this.appFeature
 								);
+							} else if (!this.userService.auth) {
+								// Close logon dialog
+								this.dialogRef.close(ssoErroType.SSO_ErrorType_SignInFailed);
+								this.devService.writeLog('onNavigationCompleted: Login failed! enableSSO(): ' + result.success + ', ' + result.status);
+								this.userService.sendSigninMetrics(
+									'failure',
+									this.starterStatus,
+									this.everSignIn,
+									this.appFeature
+								);
 							}
 						});
 				}
