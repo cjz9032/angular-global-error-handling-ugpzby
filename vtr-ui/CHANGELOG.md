@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.4](https://bitbucket.tc.lenovo.com///compare/v1.12.3...v1.12.4) (2021-05-11)
+
+
+### Features
+
+* add uuid in fullstory script ([6af44cc](https://bitbucket.tc.lenovo.com///commit/6af44cce52e46d2e1da4d351cb246002a47d20a0))
+
+
+### Bug Fixes
+
+* Call FS.identify to set uuid ([7ed29fd](https://bitbucket.tc.lenovo.com///commit/7ed29fd3fa44883f3b8814c3c0bfa04db20b8c06))
+
 ### [1.12.3](https://bitbucket.tc.lenovo.com///compare/v1.12.2...v1.12.3) (2021-05-10)
 
 
