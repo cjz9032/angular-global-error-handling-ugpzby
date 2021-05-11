@@ -91,7 +91,7 @@ export class DeviceService {
 		if (familyName) {
 			familyName = familyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
 		}
-
+		this.logger.info(`identifySMBMachine familyName: ${familyName}`);
 		this.supportAIMeetingMgr = await this.isSupportSMBFeature('AIMeetingManager') || this.isSoupportAIMeetingMgr(familyName);
 		this.supportCreatorSettings = await this.isSupportSMBFeature('CreatorSettings') || this.isSupportSubFeature(familyName, 'creatorSettings');
 		this.supportColorCalibration = await this.isSupportSMBFeature('ColorCalibration') || this.isSupportSubFeature(familyName, 'colorCalibration');
@@ -106,6 +106,7 @@ export class DeviceService {
 				this.hypSettings.getFeatureSetting(featureName).then(
 					(result) => {
 						resolve((result || '').toString().toLowerCase() === 'true');
+						this.logger.info(`deviceService isSupportSMBFeature: ${featureName} result: ${result}`);
 					},
 					(error) => {
 						this.logger.error(
