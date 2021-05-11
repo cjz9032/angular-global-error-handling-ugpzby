@@ -66,3 +66,15 @@ window['_fs_namespace'] = 'FS';
 		};
 	g._v = '1.3.0';
 })(window, document, window['_fs_namespace'], 'script', 'user');
+var db, uuid;
+var DBOpenRequest = window.indexedDB.open('VantageExperience');
+DBOpenRequest.onsuccess = function (event) {
+	db = DBOpenRequest.result;
+	var transaction = db.transaction(['VantageExperience'], 'readonly');
+	var objectStore = transaction.objectStore('VantageExperience');
+	var objectStoreRequest = objectStore.get('VantageExperienceCache');
+	objectStoreRequest.onsuccess = function (event) {
+		uuid = objectStoreRequest.result['[LocalStorageKey] LidUserFirstName'];
+	};
+};
+FS.identify(uuid);
