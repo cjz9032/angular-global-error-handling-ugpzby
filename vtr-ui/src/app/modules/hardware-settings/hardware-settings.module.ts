@@ -119,6 +119,7 @@ import { VantageShellService } from '../../services/vantage-shell/vantage-shell.
 import { DeviceService } from '../../services/device/device.service';
 import { MaterialChevronModule } from 'src/app/material/material-chevron/material-chevron.module';
 import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
+import { AutoCloseModule } from 'src/app/feature/auto-close/auto-close.module';
 
 @NgModule({
 	declarations: [
@@ -197,6 +198,7 @@ import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questio
 		MatSlideToggleModule,
 		MaterialChevronModule,
 		MatCheckboxModule,
+		AutoCloseModule,
 	],
 	exports: [
 		CommonModule,

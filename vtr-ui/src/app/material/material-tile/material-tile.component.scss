@@ -1,0 +1,94 @@
+@import '../../app.theme';
+
+.vtr-material-tile {
+	background: transparent;
+	border-radius: 0.5rem;
+	height: 100%;
+	outline: none !important;
+	&:active {
+		box-shadow: none !important;
+	}
+	&.tile-removable {
+		&:hover {
+			background: $gray_darker;
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+			@media #{$white-on-black} {
+				@include white-border;
+			}
+			.remove-icon {
+				display: block;
+			}
+		}
+	}
+	.remove-icon {
+		display: none;
+		cursor: pointer;
+		font-size: 2rem;
+		color: $menu_hover;
+		width: 2rem;
+		height: 2rem;
+		right: 0;
+	}
+	.tile-container {
+		min-width: 10rem;
+		max-width: 15rem;
+		::ng-deep {
+			.tile-icon {
+				width: 5rem;
+				margin-bottom: 1rem;
+			}
+			.tile-name {
+				text-align: center;
+			}
+		}
+	}
+	.button-container {
+		.tile-button {
+			:focus {
+				&::after {
+					border: none;
+				}
+			}
+			&:not(.mat-button-disabled) {
+				&:not(.mat-primary) {
+					background: transparent;
+					border: 0.1rem solid $blue-lighter;
+					@media #{$black-on-white} {
+						@include black-border;
+					}
+					@media #{$white-on-black} {
+						@include white-border;
+					}
+				}
+				&:hover {
+					.check-icon {
+						@include high-contrast-color-reversal;
+					}
+				}
+			}
+			&.mat-button-disabled {
+				background: transparent;
+				border: 0.1rem solid $light;
+				opacity: 0.4;
+			}
+			::ng-deep {
+				.mat-button-wrapper {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.check-icon {
+						color: $light;
+						font-size: 2rem;
+					}
+					.add-icon {
+						color: $blue-lighter;
+						font-size: 2.2rem;
+						@include high-contrast-color-reversal;
+					}
+				}
+			}
+		}
+	}
+}

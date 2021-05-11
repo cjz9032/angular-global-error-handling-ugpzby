@@ -24,6 +24,8 @@ import { MaterialDialogComponent } from 'src/app/material/material-dialog/materi
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
+import { MaterialAppListDialogComponent } from 'src/app/material/material-app-list-dialog/material-app-list-dialog.component';
+import { TileItem, MaxSelected } from 'src/app/feature/types/auto-close';
 
 @Injectable({
 	providedIn: 'root',
@@ -425,5 +427,21 @@ export class DialogService {
 			this.dialog.getDialogById(id).close();
 			this.dialog.openDialogs.splice(0, this.dialog.openDialogs.length);
 		}
+	}
+
+	openAppListDialog(dialogData: TileItem[], maxSelected?: MaxSelected) {
+		if (this.hasOpenDialog()) {
+			return;
+		}
+		const dialogRef = this.dialog.open(MaterialAppListDialogComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: false,
+			panelClass: 'mx-20',
+			id: 'app-list-dialog',
+		});
+		dialogRef.componentInstance.data = dialogData;
+		dialogRef.componentInstance.maxSelected = maxSelected;
+		return dialogRef;
 	}
 }

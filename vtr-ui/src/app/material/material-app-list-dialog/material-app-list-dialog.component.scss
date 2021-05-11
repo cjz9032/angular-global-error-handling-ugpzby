@@ -1,0 +1,60 @@
+@import '../../app.theme.scss';
+
+.closeButton {
+	right: -1rem !important;
+}
+.close-icon {
+	color: $menu_hover;
+}
+.font-color-main {
+	color: $shade_blue;
+}
+.app-container {
+	border-radius: 0.5rem;
+	padding: 0 1.5rem 1.5rem;
+	background-color: $gray_darker;
+	max-height: 70vh;
+	overflow-y: scroll;
+	@media #{$black-on-white} {
+		@include black-border;
+	}
+	@media #{$white-on-black} {
+		@include white-border;
+	}
+	::ng-deep {
+		.vtr-material-tile {
+			min-width: 13rem;
+			padding: 0 1rem;
+		}
+	}
+}
+.empty-container {
+	min-height: 40rem;
+	.image-content {
+		border: none;
+		img {
+			width: 35rem;
+		}
+	}
+}
+.spinner-content {
+	padding-top: 4rem;
+	margin-bottom: 4rem;
+	min-width: 40rem;
+
+	.spinner-border {
+		width: 5rem !important;
+		height: 5rem !important;
+		padding: 4rem;
+		@media #{$high-contrast} {
+			display: inline-block;
+			width: 2rem;
+			height: 2rem;
+			vertical-align: text-bottom;
+			border: 0.25em solid currentColor;
+			border-right-color: transparent;
+			border-radius: 50%;
+			animation: spinner-border 0.75s linear infinite;
+		}
+	}
+}

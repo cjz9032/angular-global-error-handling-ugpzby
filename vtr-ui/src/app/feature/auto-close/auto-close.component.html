@@ -1,0 +1,27 @@
+<vtr-container-collapsible
+	[headerLevel]="3"
+	[cardTitle]="'intelligentBoost.title' | translate"
+	[tabIndex]="0"
+	componentName="Smart assist"
+	[isCollapsed]="false"
+	[allowCollapse]="true"
+	[theme]="'white'"
+	[collapseLinkId]="'smartAssist-autoClose-collapse'">
+	<vtr-widget-boost-container
+		[featureToggle]="autoCloseChecked">
+		<img src="assets/icons/Icon_Windows_Update_20px.svg" alt="" class="boost-feature-icon">
+		<span class="boost-feature-heading" [innerHTML]="'intelligentBoost.performanceBoost' | translate"></span>
+		<span class="boost-feature-content" [innerHTML]="'intelligentBoost.performanceBoostDesc' | translate"></span>
+		<div class="boost-feature-toggle">
+			<mat-slide-toggle [disabled]="!autoCloseAvailable" [checked]="autoCloseChecked && autoCloseAvailable" (change)="updateAutoCloseToggleState($event)"></mat-slide-toggle>
+		</div>
+		<vtr-material-app-tile-list
+			class="boost-feature-apps-container w-100"
+			[tileItems]="savedApps"
+			[removable]="removable"
+			(removed)="remove($event)"
+			(addButtonClick)="openRunningAppsDialog()"
+			[metricsParent]="metricsParent"
+		></vtr-material-app-tile-list>
+	</vtr-widget-boost-container>
+</vtr-container-collapsible>
