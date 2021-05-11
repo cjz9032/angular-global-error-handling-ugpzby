@@ -340,12 +340,12 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				}
 				inputAccessoriesCapability.isUdkAvailable =
 					responses[0] != null &&
-					Object.keys(responses[0]).indexOf('uDKCapability') !== -1
+						Object.keys(responses[0]).indexOf('uDKCapability') !== -1
 						? responses[0].uDKCapability
 						: false;
 				inputAccessoriesCapability.isKeyboardMapAvailable =
 					responses[0] != null &&
-					Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
+						Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
 						? responses[0].keyboardMapCapability
 						: false;
 				inputAccessoriesCapability.keyboardVersion =
@@ -407,8 +407,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		subpath
 			? this.router.navigateByUrl(`/${path}/${subpath}`)
 			: path
-			? this.router.navigateByUrl(`/${path}`)
-			: this.router.navigateByUrl(`/`);
+				? this.router.navigateByUrl(`/${path}`)
+				: this.router.navigateByUrl(`/`);
 	}
 
 	openMatMenu(menuTrigger: MenuHoverDirective) {
@@ -469,10 +469,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 
 	openModernPreloadModal() {
 		this.dialogService.openModernPreloadModal();
-	}
-
-	openFeedbackModal() {
-		this.feedbackService.openFeedbackModal();
 	}
 
 	openSurveyModal(surveyId: string) {

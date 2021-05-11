@@ -160,17 +160,7 @@
 					<vtr-widget-system-update></vtr-widget-system-update>
 				</div>
 			</div>
-			<div class="row"
-				*ngIf="deviceService.isSMode">
-				<div class="col-sm-12 col-md-12 pb-20 px-0">
-					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
-						[description]="'dashboard.feedback.subtitle' | translate"
-						[actionName]="'dashboard.feedback.button' | translate"
-						[isOnline]="isOnline"
-						(feedBackClick)="openFeedbackModal()">
-					</vtr-widget-feedback>
-				</div>
-			</div>
+
 			<div class="row"
 				*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData.isAvailable">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
@@ -192,21 +182,29 @@
 			</div>
 
 			<div class="row"
-				*ngIf="!deviceService.isArm && showQuickSettings && deviceService.isShellAvailable">
-				<div class="col-sm-12 px-0 pt-3">
+				*ngIf="!deviceService.isArm && showQuickSettings && deviceService.isShellAvailable && !deviceService.isSMode">
+				<div class="col-sm-12 px-0 pb-20">
 					<vtr-widget-quicksettings>
 					</vtr-widget-quicksettings>
 				</div>
 			</div>
 			<div class="row"
 				*ngIf="!deviceService.isArm && deviceService.isShellAvailable">
-				<div class="col-sm-12 px-0 mt-20">
+				<div class="col-sm-12 px-0 pb-20">
 					<vtr-widget-status componentName="system status"
 						[title]="'dashboard.systemStatus.title' | translate"
 						[description]="'dashboard.systemStatus.subtitle' | translate"
 						[items]="systemStatus"
 						[linkId]="'dashboard-ss'">
 					</vtr-widget-status>
+				</div>
+			</div>
+
+			<div class="row"
+				*ngIf="!deviceService.isArm && showQuickSettings && deviceService.isShellAvailable && deviceService.isSMode">
+				<div class="col-sm-12 px-0 pb-20">
+					<vtr-widget-quicksettings>
+					</vtr-widget-quicksettings>
 				</div>
 			</div>
 

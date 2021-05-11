@@ -18,7 +18,6 @@ import { QaService } from 'src/app/services/qa/qa.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@lenovo/material/dialog';
 
@@ -179,15 +178,6 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 				this.logger.error('fetchCMSContent error', error);
 			}
 		);
-	}
-
-	onFeedbackModal() {
-		this.dialog.open(FeedbackFormComponent, {
-			autoFocus: true,
-			hasBackdrop: true,
-			disableClose: true,
-			panelClass: 'feedback-modal',
-		});
 	}
 
 	public onConnectivityClick($event: any) { }

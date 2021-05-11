@@ -266,20 +266,6 @@
 						</span>
 					</button>
 					<button mat-menu-item
-						*ngIf="commonService.isOnline"
-						id="menu-main-lnk-open-feedback"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
-						attr.aria-label="menu-main-lnk-open-feedback"
-						vtrMetrics
-						[metricsEvent]="item.metricsEvent"
-						[metricsParent]="item.metricsParent"
-						metricsItem="GiveFeedbackButton"
-						(click)="openFeedbackModal()">
-						<span class="d-block overflow-hidden w-auto menu-item-text"
-							[innerHTML]="'dashboard.feedback.title' | translate">
-						</span>
-					</button>
-					<button mat-menu-item
 						*ngIf="appsForYouService.lenovoSurvey.display"
 						id="menu-main-lnk-open-lenovo-survey"
 						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
