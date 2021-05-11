@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FeedbackFormComponent } from 'src/app/components/feedback-form/feedback-form/feedback-form.component';
 import { TranslationModule } from '../translation.module';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
@@ -32,7 +31,6 @@ import { PageDashboardAndroidComponent } from 'src/app/components/pages/page-das
 		PageDashboardAndroidComponent,
 	],
 	providers: [MockService],
-	entryComponents: [FeedbackFormComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class AndroidDashboardModule {}
+export class AndroidDashboardModule { }

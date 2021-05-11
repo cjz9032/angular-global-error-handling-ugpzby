@@ -5,9 +5,7 @@ import { MatDialogModule } from '@lenovo/material/dialog';
 import { MatIconModule } from '@lenovo/material/icon';
 
 import { FeedbackRoutingModule } from './feedback-routing.module';
-import { FeedbackFormComponent } from 'src/app/components/feedback-form/feedback-form/feedback-form.component';
 import { SurveyFormComponent } from 'src/app/components/feedback-form/survey-form/survey-form.component';
-import { WidgetFeedbackComponent } from 'src/app/components/widgets/widget-feedback/widget-feedback.component';
 import { TranslationModule } from '../translation.module';
 import { CommonPipeModule } from '../common/common-pipe.module';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
@@ -22,7 +20,7 @@ import { CommonDirectiveModule } from '../common/common-directive.module';
 
 
 @NgModule({
-	declarations: [FeedbackFormComponent, WidgetFeedbackComponent, SurveyFormComponent],
+	declarations: [SurveyFormComponent],
 	imports: [
 		CommonModule,
 		TranslationModule.forChild(),
@@ -41,9 +39,9 @@ import { CommonDirectiveModule } from '../common/common-directive.module';
 		MatDialogModule,
 		MatIconModule,
 	],
-	exports: [FeedbackFormComponent, WidgetFeedbackComponent, SurveyFormComponent],
+	exports: [SurveyFormComponent],
 	providers: [],
-	entryComponents: [FeedbackFormComponent],
+	entryComponents: [],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class FeedbackModule { }

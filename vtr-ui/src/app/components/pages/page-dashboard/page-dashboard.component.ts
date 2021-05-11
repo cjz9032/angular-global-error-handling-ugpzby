@@ -23,7 +23,6 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -295,7 +294,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private adPolicyService: AdPolicyService,
 		public dccService: DccService,
 		private selfselectService: SelfSelectService,
-		private feedbackService: FeedbackService,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
@@ -848,10 +846,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.dashboardService.getSelfSelectStatus().then((value) => {
 			this.showQuickSettings = value;
 		});
-	}
-
-	openFeedbackModal() {
-		this.feedbackService.openFeedbackModal();
 	}
 
 	ngAfterViewInit() {

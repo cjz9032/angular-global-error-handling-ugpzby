@@ -1251,9 +1251,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.feedback-modal,
-.survey-modal,
-.smart-performance-feedback-Modal {
+.survey-modal {
 	width: 50rem;
 	max-width: 90% !important;
 	max-height: calc(100vh - 2rem);

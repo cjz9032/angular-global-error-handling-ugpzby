@@ -282,7 +282,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item]'));
 			const currentIndex = anchors.indexOf(sourceElement);
 			const tabElements = Array.from(
-				document.querySelectorAll("[tabindex]:not([tabindex='-1']")
+				document.querySelectorAll('[tabindex]:not([tabindex=\'-1\']')
 			);
 			const curElementTabIndex = tabElements.indexOf(sourceElement);
 			// SHIFT+TAB
@@ -360,7 +360,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 						})
 					)
 					.subscribe();
-			} catch (error) {}
+			} catch (error) { }
 		}
 
 		const machineFamily = this.localCacheService.getLocalCacheValue(
@@ -475,7 +475,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	isParentActive(item) {}
+	isParentActive(item) { }
 
 	showItem(item) {
 		let showItem = true;
@@ -607,12 +607,12 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				}
 				inputAccessoriesCapability.isUdkAvailable =
 					responses[0] != null &&
-					Object.keys(responses[0]).indexOf('uDKCapability') !== -1
+						Object.keys(responses[0]).indexOf('uDKCapability') !== -1
 						? responses[0].uDKCapability
 						: false;
 				inputAccessoriesCapability.isKeyboardMapAvailable =
 					responses[0] != null &&
-					Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
+						Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
 						? responses[0].keyboardMapCapability
 						: false;
 				inputAccessoriesCapability.keyboardVersion =
@@ -640,11 +640,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	openModernPreloadModal() {
 		this.showMenu = false;
 		this.dialogService.openModernPreloadModal();
-	}
-
-	openFeedbackModal() {
-		this.showMenu = false;
-		this.feedbackService.openFeedbackModal();
 	}
 
 	openSurveyModal(surveyId) {
