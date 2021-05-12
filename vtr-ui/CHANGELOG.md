@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.5](https://bitbucket.tc.lenovo.com///compare/v1.12.4...v1.12.5) (2021-05-12)
+
+
+### Features
+
+* **auto close:** VAN-29057 auto-close files structure update ([63b79e4](https://bitbucket.tc.lenovo.com///commit/63b79e487190f67b5c3ee8856c0fe8cd55fdc248))
+
+
+### Bug Fixes
+
+* **menu:** align menu items to center ([0cf216f](https://bitbucket.tc.lenovo.com///commit/0cf216f2b960505026fee19d7ccae0602f188daf))
+* **smart-privacy:** fix performance issue ([a3c3e8b](https://bitbucket.tc.lenovo.com///commit/a3c3e8b62cffd90174fd5c6377a3cd9f5491b7b3))
+
 ### [1.12.4](https://bitbucket.tc.lenovo.com///compare/v1.12.3...v1.12.4) (2021-05-11)
 
 
