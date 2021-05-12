@@ -69,7 +69,9 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	subscription: Subscription;
 	public isSmartAssistAvailable = false;
-	public isSmartAssistAvailableSub$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
+	public isSmartAssistAvailableSub$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+		null
+	);
 	public isSmartPerformanceAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
@@ -195,7 +197,7 @@ export class ConfigService {
 
 				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
-				await this.initializeSmartAssist(machineType);
+				await this.initializeSmartAssist(machineType, this.activeSegment);
 				this.notifyMenuChange(this.menu);
 			}
 
@@ -221,7 +223,12 @@ export class ConfigService {
 	}
 
 	private updateMenuForDeviceSetting(menu: MenuItem[]) {
-		const hideMenu = [MenuID.power, MenuID.audio, MenuID.displayCamera, MenuID.inputAccessories];
+		const hideMenu = [
+			MenuID.power,
+			MenuID.audio,
+			MenuID.displayCamera,
+			MenuID.inputAccessories,
+		];
 		const visibleMenu = [MenuID.deviceSettings];
 		const deviceMenu = menu.find((item) => item.id === MenuID.device);
 		if (!(deviceMenu?.subitems?.length >= 1)) {
@@ -757,9 +764,9 @@ export class ConfigService {
 			LocalStorageKey.NewFeatureTipsVersion
 		);
 		this.logger.info('last version is:', lastVersion);
-		if ( 
-			(!welcomeTutorial || !welcomeTutorial.isDone) 
-			&& (!lastVersion || lastVersion < this.commonService.newFeatureVersion) 
+		if (
+			(!welcomeTutorial || !welcomeTutorial.isDone) &&
+			(!lastVersion || lastVersion < this.commonService.newFeatureVersion)
 		) {
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.NewFeatureTipsVersion,
@@ -770,11 +777,12 @@ export class ConfigService {
 		let widthCount = 0;
 		const widthTimer = setInterval(() => {
 			widthCount++;
-			const width = this.document.documentElement.clientWidth
+			const width = this.document.documentElement.clientWidth;
 			this.logger.info('Window inner width:', width);
 			if (width > 1) {
-				if (width < 1200 && 
-					(!lastVersion || lastVersion < this.commonService.newFeatureVersion) 
+				if (
+					width < 1200 &&
+					(!lastVersion || lastVersion < this.commonService.newFeatureVersion)
 				) {
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.NewFeatureTipsVersion,
@@ -790,7 +798,7 @@ export class ConfigService {
 							this.commonService.newFeatureVersion
 						);
 						return;
-					}					
+					}
 					if (
 						(!lastVersion || lastVersion < this.commonService.newFeatureVersion) &&
 						Array.isArray(this.menu)
@@ -798,6 +806,7 @@ export class ConfigService {
 						const idArr = [
 							MenuID.appSearch.toString(),
 							MenuID.smb.toString(),
+							MenuID.device.toString(),
 						];
 						const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
 						if (isIncludesItem) {
@@ -814,7 +823,7 @@ export class ConfigService {
 				});
 				clearInterval(widthTimer);
 			} else if (widthCount > 10) {
-				if(!lastVersion || lastVersion < this.commonService.newFeatureVersion) {
+				if (!lastVersion || lastVersion < this.commonService.newFeatureVersion) {
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.NewFeatureTipsVersion,
 						this.commonService.newFeatureVersion
@@ -839,7 +848,11 @@ export class ConfigService {
 		return menu;
 	}
 
-	private async initializeSmartAssist(machineType) {
+	private async initializeSmartAssist(machineType, activeSegment: SegmentConst) {
+		if (activeSegment !== SegmentConst.SMB) {
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartAssistSupported, true);
+			return;
+		}
 		if (machineType) {
 			this.smartAssistFilter(machineType);
 		} else if (this.deviceService.isShellAvailable) {

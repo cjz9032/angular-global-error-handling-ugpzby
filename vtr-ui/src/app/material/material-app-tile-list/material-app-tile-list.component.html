@@ -1,0 +1,31 @@
+<mat-chip-list class="row mat-chip-list-container"
+	[ngClass]="{'justify-content-center': tileItems?.length === 0}" #appTileContainer>
+	<vtr-material-tile *ngFor="let item of tileItems"
+		class="vtr-material-tile align-items-center"
+		[tileItem]="item"
+		[removable]="removable"
+		[addable]="addable"
+		(removed)="remove(item)"
+		(selected)="select(item)"
+		[metricsParent]="metricsParent">
+
+	</vtr-material-tile>
+	<mat-chip *ngIf="isShowAddBtn && !removable && !addable"
+		(click)="clickAdd()"
+		class="vtr-material-tile d-flex flex-column m-0"
+		vtrMetrics
+		metricsItem="app list add icon"
+		metricsEvent="FeatureClick"
+		[metricsParent]="metricsParent">
+		<div class="d-flex tile-container px-3 pb-3 align-items-center justify-content-center mt-5"
+			[ngClass]="{'flex-column': !isHorizontal}">
+			<span class="add-border tile-icon d-flex align-items-center justify-content-center">
+				<fa-icon [icon]="['fal', 'plus']"></fa-icon>
+			</span>
+			<span *ngIf="tileItems?.length > 0"
+				class="tile-name mat-body-1"
+				[innerHTML]="'gaming.narrator.networkBoost.addApps.add' | translate"></span>
+		</div>
+	</mat-chip>
+</mat-chip-list>
+

@@ -72,6 +72,7 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custom-slider.module';
 import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-radio.module';
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
+import { AutoCloseModule } from '../feature/auto-close/auto-close.module';
 
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
@@ -151,6 +152,7 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		MatIconModule,
 		MatButtonModule,
 		MaterialModule,
+		AutoCloseModule,
 	],
 	exports: [
 		NavbarModule,

@@ -5577,7 +5577,8 @@
 			"connectedHomeSecurity": "Get real-time monitoring and alerts about your network security at home. You will be the first one to know if any of your smart devices are facing a security attack.",
 			"hardwareScan": "Now you can get your system hardware component's health status.",
 			"appSearch": "Do you know? You can search for features applicable to your device here.",
-			"productivity": "Do you want to improve your work efficiency?"
+			"productivity": "Do you want to improve your work efficiency?",
+			"autoClose": "Do you know? The \"Performance boost\" feature can help you boost gaming loading speed. Try it now in Smart Assist."
 		}
 	},
 	"appsForYou": {

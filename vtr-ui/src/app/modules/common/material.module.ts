@@ -12,10 +12,14 @@ import { MatSnackBarModule } from '@lenovo/material/snack-bar';
 
 import { SharedModule } from '../shared.module';
 
+import { MaterialAppListDialogComponent } from 'src/app/material/material-app-list-dialog/material-app-list-dialog.component';
 import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
+import { MaterialAppTileListComponent } from 'src/app/material/material-app-tile-list/material-app-tile-list.component';
 import { MaterialStatusCircleComponent } from 'src/app/material/material-status-circle/material-status-circle.component';
 import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle/material-svg-circle.component';
+import { MaterialTileComponent } from 'src/app/material/material-tile/material-tile.component';
 import { MaterialStateCardContainerComponent } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
+
 
 @NgModule({
 	declarations: [
@@ -23,12 +27,18 @@ import { MaterialStateCardContainerComponent } from 'src/app/components/pages/pa
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
 		MaterialDialogComponent,
+		MaterialAppListDialogComponent,
+		MaterialTileComponent,
+		MaterialAppTileListComponent,
 	],
 	exports: [
 		MaterialStateCardContainerComponent,
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
 		MaterialDialogComponent,
+		MaterialAppListDialogComponent,
+		MaterialTileComponent,
+		MaterialAppTileListComponent,
 	],
 	imports: [
 		CommonModule,
@@ -41,6 +51,6 @@ import { MaterialStateCardContainerComponent } from 'src/app/components/pages/pa
 		MatDialogModule,
 		MatTooltipModule,
 		MatChipsModule,
-	],
+	]
 })
-export class MaterialModule {}
+export class MaterialModule { }

@@ -1,0 +1,40 @@
+<mat-chip
+	class="vtr-material-tile d-flex flex-column m-0 p-0"
+	[ngClass]="{'tile-removable': !addable}"
+	[removable]="true"
+	(removed)="remove(tileItem)">
+	<mat-icon matChipRemove class="remove-icon text-center position-absolute m-2 align-self-end"
+		vtrMetrics
+		metricsItem="{{tileItem.name}} removed"
+		metricsEvent="FeatureClick"
+		[metricsParent]="metricsParent">
+		<fa-icon [icon]="['fal', 'times']"></fa-icon>
+	</mat-icon>
+	<div class="d-flex w-100 tile-container px-3 pb-3 mt-5 align-items-center justify-content-center"
+		[ngClass]="{'flex-column h-100': !isHorizontal}">
+		<div class="row align-items-center tile w-100"
+			[ngClass]="{'flex-column h-100': !isHorizontal}">
+			<img *ngIf="tileItem?.iconSrc" class="tile-icon" [src]="tileItem.iconSrc | sanitize : 'resourceUrl'" alt="" srcset="">
+			<span class="tile-name w-100 mat-body-1 text-two-ellipsis" [innerHTML]="tileItem?.name"></span>
+		</div>
+		<div *ngIf="addable"
+			class="button-container">
+			<button mat-customize-button
+				[color]="tileItem?.buttonType === 'selected'?'primary':'accent'"
+				class="tile-button"
+				(click)="select(tileItem)"
+				[disabled]="tileItem?.buttonType === 'disabled'"
+				vtrMetrics
+				[metricsItem]="metricsItem"
+				metricsEvent="FeatureClick"
+				[metricsParent]="metricsParent">
+				<fa-icon *ngIf="tileItem?.buttonType === 'selected'; else addTemp"
+					class="check-icon" [icon]="['fas', 'check']"></fa-icon>
+				<ng-template #addTemp>
+					<fa-icon class="add-icon" [icon]="['fal', 'plus']"></fa-icon>
+				</ng-template>
+			</button>
+		</div>
+	</div>
+</mat-chip>
+

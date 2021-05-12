@@ -51,6 +51,7 @@ export class ProtocolGuardService implements CanActivate {
 		'gaming-thermalmode': '?action=thermalmode', // Version 3.7 app search for gaming
 		'hardware-scan': 'hardware-scan',
 		'smart-performance': 'support/smart-performance',
+		'auto-close': 'device/device-settings/smart-assist#autoclose',
 	};
 
 	backwardCompatibilitySchemas = [
