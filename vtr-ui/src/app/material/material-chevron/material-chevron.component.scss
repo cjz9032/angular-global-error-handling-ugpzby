@@ -5,6 +5,7 @@
 	padding: 2.4rem;
 	background-color: $light;
 	box-shadow: $drop_shadow;
+	border-radius: $border_radius;
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
 		outline: none !important;
