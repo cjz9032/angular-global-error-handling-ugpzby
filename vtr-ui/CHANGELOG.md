@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.6](https://bitbucket.tc.lenovo.com///compare/v1.12.5...v1.12.6) (2021-05-13)
+
+
+### Bug Fixes
+
+* **menu:** align menu items to center ([3cc6e01](https://bitbucket.tc.lenovo.com///commit/3cc6e018478059cc86fa0629ef391f85c95408e2))
+
 ### [1.12.5](https://bitbucket.tc.lenovo.com///compare/v1.12.4...v1.12.5) (2021-05-12)
 
 
