@@ -73,12 +73,14 @@
 			}
 			.menu-item {
 				font-family: 'Segoe UI', sans-serif;
-				font-size: $fontsize_sm;
 				font-weight: $weight_light;
 				outline: none;
+				font-size: 0; // remove whitespace
+				.menu-item-text {
+					font-size: $fontsize_sm;
+				}
 				.menu-angle-down-icon {
 					font-size: $fontsize_xl;
-					display: inline-block;
 				}
 				&::after {
 					border: 0 !important;

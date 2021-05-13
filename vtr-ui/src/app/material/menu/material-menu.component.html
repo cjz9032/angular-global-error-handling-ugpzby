@@ -87,9 +87,11 @@
 							routerLinkActive="active"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]">
-							{{item.label | translate}}
-							<span *ngIf="item.beta"
+							<span class="menu-item-text">
+								{{item.label | translate}}
+								<span *ngIf="item.beta"
 								class="beta">Beta</span>
+							</span>
 						</button>
 					</li>
 					<li class='h-100' *ngIf="item && !item.hide && item.id === 'app-search'">
@@ -117,7 +119,9 @@
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
 							(pointerleave)="[clearCloseAllOtherMatMenu()]">
-							<fa-icon class="align-middle" [icon]="item.icon"></fa-icon>
+							<span class="menu-item-text">
+								<fa-icon class="align-middle" [icon]="item.icon"></fa-icon>
+							</span>
 						</button>
 						<vtr-material-menu-dropdown
 							#materialMenuDropdown="materialMenuDropdownComponent"
@@ -152,7 +156,7 @@
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
 							(pointerleave)="clearCloseAllOtherMatMenu()">
-							<span [innerHTML]="item.label | translate"></span>
+							<span class="menu-item-text" [innerHTML]="item.label | translate"></span>
 							<fa-icon class="px-2 menu-angle-down-icon" [icon]="['fal', 'angle-down']"></fa-icon>
 						</button>
 						<vtr-material-menu-dropdown
