@@ -45,8 +45,8 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	) {}
 
 	ngOnInit() {
-		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion, undefined);
-		this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId, 0);
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
+		this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId);
 		this.getCacheList();
 		if (
 			this.localCacheService.getLocalCacheValue(
