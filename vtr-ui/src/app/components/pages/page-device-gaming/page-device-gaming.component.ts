@@ -97,6 +97,10 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					this.launchProtocol();
 				})
 				.catch((err) => { });
+		} else {
+			// Version 3.8 protocol: ensure that update the desktopType and liteGaming value
+			this.desktopType = this.localCacheService.getLocalCacheValue(LocalStorageKey.desktopType);
+			this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 		}
 
 		this.dashboardService.setDefaultCMSContent();

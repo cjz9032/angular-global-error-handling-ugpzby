@@ -45,7 +45,8 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	) {}
 
 	ngOnInit() {
-		this.initProfileId();
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion, undefined);
+		this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId, 0);
 		this.getCacheList();
 		if (
 			this.localCacheService.getLocalCacheValue(
@@ -114,8 +115,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 							LocalStorageKey.LightingCapabilitiesNewversionDesk,
 							response
 						);
+						this.ledlayoutversion = response.ledlayoutversion
 						this.imgDefaultOff();
-						this.getLightingProfileById(this.currentProfileId);
+						this.initProfileId();
 					}
 				});
 			}
@@ -903,27 +905,23 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 
 	public initProfileId() {
 		this.logger.info('this.currentProfileId  init ', this.currentProfileId);
-		if (this.currentProfileId === null || this.currentProfileId === undefined) {
-			if (this.gamingLightingService.isShellAvailable) {
-				this.gamingLightingService.getLightingProfileId().then((response: any) => {
-					if (response.didSuccess) {
-						this.localCacheService.setLocalCacheValue(
-							LocalStorageKey.ProfileId,
-							response.profileId
-						);
-						this.currentProfileId = response.profileId;
+		// Version 3.8 protocol
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.getLightingProfileId().then((response: any) => {
+				if (response.didSuccess) {
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.ProfileId,
+						response.profileId
+					);
+					this.currentProfileId = response.profileId;
+					if (this.currentProfileId === 0) {
+						this.isProfileOff = true;
+					} else {
+						this.isProfileOff = false;
 						this.getLightingProfileById(this.currentProfileId);
 					}
-				});
-			}
-		} else {
-			if (
-				this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) !== undefined
-			) {
-				this.currentProfileId = this.localCacheService.getLocalCacheValue(
-					LocalStorageKey.ProfileId
-				);
-			}
+				}
+			});
 		}
 		this.logger.info('this.currentProfileId ', this.currentProfileId);
 	}
@@ -945,7 +943,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	}
 
 	public replaceString(str: any) {
-		return str.replace(/ /g, '_');
+		return str ?  str.replace(/ /g, '_') : '';
 	}
 
 	/**

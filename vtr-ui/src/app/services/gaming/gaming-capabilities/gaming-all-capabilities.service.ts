@@ -39,7 +39,6 @@ export class GamingAllCapabilitiesService {
 	}
 
 	setCapabilityValuesGlobally(capabilities: any) {
-		this.isGetCapabilitiesAready = true;
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.macroKeyFeature,
 			capabilities.macroKeyFeature
@@ -166,6 +165,7 @@ export class GamingAllCapabilitiesService {
 			Gaming.GamingCapabilities,
 			capabilities
 		);
+		this.isGetCapabilitiesAready = true;
 	}
 
 	getCapabilityFromCache(storageKey: any) {
