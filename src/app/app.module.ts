@@ -33,4 +33,15 @@ import { SharedModule } from "./shared/shared.module";
     }
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(){
+      // //@ts-ignore
+      // this.xxxa.xxx = 123
+
+    // setTimeout(() => {
+
+    //   //@ts-ignore
+    //   this.xxxa.xxx = 123
+    // })
+  }
+}

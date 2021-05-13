@@ -5,7 +5,10 @@ import { AppModule } from "./app/app.module";
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+  .catch(err => {
+    debugger
+    console.error(err)
+  });
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
