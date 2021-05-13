@@ -95,12 +95,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			LocalStorageKey.macroKeyFeature
 		);
 		this.initMacroKeyEvents();
-		this.notificationSubscription = this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.gamingProperties = response.payload;
-				this.initMacroKeyEvents();
-			}
-		});
 		// Load all the cache status for Macrokey
 		this.macroKeyTypeStatus = this.macroKeyService.getMacrokeyTypeStatusCache();
 		this.macroKeyRecordedStatus = this.macroKeyService.getMacrokeyRecordedStatusCache();
