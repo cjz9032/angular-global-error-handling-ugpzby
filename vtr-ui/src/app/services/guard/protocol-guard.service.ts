@@ -52,7 +52,7 @@ export class ProtocolGuardService implements CanActivate {
 		'hardware-scan': 'hardware-scan',
 		'hardware-scan-quick': 'hardware-scan?scan=quickscan',
 		'hardware-scan-wireless-quick': 'hardware-scan?scan=quickscan&module=wireless',
-		'hardware-scan-cpu-quick': 'hardware-scan?scan=quickscan&module=cpu',
+		'hardware-scan-processor-quick': 'hardware-scan?scan=quickscan&module=cpu',
 		'hardware-scan-memory-quick': 'hardware-scan?scan=quickscan&module=memory',
 		'hardware-scan-storage-quick': 'hardware-scan?scan=quickscan&module=storage',
 		'smart-performance': 'support/smart-performance',
