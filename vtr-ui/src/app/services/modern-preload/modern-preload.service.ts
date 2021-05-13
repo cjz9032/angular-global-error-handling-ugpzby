@@ -323,7 +323,7 @@ export class ModernPreloadService {
 		const firstProgressResponse = [
 			{
 				appID: appItem.appID,
-				process: 0,
+				progress: 0,
 				status: ModernPreloadEnum.StatusDownloading
 			}
 		];
