@@ -91,9 +91,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.checkGamingCapabilities();
-		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.macroKeyFeature
-		);
 		this.initMacroKeyEvents();
 		// Load all the cache status for Macrokey
 		this.macroKeyTypeStatus = this.macroKeyService.getMacrokeyTypeStatusCache();
@@ -297,14 +294,19 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			this.gamingCapabilityService
 			.getCapabilities()
 			.then((response) => {
-				this.gamingProperties = response;
-				this.gamingCapabilityService.setCapabilityValuesGlobally(response);
-				if (!this.gamingProperties.macroKeyFeature) {
-					this.router.navigate(['/device-gaming']);
+				if (response) {
+					this.gamingProperties = response;
+					this.gamingCapabilityService.setCapabilityValuesGlobally(response);
+					if (!this.gamingProperties.macroKeyFeature) {
+						this.router.navigate(['/device-gaming']);
+					}
 				}
 			})
 			.catch((err) => { });
 		} else {
+			this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
+				LocalStorageKey.macroKeyFeature
+			);
 			if (!this.gamingProperties.macroKeyFeature) {
 				this.router.navigate(['/device-gaming']);
 			}

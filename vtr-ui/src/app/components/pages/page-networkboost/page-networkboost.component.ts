@@ -362,9 +362,11 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			this.gamingAllCapabilitiesService
 			.getCapabilities()
 			.then((response) => {
-				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
-				if (!response.networkBoostFeature || !response.fbnetFilter) {
-					this.router.navigate(['/device-gaming']);
+				if (response) {
+					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+					if (!response.networkBoostFeature || !response.fbnetFilter) {
+						this.router.navigate(['/device-gaming']);
+					}
 				}
 			})
 			.catch((err) => { });
