@@ -94,11 +94,11 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
-		this.initMacroKeySubpage();
+		this.initMacroKeyEvents();
 		this.notificationSubscription = this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapabilities) {
 				this.gamingProperties = response.payload;
-				this.initMacroKeySubpage();
+				this.initMacroKeyEvents();
 			}
 		});
 		// Load all the cache status for Macrokey
@@ -119,12 +119,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
 			this.tooltipsValue = this.translate.instant('gaming.macroKey.status.whileGaming.title');
-		}
-	}
-
-	initMacroKeySubpage() {
-		if (this.gamingProperties.macroKeyFeature) {
-			this.initMacroKeyEvents();
 		}
 	}
 
