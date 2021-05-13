@@ -50,6 +50,11 @@ export class ProtocolGuardService implements CanActivate {
 		'gaming-lighting3': 'gaming/lightingcustomize/3',
 		'gaming-thermalmode': '?action=thermalmode', // Version 3.7 app search for gaming
 		'hardware-scan': 'hardware-scan',
+		'hardware-scan-quick': 'hardware-scan?scan=quickscan',
+		'hardware-scan-wireless-quick': 'hardware-scan?scan=quickscan&module=wireless',
+		'hardware-scan-cpu-quick': 'hardware-scan?scan=quickscan&module=cpu',
+		'hardware-scan-memory-quick': 'hardware-scan?scan=quickscan&module=memory',
+		'hardware-scan-storage-quick': 'hardware-scan?scan=quickscan&module=storage',
 		'smart-performance': 'support/smart-performance',
 		'auto-close': 'device/device-settings/smart-assist#autoclose',
 		'lenovo-smart-privacy-main-page': 'smart-privacy?page=home',
