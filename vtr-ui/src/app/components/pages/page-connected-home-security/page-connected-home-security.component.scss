@@ -115,9 +115,7 @@
 						width: 10rem;
 						padding: 0rem 0.5rem 0rem 0rem;
 						margin-top: 0rem;
-						@media #{$white-on-black} {
-							filter: brightness(0) invert(1);
-						}
+						@include high-contrast-img-brightness;
 					}
 				}
 

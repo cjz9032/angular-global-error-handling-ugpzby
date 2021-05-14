@@ -1030,3 +1030,13 @@ $high-contrast-sky-blue: #81bbf5;
 		@include hyperlink-yellow-black;
 	}
 }
+
+@mixin high-contrast-img-brightness {
+	@media #{$black-on-white} {
+		filter: brightness(0);
+	}
+
+	@media #{$white-on-black} {
+		filter: brightness(0) invert(1);
+	}
+}

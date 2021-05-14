@@ -5,26 +5,25 @@
 	background-color: $grey_lighter;
 	border-radius: $border_radius;
 	border: 0.1rem solid $grey_light;
-	@media #{$black-on-white} {
+	@media #{$high-contrast} {
 		border: 0.1rem solid;
-		.item-icon-image {
-			img {
-				filter: brightness(0);
-			}
-		}
 	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid;
-		.item-icon-image {
-			img {
-				filter: brightness(0) invert(1);
-			}
+	.item-icon-image {
+		width: 2.3rem;
+		height: 2.3rem;
+	}
+	.item-icon-image {
+		img {
+			@include high-contrast-img-brightness;
 		}
 	}
 	.chevron-list-item {
 		padding: 1.5rem 2rem;
 		height: 100%;
 		border-bottom: 0.1rem solid $grey_light;
+		@media #{$high-contrast} {
+			outline: none !important;
+		}
 		a {
 			color: $main_darker;
 			display: block;
