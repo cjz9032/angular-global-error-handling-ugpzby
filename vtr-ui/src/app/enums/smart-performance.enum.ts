@@ -90,3 +90,7 @@ export enum SubscriptionState {
 	Active = 1,
 	Expired = 2
 }
+
+export enum SPNotification {
+	SPScanCompleted = 'SPScanCompleted'
+}

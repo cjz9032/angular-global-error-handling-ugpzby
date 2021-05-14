@@ -19,12 +19,15 @@ import {
 	EnumSmartPerformance,
 	actualDays,
 	SubscriptionState,
+	SPNotification,
 } from 'src/app/enums/smart-performance.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { MatTooltip } from '@lenovo/material/tooltip';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
 	selector: 'vtr-subpage-schedule-scan',
@@ -37,6 +40,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
+		private commonService: CommonService,
 		private metricService: MetricService
 	) { }
 
@@ -52,6 +56,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	@ViewChild('selectedDayList') selectedDayList: ElementRef;
 	@ViewChild('timeBlock') timeBlock: ElementRef;
 	private spTransLangEvent: Subscription;
+	notificationSubscription: Subscription;
 	selectedDate: any;
 	scheduleTab;
 	isChangeSchedule = false;
@@ -191,13 +196,16 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			!this.smartPerformanceService.isFirstRunSmartPerformance
 		) {
 			this.subscriptionListener = this.smartPerformanceService.subscriptionObserver.subscribe((state) => {
-				if (state === SubscriptionState.Active) {
-					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScanAndFix);
-				} else {
-					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScan);
-				}
+				this.getNextScanRunTime(state);
 			});
 		}
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				if (notification.type === SPNotification.SPScanCompleted) {
+					this.getNextScanRunTime(this.smartPerformanceService.subscriptionState);
+				}
+			}
+		);
 	}
 
 	// scan settings
@@ -209,6 +217,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			}, 10);
 		}
 	}
+
 	openScanScheduleDropDown(value) {
 		if (value === this.scheduleTab) {
 			this.scheduleTab = '';
@@ -290,11 +299,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 			LocalStorageKey.SPScheduleScanFrequency
 		);
 		this.changeScanFrequency(actualScanFrequency.indexOf(this.scheduleScanFrequency));
-		if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
-			this.getNextScanRunTime(EnumSmartPerformance.ScheduleScanAndFix);
-		} else {
-			this.getNextScanRunTime(EnumSmartPerformance.ScheduleScan);
-		}
+		this.getNextScanRunTime(this.smartPerformanceService.subscriptionState);
 	}
 
 	saveChangeScanTime() {
@@ -439,12 +444,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 						actualScanFrequency[0]
 					);
 				}
-
-				if (this.smartPerformanceService.subscriptionState === SubscriptionState.Active) {
-					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScanAndFix);
-				} else {
-					this.getNextScanRunTime(EnumSmartPerformance.ScheduleScan);
-				}
+				this.getNextScanRunTime(this.smartPerformanceService.subscriptionState);
 			} else {
 				this.logger.info('ui-smart-performance.scheduleScan', JSON.stringify(res));
 				if (this.smartPerformanceService.subscriptionState !== SubscriptionState.Active) {
@@ -460,8 +460,10 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async getNextScanRunTime(scantype: string) {
+	async getNextScanRunTime(subscriptionState: SubscriptionState) {
 		this.loading = true;
+		const scantype = subscriptionState === SubscriptionState.Active ? EnumSmartPerformance.ScheduleScanAndFix : EnumSmartPerformance.ScheduleScan;
+
 		const payload = { scantype };
 		let nextScanEvent = {};
 		this.logger.info('ui-smart-performance.getNextScanRunTime', JSON.stringify(payload));
@@ -695,7 +697,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		if (this.spTransLangEvent) {
 			this.spTransLangEvent.unsubscribe();
 		}
-
 		this.subscriptionListener?.unsubscribe();
+		this.notificationSubscription?.unsubscribe();
 	}
 }

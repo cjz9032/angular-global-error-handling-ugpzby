@@ -8,7 +8,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { EnumSmartPerformance, ScanningState, SubscriptionState } from 'src/app/enums/smart-performance.enum';
+import { EnumSmartPerformance, ScanningState, SPNotification, SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
@@ -634,5 +634,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.issueCount = res.result.tune + res.result.boost + res.result.secure;
 		this.smartPerformanceService.scanningState = ScanningState.Completed;
 		this.isScanAlreadyStarted = false;
+		this.commonService.sendNotification(SPNotification.SPScanCompleted);
 	}
 }
