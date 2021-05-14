@@ -52,6 +52,9 @@ export class ProtocolGuardService implements CanActivate {
 		'hardware-scan': 'hardware-scan',
 		'smart-performance': 'support/smart-performance',
 		'auto-close': 'device/device-settings/smart-assist#autoclose',
+		'lenovo-smart-privacy-main-page': 'smart-privacy?page=home',
+		'lenovo-smart-privacy-setting-page': 'smart-privacy?page=settings',
+		'lenovo-smart-privacy-password-page': 'smart-privacy?page=resetPassword',
 	};
 
 	backwardCompatibilitySchemas = [
