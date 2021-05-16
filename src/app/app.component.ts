@@ -6,6 +6,43 @@ import "zone.js";
 // script.src = "./scripts/fullstory.js";
 // document.head.appendChild(script);
 
+// function __awaiter(
+//   thisArg: unknown,
+//   _arguments: unknown,
+//   P: Promise,
+//   generator: Generator
+// ) {
+//   function adopt(value) {
+//     return value instanceof P
+//       ? value
+//       : new P(function (resolve) {
+//           resolve(value);
+//         });
+//   }
+//   return new (P || (P = Promise))(function (resolve, reject) {
+//     function fulfilled(value) {
+//       try {
+//         step(generator.next(value));
+//       } catch (e) {
+//         reject(e);
+//       }
+//     }
+//     function rejected(value) {
+//       try {
+//         step(generator["throw"](value));
+//       } catch (e) {
+//         reject(e);
+//       }
+//     }
+//     function step(result) {
+//       result.done
+//         ? resolve(result.value)
+//         : adopt(result.value).then(fulfilled, rejected);
+//     }
+//     step((generator = generator.apply(thisArg, _arguments || [])).next());
+//   });
+// }
+
 /**
  * @title Basic progress-spinner
  */
@@ -15,13 +52,14 @@ import "zone.js";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-	public someCode: string = '';
-
+  public someCode: string = "nothing";
 
   constructor(private http: HttpClient, private ngZone: NgZone) {}
 
   localErrorInZone() {
-    let timingZone = Zone.current.fork({
+    // @ts-ignore
+    const ngZoneInner = this.ngZone._inner as Zone;
+    let timingZone = ngZoneInner.fork({
       name: "timingZone",
       onInvoke: function (
         parentZoneDelegate,
@@ -33,22 +71,34 @@ export class AppComponent {
         source
       ) {
         var start = performance.now();
-        parentZoneDelegate.invoke(
+        // debugger;
+        const a = parentZoneDelegate.invoke(
           targetZone,
           callback,
           applyThis,
           applyArgs,
           source
         );
-        var end = performance.now();
-        console.log(
-          "Zone:",
-          targetZone.name,
-          "Intercepting zone:",
-          currentZone.name,
-          "Duration:",
-          end - start
-        );
+        debugger;
+        const timingCb = () => {
+          var end = performance.now();
+          console.log(
+            "Zone:",
+            targetZone.name,
+            "Intercepting zone:",
+            currentZone.name,
+            "Duration:",
+            end - start
+          );
+        };
+        // a
+        //   ? a.then((res: unknown) => {
+        //       timingCb();
+        //       return res;
+        //     })
+        //   : timingCb();
+        timingCb()
+        return a;
       },
     });
     let logZone = timingZone.fork({
@@ -69,39 +119,40 @@ export class AppComponent {
           currentZone.name,
           "enter"
         );
-        parentZoneDelegate.invoke(
+        const a = parentZoneDelegate.invoke(
           targetZone,
           callback,
           applyThis,
           applyArgs,
           source
         );
-        console.log(
-          "Zone:",
-          targetZone.name,
-          "Intercepting zone:",
-          currentZone.name,
-          "leave"
-        );
+
+        const timingCb = () => {
+          debugger;
+
+          console.log(
+            "Zone:",
+            targetZone.name,
+            "Intercepting zone:",
+            currentZone.name,
+            "leave"
+          );
+        };
+
+        // a
+        //   ? a.then((res: unknown) => {
+        //       timingCb();
+        //       return res;
+        //     })
+        //   : timingCb();
+        timingCb();
+
+        return a;
       },
     });
-    let appZone = logZone.fork({ name: "appZone" });
-
-    appZone.run(function myApp() {
-      console.log("Zone:", Zone.current.name, "Hello World!");
-    });
-    return;
-
-    console.log(Zone.current);
-
-    this.ngZone.onError.subscribe((err) => {
-      console.log("zone");
-      console.log(err);
-      debugger;
-    });
-
-    const newZone = Zone.current.fork({
-      name: "feat-a",
+    debugger;
+    let appZone = logZone.fork({
+      name: "appZone",
       onInvoke: function (
         parentZoneDelegate,
         currentZone,
@@ -111,66 +162,91 @@ export class AppComponent {
         applyArgs,
         source
       ) {
-        console.log(
-          "Zone:",
-          targetZone.name,
-          "Intercepting zone:",
-          currentZone.name,
-          "enter"
-        );
         debugger;
-        parentZoneDelegate.invoke(
-          targetZone.parent!,
+        return parentZoneDelegate.invoke(
+          targetZone,
           callback,
           applyThis,
           applyArgs,
           source
         );
-        console.log(
-          "Zone:",
-          targetZone.name,
-          "Intercepting zone:",
-          currentZone.name,
-          "leave"
-        );
-      },
-      onHandleError(
-        parentZoneDelegate: ZoneDelegate,
-        currentZone: Zone,
-        targetZone: Zone,
-        error: any
-      ) {
-        debugger;
-        return false;
       },
     });
 
     debugger;
+    // appZone.run(async () => {
+    //   this.someCode = "123";
+    //   console.log(Zone.current.name); // will output 'angular'
+    //   debugger;
 
-    newZone.runGuarded(() => {
-      //@ts-ignore
-      // this.aa.xx = 1;
-      console.log(Zone.current);
+    //   await new Promise((r) => {
+    //     debugger;
+    //     r("foo");
+    //     debugger;
+    //     this.someCode = "456";
+    //   });
+    //   console.log(Zone.current.name); // will output 'root'
+    //   debugger;
 
-      debugger;
+    //   console.log("Zone:", Zone.current.name, "Hello World!");
+    // });
+    let _this = this;
+
+    appZone.run(() => {
+      const myRunFnFac = function* () {
+        _this.someCode = "123";
+        console.log(Zone.current.name); // will output 'angular'
+        debugger;
+        const last: string = yield new Promise((r) => {
+          r("foo");
+        });
+        debugger;
+
+        _this.someCode = last;
+        // _this.someCode = "000";
+
+        // console.log(Zone.current.name); // will output 'root'
+        // debugger;
+
+        // console.log("Zone:", Zone.current.name, "Hello World!");
+      };
+
+      const myRunFn = myRunFnFac();
+      setTimeout(() => {
+        myRunFn.next();
+      }, 1000);
+
+      setTimeout(() => {
+        myRunFn.next();
+      }, 2000);
+
+      // setTimeout(() => {
+      //   myRunFn.next();
+      // }, 3000);
+      return myRunFn;
     });
 
-    // zone.run(() => {
-    //   debugger
-    // });
+    // setTimeout(()=>{
+    //   myRunFn.next(123)
+    // }, 1000)
+    // console.log(Zone.current);
 
-    // this.ngZone.run(() => {
-    //   // throw Error("The app component has thrown an error with zone!");
-    //   new Promise((r,f)=>f('fff'))
-
-    //   this.ngZone.run(() => {
-    //     throw Error("The app component has thrown an error with zone!");
-    //   });
+    // this.ngZone.onError.subscribe((err) => {
+    //   console.log("zone");
+    //   console.log(err);
+    //   debugger;
     // });
   }
 
-  localError() {
-    throw Error("The app component has thrown an error!");
+  async localError() {
+    // throw Error("The app component has thrown an error!");
+    this.someCode = "123";
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(666);
+      }, 1000);
+    });
+    this.someCode = "456";
   }
 
   failingRequest() {
@@ -220,6 +296,101 @@ export class AppComponent {
 //   });
 //   qq.then(() => {});
 // }, 3000);
+
+// let logs: string[] = [];
+// let zoneA = Zone.current.fork({
+//   name: "zoneA",
+//   onHandleError: function (
+//     parentZoneDelegate: ZoneDelegate,
+//     currentZone: Zone,
+//     targetZone: Zone,
+//     error: any
+//   ) {
+//     logs.push("zoneA onHandleError");
+//     console.log(error.message);
+//     debugger
+//     return false;
+//   },
+//   onInvoke: function (
+//     delegate,
+//     currentZone,
+//     targetZone,
+//     callback,
+//     applyThis,
+//     applyArgs
+//   ) {
+//     debugger
+//     logs.push("zoneA onInvoke");
+//     return delegate.invoke(targetZone, callback, applyThis, applyArgs);
+//   },
+// });
+// let zoneB = Zone.current.fork({
+//   name: "zoneB",
+//   onInvoke: function (
+//     delegate,
+//     currentZone,
+//     targetZone,
+//     callback,
+//     applyThis,
+//     applyArgs
+//   ) {
+//     logs.push("zoneB onInvoke");
+//     return delegate.invoke(targetZone, callback, applyThis, applyArgs);
+//   },
+// });
+// let zoneAChild = zoneA.fork({
+//   name: "zoneAChild",
+//   onInvoke: function (
+//     delegate,
+//     currentZone,
+//     targetZone,
+//     callback,
+//     applyThis,
+//     applyArgs
+//   ) {
+//     logs.push("zoneAChild onInvoke");
+//     console.log(targetZone);
+
+//     debugger
+//     return callback.apply(applyThis, applyArgs);
+
+//     //@ts-ignore
+//     // return delegate.invoke(targetZone, callback, applyThis, applyArgs);
+//   },
+//   onHandleError: function (
+//     parentZoneDelegate: ZoneDelegate,
+//     currentZone: Zone,
+//     targetZone: Zone,
+//     error: any
+//   ) {
+//     logs.push("zoneAChild onHandleError");
+//     console.log(error.message);
+//     debugger
+//     return error;
+//   },
+// });
+
+// // zoneA.runGuarded(() => {
+// //   zoneB.run(() => {
+// //     zoneAChild.runGuarded(function test() {
+// //       logs.push("begin run" + Zone.current.name);
+// //       console.log("logs", logs);
+
+// //       const error = new Error('my test err');
+// //       // console.error("trace", error.stack);
+// //       throw error;
+// //     });
+// //   });
+// // });
+
+// zoneAChild.runGuarded(function test() {
+//   logs.push("begin run" + Zone.current.name);
+//   console.log("logs", logs);
+
+//   const error = new Error('my test err');
+//   // console.error("trace", error.stack);
+//   throw error;
+// });
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

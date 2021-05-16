@@ -1,14 +1,20 @@
-<mat-toolbar color="primary">
-	Error Interceptor Demo
-</mat-toolbar>
+<mat-toolbar color="primary"> Error Interceptor Demo </mat-toolbar>
 
 <div class="content-container">
-	<button mat-raised-button (click)="localError()">Local front end error</button>
-	<button mat-raised-button (click)="localErrorInZone()">Local front end error with zone</button>
-	<button mat-raised-button (click)="failingRequest()">Server request with error</button>
-	<button mat-raised-button (click)="successfulRequest()">Successful request showing loading spinner</button>
+  {{ someCode }}
+  <button mat-raised-button (click)="localError()">
+    Local front end error
+  </button>
+  <button mat-raised-button (click)="localErrorInZone()">
+    Local front end error with zone
+  </button>
+  <button mat-raised-button (click)="failingRequest()">
+    Server request with error
+  </button>
+  <button mat-raised-button (click)="successfulRequest()">
+    Successful request showing loading spinner
+  </button>
 </div>
-
 
 <!-- Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

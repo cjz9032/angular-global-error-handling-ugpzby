@@ -9,7 +9,7 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
   imports: [CommonModule],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+    // { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
   ]
 })
 export class ErrorHandlerModule {}
