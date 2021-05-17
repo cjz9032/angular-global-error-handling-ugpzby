@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.7](https://bitbucket.tc.lenovo.com///compare/v1.12.6...v1.12.7) (2021-05-17)
+
+
+### Features
+
+* **protocol-guard:** add new semantic-to-path ([035f6a7](https://bitbucket.tc.lenovo.com///commit/035f6a760ba827c052990a5b7f71e360fdef102a))
+* **WelcomeTutorial:** VAN-23712 add mandatory in welcome tutorial ([bc5ddca](https://bitbucket.tc.lenovo.com///commit/bc5ddca60cc4d895a5d1b82db27ae51b68a746fb))
+
+
+### Bug Fixes
+
+* update angular.json fullstory.js only in dev&qa ([72287ce](https://bitbucket.tc.lenovo.com///commit/72287ce172f9306afd6de7acda93e68e01c1d82c))
+
 ### [1.12.6](https://bitbucket.tc.lenovo.com///compare/v1.12.5...v1.12.6) (2021-05-13)
 
 
