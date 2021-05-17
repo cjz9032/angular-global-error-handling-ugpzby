@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.37](https://bitbucket.tc.lenovo.com///compare/v1.11.36...v1.11.37) (2021-05-17)
+
+
+### Bug Fixes
+
+* update angular.json fullstory.js only in dev&qa ([35f6ef3](https://bitbucket.tc.lenovo.com///commit/35f6ef37c94bebcc5a0c3a11cf2f1c5199b38c99))
+* **Img high-contrast brightness:** modify img high contast brightness and size ([0f7ee46](https://bitbucket.tc.lenovo.com///commit/0f7ee4668ce39ff8c455c3c1ee46e455feb2b2a0))
+* **ModernPreload:** VAN-28457 fix spell error ([f4f9ad0](https://bitbucket.tc.lenovo.com///commit/f4f9ad0ca9c264206a3fbb91e7cf054307aa1505))
+
 ### [1.11.36](https://bitbucket.tc.lenovo.com///compare/v1.11.35...v1.11.36) (2021-05-11)
 
 
