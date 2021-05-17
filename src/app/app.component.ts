@@ -1,6 +1,7 @@
 import { Component, NgZone } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import "zone.js";
+import { lineFeature, FeatureNodeTypeEnum } from "./line-feature";
+
 // import "zone.js/dist/zone";
 // const script = document.createElement("script");
 // script.src = "./scripts/fullstory.js";
@@ -42,7 +43,6 @@ import "zone.js";
 //     step((generator = generator.apply(thisArg, _arguments || [])).next());
 //   });
 // }
-
 /**
  * @title Basic progress-spinner
  */
@@ -54,7 +54,21 @@ import "zone.js";
 export class AppComponent {
   public someCode: string = "nothing";
 
-  constructor(private http: HttpClient, private ngZone: NgZone) {}
+  constructor(private http: HttpClient, private ngZone: NgZone) {
+    console.log(this);
+  }
+
+  @lineFeature({
+    featureName: "use-case-1",
+    node: {
+      nodeName: "localAnnotation",
+      nodeType: FeatureNodeTypeEnum.MIDDLE,
+      // nodeDescription: " start-1 ",
+    },
+  })
+  localAnnotation() {
+    debugger;
+  }
 
   localErrorInZone() {
     // @ts-ignore
@@ -79,7 +93,7 @@ export class AppComponent {
           applyArgs,
           source
         );
-        debugger;
+        // debugger;
         const timingCb = () => {
           var end = performance.now();
           console.log(
@@ -91,13 +105,13 @@ export class AppComponent {
             end - start
           );
         };
-        // a
-        //   ? a.then((res: unknown) => {
-        //       timingCb();
-        //       return res;
-        //     })
-        //   : timingCb();
-        timingCb()
+        a
+          ? a.then((res: unknown) => {
+              timingCb();
+              return res;
+            })
+          : timingCb();
+        // timingCb();
         return a;
       },
     });
@@ -128,8 +142,6 @@ export class AppComponent {
         );
 
         const timingCb = () => {
-          debugger;
-
           console.log(
             "Zone:",
             targetZone.name,
@@ -150,7 +162,6 @@ export class AppComponent {
         return a;
       },
     });
-    debugger;
     let appZone = logZone.fork({
       name: "appZone",
       onInvoke: function (
@@ -162,7 +173,6 @@ export class AppComponent {
         applyArgs,
         source
       ) {
-        debugger;
         return parentZoneDelegate.invoke(
           targetZone,
           callback,
@@ -173,58 +183,101 @@ export class AppComponent {
       },
     });
 
-    debugger;
-    // appZone.run(async () => {
-    //   this.someCode = "123";
-    //   console.log(Zone.current.name); // will output 'angular'
-    //   debugger;
+    // async
+    appZone.run(async () => {
+      this.someCode = "123";
+      // console.log(Zone.current.name); // will output 'angular'
+      // debugger;
 
-    //   await new Promise((r) => {
-    //     debugger;
-    //     r("foo");
-    //     debugger;
-    //     this.someCode = "456";
-    //   });
-    //   console.log(Zone.current.name); // will output 'root'
-    //   debugger;
+      const abc: string = await new Promise((r) => {
+        // this.someCode = "456";
+        setTimeout(() => {
+          setTimeout(() => {
+            r("foo");
+          }, 600);
+        }, 300);
+      });
 
-    //   console.log("Zone:", Zone.current.name, "Hello World!");
-    // });
-    let _this = this;
+      // this.someCode = abc;
 
-    appZone.run(() => {
-      const myRunFnFac = function* () {
-        _this.someCode = "123";
-        console.log(Zone.current.name); // will output 'angular'
-        debugger;
-        const last: string = yield new Promise((r) => {
-          r("foo");
-        });
-        debugger;
+      // console.log(Zone.current.name); // will output 'root'
+      // debugger;
 
-        _this.someCode = last;
-        // _this.someCode = "000";
+      // const aaa: string = await new Promise((r) => {
+      //   r("aaa");
+      // });
+      // this.someCode = aaa;
 
-        // console.log(Zone.current.name); // will output 'root'
-        // debugger;
-
-        // console.log("Zone:", Zone.current.name, "Hello World!");
-      };
-
-      const myRunFn = myRunFnFac();
-      setTimeout(() => {
-        myRunFn.next();
-      }, 1000);
-
-      setTimeout(() => {
-        myRunFn.next();
-      }, 2000);
-
-      // setTimeout(() => {
-      //   myRunFn.next();
-      // }, 3000);
-      return myRunFn;
+      // console.log("Zone:", Zone.current.name, "Hello World!");
     });
+
+    // then
+    // then是会调用, 但其实是不同的fn, 符合文档和需求
+    // appZone.run(() => {
+    //   this.someCode = "123";
+    //   new Promise(function (resolve) {
+    //     resolve("123");
+    //   })
+    //   .then((last: string) => {
+    //     this.someCode = last;
+    //     return "456";
+    //   });
+
+    //   // console.log("Zone:", Zone.current.name, "Hello World!");
+    // });
+
+    // gen
+    // let _this = this;
+
+    // appZone.run(() => {
+    //   const myRunFnFac = function* () {
+    //     _this.someCode = "123";
+    //     console.log(Zone.current.name); // will output 'angular'
+    //     debugger;
+
+    //     const then = new Promise((r) => {
+    //       r("foo");
+    //       _this.someCode = "456";
+    //     });
+    //     const abc: string = yield then
+
+    //     console.log(abc);
+
+    //     _this.someCode = abc;
+    //     debugger;
+
+    //     // const last2: string = yield new Promise((r) => {
+    //     //   setTimeout(() =>{
+    //     //     r("bbb");
+    //     //   }, 1_000)
+    //     // });
+    //     // debugger;
+
+    //     // _this.someCode = last2;
+    //     // _this.someCode = "000";
+
+    //     // console.log(Zone.current.name); // will output 'root'
+    //     // debugger;
+
+    //     // console.log("Zone:", Zone.current.name, "Hello World!");
+    //   };
+
+    //   const myRunFn = myRunFnFac();
+    //   const tmp = myRunFn.next();
+    //   console.log(tmp);
+    //   debugger;
+
+    //   // @ts-ignore
+    //   tmp.value.then((r)=>{
+    //     debugger;
+    //     myRunFn.next('666');
+    //   })
+
+    //   // setTimeout(() => {
+    //   //   myRunFn.next();
+    //   // }, 4000);
+    //   return myRunFn;
+    // });
 
     // setTimeout(()=>{
     //   myRunFn.next(123)
@@ -240,31 +293,35 @@ export class AppComponent {
 
   async localError() {
     // throw Error("The app component has thrown an error!");
-    this.someCode = "123";
-    await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(666);
-      }, 1000);
-    });
-    this.someCode = "456";
+    // this.someCode = "123";
+    // await new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve(666);
+    //   }, 1000);
+    // });
+    // await new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve(666);
+    //   }, 1000);
+    // });
+    // this.someCode = "456";
   }
 
   failingRequest() {
-    this.ngZone.runGuarded(
-      (a, b, c) => {
-        debugger;
-        this.http.get("https://httpstat.us/404?sleep=2000").toPromise();
-        // .catch((error: HttpErrorResponse) => {});
-      },
-      this.ngZone,
-      ["a", "bb", "ccc"]
-    );
-
-    this.ngZone.onError.subscribe((err) => {
-      console.log("zone");
-      console.log(err);
-      debugger;
-    });
+    // this.ngZone.runGuarded(
+    //   (a, b, c) => {
+    //     debugger;
+    //     this.http.get("https://httpstat.us/404?sleep=2000").toPromise();
+    //     // .catch((error: HttpErrorResponse) => {});
+    //   },
+    //   this.ngZone,
+    //   ["a", "bb", "ccc"]
+    // );
+    // this.ngZone.onError.subscribe((err) => {
+    //   console.log("zone");
+    //   console.log(err);
+    //   debugger;
+    // });
   }
 
   successfulRequest() {

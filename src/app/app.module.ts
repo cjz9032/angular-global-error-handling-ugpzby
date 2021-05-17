@@ -21,7 +21,7 @@ import { SharedModule } from "./shared/shared.module";
     MatNativeDateModule,
     ReactiveFormsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
   ],
   entryComponents: [AppComponent],
   declarations: [AppComponent],
@@ -29,17 +29,15 @@ import { SharedModule } from "./shared/shared.module";
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: "fill" }
-    }
-  ]
+      useValue: { appearance: "fill" },
+    },
+  ],
 })
 export class AppModule {
-  constructor(){
-      // //@ts-ignore
-      // this.xxxa.xxx = 123
-
+  constructor() {
+    // //@ts-ignore
+    // this.xxxa.xxx = 123
     // setTimeout(() => {
-
     //   //@ts-ignore
     //   this.xxxa.xxx = 123
     // })

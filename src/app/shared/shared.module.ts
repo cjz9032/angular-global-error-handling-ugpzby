@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, NgZone } from "@angular/core";
 import { LoadingDialogComponent } from "./loading/loading-dialog/loading-dialog.component";
 import { ErrorDialogComponent } from "./errors/error-dialog/error-dialog.component";
 import { CommonModule } from "@angular/common";
@@ -14,6 +14,6 @@ const sharedComponents = [LoadingDialogComponent, ErrorDialogComponent];
   imports: [CommonModule, RouterModule, MaterialModule],
   exports: [...sharedComponents],
   providers: [ErrorDialogService, LoadingDialogService],
-  entryComponents: [...sharedComponents]
+  entryComponents: [...sharedComponents],
 })
 export class SharedModule {}
