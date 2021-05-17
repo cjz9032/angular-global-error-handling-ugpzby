@@ -1,19 +1,21 @@
-import { NetworkStatus } from './../../../enums/network-status.enum';
-import { of } from 'rxjs';
+import { Title } from '@angular/platform-browser';
+import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { DeviceService } from './../../../services/device/device.service';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
+import { DeviceService } from './../../../services/device/device.service';
 import { DashboardService } from './../../../services/dashboard/dashboard.service';
 import { VantageShellService } from './../../../services/vantage-shell/vantage-shell-mock.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CMSService } from './../../../services/cms/cms.service';
 import { CommonService } from './../../../services/common/common.service';
-import { Title } from '@angular/platform-browser';
-import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA, Pipe } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { PageMacrokeyComponent } from './page-macrokey.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NetworkStatus } from './../../../enums/network-status.enum';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('PageMacrokeyComponent', () => {
@@ -42,8 +44,8 @@ describe('PageMacrokeyComponent', () => {
 					GAMING_DATA.mockPipe({ name: 'htmlText' }),
 				],
 				providers: [
-					NgbModal,
-					NgbActiveModal,
+					MatDialog,
+					MatDialogRef,
 					{ provide: Title, useValue: titleServiceMock },
 					{ provide: CMSService, useValue: cmsServiceMock },
 					{ provide: ActivatedRoute, useValue: routerMock },

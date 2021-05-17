@@ -4,7 +4,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
@@ -19,24 +20,30 @@ describe('PageHighDensityBatteryComponent', () => {
 		navigate: jasmine.createSpy('navigate'),
 	};
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot({
-					loader: {
-						provide: TranslateLoader,
-						useFactory: HttpLoaderFactory,
-						deps: [HttpClient],
-					},
-				}),
-				HttpClientTestingModule,
-				RouterTestingModule,
-			],
-			providers: [NgbModal, BatteryDetailService, { provide: Router, useValue: mockRouter }],
-			declarations: [PageHighDensityBatteryComponent],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [
+					TranslateModule.forRoot({
+						loader: {
+							provide: TranslateLoader,
+							useFactory: HttpLoaderFactory,
+							deps: [HttpClient],
+						},
+					}),
+					HttpClientTestingModule,
+					RouterTestingModule,
+				],
+				providers: [
+					MatDialog,
+					BatteryDetailService,
+					{ provide: Router, useValue: mockRouter },
+				],
+				declarations: [PageHighDensityBatteryComponent],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PageHighDensityBatteryComponent);

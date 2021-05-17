@@ -1,11 +1,13 @@
 import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { LocalCacheService } from './../../../services/local-cache/local-cache.service';
-import { WidgetLightingNotebookComponent } from './widget-lighting-notebook.component';
-import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MetricService } from '../../../services/metric/metrics.service';
+
+import { WidgetLightingNotebookComponent } from './widget-lighting-notebook.component';
 import { GAMING_DATA } from 'src/testing/gaming-data';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', [
@@ -175,11 +177,14 @@ describe('WidgetLightingNotebookComponent', () => {
 	);
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetLightingNotebookComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
+			declarations: [
+				WidgetLightingNotebookComponent,
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+			],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
-				NgbModal,
-				NgbActiveModal,
+				MatDialog,
+				MatDialogRef,
 				{ provide: GamingLightingService, useValue: gamingLightingServiceMock },
 				{ provide: LocalCacheService, useValue: localcacheServiceMock },
 				{ provide: MetricService, useValue: metricsMock },

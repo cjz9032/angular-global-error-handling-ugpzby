@@ -2,8 +2,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { discardPeriodicTasks, fakeAsync, TestBed, tick, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { TranslateStore } from '@ngx-translate/core';
+import { of as observableOf } from 'rxjs';
+
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
@@ -19,7 +21,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { SubpageDeviceSettingsPowerComponent } from './subpage-device-settings-power.component';
-import { of as observableOf } from 'rxjs';
 
 const featureStatus = {
 	available: true,
@@ -57,7 +58,7 @@ const conservationModeStatus = {
  	storageToEighty: true,
     status: true,
     isLoading: true
-}
+};
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 describe('SubpageDeviceSettingsPowerComponent', () => {
@@ -112,7 +113,7 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const component = fixture.componentInstance;
 			const commonService = TestBed.inject(CommonService);
 			const powerService = TestBed.inject(PowerService);
-			const modalService = TestBed.inject(NgbModal);
+			const modalService = TestBed.inject(MatDialog);
 			const localCacheService = TestBed.inject(LocalCacheService);
 			const loggerService = TestBed.inject(LoggerService);
 

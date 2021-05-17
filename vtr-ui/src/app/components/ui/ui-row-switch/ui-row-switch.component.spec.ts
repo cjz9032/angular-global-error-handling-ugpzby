@@ -3,7 +3,9 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
+import { MatTooltip } from '@lenovo/material/tooltip';
+
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -23,29 +25,31 @@ const switchId = 'test';
 describe('UiRowSwitchComponent', () => {
 	let component: UiRowSwitchComponent;
 	let fixture: ComponentFixture<UiRowSwitchComponent>;
-	let modalService: NgbModal;
+	let modalService: MatDialog;
 	let deviceService: DeviceService;
 	let translate: TranslateService;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				UiRowSwitchComponent,
-				ModalRebootConfirmComponent,
-				ModalVoiceComponent,
-				NgbTooltip,
-			],
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
-			providers: [NgbModal, DevService, DeviceService, TranslateService],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					UiRowSwitchComponent,
+					ModalRebootConfirmComponent,
+					ModalVoiceComponent,
+					MatTooltip,
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+				providers: [MatDialog, DevService, DeviceService, TranslateService],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiRowSwitchComponent);
 		component = fixture.componentInstance;
 		component.switchId = switchId;
-		modalService = fixture.debugElement.injector.get(NgbModal);
+		modalService = fixture.debugElement.injector.get(MatDialog);
 		deviceService = fixture.debugElement.injector.get(DeviceService);
 		translate = fixture.debugElement.injector.get(TranslateService);
 	});
@@ -146,7 +150,7 @@ describe('UiRowSwitchComponent', () => {
 
 	it('should test on rebootConfirm method with isRebootRequired true', () => {
 		// component = fixture.componentInstance;
-		// const modalService = TestBed.inject(NgbModal);
+		// const modalService = TestBed.inject(MatDialog);
 		component.title = 'Reversing the default primary function';
 		// component.isSwitchChecked = false;
 		const prevValue = component.isRebootRequired;
@@ -160,7 +164,7 @@ describe('UiRowSwitchComponent', () => {
 
 	/* it('should test on ngAfterViewInit modern-standby-link modern-standby', () => {
 		const component = fixture.componentInstance;
-		// const modalService = TestBed.inject(NgbModal);
+		// const modalService = TestBed.inject(MatDialog);
 		component.title = 'Reversing the default primary function';
 		component.caption='Test <a href=\'www.test.com\'>Test</a>';
 		// component.isSwitchChecked = false;
@@ -176,7 +180,7 @@ describe('UiRowSwitchComponent', () => {
 
 	/* it('should test on ngAfterViewInit modern-standby-link modern-standby', () => {
 		// component = fixture.componentInstance;
-		// const modalService = TestBed.inject(NgbModal);
+		// const modalService = TestBed.inject(MatDialog);
 		component.title = 'Reversing the default primary function';
 		component.caption = 'Test <a href=\'www.test.com\'>Test</a>';
 		component.readMoreText = 'test';

@@ -2,9 +2,11 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+
 import { SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -48,35 +50,32 @@ const response = {
 describe('WidgetSubscriptionDetailsComponent', () => {
 	let component: WidgetSubscriptionDetailsComponent;
 	let fixture: ComponentFixture<WidgetSubscriptionDetailsComponent>;
-	let modalService: NgbModal;
+	let modalService: MatDialog;
 	let commonService: CommonService;
 	let localCacheService: LocalCacheService;
 	let smartPerformanceService: SmartPerformanceService;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			declarations: [WidgetSubscriptionDetailsComponent],
-			imports: [
-				TranslateModule.forRoot(),
-				NgbModule,
-				HttpClientTestingModule,
-				RouterTestingModule,
-			],
-			providers: [
-				NgbModal,
-				LoggerService,
-				SupportService,
-				SmartPerformanceService,
-				CommonService,
-				FormatLocaleDatePipe,
-				DevService,
-			],
-		});
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				declarations: [WidgetSubscriptionDetailsComponent],
+				imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+				providers: [
+					MatDialog,
+					LoggerService,
+					SupportService,
+					SmartPerformanceService,
+					CommonService,
+					FormatLocaleDatePipe,
+					DevService,
+				],
+			});
 
-		fixture = TestBed.createComponent(WidgetSubscriptionDetailsComponent);
-		component = fixture.componentInstance;
-	}));
+			fixture = TestBed.createComponent(WidgetSubscriptionDetailsComponent);
+			component = fixture.componentInstance;
+		})
+	);
 
 	it('should create Widget Subscriptiondetails Component', () => {
 		const res = { ...response };
@@ -115,7 +114,7 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 	}));
 
 	it('should open subcription modal', () => {
-		modalService = TestBed.inject(NgbModal);
+		modalService = TestBed.inject(MatDialog);
 		const modalCancel: any = {
 			componentInstance: {
 				cancelPaymentRequest: new Observable<any>(),

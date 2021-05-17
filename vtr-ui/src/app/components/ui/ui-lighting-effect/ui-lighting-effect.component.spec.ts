@@ -1,9 +1,11 @@
-import { DeviceService } from 'src/app/services/device/device.service';
 import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { UiLightingEffectComponent } from './ui-lighting-effect.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
+import { DeviceService } from 'src/app/services/device/device.service';
+
+import { UiLightingEffectComponent } from './ui-lighting-effect.component';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('UiLightingEffectComponent', () => {
@@ -21,26 +23,28 @@ describe('UiLightingEffectComponent', () => {
 	dummyElement.id = 'menu-main-btn-navbar-toggler';
 	document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				UiLightingEffectComponent,
-				GAMING_DATA.mockPipe({ name: 'translate' }),
-				GAMING_DATA.mockPipe({ name: 'sanitize' }),
-			],
-			providers: [
-				NgbModal,
-				NgbActiveModal,
-				{ provide: DeviceService, useValue: deviceServiceMock },
-			],
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [HttpClientModule],
-		}).compileComponents();
-		fixture = TestBed.createComponent(UiLightingEffectComponent);
-		component = fixture.componentInstance;
-		component.selectedOption = {};
-		fixture.detectChanges();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					UiLightingEffectComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+				],
+				providers: [
+					MatDialog,
+					MatDialogRef,
+					{ provide: DeviceService, useValue: deviceServiceMock },
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [HttpClientModule],
+			}).compileComponents();
+			fixture = TestBed.createComponent(UiLightingEffectComponent);
+			component = fixture.componentInstance;
+			component.selectedOption = {};
+			fixture.detectChanges();
+		})
+	);
 
 	it('should create', fakeAsync(() => {
 		expect(component).toBeTruthy();

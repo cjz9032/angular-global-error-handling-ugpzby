@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 import { ModalExportLogComponent } from './modal-export-log.component';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
 
@@ -10,7 +11,7 @@ describe('ModalExportLogComponent', () => {
 	let component: ModalExportLogComponent;
 	let fixture: ComponentFixture<ModalExportLogComponent>;
 
-	const ngbActiveModal = jasmine.createSpyObj('ngbActiveModal', ['close']);
+	const dialogRef = jasmine.createSpyObj('dialogRef', ['close']);
 	const deviceService = jasmine.createSpyObj('deviceService', ['launchUri']);
 
 	beforeEach(async () => {
@@ -18,8 +19,8 @@ describe('ModalExportLogComponent', () => {
 			declarations: [ModalExportLogComponent],
 			providers: [
 				{
-					provide: NgbActiveModal,
-					useValue: ngbActiveModal,
+					provide: MatDialogRef,
+					useValue: dialogRef,
 				},
 				{
 					provide: DeviceService,

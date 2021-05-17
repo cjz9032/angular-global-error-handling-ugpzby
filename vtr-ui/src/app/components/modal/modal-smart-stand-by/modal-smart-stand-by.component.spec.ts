@@ -3,7 +3,7 @@
 // import { ModalSmartStandByComponent } from './modal-smart-stand-by.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { TranslationModule } from 'src/app/modules/translation.module';
-// import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+// import { MatDialogRef } from '@lenovo/material/dialog';
 // import { TranslateStore } from '@ngx-translate/core';
 // import { PowerService } from 'src/app/services/power/power.service';
 // import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
@@ -49,7 +49,7 @@
 // 			TestBed.configureTestingModule({
 // 				declarations: [ModalSmartStandByComponent],
 // 				imports: [FontAwesomeModule, TranslationModule, HttpClientTestingModule],
-// 				providers: [NgbActiveModal, TranslateStore]
+// 				providers: [MatDialogRef, TranslateStore]
 // 			}).compileComponents();
 // 		})
 // 	);
@@ -59,7 +59,7 @@
 // 			const fixture = TestBed.createComponent(ModalSmartStandByComponent);
 // 			const component = fixture.debugElement.componentInstance;
 // 			const powerService = fixture.debugElement.injector.get(PowerService);
-// 			const activeModal = fixture.debugElement.injector.get(NgbActiveModal)
+// 			const activeModal = fixture.debugElement.injector.get(MatDialogRef)
 // 			const httpTestingController = fixture.debugElement.injector.get(HttpTestingController);
 
 // 			return { fixture, component, powerService, httpTestingController, activeModal };

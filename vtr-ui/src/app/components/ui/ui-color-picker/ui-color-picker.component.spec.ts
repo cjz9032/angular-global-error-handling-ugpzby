@@ -1,10 +1,10 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { fakeAsync, ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { UiColorPickerComponent } from './ui-color-picker.component';
-import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
 import { GAMING_DATA } from './../../../../testing/gaming-data';
-import { By } from '@angular/platform-browser';
+import { UiColorPickerComponent } from './ui-color-picker.component';
 
 const presetColorList = [
 	{ color: 'FFECE6', isChecked: true },
@@ -18,22 +18,24 @@ describe('UiColorPickerComponent', () => {
 	dummyElement.id = 'menu-main-btn-navbar-toggler';
 	document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				UiColorPickerComponent,
-				GAMING_DATA.mockPipe({ name: 'translate' }),
-				GAMING_DATA.mockPipe({ name: 'sanitize' }),
-			],
-			providers: [NgbModal, NgbActiveModal],
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [HttpClientModule],
-		}).compileComponents();
-		fixture = TestBed.createComponent(UiColorPickerComponent);
-		component = fixture.componentInstance;
-		component.color = '';
-		fixture.detectChanges();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					UiColorPickerComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+				],
+				providers: [MatDialog, MatDialogRef],
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [HttpClientModule],
+			}).compileComponents();
+			fixture = TestBed.createComponent(UiColorPickerComponent);
+			component = fixture.componentInstance;
+			component.color = '';
+			fixture.detectChanges();
+		})
+	);
 
 	it('should create', fakeAsync(() => {
 		expect(component).toBeTruthy();
@@ -142,7 +144,7 @@ describe('UiColorPickerComponent', () => {
 		component.cpSliderDragEndFun({});
 		expect(component.isSliderOut).toEqual(true);
 
-		component.clickEvent = {target: ''};
+		component.clickEvent = { target: '' };
 		component.cpSliderDragEndFun(event);
 		expect(component.isFirstTrigger).toBe(false);
 

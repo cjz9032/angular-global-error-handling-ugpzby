@@ -1,12 +1,14 @@
 import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
-import { WidgetLightingDeskComponent } from './widget-lighting-desk.component';
-import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { LocalCacheService } from './../../../services/local-cache/local-cache.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
+import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
+import { LocalCacheService } from './../../../services/local-cache/local-cache.service';
 import { MetricService } from '../../../services/metric/metrics.service';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { GAMING_DATA } from 'src/testing/gaming-data';
+import { WidgetLightingDeskComponent } from './widget-lighting-desk.component';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', [
 	'getLightingProfileId',
@@ -19,7 +21,7 @@ const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', 
 	'setLightingProfileEffectColor',
 ]);
 const localcacheServiceMock = {
-	getLocalCacheValue:(key: any) => {
+	getLocalCacheValue: (key: any) => {
 		switch (key) {
 			case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
 				return lightingCapility;
@@ -31,7 +33,7 @@ const localcacheServiceMock = {
 				return getLightingProfileById;
 		}
 	},
-	setLocalCacheValue:(key: any, value: any) => {
+	setLocalCacheValue: (key: any, value: any) => {
 		switch (key) {
 			case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
 				lightingCapility = value;
@@ -201,10 +203,13 @@ describe('WidgetLightingDeskComponent', () => {
 	);
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetLightingDeskComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
+			declarations: [
+				WidgetLightingDeskComponent,
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+			],
 			providers: [
-				NgbModal,
-				NgbActiveModal,
+				MatDialog,
+				MatDialogRef,
 				{ provide: GamingLightingService, useValue: gamingLightingServiceMock },
 				{ provide: LocalCacheService, useValue: localcacheServiceMock },
 				{ provide: MetricService, useValue: metricsMock },

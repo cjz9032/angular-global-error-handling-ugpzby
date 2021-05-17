@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { ModalSnapshotComponent } from './modal-snapshot.component';
 
@@ -12,7 +13,7 @@ describe('ModalSnapshotComponent', () => {
 			TestBed.configureTestingModule({
 				declarations: [ModalSnapshotComponent],
 				imports: [TranslateModule.forRoot()],
-				providers: [NgbActiveModal],
+				providers: [MatDialogRef],
 			}).compileComponents();
 		})
 	);

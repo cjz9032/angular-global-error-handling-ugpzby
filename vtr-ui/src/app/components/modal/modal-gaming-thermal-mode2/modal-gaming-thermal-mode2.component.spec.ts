@@ -1,9 +1,9 @@
 import { Component, NO_ERRORS_SCHEMA, Input } from '@angular/core';
 import { TestBed, ComponentFixture, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateStore } from '@ngx-translate/core';
 import { of } from 'rxjs';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@lenovo/material/dialog';
 
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { ModalGamingThermalMode2Component } from './modal-gaming-thermal-mode2.component';
@@ -16,7 +16,6 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -45,7 +44,7 @@ describe('ModalGamingThermalMode2Component', () => {
 	let performanceOCSetting = false;
 	let autoSwitchStatus = false;
 	// mock cache
-	let thermalModeVersionCache = 2;
+	const thermalModeVersionCache = 2;
 	let thermalModeSettingStatusCache = 2;
 	let autoSwitchStatusCache = false;
 	let cpuOCStatusCache = 1;
@@ -131,9 +130,7 @@ describe('ModalGamingThermalMode2Component', () => {
 	};
 	const gamingThermalModeServiceMock = {
 		isShellAvailable: true,
-		getThermalModeSettingStatus: () => {
-			return Promise.resolve(thermalModeSettingStatus);
-		},
+		getThermalModeSettingStatus: () => Promise.resolve(thermalModeSettingStatus),
 		setThermalModeSettingStatus: (value: number) => {
 			if (setReturnValue) {
 				thermalModeSettingStatus = value;
@@ -142,9 +139,7 @@ describe('ModalGamingThermalMode2Component', () => {
 				resolve(setReturnValue);
 			});
 		},
-		getAutoSwitchStatus: () => {
-			return Promise.resolve(autoSwitchStatus);
-		},
+		getAutoSwitchStatus: () => Promise.resolve(autoSwitchStatus),
 		setAutoSwitchStatus: (value: boolean) => {
 			if (setReturnValue) {
 				autoSwitchStatus = value;
@@ -157,9 +152,7 @@ describe('ModalGamingThermalMode2Component', () => {
 			Promise.resolve(setReturnValue);
 		},
 		// Version 3.5 auto adjuste
-		getAutoAdjustSetting: () => {
-			return Promise.resolve(autoAdjustSettingStatus);
-		},
+		getAutoAdjustSetting: () => Promise.resolve(autoAdjustSettingStatus),
 		setAutoAdjustSetting: (value) => {
 			if (setReturnValue) {
 				autoAdjustSettingStatus = value;
@@ -169,9 +162,7 @@ describe('ModalGamingThermalMode2Component', () => {
 	};
 	const gamingOCServiceMock = {
 		isShellAvailable: true,
-		getPerformanceOCSetting: () => {
-			return Promise.resolve(performanceOCSetting);
-		},
+		getPerformanceOCSetting: () => Promise.resolve(performanceOCSetting),
 		setPerformanceOCSetting: (value: boolean) => {
 			if (setReturnValue) {
 				performanceOCSetting = value;

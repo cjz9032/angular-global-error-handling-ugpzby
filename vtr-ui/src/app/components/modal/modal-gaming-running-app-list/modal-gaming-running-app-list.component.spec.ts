@@ -1,12 +1,13 @@
 import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommsService } from 'src/app/services/comms/comms.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 import { ModalGamingRunningAppListComponent } from './modal-gaming-running-app-list.component';
@@ -120,7 +121,7 @@ describe('ModalGamingRunningAppListComponent', () => {
 					{ provide: HttpHandler },
 					{ provide: CMSService, useValue: cmsServiceMock },
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: NgbActiveModal },
+					{ provide: MatDialogRef },
 				],
 			}).compileComponents();
 		})
