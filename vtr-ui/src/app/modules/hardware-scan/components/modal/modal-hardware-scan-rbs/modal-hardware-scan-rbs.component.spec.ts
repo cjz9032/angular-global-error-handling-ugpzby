@@ -1,24 +1,27 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
-import { ModalHardwareScanRbsComponent } from './modal-hardware-scan-rbs.component';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 import { DevService } from 'src/app/services/dev/dev.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
+
+import { ModalHardwareScanRbsComponent } from './modal-hardware-scan-rbs.component';
 
 describe('ModalHardwareScanRbsComponent', () => {
 	let hwScanService: HardwareScanService;
 	let component: ModalHardwareScanRbsComponent;
 	let fixture: ComponentFixture<ModalHardwareScanRbsComponent>;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [ModalHardwareScanRbsComponent],
-			imports: [TranslateModule.forRoot(), HttpClientModule],
-			providers: [NgbActiveModal, HttpClientModule, DevService],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [ModalHardwareScanRbsComponent],
+				imports: [TranslateModule.forRoot(), HttpClientModule],
+				providers: [MatDialogRef, HttpClientModule, DevService],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalHardwareScanRbsComponent);

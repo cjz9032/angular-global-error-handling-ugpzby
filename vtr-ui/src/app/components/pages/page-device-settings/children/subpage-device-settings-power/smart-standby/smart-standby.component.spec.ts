@@ -2,7 +2,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -30,7 +31,7 @@ describe('Component: SmartStandby', () => {
 			const fixture = TestBed.createComponent(SmartStandbyComponent);
 			const smartStandbyComponent = fixture.componentInstance;
 			const powerService = fixture.debugElement.injector.get(PowerService);
-			const modalService = fixture.debugElement.injector.get(NgbModal);
+			const modalService = fixture.debugElement.injector.get(MatDialog);
 			const loggerService = fixture.debugElement.injector.get(LoggerService);
 			const commonService = fixture.debugElement.injector.get(CommonService);
 			const smartStandbyService = fixture.debugElement.injector.get(SmartStandbyService);
@@ -102,16 +103,21 @@ describe('Component: SmartStandby', () => {
 			expect(spy).toHaveBeenCalled();
 		});
 
-		it('should call setSmartStandbySection - else case - 2', waitForAsync(() => {
-			const { fixture, smartStandbyComponent, powerService } = setup();
-			powerService.isShellAvailable = true;
-			spyOn(powerService, 'getSmartStandbyEnabled').and.returnValue(Promise.resolve(false));
-			const spy = spyOn(smartStandbyComponent, 'splitStartEndTime');
-			smartStandbyComponent.cache = new SmartStandby();
-			smartStandbyComponent.smartStandby.isEnabled = false;
-			smartStandbyComponent.setSmartStandbySection(true);
-			expect(spy).not.toHaveBeenCalled();
-		}));
+		it(
+			'should call setSmartStandbySection - else case - 2',
+			waitForAsync(() => {
+				const { fixture, smartStandbyComponent, powerService } = setup();
+				powerService.isShellAvailable = true;
+				spyOn(powerService, 'getSmartStandbyEnabled').and.returnValue(
+					Promise.resolve(false)
+				);
+				const spy = spyOn(smartStandbyComponent, 'splitStartEndTime');
+				smartStandbyComponent.cache = new SmartStandby();
+				smartStandbyComponent.smartStandby.isEnabled = false;
+				smartStandbyComponent.setSmartStandbySection(true);
+				expect(spy).not.toHaveBeenCalled();
+			})
+		);
 
 		it('should call initDataFromCache - outer if', () => {
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();

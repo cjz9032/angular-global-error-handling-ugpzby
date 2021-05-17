@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { UiMacrokeyDetailsComponent } from './ui-macrokey-details.component';
 import { Component, Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
+
+import { MatDialog } from '@lenovo/material/dialog';
+
+import { UiMacrokeyDetailsComponent } from './ui-macrokey-details.component';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
@@ -36,7 +38,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 					GAMING_DATA.mockPipe({ name: 'sanitize' }),
 				],
 				imports: [],
-				providers: [NgbModal],
+				providers: [MatDialog],
 				schemas: [NO_ERRORS_SCHEMA],
 			}).compileComponents();
 		})
@@ -45,7 +47,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 	let modalService: any;
 
 	beforeEach(() => {
-		modalService = TestBed.inject(NgbModal);
+		modalService = TestBed.inject(MatDialog);
 		fixture = TestBed.createComponent(UiMacrokeyDetailsComponent);
 		component = fixture.componentInstance;
 		component.recording = false;

@@ -2,7 +2,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
@@ -33,15 +32,15 @@ import { PageDashboardComponent } from './page-dashboard.component';
 class TranslateServiceStub {
 	public onTranslationChange: EventEmitter<any> = new EventEmitter();
 	public onDefaultLangChange: EventEmitter<any> = new EventEmitter();
-	instant(data: string) { }
+	instant(data: string) {}
 	stream(data: string) {
 		return of(data);
 	}
 	get(key: string) {
 		return of(key);
 	}
-	setDefaultLang(lang: string) { }
-	use(lang: string) { }
+	setDefaultLang(lang: string) {}
+	use(lang: string) {}
 	get onLangChange() {
 		return of({ lang: 'en' });
 	}
@@ -54,40 +53,41 @@ describe('PageDashboardComponent', () => {
 
 	let translate: TranslateService;
 	let originalTimeout;
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [PageDashboardComponent, FormatLocaleDatePipe],
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
-			providers: [
-				DashboardService,
-				QaService,
-				NgbModalConfig,
-				CommonService,
-				FormatLocaleDatePipe,
-				DeviceService,
-				CMSService,
-				UPEService,
-				SystemUpdateService,
-				UserService,
-				{ provide: TranslateService, useClass: TranslateServiceStub },
-				VantageShellService,
-				AndroidService,
-				DialogService,
-				LoggerService,
-				HypothesisService,
-				WarrantyService,
-				AdPolicyService,
-				DccService,
-				SelfSelectService,
-				FeedbackService,
-				LocalInfoService,
-				MetricService,
-				DevService,
-				CommsService,
-			],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [PageDashboardComponent, FormatLocaleDatePipe],
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+				providers: [
+					DashboardService,
+					QaService,
+					CommonService,
+					FormatLocaleDatePipe,
+					DeviceService,
+					CMSService,
+					UPEService,
+					SystemUpdateService,
+					UserService,
+					{ provide: TranslateService, useClass: TranslateServiceStub },
+					VantageShellService,
+					AndroidService,
+					DialogService,
+					LoggerService,
+					HypothesisService,
+					WarrantyService,
+					AdPolicyService,
+					DccService,
+					SelfSelectService,
+					FeedbackService,
+					LocalInfoService,
+					MetricService,
+					DevService,
+					CommsService,
+				],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PageDashboardComponent);

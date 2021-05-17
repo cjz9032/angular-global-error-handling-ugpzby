@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { DevService } from '../../../services/dev/dev.service';
@@ -19,7 +20,7 @@ describe('RecoverBadSectorsService', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [TranslateModule.forRoot(), HttpClientModule],
-			providers: [NgbActiveModal, HttpClientModule, DevService],
+			providers: [MatDialogRef, HttpClientModule, DevService],
 		});
 		service = TestBed.inject(RecoverBadSectorsService);
 	});

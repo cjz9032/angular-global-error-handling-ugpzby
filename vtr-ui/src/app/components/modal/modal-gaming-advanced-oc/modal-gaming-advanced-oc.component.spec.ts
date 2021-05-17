@@ -3,15 +3,15 @@ import { ModalGamingAdvancedOCComponent } from './modal-gaming-advanced-oc.compo
 import { GamingAdvancedOCService } from 'src/app/services/gaming/gaming-advanced-oc/gaming-advanced-oc.service';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { TranslateStore } from '@ngx-translate/core';
+import { of } from 'rxjs';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { Component, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { Gaming } from './../../../enums/gaming.enum';
-import { of } from 'rxjs';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -206,29 +206,33 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	metricService.sendMetrics.and.returnValue(true);
 	timerService.stop.and.returnValue(2);
 
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [ModalGamingAdvancedOCComponent, ModalGamingPromptStubComponent],
+				imports: [TranslationModule, HttpClientModule],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					HttpClient,
+					TranslateStore,
+					MatDialogRef,
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesService,
+					},
+					{ provide: GamingAdvancedOCService, useValue: advancedOCService },
+					{ provide: MetricService, useValue: metricService },
+					{ provide: TimerService, useValue: timerService },
+				],
+			}).compileComponents();
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [ModalGamingAdvancedOCComponent, ModalGamingPromptStubComponent],
-			imports: [TranslationModule, HttpClientModule],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [
-				HttpClient,
-				TranslateStore,
-				NgbActiveModal,
-				{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesService },
-				{ provide: GamingAdvancedOCService, useValue: advancedOCService },
-				{ provide: MetricService, useValue: metricService },
-				{ provide: TimerService, useValue: timerService },
-			],
-		}).compileComponents();
-
-		activeModalService = TestBed.inject(NgbActiveModal);
-		modalService = TestBed.inject(NgbModal);
-		fixture = TestBed.createComponent(ModalGamingAdvancedOCComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	}));
+			activeModalService = TestBed.inject(MatDialogRef);
+			modalService = TestBed.inject(MatDialog);
+			fixture = TestBed.createComponent(ModalGamingAdvancedOCComponent);
+			component = fixture.componentInstance;
+			fixture.detectChanges();
+		})
+	);
 
 	it('should show quote after component initialized', async () => {
 		expect(component).toBeTruthy();
@@ -293,27 +297,36 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 			}
 		});
 
-		it('setAdvancedOCInfo response : true ', waitForAsync(() => {
-			advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(true));
-			component.setAdvancedOCInfo(advancedOCInfo);
-			expect(advancedOCService.setAdvancedOCInfoCache).toHaveBeenCalled();
-		}));
+		it(
+			'setAdvancedOCInfo response : true ',
+			waitForAsync(() => {
+				advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(true));
+				component.setAdvancedOCInfo(advancedOCInfo);
+				expect(advancedOCService.setAdvancedOCInfoCache).toHaveBeenCalled();
+			})
+		);
 
-		it('setAdvancedOCInfo response : false', waitForAsync(() => {
-			component.advancedOCInfo = advancedOCInfo;
-			advancedOCService.getAdvancedOCInfoCache.and.returnValue(advancedOCInfo);
-			advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(false));
-			component.setAdvancedOCInfo(advancedOCInfo);
-			expect(component.advancedOCInfo).toEqual(advancedOCInfo);
-		}));
+		it(
+			'setAdvancedOCInfo response : false',
+			waitForAsync(() => {
+				component.advancedOCInfo = advancedOCInfo;
+				advancedOCService.getAdvancedOCInfoCache.and.returnValue(advancedOCInfo);
+				advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(false));
+				component.setAdvancedOCInfo(advancedOCInfo);
+				expect(component.advancedOCInfo).toEqual(advancedOCInfo);
+			})
+		);
 
-		it('setAdvancedOCInfo response : false & getAdvancedOCInfoCache is false', waitForAsync(() => {
-			component.advancedOCInfo = advancedOCInfo;
-			advancedOCService.getAdvancedOCInfoCache.and.returnValue(false);
-			advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(false));
-			component.setAdvancedOCInfo(advancedOCInfo);
-			expect(component.advancedOCInfo).toEqual(advancedOCInfo);
-		}));
+		it(
+			'setAdvancedOCInfo response : false & getAdvancedOCInfoCache is false',
+			waitForAsync(() => {
+				component.advancedOCInfo = advancedOCInfo;
+				advancedOCService.getAdvancedOCInfoCache.and.returnValue(false);
+				advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(false));
+				component.setAdvancedOCInfo(advancedOCInfo);
+				expect(component.advancedOCInfo).toEqual(advancedOCInfo);
+			})
+		);
 	});
 
 	describe('check open save modal : ', () => {
@@ -350,21 +363,24 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	});
 
 	describe('check setRangeValue : ', () => {
-		it('setRangeValue gpuParameterList', waitForAsync(() => {
-			component.advancedOCInfo = advancedOCInfo;
+		it(
+			'setRangeValue gpuParameterList',
+			waitForAsync(() => {
+				component.advancedOCInfo = advancedOCInfo;
 
-			component.setRangeValue([30], 0, 'gpuParameterList', 0, true);
-			expect(component.advancedOCInfo.gpuParameterList[0].OCValue).toBe(30);
+				component.setRangeValue([30], 0, 'gpuParameterList', 0, true);
+				expect(component.advancedOCInfo.gpuParameterList[0].OCValue).toBe(30);
 
-			component.setRangeValue([45, 2], 1, 'gpuParameterList', 1, true);
-			expect(component.advancedOCInfo.gpuParameterList[1].OCValue).toBe(45);
+				component.setRangeValue([45, 2], 1, 'gpuParameterList', 1, true);
+				expect(component.advancedOCInfo.gpuParameterList[1].OCValue).toBe(45);
 
-			component.setRangeValue(30, 0, 'gpuParameterList', 0, false);
-			expect(component.advancedOCInfo.gpuParameterList[0].OCValue).toBe(30);
+				component.setRangeValue(30, 0, 'gpuParameterList', 0, false);
+				expect(component.advancedOCInfo.gpuParameterList[0].OCValue).toBe(30);
 
-			component.setRangeValue(45, 1, 'gpuParameterList', 1, false);
-			expect(component.advancedOCInfo.gpuParameterList[1].OCValue).toBe(45);
-		}));
+				component.setRangeValue(45, 1, 'gpuParameterList', 1, false);
+				expect(component.advancedOCInfo.gpuParameterList[1].OCValue).toBe(45);
+			})
+		);
 
 		it('setRangeValue cpuParameterList pairwiseAssociation', async () => {
 			const arr1 = [2, 77, 34, 79, 102, 106];
@@ -828,419 +844,434 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	});
 
 	describe('check pairwiseAssociation : ', () => {
-		it('pairwiseAssociation & (tuneId === 2 || tuneId === 77)', waitForAsync(() => {
-			component.advancedOCInfo.cpuParameterList = [
-				{
-					tuneId: 2,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 77,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 79,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 34,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 102,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 106,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 76,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-			];
-			component.pairwiseAssociation(2, 1);
-			expect(component.advancedOCInfo.cpuParameterList[0].OCValue).toBe(1);
-			expect(component.advancedOCInfo.cpuParameterList[1].OCValue).toBe(1);
+		it(
+			'pairwiseAssociation & (tuneId === 2 || tuneId === 77)',
+			waitForAsync(() => {
+				component.advancedOCInfo.cpuParameterList = [
+					{
+						tuneId: 2,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 77,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 79,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 34,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 102,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 106,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 76,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+				];
+				component.pairwiseAssociation(2, 1);
+				expect(component.advancedOCInfo.cpuParameterList[0].OCValue).toBe(1);
+				expect(component.advancedOCInfo.cpuParameterList[1].OCValue).toBe(1);
 
-			component.pairwiseAssociation(77, 10);
-			expect(component.advancedOCInfo.cpuParameterList[0].OCValue).toBe(10);
-			expect(component.advancedOCInfo.cpuParameterList[1].OCValue).toBe(10);
+				component.pairwiseAssociation(77, 10);
+				expect(component.advancedOCInfo.cpuParameterList[0].OCValue).toBe(10);
+				expect(component.advancedOCInfo.cpuParameterList[1].OCValue).toBe(10);
 
-			component.pairwiseAssociation(76, 11);
-			expect(component.advancedOCInfo.cpuParameterList[0].OCValue).not.toBe(11);
-			expect(component.advancedOCInfo.cpuParameterList[1].OCValue).not.toBe(11);
-		}));
+				component.pairwiseAssociation(76, 11);
+				expect(component.advancedOCInfo.cpuParameterList[0].OCValue).not.toBe(11);
+				expect(component.advancedOCInfo.cpuParameterList[1].OCValue).not.toBe(11);
+			})
+		);
 
-		it('pairwiseAssociation & (tuneId === 34 || tuneId === 79)', waitForAsync(() => {
-			component.advancedOCInfo.cpuParameterList = [
-				{
-					tuneId: 2,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 77,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 79,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 34,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 102,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 106,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 114,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-			];
-			component.pairwiseAssociation(34, 10);
-			expect(component.advancedOCInfo.cpuParameterList[2].OCValue).toBe(10);
-			expect(component.advancedOCInfo.cpuParameterList[3].OCValue).toBe(10);
+		it(
+			'pairwiseAssociation & (tuneId === 34 || tuneId === 79)',
+			waitForAsync(() => {
+				component.advancedOCInfo.cpuParameterList = [
+					{
+						tuneId: 2,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 77,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 79,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 34,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 102,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 106,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 114,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+				];
+				component.pairwiseAssociation(34, 10);
+				expect(component.advancedOCInfo.cpuParameterList[2].OCValue).toBe(10);
+				expect(component.advancedOCInfo.cpuParameterList[3].OCValue).toBe(10);
 
-			component.pairwiseAssociation(79, 5);
-			expect(component.advancedOCInfo.cpuParameterList[2].OCValue).toBe(5);
-			expect(component.advancedOCInfo.cpuParameterList[3].OCValue).toBe(5);
+				component.pairwiseAssociation(79, 5);
+				expect(component.advancedOCInfo.cpuParameterList[2].OCValue).toBe(5);
+				expect(component.advancedOCInfo.cpuParameterList[3].OCValue).toBe(5);
 
-			component.pairwiseAssociation(114, 0);
-			expect(component.advancedOCInfo.cpuParameterList[2].OCValue).not.toBe(0);
-			expect(component.advancedOCInfo.cpuParameterList[3].OCValue).not.toBe(0);
-		}));
+				component.pairwiseAssociation(114, 0);
+				expect(component.advancedOCInfo.cpuParameterList[2].OCValue).not.toBe(0);
+				expect(component.advancedOCInfo.cpuParameterList[3].OCValue).not.toBe(0);
+			})
+		);
 
-		it('pairwiseAssociation & (tuneId === 102 || tuneId === 106)', waitForAsync(() => {
-			component.advancedOCInfo.cpuParameterList = [
-				{
-					tuneId: 2,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 77,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 79,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 34,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 102,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 106,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 117,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-			];
-			component.pairwiseAssociation(102, 7);
-			expect(component.advancedOCInfo.cpuParameterList[4].OCValue).toBe(7);
-			expect(component.advancedOCInfo.cpuParameterList[5].OCValue).toBe(7);
+		it(
+			'pairwiseAssociation & (tuneId === 102 || tuneId === 106)',
+			waitForAsync(() => {
+				component.advancedOCInfo.cpuParameterList = [
+					{
+						tuneId: 2,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 77,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 79,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 34,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 102,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 106,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 117,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+				];
+				component.pairwiseAssociation(102, 7);
+				expect(component.advancedOCInfo.cpuParameterList[4].OCValue).toBe(7);
+				expect(component.advancedOCInfo.cpuParameterList[5].OCValue).toBe(7);
 
-			component.pairwiseAssociation(106, 16);
-			expect(component.advancedOCInfo.cpuParameterList[4].OCValue).toBe(16);
-			expect(component.advancedOCInfo.cpuParameterList[5].OCValue).toBe(16);
+				component.pairwiseAssociation(106, 16);
+				expect(component.advancedOCInfo.cpuParameterList[4].OCValue).toBe(16);
+				expect(component.advancedOCInfo.cpuParameterList[5].OCValue).toBe(16);
 
-			component.pairwiseAssociation(117, 20);
-			expect(component.advancedOCInfo.cpuParameterList[4].OCValue).not.toBe(20);
-			expect(component.advancedOCInfo.cpuParameterList[5].OCValue).not.toBe(20);
-		}));
+				component.pairwiseAssociation(117, 20);
+				expect(component.advancedOCInfo.cpuParameterList[4].OCValue).not.toBe(20);
+				expect(component.advancedOCInfo.cpuParameterList[5].OCValue).not.toBe(20);
+			})
+		);
 	});
 
 	describe('check multipleAssociations : ', () => {
-		it('multipleAssociations add', waitForAsync(() => {
-			const arr2 = [29, 30, 31, 32, 42, 43, 96, 97, 107, 108];
-			component.advancedOCInfo.cpuParameterList = [
-				{
-					tuneId: 29,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 30,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 31,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 32,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 42,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 43,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 96,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 97,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 107,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 108,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-			];
-			for (let i = 0; i < component.advancedOCInfo.cpuParameterList.length; i++) {
-				component.multipleAssociations(
-					arr2,
-					component.advancedOCInfo.cpuParameterList[i].tuneId,
-					45,
-					2,
-					2
-				);
-				for (let j = 0; j <= i; j++) {
-					expect(component.advancedOCInfo.cpuParameterList[j].OCValue).toBe(45);
+		it(
+			'multipleAssociations add',
+			waitForAsync(() => {
+				const arr2 = [29, 30, 31, 32, 42, 43, 96, 97, 107, 108];
+				component.advancedOCInfo.cpuParameterList = [
+					{
+						tuneId: 29,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 30,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 31,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 32,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 42,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 43,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 96,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 97,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 107,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 108,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+				];
+				for (let i = 0; i < component.advancedOCInfo.cpuParameterList.length; i++) {
+					component.multipleAssociations(
+						arr2,
+						component.advancedOCInfo.cpuParameterList[i].tuneId,
+						45,
+						2,
+						2
+					);
+					for (let j = 0; j <= i; j++) {
+						expect(component.advancedOCInfo.cpuParameterList[j].OCValue).toBe(45);
+					}
 				}
-			}
-		}));
+			})
+		);
 
-		it('multipleAssociations reduce', waitForAsync(() => {
-			const arr2 = [29, 30, 31, 32, 42, 43, 96, 97, 107, 108];
-			component.advancedOCInfo.cpuParameterList = [
-				{
-					tuneId: 29,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 30,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 31,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 32,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 42,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 43,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 96,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 97,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 107,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-				{
-					tuneId: 108,
-					OCValue: '41',
-					defaultValue: '40',
-					minValue: '28',
-					maxValue: '80',
-					stepValue: '1',
-				},
-			];
-			for (let i = 0; i < component.advancedOCInfo.cpuParameterList.length; i++) {
-				component.multipleAssociations(
-					arr2,
-					component.advancedOCInfo.cpuParameterList[i].tuneId,
-					39,
-					1,
-					1
-				);
-				for (let j = i; j < component.advancedOCInfo.cpuParameterList.length; j++) {
-					expect(component.advancedOCInfo.cpuParameterList[j].OCValue).toBe(39);
+		it(
+			'multipleAssociations reduce',
+			waitForAsync(() => {
+				const arr2 = [29, 30, 31, 32, 42, 43, 96, 97, 107, 108];
+				component.advancedOCInfo.cpuParameterList = [
+					{
+						tuneId: 29,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 30,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 31,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 32,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 42,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 43,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 96,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 97,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 107,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+					{
+						tuneId: 108,
+						OCValue: '41',
+						defaultValue: '40',
+						minValue: '28',
+						maxValue: '80',
+						stepValue: '1',
+					},
+				];
+				for (let i = 0; i < component.advancedOCInfo.cpuParameterList.length; i++) {
+					component.multipleAssociations(
+						arr2,
+						component.advancedOCInfo.cpuParameterList[i].tuneId,
+						39,
+						1,
+						1
+					);
+					for (let j = i; j < component.advancedOCInfo.cpuParameterList.length; j++) {
+						expect(component.advancedOCInfo.cpuParameterList[j].OCValue).toBe(39);
+					}
 				}
-			}
-		}));
+			})
+		);
 	});
 
 	describe('check setToDefaultValue : ', () => {

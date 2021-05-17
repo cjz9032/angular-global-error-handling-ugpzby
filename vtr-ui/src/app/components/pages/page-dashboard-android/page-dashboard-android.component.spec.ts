@@ -3,9 +3,9 @@ import { EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
+
 import { AndroidService } from 'src/app/services/android/android.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -46,33 +46,33 @@ describe('PageDashboardAndroidComponent', () => {
 	let cmsService: CMSService;
 	let configService: ConfigService;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [PageDashboardAndroidComponent],
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
-			providers: [
-				DashboardService,
-				MockService,
-				QaService,
-				NgbModal,
-				NgbModalConfig,
-				CommonService,
-				ConfigService,
-				DeviceService,
-				CMSService,
-				SystemUpdateService,
-				UserService,
-				{ provide: TranslateService, useClass: TranslateServiceStub },
-				VantageShellService,
-				AndroidService,
-				DomSanitizer,
-				LoggerService,
-				DevService,
-				CommsService,
-			],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [PageDashboardAndroidComponent],
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+				providers: [
+					DashboardService,
+					MockService,
+					QaService,
+					CommonService,
+					ConfigService,
+					DeviceService,
+					CMSService,
+					SystemUpdateService,
+					UserService,
+					{ provide: TranslateService, useClass: TranslateServiceStub },
+					VantageShellService,
+					AndroidService,
+					DomSanitizer,
+					LoggerService,
+					DevService,
+					CommsService,
+				],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PageDashboardAndroidComponent);

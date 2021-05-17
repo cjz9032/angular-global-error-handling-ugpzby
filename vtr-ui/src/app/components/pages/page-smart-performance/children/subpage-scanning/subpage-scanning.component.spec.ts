@@ -1,5 +1,7 @@
 import { NO_ERRORS_SCHEMA, SimpleChange } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateStore } from '@ngx-translate/core';
+import { MatDialog, MatDialogModule } from '@lenovo/material/dialog';
 
 import { SubpageScanningComponent } from './subpage-scanning.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -7,9 +9,6 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 import { TranslationModule } from 'src/app/modules/translation.module';
-import { TranslateStore } from '@ngx-translate/core';
-
-import { NgbModal, NgbModule, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 const responseData = {
 	type: 1,
@@ -29,24 +28,26 @@ describe('SubpageScanningComponent', () => {
 	let component: SubpageScanningComponent;
 	let fixture: ComponentFixture<SubpageScanningComponent>;
 	let shellService: VantageShellService;
-	let modalService: NgbModal;
+	let modalService: MatDialog;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			declarations: [SubpageScanningComponent],
-			providers: [
-				TranslateStore,
-				SmartPerformanceService,
-				VantageShellService,
-				LoggerService,
-				NgbModal,
-			],
-			imports: [TranslationModule, NgbModule],
-		});
-		fixture = TestBed.createComponent(SubpageScanningComponent);
-		component = fixture.componentInstance;
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				declarations: [SubpageScanningComponent],
+				providers: [
+					TranslateStore,
+					SmartPerformanceService,
+					VantageShellService,
+					LoggerService,
+					MatDialog,
+				],
+				imports: [TranslationModule, MatDialogModule],
+			});
+			fixture = TestBed.createComponent(SubpageScanningComponent);
+			component = fixture.componentInstance;
+		})
+	);
 
 	it('should create', () => {
 		shellService = TestBed.inject(VantageShellService);
@@ -224,13 +225,16 @@ describe('SubpageScanningComponent', () => {
 		component.activeGroup = 'Tune up performance';
 		component.GetCurrentScanningRollingTexts('Look for junk in 85 locations');
 		const spyToggle = spyOn(component, 'toggle');
-		const spyGetCurrentScanningRollingTexts = spyOn(component, 'GetCurrentScanningRollingTexts');
+		const spyGetCurrentScanningRollingTexts = spyOn(
+			component,
+			'GetCurrentScanningRollingTexts'
+		);
 		fixture.detectChanges();
 		expect(spyGetCurrentScanningRollingTexts).toHaveBeenCalled();
 	});
 
 	it('should open cancel scan modal', () => {
-		modalService = TestBed.inject(NgbModal);
+		modalService = TestBed.inject(MatDialog);
 		const spy = spyOn(modalService, 'open');
 		component.openCancelScanModel();
 		expect(spy).toHaveBeenCalled();

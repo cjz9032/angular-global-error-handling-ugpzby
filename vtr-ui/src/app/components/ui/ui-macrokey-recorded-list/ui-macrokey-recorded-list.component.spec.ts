@@ -1,11 +1,13 @@
-import { TranslateService } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
-import { UiMacrokeyRecordedListComponent } from './ui-macrokey-recorded-list.component';
 import { NO_ERRORS_SCHEMA, Pipe, Component } from '@angular/core';
-import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@lenovo/material/dialog';
 import { of } from 'rxjs';
+
+import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
+
+import { UiMacrokeyRecordedListComponent } from './ui-macrokey-recorded-list.component';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
@@ -71,7 +73,7 @@ describe('UiMacrokeyRecordedListComponent', () => {
 				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(UiMacrokeyRecordedListComponent);
-			modalService = TestBed.inject(NgbModal);
+			modalService = TestBed.inject(MatDialog);
 			component = fixture.componentInstance;
 			component.selectedNumber = { key: '0' };
 			component.recordingStatus = false;

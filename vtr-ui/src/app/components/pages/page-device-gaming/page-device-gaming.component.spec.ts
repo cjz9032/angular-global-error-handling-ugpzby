@@ -5,18 +5,15 @@ import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedbac
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { MatDialog, MatDialogModule } from '@lenovo/material/dialog';
 import { TranslateStore } from '@ngx-translate/core';
+import { of } from 'rxjs';
+
 import { DevService } from 'src/app/services/dev/dev.service';
-import { CookieService } from 'ngx-cookie-service';
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { CommsService } from 'src/app/services/comms/comms.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
-import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { of } from 'rxjs';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
@@ -50,7 +47,12 @@ describe('PageDeviceGamingComponent', () => {
 					GAMING_DATA.mockPipe({ name: 'sanitize' }),
 				],
 				schemas: [NO_ERRORS_SCHEMA],
-				imports: [TranslationModule, HttpClientModule, RouterTestingModule, NgbModule],
+				imports: [
+					TranslationModule,
+					HttpClientModule,
+					RouterTestingModule,
+					MatDialogModule,
+				],
 				providers: [
 					TranslateStore,
 					GamingAllCapabilitiesService,
@@ -88,9 +90,8 @@ describe('PageDeviceGamingComponent', () => {
 		spyOn(component, 'ngDoCheck').and.callThrough();
 		component.ngDoCheck();
 		expect(component.ngDoCheck).toHaveBeenCalled();
-		const modalService = fixture.debugElement.injector.get(NgbModal);
-		modalService.hasOpenModals();
-		modalService.dismissAll();
+		const modalService = fixture.debugElement.injector.get(MatDialog);
+		modalService.closeAll();
 	});
 
 	it('#PageDeviceGamingComponent : onNotification network status online ', () => {

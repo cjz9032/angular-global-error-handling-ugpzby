@@ -2,9 +2,9 @@ import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angul
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { MatDialog, MatDialogModule } from '@lenovo/material/dialog';
 
 import { WidgetLegionEdgeComponent } from './widget-legion-edge.component';
 
@@ -28,7 +28,6 @@ import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 import { AutomationId } from 'src/app/enums/automation-id.enum';
 
 import { GAMING_DATA } from './../../../../testing/gaming-data';
-import { MatDialog, MatDialogModule } from '@lenovo/material/dialog';
 
 describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
@@ -189,9 +188,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					return winKeyLockFeatureCache;
 			}
 		},
-		getGamingThermalModeNotification: () => {
-			return new Observable();
-		},
+		getGamingThermalModeNotification: () => new Observable(),
 	};
 
 	const translateServiceMock = { instant: (name) => name };
@@ -264,17 +261,11 @@ describe('WidgetLegionEdgeComponent', () => {
 		let thermalModeRealStatus = 2;
 		let performanceOCStatus = false;
 		const gamingThermalModeServiceMock = {
-			getThermalModeRealStatus: () => {
-				return Promise.resolve(thermalModeRealStatus);
-			},
-			regThermalModeRealStatusChangeEvent: () => {
-				return Promise.resolve(setReturnValue);
-			},
+			getThermalModeRealStatus: () => Promise.resolve(thermalModeRealStatus),
+			regThermalModeRealStatusChangeEvent: () => Promise.resolve(setReturnValue),
 		};
 		const gamingOCServiceMoke = {
-			getPerformanceOCSetting: () => {
-				return Promise.resolve(performanceOCStatus);
-			},
+			getPerformanceOCSetting: () => Promise.resolve(performanceOCStatus),
 		};
 
 		beforeEach(
@@ -809,17 +800,11 @@ describe('WidgetLegionEdgeComponent', () => {
 		const thermalModeRealStatus = 2;
 		const performanceOCStatus = false;
 		const gamingThermalModeServiceMock = {
-			getThermalModeRealStatus: () => {
-				return Promise.resolve(thermalModeRealStatus);
-			},
-			regThermalModeRealStatusChangeEvent: () => {
-				return Promise.resolve(setReturnValue);
-			},
+			getThermalModeRealStatus: () => Promise.resolve(thermalModeRealStatus),
+			regThermalModeRealStatusChangeEvent: () => Promise.resolve(setReturnValue),
 		};
 		const gamingOCServiceMoke = {
-			getPerformanceOCSetting: () => {
-				return Promise.resolve(performanceOCStatus);
-			},
+			getPerformanceOCSetting: () => Promise.resolve(performanceOCStatus),
 		};
 
 		beforeEach(
@@ -868,7 +853,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -1084,9 +1069,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('cpu over clock', () => {
 		let cpuOCStatus = 3;
 		const gamingSystemUpdateServiceMock = {
-			getCpuOCStatus: () => {
-				return Promise.resolve(cpuOCStatus);
-			},
+			getCpuOCStatus: () => Promise.resolve(cpuOCStatus),
 			setCpuOCStatus: (value: number) => {
 				if (setReturnValue) {
 					cpuOCStatus = value;
@@ -1095,9 +1078,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					resolve(setReturnValue);
 				});
 			},
-			getRamOCStatus: () => {
-				return Promise.resolve(false);
-			},
+			getRamOCStatus: () => Promise.resolve(false),
 		};
 		beforeEach(
 			waitForAsync(() => {
@@ -1144,7 +1125,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -1303,9 +1284,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('RAM over clock', () => {
 		let ramOCStatus = false;
 		const gamingSystemUpdateServiceMock = {
-			getRamOCStatus: () => {
-				return Promise.resolve(ramOCStatus);
-			},
+			getRamOCStatus: () => Promise.resolve(ramOCStatus),
 			setRamOCStatus: (value: boolean) => {
 				if (setReturnValue) {
 					ramOCStatus = value;
@@ -1360,7 +1339,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -1564,9 +1543,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('network boost', () => {
 		let networkBoostModeStatus = false;
 		const networkBoostServiceMoke = {
-			getNetworkBoostStatus: () => {
-				return Promise.resolve(networkBoostModeStatus);
-			},
+			getNetworkBoostStatus: () => Promise.resolve(networkBoostModeStatus),
 			setNetworkBoostStatus: (value: boolean) => {
 				if (setReturnValue) {
 					networkBoostModeStatus = value;
@@ -1621,7 +1598,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -1844,9 +1821,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('auto close', () => {
 		let autoCloseModeStatus = false;
 		const gamingAutoCloseServiceMock = {
-			getAutoCloseStatus: () => {
-				return Promise.resolve(autoCloseModeStatus);
-			},
+			getAutoCloseStatus: () => Promise.resolve(autoCloseModeStatus),
 			setAutoCloseStatus: (value: boolean) => {
 				if (setReturnValue) {
 					autoCloseModeStatus = value;
@@ -1901,7 +1876,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -2060,9 +2035,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('hybrid mode', () => {
 		let hybridModeStatus = false;
 		const gamingHybridModeServiceMock = {
-			getHybridModeStatus: () => {
-				return Promise.resolve(hybridModeStatus);
-			},
+			getHybridModeStatus: () => Promise.resolve(hybridModeStatus),
 			setHybridModeStatus: (value: boolean) => {
 				if (setReturnValue) {
 					hybridModeStatus = value;
@@ -2117,7 +2090,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -2275,9 +2248,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('over drive', () => {
 		let overDriveStatus = true;
 		const gamingOverDriveServiceMock = {
-			getOverDriveStatus: () => {
-				return Promise.resolve(overDriveStatus);
-			},
+			getOverDriveStatus: () => Promise.resolve(overDriveStatus),
 			setOverDriveStatus: (value: boolean) => {
 				if (setReturnValue) {
 					overDriveStatus = value;
@@ -2332,7 +2303,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -2501,9 +2472,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('touchpad lock', () => {
 		let touchpadLockStatus = false;
 		const gamingKeyLockServiceMock = {
-			getKeyLockStatus: () => {
-				return Promise.resolve(touchpadLockStatus);
-			},
+			getKeyLockStatus: () => Promise.resolve(touchpadLockStatus),
 			setKeyLockStatus: (value: boolean) => {
 				if (setReturnValue) {
 					touchpadLockStatus = value;
@@ -2554,7 +2523,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceMock },
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
@@ -2773,7 +2742,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceSpy,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 					],
 				}).compileComponents();
 				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
@@ -3093,7 +3062,7 @@ describe('WidgetLegionEdgeComponent', () => {
 						},
 						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 					],
 				}).compileComponents();
 				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
@@ -3167,7 +3136,7 @@ describe('WidgetLegionEdgeComponent', () => {
 							provide: GamingQuickSettingToolbarService,
 							useValue: gamingQuickSettingToolbarServiceMock,
 						},
-						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: MatDialog, useValue: { open: () => 0 } },
 						{ provide: LoggerService, useValue: loggerServiceSpy },
 					],
 				}).compileComponents();
