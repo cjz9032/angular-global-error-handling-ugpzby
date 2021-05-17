@@ -1099,7 +1099,7 @@
 			"helpful": "Корисний вміст",
 			"copy": "текст",
 			"goodCondition": "Добрий стан",
-			"needAction": "Оптимізувати зараз",
+			"optimizeNow": "Оптимізувати зараз",
 			"hwStatus": "Стан обладнання",
 			"swStatus": "Стан ПЗ",
 			"refreshModules": "Оновити модулі",

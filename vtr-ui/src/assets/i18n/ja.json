@@ -1208,7 +1208,7 @@
 			"helpful": "役に立つ情報",
 			"copy": "コピー",
 			"goodCondition": "良好な状態です",
-			"needAction": "今すぐ最適化",
+			"optimizeNow": "今すぐ最適化",
 			"hwStatus": "ハードウェアの状況",
 			"swStatus": "ソフトウェアの状況",
 			"refreshModules": "モジュールの更新",

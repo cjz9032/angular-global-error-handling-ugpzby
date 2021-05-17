@@ -1099,7 +1099,7 @@
 			"helpful": "Hasznos tartalom",
 			"copy": "másolás",
 			"goodCondition": "Jó állapotú",
-			"needAction": "Optimalizálás most",
+			"optimizeNow": "Optimalizálás most",
 			"hwStatus": "Hardver állapota",
 			"swStatus": "Szoftver állapota",
 			"refreshModules": "Modulok frissítése",

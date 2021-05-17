@@ -1099,7 +1099,7 @@
 			"helpful": "Conteúdo Útil",
 			"copy": "copiar",
 			"goodCondition": "Bom estado",
-			"needAction": "Otimizar agora",
+			"optimizeNow": "Otimizar agora",
 			"hwStatus": "Estado do Hardware",
 			"swStatus": "Estado do Software",
 			"refreshModules": "Atualizar Módulos",

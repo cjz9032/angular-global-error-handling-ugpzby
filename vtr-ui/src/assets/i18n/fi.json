@@ -1099,7 +1099,7 @@
 			"helpful": "Hyödyllistä sisältöä",
 			"copy": "kopioi",
 			"goodCondition": "Hyvässä kunnossa",
-			"needAction": "Optimoi nyt",
+			"optimizeNow": "Optimoi nyt",
 			"hwStatus": "Laitteiston tila",
 			"swStatus": "Ohjelmistojen tila",
 			"refreshModules": "Päivitä moduulit",

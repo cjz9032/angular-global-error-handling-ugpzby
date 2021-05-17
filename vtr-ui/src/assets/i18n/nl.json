@@ -1099,7 +1099,7 @@
 			"helpful": "Nuttige inhoud",
 			"copy": "kopiëren",
 			"goodCondition": "Goede conditie",
-			"needAction": "Nu optimaliseren",
+			"optimizeNow": "Nu optimaliseren",
 			"hwStatus": "Hardwarestatus",
 			"swStatus": "Softwarestatus",
 			"refreshModules": "Modules vernieuwen",

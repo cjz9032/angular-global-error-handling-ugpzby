@@ -1099,7 +1099,7 @@
 			"helpful": "Korisni sadržaj",
 			"copy": "kopija",
 			"goodCondition": "U dobrom stanju",
-			"needAction": "Optimizuj sada",
+			"optimizeNow": "Optimizuj sada",
 			"hwStatus": "Status hardvera",
 			"swStatus": "Status softvera",
 			"refreshModules": "Osvežavanje modula",

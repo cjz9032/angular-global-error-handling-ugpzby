@@ -1099,7 +1099,7 @@
 			"helpful": "Nyttigt indhold",
 			"copy": "kopiér",
 			"goodCondition": "God tilstand",
-			"needAction": "Optimer nu",
+			"optimizeNow": "Optimer nu",
 			"hwStatus": "Hardwarestatus",
 			"swStatus": "Softwarestatus",
 			"refreshModules": "Opdater moduler",

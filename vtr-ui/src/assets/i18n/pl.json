@@ -1099,7 +1099,7 @@
 			"helpful": "Pomocna treść",
 			"copy": "kopiuj",
 			"goodCondition": "Dobry stan",
-			"needAction": "Zoptymalizuj teraz",
+			"optimizeNow": "Zoptymalizuj teraz",
 			"hwStatus": "Stan sprzętu",
 			"swStatus": "Stan oprogramowania",
 			"refreshModules": "Odśwież moduły",
