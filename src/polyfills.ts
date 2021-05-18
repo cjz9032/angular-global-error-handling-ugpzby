@@ -1,4 +1,9 @@
-import 'zone.js/dist/zone';
+// // @ts-ignore
+// window.__Zone_disable_Error = true
+// // @ts-ignore
+// window.__Zone_disable_ZoneAwarePromise = true
+
+import 'zone.js';
 
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.

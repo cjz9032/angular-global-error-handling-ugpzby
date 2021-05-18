@@ -46,6 +46,33 @@ import { lineFeature, FeatureNodeTypeEnum } from "./line-feature";
 /**
  * @title Basic progress-spinner
  */
+
+const DoFirst = function (num: number): Promise<string> {
+  return new Promise(function (r, rej) {
+    // setTimeout(() => {
+    //   // throw new Error('in other dth')
+    //   // rej(new Error("in other"));
+    //   if (num !== 1) {
+    //     rej(new Error("666: " + num));
+    //   } else {
+    //     r("1");
+    //   }
+    // }, 1000);
+    // rej(new Error('123'));
+    r("1");
+  })
+
+  .then((t) => {
+    // if(true){
+    //   return new Error('123'))
+    // }
+    debugger
+    // @ts-ignore
+    this.aa.xx = 1
+    return '123'
+  })
+};
+
 @Component({
   selector: "app",
   templateUrl: "app.component.html",
@@ -62,12 +89,41 @@ export class AppComponent {
     featureName: "use-case-1",
     node: {
       nodeName: "localAnnotation",
-      nodeType: FeatureNodeTypeEnum.MIDDLE,
-      // nodeDescription: " start-1 ",
+      nodeType: FeatureNodeTypeEnum.START,
     },
   })
-  localAnnotation() {
+  async localAnnotation() {
+    this.someCode = "123";
+    await 123;
+
+    // in bg?
+    new Promise((res) => {
+      setTimeout(() => {
+        res("bg123");
+      });
+    });
+
+    const abc: string = await DoFirst(1);
+    this.someCode = abc;
     debugger;
+    try {
+      const abc2: string = await DoFirst(2);
+      this.someCode = abc2;
+    } catch (e) {
+      debugger;
+    }
+
+    const abc3: string = await DoFirst(3);
+    this.someCode = abc3;
+    // const res: string = await new Promise((r, rej) => {
+    //   // r("123");
+    //   rej(new Error("err"));
+    //   // rej("err");
+    // });
+    // this.someCode = res;
+
+    // debugger;
+    return 666;
   }
 
   localErrorInZone() {

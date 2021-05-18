@@ -1,5 +1,8 @@
 import { Injectable, Injector, NgModule, NgZone } from "@angular/core";
 
+import { get } from "./st";
+// import cloneDeep from "lodash/cloneDeep";
+
 // todo access ngZone? https://stackoverflow.com/questions/47619350/access-angular-ngzone-instance-from-window-object
 // const injector = Injector.create({
 //   providers: [{ provide: NgZone, useClass: NgZone }],
@@ -22,8 +25,6 @@ const featureMap: {
 
 // longLog
 let longLog = [];
-
-let lineZone: Zone;
 
 let lastNodeInfo: {
   node: FeatureNode;
@@ -48,83 +49,147 @@ export function lineFeature(decoArgs: {
     const originalMethod = descriptor.value;
 
     descriptor.value = function (...args: any[]) {
-      // todo avoid ng-zone's checkDirty for this part?
-      const componentInstance: any = this;
       const { node: curNode, featureName } = decoArgs;
-      debugger;
-      const initFeatureZoneSuccess = initGlobalZone(componentInstance.ngZone);
+      const outLineZone = initOutLineZone();
       const initFeatureSuccess = xxFeatureNode(
         featureName,
         curNode,
         originalMethod
       );
-      let result;
-      if (initFeatureZoneSuccess && initFeatureSuccess) {
-        // run in zone
-        lineZone.run(() => {
-          result = originalMethod.apply(this, args);
-        });
+
+      let result: Promise<unknown> | undefined;
+      if (outLineZone && initFeatureSuccess) {
+        // todo catch someSth? and rethrow it
+
+        // result = originalMethod.apply(this, args);
+
+        outLineZone.runGuarded(
+          function () {
+            // @ts-ignore
+            result = originalMethod.apply(this, arguments);
+            return result;
+          },
+          this, // no use
+          args, // no use
+          "outLineZoneRoot"
+        );
       } else {
         result = originalMethod.apply(this, args);
       }
-
       return result;
     };
   };
 }
 
-function initGlobalZone(ngZone: NgZone) {
-  if (!ngZone) {
-    console.warn("[Line-Feature] " + `ngZone has not been injected`);
-    return false;
-  }
-  if (!lineZone) {
-    // @ts-ignore
-    const ngZoneInner = ngZone._inner as Zone;
-    let timingZone = ngZoneInner.fork({
-      name: "timingZone",
-      onInvoke: function (
-        parentZoneDelegate,
-        currentZone,
-        targetZone,
-        callback,
-        applyThis,
-        applyArgs,
-        source
-      ) {
-        var start = performance.now();
-        const a = parentZoneDelegate.invoke(
-          targetZone,
-          callback,
-          applyThis,
-          applyArgs,
-          source
-        );
-        const timingCb = () => {
-          var end = performance.now();
-          console.log(
-            "Zone:",
-            targetZone.name,
-            "Intercepting zone:",
-            currentZone.name,
-            "Duration:",
-            end - start
+function initOutLineZone(): Zone | null {
+  // Current Zone its parent, whatever what the parent it is
+  let _innerZone: Zone;
+  _innerZone = Zone.current.fork({
+    name: "myOuterNg",
+    // onHasTask bg?
+    onInvoke(
+      parentZoneDelegate: ZoneDelegate,
+      currentZone: Zone,
+      targetZone: Zone,
+      delegate: Function,
+      applyThis: any,
+      applyArgs?: any[],
+      source?: string
+    ) {
+      console.log("ttttttttt");
+      console.log(delegate, applyArgs, source);
+      // todo filter the 1st call by self
+      debugger;
+      let res;
+      try {
+        Zone.root
+        .fork({
+          name: "xxx",
+        })
+        .run(() => {
+          res = parentZoneDelegate.invoke(
+            targetZone,
+            delegate,
+            applyThis,
+            applyArgs,
+            source
           );
-        };
-        a
-          ? a.then((res: unknown) => {
-              timingCb();
-              return res;
-            })
-          : timingCb();
-        // timingCb();
-        return a;
-      },
-    });
+        });
+       
+      } catch (e) {
+        console.log('myee', e);
+        debugger
+      }
 
-    lineZone = timingZone;
-  }
-  return lineZone;
+      // Zone.root
+      //   .fork({
+      //     name: "xxx",
+      //   })
+      //   .run(() => {
+      //     // res?.then((t: unknown) => {
+      //     //   debugger;
+      //     // });
+      //     // .catch((err: unknown) => {
+      //     //   debugger;
+      //     //   // throw err;
+      //     //   // return err;
+      //     // }));
+      //   });
+
+      return res;
+    },
+    onScheduleTask: function (delegate, curr, target, task) {
+      console.log("ssssss", task);
+      console.log(
+        "new task is scheduled:",
+        task.type,
+        task.source,
+        curr,
+        delegate
+      );
+      debugger;
+      return delegate.scheduleTask(target, task);
+    },
+    // onInvokeTask(
+    //   parentZoneDelegate: ZoneDelegate,
+    //   currentZone: Zone,
+    //   targetZone: Zone,
+    //   task: Task,
+    //   applyThis: any,
+    //   applyArgs?: any[]
+    // ) {
+    //   // console.log("xxxxx");
+    //   // console.log(task, applyArgs);
+    //   // debugger;
+    //   return parentZoneDelegate.invokeTask(
+    //     targetZone,
+    //     task,
+    //     applyThis,
+    //     applyArgs
+    //   );
+    // },
+    onHandleError(
+      parentZoneDelegate: ZoneDelegate,
+      currentZone: Zone,
+      targetZone: Zone,
+      error: any
+    ) {
+      // trace this trace
+      // console.error(error);
+      // console.trace();
+      // console.log(new Error().stack);
+      const trace = get();
+
+      console.error(new Error());
+
+      console.log("eeeeeee");
+
+      debugger;
+
+      return true;
+    },
+  });
+  return _innerZone;
 }
 
 function xxFeatureNode(
