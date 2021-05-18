@@ -8,7 +8,7 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { WidgetWarrantyDetailComponent } from './widget-warranty-detail.component';
 import { UiWarrantyLineComponent } from './children/ui-warranty-line/ui-warranty-line.component';
 import { UiWarrantyRoundComponent } from './children/ui-warranty-round/ui-warranty-round.component';
-import { UiButtonModule } from '../../ui/ui-button/ui-button.module';
+import { MatButtonModule } from '@lenovo/material/button';
 import { UiWarrantyIndicatorComponent } from './children/ui-warranty-indicator/ui-warranty-indicator.component';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -24,7 +24,7 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 	],
 	imports: [
 		CommonModule,
-		UiButtonModule,
+		MatButtonModule,
 		TranslationModule.forChild(),
 		CommonPipeModule,
 		FontAwesomeModule,

@@ -16,7 +16,8 @@ export class UACWidgetItemViewModel extends WidgetItem {
 			{
 				id: 'sa-widget-lnk-uac',
 				type: 'security',
-				metricItemName: 'UAC',
+				isSystemLink: false,
+				metricsItemName: 'UAC',
 			},
 			translate
 		);

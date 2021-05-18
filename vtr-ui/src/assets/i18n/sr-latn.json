@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "Okruženje",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Verzija addin",
 				"experienceVersion": "Verzija experience",
 				"shellVersion": "Verzija shell",
 				"bridgeVersion": "Verzija bridge"

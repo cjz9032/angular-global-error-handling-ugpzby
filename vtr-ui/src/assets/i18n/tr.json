@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "Ortam",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Addin Sürümü",
 				"experienceVersion": "Experience Sürümü",
 				"shellVersion": "Shell Sürümü",
 				"bridgeVersion": "Bridge Sürümü"

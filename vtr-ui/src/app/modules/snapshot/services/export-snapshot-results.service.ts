@@ -716,7 +716,7 @@ export class ExportSnapshotResultsService extends CommonExportLogService {
 					0: this.firsColumnStyle,
 				},
 				didParseCell: (data) => {
-					if (data.column.index > 0 && data.cell.raw) {
+					if (data.column.index > 0 && data.cell.raw && data.section !== 'head') {
 						data.cell.styles.font = this.setCorrectFont(
 							data.cell.raw.content ?? data.cell.raw
 						);

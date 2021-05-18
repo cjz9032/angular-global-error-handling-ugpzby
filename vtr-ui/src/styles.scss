@@ -1251,9 +1251,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.feedback-modal,
-.survey-modal,
-.smart-performance-feedback-Modal {
+.survey-modal {
 	width: 50rem;
 	max-width: 90% !important;
 	max-height: calc(100vh - 2rem);
@@ -2564,6 +2562,11 @@ ngb-tooltip-window.schedule-scan.tooltip {
 
 .btn-size-md {
 	min-height: 3.6rem !important;
+	font-size: 1.4rem !important;
+}
+
+.btn-size-lg {
+	min-height: 5.2rem !important;
 	font-size: 1.4rem !important;
 }
 

@@ -2,7 +2,13 @@ import { Injectable } from '@angular/core';
 import { DeviceService } from '../device/device.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
-import { WarrantyCodeEnum, WarrantyData, WarrantyDataRound, WarrantyLevel, WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
+import {
+	WarrantyCodeEnum,
+	WarrantyData,
+	WarrantyDataRound,
+	WarrantyLevel,
+	WarrantyStatusEnum,
+} from 'src/app/data-models/warranty/warranty.model';
 import { LoggerService } from '../logger/logger.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { environment } from 'src/environments/environment';
@@ -23,8 +29,7 @@ export class WarrantyService {
 		private translate: TranslateService,
 		private localInfoService: LocalInfoService,
 		private deviceService: DeviceService
-	) {
-	}
+	) { }
 
 	warrantyUrl = `${environment.pcSupportApiRoot}/warrantylookup`;
 
@@ -45,7 +50,7 @@ export class WarrantyService {
 			{
 				level: 'GOOD',
 				levelText: 'GOOD',
-			}
+			},
 		],
 		currentWarrantyLevel: '',
 		warrantyCode: '',
@@ -62,45 +67,58 @@ export class WarrantyService {
 
 	warrantyLevels: WarrantyLevel[] = [];
 
-	offlineWarrantyLevels: WarrantyLevel[] = [
-		{
-			id: 'good',
-			isRecommended: false,
-			levelText: this.translate.instant('warranty.upgradeLevels.good.levelText'),
-			warrantyCode: WarrantyCodeEnum.Depot,
-			warrantyCodeText: this.translate.instant('warranty.upgradeLevels.good.warrantyCodeText'),
-			points: [
-				this.translate.instant('warranty.upgradeLevels.good.point1'),
-				this.translate.instant('warranty.upgradeLevels.good.point2'),
-				this.translate.instant('warranty.upgradeLevels.good.point3'),
-			],
-		},
-		{
-			id: 'better',
-			isRecommended: false,
-			levelText: this.translate.instant('warranty.upgradeLevels.better.levelText'),
-			warrantyCode: WarrantyCodeEnum.Onsite,
-			warrantyCodeText: this.translate.instant('warranty.upgradeLevels.better.warrantyCodeText'),
-			points: [
-				this.translate.instant('warranty.upgradeLevels.better.point1'),
-				this.translate.instant('warranty.upgradeLevels.better.point2'),
-				this.translate.instant('warranty.upgradeLevels.better.point3'),
-			],
-		},
-		{
-			id: 'best',
-			isRecommended: true,
-			levelText: this.translate.instant('warranty.upgradeLevels.best.levelText'),
-			warrantyCode: WarrantyCodeEnum.Premier,
-			warrantyCodeText: this.translate.instant('warranty.upgradeLevels.best.warrantyCodeText'),
-			points: [
-				this.translate.instant('warranty.upgradeLevels.best.point1'),
-				this.translate.instant('warranty.upgradeLevels.best.point2'),
-				this.translate.instant('warranty.upgradeLevels.best.point3'),
-				this.translate.instant('warranty.upgradeLevels.best.point4'),
-			],
-		},
-	];
+	offlineWarrantyLevels: WarrantyLevel[] = [];
+
+	getOfflineWarrantyLevels() {
+		if (this.offlineWarrantyLevels.length === 0) {
+			this.offlineWarrantyLevels = [
+				{
+					id: 'good',
+					isRecommended: false,
+					levelText: this.translate.instant('warranty.upgradeLevels.good.levelText'),
+					warrantyCode: WarrantyCodeEnum.Depot,
+					warrantyCodeText: this.translate.instant(
+						'warranty.upgradeLevels.good.warrantyCodeText'
+					),
+					points: [
+						this.translate.instant('warranty.upgradeLevels.good.point1'),
+						this.translate.instant('warranty.upgradeLevels.good.point2'),
+						this.translate.instant('warranty.upgradeLevels.good.point3'),
+					],
+				},
+				{
+					id: 'better',
+					isRecommended: false,
+					levelText: this.translate.instant('warranty.upgradeLevels.better.levelText'),
+					warrantyCode: WarrantyCodeEnum.Onsite,
+					warrantyCodeText: this.translate.instant(
+						'warranty.upgradeLevels.better.warrantyCodeText'
+					),
+					points: [
+						this.translate.instant('warranty.upgradeLevels.better.point1'),
+						this.translate.instant('warranty.upgradeLevels.better.point2'),
+						this.translate.instant('warranty.upgradeLevels.better.point3'),
+					],
+				},
+				{
+					id: 'best',
+					isRecommended: true,
+					levelText: this.translate.instant('warranty.upgradeLevels.best.levelText'),
+					warrantyCode: WarrantyCodeEnum.Premier,
+					warrantyCodeText: this.translate.instant(
+						'warranty.upgradeLevels.best.warrantyCodeText'
+					),
+					points: [
+						this.translate.instant('warranty.upgradeLevels.best.point1'),
+						this.translate.instant('warranty.upgradeLevels.best.point2'),
+						this.translate.instant('warranty.upgradeLevels.best.point3'),
+						this.translate.instant('warranty.upgradeLevels.best.point4'),
+					],
+				},
+			];
+		}
+		return this.offlineWarrantyLevels;
+	}
 
 	convertWarrantyData(data: WarrantyData) {
 		if (data.warrantyStatus === WarrantyStatusEnum.WarrantyNotFound) {
@@ -115,12 +133,16 @@ export class WarrantyService {
 		data.warrantyCode = data.warrantyCode?.toLowerCase();
 
 		if (data.warrantyLevels.length > 0) {
-			data.warrantyLevels.forEach(w => {
+			data.warrantyLevels.forEach((w) => {
 				w.level = w.level?.toLowerCase();
 			});
 		}
 		data.firstRound = {
-			index: 0, mos: 0, isInUsed: true, isStart: true, startDate: data.startDate,
+			index: 0,
+			mos: 0,
+			isInUsed: true,
+			isStart: true,
+			startDate: data.startDate,
 		};
 		const startDate = Date.parse(data.startDate);
 		const endDate = Date.parse(data.endDate);
@@ -129,10 +151,14 @@ export class WarrantyService {
 		let maxCircle = Math.round(data.maxDuration / 12) + 1;
 		let inWarrantyCircleCount = warrantyYear + 1;
 
-		if (!data.remainingDays) { data.remainingDays = 0; }
+		if (!data.remainingDays) {
+			data.remainingDays = 0;
+		}
 		if (!data.remainingMonths) {
 			data.remainingMonths = this.getMonthDiff(data.remainingDays, endDate);
-			if (!Boolean(data.remainingMonths && data.remainingMonths >= 0)) { data.remainingMonths = 0; }
+			if (!Boolean(data.remainingMonths && data.remainingMonths >= 0)) {
+				data.remainingMonths = 0;
+			}
 		}
 
 		if (data.warrantyStatus === WarrantyStatusEnum.InWarranty) {
@@ -142,8 +168,7 @@ export class WarrantyService {
 			data.inUseCircle = data.todayCircleIndex;
 			data.remainingCircle = inWarrantyCircleCount - data.todayCircleIndex - 1;
 			data.renewableCircle = maxCircle - inWarrantyCircleCount;
-		}
-		else if (data.warrantyStatus === WarrantyStatusEnum.WarrantyExpired) {
+		} else if (data.warrantyStatus === WarrantyStatusEnum.WarrantyExpired) {
 			data.warrantyCode = WarrantyCodeEnum.NoWarranty;
 			data.todayCircleIndex = -1;
 			data.inUseCircle = warrantyYear;
@@ -154,7 +179,9 @@ export class WarrantyService {
 		if (data.inUseCircle > 0) {
 			for (let i = 0; i < data.inUseCircle; i++) {
 				const round: WarrantyDataRound = {
-					index: i, mos: (i + 1) * 12, isInUsed: true
+					index: i,
+					mos: (i + 1) * 12,
+					isInUsed: true,
 				};
 				if (i + 1 === data.inUseCircle && data.remainingCircle === 0) {
 					round.isEnd = true;
@@ -168,9 +195,11 @@ export class WarrantyService {
 				const round: WarrantyDataRound = { index: i, mos: (i + 1) * 12 };
 				if (i === data.todayCircleIndex) {
 					round.isToday = true;
-					if (data.remainingMonths < 6 ||
+					if (
+						data.remainingMonths < 6 ||
 						data.warrantyCode === WarrantyCodeEnum.Depot ||
-						data.warrantyCode === WarrantyCodeEnum.NoWarranty) {
+						data.warrantyCode === WarrantyCodeEnum.NoWarranty
+					) {
 						round.isAlert = true;
 					}
 				}
@@ -189,15 +218,18 @@ export class WarrantyService {
 			}
 		}
 		if (data.warrantyStatus === WarrantyStatusEnum.InWarranty) {
-			data.rounds.forEach(((r, i) => {
+			data.rounds.forEach((r, i) => {
 				if (r.index >= data.todayCircleIndex) {
 					r.mos -= 12;
 				}
 				if (i === data.rounds.length - 1) {
 					r.isLast = true;
 				}
-			}));
-		} else if (data.warrantyStatus === WarrantyStatusEnum.WarrantyExpired && data.renewableCircle === 0) {
+			});
+		} else if (
+			data.warrantyStatus === WarrantyStatusEnum.WarrantyExpired &&
+			data.renewableCircle === 0
+		) {
 			data.rounds[data.rounds.length - 1].isLast = true;
 		}
 		return data;
@@ -207,19 +239,22 @@ export class WarrantyService {
 		if (!this.warrantyData.isAvailable) {
 			this.warrantyData.warrantyStatus = WarrantyStatusEnum.WarrantyNotFound;
 			this.hasFetchWarranty = true;
-			this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
+			this.commonService.sendNotification(
+				LocalStorageKey.LastWarrantyData,
+				this.warrantyData
+			);
 		}
 	}
 
 	convertWarrantyLevels(data: any): WarrantyLevel[] {
-		if (!data && !data.good) {
-			return this.offlineWarrantyLevels;
+		if (!data?.good) {
+			return this.getOfflineWarrantyLevels();
 		}
 		const levels: WarrantyLevel[] = [];
 		const dataLevels = [
-			{ id: 'good', item: data?.good, },
-			{ id: 'better', item: data?.better, },
-			{ id: 'best', item: data?.best, },
+			{ id: 'good', item: data?.good },
+			{ id: 'better', item: data?.better },
+			{ id: 'best', item: data?.best },
 		];
 		dataLevels.forEach((level) => {
 			const levelItem = level.item;
@@ -228,7 +263,8 @@ export class WarrantyService {
 					id: levelItem.id,
 					isRecommended: levelItem.isRecommended,
 					levelText: levelItem.warrantyLevelTitle || levelItem.id,
-					warrantyCode: levelItem.warrantyLevelCode?.toLowerCase() || WarrantyCodeEnum.Depot,
+					warrantyCode:
+						levelItem.warrantyLevelCode?.toLowerCase() || WarrantyCodeEnum.Depot,
 					warrantyCodeText: levelItem.warrantyLevelCodeText || '',
 					points: levelItem.describe,
 				});
@@ -239,7 +275,7 @@ export class WarrantyService {
 
 	setWarrantyLevelsNotFound() {
 		if (!this.isOnlineWarrantyLevelsAvailable) {
-			this.warrantyLevels = this.offlineWarrantyLevels;
+			this.warrantyLevels = this.getOfflineWarrantyLevels();
 			this.hasFetchWarrantyLevels = true;
 		}
 	}
@@ -257,10 +293,15 @@ export class WarrantyService {
 
 				const warrantyUrl = `${environment.pcSupportApiRoot}/api/v4/upsellAggregation/vantage/warrantySummaryInfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
-				const warrantyDataCache: WarrantyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyData);
+				const warrantyDataCache: WarrantyData = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.LastWarrantyData
+				);
 				if (warrantyDataCache && warrantyDataCache.isAvailable) {
 					this.warrantyData = warrantyDataCache;
-					this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
+					this.commonService.sendNotification(
+						LocalStorageKey.LastWarrantyData,
+						this.warrantyData
+					);
 					this.hasFetchWarranty = true;
 				}
 
@@ -276,14 +317,23 @@ export class WarrantyService {
 						const result = await response.content.readAsStringAsync();
 						if (result) {
 							const resultJson = JSON.parse(result);
-							if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
+							if (
+								resultJson.code === 0 &&
+								resultJson.msg?.desc?.toLowerCase() === 'success'
+							) {
 								this.logger.info('Fetch warranty result: ', resultJson);
 								this.warrantyData = this.convertWarrantyData(resultJson.data);
-								this.localCacheService.setLocalCacheValue(LocalStorageKey.LastWarrantyData, this.warrantyData);
+								this.localCacheService.setLocalCacheValue(
+									LocalStorageKey.LastWarrantyData,
+									this.warrantyData
+								);
 								this.hasFetchWarranty = true;
 							} else {
 								this.setWarrantyNotFound();
-								this.logger.info('Fetch warranty no success response: ', resultJson);
+								this.logger.info(
+									'Fetch warranty no success response: ',
+									resultJson
+								);
 							}
 						} else {
 							this.setWarrantyNotFound();
@@ -311,7 +361,9 @@ export class WarrantyService {
 
 				const warrantyLevelUrl = `${environment.pcSupportApiRoot}/api/v4/upsellaggregation/vantage/warrantyupgradeinfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
-				const warrantyLevelsCache: WarrantyLevel[] = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyLevels);
+				const warrantyLevelsCache: WarrantyLevel[] = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.LastWarrantyLevels
+				);
 				if (warrantyLevelsCache && warrantyLevelsCache.length > 0) {
 					this.warrantyLevels = warrantyLevelsCache;
 					this.hasFetchWarrantyLevels = true;
@@ -330,14 +382,25 @@ export class WarrantyService {
 						const result = await response.content.readAsStringAsync();
 						if (result) {
 							const resultJson = JSON.parse(result);
-							if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
+							if (
+								resultJson.code === 0 &&
+								resultJson.msg?.desc?.toLowerCase() === 'success'
+							) {
 								this.logger.info('Fetch warranty levels result: ', resultJson);
-								this.warrantyLevels = this.convertWarrantyLevels(resultJson.data.recommendation);
-								this.localCacheService.setLocalCacheValue(LocalStorageKey.LastWarrantyLevels, this.warrantyLevels);
+								this.warrantyLevels = this.convertWarrantyLevels(
+									resultJson.data.recommendation
+								);
+								this.localCacheService.setLocalCacheValue(
+									LocalStorageKey.LastWarrantyLevels,
+									this.warrantyLevels
+								);
 								this.hasFetchWarrantyLevels = true;
 							} else {
 								this.setWarrantyLevelsNotFound();
-								this.logger.info('Fetch warranty levels no success response: ', resultJson);
+								this.logger.info(
+									'Fetch warranty levels no success response: ',
+									resultJson
+								);
 							}
 						} else {
 							this.setWarrantyLevelsNotFound();

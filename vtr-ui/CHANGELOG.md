@@ -73,10 +73,64 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.12.0](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.30...v1.12.0) (2021-05-06)
 
-
 ### Bug Fixes
 
 * **Chevron:** VAN-28425 modify chevron list metrics event name ([ee8ffc9](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ee8ffc9e0708cbe7645d39dbdb50a907f9ec9999))
+
+### [1.11.38](https://bitbucket.tc.lenovo.com///compare/v1.11.37...v1.11.38) (2021-05-17)
+
+### [1.11.37](https://bitbucket.tc.lenovo.com///compare/v1.11.36...v1.11.37) (2021-05-17)
+
+
+### Bug Fixes
+
+* update angular.json fullstory.js only in dev&qa ([35f6ef3](https://bitbucket.tc.lenovo.com///commit/35f6ef37c94bebcc5a0c3a11cf2f1c5199b38c99))
+* **Img high-contrast brightness:** modify img high contast brightness and size ([0f7ee46](https://bitbucket.tc.lenovo.com///commit/0f7ee4668ce39ff8c455c3c1ee46e455feb2b2a0))
+* **ModernPreload:** VAN-28457 fix spell error ([f4f9ad0](https://bitbucket.tc.lenovo.com///commit/f4f9ad0ca9c264206a3fbb91e7cf054307aa1505))
+
+### [1.11.36](https://bitbucket.tc.lenovo.com///compare/v1.11.35...v1.11.36) (2021-05-11)
+
+
+### Features
+
+* **feedback:** VAN-28876 remove all feedback in Vantage. ([199d3b2](https://bitbucket.tc.lenovo.com///commit/199d3b228a79b0d7af0a2b97c980597e615c55dd))
+
+
+### Bug Fixes
+
+* fix lid dialog padding to avoid white cube below ([e9d984d](https://bitbucket.tc.lenovo.com///commit/e9d984defa56d94ea8d6bbc0d5082a08b2c1c627))
+* **dashboard:** VAN-28840 open browser instead of goto support on arm machine ([a817bff](https://bitbucket.tc.lenovo.com///commit/a817bffdaf6be7725b8cf3d21aa38f49b4dbe535))
+* **ModernPreload:** VAN-28457 show first downloading progress ([f1ead34](https://bitbucket.tc.lenovo.com///commit/f1ead34b0e08d39e3a96bc83a6863794e75b1fd8))
+* **vsp:** VAN-29064 remove action if action used complete in sp page. ([b58d67a](https://bitbucket.tc.lenovo.com///commit/b58d67a739387859dad291947b3a309cc575be0a))
+* **vsp:** VAN-29064 Removed incorrect auto description string. ([c8115a7](https://bitbucket.tc.lenovo.com///commit/c8115a709db2d2ea7ccbaa20c974fde2fdcbf804))
+
+### [1.11.35](https://bitbucket.tc.lenovo.com///compare/v1.11.34...v1.11.35) (2021-05-10)
+
+### [1.11.34](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.33...v1.11.34) (2021-05-08)
+
+
+### Features
+
+* **overall:** fix npm vulnerabilities issue ([aa9fe63](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/aa9fe634800bb6888766cff036f84a72c0463b5c))
+
+
+### Bug Fixes
+
+* **support:** VAN-28833 if no warranty level from service show correct local text. ([4bddc00](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/4bddc00b7e62905542ba7f106faca8ab531a0cdd))
+
+### [1.11.33](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.32...v1.11.33) (2021-05-07)
+
+
+### Bug Fixes
+
+* **chevron:** VAN-28793 VAN-28425 add metrics default value ([ff7f7b6](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ff7f7b641ba1f5011ab4712dac65205850cecd26))
+* **overall:** fix coverity issue ([3282201](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/3282201b81cc40989d16e2cf8341e4489f98fca0))
+* **overall:** fix coverity issue ([f990f00](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/f990f008b360427c0a0b36eb280f2109ee1f6e7e))
+* **SU:** VAN-28722 remove action if checked action complete in su page. ([d4df4ec](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/d4df4ec1478a3e1e3b851a0c27a471d7f10ad1ce))
+
+### [1.11.32](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.11.31...v1.11.32) (2021-05-06)
+
+### [1.11.31](https://bitbucket.tc.lenovo.com///compare/v1.11.30...v1.11.31) (2021-04-30)
 
 ### [1.11.30](https://bitbucket.tc.lenovo.com///compare/v1.11.29...v1.11.30) (2021-04-29)
 

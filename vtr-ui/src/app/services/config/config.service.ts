@@ -206,20 +206,25 @@ export class ConfigService {
 	}
 
 	private initializeSMB(menu: MenuItem[]) {
-		if (this.deviceService.machineInfo) {
-			this.supportFilter(menu, MenuID.smb, this.deviceService.isSMB);
-			this.supportFilter(
-				menu,
-				MenuID.creatorCentre,
-				this.deviceService.supportCreatorSettings
-			);
-			this.supportFilter(menu, MenuID.easyRendering, this.deviceService.supportEasyRendering);
-			this.supportFilter(
-				menu,
-				MenuID.colorCalibration,
-				this.deviceService.supportColorCalibration
-			);
-		}
+		this.deviceService.getMachineInfo().then((machineInfo) => {
+			if (machineInfo) {
+				this.supportFilter(menu, MenuID.smb, this.deviceService.isSMB);
+				this.supportFilter(
+					menu,
+					MenuID.creatorCentre,
+					this.deviceService.supportCreatorSettings
+				);
+				this.supportFilter(menu, MenuID.easyRendering, this.deviceService.supportEasyRendering);
+				this.supportFilter(
+					menu,
+					MenuID.colorCalibration,
+					this.deviceService.supportColorCalibration
+				);
+			}
+			else {
+				this.logger.error('ConfigService.initializeSMB failed');
+			}
+		});
 	}
 
 	private updateMenuForDeviceSetting(menu: MenuItem[]) {
@@ -281,7 +286,7 @@ export class ConfigService {
 			country.toLowerCase() === 'us' &&
 			locale.startsWith('en') &&
 			chsHypsis &&
-			!machineInfo.isGaming;
+			!machineInfo?.isGaming;
 		this.showCHS = this.chsAvailability && this.activeSegment !== SegmentConst.Commercial;
 
 		this.supportFilter(menu, MenuID.connectedHomeSecurity, this.showCHS);
@@ -364,8 +369,8 @@ export class ConfigService {
 			securityMenu.subitems,
 			'wifi-security',
 			!securityMenuCondition.isSmode &&
-				!securityMenuCondition.isArm &&
-				securityMenuCondition.wifiIsSupport
+			!securityMenuCondition.isArm &&
+			securityMenuCondition.wifiIsSupport
 		);
 	}
 
@@ -750,8 +755,8 @@ export class ConfigService {
 	updateSystemUpdatesMenu() {
 		const showSystemUpdate = Boolean(
 			this.adPolicyService.IsSystemUpdateEnabled &&
-				!this.deviceService.isSMode &&
-				!this.deviceService.isGaming
+			!this.deviceService.isSMode &&
+			!this.deviceService.isGaming
 		);
 		this.supportFilter(this.menu, MenuID.systemUpdates, showSystemUpdate);
 	}

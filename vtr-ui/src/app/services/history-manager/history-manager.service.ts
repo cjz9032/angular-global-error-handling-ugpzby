@@ -27,7 +27,7 @@ export class HistoryManager {
 				return;
 			}
 
-			const path = url?.substring(url.indexOf('/'));
+			const path = url?.substring(url?.indexOf('/'));
 
 			if (path && this.currentRoute?.finalPath.startsWith(path)) {
 				this.currentRoute = new PageRoute(path);

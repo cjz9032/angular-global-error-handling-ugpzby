@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "Περιβάλλον",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Έκδοση Addin",
 				"experienceVersion": "Έκδοση Experience",
 				"shellVersion": "Έκδοση Shell",
 				"bridgeVersion": "Έκδοση Bridge"

@@ -11,9 +11,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { SupportContentStatus } from 'src/app/enums/support-content-status.enum';
-
-import { environment } from 'src/environments/environment';
-import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ContentSource } from 'src/app/enums/content.enum';
@@ -83,13 +80,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
 		metricsEvent: 'FeatureClick',
 	};
-	listYourVirtualAssistant = {
-		icon: ['fal', 'robot'],
-		title: 'support.needHelp.listYourVirtualAssistant',
-		url: 'https://lena.lenovo.com/lena',
-		metricsItem: 'NeedHelp.YourVirtualAssistantButton',
-		metricsEvent: 'FeatureClick',
-	};
 
 	listFindUs = {
 		icon: ['fal', 'heart'],
@@ -143,7 +133,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		private licensesService: LicensesService,
 		private activatedRoute: ActivatedRoute,
 		private loggerService: LoggerService,
-		private feedbackService: FeedbackService
 	) {
 	}
 
@@ -223,11 +212,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					this.activatedRoute.snapshot.queryParams.action === 'licenseagreement'
 				) {
 					this.licensesService.openLicensesAgreement();
-				} else if (
-					params.has('action') &&
-					this.activatedRoute.snapshot.queryParams.action === 'feedback'
-				) {
-					this.feedbackService.openFeedbackModal();
 				}
 			}
 		);
@@ -416,11 +400,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	copyObjectArray(obj: any) {
 		return JSON.parse(JSON.stringify(obj));
 	}
-
-	openFeedbackModal() {
-		this.feedbackService.openFeedbackModal();
-	}
-
 
 	openWarrantyExploreOptions() {
 		if (!this.isOnline) {

@@ -8,16 +8,17 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { EnumSmartPerformance, ScanningState, SubscriptionState } from 'src/app/enums/smart-performance.enum';
+import { EnumSmartPerformance, ScanningState, SPNotification, SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { SPHistoryScanResultsDateTime } from './interface/smart-performance.interface';
 import { cloneDeep } from 'lodash';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'vtr-page-smart-performance',
@@ -59,6 +60,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		public smartPerformanceService: SmartPerformanceService,
 		public smartPerformanceDialogService: SmartPerformanceDialogService,
 		private logger: LoggerService,
+		private router: Router,
+		private location: Location,
 		public shellServices: VantageShellService,
 		public metricsService: MetricService,
 		private localCacheService: LocalCacheService,
@@ -601,6 +604,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 					this.activatedRoute.snapshot.queryParams.action === 'start'
 				) {
 					this.scanNow();
+					this.location.go(this.router.url.split('?')[0]);
 				}
 			}
 		);
@@ -630,5 +634,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.issueCount = res.result.tune + res.result.boost + res.result.secure;
 		this.smartPerformanceService.scanningState = ScanningState.Completed;
 		this.isScanAlreadyStarted = false;
+		this.commonService.sendNotification(SPNotification.SPScanCompleted);
 	}
 }

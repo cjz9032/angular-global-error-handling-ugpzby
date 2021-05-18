@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "Dopuszczalne warunki zewnętrzne",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Wersja Addin",
 				"experienceVersion": "Wersja Experience",
 				"shellVersion": "Wersja Shell",
 				"bridgeVersion": "Wersja Bridge"

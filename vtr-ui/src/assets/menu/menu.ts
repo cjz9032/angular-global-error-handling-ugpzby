@@ -38,7 +38,7 @@ export enum MenuID {
 
 export class RoutePath {
 	static readonly deviceGaming = 'device-gaming';
-	static readonly smartPerfomance = 'smart-performance';
+	static readonly smartPerformance = 'smart-performance';
 	static readonly smartPerformanceBaseArm = 'support/smart-performance';
 	static readonly smartPrivacy = 'smart-privacy';
 	static readonly facebook = 'https://www.facebook.com/LenovoLegion/';
@@ -197,7 +197,7 @@ export const menuConfig = {
 					id: MenuID.smartPerformance,
 					label: 'gaming.common.menu.smartPerformance',
 					beta: false,
-					path: RoutePath.smartPerfomance,
+					path: RoutePath.smartPerformance,
 					icon: '',
 					metricsEvent: 'itemClick',
 					externallink: false,
@@ -779,7 +779,7 @@ export const menuConfig = {
 					id: MenuID.smartPerformance,
 					label: 'gaming.common.menu.smartPerformance',
 					beta: false,
-					path: RoutePath.smartPerfomance,
+					path: RoutePath.smartPerformance,
 					icon: '',
 					metricsEvent: 'itemClick',
 					externallink: false,

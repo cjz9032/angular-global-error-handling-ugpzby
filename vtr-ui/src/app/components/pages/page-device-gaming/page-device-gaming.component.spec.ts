@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PageDeviceGamingComponent } from './page-device-gaming.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -43,7 +42,6 @@ describe('PageDeviceGamingComponent', () => {
 				declarations: [
 					PageDeviceGamingComponent,
 					SvgInlinePipe,
-					FeedbackFormComponent,
 					GAMING_DATA.mockPipe({ name: 'sanitize' }),
 				],
 				schemas: [NO_ERRORS_SCHEMA],

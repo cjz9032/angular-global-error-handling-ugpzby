@@ -103,6 +103,12 @@
 			@media #{$white-on-black} {
 				fill: white;
 			}
+
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			padding:0 0.6rem;
+			text-align:center;
 		}
 
 		.sw-checked-date {

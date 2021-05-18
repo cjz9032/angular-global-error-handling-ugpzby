@@ -4,6 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -219,6 +220,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		shellService: VantageShellService,
 		private deviceService: DeviceService,
 		private router: Router,
+		private location: Location,
 		private logger: LoggerService,
 		private hypSetting: HypothesisService,
 		private antiVirusService: AntivirusService,
@@ -250,6 +252,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				this.metrics.sendAsync(metricData);
 			} else if (this.protocolAction.toLowerCase() === 'start') {
 				this.shouldCheckingUpdateByProtocol = true;
+				this.location.go(this.router.url.split('?')[0]);
 			}
 		}
 	}

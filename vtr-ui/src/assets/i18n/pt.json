@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "Ambiente",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Versão da addin",
 				"experienceVersion": "Versão da experience",
 				"shellVersion": "Versão da shell",
 				"bridgeVersion": "Versão da bridge"

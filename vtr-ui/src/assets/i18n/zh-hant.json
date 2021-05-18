@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "環境",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Addin 版本",
 				"experienceVersion": "Experience 版本",
 				"shellVersion": "Shell 版本",
 				"bridgeVersion": "Bridge 版本"

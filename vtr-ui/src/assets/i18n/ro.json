@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "Mediu",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Versiune Addin",
 				"experienceVersion": "Versiune Experience",
 				"shellVersion": "Versiune Shell",
 				"bridgeVersion": "Versiune Bridge"

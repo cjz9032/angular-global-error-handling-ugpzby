@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "Середовище",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "Версія Addin",
 				"experienceVersion": "Версія Experience",
 				"shellVersion": "Версія Shell",
 				"bridgeVersion": "Версія Bridge"

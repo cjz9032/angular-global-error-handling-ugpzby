@@ -213,13 +213,7 @@ export class SmartPerformanceService {
 						const resultJson = JSON.parse(result);
 						if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
 							this.logger.info('Fetch smartPerformance payment detail result: ', resultJson);
-
-							const smartTest = sessionStorage.getItem('smartTest');
-							if (smartTest) {
-								resolve(JSON.parse(smartTest));
-							} else {
-								resolve(resultJson);
-							}
+							resolve(resultJson);
 						} else {
 							resolve(undefined);
 							this.logger.info('Fetch smartPerformance payment detail failed response: ', resultJson);
@@ -296,6 +290,9 @@ export class SmartPerformanceService {
 					style: 'currency',
 					currency: 'CLP',
 				}).format(mpVal);
+			} else if (GEO === 'sg') {
+				mpVal = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
+				monthlyPrice = symbol + mpVal;
 			} else {
 				mpVal = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
 				monthlyPrice = currencyFormater.format(mpVal, { code: isoCode });

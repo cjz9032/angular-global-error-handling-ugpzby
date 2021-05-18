@@ -59,7 +59,7 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 		private dialogService: DialogService,
 		private feedbackService: FeedbackService,
 		private router: Router
-	) {}
+	) { }
 
 	ngOnInit(): void {
 		this.subscription = this.commonService.notification.subscribe(
@@ -94,7 +94,11 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	}
 
 	private hasSecondaryMenu(item: any) {
-		if (Array.isArray(item?.subitems)) {
+		if (!item) {
+			return;
+		}
+
+		if (Array.isArray(item.subitems)) {
 			for (const element of item.subitems) {
 				if (
 					Array.isArray(element?.subitems) &&
@@ -137,10 +141,10 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 		secondaryPath
 			? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
 			: subpath
-			? this.router.navigateByUrl(`/${path}/${subpath}`)
-			: path
-			? this.router.navigateByUrl(`/${path}`)
-			: this.router.navigateByUrl(`/`);
+				? this.router.navigateByUrl(`/${path}/${subpath}`)
+				: path
+					? this.router.navigateByUrl(`/${path}`)
+					: this.router.navigateByUrl(`/`);
 	}
 
 	onLogout() {
@@ -149,10 +153,6 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 
 	openModernPreloadModal() {
 		this.dialogService.openModernPreloadModal();
-	}
-
-	openFeedbackModal() {
-		this.feedbackService.openFeedbackModal();
 	}
 
 	openSurveyModal(surveyId: string) {

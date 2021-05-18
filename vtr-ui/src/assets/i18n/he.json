@@ -5376,7 +5376,7 @@
 			},
 			"environmentTitle": "סביבה",
 			"environment": {
-				"addinVersion": "Addin Version",
+				"addinVersion": "גרסת Addin",
 				"experienceVersion": "גרסת Experience",
 				"shellVersion": "גרסת Shell",
 				"bridgeVersion": "גרסת Bridge"
