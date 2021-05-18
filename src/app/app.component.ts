@@ -48,7 +48,7 @@ import { lineFeature, FeatureNodeTypeEnum } from "./line-feature";
  */
 
 const DoFirst = function (num: number): Promise<string> {
-  return new Promise(function (r, rej) {
+  let p: Promise<string> = new Promise(function (r, rej) {
     // setTimeout(() => {
     //   // throw new Error('in other dth')
     //   // rej(new Error("in other"));
@@ -60,17 +60,20 @@ const DoFirst = function (num: number): Promise<string> {
     // }, 1000);
     // rej(new Error('123'));
     r("1");
-  })
+  });
+  debugger;
 
-  .then((t) => {
+  p = p.then((t) => {
     // if(true){
     //   return new Error('123'))
     // }
-    debugger
+    debugger;
     // @ts-ignore
-    this.aa.xx = 1
-    return '123'
-  })
+    this.aa.xx = 1;
+    return "123";
+  });
+
+  return p;
 };
 
 @Component({
@@ -85,36 +88,37 @@ export class AppComponent {
     console.log(this);
   }
 
-  @lineFeature({
-    featureName: "use-case-1",
-    node: {
-      nodeName: "localAnnotation",
-      nodeType: FeatureNodeTypeEnum.START,
-    },
-  })
+  // @lineFeature({
+  //   featureName: "use-case-1",
+  //   node: {
+  //     nodeName: "localAnnotation",
+  //     nodeType: FeatureNodeTypeEnum.START,
+  //   },
+  // })
   async localAnnotation() {
     this.someCode = "123";
-    await 123;
+    // await 123;
 
     // in bg?
-    new Promise((res) => {
-      setTimeout(() => {
-        res("bg123");
-      });
-    });
+    // new Promise((res) => {
+    //   setTimeout(() => {
+    //     res("bg123");
+    //   });
+    // });
 
-    const abc: string = await DoFirst(1);
-    this.someCode = abc;
-    debugger;
-    try {
-      const abc2: string = await DoFirst(2);
-      this.someCode = abc2;
-    } catch (e) {
-      debugger;
-    }
+    const abc: string = await DoFirst(2);
+    // this.someCode = abc;
+    // debugger;
+    // try {
+    //   const abc2: string = await DoFirst(2);
+    //   this.someCode = abc2;
+    // } catch (e) {
+    //   debugger;
+    // }
 
-    const abc3: string = await DoFirst(3);
-    this.someCode = abc3;
+    // const abc3: string = await DoFirst(3);
+    // this.someCode = abc3;
+
     // const res: string = await new Promise((r, rej) => {
     //   // r("123");
     //   rej(new Error("err"));

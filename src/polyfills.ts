@@ -4,6 +4,11 @@
 // window.__Zone_disable_ZoneAwarePromise = true
 
 import 'zone.js';
+import 'zone.js/dist/long-stack-trace-zone.js'
+// set more long long~
+(Zone as any)['longStackTraceZoneSpec'].longStackTraceLimit = 20;
+// import 'zone.js/dist/task-tracking.js'
+import 'zone.js/dist/zone-error.js'
 
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.

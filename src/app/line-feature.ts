@@ -1,4 +1,4 @@
-import { Injectable, Injector, NgModule, NgZone } from "@angular/core";
+import { Injectable, Injector, isDevMode, NgModule, NgZone } from "@angular/core";
 
 import { get } from "./st";
 // import cloneDeep from "lodash/cloneDeep";
@@ -84,6 +84,8 @@ export function lineFeature(decoArgs: {
 function initOutLineZone(): Zone | null {
   // Current Zone its parent, whatever what the parent it is
   let _innerZone: Zone;
+  const aa = isDevMode()
+  debugger
   _innerZone = Zone.current.fork({
     name: "myOuterNg",
     // onHasTask bg?
@@ -101,25 +103,34 @@ function initOutLineZone(): Zone | null {
       // todo filter the 1st call by self
       debugger;
       let res;
-      try {
-        Zone.root
-        .fork({
-          name: "xxx",
-        })
-        .run(() => {
-          res = parentZoneDelegate.invoke(
-            targetZone,
-            delegate,
-            applyThis,
-            applyArgs,
-            source
-          );
-        });
-       
-      } catch (e) {
-        console.log('myee', e);
-        debugger
-      }
+
+      res = parentZoneDelegate.invoke(
+        targetZone,
+        delegate,
+        applyThis,
+        applyArgs,
+        source
+      );
+
+      // try {
+      //   Zone.root
+      //   .fork({
+      //     name: "xxx",
+      //   })
+      //   .run(() => {
+      //     res = parentZoneDelegate.invoke(
+      //       targetZone,
+      //       delegate,
+      //       applyThis,
+      //       applyArgs,
+      //       source
+      //     );
+      //   });
+
+      // } catch (e) {
+      //   console.log('myee', e);
+      //   debugger
+      // }
 
       // Zone.root
       //   .fork({
@@ -178,7 +189,6 @@ function initOutLineZone(): Zone | null {
       // console.error(error);
       // console.trace();
       // console.log(new Error().stack);
-      const trace = get();
 
       console.error(new Error());
 
