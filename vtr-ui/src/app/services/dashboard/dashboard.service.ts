@@ -99,7 +99,7 @@ export class DashboardService {
 		linkPath: 'lenovo-vantage3:system-updates?action=start',
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-su',
-		statusText: 'device.myDevice.needAction',
+		statusText: 'device.myDevice.updateNow',
 		isActionLink: true,
 	};
 
@@ -110,7 +110,7 @@ export class DashboardService {
 		linkPath: 'lenovo-vantage3:hardware-scan?scan=quickscan',
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-hws',
-		statusText: 'device.myDevice.needAction',
+		statusText: 'device.myDevice.scanNow',
 		isActionLink: true,
 	};
 
@@ -121,7 +121,7 @@ export class DashboardService {
 		linkPath: 'lenovo-vantage3:smart-performance?action=start',
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-sp',
-		statusText: 'device.myDevice.needAction',
+		statusText: 'device.myDevice.optimizeNow',
 		isActionLink: true,
 	};
 

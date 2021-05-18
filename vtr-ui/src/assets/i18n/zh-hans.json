@@ -1207,7 +1207,7 @@
 			"helpful": "常见问题",
 			"copy": "复制",
 			"goodCondition": "状况良好",
-			"needAction": "立即优化",
+			"optimizeNow": "立即优化",
 			"hwStatus": "硬件状态",
 			"swStatus": "软件状态",
 			"refreshModules": "刷新模块",

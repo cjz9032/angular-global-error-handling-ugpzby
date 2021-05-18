@@ -1099,7 +1099,7 @@
 			"helpful": "Nyttig innhold",
 			"copy": "kopi",
 			"goodCondition": "I god stand",
-			"needAction": "Optimaliser nå",
+			"optimizeNow": "Optimaliser nå",
 			"hwStatus": "Maskinvarestatus",
 			"swStatus": "Programvarestatus",
 			"refreshModules": "Oppdater moduler",

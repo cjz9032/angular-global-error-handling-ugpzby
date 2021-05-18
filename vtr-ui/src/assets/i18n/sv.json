@@ -1099,7 +1099,7 @@
 			"helpful": "Praktisk information",
 			"copy": "kopiera",
 			"goodCondition": "I bra skick",
-			"needAction": "Optimera nu",
+			"optimizeNow": "Optimera nu",
 			"hwStatus": "Maskinvarustatus",
 			"swStatus": "Programvarustatus",
 			"refreshModules": "Uppdatera moduler",

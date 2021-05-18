@@ -19,7 +19,7 @@ import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hard
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { FeatureClick } from 'src/app/services/metric/metrics.model';
-import { DeviceCondition, SystemHealthDates } from 'src/app/enums/system-state.enum';
+import { DeviceCondition, SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -108,7 +108,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		document.removeEventListener(copyCmd, listener, false);
 	}
 
-	public onMaintanceClicked() {
+	public onMaintenanceClicked() {
 		if (
 			this.deviceStatus !== DeviceCondition.Loading &&
 			this.deviceStatus !== DeviceCondition.Good
@@ -357,5 +357,31 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			hwscan.subtitle = this.translate.instant(notScannedKey);
 		}
 		hwscan.link = this.quickScanProtocol;
+	}
+
+	getStatusText() {
+		switch (this.deviceStatus) {
+			case DeviceCondition.Good:
+				return 'device.myDevice.goodCondition';
+			case DeviceCondition.NeedRunHWScan:
+				return 'device.myDevice.scanNow';
+			case DeviceCondition.NeedRunSU:
+				return 'device.myDevice.updateNow';
+			case DeviceCondition.NeedRunSPScan:
+				return 'device.myDevice.optimizeNow';
+			default:
+				break;
+		}
+	}
+
+	getSystemState() {
+		switch (this.deviceStatus) {
+			case DeviceCondition.Loading:
+				return SystemState.Loading;
+			case DeviceCondition.Good:
+				return SystemState.GoodCondition;
+			default:
+				return SystemState.NeedMaintenance;
+		}
 	}
 }

@@ -1169,7 +1169,6 @@
 			"freeMemory": "Free memory",
 			"copy": "copy",
 			"goodCondition": "Good condition",
-			"needAction": "Optimize now",
 			"hwStatus": "Hardware Status",
 			"swStatus": "Software Status",
 			"refreshModules": "Refresh Modules",
@@ -1178,6 +1177,8 @@
 			"physicalMemory": "Physical Memory",
 			"storage": "Storage",
 			"scanNow": "Scan now",
+			"optimizeNow": "Optimize now",
+			"updateNow": "Update now",
 			"entitled": "Entitled",
 			"subscribeNow": "Click to subscribe",
 			"systemUpdate": {

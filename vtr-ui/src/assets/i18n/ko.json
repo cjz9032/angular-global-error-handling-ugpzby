@@ -1099,7 +1099,7 @@
 			"helpful": "유용한 콘텐츠",
 			"copy": "복사",
 			"goodCondition": "상태 양호",
-			"needAction": "지금 최적화",
+			"optimizeNow": "지금 최적화",
 			"hwStatus": "하드웨어 상태",
 			"swStatus": "소프트웨어 상태",
 			"refreshModules": "모듈 새로 고침",

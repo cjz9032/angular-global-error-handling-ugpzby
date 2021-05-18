@@ -1209,7 +1209,7 @@
 			"helpful": "Contenu utile",
 			"copy": "copier",
 			"goodCondition": "Bon état",
-			"needAction": "Optimiser maintenant",
+			"optimizeNow": "Optimiser maintenant",
 			"hwStatus": "État du matériel",
 			"swStatus": "État du logiciel",
 			"refreshModules": "Actualiser les modules",

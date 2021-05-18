@@ -2,7 +2,7 @@
 	<div class="device-brief col-12 d-flex p-0">
 		<div class="device-brief-bios">
 			<p id="myDevice-machine-info">{{myDevice.family}}</p>
-			<p *ngFor="let item of [['myDevice-sn','device.myDevice.serial',myDevice.sn],['myDevice-productNo','device.myDevice.productNumber',myDevice.productNo],['myDevice-bios','device.myDevice.biosVersion',myDevice.bios]]"> 
+			<p *ngFor="let item of [['myDevice-sn','device.myDevice.serial',myDevice.sn],['myDevice-productNo','device.myDevice.productNumber',myDevice.productNo],['myDevice-bios','device.myDevice.biosVersion',myDevice.bios]]">
 				<span>
 					<span id="{{item[0]}}" role="text">{{item[1]|translate}}:</span>
 					<span dir="ltr" id="{{item[0]}}-value" role="text">{{item[2]}}</span>
@@ -13,19 +13,19 @@
 			</p>
 		</div>
 
-		<div class="device-overall-status" id="device-overall-status-button" role="button" tabindex="0" (keydown.enter)="onMaintanceClicked()" (click)="onMaintanceClicked()">
-			<vtr-widget-round-status [status]="(deviceStatus===0||deviceStatus===1)?deviceStatus:2"
+		<div class="device-overall-status" id="device-overall-status-button" role="button" tabindex="0" (keydown.enter)="onMaintenanceClicked()" (click)="onMaintenanceClicked()">
+			<vtr-widget-round-status [status]="getSystemState()"
 				[statusId]="'device-overall-system'"
-				[statusText]="(deviceStatus===1?'device.myDevice.goodCondition':'device.myDevice.needAction')"></vtr-widget-round-status>
+				[statusText]="getStatusText()"></vtr-widget-round-status>
 		</div>
 	</div>
-	
+
 	<vtr-ui-group-card class="device-detail col-12" [hostPage]="'DevicePage'" [title]="'device.myDevice.hwStatus'|translate" [refreshButtonText]="'device.myDevice.refreshModules'|translate" (refreshClicked)="refreshClicked()">
 		<div class="container">
 			<div class="row">
 				<div class="device-detail-item device-detail-hw-item" *ngFor="let item of hwStatus;trackBy: trackByFn">
 					<vtr-ui-deviceinfo-item [dataModel]="item"></vtr-ui-deviceinfo-item>
-				</div> 
+				</div>
 			</div>
 		</div>
 	</vtr-ui-group-card>
@@ -35,7 +35,7 @@
 			<div class="row">
 				<div class="device-detail-item device-detail-sw-item" *ngFor="let item of swStatus">
 					<vtr-ui-deviceinfo-item [dataModel]="item"></vtr-ui-deviceinfo-item>
-				</div> 
+				</div>
 			</div>
 		</div>
 	</vtr-ui-group-card>
