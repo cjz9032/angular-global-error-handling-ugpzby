@@ -3,8 +3,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -95,38 +96,40 @@ describe('BatteryCardComponent', () => {
 	let logger: LoggerService;
 	// let translate: TranslateService;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot({
-					loader: {
-						provide: TranslateLoader,
-						useFactory: HttpLoaderFactory,
-						deps: [HttpClient],
-					},
-				}),
-				HttpClientTestingModule,
-				RouterTestingModule,
-			],
-			declarations: [BatteryCardComponent],
-			providers: [
-				CommonService,
-				BatteryDetailService,
-				VantageShellService,
-				LoggerService,
-				NgbModal,
-			],
-		}).compileComponents();
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [
+					TranslateModule.forRoot({
+						loader: {
+							provide: TranslateLoader,
+							useFactory: HttpLoaderFactory,
+							deps: [HttpClient],
+						},
+					}),
+					HttpClientTestingModule,
+					RouterTestingModule,
+				],
+				declarations: [BatteryCardComponent],
+				providers: [
+					CommonService,
+					BatteryDetailService,
+					VantageShellService,
+					LoggerService,
+					MatDialog,
+				],
+			}).compileComponents();
 
-		fixture = TestBed.createComponent(BatteryCardComponent);
-		component = fixture.componentInstance;
-		commonService = TestBed.inject(CommonService);
-		batteryDetailService = TestBed.inject(BatteryDetailService);
-		shellService = TestBed.inject(VantageShellService);
-		logger = TestBed.inject(LoggerService);
-		component.isLoading = false;
-	}));
+			fixture = TestBed.createComponent(BatteryCardComponent);
+			component = fixture.componentInstance;
+			commonService = TestBed.inject(CommonService);
+			batteryDetailService = TestBed.inject(BatteryDetailService);
+			shellService = TestBed.inject(VantageShellService);
+			logger = TestBed.inject(LoggerService);
+			component.isLoading = false;
+		})
+	);
 
 	it('should create component', () => {
 		fixture.detectChanges();

@@ -1,20 +1,22 @@
-import { NetworkStatus } from './../../../enums/network-status.enum';
-import { of } from 'rxjs';
+import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA, Pipe } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { DeviceService } from './../../../services/device/device.service';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { Title } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
+import { DeviceService } from './../../../services/device/device.service';
 import { DashboardService } from './../../../services/dashboard/dashboard.service';
 import { VantageShellService } from './../../../services/vantage-shell/vantage-shell-mock.service';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { NetworkStatus } from './../../../enums/network-status.enum';
 import { CMSService } from './../../../services/cms/cms.service';
 import { CommonService } from './../../../services/common/common.service';
-import { Title } from '@angular/platform-browser';
-import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA, Pipe } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { PageLightingcustomizeComponent } from './page-lightingcustomize.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { Gaming } from './../../../enums/gaming.enum';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { GAMING_DATA } from 'src/testing/gaming-data';
 
 describe('PageLightingcustomizeComponent', () => {
@@ -43,8 +45,8 @@ describe('PageLightingcustomizeComponent', () => {
 					GAMING_DATA.mockPipe({ name: 'htmlText' }),
 				],
 				providers: [
-					NgbModal,
-					NgbActiveModal,
+					MatDialog,
+					MatDialogRef,
 					{ provide: Title, useValue: titleServiceMock },
 					{ provide: CMSService, useValue: cmsServiceMock },
 					{ provide: ActivatedRoute, useValue: routerMock },

@@ -1,6 +1,7 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { BatteryGaugeResetComponent } from './battery-gauge-reset.component';
@@ -37,21 +38,23 @@ describe('BatteryGaugeResetComponent', () => {
 			startTime: '',
 		},
 	];
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [BatteryGaugeResetComponent],
-			imports: [TranslationModule.forChild()],
-			providers: [TranslateStore],
-			schemas: [NO_ERRORS_SCHEMA],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [BatteryGaugeResetComponent],
+				imports: [TranslationModule.forChild()],
+				providers: [TranslateStore],
+				schemas: [NO_ERRORS_SCHEMA],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(BatteryGaugeResetComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
-		modalService = fixture.debugElement.injector.get(NgbModal);
-		powerService = fixture.debugElement.injector.get(NgbModal);
+		modalService = fixture.debugElement.injector.get(MatDialog);
+		powerService = fixture.debugElement.injector.get(MatDialog);
 	});
 
 	it('should create', () => {

@@ -2,22 +2,25 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 import { DevService } from '../../../../../services/dev/dev.service';
 import { ModalCancelComponent } from './modal-cancel.component';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('ModalCancelComponent', () => {
 	let component: ModalCancelComponent;
 	let fixture: ComponentFixture<ModalCancelComponent>;
 	let cancelModal;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
-			providers: [DevService, NgbActiveModal],
-			declarations: [ModalCancelComponent],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
+				providers: [DevService, MatDialogRef],
+				declarations: [ModalCancelComponent],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalCancelComponent);
@@ -29,7 +32,7 @@ describe('ModalCancelComponent', () => {
 	});
 
 	it('closeModal calling activeModal close', () => {
-		cancelModal = TestBed.inject(NgbActiveModal);
+		cancelModal = TestBed.inject(MatDialogRef);
 		const spy = spyOn(cancelModal, 'close');
 		component.closeModal();
 		expect(spy).toHaveBeenCalled();

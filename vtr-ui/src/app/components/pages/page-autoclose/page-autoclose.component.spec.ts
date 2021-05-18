@@ -3,6 +3,7 @@ import { Component, NO_ERRORS_SCHEMA, Input, EventEmitter, Output, Pipe } from '
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateStore } from '@ngx-translate/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import { MatDialog } from '@lenovo/material/dialog';
 
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -13,7 +14,7 @@ import { PageAutocloseComponent } from './page-autoclose.component';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
@@ -50,7 +51,7 @@ describe('PageAutocloseComponent', () => {
 	let shellServices: any;
 	let gamingQuickSettingToolbarService: any;
 	let appnotification: AppNotification;
-	let modalService: any; // let modalService: NgbModal will throw error when spyon functions of modalService
+	let modalService: any; // let modalService: MatDialog will throw error when spyon functions of modalService
 
 	describe('quick setting toolbar & toast event', () => {
 		const appDataList = {
@@ -148,7 +149,7 @@ describe('PageAutocloseComponent', () => {
 				gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
 				fixture = TestBed.createComponent(PageAutocloseComponent);
 				component = fixture.componentInstance;
-				modalService = TestBed.inject(NgbModal);
+				modalService = TestBed.inject(MatDialog);
 				fixture.detectChanges();
 			})
 		);

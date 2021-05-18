@@ -3,34 +3,38 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 import { ModalVoiceComponent } from './modal-voice.component';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
+
 import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 
 describe('ModalVoiceComponent', () => {
 	let component: ModalVoiceComponent;
 	let fixture: ComponentFixture<ModalVoiceComponent>;
-	let activaModal: NgbActiveModal;
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot({
-					loader: {
-						provide: TranslateLoader,
-						useFactory: HttpLoaderFactory,
-						deps: [HttpClient],
-					},
-				}),
-				HttpClientTestingModule,
-				RouterTestingModule,
-			],
-			declarations: [ModalVoiceComponent, SvgInlinePipe],
-			providers: [NgbActiveModal],
-		}).compileComponents();
-	}));
+	let activaModal: MatDialogRef<ModalVoiceComponent>;
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [
+					TranslateModule.forRoot({
+						loader: {
+							provide: TranslateLoader,
+							useFactory: HttpLoaderFactory,
+							deps: [HttpClient],
+						},
+					}),
+					HttpClientTestingModule,
+					RouterTestingModule,
+				],
+				declarations: [ModalVoiceComponent, SvgInlinePipe],
+				providers: [MatDialogRef],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalVoiceComponent);

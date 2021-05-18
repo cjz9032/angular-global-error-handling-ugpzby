@@ -2,6 +2,9 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { MatDialog, MatDialogModule } from '@lenovo/material/dialog';
 
 import { SubpageSmartPerformanceScanSummaryComponent } from './subpage-smart-performance-scan-summary.component';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -12,8 +15,6 @@ import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-loc
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { DevService } from 'src/app/services/dev/dev.service';
 
-import { TranslateModule } from '@ngx-translate/core';
-import { NgbModalModule, NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import moment from 'moment';
 
 const res = {
@@ -69,32 +70,33 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 	let commonService: CommonService;
 	let smartPerformanceService: SmartPerformanceService;
 	let logger: LoggerService;
-	let modalService: NgbModal;
+	let modalService: MatDialog;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			declarations: [SubpageSmartPerformanceScanSummaryComponent],
-			imports: [
-				HttpClientTestingModule,
-				RouterTestingModule,
-				TranslateModule.forRoot(),
-				NgbModalModule,
-				NgbModule,
-			],
-			providers: [
-				CommonService,
-				SmartPerformanceService,
-				SupportService,
-				VantageShellService,
-				FormatLocaleDatePipe,
-				DevService,
-				NgbModal,
-			],
-		});
-		fixture = TestBed.createComponent(SubpageSmartPerformanceScanSummaryComponent);
-		component = fixture.componentInstance;
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				declarations: [SubpageSmartPerformanceScanSummaryComponent],
+				imports: [
+					HttpClientTestingModule,
+					RouterTestingModule,
+					TranslateModule.forRoot(),
+					MatDialogModule,
+				],
+				providers: [
+					CommonService,
+					SmartPerformanceService,
+					SupportService,
+					VantageShellService,
+					FormatLocaleDatePipe,
+					DevService,
+					MatDialog,
+				],
+			});
+			fixture = TestBed.createComponent(SubpageSmartPerformanceScanSummaryComponent);
+			component = fixture.componentInstance;
+		})
+	);
 
 	it('should create SubpageSmartPerformanceScanSummaryComponent', () => {
 		commonService = TestBed.inject(CommonService);
@@ -258,7 +260,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 	});
 
 	it('should open openSubscribeModal', () => {
-		modalService = TestBed.inject(NgbModal);
+		modalService = TestBed.inject(MatDialog);
 		const spy = spyOn(modalService, 'open');
 		component.openSubscribeModal();
 		expect(spy).toHaveBeenCalled();

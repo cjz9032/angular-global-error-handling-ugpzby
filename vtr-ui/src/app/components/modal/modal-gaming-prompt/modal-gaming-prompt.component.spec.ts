@@ -4,24 +4,26 @@ import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 describe('ModalGamingPromptComponent', () => {
 	let component: ModalGamingPromptComponent;
 	let fixture: ComponentFixture<ModalGamingPromptComponent>;
 	let activeModalService: any;
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [ModalGamingPromptComponent],
-			imports: [TranslationModule],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [NgbActiveModal, HttpClient, TranslateStore],
-		});
-		activeModalService = TestBed.inject(NgbActiveModal);
-		fixture = TestBed.createComponent(ModalGamingPromptComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [ModalGamingPromptComponent],
+				imports: [TranslationModule],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [MatDialogRef, HttpClient, TranslateStore],
+			});
+			activeModalService = TestBed.inject(MatDialogRef);
+			fixture = TestBed.createComponent(ModalGamingPromptComponent);
+			component = fixture.componentInstance;
+			fixture.detectChanges();
+		})
+	);
 
 	it('should create', () => {
 		expect(component).toBeTruthy();

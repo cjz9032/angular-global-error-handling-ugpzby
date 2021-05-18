@@ -1,15 +1,18 @@
 import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { PowerSmartSettingsComponent } from './power-smart-settings.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+
+import { PowerSmartSettingsComponent } from './power-smart-settings.component';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-
 import {
 	ICModes,
 	IntelligentCoolingMode,
@@ -18,9 +21,7 @@ import {
 	DYTC6Modes,
 } from 'src/app/enums/intelligent-cooling.enum';
 import { HttpLoaderFactory } from 'src/app/modules/translation.module';
-import { HttpClient } from '@angular/common/http';
 import { DevService } from 'src/app/services/dev/dev.service';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Component: PowerSmartSetting', () => {
 	let component: PowerSmartSettingsComponent;
@@ -29,43 +30,45 @@ describe('Component: PowerSmartSetting', () => {
 	let translate: TranslateService;
 	let powerService: PowerService;
 	let metricService: MetricService;
-	// let modalService: NgbModal
-	// let modalRef: NgbModalRef
+	// let modalService: MatDialog
+	// let modalRef: MatDialogRef
 	// let originalTimeout;
 	// const thinkpad = 1;
 	// const ideapad = 0;
 	// const TRANSLATIONS_EN = require('assets/i18n/en.json');
 	// const TRANSLATIONS_FR = require('assets/i18n/fr.json');
-	beforeEach(waitForAsync(() => {
-		// originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-		// jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			declarations: [PowerSmartSettingsComponent],
-			imports: [
-				RouterTestingModule,
-				TranslateModule.forRoot({
-					loader: {
-						provide: TranslateLoader,
-						useFactory: HttpLoaderFactory,
-						deps: [HttpClient],
-					},
-				}),
-				HttpClientTestingModule,
-			],
-			providers: [
-				LoggerService,
-				PowerService,
-				CommonService,
-				TranslateService,
-				NgbModal,
-				MetricService,
-				DevService,
-			],
+	beforeEach(
+		waitForAsync(() => {
+			// originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+			// jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				declarations: [PowerSmartSettingsComponent],
+				imports: [
+					RouterTestingModule,
+					TranslateModule.forRoot({
+						loader: {
+							provide: TranslateLoader,
+							useFactory: HttpLoaderFactory,
+							deps: [HttpClient],
+						},
+					}),
+					HttpClientTestingModule,
+				],
+				providers: [
+					LoggerService,
+					PowerService,
+					CommonService,
+					TranslateService,
+					MatDialog,
+					MetricService,
+					DevService,
+				],
+			})
+				// .overrideModule(BrowserDynamicTestingModule, { set: { entryComponents: [ModalIntelligentCoolingModesComponent] } })
+				.compileComponents();
 		})
-			// .overrideModule(BrowserDynamicTestingModule, { set: { entryComponents: [ModalIntelligentCoolingModesComponent] } })
-			.compileComponents();
-	}));
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PowerSmartSettingsComponent);
@@ -117,12 +120,15 @@ describe('Component: PowerSmartSetting', () => {
 	// 	expect(component.dytc6Mode).toEqual(component.cache.captionText)
 	// });
 
-	it('should call checkDriverForThinkPad', waitForAsync(() => {
-		// spyOn<any>(component, 'isYoga730').and.returnValue(true);
-		component.cache = new IntelligentCoolingCapability();
-		component.checkDriverForThinkPad();
-		expect(component.checkDriverForThinkPad).toBeTruthy();
-	}));
+	it(
+		'should call checkDriverForThinkPad',
+		waitForAsync(() => {
+			// spyOn<any>(component, 'isYoga730').and.returnValue(true);
+			component.cache = new IntelligentCoolingCapability();
+			component.checkDriverForThinkPad();
+			expect(component.checkDriverForThinkPad).toBeTruthy();
+		})
+	);
 
 	it('should call onIntelligentCoolingToggle', () => {
 		component.cache = new IntelligentCoolingCapability();
@@ -178,67 +184,82 @@ describe('Component: PowerSmartSetting', () => {
 		expect(component.isCollapsed).toEqual(true);
 	});
 
-	it('should call initPowerSmartSettingsForIdeaPad', waitForAsync(() => {
-		const response = {
-			// available: true,
-			itsVersion: 4,
-		};
-		component.cache = new IntelligentCoolingCapability();
-		const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
-			Promise.resolve(response)
-		);
-		component.initPowerSmartSettingsForIdeaPad();
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call initPowerSmartSettingsForIdeaPad',
+		waitForAsync(() => {
+			const response = {
+				// available: true,
+				itsVersion: 4,
+			};
+			component.cache = new IntelligentCoolingCapability();
+			const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
+				Promise.resolve(response)
+			);
+			component.initPowerSmartSettingsForIdeaPad();
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call initPowerSmartSettingsForIdeaPad - available is present', waitForAsync(() => {
-		const response = {
-			available: true,
-			itsVersion: 3,
-		};
-		const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
-			Promise.resolve(response)
-		);
-		component.initPowerSmartSettingsForIdeaPad();
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call initPowerSmartSettingsForIdeaPad - available is present',
+		waitForAsync(() => {
+			const response = {
+				available: true,
+				itsVersion: 3,
+			};
+			const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
+				Promise.resolve(response)
+			);
+			component.initPowerSmartSettingsForIdeaPad();
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call initPowerSmartSettingsForIdeaPad -catch block', waitForAsync(() => {
-		// let response = {
-		// 	available: true,
-		// 	itsVersion: 3,
-		// }
-		component.cache = new IntelligentCoolingCapability();
-		const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
-			Promise.reject(Error)
-		);
-		component.initPowerSmartSettingsForIdeaPad();
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call initPowerSmartSettingsForIdeaPad -catch block',
+		waitForAsync(() => {
+			// let response = {
+			// 	available: true,
+			// 	itsVersion: 3,
+			// }
+			component.cache = new IntelligentCoolingCapability();
+			const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
+				Promise.reject(Error)
+			);
+			component.initPowerSmartSettingsForIdeaPad();
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call initPowerSmartSettingsForIdeaPad - itsVersion = 4', waitForAsync(() => {
-		const response = {
-			available: true,
-			itsVersion: 4,
-		};
-		const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
-			Promise.resolve(response)
-		);
-		component.initPowerSmartSettingsForIdeaPad();
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call initPowerSmartSettingsForIdeaPad - itsVersion = 4',
+		waitForAsync(() => {
+			const response = {
+				available: true,
+				itsVersion: 4,
+			};
+			const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
+				Promise.resolve(response)
+			);
+			component.initPowerSmartSettingsForIdeaPad();
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call initPowerSmartSettingsForIdeaPad - itsVersion >= 5', waitForAsync(() => {
-		const response = {
-			available: true,
-			itsVersion: 5,
-		};
-		const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
-			Promise.resolve(response)
-		);
-		component.initPowerSmartSettingsForIdeaPad();
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call initPowerSmartSettingsForIdeaPad - itsVersion >= 5',
+		waitForAsync(() => {
+			const response = {
+				available: true,
+				itsVersion: 5,
+			};
+			const spy = spyOn(powerService, 'getITSModeForICIdeapad').and.returnValue(
+				Promise.resolve(response)
+			);
+			component.initPowerSmartSettingsForIdeaPad();
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
 	it('should call initPowerSmartSettingsUIForIdeaPad itsVersion is 3', () => {
 		const response = {
@@ -482,80 +503,98 @@ describe('Component: PowerSmartSetting', () => {
 		expect(component.getTIOCapability).toThrow();
 	});
 
-	it('should call setAutoModeSetting', waitForAsync(() => {
-		const event = { switchValue: true };
-		component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
-		const spy = spyOn<any>(component, 'setPowerSmartSettingsForIdeaPad');
-		// @ts-ignore private method access
-		component.setAutoModeSetting(event);
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call setAutoModeSetting',
+		waitForAsync(() => {
+			const event = { switchValue: true };
+			component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
+			const spy = spyOn<any>(component, 'setPowerSmartSettingsForIdeaPad');
+			// @ts-ignore private method access
+			component.setAutoModeSetting(event);
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call setAutoModeSetting - switchValue is false', waitForAsync(() => {
-		const event = { switchValue: false };
-		component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
-		const spy = spyOn<any>(component, 'setPowerSmartSettingsForIdeaPad');
-		// @ts-ignore private method access
-		component.setAutoModeSetting(event);
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call setAutoModeSetting - switchValue is false',
+		waitForAsync(() => {
+			const event = { switchValue: false };
+			component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
+			const spy = spyOn<any>(component, 'setPowerSmartSettingsForIdeaPad');
+			// @ts-ignore private method access
+			component.setAutoModeSetting(event);
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call setManualModeSetting - IntelligentCoolingHardware.ITS13', waitForAsync(() => {
-		const mode: IntelligentCoolingMode = {
-			type: ICModes.Cool,
-			status: true,
-			ideapadType4: 'ITS_Auto',
-			ideapadType3: 'MMC_Cool',
-		};
-		component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
-		const spy = spyOn<any>(component, 'setPerformanceAndCool');
-		// @ts-ignore private method access
-		component.setManualModeSetting(mode);
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call setManualModeSetting - IntelligentCoolingHardware.ITS13',
+		waitForAsync(() => {
+			const mode: IntelligentCoolingMode = {
+				type: ICModes.Cool,
+				status: true,
+				ideapadType4: 'ITS_Auto',
+				ideapadType3: 'MMC_Cool',
+			};
+			component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
+			const spy = spyOn<any>(component, 'setPerformanceAndCool');
+			// @ts-ignore private method access
+			component.setManualModeSetting(mode);
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call setManualModeSetting - IntelligentCoolingHardware.ITS14', waitForAsync(() => {
-		const mode: IntelligentCoolingMode = {
-			type: ICModes.Performance,
-			status: false,
-			ideapadType4: 'MMC_Performance',
-			ideapadType3: 'MMC_Performance',
-		};
-		component.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
-		const spy = spyOn<any>(component, 'updateSelectedModeText');
-		// @ts-ignore private method access
-		component.setManualModeSetting(mode);
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call setManualModeSetting - IntelligentCoolingHardware.ITS14',
+		waitForAsync(() => {
+			const mode: IntelligentCoolingMode = {
+				type: ICModes.Performance,
+				status: false,
+				ideapadType4: 'MMC_Performance',
+				ideapadType3: 'MMC_Performance',
+			};
+			component.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
+			const spy = spyOn<any>(component, 'updateSelectedModeText');
+			// @ts-ignore private method access
+			component.setManualModeSetting(mode);
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call setManualModeSetting - IntelligentCoolingHardware.Legacy', waitForAsync(() => {
-		const mode: IntelligentCoolingMode = {
-			type: ICModes.Cool,
-			status: true,
-			ideapadType4: 'ITS_Auto',
-			ideapadType3: 'MMC_Cool',
-		};
-		component.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
-		const spy = spyOn<any>(component, 'setPerformanceAndCool');
-		// @ts-ignore private method access
-		component.setManualModeSetting(mode);
-		expect(spy).toHaveBeenCalled();
-	}));
+	it(
+		'should call setManualModeSetting - IntelligentCoolingHardware.Legacy',
+		waitForAsync(() => {
+			const mode: IntelligentCoolingMode = {
+				type: ICModes.Cool,
+				status: true,
+				ideapadType4: 'ITS_Auto',
+				ideapadType3: 'MMC_Cool',
+			};
+			component.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
+			const spy = spyOn<any>(component, 'setPerformanceAndCool');
+			// @ts-ignore private method access
+			component.setManualModeSetting(mode);
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call setManualModeSetting - isShellAvailable else', waitForAsync(() => {
-		const mode: IntelligentCoolingMode = {
-			type: ICModes.Cool,
-			status: true,
-			ideapadType4: 'ITS_Auto',
-			ideapadType3: 'MMC_Cool',
-		};
-		// component.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
-		powerService.isShellAvailable = false;
-		const spy = spyOn<any>(component, 'setPerformanceAndCool');
-		// @ts-ignore private method access
-		component.setManualModeSetting(mode);
-		expect(spy).not.toHaveBeenCalled();
-	}));
+	it(
+		'should call setManualModeSetting - isShellAvailable else',
+		waitForAsync(() => {
+			const mode: IntelligentCoolingMode = {
+				type: ICModes.Cool,
+				status: true,
+				ideapadType4: 'ITS_Auto',
+				ideapadType3: 'MMC_Cool',
+			};
+			// component.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
+			powerService.isShellAvailable = false;
+			const spy = spyOn<any>(component, 'setPerformanceAndCool');
+			// @ts-ignore private method access
+			component.setManualModeSetting(mode);
+			expect(spy).not.toHaveBeenCalled();
+		})
+	);
 
 	it('should throw error - getManualModeSetting', () => {
 		// @ts-ignore private method access
@@ -608,7 +647,7 @@ describe('Component: PowerSmartSetting', () => {
 	});
 
 	// it('should call coolingModesPopUp', () => {
-	// 	modalService = TestBed.inject(NgbModal)
+	// 	modalService = TestBed.inject(MatDialog)
 	// 	modalRef = modalService.open(ModalIntelligentCoolingModesComponent)
 	// 	let spy = spyOn(modalService, 'open').and.returnValue(modalRef)
 	// 	component.coolingModesPopUp()
@@ -636,29 +675,35 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call onAutoTransitionToggle', waitForAsync(() => {
-		powerService.isShellAvailable = true;
-		component.isAutoTransitionVisible = true;
+	it(
+		'should call onAutoTransitionToggle',
+		waitForAsync(() => {
+			powerService.isShellAvailable = true;
+			component.isAutoTransitionVisible = true;
 
-		component.cache = new IntelligentCoolingCapability();
-		const spy = spyOn(powerService, 'setAutoTransitionForICIdeapad').and.returnValue(
-			Promise.resolve(true)
-		);
-		component.onAutoTransitionToggle(true);
-		expect(spy).toHaveBeenCalled();
-	}));
+			component.cache = new IntelligentCoolingCapability();
+			const spy = spyOn(powerService, 'setAutoTransitionForICIdeapad').and.returnValue(
+				Promise.resolve(true)
+			);
+			component.onAutoTransitionToggle(true);
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 
-	it('should call onAutoTransitionToggle set failed', waitForAsync(() => {
-		powerService.isShellAvailable = true;
-		component.isAutoTransitionVisible = true;
+	it(
+		'should call onAutoTransitionToggle set failed',
+		waitForAsync(() => {
+			powerService.isShellAvailable = true;
+			component.isAutoTransitionVisible = true;
 
-		component.cache = new IntelligentCoolingCapability();
-		const spy = spyOn(powerService, 'setAutoTransitionForICIdeapad').and.returnValue(
-			Promise.resolve(false)
-		);
-		component.onAutoTransitionToggle(true);
-		expect(spy).toHaveBeenCalled();
-	}));
+			component.cache = new IntelligentCoolingCapability();
+			const spy = spyOn(powerService, 'setAutoTransitionForICIdeapad').and.returnValue(
+				Promise.resolve(false)
+			);
+			component.onAutoTransitionToggle(true);
+			expect(spy).toHaveBeenCalled();
+		})
+	);
 	it('should call initPowerSmartSettingsUIForIdeaPad itsVersion is 5', () => {
 		const response = {
 			available: true,

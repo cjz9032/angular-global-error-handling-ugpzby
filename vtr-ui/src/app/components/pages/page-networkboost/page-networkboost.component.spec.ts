@@ -3,6 +3,7 @@ import { Component, NO_ERRORS_SCHEMA, Input, EventEmitter } from '@angular/core'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateStore } from '@ngx-translate/core';
 import { of, BehaviorSubject } from 'rxjs';
+import { MatDialog } from '@lenovo/material/dialog';
 
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -13,7 +14,6 @@ import { PageNetworkboostComponent } from './page-networkboost.component';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
@@ -115,7 +115,7 @@ describe('PageNetworkboostComponent', () => {
 				gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
 				fixture = TestBed.createComponent(PageNetworkboostComponent);
 				component = fixture.componentInstance;
-				modalService = TestBed.inject(NgbModal);
+				modalService = TestBed.inject(MatDialog);
 				fixture.detectChanges();
 			})
 		);
