@@ -2,6 +2,90 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.8](https://bitbucket.tc.lenovo.com///compare/v1.11.38...v1.12.8) (2021-05-18)
+
+
+### Bug Fixes
+
+* remove NgbModal & NgbActiveModal ([3d542c7](https://bitbucket.tc.lenovo.com///commit/3d542c7cc13d3c70c4fd693fcf3aa380b254967e))
+* remove useless app update service ([031e2a9](https://bitbucket.tc.lenovo.com///commit/031e2a950b715f6100635c78c7889a312b9c1b35))
+
+### [1.12.7](https://bitbucket.tc.lenovo.com///compare/v1.11.37...v1.12.7) (2021-05-17)
+
+
+### Features
+
+* **protocol-guard:** add new semantic-to-path ([035f6a7](https://bitbucket.tc.lenovo.com///commit/035f6a760ba827c052990a5b7f71e360fdef102a))
+* **WelcomeTutorial:** VAN-23712 add mandatory in welcome tutorial ([bc5ddca](https://bitbucket.tc.lenovo.com///commit/bc5ddca60cc4d895a5d1b82db27ae51b68a746fb))
+
+
+### Bug Fixes
+
+* update angular.json fullstory.js only in dev&qa ([72287ce](https://bitbucket.tc.lenovo.com///commit/72287ce172f9306afd6de7acda93e68e01c1d82c))
+
+### [1.12.6](https://bitbucket.tc.lenovo.com///compare/v1.12.5...v1.12.6) (2021-05-13)
+
+
+### Bug Fixes
+
+* **menu:** align menu items to center ([3cc6e01](https://bitbucket.tc.lenovo.com///commit/3cc6e018478059cc86fa0629ef391f85c95408e2))
+
+### [1.12.5](https://bitbucket.tc.lenovo.com///compare/v1.12.4...v1.12.5) (2021-05-12)
+
+
+### Features
+
+* **auto close:** VAN-29057 auto-close files structure update ([63b79e4](https://bitbucket.tc.lenovo.com///commit/63b79e487190f67b5c3ee8856c0fe8cd55fdc248))
+
+
+### Bug Fixes
+
+* **menu:** align menu items to center ([0cf216f](https://bitbucket.tc.lenovo.com///commit/0cf216f2b960505026fee19d7ccae0602f188daf))
+* **smart-privacy:** fix performance issue ([a3c3e8b](https://bitbucket.tc.lenovo.com///commit/a3c3e8b62cffd90174fd5c6377a3cd9f5491b7b3))
+
+### [1.12.4](https://bitbucket.tc.lenovo.com///compare/v1.11.36...v1.12.4) (2021-05-11)
+
+
+### Features
+
+* add uuid in fullstory script ([6af44cc](https://bitbucket.tc.lenovo.com///commit/6af44cce52e46d2e1da4d351cb246002a47d20a0))
+
+
+### Bug Fixes
+
+* Call FS.identify to set uuid ([7ed29fd](https://bitbucket.tc.lenovo.com///commit/7ed29fd3fa44883f3b8814c3c0bfa04db20b8c06))
+
+### [1.12.3](https://bitbucket.tc.lenovo.com///compare/v1.11.35...v1.12.3) (2021-05-10)
+
+
+### Features
+
+* add deeplinks support ([18337ff](https://bitbucket.tc.lenovo.com///commit/18337fff3da0843b2087f9482ab059259fecdc45))
+* add new smart privacy ([b84fd0c](https://bitbucket.tc.lenovo.com///commit/b84fd0cfd7d0bcbd0c5d5457337d1c86765a1698))
+* **smart-privacy:** add iframe messenger ([45fddf6](https://bitbucket.tc.lenovo.com///commit/45fddf68295d343e8c503f0f5aebbd9657b21bd3))
+* **smart-privacy:** update smart privacy ([0129e4d](https://bitbucket.tc.lenovo.com///commit/0129e4d06f33f07c6f6cdfba7c73a423a8dc1b95))
+
+
+### Bug Fixes
+
+* add unsubscribe for the open buy now method ([66bdfbb](https://bitbucket.tc.lenovo.com///commit/66bdfbb04d7b35022c4a4d3a029b95f187ab1d32))
+
+### [1.12.2](https://bitbucket.tc.lenovo.com///compare/v1.11.34...v1.12.2) (2021-05-08)
+
+
+### Bug Fixes
+
+* update material select config Closes VAN-28536 ([6e8be76](https://bitbucket.tc.lenovo.com///commit/6e8be7613d09df42d1502e49b82028b51c962928))
+
+### [1.12.1](https://bitbucket.tc.lenovo.com///compare/v1.11.33...v1.12.1) (2021-05-07)
+
+## [1.12.0](https://bitbucket.tc.lenovo.com///compare/v1.11.32...v1.12.0) (2021-05-06)
+
+
+### Bug Fixes
+
+* **Chevron:** VAN-28425 modify chevron list metrics event name ([ee8ffc9](https://bitbucket.tc.lenovo.com///commit/ee8ffc9e0708cbe7645d39dbdb50a907f9ec9999))
+
 ### [1.12.7](https://bitbucket.tc.lenovo.com///compare/v1.12.6...v1.12.7) (2021-05-17)
 
 
