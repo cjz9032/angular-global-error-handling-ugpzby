@@ -107,19 +107,23 @@ vtr-subpage-smart-performance-scan-summary {
 		}
 
 		&::ng-deep {
-			ngb-accordion {
-				.card {
+			mat-accordion {
+				.mat-expansion-panel {
 					border-radius: 0.6rem;
 					border: 1px solid $screen_dark_01;
 					background: $grey_lighter;
 					margin-top: 1rem;
 					width: 100%;
+					box-shadow: none;
 
 					&:first-child {
 						margin-top: 0;
 					}
+					@media #{$high-contrast} {
+						outline: none !important;
+					}
 
-					.card-header {
+					.mat-expansion-panel-header {
 						border-bottom: none;
 						min-height: 6.3rem;
 						padding-top: 0;
@@ -128,28 +132,7 @@ vtr-subpage-smart-performance-scan-summary {
 						pointer-events: none;
 						background: $grey_lighter;
 
-						.btn-link {
-							width: 100%;
-
-							@media #{$white-on-black} {
-								border: none;
-							}
-
-							@media #{$black-on-white} {
-								border: none;
-							}
-
-							@media #{$breakpoint_sm} {
-								padding-left: 0rem;
-							}
-
-							&:hover,
-							&:focus {
-								text-decoration: none;
-							}
-						}
-
-						.collapsed {
+						&[aria-expanded='false'] {
 							.heading {
 								h2 {
 									font-size: $fontsize_xs;
@@ -201,6 +184,7 @@ vtr-subpage-smart-performance-scan-summary {
 								font-size: 3.2rem;
 								margin-right: 1.5rem;
 								color: $menu_hover;
+								line-height: 1.5;
 
 								@media #{$breakpoint_sm} {
 									height: 3rem;
@@ -213,8 +197,11 @@ vtr-subpage-smart-performance-scan-summary {
 						}
 					}
 
-					.card-body {
+					.mat-expansion-panel-content {
 						padding: 0 1.25rem;
+						.mat-expansion-panel-body {
+							padding: 0;
+						}
 
 						@media #{$breakpoint_sm} {
 							padding: 0 0.25rem;
@@ -274,7 +261,7 @@ vtr-subpage-smart-performance-scan-summary {
 		width: 100%;
 		position: relative;
 		text-align: left;
-		padding: 0.5rem 2rem 0.5rem 0.5rem;
+		padding: 1.5rem 2rem 1rem 0.5rem;
 		border-right: 1px solid $grey_light;
 
 		.icon,
