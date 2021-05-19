@@ -291,8 +291,8 @@ export abstract class CommonExportLogService {
 
 	protected setCorrectFont(content: string): any {
 		const fontByInterval = [
-			{ font: FontTypes.notokr, range: /[\u3131-\uD79D]/ }, // korean
 			{ font: FontTypes.notosc, range: /[\u4e00-\u9eff]/ }, // chinese and japanese
+			{ font: FontTypes.notokr, range: /[\u3131-\uD79D]/ }, // korean
 			{ font: FontTypes.amiri, range: /[\u0600-\u06FF]/ }, // arabic
 			{ font: FontTypes.rubik, range: this.hebrewUnicodeRange }, // hebrew
 			{ font: FontTypes.rubik, range: /[\u0370-\u03FF]/ }, // greek
