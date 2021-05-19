@@ -1,4 +1,10 @@
-import { Injectable, Injector, isDevMode, NgModule, NgZone } from "@angular/core";
+import {
+  Injectable,
+  Injector,
+  isDevMode,
+  NgModule,
+  NgZone,
+} from "@angular/core";
 
 import { get } from "./st";
 // import cloneDeep from "lodash/cloneDeep";
@@ -59,10 +65,6 @@ export function lineFeature(decoArgs: {
 
       let result: Promise<unknown> | undefined;
       if (outLineZone && initFeatureSuccess) {
-        // todo catch someSth? and rethrow it
-
-        // result = originalMethod.apply(this, args);
-
         outLineZone.runGuarded(
           function () {
             // @ts-ignore
@@ -82,10 +84,33 @@ export function lineFeature(decoArgs: {
 }
 
 function initOutLineZone(): Zone | null {
-  // Current Zone its parent, whatever what the parent it is
+  // Current Zone is the parent, whatever what the parent it is
   let _innerZone: Zone;
-  const aa = isDevMode()
-  debugger
+  let firstCallRes: any;
+  let isAsync: boolean;
+  let isFinished = false;
+
+  // From ZoneAwarePromise
+  const UNRESOLVED: null = null;
+  const RESOLVED = true;
+  const REJECTED = false;
+  const REJECTED_NO_CATCH = 0;
+  const symbolPromiseState = (window as any).__Zone_symbol_prefix + "state";
+
+  let startTime = performance.now();
+  let spendTime: number;
+  const onFinishCall = (hasTaskState?: HasTaskState) => {
+    if (isFinished) return;
+    isFinished = true;
+    const endTime = performance.now();
+    spendTime = endTime - startTime;
+    console.log(spendTime, hasTaskState);
+    // if( hasTaskState?.microTask  || hasTaskState?.eventTask || hasTaskState?.microTask ){
+    //   // there is something running in background
+    // }
+    // todo destroy?
+  };
+
   _innerZone = Zone.current.fork({
     name: "myOuterNg",
     // onHasTask bg?
@@ -98,12 +123,7 @@ function initOutLineZone(): Zone | null {
       applyArgs?: any[],
       source?: string
     ) {
-      console.log("ttttttttt");
-      console.log(delegate, applyArgs, source);
-      // todo filter the 1st call by self
-      debugger;
-      let res;
-
+      let res: unknown;
       res = parentZoneDelegate.invoke(
         targetZone,
         delegate,
@@ -111,92 +131,35 @@ function initOutLineZone(): Zone | null {
         applyArgs,
         source
       );
-
-      // try {
-      //   Zone.root
-      //   .fork({
-      //     name: "xxx",
-      //   })
-      //   .run(() => {
-      //     res = parentZoneDelegate.invoke(
-      //       targetZone,
-      //       delegate,
-      //       applyThis,
-      //       applyArgs,
-      //       source
-      //     );
-      //   });
-
-      // } catch (e) {
-      //   console.log('myee', e);
-      //   debugger
-      // }
-
-      // Zone.root
-      //   .fork({
-      //     name: "xxx",
-      //   })
-      //   .run(() => {
-      //     // res?.then((t: unknown) => {
-      //     //   debugger;
-      //     // });
-      //     // .catch((err: unknown) => {
-      //     //   debugger;
-      //     //   // throw err;
-      //     //   // return err;
-      //     // }));
-      //   });
+      if (source === "outLineZoneRoot") {
+        firstCallRes = res;
+        isAsync =
+          firstCallRes instanceof Promise &&
+          // @ts-ignore
+          firstCallRes[symbolPromiseState] === UNRESOLVED;
+        if (!isAsync) {
+          onFinishCall();
+        }
+      }
 
       return res;
     },
-    onScheduleTask: function (delegate, curr, target, task) {
-      console.log("ssssss", task);
-      console.log(
-        "new task is scheduled:",
-        task.type,
-        task.source,
-        curr,
-        delegate
-      );
-      debugger;
-      return delegate.scheduleTask(target, task);
+    onHasTask: function (delegate, curr, target, hasTaskState) {
+      if (isAsync && firstCallRes[symbolPromiseState] === RESOLVED) {
+        onFinishCall(hasTaskState);
+      }
+      return delegate.hasTask(target, hasTaskState);
     },
-    // onInvokeTask(
-    //   parentZoneDelegate: ZoneDelegate,
-    //   currentZone: Zone,
-    //   targetZone: Zone,
-    //   task: Task,
-    //   applyThis: any,
-    //   applyArgs?: any[]
-    // ) {
-    //   // console.log("xxxxx");
-    //   // console.log(task, applyArgs);
-    //   // debugger;
-    //   return parentZoneDelegate.invokeTask(
-    //     targetZone,
-    //     task,
-    //     applyThis,
-    //     applyArgs
-    //   );
-    // },
     onHandleError(
       parentZoneDelegate: ZoneDelegate,
       currentZone: Zone,
       targetZone: Zone,
       error: any
     ) {
-      // trace this trace
-      // console.error(error);
-      // console.trace();
-      // console.log(new Error().stack);
-
-      console.error(new Error());
-
-      console.log("eeeeeee");
-
-      debugger;
-
-      return true;
+      const res = parentZoneDelegate.handleError(targetZone, error);
+      // get new error
+      console.error(error);
+      return res;
     },
   });
   return _innerZone;

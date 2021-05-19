@@ -105,8 +105,9 @@ Zone.__load_patch('Error', (global: any, Zone: ZoneType, api: _ZonePrivate) => {
             i--;
             break;
           default:
-            frames[i] += isZoneFrame ? ` [${(zoneFrame as _ZoneFrame).zone.name}]` :
-                                       ` [${(zoneFrame as ZoneFrameName).zoneName}]`;
+            // todo 暂时隐藏zone, 需要查edge格式再调整
+            // frames[i] += isZoneFrame ? ` [${(zoneFrame as _ZoneFrame).zone.name}]` :
+            //                            ` [${(zoneFrame as ZoneFrameName).zoneName}]`;
         }
       }
     }

@@ -12,7 +12,6 @@ platformBrowserDynamic()
     }),
   })
   .catch((err) => {
-    debugger;
     console.error(err);
   });
 

@@ -159,7 +159,6 @@
    if (!stackTracesEnabled()) {
      return;
    }
-   debugger
    const frames: string[][] = [];
    captureStackTraces(frames, 2);
    const frames1 = frames[0];

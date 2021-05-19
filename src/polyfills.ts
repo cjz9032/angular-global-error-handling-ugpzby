@@ -2,7 +2,7 @@
 // window.__Zone_disable_Error = true
 // // @ts-ignore
 // window.__Zone_disable_ZoneAwarePromise = true
-
+(window as any).__Zone_symbol_prefix = '__zone_symbol__'
 import "zone.js";
 // import "zone.js/dist/zone-error.js";
 import "./long-stack-trace";
