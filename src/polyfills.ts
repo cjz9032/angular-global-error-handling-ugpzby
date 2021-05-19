@@ -3,13 +3,13 @@
 // // @ts-ignore
 // window.__Zone_disable_ZoneAwarePromise = true
 
-import 'zone.js';
-import 'zone.js/dist/long-stack-trace-zone.js'
-// set more long long~
-(Zone as any)['longStackTraceZoneSpec'].longStackTraceLimit = 20;
+import "zone.js";
+// import "zone.js/dist/zone-error.js";
+import "./long-stack-trace";
+import "./error-rewrite";
 // import 'zone.js/dist/task-tracking.js'
-import 'zone.js/dist/zone-error.js'
-
+// (Zone as any)['longStackTraceZoneSpec'].longStackTraceLimit = 20;
+// set more long long~
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
