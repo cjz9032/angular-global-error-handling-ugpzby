@@ -2,7 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { SPHistoryScanResultsDateTime, SPResult, SPResultContent } from '../../interface/smart-performance.interface';
+import {
+	SPHistoryScanResultsDateTime,
+	SPResult,
+	SPResultContent,
+} from '../../interface/smart-performance.interface';
 
 @Component({
 	selector: 'vtr-subpage-scan-results-accordion',
@@ -13,7 +17,7 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	@Input() resultItem: SPHistoryScanResultsDateTime;
 	spResults: SPResult[] = [
 		{
-			id: 'Tune up performance',
+			id: 'Tune-up-performance',
 			header: {
 				id: 'smart-performance-scan-result-tunPC-title',
 				icon: 'icomoon-tune-pc',
@@ -95,7 +99,7 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 			],
 		},
 		{
-			id: 'Internet performance',
+			id: 'Internet-performance',
 			header: {
 				id: 'smart-performance-scan-result-boost-extra-title',
 				icon: 'icomoon-boost-internet',
@@ -177,7 +181,7 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 			],
 		},
 		{
-			id: 'Malware & Security',
+			id: 'Malware-Security',
 			header: {
 				id: 'smart-performance-scan-result-malware-title',
 				icon: 'icomoon-malware',
@@ -267,8 +271,8 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 
 	constructor(
 		public smartPerformanceService: SmartPerformanceService,
-		private translate: TranslateService,
-	) { }
+		private translate: TranslateService
+	) {}
 	ngOnInit(): void {
 		this.isEn = this.translate.currentLang === 'en';
 	}

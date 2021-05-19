@@ -8,7 +8,6 @@ import {
 	EventEmitter,
 	ElementRef,
 } from '@angular/core';
-import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -23,8 +22,6 @@ import { MatDialog } from '@lenovo/material/dialog';
 	styleUrls: ['./subpage-scanning.component.scss'],
 })
 export class SubpageScanningComponent implements OnInit, OnChanges {
-	@ViewChild('acc', { static: false }) accordionComponent: NgbAccordion;
-	@ViewChild('spScanningAccordion', { static: false }) spScanningAccordion: ElementRef;
 	@Input() showProgress = true;
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
@@ -57,7 +54,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.percent = 0;
@@ -81,14 +78,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 			this.translate.instant('smartPerformance.tunePCPerformance.title'),
 			this.sampleDesc
 		);
-		setTimeout(() => {
-			const accordionCards: HTMLButtonElement[] = this.spScanningAccordion.nativeElement.getElementsByTagName(
-				'button'
-			);
-			for (const card of accordionCards) {
-				card.setAttribute('tabindex', '-1');
-			}
-		}, 0);
 	}
 	ngOnChanges(changes) {
 		if (this.scheduleScanData) {
@@ -110,13 +99,10 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 
 		if (catVal === SPSubCategory.TunePC) {
 			this.activeGroup = SPCategory.TuneUpPerformance;
-			this.toggle(this.activeGroup);
 		} else if (catVal === SPSubCategory.Boost) {
 			this.activeGroup = SPCategory.InternetPerformance;
-			this.toggle(this.activeGroup);
 		} else if (catVal === SPSubCategory.Malware) {
 			this.activeGroup = SPCategory.MalwareSecurity;
-			this.toggle(this.activeGroup);
 		}
 
 		if (catVal === SPSubCategory.TunePC) {
@@ -264,10 +250,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 				this.sendModelStatus.emit();
 			}
 		});
-	}
-
-	toggle(id: string): void {
-		this.accordionComponent.expand(id);
 	}
 
 	updateTitleAndSubItems(nameVal, descVal) {

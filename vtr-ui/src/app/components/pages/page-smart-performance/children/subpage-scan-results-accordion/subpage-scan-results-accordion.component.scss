@@ -2,29 +2,39 @@
 
 .pc-info-card {
 	&::ng-deep {
-		ngb-accordion {
-			.card {
+		mat-accordion {
+			.mat-expansion-panel {
 				border-radius: 0.6rem;
 				border: 1px solid $screen_dark_01;
 				background: $grey_lighter;
 				margin-top: 1rem;
 				width: 100%;
+				box-shadow: none;
 
 				&:first-child {
 					margin-top: 0;
 				}
 
-				.card-header {
+				@media #{$high-contrast} {
+					outline: none !important;
+				}
+
+				.mat-expansion-panel-header {
 					border-bottom: none;
 					min-height: 6.3rem;
 					display: flex;
-					padding: 0.75rem;
+					padding: 0.75rem 2rem;
 					background: $grey_lighter;
+					&:focus {
+						border: 0.1rem solid $menu_hover;
+						@media #{$high-contrast} {
+							border: none;
+						}
+					}
 
 					.card-heading {
 						width: 100%;
 						position: relative;
-						padding: 0 1.25rem;
 
 						@media #{$white-on-black} {
 							border: none;
@@ -61,23 +71,11 @@
 						color: $menu_hover;
 					}
 
-					.chevron-up {
-						display: block;
+					.mat-expansion-indicator {
+						display: flex;
 					}
 
-					.chevron-down {
-						display: none;
-					}
-
-					.collapsed {
-						.chevron-up {
-							display: none;
-						}
-
-						.chevron-down {
-							display: block;
-						}
-
+					&[aria-expanded='false'] {
 						.heading {
 							h2 {
 								font-size: $fontsize_xs;
@@ -100,6 +98,11 @@
 									font-size: $fontsize_xs;
 								}
 							}
+						}
+					}
+					&[aria-expanded='true'] {
+						.mat-expansion-indicator {
+							margin-top: 0.5rem;
 						}
 					}
 
@@ -179,9 +182,7 @@
 					}
 				}
 
-				.card-body {
-					padding: 0 1rem $padding_content $padding_content;
-
+				.mat-expansion-panel-content {
 					h4 {
 						font-size: $fontsize_xs;
 					}
@@ -290,7 +291,6 @@
 								.icomoon {
 									font-size: 2.8rem;
 									margin-right: 1rem;
-									margin-top: -0.8rem;
 									&::before {
 										color: $tab_gray;
 									}
