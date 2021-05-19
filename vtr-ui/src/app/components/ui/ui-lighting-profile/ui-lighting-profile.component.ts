@@ -200,8 +200,13 @@ export class UiLightingProfileComponent implements OnInit {
 							LocalStorageKey.ProfileId,
 							this.currentProfileId
 						);
+						if (this.currentProfileId === 0) {
+							this.isProfileOff = true;
+						} else {
+							this.isProfileOff = false;
+							this.getLightingProfileById(this.currentProfileId);
+						}
 					}
-					this.getLightingProfileById(this.currentProfileId);
 				}).catch(() => {
 					this.getLightingProfileById(this.currentProfileId);
 				});

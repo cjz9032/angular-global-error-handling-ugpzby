@@ -13,6 +13,7 @@ import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -42,7 +43,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		public dashboardService: DashboardService,
 		private translate: TranslateService,
 		public deviceService: DeviceService,
-		private router: Router
+		private router: Router,
+		private gamingAllCapabilitiesService: GamingAllCapabilitiesService
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.route.params.subscribe((params) => {
@@ -55,12 +57,12 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.getLayOutversion();
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
 		this.capabilitySubscription = this.commonService
 			.getCapabalitiesNotification()
 			.subscribe((response) => {
 				if (response.type === Gaming.GamingCapabilities) {
-					this.getLayOutversion();
+					this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
 				}
 			});
 		this.notificationSubscription = this.commonService.notification.subscribe(
@@ -68,6 +70,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 				this.onNotification(notification);
 			}
 		);
+		this.checkGamingCapabilities();
 	}
 
 	ngOnDestroy() {
@@ -145,19 +148,30 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else {
 		}
 	}
-	public getLayOutversion() {
-		const ledSetFeature = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.ledSetFeature
-		);
-		const ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
-		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.ledLayoutVersion
-		);
-		if (!ledSetFeature || !ledDriver || this.ledlayoutversion === undefined) {
-			this.router.navigate(['/device-gaming']);
+
+	// Version 3.8 protocol
+	public checkGamingCapabilities() {
+		// condition: 1. get capability finish(homepage trigger) 2. getting capability(homepage trigger) 3. never get capability(protocol)
+		if (this.gamingAllCapabilitiesService.isGetCapabilitiesAready) {
+			const ledSetFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledSetFeature);
+			const ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
+			this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
+			if (!ledSetFeature || !ledDriver || this.ledlayoutversion === undefined) {
+				this.router.navigate(['/device-gaming']);
+			}
+		} else {
+			this.gamingAllCapabilitiesService
+			.getCapabilities()
+			.then((response) => {
+				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+				this.ledlayoutversion = response.ledLayoutVersion;
+				if (!response.ledSetFeature || !response.ledDriver || response.ledLayoutVersion === undefined) {
+					this.router.navigate(['/device-gaming']);
+				}
+			})
+			.catch((err) => { });
 		}
 	}
 }

@@ -15,6 +15,8 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 import { MatDialog } from '@lenovo/material/dialog';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import {  Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -61,13 +63,16 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		private shellServices: VantageShellService,
 		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
 		private ngZone: NgZone,
-		private dialog: MatDialog
+		private dialog: MatDialog,
+		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
+		private router: Router
 	) {
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
 	}
 
 	ngOnInit() {
+		this.checkGamingCapabilities();
 		this.notificationSubscrition = this.commonService.notification.subscribe(
 			(notification: AppNotification) => {
 				this.onNotification(notification);
@@ -349,5 +354,28 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,
 			this.networkBoostEvent
 		);
+	}
+
+	// Versioin 3.8 for protocol
+	public checkGamingCapabilities() {
+		if (!this.gamingAllCapabilitiesService.isGetCapabilitiesAready) {
+			this.gamingAllCapabilitiesService
+			.getCapabilities()
+			.then((response) => {
+				if (response) {
+					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+					if (!response.networkBoostFeature || !response.fbnetFilter) {
+						this.router.navigate(['/device-gaming']);
+					}
+				}
+			})
+			.catch((err) => { });
+		} else {
+			const networkBoostFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.networkBoostFeature, false);
+			const fbNetFilter = this.localCacheService.getLocalCacheValue(LocalStorageKey.fbNetFilter, false);
+			if (!networkBoostFeature || !fbNetFilter) {
+				this.router.navigate(['/device-gaming']);
+			}
+		}
 	}
 }

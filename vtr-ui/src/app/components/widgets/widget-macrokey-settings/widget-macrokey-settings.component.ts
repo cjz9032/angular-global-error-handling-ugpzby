@@ -90,16 +90,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.macroKeyFeature
-		);
-		this.initMacroKeySubpage();
-		this.notificationSubscription = this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.gamingProperties = response.payload;
-				this.initMacroKeySubpage();
-			}
-		});
+		this.checkGamingCapabilities();
+		this.initMacroKeyEvents();
 		// Load all the cache status for Macrokey
 		this.macroKeyTypeStatus = this.macroKeyService.getMacrokeyTypeStatusCache();
 		this.macroKeyRecordedStatus = this.macroKeyService.getMacrokeyRecordedStatusCache();
@@ -118,14 +110,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
 			this.tooltipsValue = this.translate.instant('gaming.macroKey.status.whileGaming.title');
-		}
-	}
-
-	initMacroKeySubpage() {
-		if (this.gamingProperties.macroKeyFeature) {
-			this.initMacroKeyEvents();
-		} else {
-			this.redirectBack();
 		}
 	}
 
@@ -302,5 +286,30 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	clearMacroKey() {
 		this.macroKeyInputData.macro.inputs = [];
+	}
+
+	// Version 3.8 protocol
+	checkGamingCapabilities() {
+		if (!this.gamingCapabilityService.isGetCapabilitiesAready) {
+			this.gamingCapabilityService
+			.getCapabilities()
+			.then((response) => {
+				if (response) {
+					this.gamingProperties = response;
+					this.gamingCapabilityService.setCapabilityValuesGlobally(response);
+					if (!this.gamingProperties.macroKeyFeature) {
+						this.router.navigate(['/device-gaming']);
+					}
+				}
+			})
+			.catch((err) => { });
+		} else {
+			this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
+				LocalStorageKey.macroKeyFeature
+			);
+			if (!this.gamingProperties.macroKeyFeature) {
+				this.router.navigate(['/device-gaming']);
+			}
+		}
 	}
 }
