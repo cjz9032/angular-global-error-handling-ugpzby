@@ -41,14 +41,14 @@
 					<div class="row">
 						<div class="col col-12 pc-performance-block">
 							<div class="row">
-								<ngb-tabset class="tabset-main">
-									<ngb-tab id="main-1">
-										<ng-template ngbTabTitle>
+								<mat-tab-group class="tabset-main" [disablePagination]="true" id="smart-performance">
+									<mat-tab>
+										<ng-template mat-tab-label>
 											<div class="icomoon icomoon-tune-pc"></div>
 											<p role="title"
 												id="smart-performance-tune-pc-title">{{'smartPerformance.tunePCPerformance.title' |translate }}</p>
 										</ng-template>
-										<ng-template ngbTabContent>
+										<ng-template matTabContent>
 											<h1 id="smart-performance-tune-pc-head">{{'smartPerformance.tunePCPerformance.heading' |translate }}</h1>
 											<h5 id="smart-performance-tune-pc-desc">{{'smartPerformance.tunePCPerformance.description' |translate }}</h5>
 											<div class="icon-bar my-5">
@@ -110,14 +110,14 @@
 												</div>
 											</div>
 										</ng-template>
-									</ngb-tab>
-									<ngb-tab id="main-2">
-										<ng-template ngbTabTitle>
+									</mat-tab>
+									<mat-tab>
+										<ng-template mat-tab-label>
 											<div class="icomoon icomoon-boost-internet"></div>
 											<p id="smart-performance-boost-title"
 												role="title">{{'smartPerformance.boostInternetPerformance.title' |translate }}</p>
 										</ng-template>
-										<ng-template ngbTabContent>
+										<ng-template matTabContent>
 											<h1 id="smart-performance-boost-head">{{'smartPerformance.boostInternetPerformance.heading' |translate }}</h1>
 											<h5 id="smart-performance-boost-desc">{{'smartPerformance.boostInternetPerformance.description' |translate }}</h5>
 											<div class="icon-bar my-5">
@@ -179,14 +179,14 @@
 												</div>
 											</div>
 										</ng-template>
-									</ngb-tab>
-									<ngb-tab id="main-3">
-										<ng-template ngbTabTitle>
+									</mat-tab>
+									<mat-tab>
+										<ng-template mat-tab-label>
 											<span class="icomoon icomoon-malware-security"></span>
 											<p id="smart-performance-malware-title"
 												role="title">{{'smartPerformance.malwareSecurity.title' |translate }}</p>
 										</ng-template>
-										<ng-template ngbTabContent>
+										<ng-template matTabContent>
 											<h1 id="smart-performance-malware-head">{{'smartPerformance.malwareSecurity.heading' |translate }}</h1>
 											<h5 id="smart-performance-malware-desc">{{'smartPerformance.malwareSecurity.description' |translate }}</h5>
 											<div class="icon-bar my-5">
@@ -248,15 +248,14 @@
 												</div>
 											</div>
 										</ng-template>
-									</ngb-tab>
-
-									<ngb-tab id="main-4">
-										<ng-template ngbTabTitle>
+									</mat-tab>
+									<mat-tab id="main-4">
+										<ng-template mat-tab-label>
 											<span class="icomoon icomoon-proactive"></span>
 											<p id="smart-performance-proactive-title"
 												role="title">{{'smartPerformance.proactiveAutomated.title' |translate }}</p>
 										</ng-template>
-										<ng-template ngbTabContent>
+										<ng-template matTabContent>
 											<h1 id="smart-performance-proactive-head">{{'smartPerformance.proactiveAutomated.heading' |translate }}</h1>
 											<h5 id="smart-performance-proactive-desc">{{'smartPerformance.proactiveAutomated.description' |translate }}</h5>
 											<div class="icon-bar my-5">
@@ -315,8 +314,8 @@
 												</div>
 											</div>
 										</ng-template>
-									</ngb-tab>
-								</ngb-tabset>
+									</mat-tab>
+								</mat-tab-group>
 							</div>
 						</div>
 					</div>

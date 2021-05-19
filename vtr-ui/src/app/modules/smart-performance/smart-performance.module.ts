@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatIconModule } from '@lenovo/material/icon';
 import { MatExpansionModule } from '@lenovo/material/expansion';
+import { MatTabsModule } from '@lenovo/material/tabs';
 
 import { SmartPerformanceRoutingModule } from './smart-performance-routing.module';
 import { PageSmartPerformanceComponent } from '../../components/pages/page-smart-performance/page-smart-performance.component';
@@ -83,6 +84,7 @@ import { UiDotAnimateComponent } from 'src/app/components/ui/ui-dot-animate/ui-d
 		MatTooltipModule,
 		MatIconModule,
 		MatExpansionModule,
+		MatTabsModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [
