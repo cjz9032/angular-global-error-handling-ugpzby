@@ -30,7 +30,31 @@ const featureMap: {
 } = {};
 
 // longLog
-let longLog = [];
+class LongLog {
+  // error: Error = getStacktrace();
+  // timestamp: Date = new Date();
+}
+
+class LongLogContainer {
+  private longLogLimit = 1_000;
+  private _longLog: LongLog[] = [];
+  timestamp: Date = new Date();
+
+  private onAddLog() {
+    // parse
+    // must parse the info  last one with 
+  }
+
+  public addLog(longLog: LongLog) {
+    this._longLog.push(longLog);
+    if (this._longLog.length > this.longLogLimit) {
+      this._longLog = this._longLog.slice(-this.longLogLimit);
+    }
+    this.onAddLog();
+  }
+}
+
+const longLogContainer = new LongLogContainer();
 
 let lastNodeInfo: {
   node: FeatureNode;
