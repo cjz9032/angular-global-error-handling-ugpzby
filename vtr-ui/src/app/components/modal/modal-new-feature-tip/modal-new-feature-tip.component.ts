@@ -51,6 +51,11 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 			desc: 'notification.menu.productivity',
 			version: this.tipsVersions['v3.7'],
 		},
+		{
+			tipId: MenuID.device,
+			desc: 'notification.menu.autoClose',
+			version: this.tipsVersions['v3.8'],
+		},
 	];
 
 	metrics: any;
