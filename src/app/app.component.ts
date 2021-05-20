@@ -1,51 +1,7 @@
 import { Component, NgZone } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { lineFeature, FeatureNodeTypeEnum } from "./line-feature";
-
-// import "zone.js/dist/zone";
-// const script = document.createElement("script");
-// script.src = "./scripts/fullstory.js";
-// document.head.appendChild(script);
-
-// function __awaiter(
-//   thisArg: unknown,
-//   _arguments: unknown,
-//   P: Promise,
-//   generator: Generator
-// ) {
-//   function adopt(value) {
-//     return value instanceof P
-//       ? value
-//       : new P(function (resolve) {
-//           resolve(value);
-//         });
-//   }
-//   return new (P || (P = Promise))(function (resolve, reject) {
-//     function fulfilled(value) {
-//       try {
-//         step(generator.next(value));
-//       } catch (e) {
-//         reject(e);
-//       }
-//     }
-//     function rejected(value) {
-//       try {
-//         step(generator["throw"](value));
-//       } catch (e) {
-//         reject(e);
-//       }
-//     }
-//     function step(result) {
-//       result.done
-//         ? resolve(result.value)
-//         : adopt(result.value).then(fulfilled, rejected);
-//     }
-//     step((generator = generator.apply(thisArg, _arguments || [])).next());
-//   });
-// }
-/**
- * @title Basic progress-spinner
- */
+import { lineFeature } from "./line-feature/";
+import { FeatureNodeTypeEnum } from "./line-feature/log-container";
 
 const DoFirst = function (num: number): Promise<string> {
   let p: Promise<string> = new Promise(function (r, rej) {
@@ -57,10 +13,10 @@ const DoFirst = function (num: number): Promise<string> {
     //   // } else {
     //   // }
     // }, num * 0);
-    r("1");
     // rej(123);
     // rej(new Error('123'));
     // r("1");
+    r("1");
   });
   p = p.then((t) => {
     if (num !== 1) {
@@ -80,15 +36,13 @@ const DoFirst = function (num: number): Promise<string> {
 export class AppComponent {
   public someCode: string = "nothing";
 
-  constructor(private http: HttpClient, private ngZone: NgZone) {
-    console.log(this);
-  }
+  constructor(private http: HttpClient, private ngZone: NgZone) {}
 
   @lineFeature({
     featureName: "use-case-1",
     node: {
       nodeName: "localAnnotation",
-      nodeType: FeatureNodeTypeEnum.START,
+      nodeType: FeatureNodeTypeEnum.start,
     },
   })
   public async localAnnotation() {
