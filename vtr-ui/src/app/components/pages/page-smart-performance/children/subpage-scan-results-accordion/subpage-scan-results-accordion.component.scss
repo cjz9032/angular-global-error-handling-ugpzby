@@ -25,8 +25,10 @@
 					display: flex;
 					padding: 0.75rem 2rem;
 					background: $grey_lighter;
+
 					&:focus {
 						border: 0.1rem solid $menu_hover;
+
 						@media #{$high-contrast} {
 							border: none;
 						}
@@ -100,6 +102,7 @@
 							}
 						}
 					}
+
 					&[aria-expanded='true'] {
 						.mat-expansion-indicator {
 							margin-top: 0.5rem;
@@ -206,18 +209,22 @@
 							width: 16rem;
 							color: $tab_gray;
 							cursor: pointer;
+
 							* {
 								cursor: pointer;
 							}
+
 							&:focus {
 								@include outline-blue;
 							}
 
 							&.is-selected {
 								cursor: default;
+
 								* {
 									cursor: default;
 								}
+
 								background: $grey_light;
 								color: $menu_hover;
 								border-radius: 0.7rem 0.2rem 0.2rem 0.7rem;
@@ -245,9 +252,11 @@
 									border-left: 2rem solid $grey_light;
 									border-bottom: 3.5rem solid transparent;
 								}
+
 								@media #{$black-on-white} {
 									background: $shade_light;
 									color: $dark;
+
 									&::before {
 										background: $light;
 									}
@@ -258,9 +267,11 @@
 										border-bottom: 3.5rem solid transparent;
 									}
 								}
+
 								@media #{$white-on-black} {
 									background: $shade_dark;
 									color: $light;
+
 									&::before {
 										background: $dark;
 									}
@@ -291,6 +302,7 @@
 								.icomoon {
 									font-size: 2.8rem;
 									margin-right: 1rem;
+
 									&::before {
 										color: $tab_gray;
 									}
@@ -312,6 +324,10 @@
 
 									&.is-en {
 										width: 8rem;
+									}
+
+									&.long-word-lang {
+										hyphens: auto;
 									}
 								}
 
@@ -348,11 +364,9 @@
 									height: 2rem;
 									border: 0.2rem solid $go_dark;
 									text-align: center;
-									background: linear-gradient(
-										$gradient_angle,
-										$go 0%,
-										$go_light 100%
-									);
+									background: linear-gradient($gradient_angle,
+											$go 0%,
+											$go_light 100%);
 									background-color: $go_dark;
 									flex-shrink: 0;
 									@include high-contrast-status-icon-and-badge;
