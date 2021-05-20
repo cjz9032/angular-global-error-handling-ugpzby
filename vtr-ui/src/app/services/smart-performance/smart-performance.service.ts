@@ -14,6 +14,7 @@ import {
 	SPYearPrice,
 } from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
 import currencyFormater from 'currency-formatter';
+import { TranslateService } from '@ngx-translate/core';
 
 declare let Windows: any;
 
@@ -40,6 +41,7 @@ export class SmartPerformanceService {
 	localPriceData: SPLocalPriceData;
 	isLocalPriceOnlineChecked = false;
 	isFirstRunSmartPerformance = false;
+	isLongWordLang = false;
 
 	constructor(
 		shellService: VantageShellService,
@@ -47,12 +49,15 @@ export class SmartPerformanceService {
 		private httpClient: HttpClient,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
+		private translate: TranslateService,
 		private logger: LoggerService
 	) {
 		this.shellSmartPerformance = shellService.getSmartPerformance();
 		if (this.shellSmartPerformance) {
 			this.isShellAvailable = true;
 		}
+		const curLang = this.translate.currentLang;
+		this.isLongWordLang = ['de', 'sv', 'da', 'fi', 'hu', 'nb', 'nl'].includes(curLang);
 		this.getLocalYearPrice();
 	}
 

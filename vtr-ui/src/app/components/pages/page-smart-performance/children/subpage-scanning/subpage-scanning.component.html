@@ -62,7 +62,10 @@
 
 						<div class="pc-info-card pc-accordion w-100">
 							<mat-accordion>
-								<mat-expansion-panel [panelId]="'Tune-up-performance'" hideToggle [expanded]="this.activeGroup === SPCategory.TuneUpPerformance" [disabled]="true">
+								<mat-expansion-panel [panelId]="'Tune-up-performance'"
+									hideToggle
+									[expanded]="this.activeGroup === SPCategory.TuneUpPerformance"
+									[disabled]="true">
 									<mat-expansion-panel-header tabindex="-1">
 										<div class="w-100 d-flex justify-content-between align-items-center">
 											<div class="heading">
@@ -88,8 +91,10 @@
 											</div>
 										</div>
 									</mat-expansion-panel-header>
-									<div class="d-flex"  *ngIf="scanData?.status?.subcategory">
-										<div class="d-flex flex-column justify-content-between align-items-center pb-4 icon-box-content">
+									<div class="d-flex"
+										*ngIf="scanData?.status?.subcategory">
+										<div class="d-flex flex-column justify-content-between align-items-center pb-4 icon-box-content"
+											[class.long-word-lang]="smartPerformanceService.isLongWordLang">
 											<div class="icon-box d-flex align-items-center">
 												<div class="icomoon icomoon-e-junk"
 													[ngClass]="{'text-primary': scanData.status.subcategory==SPSubCategory.TunePCAccumulateJunk}">
@@ -152,7 +157,10 @@
 										</div>
 									</div>
 								</mat-expansion-panel>
-								<mat-expansion-panel [panelId]="'Internet-performance'" hideToggle [expanded]="this.activeGroup === SPCategory.InternetPerformance" [disabled]="true">
+								<mat-expansion-panel [panelId]="'Internet-performance'"
+									hideToggle
+									[expanded]="this.activeGroup === SPCategory.InternetPerformance"
+									[disabled]="true">
 									<mat-expansion-panel-header tabindex="-1">
 										<div class="w-100 d-flex justify-content-between align-items-center">
 											<div class="heading">
@@ -181,8 +189,10 @@
 											</div>
 										</div>
 									</mat-expansion-panel-header>
-									<div class="d-flex" *ngIf="scanData?.status?.subcategory">
-										<div class="d-flex flex-column justify-content-between align-items-center pb-4 icon-box-content">
+									<div class="d-flex"
+										*ngIf="scanData?.status?.subcategory">
+										<div class="d-flex flex-column justify-content-between align-items-center pb-4 icon-box-content"
+											[class.long-word-lang]="smartPerformanceService.isLongWordLang">
 											<div class="icon-box d-flex align-items-center">
 												<div class="icomoon icomoon-e-junk"
 													[ngClass]="{'text-primary': scanData.status.subcategory==SPSubCategory.BoostEJunk}">
@@ -245,7 +255,10 @@
 										</div>
 									</div>
 								</mat-expansion-panel>
-								<mat-expansion-panel [panelId]="'Malware-Security'" hideToggle [expanded]="this.activeGroup === SPCategory.MalwareSecurity" [disabled]="true">
+								<mat-expansion-panel [panelId]="'Malware-Security'"
+									hideToggle
+									[expanded]="this.activeGroup === SPCategory.MalwareSecurity"
+									[disabled]="true">
 									<mat-expansion-panel-header tabindex="-1">
 										<div class="w-100 d-flex justify-content-between align-items-center">
 											<div class="heading">
@@ -269,8 +282,10 @@
 											</div>
 										</div>
 									</mat-expansion-panel-header>
-									<div class="d-flex" *ngIf="scanData?.status?.subcategory">
-										<div class="d-flex flex-column justify-content-between align-items-center pb-4 icon-box-content">
+									<div class="d-flex"
+										*ngIf="scanData?.status?.subcategory">
+										<div class="d-flex flex-column justify-content-between align-items-center pb-4 icon-box-content"
+											[class.long-word-lang]="smartPerformanceService.isLongWordLang">
 											<div class="icon-box d-flex align-items-center">
 												<div class="icomoon icomoon-malware-scan"
 													[ngClass]="{'text-primary': scanData.status.subcategory==SPSubCategory.MalwareSan}">

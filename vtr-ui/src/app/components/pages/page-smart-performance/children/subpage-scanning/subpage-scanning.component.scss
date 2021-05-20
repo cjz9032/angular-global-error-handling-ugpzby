@@ -119,6 +119,7 @@ vtr-subpage-smart-performance-scan-summary {
 					&:first-child {
 						margin-top: 0;
 					}
+
 					@media #{$high-contrast} {
 						outline: none !important;
 					}
@@ -199,6 +200,7 @@ vtr-subpage-smart-performance-scan-summary {
 
 					.mat-expansion-panel-content {
 						padding: 0 1.25rem;
+
 						.mat-expansion-panel-body {
 							padding: 0;
 						}
@@ -255,6 +257,14 @@ vtr-subpage-smart-performance-scan-summary {
 	.icon-box-content {
 		width: 15rem;
 		padding-left: 0.5rem;
+
+		&.long-word-lang {
+			.icon-box {
+				p {
+					hyphens: auto;
+				}
+			}
+		}
 	}
 
 	.icon-box {
@@ -277,6 +287,7 @@ vtr-subpage-smart-performance-scan-summary {
 			line-height: 1.4;
 			margin: 0;
 			color: $tab_gray;
+			width: calc(-3rem + 100%);
 		}
 	}
 

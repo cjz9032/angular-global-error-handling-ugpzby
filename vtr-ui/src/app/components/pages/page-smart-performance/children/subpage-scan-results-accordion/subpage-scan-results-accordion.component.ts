@@ -272,9 +272,10 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	constructor(
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) {}
+	) { }
 	ngOnInit(): void {
-		this.isEn = this.translate.currentLang === 'en';
+		const curLang = this.translate.currentLang;
+		this.isEn = curLang === 'en';
 	}
 
 	switchToResultCard(element: any, isExpanded: boolean, result: SPResult) {
@@ -287,4 +288,5 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 		result.activeContentId = content.id;
 		this.currentContent = content;
 	}
+
 }
