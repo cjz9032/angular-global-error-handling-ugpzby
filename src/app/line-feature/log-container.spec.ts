@@ -53,31 +53,7 @@ it("should parse logs to generator new FeatureLine ", () => {
   expect(logCot.features.length).toEqual(1);
 });
 
-it("should parse logs to generator new FeatureLine when there`s no feature", () => {
-  const invalidNode = {
-    featureName: "a",
-    nodeName: "b",
-    nodeType: FeatureNodeTypeEnum.end,
-    nodeDescription: "",
-    nodeStatus: FeatureNodeStatusEnum.fail,
-    spendTime: 0,
-  };
-  const logCot = new LongLogContainer();
-  logCot.addLogs([new LongLog(invalidNode)]);
-  // there is nothing to do
-  expect(logCot.features.length).toEqual(0);
-
-  logCot.addLogs([
-    new LongLog({
-      ...invalidNode,
-      nodeType: FeatureNodeTypeEnum.start,
-    }),
-  ]);
-  expect(logCot.features.length).toEqual(1);
-  expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.fail);
-});
-
-it("should avoid the same node restart", () => {
+it("should avoid restarting from the same node ", () => {
   const sameStartNode = {
     featureName: "a",
     nodeName: "b",
@@ -94,7 +70,7 @@ it("should avoid the same node restart", () => {
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.pending);
 });
 
-it("should not the same as current feat", () => {
+it("should start a new feature when last feature is diffrent", () => {
   const logCot = new LongLogContainer();
   logCot.addLogs([
     new LongLog({
@@ -118,7 +94,7 @@ it("should not the same as current feat", () => {
   expect(logCot.features[1].featureStatus).toEqual(FeatureStatusEnum.pending);
 });
 
-it("should the same as current feat and all the logs are success", () => {
+it("should all the logs are success", () => {
   const logCot = new LongLogContainer();
   logCot.addLogs([
     new LongLog({
@@ -153,7 +129,7 @@ it("should the same as current feat and all the logs are success", () => {
   expect(logCot.features.length).toEqual(1);
 });
 
-it("should the same as current feat but the nodes has somesth wrong", () => {
+it("should the nodes has somesth wrong", () => {
   const logCot = new LongLogContainer();
   logCot.addLogs([
     new LongLog({
