@@ -39,7 +39,7 @@ export class AppComponent {
   constructor(private http: HttpClient, private ngZone: NgZone) {}
 
   @lineFeature({
-    featureName: "use-case-1",
+    featureName: ["use-case-1", "use-case-2"],
     node: {
       nodeName: "startF1",
       nodeType: FeatureNodeTypeEnum.start,
@@ -94,7 +94,7 @@ export class AppComponent {
   })
   public async middleF2() {
     // @ts-ignore
-    this.assad.ads = 213
+    this.assad.ads = 213;
     this.someCode = "123";
   }
 

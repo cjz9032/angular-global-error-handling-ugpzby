@@ -31,7 +31,7 @@ const genId = () => logId++;
 
 // longLog
 export class LongLog {
-  createtime: Date = new Date();
+  createtime: number = +new Date();
   id: string = genId().toString();
 
   constructor(
@@ -40,7 +40,6 @@ export class LongLog {
 }
 
 export class Feature {
-  // createtime: Date = new Date();
   id: string = genId().toString();
 
   constructor(
@@ -73,7 +72,7 @@ export class Feature {
     return (
       firstNode.nodeInfo.spendTime +
       (this.nodeLogs.length > 1
-        ? lastNode.createtime.getTime() - firstNode.createtime.getTime()
+        ? lastNode.createtime - firstNode.createtime
         : 0)
     );
   }
@@ -214,6 +213,7 @@ export class LongLogContainer {
     return {
       _longLog: undefined,
       _parsedFeats: undefined,
+      features: this.features,
       longLogs: this.longLogs.map((t) => ({
         ...t,
         nodeInfo: {

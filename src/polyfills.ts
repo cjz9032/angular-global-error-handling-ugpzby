@@ -5,10 +5,10 @@
 (window as any).__Zone_symbol_prefix = '__zone_symbol__'
 import "zone.js";
 // import "zone.js/dist/zone-error.js";
-import "./long-stack-trace";
-import "./error-rewrite";
-// import 'zone.js/dist/task-tracking.js'
+// import "./long-stack-trace";
 // (Zone as any)['longStackTraceZoneSpec'].longStackTraceLimit = 20;
+import 'zone.js/dist/task-tracking.js'
+import "./error-rewrite";
 // set more long long~
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
