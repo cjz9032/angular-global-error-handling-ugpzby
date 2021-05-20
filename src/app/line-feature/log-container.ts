@@ -35,12 +35,12 @@ export class LongLog {
   id: string = genId().toString();
 
   constructor(
-    public nodeInfo: FeatureNode & { spendTime: number; error?: any }
+    public nodeInfo: FeatureNode & { spendTime: number; error?: Error }
   ) {}
 }
 
 export class Feature {
-  createtime: Date = new Date();
+  // createtime: Date = new Date();
   id: string = genId().toString();
 
   constructor(
@@ -64,21 +64,43 @@ export class Feature {
     if (this.nodeLogs.length === 0) return 0;
     const lastNode = last(this.nodeLogs)!;
     const firstNode = this.nodeLogs[0];
-    if (this.nodeLogs.length === 1) return this.nodeLogs[0].nodeInfo.spendTime;
     return (
-      (lastNode.createtime.getTime() - firstNode.createtime.getTime()) / 1000
+      firstNode.nodeInfo.spendTime +
+      (this.nodeLogs.length > 1
+        ? lastNode.createtime.getTime() - firstNode.createtime.getTime()
+        : 0)
     );
   }
 
   get error() {
     return last(this.nodeLogs)?.nodeInfo.error;
   }
+
+  // prevent cyclic error when call JSON.stringify
+  toJSON() {
+    return {
+      ...this,
+      nodeLogs: this.nodeLogs.map((t) => ({
+        ...t,
+        nodeInfo: {
+          ...t.nodeInfo,
+          error: {
+            message: t.nodeInfo.error?.message,
+            stack: t.nodeInfo.error?.stack,
+          },
+        },
+      })),
+      error: {
+        message: this.error?.message,
+        stack: this.error?.stack,
+      },
+    };
+  }
 }
 
 export class LongLogContainer {
   private _longLogs: LongLog[] = [];
   private _parsedFeats: Feature[] = [];
-  timestamp: Date = new Date();
   constructor(private longLogLimit = 1_000) {}
 
   private parseLog(longLogs: LongLog[]) {
@@ -167,5 +189,22 @@ export class LongLogContainer {
         this._longLogs.length - this.longLogLimit
       );
     }
+  }
+
+  toJSON() {
+    return {
+      _longLog: undefined,
+      _parsedFeats: undefined,
+      longLogs: this.longLogs.map((t) => ({
+        ...t,
+        nodeInfo: {
+          ...t.nodeInfo,
+          error: {
+            message: t.nodeInfo.error?.message,
+            stack: t.nodeInfo.error?.stack,
+          },
+        },
+      })),
+    };
   }
 }
