@@ -49,7 +49,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	loop;
 	delay;
 	title = 'smartPerformance.title';
-	isLongWordLang: boolean;
 	constructor(
 		private dialog: MatDialog,
 		public shellServices: VantageShellService,
@@ -60,8 +59,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	ngOnInit() {
 		this.percent = 0;
 		this.isLoading = true;
-		const curLang = this.translate.currentLang;
-		this.isLongWordLang = ['de', 'sv', 'da', 'fi', 'hu', 'nb', 'nl'].includes(curLang);
 		this.headerTitle = `${this.translate.instant(
 			'smartPerformance.scanningPage.scanningSystem'
 		)}`;
@@ -272,8 +269,4 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		}
 		this.currentScanningItems[0].isCurrent = true;
 	}
-
-
-
-
 }

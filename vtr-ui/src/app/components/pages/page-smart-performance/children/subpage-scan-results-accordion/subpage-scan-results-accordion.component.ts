@@ -267,7 +267,6 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	currentContent: SPResultContent = this.spResults[0].contents[0];
 
 	isEn: boolean;
-	isLongWordLang: boolean;
 	SubscriptionState = SubscriptionState;
 
 	constructor(
@@ -277,7 +276,6 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	ngOnInit(): void {
 		const curLang = this.translate.currentLang;
 		this.isEn = curLang === 'en';
-		this.isLongWordLang = ['de', 'sv', 'da', 'fi', 'hu', 'nb', 'nl'].includes(curLang);
 	}
 
 	switchToResultCard(element: any, isExpanded: boolean, result: SPResult) {
