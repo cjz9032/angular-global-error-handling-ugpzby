@@ -163,3 +163,42 @@ it("should the nodes has somesth wrong", () => {
 
   expect(logCot.features.length).toEqual(1);
 });
+
+it("should go through a branch when the root node have multi branch", () => {
+  const logCot = new LongLogContainer();
+  logCot.addLogs([
+    new LongLog({
+      featureName: ["feat-1", "feat-2"],
+      nodeName: "root-node",
+      nodeType: FeatureNodeTypeEnum.start,
+      nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
+    }),
+  ]);
+  // root->n2 [√]
+  logCot.addLogs([
+    new LongLog({
+      featureName: "feat-1",
+      nodeName: "node-2",
+      nodeType: FeatureNodeTypeEnum.middle,
+      nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
+    }),
+  ]);
+  expect(logCot.features.length).toEqual(1);
+  expect(logCot.features[0].featureName).toEqual("feat-1");
+  expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.pending);
+  
+  // new root [√]
+  logCot.addLogs([
+    new LongLog({
+      featureName: "feat-3",
+      nodeName: "node-3",
+      nodeType: FeatureNodeTypeEnum.start,
+      nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
+    }),
+  ]);
+  expect(logCot.features.length).toEqual(2);
+  expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.left);
+});

@@ -1,4 +1,4 @@
-import _, { cloneDeep, last } from "lodash";
+import { cloneDeep, last, intersection, reduce } from "lodash";
 
 export enum FeatureNodeTypeEnum {
   start,
@@ -19,7 +19,7 @@ export enum FeatureStatusEnum {
 }
 
 export interface FeatureNode {
-  featureName: string;
+  featureName: string | string[];
   nodeName: string;
   nodeType: FeatureNodeTypeEnum;
   nodeDescription?: string;
@@ -44,14 +44,20 @@ export class Feature {
   id: string = genId().toString();
 
   constructor(
-    public featureName: string,
+    public featureName: string | string[],
     public featureStatus: FeatureStatusEnum,
     public nodeLogs: LongLog[]
   ) {}
 
+  // cause featureName would update by next node
+  get originFeatureName() {
+    if (this.nodeLogs.length === 0) return "";
+    return this.nodeLogs[0].nodeInfo.featureName;
+  }
+
   get spendTimeWithoutWaiting() {
     if (this.nodeLogs.length === 0) return 0;
-    return _.reduce(
+    return reduce(
       this.nodeLogs,
       (prev, cur) => {
         return prev + cur.nodeInfo.spendTime;
@@ -80,6 +86,7 @@ export class Feature {
   toJSON() {
     return {
       ...this,
+      originFeatureName: this.originFeatureName,
       nodeLogs: this.nodeLogs.map((t) => ({
         ...t,
         nodeInfo: {
@@ -108,7 +115,17 @@ export class LongLogContainer {
     while (toProcessLogs.length) {
       const lastFeat = last(this._parsedFeats);
       const curLog = toProcessLogs.shift()!;
-      const { featureName: curFeatName } = curLog.nodeInfo;
+
+      const _calcIntersectionFeatureName = (
+        name1: string | string[],
+        name2: string | string[]
+      ) => {
+        let name1Trans: string[] = Array.isArray(name1) ? name1 : [name1];
+        let name2Trans: string[] = Array.isArray(name2) ? name2 : [name2];
+        const res = intersection(name1Trans, name2Trans);
+        if (res.length === 0) return null;
+        return res.length < 2 ? res[0] : res;
+      };
 
       const addNextFeat = (nextLog: LongLog) => {
         if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start) {
@@ -120,14 +137,6 @@ export class LongLogContainer {
                 : FeatureStatusEnum.fail,
               [nextLog]
             )
-            //   {
-            //   featureName: nextLog.nodeInfo.featureName,
-            //   nodeLogs: [nextLog],
-            //   featureStatus:
-            //     nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
-            //       ? FeatureStatusEnum.pending
-            //       : FeatureStatusEnum.fail,
-            // }
           );
           return last(this._parsedFeats)!;
         }
@@ -141,15 +150,20 @@ export class LongLogContainer {
       };
 
       const continueLastFeat = (lastFeat: Feature, nextLog: LongLog) => {
-        // not valid
         if (lastFeat.featureStatus !== FeatureStatusEnum.pending) {
           addNextFeat(curLog);
           return false;
         }
+        // not valid
         if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start)
           return false;
 
         lastFeat.nodeLogs.push(curLog);
+        lastFeat.featureName =
+          _calcIntersectionFeatureName(
+            lastFeat.featureName,
+            curLog.nodeInfo.featureName
+          ) || "";
         lastFeat.featureStatus =
           nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
             ? nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.middle
@@ -160,7 +174,12 @@ export class LongLogContainer {
       };
 
       if (lastFeat) {
-        if (lastFeat.featureName === curFeatName) {
+        if (
+          _calcIntersectionFeatureName(
+            lastFeat.featureName,
+            curLog.nodeInfo.featureName
+          ) !== null
+        ) {
           continueLastFeat(lastFeat, curLog);
         } else {
           // resolve last, and continue it

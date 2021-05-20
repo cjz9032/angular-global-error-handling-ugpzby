@@ -14,7 +14,7 @@ type FeatureNodeInView = {
 };
 
 export function lineFeature(decoArgs: {
-  featureName: string;
+  featureName: string | string[];
   node: FeatureNodeInView;
 }) {
   return function (
