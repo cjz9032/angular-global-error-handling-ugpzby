@@ -273,13 +273,11 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	constructor(
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) {}
+	) { }
 	ngOnInit(): void {
 		const curLang = this.translate.currentLang;
 		this.isEn = curLang === 'en';
-		this.isLongWordLang = curLang === 'de' || curLang === 'sv'
-			|| curLang === 'da' || curLang === 'fi' || curLang === 'hu' || curLang === 'nb'
-			|| curLang === 'nl';
+		this.isLongWordLang = ['de', 'sv', 'da', 'fi', 'hu', 'nb', 'nl'].includes(curLang);
 	}
 
 	switchToResultCard(element: any, isExpanded: boolean, result: SPResult) {

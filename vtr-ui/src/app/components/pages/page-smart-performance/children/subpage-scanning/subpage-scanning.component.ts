@@ -55,16 +55,13 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.percent = 0;
 		this.isLoading = true;
 		const curLang = this.translate.currentLang;
-		this.isLongWordLang = curLang === 'de' || curLang === 'sv'
-			|| curLang === 'da' || curLang === 'fi' || curLang === 'hu' || curLang === 'nb'
-			|| curLang === 'nl';
-
+		this.isLongWordLang = ['de', 'sv', 'da', 'fi', 'hu', 'nb', 'nl'].includes(curLang);
 		this.headerTitle = `${this.translate.instant(
 			'smartPerformance.scanningPage.scanningSystem'
 		)}`;
