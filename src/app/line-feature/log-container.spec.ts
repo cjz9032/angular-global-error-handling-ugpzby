@@ -6,31 +6,17 @@ import {
   FeatureNode,
   FeatureNodeStatusEnum,
   FeatureStatusEnum,
+  Feature,
 } from "./log-container";
 
-it("should same node restart", () => {
-  const sameStartNode: FeatureNode = {
-    featureName: "a",
-    nodeName: "b",
-    nodeType: FeatureNodeTypeEnum.start,
-    nodeDescription: "",
-    nodeStatus: FeatureNodeStatusEnum.success,
-  };
-  const logCot = new LongLogContainer();
-  logCot.addLogs([new LongLog(sameStartNode)]);
-  logCot.addLogs([new LongLog(sameStartNode)]);
-  // there is nothing to do
-  expect(logCot.features.length).toEqual(1);
-  expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.pending);
-});
-
 it("should be a rotation log with limiting numbers items", () => {
-  const anyNode: FeatureNode = {
+  const anyNode = {
     featureName: "a",
     nodeName: "b",
     nodeType: FeatureNodeTypeEnum.end,
     nodeDescription: "",
     nodeStatus: FeatureNodeStatusEnum.success,
+    spendTime: 0,
   };
   const logCot = new LongLogContainer(10);
   const firstItem: LongLog = new LongLog(anyNode);
@@ -44,12 +30,13 @@ it("should be a rotation log with limiting numbers items", () => {
 });
 
 it("should parse logs to generator new FeatureLine ", () => {
-  const invalidNode: FeatureNode = {
+  const invalidNode = {
     featureName: "a",
     nodeName: "b",
     nodeType: FeatureNodeTypeEnum.end,
     nodeDescription: "",
     nodeStatus: FeatureNodeStatusEnum.fail,
+    spendTime: 0,
   };
   const logCot = new LongLogContainer();
   logCot.addLogs([new LongLog(invalidNode)]);
@@ -67,12 +54,13 @@ it("should parse logs to generator new FeatureLine ", () => {
 });
 
 it("should parse logs to generator new FeatureLine when there`s no feature", () => {
-  const invalidNode: FeatureNode = {
+  const invalidNode = {
     featureName: "a",
     nodeName: "b",
     nodeType: FeatureNodeTypeEnum.end,
     nodeDescription: "",
     nodeStatus: FeatureNodeStatusEnum.fail,
+    spendTime: 0,
   };
   const logCot = new LongLogContainer();
   logCot.addLogs([new LongLog(invalidNode)]);
@@ -89,13 +77,14 @@ it("should parse logs to generator new FeatureLine when there`s no feature", () 
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.fail);
 });
 
-it("should same node restart", () => {
-  const sameStartNode: FeatureNode = {
+it("should avoid the same node restart", () => {
+  const sameStartNode = {
     featureName: "a",
     nodeName: "b",
     nodeType: FeatureNodeTypeEnum.start,
     nodeDescription: "",
     nodeStatus: FeatureNodeStatusEnum.success,
+    spendTime: 0,
   };
   const logCot = new LongLogContainer();
   logCot.addLogs([new LongLog(sameStartNode)]);
@@ -113,6 +102,7 @@ it("should not the same as current feat", () => {
       nodeName: "feat-1__node-1",
       nodeType: FeatureNodeTypeEnum.start,
       nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
     }),
   ]);
   logCot.addLogs([
@@ -121,6 +111,7 @@ it("should not the same as current feat", () => {
       nodeName: "feat-2__node-1",
       nodeType: FeatureNodeTypeEnum.start,
       nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
     }),
   ]);
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.left);
@@ -135,6 +126,7 @@ it("should the same as current feat and all the logs are success", () => {
       nodeName: "feat-1__node-1",
       nodeType: FeatureNodeTypeEnum.start,
       nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
     }),
   ]);
   logCot.addLogs([
@@ -143,6 +135,7 @@ it("should the same as current feat and all the logs are success", () => {
       nodeName: "feat-1__node-2",
       nodeType: FeatureNodeTypeEnum.middle,
       nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
     }),
   ]);
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.pending);
@@ -152,6 +145,7 @@ it("should the same as current feat and all the logs are success", () => {
       nodeName: "feat-1__node-3",
       nodeType: FeatureNodeTypeEnum.end,
       nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
     }),
   ]);
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.success);
@@ -167,6 +161,7 @@ it("should the same as current feat but the nodes has somesth wrong", () => {
       nodeName: "feat-1__node-1",
       nodeType: FeatureNodeTypeEnum.start,
       nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
     }),
   ]);
   logCot.addLogs([
@@ -175,6 +170,7 @@ it("should the same as current feat but the nodes has somesth wrong", () => {
       nodeName: "feat-1__node-2",
       nodeType: FeatureNodeTypeEnum.middle,
       nodeStatus: FeatureNodeStatusEnum.fail,
+      spendTime: 0,
     }),
   ]);
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.fail);
@@ -184,6 +180,7 @@ it("should the same as current feat but the nodes has somesth wrong", () => {
       nodeName: "feat-1__node-3",
       nodeType: FeatureNodeTypeEnum.end,
       nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
     }),
   ]);
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.fail);

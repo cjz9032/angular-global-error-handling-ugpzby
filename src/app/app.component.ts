@@ -41,11 +41,39 @@ export class AppComponent {
   @lineFeature({
     featureName: "use-case-1",
     node: {
-      nodeName: "localAnnotation",
+      nodeName: "startF1",
       nodeType: FeatureNodeTypeEnum.start,
     },
   })
-  public async localAnnotation() {
+  public async startF1() {
+    this.someCode = "123";
+    return 666;
+  }
+
+  @lineFeature({
+    featureName: "use-case-1",
+    node: {
+      nodeName: "middleF1",
+      nodeType: FeatureNodeTypeEnum.middle,
+    },
+  })
+  public async middleF1() {
+    this.someCode = "123";
+  }
+
+  @lineFeature({
+    featureName: "use-case-1",
+    node: {
+      nodeName: "endF1",
+      nodeType: FeatureNodeTypeEnum.end,
+    },
+  })
+  public async endF1() {
+    await new Promise((r) => setTimeout(() => r(1), 1000));
+    this.someCode = "123";
+  }
+
+  public async endF2() {
     this.someCode = "123";
     // await 123;
 
@@ -82,21 +110,7 @@ export class AppComponent {
     // @ts-ignore
   }
 
-  async localError() {
-    // throw Error("The app component has thrown an error!");
-    // this.someCode = "123";
-    // await new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve(666);
-    //   }, 1000);
-    // });
-    // await new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve(666);
-    //   }, 1000);
-    // });
-    // this.someCode = "456";
-  }
+  async localError() {}
 
   failingRequest() {}
 

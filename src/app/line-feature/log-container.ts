@@ -1,4 +1,4 @@
-import _, { cloneDeep, last } from 'lodash';
+import _, { cloneDeep, last } from "lodash";
 
 export enum FeatureNodeTypeEnum {
   start,
@@ -31,16 +31,44 @@ const genId = () => logId++;
 
 // longLog
 export class LongLog<T = any> {
-  timestamp: Date = new Date();
+  createtime: Date = new Date();
   id: string = genId().toString();
 
-  constructor(public nodeInfo: FeatureNode, public props?: T) {}
+  constructor(
+    public nodeInfo: FeatureNode & { spendTime: number },
+    public props?: T
+  ) {}
 }
 
-interface Feature<T> {
-  featureName: string;
-  nodeLogs: LongLog<T>[];
-  featureStatus: FeatureStatusEnum;
+export class Feature<T = any> {
+  createtime: Date = new Date();
+  id: string = genId().toString();
+
+  constructor(
+    public featureName: string,
+    public featureStatus: FeatureStatusEnum,
+    public nodeLogs: LongLog<T>[]
+  ) {}
+
+  get spendTimeWithoutWaiting() {
+    if (this.nodeLogs.length === 0) return 0;
+    return _.reduce(
+      this.nodeLogs,
+      (prev, cur) => {
+        return prev + cur.nodeInfo.spendTime;
+      },
+      0
+    );
+  }
+
+  get spendTime() {
+    if (this.nodeLogs.length === 0) return 0;
+    const lastNode = last(this.nodeLogs)!;
+    const firstNode = this.nodeLogs[0];
+    return (
+      (lastNode.createtime.getTime() - firstNode.createtime.getTime()) / 1000
+    );
+  }
 }
 
 export class LongLogContainer<T = any> {
@@ -58,14 +86,23 @@ export class LongLogContainer<T = any> {
 
       const addNextFeat = (nextLog: LongLog<T>) => {
         if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start) {
-          this._parsedFeats.push({
-            featureName: nextLog.nodeInfo.featureName,
-            nodeLogs: [nextLog],
-            featureStatus:
+          this._parsedFeats.push(
+            new Feature<T>(
+              nextLog.nodeInfo.featureName,
               nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
                 ? FeatureStatusEnum.pending
                 : FeatureStatusEnum.fail,
-          });
+              [nextLog]
+            )
+            //   {
+            //   featureName: nextLog.nodeInfo.featureName,
+            //   nodeLogs: [nextLog],
+            //   featureStatus:
+            //     nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
+            //       ? FeatureStatusEnum.pending
+            //       : FeatureStatusEnum.fail,
+            // }
+          );
           return last(this._parsedFeats)!;
         }
         return false;
@@ -79,7 +116,10 @@ export class LongLogContainer<T = any> {
 
       const continueLastFeat = (lastFeat: Feature<T>, nextLog: LongLog<T>) => {
         // not valid
-        if (lastFeat.featureStatus !== FeatureStatusEnum.pending) return false;
+        if (lastFeat.featureStatus !== FeatureStatusEnum.pending) {
+          addNextFeat(curLog);
+          return false;
+        }
         if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start)
           return false;
 
@@ -95,10 +135,7 @@ export class LongLogContainer<T = any> {
 
       if (lastFeat) {
         if (lastFeat.featureName === curFeatName) {
-          const is = continueLastFeat(lastFeat, curLog);
-          if (!is) {
-            addNextFeat(curLog);
-          }
+          continueLastFeat(lastFeat, curLog);
         } else {
           // resolve last, and continue it
           resolveLastFeat(lastFeat);
@@ -123,7 +160,7 @@ export class LongLogContainer<T = any> {
     this.parseLog(longLogs);
     if (this._longLogs.length > this.longLogLimit) {
       this._longLogs = this._longLogs.slice(
-        this._longLogs.length - this.longLogLimit,
+        this._longLogs.length - this.longLogLimit
       );
     }
   }

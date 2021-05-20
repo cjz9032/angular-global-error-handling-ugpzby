@@ -32,6 +32,7 @@ export function lineFeature(decoArgs: {
             {
               ...curNode,
               featureName,
+              spendTime: zoneNodeInfo.spendTime,
               nodeStatus: !!zoneNodeInfo.error
                 ? FeatureNodeStatusEnum.fail
                 : FeatureNodeStatusEnum.success,
@@ -62,7 +63,7 @@ export function lineFeature(decoArgs: {
 }
 
 const logContainer = new LongLogContainer<ZoneNodeInfo>();
-(window as any).__myLogContainer = logContainer
+(window as any).__myLogContainer = logContainer;
 
 interface ZoneNodeInfo {
   spendTime: number;
