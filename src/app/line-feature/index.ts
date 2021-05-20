@@ -28,17 +28,15 @@ export function lineFeature(decoArgs: {
       const { node: curNode, featureName } = decoArgs;
       const outLineZone = initOutLineZone((zoneNodeInfo) => {
         logContainer.addLogs([
-          new LongLog<ZoneNodeInfo>(
-            {
-              ...curNode,
-              featureName,
-              spendTime: zoneNodeInfo.spendTime,
-              nodeStatus: !!zoneNodeInfo.error
-                ? FeatureNodeStatusEnum.fail
-                : FeatureNodeStatusEnum.success,
-            },
-            zoneNodeInfo
-          ),
+          new LongLog({
+            ...curNode,
+            featureName,
+            error: zoneNodeInfo.error,
+            spendTime: zoneNodeInfo.spendTime,
+            nodeStatus: !!zoneNodeInfo.error
+              ? FeatureNodeStatusEnum.fail
+              : FeatureNodeStatusEnum.success,
+          }),
         ]);
       });
 
@@ -62,7 +60,7 @@ export function lineFeature(decoArgs: {
   };
 }
 
-const logContainer = new LongLogContainer<ZoneNodeInfo>();
+const logContainer = new LongLogContainer();
 (window as any).__myLogContainer = logContainer;
 
 interface ZoneNodeInfo {
@@ -136,7 +134,9 @@ function initOutLineZone(
           // @ts-ignore
           firstCallRes[symbolPromiseState] === UNRESOLVED;
         if (!isAsync) {
-          onFinishCall({});
+          setTimeout(() => {
+            onFinishCall({});
+          });
         }
       }
 

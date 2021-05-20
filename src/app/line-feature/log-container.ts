@@ -30,24 +30,23 @@ let logId = 0;
 const genId = () => logId++;
 
 // longLog
-export class LongLog<T = any> {
+export class LongLog {
   createtime: Date = new Date();
   id: string = genId().toString();
 
   constructor(
-    public nodeInfo: FeatureNode & { spendTime: number },
-    public props?: T
+    public nodeInfo: FeatureNode & { spendTime: number; error?: any }
   ) {}
 }
 
-export class Feature<T = any> {
+export class Feature {
   createtime: Date = new Date();
   id: string = genId().toString();
 
   constructor(
     public featureName: string,
     public featureStatus: FeatureStatusEnum,
-    public nodeLogs: LongLog<T>[]
+    public nodeLogs: LongLog[]
   ) {}
 
   get spendTimeWithoutWaiting() {
@@ -70,25 +69,29 @@ export class Feature<T = any> {
       (lastNode.createtime.getTime() - firstNode.createtime.getTime()) / 1000
     );
   }
+
+  get error() {
+    return last(this.nodeLogs)?.nodeInfo.error;
+  }
 }
 
-export class LongLogContainer<T = any> {
-  private _longLogs: LongLog<T>[] = [];
-  private _parsedFeats: Feature<T>[] = [];
+export class LongLogContainer {
+  private _longLogs: LongLog[] = [];
+  private _parsedFeats: Feature[] = [];
   timestamp: Date = new Date();
   constructor(private longLogLimit = 1_000) {}
 
-  private parseLog(longLogs: LongLog<T>[]) {
+  private parseLog(longLogs: LongLog[]) {
     const toProcessLogs = cloneDeep(longLogs);
     while (toProcessLogs.length) {
       const lastFeat = last(this._parsedFeats);
       const curLog = toProcessLogs.shift()!;
       const { featureName: curFeatName } = curLog.nodeInfo;
 
-      const addNextFeat = (nextLog: LongLog<T>) => {
+      const addNextFeat = (nextLog: LongLog) => {
         if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start) {
           this._parsedFeats.push(
-            new Feature<T>(
+            new Feature(
               nextLog.nodeInfo.featureName,
               nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
                 ? FeatureStatusEnum.pending
@@ -109,13 +112,13 @@ export class LongLogContainer<T = any> {
         return false;
       };
 
-      const resolveLastFeat = (lastFeat: Feature<T>) => {
+      const resolveLastFeat = (lastFeat: Feature) => {
         if (lastFeat.featureStatus !== FeatureStatusEnum.pending) return false;
         lastFeat.featureStatus = FeatureStatusEnum.left;
         return true;
       };
 
-      const continueLastFeat = (lastFeat: Feature<T>, nextLog: LongLog<T>) => {
+      const continueLastFeat = (lastFeat: Feature, nextLog: LongLog) => {
         // not valid
         if (lastFeat.featureStatus !== FeatureStatusEnum.pending) {
           addNextFeat(curLog);
@@ -156,7 +159,7 @@ export class LongLogContainer<T = any> {
     return this._parsedFeats;
   }
 
-  public addLogs(longLogs: LongLog<T>[]) {
+  public addLogs(longLogs: LongLog[]) {
     this._longLogs = this._longLogs.concat(longLogs);
     this.parseLog(longLogs);
     if (this._longLogs.length > this.longLogLimit) {

@@ -73,38 +73,75 @@ export class AppComponent {
     this.someCode = "123";
   }
 
-  public async endF2() {
+  @lineFeature({
+    featureName: "use-case-2",
+    node: {
+      nodeName: "startF2",
+      nodeType: FeatureNodeTypeEnum.start,
+    },
+  })
+  public async startF2() {
     this.someCode = "123";
-    // await 123;
-
-    // const abc: string = await DoFirst(1);
-    // this.someCode = abc;
-    // // debugger;
-    // try {
-    //   const abc2: string = await DoFirst(2);
-    //   this.someCode = abc2;
-    // } catch (e) {
-    // }
-    // // in bg?
-    // new Promise((res) => {
-    //   setTimeout(() => {
-    //     res("bg123");
-    //   }, 3000);
-    // });
-
-    // const abc3: string = await DoFirst(3);
-    // this.someCode = abc3;
-
-    // const res: string = await new Promise((r, rej) => {
-    //   // r("123");
-    //   rej(new Error("err"));
-    //   // rej("err");
-    // });
-    // this.someCode = res;
-
-    // debugger;
     return 666;
   }
+
+  @lineFeature({
+    featureName: "use-case-2",
+    node: {
+      nodeName: "middleF2",
+      nodeType: FeatureNodeTypeEnum.middle,
+    },
+  })
+  public async middleF2() {
+    // @ts-ignore
+    this.assad.ads = 213
+    this.someCode = "123";
+  }
+
+  @lineFeature({
+    featureName: "use-case-2",
+    node: {
+      nodeName: "endF2",
+      nodeType: FeatureNodeTypeEnum.end,
+    },
+  })
+  public async endF2() {
+    await new Promise((r) => setTimeout(() => r(1), 1000));
+    this.someCode = "123";
+  }
+
+  // public async endF2() {
+  //   this.someCode = "123";
+  //   // await 123;
+
+  //   // const abc: string = await DoFirst(1);
+  //   // this.someCode = abc;
+  //   // // debugger;
+  //   // try {
+  //   //   const abc2: string = await DoFirst(2);
+  //   //   this.someCode = abc2;
+  //   // } catch (e) {
+  //   // }
+  //   // // in bg?
+  //   // new Promise((res) => {
+  //   //   setTimeout(() => {
+  //   //     res("bg123");
+  //   //   }, 3000);
+  //   // });
+
+  //   // const abc3: string = await DoFirst(3);
+  //   // this.someCode = abc3;
+
+  //   // const res: string = await new Promise((r, rej) => {
+  //   //   // r("123");
+  //   //   rej(new Error("err"));
+  //   //   // rej("err");
+  //   // });
+  //   // this.someCode = res;
+
+  //   // debugger;
+  //   return 666;
+  // }
 
   localErrorInZone() {
     // @ts-ignore
