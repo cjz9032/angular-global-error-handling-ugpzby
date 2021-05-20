@@ -65,6 +65,7 @@ export class Feature<T = any> {
     if (this.nodeLogs.length === 0) return 0;
     const lastNode = last(this.nodeLogs)!;
     const firstNode = this.nodeLogs[0];
+    if (this.nodeLogs.length === 1) return this.nodeLogs[0].nodeInfo.spendTime;
     return (
       (lastNode.createtime.getTime() - firstNode.createtime.getTime()) / 1000
     );
