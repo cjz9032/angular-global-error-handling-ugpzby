@@ -5579,7 +5579,8 @@
 			"connectedHomeSecurity": "Obtenha monitoramento e alertas em tempo real sobre a segurança da sua rede doméstica. Você será o primeiro a saber se algum dos seus dispositivos inteligentes está sofrendo um ataque de segurança.",
 			"hardwareScan": "Agora você pode obter o status de integridade do componente de hardware do sistema.",
 			"appSearch": "Você sabia? Você pode pesquisar os recursos aplicáveis ao seu dispositivo aqui.",
-			"productivity": "Deseja melhorar a eficiência do seu trabalho?"
+			"productivity": "Deseja melhorar a eficiência do seu trabalho?",
+			"autoClose": "Você sabia? O recurso \"Impulsionamento do desempenho\" pode ajudar você a aumentar a velocidade de carregamento do jogo. Experimente agora no Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5643,6 +5644,22 @@
 		"title": "Expresse suas ideias",
 		"likeUs": "Curtir",
 		"feedback": "Deixar comentário"
+	},
+	"intelligentBoost": {
+		"title": "Impulsionamento de jogo inteligente",
+		"appsContainerTitle": "Aplicativos adicionados à lista",
+		"edit": "Editar",
+		"done": "Pronto",
+		"add": "Adicionar",
+		"appsDialog": "Lista de aplicativos em execução",
+		"appsDialogDesc": "Apenas os aplicativos em execução serão exibidos na lista abaixo",
+		"appsDialogDisabledTooltip": "Desmarque no aplicativo primeiro",
+		"appsDialogWarn": "Nenhum aplicativo em execução",
+		"appsDialogWarnDesc": "Apenas os aplicativos em execução podem ser exibidos. Você pode iniciar um aplicativo que deseja adicionar e depois o verá aqui.",
+		"networkBoost": "Impulsionamento da rede",
+		"networkBoostDesc": "Este recurso definirá automaticamente a prioridade dos jogos para o nível mais alto na rede, aumentando a velocidade. Para usar aplicativos durante o jogo, sugerimos adicioná-los abaixo para que eles também recebam prioridade na rede.",
+		"performanceBoost": "Impulsionamento do desempenho",
+		"performanceBoostDesc": "Este recurso fechará automaticamente os aplicativos que você adicionou abaixo ao iniciar um jogo. Isso pode liberar recursos não utilizados para maior desempenho. Esteja ciente de que os aplicativos adicionados à lista serão fechados completamente. Sempre verifique se você salvou o trabalho."
 	},
 	"smb": {
 		"meetingExperience": {

@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。",
 			"hardwareScan": "現在，您可以取得系統硬體元件的性能狀態。",
 			"appSearch": "您知道嗎？您可以在此處搜尋適用於您裝置的功能。",
-			"productivity": "您想要提升工作效率嗎？"
+			"productivity": "您想要提升工作效率嗎？",
+			"autoClose": "您知道嗎？「提高效能」功能可協助您提升遊戲載入速度。立即在智慧助理中嘗試。"
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "讓我們聽到您的聲音",
 		"likeUs": "為我們按讚",
 		"feedback": "留下意見"
+	},
+	"intelligentBoost": {
+		"title": "智慧型遊戲體驗提升",
+		"appsContainerTitle": "已新增至清單的應用程式",
+		"edit": "編輯",
+		"done": "完畢",
+		"add": "新增",
+		"appsDialog": "執行中應用程式清單",
+		"appsDialogDesc": "下方清單中只會顯示目前執行中的應用程式",
+		"appsDialogDisabledTooltip": "請先取消核取應用程式",
+		"appsDialogWarn": "沒有執行中的應用程式",
+		"appsDialogWarnDesc": "只能顯示目前執行中的應用程式。您可以啟動要新增的應用程式，然後就可以在這裡看到該應用程式。",
+		"networkBoost": "網路加速",
+		"networkBoostDesc": "此功能會自動在您的網路中將遊戲的優先順序設定為最高等級，以達到最高速度。若您在玩遊戲時使用應用程式，建議您在下方加上它們，讓它們也能在您網路上取得優先權。",
+		"performanceBoost": "提高效能",
+		"performanceBoostDesc": "此功能會在啟動遊戲時，自動關閉您在下方加入的應用程式。這將會釋出未使用的資源，以獲得最佳效能。請注意，加入此清單中的應用程式將完全關閉，因此請務必確保您已儲存工作。"
 	},
 	"smb": {
 		"meetingExperience": {

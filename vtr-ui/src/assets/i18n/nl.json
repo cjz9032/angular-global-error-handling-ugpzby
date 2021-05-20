@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd.",
 			"hardwareScan": "U kunt nu de conditie van het onderdeel van uw systeemhardware opvragen.",
 			"appSearch": "Wist u dat? Hierin vindt u de functies voor uw apparaat.",
-			"productivity": "Wilt u uw werkefficiëntie verbeteren?"
+			"productivity": "Wilt u uw werkefficiëntie verbeteren?",
+			"autoClose": "Wist u dat? Met de functie \"Veel sneller werken\" kunt u ervoor zorgen dat games sneller worden geladen. Probeer het nu in Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Laat van u horen",
 		"likeUs": "Vind ons leuk",
 		"feedback": "Feedback achterlaten"
+	},
+	"intelligentBoost": {
+		"title": "Intelligente gameversnelling",
+		"appsContainerTitle": "Apps toegevoegd aan lijst",
+		"edit": "Bewerken",
+		"done": "Klaar",
+		"add": "Toevoegen",
+		"appsDialog": "Lijst met actieve apps",
+		"appsDialogDesc": "De onderstaande lijst bevat alleen apps die nu actief zijn",
+		"appsDialogDisabledTooltip": "Schakel de app eerst uit",
+		"appsDialogWarn": "Geen actieve apps",
+		"appsDialogWarnDesc": "Alleen apps die momenteel actief zijn, worden weergegeven. Als u een app wilt toevoegen, kunt u de app starten, waarna u deze hier ziet.",
+		"networkBoost": "Netwerkversnelling",
+		"networkBoostDesc": "Met deze functie krijgen games automatisch de hoogste prioriteit in het netwerk, waardoor de snelheid toeneemt. Als u apps gebruikt tijdens het gamen, raden we u aan ze hieronder toe te voegen, zodat ze ook prioriteit krijgen in het netwerk.",
+		"performanceBoost": "Veel sneller werken",
+		"performanceBoostDesc": "Wanneer u een game start, sluit deze functie automatisch de apps die u hieronder hebt toegevoegd. Zo worden ongebruikte bronnen vrijgemaakt voor een optimale snelheid. Houd er rekening mee dat apps die aan de lijst zijn toegevoegd, volledig worden gesloten. Controleer altijd of u uw werk hebt opgeslagen."
 	},
 	"smb": {
 		"meetingExperience": {

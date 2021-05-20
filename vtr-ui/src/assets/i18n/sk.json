@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Získajte monitorovanie v reálnom čase a upozornenia týkajúce zabezpečenia siete v domácnosti. Ak bude ktorékoľvek z vašich inteligentných zariadení čeliť bezpečnostnému útoku, dozviete sa o tom ako prví.",
 			"hardwareScan": "Teraz môžete získať stav súčasti hardvéru vášho systému.",
 			"appSearch": "Vedeli ste to? Tu môžete vyhľadať funkcie týkajúce sa vášho zariadenia.",
-			"productivity": "Chcete zlepšiť váš pracovný výkon?"
+			"productivity": "Chcete zlepšiť váš pracovný výkon?",
+			"autoClose": "Vedeli ste to? Funkcia „Zosilnenie výkonu“ vám môže pomôcť vylepšiť rýchlosť načítavania hier. Vyskúšajte ju teraz pri funkcii Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Pošlite nám svoj hlas",
 		"likeUs": "Označiť, že sa vám páčime",
 		"feedback": "Poskytnúť spätnú väzbu"
+	},
+	"intelligentBoost": {
+		"title": "Funkcia Inteligentné zlepšenie výkonu hier",
+		"appsContainerTitle": "Aplikácie pridané do zoznamu",
+		"edit": "Upraviť",
+		"done": "Hotovo",
+		"add": "Pr.",
+		"appsDialog": "Zoznam spustených aplikácií",
+		"appsDialogDesc": "V zozname nižšie sa zobrazia iba práve spustené aplikácie",
+		"appsDialogDisabledTooltip": "Najprv zrušte začiarknutie aplikácie",
+		"appsDialogWarn": "Žiadne spustené aplikácie",
+		"appsDialogWarnDesc": "Zobraziť sa môžu iba práve spustené aplikácie. Mohli by ste spustiť aplikáciu, ktorú chcete pridať, potom ju tam uvidíte.",
+		"networkBoost": "Funkcia Zosilnenie siete",
+		"networkBoostDesc": "Táto funkcia automaticky nastaví prioritu hier na najvyššiu úroveň vo vašej sieti, maximalizuje rýchlosti. Ak používate počas hrania hier aplikácie, odporúčame ich pridať nižšie, aby tiež mali prioritu v našej sieti.",
+		"performanceBoost": "Funkcia Zosilnenie výkonu",
+		"performanceBoostDesc": "Táto funkcia automaticky zatvorí aplikácie, ktoré ste pridali nižšie, keď spustíte hru. Mohli by sa tým uvoľniť nevyužité zdroje, aby sa maximalizoval výkon. Pamätajte na to, že sa úplne zatvoria aplikácie, ktoré ste pridali do zoznamu. Vždy sa, prosím, uistite, že ste uložili svoju prácu."
 	},
 	"smb": {
 		"meetingExperience": {

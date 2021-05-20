@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena.",
 			"hardwareScan": "Zdaj lahko pridobite stanje komponent strojne opreme vašega sistema.",
 			"appSearch": "Ali veste? Tukaj lahko poiščete funkcije za svojo napravo.",
-			"productivity": "Ali želite izboljšati svojo delovno učinkovitost?"
+			"productivity": "Ali želite izboljšati svojo delovno učinkovitost?",
+			"autoClose": "Ali veste? Funkcija »Povečanje zmogljivosti« vam lahko pomaga povečati hitrost pri nalaganju iger. Preizkusite zdaj v pomočniku Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Pošljite nam svoj glas",
 		"likeUs": "Všečkajte nas",
 		"feedback": "Povratne informacije"
+	},
+	"intelligentBoost": {
+		"title": "Pametno povečanje hitrosti pri igranju iger",
+		"appsContainerTitle": "Aplikacije, dodane na seznam",
+		"edit": "Urejanje",
+		"done": "Končano",
+		"add": "Dodaj",
+		"appsDialog": "Seznam aplikacij v teku",
+		"appsDialogDesc": "Na spodnjem seznamu bodo prikazane samo aplikacije, ki se trenutno izvajajo.",
+		"appsDialogDisabledTooltip": "Najprej počistite polje za aplikacijo",
+		"appsDialogWarn": "Ni aplikacij v teku",
+		"appsDialogWarnDesc": "Prikazati je mogoče samo aplikacije, ki se trenutno izvajajo. Lahko zaženete aplikacijo, ki jo želite dodati, potem jo boste videli na tem seznamu.",
+		"networkBoost": "Omrežna pospešitev",
+		"networkBoostDesc": "Ta funkcija bo v omrežju samodejno nastavila najvišjo prioriteto iger za večjo hitrost. Če med igranjem uporabljate aplikacije, priporočamo, da jih dodate spodaj, tako da bodo prednostne v omrežju.",
+		"performanceBoost": "Povišanje zmogljivosti",
+		"performanceBoostDesc": "Ta funkcija bo ob zagonu igre samodejno zaprla aplikacije, ki ste jih dodali spodaj. To sprosti neuporabljene vire za najhitrejše delovanje. Upoštevajte, da se bodo aplikacije, dodane na seznam, popolnoma zaprle, vedno poskrbite, da ste shranili svoje delo."
 	},
 	"smb": {
 		"meetingExperience": {

@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb.",
 			"hardwareScan": "Nu kan du få vist helbredsstatus for dine systemhardwarekomponenter.",
 			"appSearch": "Vidste du det? Du kan søge efter funktioner, der gælder for din enhed her.",
-			"productivity": "Vil du arbejde mere effektivt?"
+			"productivity": "Vil du arbejde mere effektivt?",
+			"autoClose": "Vidste du det? Funktionen \"Styrk ydeevnen\" kan hjælpe dig med at øge hastigheden, når der indlæses spil. Prøv den nu i Smart hjælp."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Send os din stemme",
 		"likeUs": "Synes godt om os",
 		"feedback": "Give feedback"
+	},
+	"intelligentBoost": {
+		"title": "Intelligent forstærkning af spil",
+		"appsContainerTitle": "Apps føjet til listen",
+		"edit": "Redigér",
+		"done": "Udført",
+		"add": "Tilføj",
+		"appsDialog": "Liste med apps, der kører",
+		"appsDialogDesc": "Kun apps, der kører, vises på listen nedenfor",
+		"appsDialogDisabledTooltip": "Fjern markering på app først",
+		"appsDialogWarn": "Der er ingen kørende apps",
+		"appsDialogWarnDesc": "Kun apps, der kører i øjeblikket, kan vises. Du kan starte en app, du vil tilføje, så vises den her.",
+		"networkBoost": "Netværksforstærkning",
+		"networkBoostDesc": "Denne funktion giver automatisk spil højeste prioritet på netværket, så hastigheden øges. Hvis du bruger apps under spil, anbefaler vi, at du tilføje dem nedenfor, så de også får prioritet på netværket.",
+		"performanceBoost": "Styrk ydeevnen",
+		"performanceBoostDesc": "Denne funktion lukker automatisk de apps, du tilføjede nedenfor, når du starter et spil. Dette kan frigøre ressourcer til at maksimere ydeevnen. Vær opmærksom på, at apps, der er tilføjet på listen, bliver lukket helt. Tjek altid, at du har gemt dit arbejde."
 	},
 	"smb": {
 		"meetingExperience": {

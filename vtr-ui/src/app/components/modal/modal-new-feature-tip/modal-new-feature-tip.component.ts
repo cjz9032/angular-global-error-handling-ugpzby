@@ -38,6 +38,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	tipsVersions = {
 		'v3.6': 3.006,
 		'v3.7': 3.007,
+		'v3.8': 3.008,
 	};
 
 	allNewTips: NewTipItem[] = [

@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Saat reaaliaikaista seurantaa ja ilmoituksia verkon suojauksesta kotona. Olet ensimmäinen, joka tietää, onko jokin älylaitteistasi joutunut hyökkäyksen kohteeksi.",
 			"hardwareScan": "Nyt voit tarkastaa järjestelmäsi laitteistokomponentin kunnon.",
 			"appSearch": "Tiedätkö? Voit hakea laitteellesi sopivia ominaisuuksia täältä.",
-			"productivity": "Haluatko työskennellä tehokkaammin?"
+			"productivity": "Haluatko työskennellä tehokkaammin?",
+			"autoClose": "Tiedätkö? \"Tehosta suorituskykyä\" -ominaisuus voi auttaa sinua nopeuttamaan pelien latausta. Kokeile sitä nyt Älykäs apu -työkalussa."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Anna äänesi kuulua",
 		"likeUs": "Tykkää meistä",
 		"feedback": "Antaa palautetta"
+	},
+	"intelligentBoost": {
+		"title": "Älykäs pelien tehostus",
+		"appsContainerTitle": "Luetteloon lisätyt sovellukset",
+		"edit": "Muokkaa",
+		"done": "Valmis",
+		"add": "Lisää",
+		"appsDialog": "Käynnissä olevien sovellusten luettelo",
+		"appsDialogDesc": "Alla olevassa luettelossa näytetään vain tällä hetkellä käynnissä olevat sovellukset",
+		"appsDialogDisabledTooltip": "Poista ensin sovelluksen valinta",
+		"appsDialogWarn": "Ei käynnissä olevia sovelluksia",
+		"appsDialogWarnDesc": "Vain tällä hetkellä käynnissä olevat sovellukset voidaan näyttää. Voit käynnistää sovelluksen, jonka haluat lisätä, jolloin näet sen tässä.",
+		"networkBoost": "Verkon tehostus",
+		"networkBoostDesc": "Tämä ominaisuus asettaa pelien prioriteetin automaattisesti korkeimmalle tasolla verkossasi ja maksimoi nopeudet. Jos käytät pelaamisen aikana sovelluksia, suosittelemme lisäämään ne alle, jotta myös niillä on prioriteetti verkossasi.",
+		"performanceBoost": "Tehosta suorituskykyä",
+		"performanceBoostDesc": "Tämä ominaisuus sulkee alla olevaan luetteloon lisäämäsi sovellukset automaattisesti, kun käynnistät pelin. Se voi vapauttaa käyttämättömiä resursseja ja parantaa suorituskykyä. Huomaa, että alla olevaan luetteloon lisätyt sovellukset suljetaan kokonaan, joten varmista aina, että olet tallentanut työsi."
 	},
 	"smb": {
 		"meetingExperience": {

@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Dobijte praćenje u stvarnom vremenu i upozorenja o mrežnoj sigurnosti vašeg doma. Prvi ćete saznati ako se bilo koji od vaših pametnih uređaja suoči sa sigurnosnim napadom.",
 			"hardwareScan": "Sada možete saznati stanje hardverske komponente vašeg sustava.",
 			"appSearch": "Znate li? Ovdje možete potražiti značajke primjenjive na vaš uređaj.",
-			"productivity": "Želite li poboljšati svoju radnu učinkovitost?"
+			"productivity": "Želite li poboljšati svoju radnu učinkovitost?",
+			"autoClose": "Znate li? Značajka \"Poboljšanje performansi\" može vam pomoći povećati brzinu učitavanja igara. Isprobajte odmah u značajkama Pametna pomoć."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Pošaljite nam svoj glas",
 		"likeUs": "Kliknite na Sviđa mi se",
 		"feedback": "Ostavi povratnu informaciju"
+	},
+	"intelligentBoost": {
+		"title": "Pametno poboljšanje performansi u igrama",
+		"appsContainerTitle": "Aplikacije dodane na popis",
+		"edit": "Uređivanje",
+		"done": "Gotovo",
+		"add": "Dodaj",
+		"appsDialog": "Pokretanje popisa aplikacija",
+		"appsDialogDesc": "Na popisu u nastavku prikazivat će se samo pokrenute aplikacije",
+		"appsDialogDisabledTooltip": "Najprije poništite odabir aplikacije",
+		"appsDialogWarn": "Nema pokrenutih aplikacija",
+		"appsDialogWarnDesc": "Mogu se prikazati samo trenutno pokrenute aplikacije. Možete pokrenuti aplikaciju koju želite dodati, a zatim ćete je vidjeti ovdje.",
+		"networkBoost": "Poboljšanje značajki mreže",
+		"networkBoostDesc": "Ova značajka automatski postavlja prioritet igara na najveću razinu unutar vaše mreže i pruža maksimalno ubrzanje. Ako tijekom igranja upotrebljavate neke aplikacije, preporučujemo da ih dodate u nastavku kako bi i one imale prioritet na vašoj mreži.",
+		"performanceBoost": "Poboljšanje performansi",
+		"performanceBoostDesc": "Ova će značajka prilikom pokretanja igre automatski zatvoriti aplikacije koje ste dodali u nastavku. Na taj je način moguće osloboditi neiskorištene resurse radi povećanja performansi. Imajte na umu da će aplikacije dodane na popis biti potpuno zatvorene pa uvijek prethodno provjerite jeste li spremili svoj rad."
 	},
 	"smb": {
 		"meetingExperience": {

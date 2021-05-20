@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Få overvåking og varsler i sanntid om nettverkssikkerheten hjemme. Du er den første som får beskjed om noen av smartenhetene utsettes for et sikkerhetsangrep.",
 			"hardwareScan": "Nå kan du få tilstandsstatusen til maskinvarekomponentene til systemet ditt.",
 			"appSearch": "Visste du dette? Du kan søke etter funksjoner som gjelder for enheten din her.",
-			"productivity": "Vil du forbedre arbeidseffektiviteten nå?"
+			"productivity": "Vil du forbedre arbeidseffektiviteten nå?",
+			"autoClose": "Visste du dette? Funksjonen \"Bedre ytelse\" kan hjelpe deg med å øke innlastingshastigheten for spill. Prøv det nå i Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Gi oss din mening",
 		"likeUs": "Lik oss",
 		"feedback": "Gi tilbakemelding"
+	},
+	"intelligentBoost": {
+		"title": "Intelligent ytelsesøkning av spill",
+		"appsContainerTitle": "Apper som er tilføyd på listen",
+		"edit": "Rediger",
+		"done": "Ferdig",
+		"add": "Legg til",
+		"appsDialog": "Liste over apper som kjører",
+		"appsDialogDesc": "Bare apper som kjører, vil vises i listen nedenfor.",
+		"appsDialogDisabledTooltip": "Opphev merkingen av appen først",
+		"appsDialogWarn": "Ingen kjørende apper",
+		"appsDialogWarnDesc": "Bare apper som kjøres i øyeblikket, kan vises. Du kan starte en app du vil legge til, så får du se den her.",
+		"networkBoost": "Nettverksforbedring",
+		"networkBoostDesc": "Nettverksforbedring setter automatisk prioriteten til spill til høyeste nivå i nettverket, maks hastighet. Hvis du bruker noen apper under spilling, foreslår vi at du legger dem til nedenfor slik at de også får prioritet i nettverket ditt.",
+		"performanceBoost": "Bedre ytelse",
+		"performanceBoostDesc": "Denne funksjonen lukker automatisk appene du la til nedenfor, når du starter et spill. Det kan frigjøre ubrukte ressurser for maks ytelse. Vær oppmerksom på at apper som er lagt til på listen, blir lukket helt, så du må alltid sørge for at du har lagret arbeidet ditt."
 	},
 	"smb": {
 		"meetingExperience": {

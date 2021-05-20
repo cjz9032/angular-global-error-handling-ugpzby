@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Du få övervakning i realtid och varningar om nätverkssäkerheten i ditt hem. Du blir den första som får veta om någon av dina smarta enheter utsätts för en säkerhetsattack.",
 			"hardwareScan": "Nu kan du få reda på hälsostatusen för systemets maskinvarukomponent.",
 			"appSearch": "Visste du detta? Här kan du söka efter funktioner som gäller din enhet.",
-			"productivity": "Vill du arbeta mer effektivt?"
+			"productivity": "Vill du arbeta mer effektivt?",
+			"autoClose": "Visste du detta? Med funktionen Prestandahöjning kan du påskynda inläsningen av spel. Prova den nu i Smart hjälp."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Ge oss din röst",
 		"likeUs": "Gilla oss",
 		"feedback": "Ge feedback"
+	},
+	"intelligentBoost": {
+		"title": "Intelligent spelprestanda",
+		"appsContainerTitle": "Appar som har lagts till i listan",
+		"edit": "Ändra",
+		"done": "Klart",
+		"add": "Lägg till",
+		"appsDialog": "Lista med aktiva appar",
+		"appsDialogDesc": "Endast appar som är aktiva visas i listan nedan",
+		"appsDialogDisabledTooltip": "Avmarkera appen först",
+		"appsDialogWarn": "Det finns inga aktiva appar",
+		"appsDialogWarnDesc": "Endast appar som är aktiva kan visas. Starta en app som du vill lägga till så syns den här.",
+		"networkBoost": "Nätverksprestanda",
+		"networkBoostDesc": "Den här funktionen ställer automatiskt in prioritetsordningen för spel på den högsta nivån i nätverket för att maximera snabbheten. Om du använder appar medan du spelar rekommenderar vi att du lägger till dem nedan så att de också prioriteras i nätverket.",
+		"performanceBoost": "Prestandahöjning",
+		"performanceBoostDesc": "Den här funktionen stänger automatiskt apparna i listan nedan när du startar ett spel. Det kan frigöra outnyttjade resurser. Tänk på att appar som läggs till i listan stängs helt. Kontrollera därför alltid att du har sparat ditt arbete."
 	},
 	"smb": {
 		"meetingExperience": {

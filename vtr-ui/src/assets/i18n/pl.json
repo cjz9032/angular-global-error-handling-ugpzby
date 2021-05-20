@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Zyskaj monitorowanie w czasie rzeczywistym i otrzymuj alerty dotyczące bezpieczeństwa sieci w domu. Jako pierwszy dowiesz się, czy któreś z twoich inteligentnych urządzeń jest narażone na zagrożenia.",
 			"hardwareScan": "Teraz możesz uzyskać informacje o kondycji komponentu sprzętowego systemu.",
 			"appSearch": "Czy wiesz? W tym miejscu możesz wyszukać funkcje związane z Twoim urządzeniem.",
-			"productivity": "Czy chcesz poprawić wydajność swojej pracy?"
+			"productivity": "Czy chcesz poprawić wydajność swojej pracy?",
+			"autoClose": "Czy wiesz? Funkcja „Wspomaganie wydajności” pozwala przyspieszyć ładowanie gier. Wypróbuj ją teraz, korzystając z Inteligentnego asystenta."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Czy podobają Ci się nasze rozwiązania?",
 		"likeUs": "Polub nas",
 		"feedback": "Przekaż opinię"
+	},
+	"intelligentBoost": {
+		"title": "Inteligentne wzmocnienie w grach",
+		"appsContainerTitle": "Aplikacje dodane do listy",
+		"edit": "Edytuj",
+		"done": "Gotowe",
+		"add": "Dodaj",
+		"appsDialog": "Lista uruchomionych aplikacji",
+		"appsDialogDesc": "Poniższa lista będzie zawierać tylko aktualnie uruchomione aplikacje",
+		"appsDialogDisabledTooltip": "Najpierw usuń zaznaczenie aplikacji",
+		"appsDialogWarn": "Brak uruchomionych aplikacji",
+		"appsDialogWarnDesc": "Można wyświetlić tylko aktualnie uruchomione aplikacje. Możesz uruchomić aplikację, którą chcesz dodać — zobaczysz ją tutaj.",
+		"networkBoost": "Wspomaganie sieci",
+		"networkBoostDesc": "Ta funkcja automatycznie przypisuje grom najwyższy priorytet w sieci, zwiększając prędkość ich działania. Jeśli podczas gry używasz innych aplikacji, zalecamy ich dodanie poniżej, dzięki czemu one także będą traktowane priorytetowo w ramach sieci.",
+		"performanceBoost": "Wspomaganie wydajności",
+		"performanceBoostDesc": "Ta funkcja powoduje, że w momencie uruchomienia gry następuje automatyczne zamknięcie aplikacji dodanych poniżej. Taki mechanizm może pozwolić zwolnić zasoby i zwiększyć wydajność. Pamiętaj, że aplikacje dodane do listy zostaną całkowicie zamknięte. Zawsze pamiętaj o zapisywaniu wyników swojej pracy."
 	},
 	"smb": {
 		"meetingExperience": {

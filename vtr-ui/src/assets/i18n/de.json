@@ -5579,7 +5579,8 @@
 			"connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist.",
 			"hardwareScan": "Nun können Sie den Integritätsstatus Ihrer Systemhardwarekomponenten abrufen.",
 			"appSearch": "Schon gewusst? Hier können Sie nach Funktionen für Ihre Einheit suchen.",
-			"productivity": "Möchten Sie effizienter arbeiten?"
+			"productivity": "Möchten Sie effizienter arbeiten?",
+			"autoClose": "Schon gewusst? Mit der Funktion \"Leistungsboost\" können Sie die Ladegeschwindigkeit von Spielen steigern. Testen Sie es jetzt in Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5643,6 +5644,22 @@
 		"title": "Senden Sie uns Ihre Stimme",
 		"likeUs": "Folgen",
 		"feedback": "Feedback zu geben"
+	},
+	"intelligentBoost": {
+		"title": "Intelligenter Gamingboost",
+		"appsContainerTitle": "Zur Liste hinzugefügte Apps",
+		"edit": "Bearbeiten",
+		"done": "Fertig",
+		"add": "Hinzufügen",
+		"appsDialog": "Liste mit ausgeführten Apps",
+		"appsDialogDesc": "In der folgenden Liste stehen nur aktuell ausgeführte Apps",
+		"appsDialogDisabledTooltip": "Wählen Sie zuerst eine App ab",
+		"appsDialogWarn": "Keine ausgeführten Apps",
+		"appsDialogWarnDesc": "Es können nur derzeit ausgeführte Apps angezeigt werden. Wenn Sie eine bestimmte App hinzufügen möchten, starten Sie die App und sie wird anschließend hier angezeigt.",
+		"networkBoost": "Netzwerkboost",
+		"networkBoostDesc": "Mit dieser Funktion erhalten Spiele automatisch die höchste Netzwerkpriorität und nutzen die maximale Netzwerkgeschwindigkeit. Wenn Sie beim Spielen Apps verwenden, empfehlen wir, diese ebenfalls hier hinzuzufügen, damit sie ebenfalls Netzwerkpriorität haben.",
+		"performanceBoost": "Leistungsboost",
+		"performanceBoostDesc": "Mit dieser Funktion werden beim Starten eines Spiels automatisch die Apps geschlossen, die Sie unten hinzugefügt haben. Dadurch bleiben mehr Ressourcen für die maximale Leistung. Beachten Sie, dass die zur Liste hinzugefügten Apps vollständig geschlossen werden. Stellen Sie immer sicher, dass Sie Ihre Arbeit gespeichert haben."
 	},
 	"smb": {
 		"meetingExperience": {
