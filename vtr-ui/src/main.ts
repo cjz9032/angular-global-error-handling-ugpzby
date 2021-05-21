@@ -8,12 +8,6 @@ if (environment.production) {
 	enableProdMode();
 }
 
-if (environment.fullStory) {
-	const script = document.createElement('script');
-	script.src = './scripts/fullstory.js';
-	document.head.appendChild(script);
-}
-
 platformBrowserDynamic()
 	.bootstrapModule(AppModule)
-	.catch((err) => {});
+	.catch((err) => { });

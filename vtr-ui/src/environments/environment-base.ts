@@ -10,5 +10,4 @@ export interface IEnvironment {
 	isLoggingEnabled: boolean;
 	isServerSwitchEnabled: boolean;
 	pcSupportApiRoot: string;
-	fullStory: boolean;
 }
