@@ -30,11 +30,14 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public lightingProfileById: any;
 	public lightingPanelImage: any = LightingDataList.lightingPanelImage;
 	public lightingPanelImageT750: any = LightingDataList.lightingPanelImageT750;
+	public lightingPanelImageMemory: any = LightingDataList.lightingPanelImageMemory;
 	public lightingPanelImageT550AMD: any = LightingDataList.lightingPanelImageT550AMD;
 	public lightingEffectRgbData: any = JSON.parse(JSON.stringify(LightingDataList.lightingEffectRgbData));
 	public lightingEffectSingleData: any = LightingDataList.lightingEffectSingleData;
 	public isEffectChange: boolean;
 	public isValChange = true;
+	// gpu led lighting
+	public isGPULightingDriverLackShow = false;
 
 	constructor(
 		private commonService: CommonService,
@@ -527,6 +530,15 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 							this.lightingProfileCurrentDetail.lightPanelType
 						);
 					}
+					if (lightingCapabilitiesRes &&
+						lightingCapabilitiesRes.MemoryPanelType && Array.isArray(lightingCapabilitiesRes.GPUPanelType) &&
+						lightingCapabilitiesRes.MemoryPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1) {
+						// memory led
+						currentNameImg = this.getCurrentName(
+							this.lightingPanelImageMemory,
+							this.lightingProfileCurrentDetail.lightPanelType
+						);
+					}
 					if (currentNameImg.length > 0) {
 						this.lightingProfileCurrentDetail.panelName = currentNameImg[0].panelName;
 						this.lightingProfileCurrentDetail.pathUrl = currentNameImg[0].pathUrl;
@@ -700,6 +712,17 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			} else {
 				this.supportBrightness = true;
 			}
+		} else if (this.lightingCapabilities.GPUBrightLevel &&
+			this.lightingCapabilities.GPUBrightLevel !== 0 &&
+			this.lightingCapabilities.GPUPanelType.indexOf(
+				this.lightingProfileCurrentDetail.lightPanelType
+			) > -1) {
+			// gpu led lighting
+			if (val === 268435456 || val === 4 || val === 256) {
+				this.supportBrightness = false;
+			} else {
+				this.supportBrightness = true;
+			}
 		} else {
 			this.supportBrightness = false;
 		}
@@ -736,6 +759,19 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			} else {
 				this.supportSpeed = true;
 			}
+		} else if (
+			this.lightingCapabilities.GPUSpeedLevel &&
+			this.lightingCapabilities.GPUSpeedLevel !== 0 &&
+			this.lightingCapabilities.GPUPanelType.indexOf(
+				this.lightingProfileCurrentDetail.lightPanelType
+			) > -1
+		) {
+			// gpu led lighting
+			if (val === 268435456 || val === 1 || val === 256) {
+				this.supportSpeed = false;
+			} else {
+				this.supportSpeed = true;
+			}
 		} else {
 			this.supportSpeed = false;
 		}
@@ -758,6 +794,17 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
+			if (val !== 256 && val !== 268435456) {
+				this.supportColor = true;
+			} else {
+				this.supportColor = false;
+			}
+		} else if (
+			this.lightingCapabilities.GPUPanelType.indexOf(
+				this.lightingProfileCurrentDetail.lightPanelType
+			) > -1
+		) {
+			// gpu led lighting
 			if (val !== 256 && val !== 268435456) {
 				this.supportColor = true;
 			} else {
