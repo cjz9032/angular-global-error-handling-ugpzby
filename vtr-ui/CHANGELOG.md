@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.12](https://bitbucket.tc.lenovo.com///compare/v1.12.11...v1.12.12) (2021-05-21)
+
+
+### Bug Fixes
+
+* **fullstory:** remove fullstory ([a57f4e8](https://bitbucket.tc.lenovo.com///commit/a57f4e8e45b4fe7f5e334852e16c47c91b7d7719))
+
 ### [1.12.11](https://bitbucket.tc.lenovo.com///compare/v1.12.10...v1.12.11) (2021-05-21)
 
 ### [1.12.10](https://bitbucket.tc.lenovo.com///compare/v1.12.9...v1.12.10) (2021-05-20)
