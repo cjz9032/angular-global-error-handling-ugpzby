@@ -1,5 +1,5 @@
 import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
+import { NgModule, SchemaMetadata } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatNativeDateModule } from "@angular/material/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -10,6 +10,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from "@angular/material/form-field";
 import { AppComponent } from "./app.component";
 import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
+import { ClockComponent } from "src/app/components/clock/clock.component";
+
 // var doErrSth = function () {
 //   console.log("doErrSth");
 //   throw new Error("doErrSth");
@@ -46,7 +48,7 @@ import { SharedModule } from "./shared/shared.module";
     SharedModule,
   ],
   entryComponents: [AppComponent],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ClockComponent],
   bootstrap: [AppComponent],
   providers: [
     {
