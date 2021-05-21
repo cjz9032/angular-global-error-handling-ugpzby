@@ -15,14 +15,13 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 	styleUrls: ['./auto-close.component.scss'],
 })
 export class AutoCloseComponent implements OnInit, OnDestroy {
-	someItem = [];
 	innerSavedApps: TileItem[];
 	runningApps: TileItem[];
 	maxSelected: MaxSelected;
 	removable: boolean;
 	innerAutoCloseChecked = false;
 	innerAutoCloseAvailable = false;
-	metricsParent = 'AutoClose';
+	metricsParent = 'Device.AutoClose';
 	actionSubscription: Subscription;
 	get savedApps() {
 		return this.innerSavedApps;
@@ -60,7 +59,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	) {}
 
 	ngOnInit(): void {
-		this.getProtocalActions();
+		this.getProtocolActions();
 		this.initAutoClose();
 	}
 
@@ -71,7 +70,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	}
 
 	initAutoClose() {
-		const cacheAutoCloseAvailabe = this.localCacheService.getLocalCacheValue(
+		const cacheAutoCloseAvailable = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.PerformanceBoostAvailable
 		);
 		const cacheAutoCloseToggleState = this.localCacheService.getLocalCacheValue(
@@ -81,7 +80,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 			LocalStorageKey.PerformanceBoostList
 		);
 
-		this.autoCloseAvailable = Boolean(cacheAutoCloseAvailabe);
+		this.autoCloseAvailable = Boolean(cacheAutoCloseAvailable);
 		this.autoCloseChecked = Boolean(cacheAutoCloseToggleState);
 
 		if (cacheAutoCloseList) {
@@ -111,7 +110,8 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 		this.runningApps = null;
 		const appListDialog = this.dialogService.openAppListDialog(
 			this.runningApps,
-			this.maxSelected
+			this.maxSelected,
+			this.metricsParent
 		);
 		this.autoCloseService.getRunningApps().then((apps: TileItem[]) => {
 			this.runningApps = apps;
@@ -160,7 +160,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	getProtocalActions() {
+	getProtocolActions() {
 		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe(
 			(params: ParamMap) => {
 				if (

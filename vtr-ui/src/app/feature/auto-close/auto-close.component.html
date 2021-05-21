@@ -8,14 +8,24 @@
 	[theme]="'white'"
 	[collapseLinkId]="'smartAssist-autoClose-collapse'">
 	<vtr-widget-boost-container
-		[featureToggle]="autoCloseChecked">
-		<img src="assets/icons/Icon_Windows_Update_20px.svg" alt="" class="boost-feature-icon">
+		[featureToggle]="autoCloseChecked"
+		id="auto-close">
+		<img src="assets/icons/Performance-boost.svg" alt="" class="boost-feature-icon">
 		<span class="boost-feature-heading" [innerHTML]="'intelligentBoost.performanceBoost' | translate"></span>
 		<span class="boost-feature-content" [innerHTML]="'intelligentBoost.performanceBoostDesc' | translate"></span>
 		<div class="boost-feature-toggle">
-			<mat-slide-toggle [disabled]="!autoCloseAvailable" [checked]="autoCloseChecked && autoCloseAvailable" (change)="updateAutoCloseToggleState($event)"></mat-slide-toggle>
+			<mat-slide-toggle #toggle
+				id="auto-close-toggle"
+				[disabled]="!autoCloseAvailable"
+				[checked]="autoCloseChecked && autoCloseAvailable"
+				(change)="updateAutoCloseToggleState($event)"
+				vtrMetrics
+				metricsEvent="featureClick"
+				metricsItem="auto-close-toggle"
+				[metricsValue]="!(autoCloseChecked && autoCloseAvailable)"></mat-slide-toggle>
 		</div>
 		<vtr-material-app-tile-list
+			id="auto-close"
 			class="boost-feature-apps-container w-100"
 			[tileItems]="savedApps"
 			[removable]="removable"

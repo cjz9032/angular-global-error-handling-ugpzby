@@ -73,7 +73,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 			}
 		}, 1000);
 		setTimeout(() => {
-			(document.querySelector('#new-feature-tip-dialog') as HTMLElement).focus();
+			(document.querySelector('#new-feature-tip-dialog') as HTMLElement)?.focus();
 		}, 0);
 	}
 

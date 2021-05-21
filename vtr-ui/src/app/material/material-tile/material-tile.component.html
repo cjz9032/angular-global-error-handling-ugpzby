@@ -1,13 +1,14 @@
 <mat-chip
+	[id]="'app-'+tileItem.name"
 	class="vtr-material-tile d-flex flex-column m-0 p-0"
 	[ngClass]="{'tile-removable': !addable}"
 	[removable]="true"
 	(removed)="remove(tileItem)">
 	<mat-icon matChipRemove class="remove-icon text-center position-absolute m-2 align-self-end"
+		[id]="'app-remove-btn-'+tileItem.name"
 		vtrMetrics
 		metricsItem="{{tileItem.name}} removed"
-		metricsEvent="FeatureClick"
-		[metricsParent]="metricsParent">
+		metricsEvent="FeatureClick">
 		<fa-icon [icon]="['fal', 'times']"></fa-icon>
 	</mat-icon>
 	<div class="d-flex w-100 tile-container px-3 pb-3 mt-5 align-items-center justify-content-center"
@@ -24,9 +25,11 @@
 				class="tile-button"
 				(click)="select(tileItem)"
 				[disabled]="tileItem?.buttonType === 'disabled'"
+				[id]="'app-select-btn-'+tileItem.name"
 				vtrMetrics
-				[metricsItem]="metricsItem"
+				[metricsItem]="metricsItem+tileItem.name"
 				metricsEvent="FeatureClick"
+				[metricsValue]="tileItem?.buttonType !== 'selected'"
 				[metricsParent]="metricsParent">
 				<fa-icon *ngIf="tileItem?.buttonType === 'selected'; else addTemp"
 					class="check-icon" [icon]="['fas', 'check']"></fa-icon>
