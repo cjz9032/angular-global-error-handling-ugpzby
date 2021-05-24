@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Gondoskodjon otthoni hálózatának valós idejű felügyeletéről és az azonnali értesítésekről. Ön fog elsőként értesülni arról, ha valamelyik okos eszközének biztonságát valamilyen fenyegetés veszélyezteti.",
 			"hardwareScan": "Mostantól megtekintheti a rendszer hardvereszközeinek az állapotát.",
 			"appSearch": "Tudta ezt? Itt kereshet a készüléke szempontjából releváns funkciók között.",
-			"productivity": "Szeretne hatékonyabban dolgozni?"
+			"productivity": "Szeretne hatékonyabban dolgozni?",
+			"autoClose": "Tudta ezt? A „Teljesítményjavulás” javíthatja a játékok betöltésének sebességét. Próbálja ki most az Intelligens segítség szolgáltatásban."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Ossza meg velünk a véleményét!",
 		"likeUs": "Kedvelés",
 		"feedback": "Visszajelzés küldése"
+	},
+	"intelligentBoost": {
+		"title": "Intelligens játékgyorsítás",
+		"appsContainerTitle": "Listához hozzáadott alkalmazások",
+		"edit": "Szerkesztés",
+		"done": "Kész",
+		"add": "Hozzáadás",
+		"appsDialog": "Futó alkalmazások listája",
+		"appsDialogDesc": "Az alábbi listában csak a jelenleg futó alkalmazások jelennek meg",
+		"appsDialogDisabledTooltip": "Először törölje a jelet az alkalmazás melletti négyzetből",
+		"appsDialogWarn": "Nincsenek futó alkalmazások",
+		"appsDialogWarnDesc": "Csak a jelenleg futó alkalmazások jeleníthetők meg. A hozzáadni kívánt alkalmazások itt jelennek majd meg az indításuk után.",
+		"networkBoost": "Hálózatgyorsítás",
+		"networkBoostDesc": "Ez a funkció automatikusan a legmagasabb prioritást állítja be a játékok számára a hálózaton, így maximalizálva a sebességet. Ha játék közben más alkalmazást is használ, azt javasoljuk, hogy vegye fel őket alább, hogy elsőbbséget kapjanak a hálózaton.",
+		"performanceBoost": "Teljesítményjavulás",
+		"performanceBoostDesc": "Ez a funkció a játék indításakor automatikusan bezárja azokat az alkalmazásokat, amelyeket alább hozzáadott. Így felszabadíthatja a használaton kívüli erőforrásokat a maximális teljesítmény eléréséhez. Ne feledje, hogy a listára felvett alkalmazások teljesen bezáródnak, ezért kérjük, mindig győződjön meg róla, hogy mentette munkáját."
 	},
 	"smb": {
 		"meetingExperience": {

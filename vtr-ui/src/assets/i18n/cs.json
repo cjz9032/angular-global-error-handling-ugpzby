@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Získejte sledování v reálném čase a upozornění na zabezpečení vaší domácí sítě. A jako první se dozvíte, zda některé z vašich chytrých zařízení čelí bezpečnostnímu útoku.",
 			"hardwareScan": "Nyní můžete zjistit stav hardwaru součásti systému.",
 			"appSearch": "Víte, že…? Zde můžete vyhledat funkce použitelné pro vaše zařízení.",
-			"productivity": "Chcete zvýšit efektivitu práce?"
+			"productivity": "Chcete zvýšit efektivitu práce?",
+			"autoClose": "Víte, že…? Funkce „Navýšení výkonu“ vám pomůže zrychlit načítání her. Vyzkoušejte ji v aplikaci Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Pošlete nám svůj hlas",
 		"likeUs": "Olajkujte nás",
 		"feedback": "Zanechat zpětnou vazbu"
+	},
+	"intelligentBoost": {
+		"title": "Inteligentní zvýšení výkonu her",
+		"appsContainerTitle": "Aplikace přidány do seznamu",
+		"edit": "Úpravy",
+		"done": "Hotovo",
+		"add": "Př.",
+		"appsDialog": "Seznam spuštěných aplikací",
+		"appsDialogDesc": "V seznamu dole budou uvedeny jen aktuálně spuštěné aplikace.",
+		"appsDialogDisabledTooltip": "Nejprve zrušte zaškrtnutí u aplikace",
+		"appsDialogWarn": "Žádné spuštěné aplikace",
+		"appsDialogWarnDesc": "Lze zobrazit pouze aktuálně spuštěné aplikace. Můžete spustit aplikaci, kterou chcete přidat, a aplikace se zde zobrazí.",
+		"networkBoost": "Zvýšení výkonu sítě",
+		"networkBoostDesc": "Tato funkce automaticky nastaví hrám nejvyšší prioritu v síti, což umožní maximalizovat rychlost. Pokud během hraní používáte další aplikace, doporučujeme vám je přidat do níže uvedeného seznamu, aby ve vaší síti také měly prioritu.",
+		"performanceBoost": "Zvýšení výkonu",
+		"performanceBoostDesc": "Tato funkce při spuštění hry automaticky zavře aplikace, které jste přidali do níže uvedeného seznamu. Můžete tak uvolnit nevyužité zdroje a zvýšit výkon na maximum. Berte na vědomí, že aplikace přidané do tohoto seznamu budou úplně zavřeny. Vždy se ujistěte, že jste si uložili nedokončenou práci."
 	},
 	"smb": {
 		"meetingExperience": {

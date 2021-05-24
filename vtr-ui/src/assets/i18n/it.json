@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "È possibile usufruire di una funzione di monitoraggio e creazione di avvisi in tempo reale sulla sicurezza della propria rete a casa. Si verrà a sapere per primi se uno dei propri dispositivi intelligenti è sottoposto a un attacco di sicurezza.",
 			"hardwareScan": "È ora possibile ottenere lo stato di integrità dei componenti hardware del sistema.",
 			"appSearch": "Anche se Qui è possibile cercare le funzioni applicabili al dispositivo.",
-			"productivity": "Vuoi aumentare l'efficienza operativa?"
+			"productivity": "Vuoi aumentare l'efficienza operativa?",
+			"autoClose": "Sai che la funzione \"Potenziamento delle prestazioni\" consente di aumentare la velocità di caricamento del gioco. Provala ora con Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Inviaci la tua opinione",
 		"likeUs": "Metti Mi piace",
 		"feedback": "Lascia feedback"
+	},
+	"intelligentBoost": {
+		"title": "Potenziamento intelligente del gioco",
+		"appsContainerTitle": "App aggiunte all'elenco",
+		"edit": "Modifica",
+		"done": "Eseguito",
+		"add": "Ag.",
+		"appsDialog": "Elenco delle app in esecuzione",
+		"appsDialogDesc": "Nel seguente elenco verranno visualizzate solo le app in esecuzione",
+		"appsDialogDisabledTooltip": "Deseleziona prima l'app",
+		"appsDialogWarn": "Nessuna app in esecuzione",
+		"appsDialogWarnDesc": "Possono essere mostrate solo le app attualmente in esecuzione. Potresti avviare un'app che desideri aggiungere, la vedrai qui.",
+		"networkBoost": "Ottimizzazione rete",
+		"networkBoostDesc": "Questa funzionalità imposterà automaticamente la priorità dei giochi al livello più alto nella rete, massimizzando la velocità. Se durante il gioco usi delle app, ti suggeriamo di aggiungerle sotto cosicché acquisiscano priorità nella rete.",
+		"performanceBoost": "Potenziamento delle prestazioni",
+		"performanceBoostDesc": "Questa funzionalità chiuderà automaticamente le app aggiunte sotto all'avvio di un gioco. Verranno liberate risorse inutilizzate per ottimizzare le prestazioni. Le app aggiunte all'elenco verranno chiuse completamente. Verifica di avere salvato il lavoro."
 	},
 	"smb": {
 		"meetingExperience": {

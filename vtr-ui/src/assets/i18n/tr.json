@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz.",
 			"hardwareScan": "Artık sistem donanımı bileşeninizin sağlık durumunu öğrenebilirsiniz.",
 			"appSearch": "Bunu biliyor muydunuz? Burada cihazınız için geçerli özellikleri arayabilirsiniz.",
-			"productivity": "Çalışma verimliliğinizi iyileştirmek istiyor musunuz?"
+			"productivity": "Çalışma verimliliğinizi iyileştirmek istiyor musunuz?",
+			"autoClose": "Bunu biliyor muydunuz? “Performans geliştirme” özelliği, oyun yükleme hızını artırmanıza yardımcı olabilir. Şimdi Smart Assist'te deneyin."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Görüşlerinizi Bize Gönderin",
 		"likeUs": "Bizi değerlendirin",
 		"feedback": "Geri bildirimde bulunun"
+	},
+	"intelligentBoost": {
+		"title": "Akıllı oyun yükseltme",
+		"appsContainerTitle": "Listeye eklenen uygulamalar",
+		"edit": "Düzenle",
+		"done": "Bitti",
+		"add": "Ekl",
+		"appsDialog": "Çalışan uygulamalar listesi",
+		"appsDialogDesc": "Aşağıdaki listede yalnızca çalışmakta olan uygulamalar gösterilir",
+		"appsDialogDisabledTooltip": "Lütfen önce uygulamanın işaretini kaldırın",
+		"appsDialogWarn": "Çalışan uygulama yok",
+		"appsDialogWarnDesc": "Yalnızca şu anda çalışan uygulamalar gösterilebilir. Eklemek istediğiniz bir uygulamayı başlattıktan sonra burada görebilirsiniz.",
+		"networkBoost": "Ağ yükseltme",
+		"networkBoostDesc": "Bu özellik, oyunların önceliğini otomatik olarak ağınızdaki en üst düzeye ayarlayarak hızları maksimize eder. Oyun oynarken başka uygulamalar kullanıyorsanız onların da ağınızda öncelik alması için bu uygulamaları aşağıya eklemenizi öneririz.",
+		"performanceBoost": "Performans geliştirme",
+		"performanceBoostDesc": "Bu özellik, bir oyun başlattığınızda aşağıya eklediğiniz uygulamaları otomatik olarak kapatır. Kullanılmayan kaynakları serbest bırakıp performansı maksimize edebilir. Listeye eklenen uygulamaların tamamen kapanacağını, her zaman çalışmanızı kaydetmeyi unutmayın."
 	},
 	"smb": {
 		"meetingExperience": {

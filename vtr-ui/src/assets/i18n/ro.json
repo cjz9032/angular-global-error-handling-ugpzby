@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate.",
 			"hardwareScan": "Acum puteți obține informații despre starea de sănătate a componentei hardware a sistemului dvs.",
 			"appSearch": "Știați că? Aici puteți căuta caracteristici aplicabile dispozitivului dvs.",
-			"productivity": "Doriți să lucrați mai eficient?"
+			"productivity": "Doriți să lucrați mai eficient?",
+			"autoClose": "Știați că? Funcția „Sporire performanțe” vă poate ajuta să sporiți viteza de încărcare a jocurilor. Încercați acum în Asistent inteligent."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Trimiteți-ne vocea dumneavoastră",
 		"likeUs": "Trimiteți-ne aprecieri",
 		"feedback": "Introducere feedback"
+	},
+	"intelligentBoost": {
+		"title": "Îmbunătățire inteligentă a jocurilor",
+		"appsContainerTitle": "Aplicații adăugate la listă",
+		"edit": "Editare",
+		"done": "Efectuat",
+		"add": "Adăugare",
+		"appsDialog": "Listă de aplicații care rulează",
+		"appsDialogDesc": "În lista de mai jos se vor afișa doar aplicațiile care rulează în prezent",
+		"appsDialogDisabledTooltip": "Mai întâi debifați aplicația",
+		"appsDialogWarn": "Nu există aplicații care rulează",
+		"appsDialogWarnDesc": "Numai aplicațiile care rulează în prezent pot fi afișate. Ați putea lansa o aplicație pe care doriți să o adăugați, apoi o veți vedea aici.",
+		"networkBoost": "Stimulare rețea",
+		"networkBoostDesc": "Această funcție va seta automat prioritatea jocurilor la cel mai înalt nivel în cadrul rețelei dvs., mărind vitezele. Dacă folosiți aplicații în timpul jocului, vă sugerăm să le adăugați mai jos pentru a primi, de asemenea, prioritate în rețea.",
+		"performanceBoost": "Sporire performanțe",
+		"performanceBoostDesc": "Această funcție va închide automat aplicațiile pe care le-ați adăugat mai jos la lansarea unui joc. Ar putea elibera resurse neutilizate pentru a mări performanța. Rețineți că aplicațiile adăugate în listă se vor închide complet, asigurați-vă întotdeauna că v-ați salvat lucrările."
 	},
 	"smb": {
 		"meetingExperience": {

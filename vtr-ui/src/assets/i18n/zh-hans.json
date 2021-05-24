@@ -5577,7 +5577,8 @@
 			"connectedHomeSecurity": "在家中获得有关网络安全的实时监控和警报。您将是第一个知道您的智能设备是否面临安全攻击的人。",
 			"hardwareScan": "现在，让我们看看硬件是不是都正常。",
 			"appSearch": "您知道吗？您可以在此处搜索适用于您设备的功能。",
-			"productivity": "想要提高工作效率吗？"
+			"productivity": "想要提高工作效率吗？",
+			"autoClose": "您知道吗？“性能提升”功能可以提高游戏加载速度。您可以即刻前往智能助手进行尝试。"
 		}
 	},
 	"appsForYou": {
@@ -5641,6 +5642,22 @@
 		"title": "让我们听到您的声音",
 		"likeUs": "为我们点赞",
 		"feedback": "留下反馈"
+	},
+	"intelligentBoost": {
+		"title": "智能游戏速度提升",
+		"appsContainerTitle": "已添加到列表的应用程序",
+		"edit": "编辑",
+		"done": "完成",
+		"add": "添加",
+		"appsDialog": "正在运行的应用程序列表",
+		"appsDialogDesc": "下方列表中仅显示当前运行的应用程序",
+		"appsDialogDisabledTooltip": "请先取消选中应用程序",
+		"appsDialogWarn": "无正在运行的应用程序",
+		"appsDialogWarnDesc": "仅显示当前正在运行的应用程序。您可以启动要添加的应用程序，以便其在此处显示。",
+		"networkBoost": "网络优先级提升",
+		"networkBoostDesc": "此功能会自动将游戏设置为网络内的最高优先级，从而最大限度地提高速度。如果您在游戏时使用任何应用程序，建议您将它们添加到下方，以便其在网络内获得较高的优先级。",
+		"performanceBoost": "性能提升",
+		"performanceBoostDesc": "此功能会在启动游戏时自动关闭您在下方添加的应用程序。这将释放未使用的资源以最大限度地提高性能。请注意，列表中添加的应用程序将完全关闭，因此请始终确保您已保存工作。"
 	},
 	"smb": {
 		"meetingExperience": {

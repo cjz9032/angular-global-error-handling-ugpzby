@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Nabavite nadzor i upozorenja u realnom vremenu o bezbednosti mreže kod kuće. Bićete prvi koji će znati da li se neki od pametnih uređaja suočavaju sa bezbednosnim napadom.",
 			"hardwareScan": "Sada možete dobiti status stanja hardverske komponente sistema.",
 			"appSearch": "Da li znate? Ovde možete potražiti funkcije primenljive na vaš uređaj.",
-			"productivity": "Želite li odmah da poboljšate efikasnost na radu?"
+			"productivity": "Želite li odmah da poboljšate efikasnost na radu?",
+			"autoClose": "Da li znate? Pomoću funkcije „Poboljšavanje performansi“ možete da ubrzate učitavanje igara. Isprobajte je u Smart Assist-u."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Pošaljite nam vaš glas",
 		"likeUs": "Označite da vam se sviđamo",
 		"feedback": "Ostavite povratne informacije"
+	},
+	"intelligentBoost": {
+		"title": "Inteligentno poboljšavanje igara",
+		"appsContainerTitle": "Aplikacije dodate na listu",
+		"edit": "Uređivanje",
+		"done": "Gotovo",
+		"add": "Dodaj",
+		"appsDialog": "Lista pokrenutih aplikacija",
+		"appsDialogDesc": "Na listi u nastavku se prikazuju samo pokrenute aplikacije",
+		"appsDialogDisabledTooltip": "Prvo opozovite izbor aplikacije",
+		"appsDialogWarn": "Nema pokrenutih aplikacija",
+		"appsDialogWarnDesc": "Mogu da se prikazuju samo pokrenute aplikacije. Možete da pokrenete aplikaciju koju želite da dodate i ona će se prikazati na listi.",
+		"networkBoost": "Poboljšavanje mreže",
+		"networkBoostDesc": "Ova funkcija automatski podešava prioritet igara na najviši nivo na mreži i tako povećava brzinu. Ako koristite neke aplikacije dok igrate igre, preporučujemo vam da ih dodate ispod kako bi i one imale prioritet na mreži.",
+		"performanceBoost": "Poboljšavanje performansi",
+		"performanceBoostDesc": "Ova funkcija automatski zatvara aplikacije koje ste dodali ispod kada pokrenete igru. Ona oslobađa neiskorišćene resurse kako bi poboljšala performanse. Imajte na umu da se aplikacije koje ste dodali na listu u potpunosti zatvaraju, pa uvek sačuvajte ono na čemu radite."
 	},
 	"smb": {
 		"meetingExperience": {

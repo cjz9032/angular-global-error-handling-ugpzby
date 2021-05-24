@@ -5579,7 +5579,8 @@
 			"connectedHomeSecurity": "Obtenga supervisión y alertas en tiempo real sobre la seguridad de su red en el hogar. Será el primero en saber si alguno de sus dispositivos inteligentes está enfrentando un ataque de seguridad.",
 			"hardwareScan": "Ahora puede obtener el estado de mantenimiento del componente de hardware del sistema.",
 			"appSearch": "¿Sabía usted? Aquí puede buscar características aplicables a su dispositivo.",
-			"productivity": "¿Desea mejorar su eficiencia laboral?"
+			"productivity": "¿Desea mejorar su eficiencia laboral?",
+			"autoClose": "¿Sabía usted? La característica “Mejora del rendimiento” le puede ayudar a aumentar la velocidad de carga de juegos. Pruébelo ahora en Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5643,6 +5644,22 @@
 		"title": "Envíenos su mensaje",
 		"likeUs": "Denos un Me gusta",
 		"feedback": "Dejar comentarios"
+	},
+	"intelligentBoost": {
+		"title": "Potenciamiento del juego inteligente",
+		"appsContainerTitle": "Aplicaciones añadidas a la lista",
+		"edit": "Editar",
+		"done": "Hecho",
+		"add": "Agr",
+		"appsDialog": "Lista de aplicaciones en ejecución",
+		"appsDialogDesc": "Solo se mostrarán aplicaciones ejecutándose actualmente en la lista que se indica a continuación",
+		"appsDialogDisabledTooltip": "Deseleccione la aplicación primero",
+		"appsDialogWarn": "No hay aplicaciones en ejecución",
+		"appsDialogWarnDesc": "Solo se pueden mostrar las aplicaciones que se están ejecutando actualmente. Podría iniciar una aplicación que desee añadir y luego la verá aquí.",
+		"networkBoost": "Potenciamiento de red",
+		"networkBoostDesc": "Esta característica especificará automáticamente la prioridad de los juegos al nivel más elevado dentro de la red, lo que maximizará la velocidad. Si usa aplicaciones al jugar, es recomendable agregarlas a continuación para que también reciban prioridad en la red.",
+		"performanceBoost": "Mejora del rendimiento",
+		"performanceBoostDesc": "Esta característica cerrará automáticamente las aplicaciones que añadió a continuación al iniciar un juego. Esto puede liberar recursos no utilizados para maximizar el rendimiento. Tenga en cuenta que las aplicaciones añadidas a la lista se cerrarán por completo, asegúrese siempre de haber guardado su trabajo."
 	},
 	"smb": {
 		"meetingExperience": {

@@ -5579,7 +5579,8 @@
 			"connectedHomeSecurity": "Profitez d'une surveillance et d'alertes en temps réel concernant la sécurité de votre réseau à domicile. Vous serez le premier informé si l'un de vos périphériques intelligents est confronté à une attaque de sécurité.",
 			"hardwareScan": "Vous pouvez maintenant accéder à l'état d'intégrité des composants matériels de votre système.",
 			"appSearch": "Le saviez-vous ? Vous pouvez rechercher ici les fonctions applicables à votre périphérique.",
-			"productivity": "Vous souhaitez être plus efficace au travail ?"
+			"productivity": "Vous souhaitez être plus efficace au travail ?",
+			"autoClose": "Le saviez-vous ? La fonction \"Amélioration des performances\" peut vous aider à réduire les temps de chargement des jeux. Essayez-la maintenant dans Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5643,6 +5644,22 @@
 		"title": "Nous envoyer vos commentaires",
 		"likeUs": "Suivez-nous",
 		"feedback": "Laisser des commentaires"
+	},
+	"intelligentBoost": {
+		"title": "Amélioration de jeux intelligente",
+		"appsContainerTitle": "Applications ajoutées à la liste",
+		"edit": "Editer",
+		"done": "Effectué",
+		"add": "Ajouter",
+		"appsDialog": "Liste des applications en cours d'exécution",
+		"appsDialogDesc": "Seules les application en cours d'exécution s'afficheront dans la liste ci-dessous",
+		"appsDialogDisabledTooltip": "Décochez d'abord sur l'application",
+		"appsDialogWarn": "Aucune application en cours d'exécution",
+		"appsDialogWarnDesc": "Seules les applications actuellement en cours d'exécution peuvent être affichées. Vous pouvez lancer une application à ajouter, et elle s'affichera ici.",
+		"networkBoost": "Amélioration réseau",
+		"networkBoostDesc": "Cette fonctionnalité définit automatiquement la priorité des jeux au niveau le plus élevé de votre réseau afin de maximiser les vitesses. Si vous utilisez des applications pendant que vous jouez, nous vous conseillons de les ajouter ci-dessous afin qu'elles reçoivent la priorité sur votre réseau.",
+		"performanceBoost": "Amélioration des performances",
+		"performanceBoostDesc": "Cette fonctionnalité fermera automatiquement les applications que vous avez ajoutées ci-dessous lors du lancement d'un jeu. Cela permet de libérer des ressources inutilisées pour optimiser les performances. Soyez conscient que les applications ajoutées dans la liste seront complètement fermées. Assurez-vous de sauvegarder votre travail en amont."
 	},
 	"smb": {
 		"meetingExperience": {

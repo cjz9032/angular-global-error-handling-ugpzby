@@ -5469,7 +5469,8 @@
 			"connectedHomeSecurity": "Obtenha monitorização e alertas em tempo real sobre a segurança da sua rede em casa. Será o primeiro a saber se algum dos seus dispositivos inteligentes está a ser alvo de um ataque de segurança.",
 			"hardwareScan": "Agora é possível obter o estado de funcionamento do componente de hardware do sistema.",
 			"appSearch": "Sabia que... Pode procurar aqui as funcionalidades aplicáveis ao seu dispositivo.",
-			"productivity": "Pretende melhorar a eficiência do seu trabalho?"
+			"productivity": "Pretende melhorar a eficiência do seu trabalho?",
+			"autoClose": "Sabia que... A funcionalidade “Reforçar o desempenho” poderá ajudá-lo a aumentar a velocidade de carregamentos dos jogos. Experimente-a agora no Smart Assist."
 		}
 	},
 	"appsForYou": {
@@ -5533,6 +5534,22 @@
 		"title": "Envie-nos a sua opinião",
 		"likeUs": "Siga-nos",
 		"feedback": "Deixar comentários"
+	},
+	"intelligentBoost": {
+		"title": "Melhoramento inteligente de jogos",
+		"appsContainerTitle": "Aplicações adicionadas à lista",
+		"edit": "Editar",
+		"done": "Concluído",
+		"add": "Adicionar",
+		"appsDialog": "Lista de aplicações em execução",
+		"appsDialogDesc": "Só as aplicações atualmente em execução serão mostradas na lista abaixo",
+		"appsDialogDisabledTooltip": "Primeiro, desmarque a aplicação",
+		"appsDialogWarn": "Nenhuma aplicação em execução",
+		"appsDialogWarnDesc": "Só poderão ser mostradas as aplicações atualmente em execução. Pode lançar uma aplicação que pretende adicionar e, em seguida, vê-la aqui.",
+		"networkBoost": "Reforço da rede",
+		"networkBoostDesc": "Esta funcionalidade vai definir automaticamente a prioridade dos jogos para o nível máximo na rede, maximizando a velocidade. Se utilizar quaisquer aplicações durante o jogo, sugerimos que as adicione abaixo para também terem prioridade na rede.",
+		"performanceBoost": "Reforçar o desempenho",
+		"performanceBoostDesc": "Esta funcionalidade fechará automaticamente as aplicações que adicionou abaixo quando iniciar um jogo. Poderá libertar recursos não utilizados para maximizar o desempenho. Tenha em atenção que as aplicações adicionadas na lista serão totalmente fechadas, certifique-se sempre de que guardou o seu trabalho."
 	},
 	"smb": {
 		"meetingExperience": {

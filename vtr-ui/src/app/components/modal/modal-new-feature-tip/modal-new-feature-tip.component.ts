@@ -38,6 +38,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	tipsVersions = {
 		'v3.6': 3.006,
 		'v3.7': 3.007,
+		'v3.8': 3.008,
 	};
 
 	allNewTips: NewTipItem[] = [
@@ -50,6 +51,11 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 			tipId: MenuID.smb,
 			desc: 'notification.menu.productivity',
 			version: this.tipsVersions['v3.7'],
+		},
+		{
+			tipId: MenuID.device,
+			desc: 'notification.menu.autoClose',
+			version: this.tipsVersions['v3.8'],
 		},
 	];
 
