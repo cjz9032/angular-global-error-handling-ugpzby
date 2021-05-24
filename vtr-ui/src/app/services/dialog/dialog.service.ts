@@ -429,7 +429,7 @@ export class DialogService {
 		}
 	}
 
-	openAppListDialog(dialogData: TileItem[], maxSelected?: MaxSelected) {
+	openAppListDialog(dialogData: TileItem[], maxSelected?: MaxSelected, metricsParent?: string) {
 		if (this.hasOpenDialog()) {
 			return;
 		}
@@ -442,6 +442,7 @@ export class DialogService {
 		});
 		dialogRef.componentInstance.data = dialogData;
 		dialogRef.componentInstance.maxSelected = maxSelected;
+		dialogRef.componentInstance.metricsParent = metricsParent;
 		return dialogRef;
 	}
 }

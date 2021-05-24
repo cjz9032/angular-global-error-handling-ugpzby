@@ -12,7 +12,8 @@ export class MaterialAppListDialogComponent {
 
 	constructor(
 		@Inject(MAT_DIALOG_DATA) public data: TileItem[],
-		@Inject(MAT_DIALOG_DATA) public maxSelected: MaxSelected
+		@Inject(MAT_DIALOG_DATA) public maxSelected: MaxSelected,
+		@Inject(MAT_DIALOG_DATA) public metricsParent: string = 'Device'
 	) {}
 
 	select(item: TileItem) {
