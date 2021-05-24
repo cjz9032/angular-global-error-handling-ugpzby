@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.13](https://bitbucket.tc.lenovo.com///compare/v1.12.12...v1.12.13) (2021-05-24)
+
+
+### Features
+
+* **auto close:** VAN-29396 add auto close feature tips config ([87d04c4](https://bitbucket.tc.lenovo.com///commit/87d04c4c22505e97cce2257e7392c99cc8e81058))
+* **Auto close:** VAN-29394 add auto-id and metrics for Auto close ([7b56b54](https://bitbucket.tc.lenovo.com///commit/7b56b549ff9d484ac1dfadaaf672187ae0d27e4f))
+* **Auto close NLS:** add auto close nls strings and version support ([a7dc47f](https://bitbucket.tc.lenovo.com///commit/a7dc47ffdeb0924be062d6c02473cd6a0f16c95d))
+
 ### [1.12.12](https://bitbucket.tc.lenovo.com///compare/v1.12.11...v1.12.12) (2021-05-21)
 
 
