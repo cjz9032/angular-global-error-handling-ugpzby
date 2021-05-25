@@ -757,7 +757,10 @@
 				"name10": "水冷水泵彩灯 & 水冷风扇彩灯",
 				"name11": "前置风扇彩灯",
 				"name12": "上置风扇彩灯",
-				"name13": "内存彩灯"
+				"name13": "内存彩灯",
+				"name14": "显卡图形彩灯",
+				"name15": "显卡拯救者灯",
+				"name16": "显卡型号彩灯"
 			},
 			"lightingEffect": {
 				"effectName1": "静态",
@@ -783,7 +786,8 @@
 			},
 			"tipText": {
 				"title1": "使用 Fn+空格键在概要文件之间切换"
-			}
+			},
+			"gpuDriverLackText": "请安装GPU驱动以便设置GPU灯效."
 		}
 	},
 	"common": {
