@@ -26,7 +26,8 @@
 							"util",
 							"jspdf-autotable",
 							"currency-formatter",
-							"x2js"
+							"x2js",
+							"localforage"
 						],
 						"customWebpackConfig": {
 							"path": "./custom-webpack.config.js"
