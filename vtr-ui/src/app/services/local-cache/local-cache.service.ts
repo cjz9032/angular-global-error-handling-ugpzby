@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { NgForage, Driver, DedicatedInstanceFactory } from 'ngforage';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../logger/logger.service';
 import { IdleService } from '../idle/idle.service';
+import localforage from 'localforage';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class LocalCacheService {
 	private experienceName = 'VantageExperience';
-	private store: NgForage;
+	private store: LocalForage;
 	private transferEnabled = false;
 	private transferredShellVersion = '10.2011.8';
 	private cacheMap = {};
@@ -18,7 +18,6 @@ export class LocalCacheService {
 	private needSaveIndexedDB = false;
 
 	constructor(
-		private readonly fact: DedicatedInstanceFactory,
 		private idleService: IdleService,
 		private loggerService: LoggerService,
 		private commonService: CommonService
@@ -28,9 +27,9 @@ export class LocalCacheService {
 			this.createForage(this.experienceName, this.experienceName);
 		}
 		this.idleService.start();
-		this.idleService.schedule('SaveIndexedDB', false, function () {
+		this.idleService.schedule('SaveIndexedDB', false, function() {
 			this.saveIndexedDB();
-		}, this)
+		}, this);
 	}
 
 	private saveIndexedDB() {
@@ -81,6 +80,7 @@ export class LocalCacheService {
 	/**
 	 * Stores given value in IndexedDB
 	 * Before switch to use IndexedDB, please make sure there is related feature story for PA to verify
+	 *
 	 * @param key key for storage. Must define it in LocalStorageKey or DashboardLocalStorageKey enum
 	 * @param value value to store in local storage
 	 */
@@ -101,6 +101,7 @@ export class LocalCacheService {
 	/**
 	 * Get value from IndexedDB
 	 * Before switch to use IndexedDB, please make sure there is related feature story for PA to verify
+	 *
 	 * @param key key for storage. Must define it in LocalStorageKey or DashboardLocalStorageKey enum
 	 * @param defaultValue default value for not key not found in IndexedDB storage
 	 */
@@ -119,6 +120,7 @@ export class LocalCacheService {
 	/**
 	 * Removes the key/value pair in IndexedDB storage with the given key
 	 * Before switch to use IndexedDB, please make sure there is related feature story for PA to verify
+	 *
 	 * @param key key use to removes the key/value pair in IndexedDB storage
 	 */
 	public removeLocalCacheValue(key: LocalStorageKey): Promise<void> {
@@ -151,10 +153,13 @@ export class LocalCacheService {
 	}
 
 	private createForage(dbName: string, store: string) {
-		this.store = this.fact.createNgForage({
+		this.store = localforage.createInstance({
 			name: dbName,
 			storeName: store,
-			driver: [Driver.INDEXED_DB, Driver.LOCAL_STORAGE],
+			driver: [
+				localforage.INDEXEDDB,
+				localforage.LOCALSTORAGE
+			],
 		});
 	}
 
