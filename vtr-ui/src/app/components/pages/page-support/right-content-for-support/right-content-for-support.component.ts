@@ -37,28 +37,6 @@ export class RightContentForSupportComponent implements OnInit, OnDestroy {
 		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
 		metricsEvent: 'FeatureClick',
 	};
-	listYourVirtualAssistant = {
-		icon: ['fal', 'robot'],
-		title: 'support.needHelp.listYourVirtualAssistant',
-		url: 'https://lena.lenovo.com/lena',
-		metricsItem: 'NeedHelp.YourVirtualAssistantButton',
-		metricsEvent: 'FeatureClick',
-	};
-
-	// lenaUrls = [
-	// 	{ url: 'https://in.lena.lenovo.com/lena', lang: 'en', geo: ['in', 'lk', 'bd'] },
-	// 	{ url: 'https://us.lena.lenovo.com/lena', lang: 'en', geo: ['us', 'ca'] },
-	// 	{ url: 'https://uki.lena.lenovo.com/lena', lang: 'en', geo: ['gb', 'ie'] },
-	// 	{ url: 'https://lena.lenovo.com/lena', lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph'] },
-	// 	{
-	// 		url: 'https://las.lena.lenovo.com/lena',
-	// 		lang: 'es',
-	// 		geo: ['mx', 'co', 'ar', 'pe', 'cl', 'cr', 'do', 'sv', 'gt', 'hn', 'ni', 'pa', 'bo', 'ec', 'py',
-	// 			'uy', 've'],
-	// 	},
-	// 	{ url: 'https://jp.lena.lenovo.com/lena', lang: 'ja', geo: ['jp'] },
-	// 	{ url: 'https://eu.lena.lenovo.com/lena', lang: 'de', geo: ['de', 'at'] },
-	// ];
 
 	listFindUs = {
 		icon: ['fal', 'heart'],
