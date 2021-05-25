@@ -1,0 +1,57 @@
+@import '../../../../../app.theme.scss';
+
+$font-size: 2rem;
+
+.hidden {
+	display: none;
+}
+
+.widget-root {
+	.mat-button {
+		font-size: $font-size;
+		min-width: 2.5rem;
+		padding: 0;
+		height: 4rem;
+		font-weight: initial;
+		color: $grey_dark;
+		&:focus {
+			border: 1px solid $menu_hover;
+			outline: none;
+		}
+	}
+
+	.pagination-num-btn:disabled {
+		color: $hover_dark;
+		font-weight: bold;
+	}
+
+	.pagination-chevron-icon-btn:disabled {
+		opacity: 0.6;
+		color: $grey_dark;
+	}
+}
+
+:host-context(.is-gaming) {
+	.widget-root {
+		.mat-button {
+			color: $gaming_light_08;
+			&:focus {
+				border: 1px solid $menu_hover;
+			}
+
+			&:enabled {
+				.item-content {
+					cursor: pointer;
+				}
+			}
+		}
+
+		.pagination-num-btn:disabled {
+			color: $gaming_lightest;
+		}
+
+		.pagination-chevron-icon-btn:disabled {
+			color: $gaming_light_02;
+		}
+	}
+}

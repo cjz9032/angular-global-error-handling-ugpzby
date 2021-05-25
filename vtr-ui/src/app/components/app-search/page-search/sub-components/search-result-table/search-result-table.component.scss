@@ -1,0 +1,148 @@
+@import '../../../../../app.theme.scss';
+
+$item_height: 6rem;
+$icon_size: 2.4rem;
+$clean_icon_size: 1.6rem;
+$font_size: 1.4rem;
+$result_item_border-radius: 0.4rem;
+.paginator-item-range-label {
+	color: $gray_dark;
+	font-size: 1.8rem;
+	opacity: 0.8;
+
+	span:first-child {
+		font-weight: bold;
+	}
+}
+
+table {
+	margin-top: 1.2rem;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	.mat-row {
+		.mat-cell {
+			padding: 0;
+			border: 1px solid $grey_light;
+			border-collapse: collapse;
+			border-spacing: 0;
+
+			.mat-button {
+				padding: 0;
+				line-height: initial;
+				border-radius: 0;
+			}
+		}
+
+		&:first-child {
+			.mat-cell {
+				border-top-left-radius: $result_item_border-radius;
+				border-top-right-radius: $result_item_border-radius;
+				.mat-button {
+					border-top-left-radius: $result_item_border-radius;
+					border-top-right-radius: $result_item_border-radius;
+				}
+			}
+		}
+
+		&:last-child {
+			.mat-cell {
+				border-bottom-left-radius: $result_item_border-radius;
+				border-bottom-right-radius: $result_item_border-radius;
+				.mat-button {
+					border-bottom-left-radius: $result_item_border-radius;
+					border-bottom-right-radius: $result_item_border-radius;
+				}
+			}
+		}
+	}
+
+	.result-item-btn {
+		height: $item_height;
+		background: $light 0% 0% no-repeat padding-box;
+
+		&:focus {
+			border: 1px solid $menu_hover;
+			outline: none;
+		}
+
+		.result-item-box {
+			div {
+				cursor: pointer;
+			}
+			.feature-icon-box {
+				width: $icon_size + 4rem;
+
+				.feature-icon {
+					font-size: $icon_size;
+					color: $menu_hover;
+				}
+			}
+
+			.feature-name-box {
+				font-size: $font_size;
+				font-weight: bold;
+				color: $gray_dark;
+			}
+
+			.feature-category-box {
+				font-size: $font_size;
+				font-style: italic;
+				color: $gray_dark;
+				font-weight: initial;
+				padding: 0;
+			}
+
+			.narrow-icon {
+				font-size: $font_size;
+				color: $gray_dark;
+				padding-left: 1.4rem;
+				padding-right: 1.8rem;
+				font-weight: initial;
+			}
+		}
+	}
+}
+
+.pagination-bar {
+	width: 100%;
+	font-size: 1.8rem;
+	opacity: 0.8;
+	margin-top: 2.4rem;
+}
+
+:host-context(.is-gaming) {
+	table {
+		.mat-row {
+			.mat-cell {
+				border: 1px solid $gaming_light_02;
+			}
+		}
+
+		.result-item-btn {
+			background: $darkCell 0% 0% no-repeat padding-box;
+			&:focus {
+				border: 1px solid $menu_hover;
+			}
+
+			.result-item-box {
+				.feature-name-box {
+					color: $gaming_lightest;
+				}
+
+				.feature-category-box {
+					color: $gaming_grey_lightest;
+				}
+
+				.narrow-icon {
+					color: $gaming_grey_lightest;
+				}
+			}
+		}
+	}
+
+	.paginator-item-range-label {
+		color: $gaming_lightest;
+		opacity: 1;
+	}
+}
