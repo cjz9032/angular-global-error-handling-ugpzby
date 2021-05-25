@@ -27,10 +27,10 @@
 					"/*.ttf"
 				],
 				"urls": [
-					"https://vantage*.csw*.lenovo.com/**/*.jpg",
-					"https://vantage*.csw*.lenovo.com/**/*.png",
-					"https://vantage*.csw*.lenovo.com/**/*.svg",
-					"https://vantage*.csw*.lenovo.com/**/*.webp"
+					"https://vantage*.csw.lenovo.com/**/*.jpg",
+					"https://vantage*.csw.lenovo.com/**/*.png",
+					"https://vantage*.csw.lenovo.com/**/*.svg",
+					"https://vantage*.csw.lenovo.com/**/*.webp"
 				]
 			}
 		}
@@ -39,8 +39,8 @@
 		{
 			"name": "cms",
 			"urls": [
-				"https://vantage*.csw*.lenovo.com/api/**",
-				"https://vantage*.csw*.lenovo.com/**/*.js"
+				"https://vantage*.csw.lenovo.com/api/**",
+				"https://vantage*.csw.lenovo.com/**/*.js"
 			],
 			"cacheConfig": {
 				"maxSize": 50,
