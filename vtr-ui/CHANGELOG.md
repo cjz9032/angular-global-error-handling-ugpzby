@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.39](https://bitbucket.tc.lenovo.com///compare/v1.11.38...v1.11.39) (2021-05-25)
+
+
+### Bug Fixes
+
+* **VAN-29541:** Change to use localforage for local cache ([cf0e04d](https://bitbucket.tc.lenovo.com///commit/cf0e04d5f836610dc8ce2869559df45299c9184f))
+
 ### [1.11.38](https://bitbucket.tc.lenovo.com///compare/v1.11.37...v1.11.38) (2021-05-17)
 
 ### [1.11.37](https://bitbucket.tc.lenovo.com///compare/v1.11.36...v1.11.37) (2021-05-17)
