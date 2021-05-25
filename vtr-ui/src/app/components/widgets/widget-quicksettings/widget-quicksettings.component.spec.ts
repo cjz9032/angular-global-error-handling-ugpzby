@@ -7,7 +7,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { DisplayService } from 'src/app/services/display/display.service';
+import { DisplayService } from 'src/app/services/hwsettings/hwsettings.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';

@@ -1,17 +1,11 @@
+import { PageSettingsAppTransitionComponent } from 'src/app/components/pages/page-settings-app-transition/page-settings-app-transition.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NgModule } from '@angular/core';
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
-import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
-import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSupportDetailComponent } from 'src/app/components/pages/page-support-detail/page-support-detail.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
-import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
-import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
-import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
 import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 import { PerformanceBoostGuard } from 'src/app/services/guard/performance-boost-guard';
 
@@ -38,7 +32,6 @@ const routes: Routes = [
 	},
 	{
 		path: 'device-settings',
-		component: PageDeviceSettingsComponent,
 		canDeactivate: [GuardService],
 		canActivate: [NonShellGuard, GuardService, NonArmGuard],
 		data: {
@@ -53,7 +46,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'power',
-				component: SubpageDeviceSettingsPowerContainerComponent,
+				component: PageSettingsAppTransitionComponent,
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
@@ -62,7 +55,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'audio',
-				component: SubpageDeviceSettingsAudioComponent,
+				component: PageSettingsAppTransitionComponent,
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
@@ -71,7 +64,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'display-camera',
-				component: SubpageDeviceSettingsDisplayComponent,
+				component: PageSettingsAppTransitionComponent,
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
@@ -80,7 +73,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'input-accessories',
-				component: SubpageDeviceSettingsInputAccessoryComponent,
+				component: PageSettingsAppTransitionComponent,
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
@@ -89,7 +82,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'smart-assist',
-				component: PageSmartAssistComponent,
+				component: PageSettingsAppTransitionComponent,
 				canDeactivate: [GuardService],
 				canActivate: [GuardService, NonArmGuard, PerformanceBoostGuard],
 
@@ -107,16 +100,7 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Support.Detail',
-		},
-	},
-	{
-		path: 'high-density-battery',
-		component: PageHighDensityBatteryComponent,
-		canDeactivate: [GuardService],
-		canActivate: [NonShellGuard, GuardService],
-		data: {
-			pageName: 'Device.HighDensityBattery',
+			pageName: 'Support.Detail'
 		},
 	},
 ];

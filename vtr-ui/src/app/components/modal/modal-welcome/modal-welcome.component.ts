@@ -206,6 +206,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	next(page) {
 		this.metrics.metricsEnabled = this.privacyPolicy === true;
+		this.metricService.setMetricsEnabledInAllSubApp();
 		let tutorialData;
 		if (page < 2) {
 			const data = {
@@ -330,6 +331,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	private updateHeaderImage(segment: SegmentConst) {
 		if (segment === SegmentConst.SMB) {
 			this.dccService.headerBackground = 'assets/images/HeaderImageSmb.png';
+			this.dccService.setHeaderImageInAllSubApp();
 		}
 	}
 

@@ -1,0 +1,15 @@
+<div *ngIf="!isSettingsIframeShowed" class="vtr-header-main">
+	<img class="vtr-header-main-img" #dccHeaderBackground
+		[src]="dccService.headerBackground"
+		alt="" [hidden] = 'dccHeaderBackground.naturalWidth === 0'>
+	<div class="vtr-header-main-inner">
+		<a class="back" (click)="goBack()" href="javascript:void(0);">
+			{{backarrow}}
+			<span>{{'common.ui.back' | translate}}</span>
+		</a>
+		<h1 class="title">{{'common.menu.device.sub2' | translate}}</h1>
+	</div>
+</div>
+<div *ngIf="!isSettingsIframeShowed" class="spinner-content w-100">
+	<div class="spinner-border text-primary progress-spinner" role="status"></div>
+</div>

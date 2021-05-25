@@ -1,3 +1,4 @@
+import { IframeRenderer } from 'src/app/services/iframe-renderer/iframe-renderer.service';
 import { AfterViewInit, Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
@@ -275,6 +276,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	};
 
 	constructor(
+		private iframeRenderer: IframeRenderer,
 		private router: Router,
 		public dashboardService: DashboardService,
 		public qaService: QaService,
@@ -855,6 +857,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			'dashboard'
 		);
 		this.metricsService.activateScrollCounter(PageName.Dashboard);
+		this.iframeRenderer.preloadSubApp();
 	}
 
 	checkDeviceAndSecurityTimer() {

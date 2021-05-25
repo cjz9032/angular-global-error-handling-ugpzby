@@ -2597,6 +2597,10 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .snackbar {
+	position: fixed;
+	left: 5rem;
+	bottom: 0rem;
+	max-width: none !important;
 	white-space: pre-wrap;
 }
 

@@ -17,7 +17,7 @@
 		(scroll)="onPageScroll($event)"
 		[ngClass]="{'is-android': deviceService.isAndroid}">
 		<div class="row">
-			<div class="col p-0">
+			<div class="sub-app-iframe-container col p-0">
 				<router-outlet (activate)="onActivate($event)"></router-outlet>
 			</div>
 		</div>

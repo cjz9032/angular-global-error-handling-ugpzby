@@ -6,7 +6,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { DisplayService } from 'src/app/services/display/display.service';
+import { DisplayService } from 'src/app/services/hwsettings/hwsettings.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';

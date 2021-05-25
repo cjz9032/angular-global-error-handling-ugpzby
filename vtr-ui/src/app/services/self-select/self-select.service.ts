@@ -1,3 +1,7 @@
+import { ContainerAppSendMessageType } from '../communication/app-message-type';
+import { ContainerAppSendHandler } from '../communication/container-app-send.handler';
+import { subAppConfigList } from 'src/sub-app-config/sub-app-config';
+import { ISubAppConfig } from 'src/sub-app-config/sub-app-config-base';
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
@@ -90,6 +94,7 @@ export class SelfSelectService {
 	private segmentSelected: boolean; // Only for UI to show default segment
 
 	constructor(
+		private containerAppSendHandler: ContainerAppSendHandler,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
 		private logger: LoggerService,
@@ -162,6 +167,7 @@ export class SelfSelectService {
 		} catch (error) {
 			this.logger.error('saveConfig failed for error: ', JSON.stringify(error));
 		}
+		this.setSegmentInAllSubApp();
 	}
 
 	private reloadVantage() {
@@ -305,5 +311,20 @@ export class SelfSelectService {
 		}
 		this.frePersona = '';
 		return Promise.resolve(this.frePersona);
+	}
+
+	private setSegmentInAllSubApp() {
+		for (const subAppConfig of subAppConfigList) {
+			this.setSegmentInSubApp(subAppConfig);
+		}
+	}
+
+	public setSegmentInSubApp(subAppConfig: ISubAppConfig) {
+		const payload = { segment: this.savedSegment };
+		this.containerAppSendHandler.handle(
+			subAppConfig,
+			ContainerAppSendMessageType.setSegment,
+			payload
+		);
 	}
 }

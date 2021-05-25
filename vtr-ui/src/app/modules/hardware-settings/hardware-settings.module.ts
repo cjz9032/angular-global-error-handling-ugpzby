@@ -1,48 +1,19 @@
-import { SettingsPageLayoutModule } from './../../components/settings-page-layout/settings-page-layout.module';
-import { ActiveProtectionSystemAdvancedComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system-advanced/active-protection-system-advanced.component';
-import { ActiveProtectionSystemComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
-import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-import { BatteryCardComponent } from 'src/app/components/battery/battery-card/battery-card.component';
-import { BatteryConditionNotesComponent } from 'src/app/components/battery/battery-card/battery-condition-notes/battery-condition-notes.component';
-import { BatteryChargeThresholdSettingsComponent } from 'src/app/components/battery/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
-import { BatteryDetailComponent } from 'src/app/components/battery/battery-detail/battery-detail.component';
-import { BatteryIndicatorComponent } from 'src/app/components/battery/battery-indicator/battery-indicator.component';
-import { CameraBackgroundBlurComponent } from 'src/app/components/camera-background-blur/camera-background-blur.component';
-import { CameraControlComponent } from 'src/app/components/camera-control/camera-control.component';
-import { CameraDetailMockService } from 'src/app/services/camera/camera-detail/camera-detail.mock.service';
-import { ClockComponent } from 'src/app/components/clock/clock.component';
+import { PageSettingsAppTransitionComponent } from 'src/app/components/pages/page-settings-app-transition/page-settings-app-transition.component';
 import { CommonModule } from '@angular/common';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { DisplayColorTempComponent } from 'src/app/components/display/display-color-temp/display-color-temp.component';
-import { DolbyModesTranslationPipe } from 'src/app/pipe/dolby-modes-translation.pipe';
-import { EyeCareModeComponent } from 'src/app/components/display/eye-care-mode/eye-care-mode.component';
 
 import { HardwareSettingRoutingModule } from './hardware-settings-routing.module';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
-import { IntelligentMediaComponent } from 'src/app/components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { NgbDropdownModule, NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
-import { OledPowerSettingsComponent } from 'src/app/components/display/oled-power-settings/oled-power-settings.component';
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
-import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
-import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSupportDetailModule } from 'src/app/components/pages/page-support-detail/page-support-detail.module';
-import { PowerSmartSettingsComponent } from 'src/app/components/widgets/power-smart-settings/power-smart-settings.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
-import { SmartStandbyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/smart-standby/smart-standby.component';
-import { BatteryGaugeResetComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/battery-gauge-reset/battery-gauge-reset.component';
-import { SubpageDeviceSettingsAudioComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
-import { SubpageDeviceSettingsDisplayComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { SubpageDeviceSettingsInputAccessoryComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
-import { SubpageDeviceSettingsPowerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
-import { UserDefinedKeyComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/user-defined-key/user-defined-key.component';
-import { TopRowFunctionsComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions/top-row-functions.component';
-import { VoiceComponent } from 'src/app/components/pages/page-smart-assist/voice/voice.component';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { CommonModalModule } from '../common/common-modal.module';
@@ -93,76 +64,20 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { faPlusSquare } from '@fortawesome/pro-light-svg-icons/faPlusSquare';
 import { faPlus } from '@fortawesome/pro-light-svg-icons/faPlus';
 
-import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
-import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
-import { SubpageDeviceSettingsPowerDpmComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.component';
-import { PowerPlanComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-plan/power-plan.component';
-import { PowerAgendaComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-agenda/power-agenda.component';
-import { PowerSettingsComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-settings/power-settings.component';
-import { PowerUseComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-dpm/power-use/power-use.component';
-import { BacklightModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.module';
-import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
 
-import { BacklightThinkpadComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight-thinkpad/backlight-thinkpad.component';
 import { UiCustomSliderModule } from 'src/app/components/ui/ui-custom-slider/ui-custom-slider.module';
-import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/anti-theft/anti-theft.component';
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
-import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
-import { BatteryHealthModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-power/battery-health/battery-health.module';
 import { MaterialModule } from '../common/material.module';
 import { SystemUpdateModule } from '../system-update/system-update.module';
-import { AudioVendorService } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
-import { AudioVendorFactory } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/audio-vendor.factory';
-import { DOLBY_FUSION_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/dolby-fusion-client';
-import { FORTE_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/forte-client';
-import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { DeviceService } from '../../services/device/device.service';
 import { MaterialChevronModule } from 'src/app/material/material-chevron/material-chevron.module';
 import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
 import { AutoCloseModule } from 'src/app/feature/auto-close/auto-close.module';
 
 @NgModule({
 	declarations: [
-		ActiveProtectionSystemAdvancedComponent,
-		ActiveProtectionSystemComponent,
-		BatteryCardComponent,
-		BatteryConditionNotesComponent,
-		BatteryChargeThresholdSettingsComponent,
-		BatteryDetailComponent,
-		BatteryIndicatorComponent,
-		CameraBackgroundBlurComponent,
-		CameraControlComponent,
-		ClockComponent,
-		DisplayColorTempComponent,
-		DolbyModesTranslationPipe,
-		EyeCareModeComponent,
-		IntelligentMediaComponent,
-		OledPowerSettingsComponent,
+		PageSettingsAppTransitionComponent,
 		PageDeviceComponent,
-		PageDeviceSettingsComponent,
 		PageQuestionsComponent,
-		PageSmartAssistComponent,
-		PowerSmartSettingsComponent,
-		SmartStandbyComponent,
-		BatteryGaugeResetComponent,
-		SubpageDeviceSettingsAudioComponent,
-		SubpageDeviceSettingsDisplayComponent,
-		SubpageDeviceSettingsInputAccessoryComponent,
-		SubpageDeviceSettingsPowerComponent,
-		UserDefinedKeyComponent,
-		TopRowFunctionsComponent,
-		VoiceComponent,
-		SmartStandbyGraphComponent,
-		TopRowFunctionsIdeapadComponent,
-		PowerUseComponent,
-		PowerPlanComponent,
-		PowerAgendaComponent,
-		PowerSettingsComponent,
-		SubpageDeviceSettingsPowerDpmComponent,
-		SubpageDeviceSettingsPowerContainerComponent,
-		BacklightThinkpadComponent,
-		AntiTheftComponent,
-		PageHighDensityBatteryComponent,
 	],
 	imports: [
 		CommonModule,
@@ -183,12 +98,9 @@ import { AutoCloseModule } from 'src/app/feature/auto-close/auto-close.module';
 		RouterModule,
 		NgbCollapseModule,
 		PageLayoutModule,
-		SettingsPageLayoutModule,
-		BacklightModule,
 		UiCustomSliderModule,
 		PageSupportDetailModule,
 		SpinnerModule,
-		BatteryHealthModule,
 		MatTooltipModule,
 		OverlayModule,
 		CdkScrollableModule,
@@ -206,18 +118,11 @@ import { AutoCloseModule } from 'src/app/feature/auto-close/auto-close.module';
 		CommonModalModule,
 		WidgetQuestionsModule,
 		PageLayoutModule,
-		SettingsPageLayoutModule,
 		RouterModule,
 		HeaderMainModule,
 		UiCustomSliderModule,
 	],
 	providers: [
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
-		{
-			provide: AudioVendorService,
-			useFactory: AudioVendorFactory,
-			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService],
-		},
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

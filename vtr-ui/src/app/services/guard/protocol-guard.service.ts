@@ -1,3 +1,5 @@
+import { IframeRenderer } from 'src/app/services/iframe-renderer/iframe-renderer.service';
+import { Subscription } from 'rxjs';
 import { Injectable } from '@angular/core';
 import {
 	CanActivate,
@@ -94,11 +96,21 @@ export class ProtocolGuardService implements CanActivate {
 
 	characteristicCode = '/?protocol=';
 
+	private routerEventSubscription: Subscription;
+
 	constructor(
+		private iframeRenderer: IframeRenderer,
 		private router: Router,
 		private commonService: CommonService,
 		private deviceService: DeviceService
-	) {}
+	) {
+		this.routerEventSubscription = this.router.events.subscribe((ev) => {
+			if (ev instanceof NavigationEnd && ev.urlAfterRedirects !== '/dashboard' && ev.urlAfterRedirects !== '/device-gaming') {
+				this.iframeRenderer.preloadSubApp();
+				this.routerEventSubscription.unsubscribe();
+			}
+		});
+	}
 
 	private decodeBase64String(args: string) {
 		try {

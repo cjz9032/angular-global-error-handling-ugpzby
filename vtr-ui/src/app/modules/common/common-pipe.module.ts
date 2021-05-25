@@ -2,7 +2,6 @@ import { CapitalizeFirstPipe } from 'src/app/pipe/capitalize-pipe/capitalize-fir
 import { CharacterLimitPipe } from 'src/app/pipe/ui-chs-statusbar/character-limit.pipe';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { JoinclassPipe } from 'src/app/pipe/security-wifi/join-class.pipe';
-import { MinutesToHourminPipe } from 'src/app/pipe/minutes-to-hourmin.pipe';
 import { SanitizeModule } from '../sanitize.module';
 import { SeparatePascalCasePipe } from 'src/app/pipe/separate-pascal-case.pipe';
 import { StatusTextPipe } from 'src/app/pipe/ui-security-statusbar/status-text.pipe';
@@ -23,7 +22,6 @@ import { FormatIfDatetimeOrTranslateDefaultPipe } from 'src/app/pipe/format-if-d
 		CapitalizeFirstPipe,
 		CharacterLimitPipe,
 		JoinclassPipe,
-		MinutesToHourminPipe,
 		SeparatePascalCasePipe,
 		StatusTextPipe,
 		HtmlTextPipe,
@@ -42,7 +40,6 @@ import { FormatIfDatetimeOrTranslateDefaultPipe } from 'src/app/pipe/format-if-d
 		CapitalizeFirstPipe,
 		CharacterLimitPipe,
 		JoinclassPipe,
-		MinutesToHourminPipe,
 		SanitizeModule,
 		SeparatePascalCasePipe,
 		StatusTextPipe,

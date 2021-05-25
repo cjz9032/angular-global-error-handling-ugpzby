@@ -18,7 +18,7 @@
 			class="text-center description"
 			role="text">
 			{{ 'support.about.version' | translate}}: {{ shellVersion }} <br>
-			( Web: {{ buildVersion }}&nbsp;&nbsp;Bridge: {{ bridgeVersion }} )
+			<span [innerHTML]="buildVersion + bridgeVersion"></span>
 		</div>
 	</div>
 	<div class="line"></div>

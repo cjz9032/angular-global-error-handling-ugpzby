@@ -8,8 +8,7 @@
 				"files": [
 					"/*.woff",
 					"/*.css",
-					"/assets/cms-cache/**",
-					"/assets/images/keyboard-images/KeyboardMap_Images/**"
+					"/assets/cms-cache/**"
 				]
 			}
 		},
@@ -41,7 +40,7 @@
 			"name": "cms",
 			"urls": [
 				"https://vantage*.csw.lenovo.com/api/**",
-				"https://vantage*.csw.lenovo.com/*.js"
+				"https://vantage*.csw.lenovo.com/**/*.js"
 			],
 			"cacheConfig": {
 				"maxSize": 50,

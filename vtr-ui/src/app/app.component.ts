@@ -1,3 +1,6 @@
+import { IframeRenderer } from 'src/app/services/iframe-renderer/iframe-renderer.service';
+import { subAppConfigList } from 'src/sub-app-config/sub-app-config';
+import { ContainerAppReceiveService } from './services/communication/container-app-receive.service';
 import { SelfSelectService } from 'src/app/services/self-select/self-select.service';
 import { DOCUMENT } from '@angular/common';
 import {
@@ -17,7 +20,7 @@ import { Overlay } from '@angular/cdk/overlay';
 import { MAT_TOOLTIP_SCROLL_STRATEGY } from '@lenovo/material/tooltip';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@lenovo/material/dialog';
 
-import { DisplayService } from './services/display/display.service';
+import { DisplayService } from './services/hwsettings/hwsettings.service';
 import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
@@ -84,6 +87,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private isFirstPageInitialized = false;
 
 	constructor(
+		private iframeRenderer: IframeRenderer,
+		private containerAppReceiverService: ContainerAppReceiveService, // needed, cannot remove
 		private displayService: DisplayService,
 		private router: Router,
 		private dialog: MatDialog,
@@ -558,6 +563,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 						this.warrantyService.fetchWarranty();
 					}
 					break;
+				case LocalStorageKey.WelcomeTutorial:
+					if (notification.payload.page === 2) {
+						this.iframeRenderer.preloadSubApp();
+					}
+					break;
 				default:
 					break;
 			}
@@ -631,6 +641,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.commonService.markPerformanceNode('app entry loaded');
 		this.metricService.pageContainer = this.pageContainer;
 		this.metricService.onAppInitDone();
+		this.getSubAppConfig();
 	}
 
 	onPageScroll($event) {
@@ -682,6 +693,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			hostname: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode
 				? ''
 				: win.location.host,
+			pathname: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode
+				? ''
+				: win.location.pathname,
 			navigationStarts: Math.round(navigationStartTime),
 			indexPageEstablished: Math.round(
 				navigationStartTime + navPerf.responseEnd - navPerf.startTime
@@ -723,7 +737,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				? performanceTimePoints.domInteractived
 				: performanceTimePoints.indexPageEstablished;
 		this.metricService.sendAppLoadedMetric(performanceTimePoints);
-		let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;
+		let content = `You are now accessing Main App ( v${this.environment.appVersion} )\n${performanceTimePoints.source}, ${performanceTimePoints.hostname}${performanceTimePoints.pathname} \n \n`;
 		content += `Certpin done: ${performanceTimePoints.certPingDone} ms \n`;
 		content += `Navigation starts: ${performanceTimePoints.navigationStarts} ms \n`;
 		content += `Source downloaded: ${performanceTimePoints.indexPageEstablished} ms \n`;
@@ -743,7 +757,62 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				panelClass: ['snackbar'],
 			});
 			const snackbar = document.getElementsByClassName('snackbar')[0];
-			snackbar.querySelector('button').id = 'snackbar-close-btn';
+			snackbar.querySelector('button').id = 'main-app-snackbar-close-btn';
+		}
+	}
+
+	private getSubAppConfig() {
+		for (const subAppConfig of subAppConfigList) {
+			if (window.location.origin === 'http://127.0.0.1:4200') {
+				subAppConfig.url = `http://127.0.0.1:4201`;
+				subAppConfig.origin = 'http://127.0.0.1:4201';
+			} else {
+				subAppConfig.url = `${window.location.origin}/v1/web/${subAppConfig.name}/default`;
+				subAppConfig.origin = window.location.origin;
+			}
+			const vantageStub = this.vantageShellService.getVantageStub();
+			let subAppConfigData: any;
+			if (vantageStub && typeof vantageStub.getIntegrationInfo === 'function') {
+				try {
+					subAppConfigData = JSON.parse(vantageStub.getIntegrationInfo());
+				} catch (error) {
+					this.logger.error(`AppComponent.getSubAppConfig[${subAppConfig.name}]`, error.message);
+				}
+			}
+			if (subAppConfigData) {
+				for (const data of subAppConfigData) {
+					if (data.web.app === subAppConfig.name) {
+						if (data.web.env.includes('127.0.0.1')) {
+							subAppConfig.url = data.web.env.substring(0, data.web.env.length - 1);
+						} else {
+							subAppConfig.url = `${data.web.env}${data.ver}/web/${data.web.app}/${data.web.release}`;
+						}
+						subAppConfig.origin = data.web.env.substring(0, data.web.env.length - 1);
+						if (data.isPreloadEnabled) {
+							if (data.isPreloadEnabled === 'false') {
+								subAppConfig.isPreloadEnabled = false;
+							} else {
+								subAppConfig.isPreloadEnabled = data.isPreloadEnabled;
+							}
+						}
+						if (data.isAutoDestroyEnabled) {
+							if (data.isAutoDestroyEnabled === 'false') {
+								subAppConfig.isAutoDestroyEnabled = false;
+							} else {
+								subAppConfig.isAutoDestroyEnabled = data.isAutoDestroyEnabled;
+							}
+						}
+					}
+				}
+			}
+			if (subAppConfig.origin === window.location.origin
+				|| (subAppConfig.origin.includes('127.0.0.1')
+				&& window.location.origin.includes('127.0.0.1')
+				&& navigator.userAgent.includes('Edge'))) {
+				subAppConfig.isCrossOrigin = false;
+			} else {
+				subAppConfig.isCrossOrigin = true;
+			}
 		}
 	}
 }

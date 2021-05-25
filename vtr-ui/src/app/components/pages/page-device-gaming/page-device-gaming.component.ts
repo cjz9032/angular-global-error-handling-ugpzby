@@ -1,3 +1,4 @@
+import { IframeRenderer } from 'src/app/services/iframe-renderer/iframe-renderer.service';
 import { Component, OnInit, DoCheck, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
@@ -54,6 +55,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	private actionSubscription: Subscription;
 
 	constructor(
+		private iframeRenderer: IframeRenderer,
 		private router: Router,
 		public dashboardService: DashboardService,
 		public mockService: MockService,
@@ -126,6 +128,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	ngAfterViewInit(): void {
 		this.commonService.markPerformanceNode('device-gaming');
 		this.commonService.sendNotification(PerformanceNotifications.firstPageInitialized, 'device-gaming');
+		this.iframeRenderer.preloadSubApp();
 	}
 
 	ngOnDestroy() {

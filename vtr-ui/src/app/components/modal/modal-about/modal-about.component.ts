@@ -1,3 +1,4 @@
+import { subAppConfigList } from 'src/sub-app-config/sub-app-config';
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -44,6 +45,21 @@ export class ModalAboutComponent implements OnInit {
 		} else {
 			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion : '';
 		}
+		this.buildVersion = `(Main web: ${this.buildVersion}&nbsp;&nbsp;`;
+		this.bridgeVersion = `Main bridge: ${this.bridgeVersion}`;
+		for (const subAppConfig of subAppConfigList) {
+			if (subAppConfig.webVersion) {
+				this.buildVersion = `${this.buildVersion}${subAppConfig.name.replace(subAppConfig.name[0], subAppConfig.name[0].toUpperCase())} web: ${subAppConfig.webVersion}&nbsp;&nbsp;`;
+			}
+			if (subAppConfig.jsBridgeVersion) {
+				if (this.bridgeVersion.startsWith('<br>')) {
+					this.bridgeVersion = `${this.bridgeVersion}<br>${subAppConfig.name.replace(subAppConfig.name[0], subAppConfig.name[0].toUpperCase())} bridge: ${subAppConfig.jsBridgeVersion}`;
+				} else {
+					this.bridgeVersion = `<br>${this.bridgeVersion}<br>${subAppConfig.name.replace(subAppConfig.name[0], subAppConfig.name[0].toUpperCase())} bridge: ${subAppConfig.jsBridgeVersion}`;
+				}
+			}
+		}
+		this.bridgeVersion = `${this.bridgeVersion})`;
 	}
 
 	agreementClicked() {

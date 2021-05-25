@@ -35,7 +35,7 @@ export class LoggerService {
 			errorMessage = data.message;
 		}
 
-		return `v${this.version}:- ${message} | data: ${JSON.stringify(errorMessage)}`;
+		return `Main App v${this.version}:- ${message} | data: ${JSON.stringify(errorMessage)}`;
 	}
 
 	public debug(message: string, data: any = {}): void {

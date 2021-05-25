@@ -1,3 +1,6 @@
+import { ContainerAppSendMessageType } from '../communication/app-message-type';
+import { ContainerAppSendHandler } from '../communication/container-app-send.handler';
+import { subAppConfigList } from 'src/sub-app-config/sub-app-config';
 import { Injectable, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
@@ -48,6 +51,7 @@ export class MetricService {
 	private pageScollEvent = (arg: any) => { };
 
 	constructor(
+		private containerAppSendHandler: ContainerAppSendHandler,
 		private http: HttpClient,
 		private shellService: VantageShellService,
 		private timerService: DurationCounterService,
@@ -498,6 +502,7 @@ export class MetricService {
 								this.toLower(result.freMetricsSettings) === 'enabled'))
 					) {
 						this.metricsClient.metricsEnabled = true;
+						this.setMetricsEnabledInAllSubApp();
 						this.externalAppMetricsState = true;
 						this.localCacheService.setLocalCacheValue(
 							LocalStorageKey.UserDeterminePrivacy,
@@ -590,5 +595,23 @@ export class MetricService {
 		};
 
 		this.metricsClient.autoFillAndSend(fullPayload, { forced: true, autoFill: true });
+	}
+
+	public sendAppRefreshMetric() {
+		const stub = this.shellService.getVantageStub();
+		this.metricsClient.sendAsync(
+			new AppAction(MetricConst.ActionRefresh, stub.launchParms, stub.launchType, 0, 0)
+		);
+	}
+
+	public setMetricsEnabledInAllSubApp() {
+		for (const subAppConfig of subAppConfigList) {
+			const payload = { metricsEnabled: this.metricsClient.metricsEnabled };
+			this.containerAppSendHandler.handle(
+				subAppConfig,
+				ContainerAppSendMessageType.setMetricsEnabled,
+				payload
+			);
+		}
 	}
 }

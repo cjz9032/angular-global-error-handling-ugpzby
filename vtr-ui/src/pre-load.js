@@ -11,4 +11,4 @@
 	'gaming-only.jpg',
 	'gaming-work.jpg',
 	'non-gaming.jpg'
-].forEach(imgName=>{const image=new Image();image.src=`/assets/images/welcome/${imgName}`;})
+].forEach(imgName=>{const image=new Image();image.src=`assets/images/welcome/${imgName}`;})

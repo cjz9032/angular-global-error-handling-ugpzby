@@ -1,4 +1,4 @@
-import { EyeCareMode } from '../data-models/camera/eyeCareMode.model';
+import { EyeCareMode } from '../data-models/hwsettings/hwsettings.model';
 
 export enum DeviceMonitorStatus {
 	MicrophoneStatus = '[DeviceMonitorStatus] MicrophoneStatus',

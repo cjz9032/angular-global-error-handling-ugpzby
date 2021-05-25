@@ -11,8 +11,6 @@ import { SharedModule } from '../shared.module';
 import { UiCheckboxComponent } from 'src/app/components/ui/ui-checkbox/ui-checkbox.component';
 import { UiCircleRadioComponent } from 'src/app/components/ui/ui-circle-radio/ui-circle-radio.component';
 import { UiCircleRadioWithCheckboxComponent } from 'src/app/components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
-import { UiDaysPickerComponent } from 'src/app/components/ui/ui-days-picker/ui-days-picker.component';
-import { UiDropDownComponent } from 'src/app/components/ui/ui-dropdown/ui-dropdown.component';
 import { UiGamingCollapsibleContainerComponent } from 'src/app/components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { UiGamingDriverPopupComponent } from './../../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 import { UiNumberButtonComponent } from 'src/app/components/ui/ui-number-button/ui-number-button.component';
@@ -22,7 +20,6 @@ import { UiRoundedRectangleRadioComponent } from 'src/app/components/ui/ui-round
 import { UiRowSwitchComponent } from 'src/app/components/ui/ui-row-switch/ui-row-switch.component';
 import { UiSwitchOnoffComponent } from 'src/app/components/ui/ui-switch-onoff/ui-switch-onoff.component';
 import { UiSwitchTristateComponent } from 'src/app/components/ui/ui-switch-tristate/ui-switch-tristate.component';
-import { UiTimePickerComponent } from 'src/app/components/ui/ui-time-picker/ui-time-picker.component';
 import { UiTooltipsComponent } from 'src/app/components/ui/ui-tooltips/ui-tooltips.component';
 import { UiToggleComponent } from 'src/app/components/ui/ui-toggle/ui-toggle.component';
 import { ContainerCollapsibleComponent } from 'src/app/components/container-collapsible/container-collapsible.component';
@@ -40,8 +37,6 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faCircle as falCircle } from '@fortawesome/free-regular-svg-icons/faCircle';
 import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
-import { UiDpmDropdownComponent } from 'src/app/components/ui/ui-dpm-dropdown/ui-dpm-dropdown.component';
-import { UiDpmEnergyComponent } from 'src/app/components/ui/ui-dpm-energy/ui-dpm-energy.component';
 import { UiCustomSwitchModule } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.module';
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 import { UiRoundedRectangleCustomRadioListModule } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-custom-radio-list.module';
@@ -50,7 +45,6 @@ import { SafePipeModule } from 'safe-pipe';
 import { UiGroupCardComponent } from 'src/app/components/ui/ui-group-card/ui-group-card.component';
 import { UiDeviceinfoItemComponent } from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
 import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
-import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-point/ui-exclamation-point.component';
 import { MaterialModule } from './material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatButtonModule } from '@lenovo/material/button';
@@ -61,45 +55,36 @@ import { MatButtonModule } from '@lenovo/material/button';
 		UiCheckboxComponent,
 		UiCircleRadioComponent,
 		UiCircleRadioWithCheckboxComponent,
-		UiDaysPickerComponent,
-		UiDropDownComponent,
 		UiNumberButtonComponent,
 		UiRectangleRadioComponent,
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
 		UiSwitchTristateComponent,
-		UiTimePickerComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		UiProgressBarComponent,
 		UiTooltipsComponent,
 		UiToggleComponent,
 		ContainerCollapsibleComponent,
-		UiDpmDropdownComponent,
-		UiDpmEnergyComponent,
 		UiBrightnessSliderComponent,
 		UiAddReduceButtonComponent,
 		UiGroupCardComponent,
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
 		UiGamingMonitorTooltipComponent,
-		UiExclamationPointComponent,
 		UiLightingProfileToggleComponent,
 	],
 	exports: [
 		UiCheckboxComponent,
 		UiCircleRadioComponent,
 		UiCircleRadioWithCheckboxComponent,
-		UiDaysPickerComponent,
-		UiDropDownComponent,
 		UiNumberButtonComponent,
 		UiRectangleRadioComponent,
 		UiRoundedRectangleRadioComponent,
 		UiRowSwitchComponent,
 		UiSwitchOnoffComponent,
 		UiSwitchTristateComponent,
-		UiTimePickerComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
 		NgbProgressbarModule,
@@ -108,8 +93,6 @@ import { MatButtonModule } from '@lenovo/material/button';
 		UiTooltipsComponent,
 		UiToggleComponent,
 		ContainerCollapsibleComponent,
-		UiDpmDropdownComponent,
-		UiDpmEnergyComponent,
 		UiBrightnessSliderComponent,
 		UiAddReduceButtonComponent,
 		UiCustomSwitchModule,
@@ -119,7 +102,6 @@ import { MatButtonModule } from '@lenovo/material/button';
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
 		UiGamingMonitorTooltipComponent,
-		UiExclamationPointComponent,
 		UiLightingProfileToggleComponent,
 	],
 	imports: [

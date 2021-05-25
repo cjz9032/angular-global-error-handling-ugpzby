@@ -1,3 +1,7 @@
+import { ContainerAppSendMessageType } from '../communication/app-message-type';
+import { ContainerAppSendHandler } from '../communication/container-app-send.handler';
+import { subAppConfigList } from 'src/sub-app-config/sub-app-config';
+import { ISubAppConfig } from 'src/sub-app-config/sub-app-config-base';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { MatDialog } from '@lenovo/material/dialog';
@@ -79,6 +83,7 @@ export class UserService implements IUserService {
 		.replace(/[\t]/g, ' ');
 
 	constructor(
+		private containerAppSendHandler: ContainerAppSendHandler,
 		private cookieService: CookieService,
 		private commsService: CommsService,
 		private localCacheService: LocalCacheService,
@@ -418,6 +423,7 @@ export class UserService implements IUserService {
 			this.lid
 				.logout()
 				.then((result) => {
+					this.setLidInAllSubApp();
 					let metricsData: any;
 					if (result.success && result.status === 0) {
 						metricsData = {
@@ -573,5 +579,20 @@ export class UserService implements IUserService {
 					});
 				}
 			});
+	}
+
+	public setLidInAllSubApp() {
+		for (const subAppConfig of subAppConfigList) {
+			this.setLidInSubApp(subAppConfig);
+		}
+	}
+
+	public setLidInSubApp(subAppConfig: ISubAppConfig) {
+		const payload = { lid: this.lid.userGuid };
+		this.containerAppSendHandler.handle(
+			subAppConfig,
+			ContainerAppSendMessageType.setLid,
+			payload
+		);
 	}
 }
