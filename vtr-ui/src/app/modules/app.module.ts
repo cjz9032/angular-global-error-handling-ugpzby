@@ -75,7 +75,7 @@ import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-b
 import { AutoCloseModule } from '../feature/auto-close/auto-close.module';
 
 import { DevService } from '../services/dev/dev.service';
-import { DisplayService } from '../services/display/display.service';
+import { DisplayService } from '../services/hwsettings/hwsettings.service';
 import { ChunkLoadErrorHandler } from '../services/error-handler/global.service';
 import { NewFeatureTipService } from '../services/new-feature-tip/new-feature-tip.service';
 import { CommsService } from '../services/comms/comms.service';

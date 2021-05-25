@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import * as SettingsPhoenix from '@lenovo/tan-client-bridge-settings';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { HttpClient } from '@angular/common/http';
 import { Container, BindingScopeEnum } from 'inversify';
-import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
+import { Backlight } from 'src/app/data-models/hwsettings/hwsettings.model';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 import { WifisecurityProxy } from '../security/wifisecurityproxy.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
@@ -18,6 +19,7 @@ declare let window;
 export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
+	private settingsPhoenix: any;
 	private shell: any;
 	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
@@ -32,28 +34,18 @@ export class VantageShellService {
 				}),
 				{
 					metricsBroker: metricClient,
-					hsaPowerBroker: powerClient,
-					hsaDolbyBroker: this.shell.DolbyRpcClient
-						? this.shell.DolbyRpcClient.instance
-						: null,
-					hsaForteBroker: this.shell.ForteRpcClient
-						? this.shell.ForteRpcClient.getInstance()
-						: null,
-					hsaHPDIdeaBroker: this.getHsaIntelligentSecurity(),
 				}
 			);
 
 			this.phoenix.loadFeatures([
 				Phoenix.Features.Device,
 				Phoenix.Features.LenovoId,
-				Phoenix.Features.HwSettings,
 				Phoenix.Features.SystemUpdate,
 				Phoenix.Features.Warranty,
 				Phoenix.Features.UserGuide,
 				Phoenix.Features.DeviceFilter,
 				Phoenix.Features.Metrics,
 				Phoenix.Features.ModernPreload,
-				Phoenix.Features.LenovoVoiceFeature,
 				Phoenix.Features.GenericMetricsPreference,
 				Phoenix.Features.PreferenceSettings,
 				Phoenix.Features.HardwareScan,
@@ -67,6 +59,27 @@ export class VantageShellService {
 				Phoenix.Features.SystemEvent,
 				Phoenix.Features.ContentLocalCache,
 				Phoenix.Features.Snapshot,
+			]);
+
+			this.settingsPhoenix = SettingsPhoenix.default(
+				new Container({
+					defaultScope: BindingScopeEnum.Singleton,
+				}),
+				{
+					hsaPowerBroker: powerClient,
+					hsaDolbyBroker: this.shell.DolbyRpcClient
+						? this.shell.DolbyRpcClient.instance
+						: null,
+					hsaForteBroker: this.shell.ForteRpcClient
+						? this.shell.ForteRpcClient.getInstance()
+						: null,
+					hsaHPDIdeaBroker: this.getHsaIntelligentSecurity(),
+				}
+			);
+
+			this.settingsPhoenix.loadFeatures([
+				SettingsPhoenix.Features.HwSettings,
+				SettingsPhoenix.Features.LenovoVoiceFeature,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -258,8 +271,8 @@ export class VantageShellService {
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
 	private getHwSettings(): any {
-		if (this.phoenix && this.phoenix.hwsettings) {
-			return this.phoenix.hwsettings;
+		if (this.settingsPhoenix && this.settingsPhoenix.hwsettings) {
+			return this.settingsPhoenix.hwsettings;
 		}
 		return undefined;
 	}
@@ -344,8 +357,8 @@ export class VantageShellService {
 	 * returns EyecareMode object from VantageShellService of JS Bridge
 	 */
 	public getEyeCareMode(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.display.eyeCareMode;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.display.eyeCareMode;
 		}
 		return undefined;
 	}
@@ -354,8 +367,8 @@ export class VantageShellService {
 	 * returns Privacy Guard object from VantageShellService of JS Bridge
 	 */
 	public getPrivacyGuardObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.display.privacyGuard;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.display.privacyGuard;
 		}
 		return undefined;
 	}
@@ -364,8 +377,8 @@ export class VantageShellService {
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
 	public getCameraPrivacy(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.camera.cameraPrivacy;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.camera.cameraPrivacy;
 		}
 		return undefined;
 	}
@@ -373,20 +386,20 @@ export class VantageShellService {
 	 * returns cameraSettings object from VantageShellService of JS Bridge
 	 */
 	public getCameraSettings(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.camera.cameraSettings;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.camera.cameraSettings;
 		}
 		return undefined;
 	}
 	public getVantageToolBar(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.power.common.vantageToolBar;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.power.common.vantageToolBar;
 		}
 		return undefined;
 	}
 	public getPowerIdeaNoteBook(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.power.ideaNotebook;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.power.ideaNotebook;
 		}
 		return undefined;
 	}
@@ -482,15 +495,15 @@ export class VantageShellService {
 	}
 
 	public getCameraBlur(): any {
-		if (this.phoenix && this.phoenix.hwsettings.camera.cameraBlur) {
-			return this.phoenix.hwsettings.camera.cameraBlur;
+		if (this.settingsPhoenix && this.settingsPhoenix.hwsettings.camera.cameraBlur) {
+			return this.settingsPhoenix.hwsettings.camera.cameraBlur;
 		}
 		return undefined;
 	}
 
 	public getIntelligentSensing(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.lis.intelligentSensing;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.lis.intelligentSensing;
 		}
 		return undefined;
 	}
@@ -502,15 +515,15 @@ export class VantageShellService {
 	}
 
 	public getIntelligentMedia(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.lis.intelligentMedia;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.lis.intelligentMedia;
 		}
 		return undefined;
 	}
 
 	public getSuperResolution(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.ai.superResolution;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.ai.superResolution;
 		}
 		return undefined;
 	}
@@ -566,16 +579,19 @@ export class VantageShellService {
 	}
 
 	public getImcHelper(): any {
-		if (this.phoenix && this.phoenix.hwsettings.power.thinkpad.sectionImcHelper) {
-			return this.phoenix.hwsettings.power.thinkpad.sectionImcHelper;
+		if (
+			this.settingsPhoenix &&
+			this.settingsPhoenix.hwsettings.power.thinkpad.sectionImcHelper
+		) {
+			return this.settingsPhoenix.hwsettings.power.thinkpad.sectionImcHelper;
 		}
 		return undefined;
 	}
 
 	// Active Protection System
 	public getActiveProtectionSystem(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.aps.ActiveProtectionSystem; // returning APS Object with methods
 		}
 		return undefined;
 	}
@@ -584,8 +600,8 @@ export class VantageShellService {
 	 * returns Keyboard manager object  from VantageShellService of JS Bridge
 	 */
 	public getKeyboardManagerObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.kbdManager;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.input.kbdManager;
 		}
 		return undefined;
 	}
@@ -594,16 +610,16 @@ export class VantageShellService {
 	 * returns Keyboard object  from VantageShellService of JS Bridge
 	 */
 	public getKeyboardObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.keyboard;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.input.keyboard;
 		}
 		return undefined;
 	}
 
 	// =================== Start Lenovo Voice
 	public getLenovoVoice(): any {
-		if (this.phoenix) {
-			return this.phoenix.lenovovoice;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.lenovovoice;
 		}
 		return undefined;
 	}
@@ -652,8 +668,8 @@ export class VantageShellService {
 	}
 	// shellService
 	public getVoipHotkeysObject(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.voipHotkeys;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.input.voipHotkeys;
 		}
 		return undefined;
 	}
@@ -668,8 +684,8 @@ export class VantageShellService {
 	// ==================== End Hardware Scan
 
 	public getMouseAndTouchPad(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.inputControlLinks;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.input.inputControlLinks;
 		}
 		return undefined;
 	}
@@ -684,15 +700,15 @@ export class VantageShellService {
 	// ==================== End Snapshot
 
 	getTopRowFunctionsIdeapad(): any {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.topRowFunctionsIdeapad;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.input.topRowFunctionsIdeapad;
 		}
 		return undefined;
 	}
 
 	getBacklight(): Backlight {
-		if (this.phoenix) {
-			return this.phoenix.hwsettings.input.backlight;
+		if (this.settingsPhoenix) {
+			return this.settingsPhoenix.hwsettings.input.backlight;
 		}
 		return undefined;
 	}
@@ -705,7 +721,7 @@ export class VantageShellService {
 	}
 
 	getToolbarToastFeature(): any {
-		return this.phoenix.hwsettings.toolbar.ToolbarToast;
+		return this.settingsPhoenix.hwsettings.toolbar.ToolbarToast;
 	}
 
 	public getUpeAgent(): any {

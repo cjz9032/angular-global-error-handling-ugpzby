@@ -1,3 +1,4 @@
+import { MetricService } from 'src/app/services/metric/metrics.service';
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SettingsService } from 'src/app/services/settings/settings.service';
@@ -116,6 +117,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	activeElement: HTMLElement;
 	isSPFullFeatureEnabled: any;
 	constructor(
+		private metricService: MetricService,
 		private shellService: VantageShellService,
 		public configService: ConfigService,
 		private settingsService: SettingsService,
@@ -134,6 +136,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.metricsPreference = shellService.getMetricPreferencePlugin();
 		this.settingsService.getMetricsPolicy((result) => {
 			this.metrics.metricsEnabled = result;
+			this.metricService.setMetricsEnabledInAllSubApp();
 			this.toggleUsageStatistics = this.metrics.metricsEnabled;
 		});
 	}
@@ -395,6 +398,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.settingsService.toggleUsageStatistics = event.switchValue;
 		if (this.metrics) {
 			this.metrics.metricsEnabled = event.switchValue;
+			this.metricService.setMetricsEnabledInAllSubApp();
 		} else {
 			this.toggleUsageStatistics = !event.switchValue;
 			this.settingsService.toggleUsageStatistics = !event.switchValue;

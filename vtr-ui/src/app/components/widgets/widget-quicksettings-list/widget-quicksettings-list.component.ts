@@ -4,7 +4,7 @@ import { EventTypes, SecurityAdvisor, WifiSecurity} from '@lenovo/tan-client-bri
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
-import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { DolbyModeResponse } from 'src/app/data-models/hwsettings/hwsettings.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -14,7 +14,7 @@ import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal
 import { PowerService } from './../../../services/power/power.service';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { DialogService } from './../../../services/dialog/dialog.service';
-import { AudioService } from 'src/app/services/audio/audio.service';
+import { AudioService } from 'src/app/services/hwsettings/hwsettings.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',

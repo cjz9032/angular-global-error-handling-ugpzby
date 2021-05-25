@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import {
 	FlipToStartErrorStatusInterface,
 	FlipToStartInterface,
 	FlipToStartSetStatus,
 } from './flip-to-start.interface';
-import { ConservationModeStatus } from 'src/app/data-models/battery/conservation-mode-response.model';
+import { ConservationModeStatus } from 'src/app/data-models/hwsettings/hwsettings.model';
 @Injectable({
 	providedIn: 'root',
 })
@@ -616,38 +615,7 @@ export class PowerService {
 		}
 	}
 
-	setChargeThresholdValue(value: ChargeThreshold): Promise<any> {
-		try {
-			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(
-					value.batteryNum,
-					value.startValue,
-					value.stopValue,
-					value.checkboxValue
-				);
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
 
-	setCtAutoCheckbox(value: ChargeThreshold): Promise<any> {
-		// console.log('auto check value here ----->', value);
-		try {
-			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
-					value.batteryNum,
-					value.startValue,
-					value.stopValue,
-					value.checkboxValue
-				);
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
 
 	setToggleOff(value: any): Promise<any> {
 		try {

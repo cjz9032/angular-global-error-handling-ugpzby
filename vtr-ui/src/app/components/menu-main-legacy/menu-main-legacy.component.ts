@@ -16,7 +16,6 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -30,7 +29,6 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
-import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
@@ -39,9 +37,6 @@ import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
-import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
-import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { MatDialog } from '@lenovo/material/dialog';
@@ -119,21 +114,18 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private logger: LoggerService,
 		private dialogService: DialogService,
-		private keyboardService: InputAccessoriesService,
 		private dialog: MatDialog,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
-		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		public dashboardService: DashboardService,
 		private newFeatureTipService: NewFeatureTipService,
 		private viewContainerRef: ViewContainerRef,
 		public cardService: CardService,
 		private feedbackService: FeedbackService,
 		private localCacheService: LocalCacheService,
-		private backlightService: BacklightService,
 		private hypService: HypothesisService,
 		private appSearchService: AppSearchService
 	) {
@@ -202,17 +194,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			this.showSearchMenu = available;
 		});
 
-		const machineType = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.MachineType,
-			undefined
-		);
-		if (machineType !== undefined) {
-			this.loadMenuOptions(machineType);
-		} else if (this.deviceService.isShellAvailable) {
-			this.deviceService.getMachineType().then((value: number) => {
-				this.loadMenuOptions(value);
-			});
-		}
 	}
 
 	@HostListener('document:click', ['$event'])
@@ -291,12 +272,16 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				// if next tabbable element not in the current active dropdown menu then close menu
 				const element = tabElements[curElementTabIndex + 1] as HTMLElement;
 				if (anchors.indexOf(element) === -1) {
-					$event.stopPropagation();
-					$event.preventDefault();
-					element.focus();
-					if (element.id === 'navbarDropdown') {
-						const next = tabElements[curElementTabIndex + 2] as HTMLElement;
-						next.focus();
+					if (element) {
+						$event.stopPropagation();
+						$event.preventDefault();
+						element.focus();
+						if (element.id && element.id === 'navbarDropdown') {
+							const next = tabElements[curElementTabIndex + 2] as HTMLElement;
+							if (next) {
+								next.focus();
+							}
+						}
 					}
 
 					activeDropdown.close();
@@ -320,74 +305,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private loadMenuOptions(machineType: number) {
-		// if IdeaPad or ThinkPad then call below function
-		if (machineType === 0 || machineType === 1) {
-			// add try catch for backlight exception; this is temp solution, dongwq2 should add error handle in backlight
-			try {
-				this.backlightCapabilitySubscription = this.backlightService.backlight
-					.pipe(
-						map((res) => res.find((item) => item.key === 'KeyboardBacklightLevel')),
-						map((res) => res.value !== BacklightLevelEnum.NO_CAPABILITY),
-						tap((res) => {
-							this.localCacheService.setLocalCacheValue(
-								LocalStorageKey.BacklightCapability,
-								res
-							);
-						}),
-						catchError(() => {
-							window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
-							return undefined;
-						})
-					)
-					.subscribe();
-			} catch (error) { }
-		}
-
-		const machineFamily = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.MachineFamilyName,
-			undefined
-		);
-		// Added special case for KEI machine
-		if (machineFamily) {
-			const familyName = machineFamily.replace(/\s+/g, '');
-			if (machineType === 1 && familyName !== 'LenovoTablet10') {
-				this.initInputAccessories();
-			}
-		}
-
-		if (machineType === 0) {
-			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.TopRowFunctionsCapability,
-				false
-			);
-			this.topRowFnSubscription = this.topRowFunctionsIdeapadService.capability
-				.pipe(
-					catchError(() => {
-						window.localStorage.removeItem(LocalStorageKey.TopRowFunctionsCapability);
-						return undefined;
-					})
-				)
-				.subscribe((capabilities: Array<any>) => {
-					if (capabilities.length === 0) {
-						this.localCacheService.setLocalCacheValue(
-							LocalStorageKey.TopRowFunctionsCapability,
-							false
-						);
-					}
-					// todo: there should be a better way to operate this array
-					capabilities.forEach((capability) => {
-						if (capability.key === 'FnLock') {
-							this.localCacheService.setLocalCacheValue(
-								LocalStorageKey.TopRowFunctionsCapability,
-								capability.value === StringBooleanEnum.TRUTHY
-							);
-						}
-					});
-				});
-		}
-	}
 
 	private checkLiteGaming() {
 		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({
@@ -561,56 +478,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	async initInputAccessories() {
-		this.logger.error('MenuMainComponent.initInputAccessories before API call');
-		const responses = await Promise.all([
-			this.keyboardService.GetAllCapability(),
-			this.keyboardService.GetKeyboardVersion(),
-		]);
-		try {
-			if (responses) {
-				this.logger.error('MenuMainComponent.initInputAccessories after API call', {
-					GetAllCapability: responses[0],
-					GetKeyboardVersion: responses[1],
-				});
-				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(
-					LocalStorageKey.InputAccessoriesCapability,
-					undefined
-				);
-				if (inputAccessoriesCapability === undefined) {
-					inputAccessoriesCapability = new InputAccessoriesCapability();
-				}
-				inputAccessoriesCapability.isUdkAvailable =
-					responses[0] != null &&
-						Object.keys(responses[0]).indexOf('uDKCapability') !== -1
-						? responses[0].uDKCapability
-						: false;
-				inputAccessoriesCapability.isKeyboardMapAvailable =
-					responses[0] != null &&
-						Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
-						? responses[0].keyboardMapCapability
-						: false;
-				inputAccessoriesCapability.keyboardVersion =
-					responses[1] != null ? responses[1] : '-1';
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.InputAccessoriesCapability,
-					inputAccessoriesCapability
-				);
-			}
-		} catch (error) {
-			this.logger.exception('initInputAccessories', error);
-		}
-
-		this.keyboardService.getVoipHotkeysSettings().then((response) => {
-			if (response.capability) {
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.VOIPCapability,
-					response.capability
-				);
-			}
-			return response;
-		});
-	}
 
 	openModernPreloadModal() {
 		this.showMenu = false;

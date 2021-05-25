@@ -31,10 +31,7 @@ export class SvgInlinePipe implements PipeTransform, OnDestroy {
 		if (typeof value !== 'undefined') {
 			if (
 				value.substring(value.lastIndexOf('.')) === '.svg' &&
-				((window.VantageShellExtension &&
-					window.VantageShellExtension.MsWebviewHelper.getInstance().isInOfflineMode ===
-						true) ||
-					!this.commonService.isOnline)
+				!window.location.origin.includes('127.0.0.1')
 			) {
 				return new Observable((observer) => {
 					observer.next('');

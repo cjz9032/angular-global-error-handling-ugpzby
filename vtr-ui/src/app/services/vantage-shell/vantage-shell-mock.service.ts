@@ -8,13 +8,8 @@ import { HttpClient } from '@angular/common/http';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { BindingScopeEnum, Container } from 'inversify';
 import { HardwareScanShellMock } from 'src/app/modules/hardware-scan/services/hardware-scan-shell-mock';
-import { KeyType } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.interface';
-import { VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
+import { VoipErrorCodeEnum } from 'src/app/enums/hwsettings.enum';
 import { CommonErrorCode } from 'src/app/data-models/common/common.interface';
-import {
-	BacklightLevelEnum,
-	BacklightStatusEnum,
-} from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
@@ -2305,56 +2300,6 @@ export class VantageShellService {
 		};
 	}
 
-	getBacklight(): any {
-		return {
-			getBacklight: () =>
-				Promise.resolve({
-					settingList: {
-						setting: [
-							{
-								key: 'KeyboardBacklightLevel',
-								value: BacklightLevelEnum.TWO_LEVELS_AUTO,
-								enabled: 0,
-								errorCode: CommonErrorCode.SUCCEED,
-							},
-							{
-								key: 'KeyboardBacklightStatus',
-								value: BacklightStatusEnum.DISABLED_OFF,
-								enabled: 0,
-								errorCode: CommonErrorCode.SUCCEED,
-							},
-						],
-					},
-				}),
-			setBacklight: (status) =>
-				Promise.resolve({
-					errorcode: CommonErrorCode.SUCCEED,
-				}),
-			getBacklightOnSystemChange: (settings) =>
-				new Promise((resolve) => {
-					setTimeout(() => {
-						resolve({
-							settingList: {
-								setting: [
-									{
-										key: 'KeyboardBacklightLevel',
-										value: BacklightLevelEnum.ONE_LEVEL,
-										enabled: 0,
-										errorCode: CommonErrorCode.SUCCEED,
-									},
-									{
-										key: 'KeyboardBacklightStatus',
-										value: BacklightStatusEnum.DISABLED_OFF,
-										enabled: 0,
-										errorCode: CommonErrorCode.SUCCEED,
-									},
-								],
-							},
-						});
-					}, 30000);
-				}),
-		};
-	}
 
 	public getRegistryUtil(): Phoenix.RegistryFeature {
 		if (this.phoenix) {

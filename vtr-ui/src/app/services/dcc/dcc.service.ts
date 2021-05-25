@@ -1,3 +1,7 @@
+import { ContainerAppSendMessageType } from '../communication/app-message-type';
+import { ContainerAppSendHandler } from '../communication/container-app-send.handler';
+import { subAppConfigList } from 'src/sub-app-config/sub-app-config';
+import { ISubAppConfig } from 'src/sub-app-config/sub-app-config-base';
 import { Injectable } from '@angular/core';
 
 import { LoggerService } from '../logger/logger.service';
@@ -20,6 +24,7 @@ export class DccService {
 	private headerSmbBackground = 'assets/images/HeaderImageSmb.png';
 
 	constructor(
+		private containerAppSendHandler: ContainerAppSendHandler,
 		private logger: LoggerService,
 		private cmsService: CMSService,
 		private deviceService: DeviceService,
@@ -34,12 +39,14 @@ export class DccService {
 		const segment = await this.selfSelectService.getSegment();
 		if (segment === SegmentConst.SMB) {
 			this.headerBackground = this.headerSmbBackground;
+			this.setHeaderImageInAllSubApp();
 		} else {
 			const isDccDevice = await this.isDccCapableDevice();
 			this.headerBackground =
 				isDccDevice && this.needUpdateDccHeaderBackground()
 					? this.headerDccBackground
 					: this.headerDefaultBackground;
+			this.setHeaderImageInAllSubApp();
 		}
 		if (!this.deviceService.isGaming) {
 			const queryOptions: any = {
@@ -60,6 +67,7 @@ export class DccService {
 				this.cmsHeaderDccBackgroundUpdated = true;
 			}
 			this.headerBackground = headerImage.FeatureImage;
+			this.setHeaderImageInAllSubApp();
 		}
 	}
 
@@ -112,6 +120,7 @@ export class DccService {
 						if (hyp === 'CES-2019' && !this.deviceService.isGaming) {
 							this.showDemo = true;
 							this.headerBackground = this.headerDccBackground;
+							this.setHeaderImageInAllSubApp();
 						}
 						resolve(this.showDemo);
 					},
@@ -124,5 +133,20 @@ export class DccService {
 				resolve(false);
 			}
 		});
+	}
+
+	public setHeaderImageInAllSubApp() {
+		for (const subAppConfig of subAppConfigList) {
+			this.setHeaderImageInSubApp(subAppConfig);
+		}
+	}
+
+	public setHeaderImageInSubApp(subAppConfig: ISubAppConfig) {
+		const payload = { headerImage: this.headerBackground };
+		this.containerAppSendHandler.handle(
+			subAppConfig,
+			ContainerAppSendMessageType.setHeaderImage,
+			payload
+		);
 	}
 }

@@ -15,7 +15,6 @@ import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.
 import { GuardConstants } from './guard-constants';
 import { BasicGuard } from './basic-guard';
 import { MetricService } from '../metric/metrics.service';
-import { BatteryDetailService } from '../battery-detail/battery-detail.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
@@ -42,7 +41,6 @@ export class GuardService extends BasicGuard {
 		public guardConstants: GuardConstants,
 		private timerService: DurationCounterService,
 		private metricsService: MetricService,
-		private batteryService: BatteryDetailService
 	) {
 		super(commonService, guardConstants);
 		this.metrics = shellService.getMetrics();
@@ -61,13 +59,6 @@ export class GuardService extends BasicGuard {
 			(!this.adPolicy.IsSystemUpdateEnabled || this.deviceService.isSMode)
 		) {
 			return super.canActivate(activatedRouteSnapshot, routerStateSnapshot);
-		}
-		if (routerStateSnapshot.url.includes('high-density-battery')) {
-			if (this.batteryService.isTemporaryChargeMode) {
-				return (
-					this.batteryService.isTemporaryChargeMode || this.batteryService.isDlsPiCapable
-				);
-			}
 		}
 		if (routerStateSnapshot.url.includes('dashboard')) {
 		}

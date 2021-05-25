@@ -12,19 +12,19 @@ import { AppSearch } from './model/feature-ids.model';
 import { IApplicableDetector } from './model/interface.model';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { DisplayService } from 'src/app/services/display/display.service';
-import { BatteryDetailService } from '../battery-detail/battery-detail.service';
+import { DisplayService } from 'src/app/services/hwsettings/hwsettings.service';
+import { BatteryDetailService } from 'src/app/services/hwsettings/hwsettings.service';
 import { PowerService } from '../power/power.service';
-import { PowerDpmService } from '../power-dpm/power-dpm.service';
-import { CameraFeedService } from '../camera/camera-feed/camera-feed.service';
-import { AudioService } from '../audio/audio.service';
-import { InputAccessoriesService } from '../input-accessories/input-accessories.service';
-import { SmartAssistService } from '../smart-assist/smart-assist.service';
+import { PowerDpmService } from 'src/app/services/hwsettings/hwsettings.service';
+import { CameraFeedService } from 'src/app/services/hwsettings/hwsettings.service';
+import { AudioService } from 'src/app/services/hwsettings/hwsettings.service';
+import { InputAccessoriesService } from 'src/app/services/hwsettings/hwsettings.service';
+import { SmartAssistService } from 'src/app/services/hwsettings/hwsettings.service';
 import { FlipToStartSupportedEnum } from '../power/flip-to-start.enum';
-import { TopRowFunctionsIdeapadService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { TopRowFunctionsIdeapadService } from 'src/app/services/hwsettings/hwsettings.service';
 import { MachineType } from '../device/machine-type';
-import { BacklightService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
-import { BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
+import { BacklightService } from 'src/app/services/hwsettings/hwsettings.service';
+import { BacklightLevelEnum } from 'src/app/enums/hwsettings.enum';
 
 @Injectable({
 	providedIn: 'root',

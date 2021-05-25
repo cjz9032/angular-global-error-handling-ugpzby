@@ -7,14 +7,13 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { HeaderMainComponent } from './header-main.component';
 import { UiHeaderSubpageComponent } from '../ui/ui-header-subpage/ui-header-subpage.component';
-import { MenuHeaderComponent } from '../menu-header/menu-header.component';
 import { faSquare } from '@fortawesome/free-solid-svg-icons/faSquare';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-	declarations: [HeaderMainComponent, UiHeaderSubpageComponent, MenuHeaderComponent],
-	exports: [MetricsModule, HeaderMainComponent, UiHeaderSubpageComponent, MenuHeaderComponent],
+	declarations: [HeaderMainComponent, UiHeaderSubpageComponent],
+	exports: [MetricsModule, HeaderMainComponent, UiHeaderSubpageComponent],
 	imports: [
 		CommonModule,
 		MetricsModule,

@@ -11,7 +11,7 @@
 						</div>
 						<span class="mcafee-title" [innerHTML]="'security.antivirus.others.graphicTitle' | translate"></span>
 					</div>
-					<img class="w-100 logo mr-4 d-none d-sm-block d-md-none" src="assets/images/antivirus/OEM_Logo.svg" alt="" srcset="">
+					<img class="w-100 logo mr-4 d-none d-sm-block d-md-none" [src]="'assets/images/antivirus/OEM_Logo.svg' | svgInline | async" alt="" srcset="">
 				</div>
 				<div class="desc text-break">
 					<p class="mcafee-subtitle font-weight-600" [innerHTML]="'security.antivirus.others.graphicSubtitle' | translate"></p>
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="bottom-side">
-				<object class="w-100" data="assets/images/antivirus/hero_bottom_blob.svg" type="image/svg+xml"></object>
+				<img class="w-100" [src]="'assets/images/antivirus/hero_bottom_blob.svg' | svgInline | async" alt="" srcset="">
 			</div>
 		</div>
 		<div class="right-side d-none d-md-block d-lg-none d-xl-block">
@@ -28,8 +28,8 @@
 		</div>
 		<div class="col-0 col col-lg-0 col p-0 hero-background d-none d-md-block d-lg-none d-xl-block position-relative"
 			>
-			<object class="cover" data="assets/images/antivirus/hero_side_blob_white.svg" type="image/svg+xml"></object>
-			<img class="logo position-absolute" src="assets/images/antivirus/McAfee_Lenovo_Logo.svg" alt="" srcset="">
+			<img class="cover" [src]="'assets/images/antivirus/hero_side_blob_white.svg' | svgInline | async" alt="" srcset="">
+			<img class="logo position-absolute" [src]="'assets/images/antivirus/McAfee_Lenovo_Logo.svg' | svgInline | async" alt="" srcset="">
 		</div>
 	</div>
 </section>

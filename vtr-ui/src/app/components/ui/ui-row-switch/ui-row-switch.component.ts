@@ -21,7 +21,6 @@ import { throttleTime } from 'rxjs/operators';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { BaseComponent } from '../../base/base.component';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
-import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
 import { ModalAiMeetingManagerComponent } from '../../modal/modal-ai-meeting-manager/modal-ai-meeting-manager.component';
 
 @Component({
@@ -216,16 +215,6 @@ export class UiRowSwitchComponent
 		if (linkPath && linkPath.length > 0) {
 			this.deviceService.launchUri(linkPath);
 		}
-	}
-	voicePopUp() {
-		const modalRef = this.dialog.open(ModalVoiceComponent, {
-			autoFocus: true,
-			hasBackdrop: true,
-			disableClose: true,
-			panelClass: 'Voice-Modal',
-		});
-		modalRef.componentInstance.value = this.voiceValue;
-		modalRef.componentInstance.metricsParent = this.metricsParent;
 	}
 
 	aiMeetingManagerPopUp() {

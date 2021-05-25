@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
 import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { CommonService } from '../common/common.service';
-import { Microphone } from 'src/app/data-models/audio/microphone.model';
+import { Microphone } from 'src/app/data-models/hwsettings/hwsettings.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';

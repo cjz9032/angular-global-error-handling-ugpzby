@@ -43,6 +43,8 @@ interface IContentGroup {
 })
 export class DashboardService {
 	private dashboard: any;
+	private microphone: any;
+	private cameraPrivacyStatus: any;
 	public eyeCareMode: any;
 	private sysinfo: any;
 	private sysupdate: any;
@@ -146,6 +148,8 @@ export class DashboardService {
 		private translate: TranslateService,
 	) {
 		this.dashboard = shellService.getDashboard();
+		this.microphone = shellService.getMicrophoneSettings();
+		this.cameraPrivacyStatus = shellService.getCameraPrivacy();
 		this.eyeCareMode = shellService.getEyeCareMode();
 		this.sysinfo = null;
 		this.commonService = commonService;
@@ -162,8 +166,8 @@ export class DashboardService {
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
 		try {
-			if (this.dashboard) {
-				return this.dashboard.getMicphoneStatus();
+			if (this.microphone) {
+				return this.microphone.getMicrophoneMute();
 			}
 			return undefined;
 		} catch (error) {
@@ -173,8 +177,8 @@ export class DashboardService {
 
 	public setMicrophoneStatus(value: boolean): Promise<boolean> {
 		try {
-			if (this.dashboard) {
-				return this.dashboard.setMicphoneStatus(value);
+			if (this.microphone) {
+				return this.microphone.setMicrophoneMute(value);
 			}
 			return undefined;
 		} catch (error) {
@@ -184,8 +188,8 @@ export class DashboardService {
 
 	public getCameraStatus(): Promise<FeatureStatus> {
 		try {
-			if (this.dashboard) {
-				return this.dashboard.getCameraStatus();
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.getCameraPrivacyStatus();
 			}
 			return undefined;
 		} catch (error) {
@@ -195,8 +199,8 @@ export class DashboardService {
 
 	public setCameraStatus(value: boolean): Promise<boolean> {
 		try {
-			if (this.dashboard) {
-				return this.dashboard.setCameraStatus(value);
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.setCameraPrivacyStatus(value);
 			}
 			return undefined;
 		} catch (error) {

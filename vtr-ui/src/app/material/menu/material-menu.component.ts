@@ -1,3 +1,5 @@
+import { ContainerAppReceiveHandler } from 'src/app/services/communication/container-app-receive.handler';
+import { SubAppSendMessageType } from 'src/app/services/communication/app-message-type';
 import {
 	Component,
 	OnInit,
@@ -40,11 +42,6 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { StringBooleanEnum } from 'src/app/data-models/common/common.interface';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { BacklightService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
-import { TopRowFunctionsIdeapadService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
-import { BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
 import { RoutePath } from 'src/assets/menu/menu';
 import { MaterialMenuDropdownComponent } from './material-menu-dropdown/material-menu-dropdown.component';
@@ -84,11 +81,13 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	isDefaultMenuAvailable = false;
 	private subscription: Subscription;
 	private backlightCapabilitySubscription: Subscription;
+	private communicationSubscription: Subscription;
 	private topRowFnSubscription: Subscription;
 	private routerEventSubscription: Subscription;
 	private closeAllOtherMatMenuTimer: any;
 	private firstTab = true;
 	constructor(
+		private containerAppReceiveHandler: ContainerAppReceiveHandler,
 		public dashboardService: DashboardService,
 		public configService: ConfigService,
 		public appsForYouService: AppsForYouService,
@@ -100,14 +99,11 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		private cardService: CardService,
 		private dialogService: DialogService,
 		private feedbackService: FeedbackService,
-		private backlightService: BacklightService,
-		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private router: Router,
 		private newFeatureTipService: NewFeatureTipService,
 		private viewContainerRef: ViewContainerRef,
 		private translate: TranslateService,
 		private logger: LoggerService,
-		private keyboardService: InputAccessoriesService,
 		@Inject(DOCUMENT) private document: Document
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
@@ -145,6 +141,13 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				this.currentIsSearchPage = ev.url.indexOf(`/${RoutePath.search}`) > -1;
 			}
 		});
+		this.communicationSubscription = this.containerAppReceiveHandler.messageFromSubApp.subscribe(
+			(data) => {
+				if (data.messageType === SubAppSendMessageType.clickInIframe) {
+					this.closeAllMatMenu();
+				}
+			}
+		);
 	}
 
 	onSearchMenuClosed(materialMenuDropdown: MaterialMenuDropdownComponent) {
@@ -184,6 +187,9 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		}
 		if (this.routerEventSubscription) {
 			this.routerEventSubscription.unsubscribe();
+		}
+		if (this.communicationSubscription) {
+			this.communicationSubscription.unsubscribe();
 		}
 	}
 
@@ -241,133 +247,9 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		const machineType = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.MachineType,
-			undefined
-		);
-		if (machineType !== undefined) {
-			this.loadMenuOptions(machineType);
-		} else if (this.deviceService.isShellAvailable) {
-			this.deviceService.getMachineType().then((value: number) => {
-				this.loadMenuOptions(value);
-			});
-		}
 	}
 
-	private loadMenuOptions(machineType: number) {
-		// if IdeaPad then call below function
-		if (machineType === 0 || machineType === 1) {
-			this.backlightCapabilitySubscription = this.backlightService.backlight
-				.pipe(
-					map((res) => res.find((item) => item.key === 'KeyboardBacklightLevel')),
-					map((res) => res.value !== BacklightLevelEnum.NO_CAPABILITY),
-					tap((res) => {
-						this.localCacheService.setLocalCacheValue(
-							LocalStorageKey.BacklightCapability,
-							res
-						);
-					}),
-					catchError(() => {
-						window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
-						return undefined;
-					})
-				)
-				.subscribe();
-		}
-		const machineFamily = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.MachineFamilyName,
-			undefined
-		);
-		// Added special case for KEI machine
-		if (machineFamily) {
-			const familyName = machineFamily.replace(/\s+/g, '');
-			if (machineType === 1 && familyName !== 'LenovoTablet10') {
-				this.initInputAccessories();
-			}
-		}
-		if (machineType === 0) {
-			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.TopRowFunctionsCapability,
-				false
-			);
-			this.topRowFnSubscription = this.topRowFunctionsIdeapadService.capability
-				.pipe(
-					catchError(() => {
-						window.localStorage.removeItem(LocalStorageKey.TopRowFunctionsCapability);
-						return undefined;
-					})
-				)
-				.subscribe((capabilities: Array<any>) => {
-					if (Array.isArray(capabilities)) {
-						if (capabilities.length === 0) {
-							this.localCacheService.setLocalCacheValue(
-								LocalStorageKey.TopRowFunctionsCapability,
-								false
-							);
-						}
-						capabilities.forEach((capability) => {
-							if (capability.key === 'FnLock') {
-								this.localCacheService.setLocalCacheValue(
-									LocalStorageKey.TopRowFunctionsCapability,
-									capability.value === StringBooleanEnum.TRUTHY
-								);
-							}
-						});
-					}
-				});
-		}
-	}
 
-	async initInputAccessories() {
-		this.logger.error('MenuMainComponent.initInputAccessories before API call');
-		const responses = await Promise.all([
-			this.keyboardService.GetAllCapability(),
-			this.keyboardService.GetKeyboardVersion(),
-		]);
-		try {
-			if (responses) {
-				this.logger.error('MenuMainComponent.initInputAccessories after API call', {
-					GetAllCapability: responses[0],
-					GetKeyboardVersion: responses[1],
-				});
-				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(
-					LocalStorageKey.InputAccessoriesCapability,
-					undefined
-				);
-				if (inputAccessoriesCapability === undefined) {
-					inputAccessoriesCapability = new InputAccessoriesCapability();
-				}
-				inputAccessoriesCapability.isUdkAvailable =
-					responses[0] != null &&
-						Object.keys(responses[0]).indexOf('uDKCapability') !== -1
-						? responses[0].uDKCapability
-						: false;
-				inputAccessoriesCapability.isKeyboardMapAvailable =
-					responses[0] != null &&
-						Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
-						? responses[0].keyboardMapCapability
-						: false;
-				inputAccessoriesCapability.keyboardVersion =
-					responses[1] != null ? responses[1] : '-1';
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.InputAccessoriesCapability,
-					inputAccessoriesCapability
-				);
-			}
-		} catch (error) {
-			this.logger.exception('initInputAccessories', error);
-		}
-		this.keyboardService.getVoipHotkeysSettings().then((response) => {
-			if (response.capability) {
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.VOIPCapability,
-					response.capability
-				);
-			}
-			return response;
-		});
-	}
 
 	toggleMenu(event) {
 		event.stopPropagation();
