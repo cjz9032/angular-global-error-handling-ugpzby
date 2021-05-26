@@ -1,5 +1,5 @@
 
-/// <reference types="../node_modules/zone.js" />
+/// <reference types="zone.js" />
 
 // declare interface Window {
 //     Zone: ZoneType;
