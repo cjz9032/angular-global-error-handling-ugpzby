@@ -118,7 +118,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 							LocalStorageKey.LightingCapabilitiesNewversionDesk,
 							response
 						);
-						this.ledlayoutversion = response.ledlayoutversion
+						if (response.ledlayoutversion) this.ledlayoutversion = response.ledlayoutversion;
 						this.imgDefaultOff();
 						this.initProfileId();
 					}
@@ -799,7 +799,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			} else {
 				this.supportColor = false;
 			}
-		} else if (
+		} else if (this.lightingCapabilities.GPUPanelType &&
 			this.lightingCapabilities.GPUPanelType.indexOf(
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
