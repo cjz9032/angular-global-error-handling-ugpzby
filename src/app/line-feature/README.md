@@ -34,7 +34,7 @@ To use this library the following need to be added to your polyfills(If you are 
 ### Dependency
 Put this into the `polyfills` file of your project:
 
-```
+```typescript
 // ...
 import 'zone.js';
 import 'zone.js/dist/long-stack-trace-zone'; // enable it to track a long async stack
@@ -42,8 +42,8 @@ import './libs/line-feature/error-rewrite'; // NOTE: NOT THE ORIGIN ZONE-ERROR
 // ...
 ```
 
-If you are using in production, then replace the ngZone Module following as well:
-```
+If you want to using in `production` too, then replace the `ngZone` Module following as well:
+```typescript
 platformBrowserDynamic()
 	.bootstrapModule(AppModule, {
 		ngZone: new NgZone({
@@ -58,6 +58,8 @@ platformBrowserDynamic()
 # Usage
 
 ## Examples
+
+<br>
 
 ### Simple
 
@@ -129,6 +131,7 @@ and it should indicate the feature info, node info.
     featureLogContainer.off(type, handler)
 ```
 
+<br>
 
 ### Tree Case
 In the diagram below, now we have a start node with two branchs
