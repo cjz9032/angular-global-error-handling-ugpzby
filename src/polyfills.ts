@@ -9,7 +9,7 @@ import "zone.js";
 // (Zone as any)['longStackTraceZoneSpec'].longStackTraceLimit = 20;
 import 'zone.js/dist/long-stack-trace-zone';
 import 'zone.js/dist/task-tracking.js'
-import "./error-rewrite";
+import "./app/line-feature/error-rewrite";
 // set more long long~
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
