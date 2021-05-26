@@ -66,8 +66,9 @@ it("should avoid restarting from the same node ", () => {
   logCot.addLogs([new LongLog(sameStartNode)]);
   logCot.addLogs([new LongLog(sameStartNode)]);
   // there is nothing to do
-  expect(logCot.features.length).toEqual(1);
-  expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.pending);
+  expect(logCot.features.length).toEqual(2);
+  expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.left);
+  expect(logCot.features[1].featureStatus).toEqual(FeatureStatusEnum.pending);
 });
 
 it("should start a new feature when last feature is diffrent", () => {
