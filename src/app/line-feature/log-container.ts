@@ -113,7 +113,7 @@ export class Feature {
   }
 }
 
-interface FeatureEventPayload {
+export interface FeatureEventPayload {
   type: "add" | "update";
   data: {
     feature: Feature;
@@ -255,7 +255,7 @@ export class LongLogContainer {
     this.emitter.on(type, handler);
     return this;
   }
-  off(type: FeatureEventType, handler: (payload: FeatureEventPayload) => void) {
+  off(type: FeatureEventType, handler: (event?: any) => void) {
     this.emitter.off(type, handler);
     return this;
   }

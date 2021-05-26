@@ -113,8 +113,11 @@ and it should indicate the feature info, node info.
     import { featureLogContainer } from "./libs/line-feature";
 
     // Subscript a event
-    featureLogContainer.on(FeatureEventType.change, (pay) => {
-        const { feature } = pay.data;
+    featureLogContainer.on(FeatureEventType.change, (event) => {
+        const { feature, type } = event.data;
+
+        console.log(type) // add or upadate a feature
+        
         if (feature.featureStatus === FeatureStatusEnum.fail) {
             // error occurs due to not handle error
             console.log(feature.error) // display error stack track which includes async parts of

@@ -1,4 +1,5 @@
 import { cloneDeep, times } from "lodash";
+
 import {
   LongLogContainer,
   LongLog,
@@ -7,6 +8,8 @@ import {
   FeatureNodeStatusEnum,
   FeatureStatusEnum,
   Feature,
+  FeatureEventType,
+  FeatureEventPayload,
 } from "./log-container";
 
 it("should be a rotation log with limiting numbers items", () => {
@@ -189,7 +192,7 @@ it("should go through a branch when the root node have multi branch", () => {
   expect(logCot.features.length).toEqual(1);
   expect(logCot.features[0].featureName).toEqual("feat-1");
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.pending);
-  
+
   // new root [√]
   logCot.addLogs([
     new LongLog({
@@ -202,4 +205,26 @@ it("should go through a branch when the root node have multi branch", () => {
   ]);
   expect(logCot.features.length).toEqual(2);
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.left);
+});
+
+it("should a event is emitted when the feature is generated", () => {
+  const logCot = new LongLogContainer();
+
+  const onFoo = (event: FeatureEventPayload) => {
+    console.log(event);
+    expect(event.data.feature.featureStatus).toEqual(FeatureStatusEnum.pending);
+    logCot.off(FeatureEventType.change, onFoo);
+  };
+
+  logCot.on(FeatureEventType.change, onFoo);
+
+  logCot.addLogs([
+    new LongLog({
+      featureName: ["feat-1"],
+      nodeName: "root-node",
+      nodeType: FeatureNodeTypeEnum.start,
+      nodeStatus: FeatureNodeStatusEnum.success,
+      spendTime: 0,
+    }),
+  ]);
 });
