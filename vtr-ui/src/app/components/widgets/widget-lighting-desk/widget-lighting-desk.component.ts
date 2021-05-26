@@ -118,7 +118,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 							LocalStorageKey.LightingCapabilitiesNewversionDesk,
 							response
 						);
-						this.ledlayoutversion = response.ledlayoutversion
+						if (response.ledlayoutversion) {
+							this.ledlayoutversion = response.ledlayoutversion;
+						}
 						this.imgDefaultOff();
 						this.initProfileId();
 					}
@@ -531,7 +533,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 						);
 					}
 					if (lightingCapabilitiesRes &&
-						lightingCapabilitiesRes.MemoryPanelType && Array.isArray(lightingCapabilitiesRes.GPUPanelType) &&
+						lightingCapabilitiesRes.MemoryPanelType && Array.isArray(lightingCapabilitiesRes.MemoryPanelType) &&
 						lightingCapabilitiesRes.MemoryPanelType.indexOf(this.lightingProfileCurrentDetail.lightPanelType) > -1) {
 						// memory led
 						currentNameImg = this.getCurrentName(
@@ -637,7 +639,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 					}
 					if (
 						lightingCapabilitiesRes.MemoryPanelType &&
-						lightingCapabilitiesRes.MemoryPanelType.length !== 0 &&
+						Array.isArray(this.lightingCapabilities.MemoryPanelType) &&
 						lightingCapabilitiesRes.MemoryPanelType.indexOf(
 							this.lightingProfileCurrentDetail.lightPanelType
 						) > -1
@@ -701,8 +703,8 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				}
 			}
 		} else if (
-			this.lightingCapabilities.MemoryBrightLevel &&
-			this.lightingCapabilities.MemoryBrightLevel !== 0 &&
+			this.lightingCapabilities.MemoryBrightLevel && this.lightingCapabilities.MemoryPanelType &&
+			Array.isArray(this.lightingCapabilities.MemoryPanelType) &&
 			this.lightingCapabilities.MemoryPanelType.indexOf(
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
@@ -712,9 +714,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			} else {
 				this.supportBrightness = true;
 			}
-		} else if (this.lightingCapabilities.GPUBrightLevel &&
-			this.lightingCapabilities.GPUBrightLevel !== 0 &&
-			this.lightingCapabilities.GPUPanelType.indexOf(
+		} else if (this.lightingCapabilities.GPUSupportBrightnessList &&
+			Array.isArray(this.lightingCapabilities.GPUSupportBrightnessList) &&
+			this.lightingCapabilities.GPUSupportBrightnessList.indexOf(
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1) {
 			// gpu led lighting
@@ -748,8 +750,8 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				}
 			}
 		} else if (
-			this.lightingCapabilities.MemorySpeedLevel &&
-			this.lightingCapabilities.MemorySpeedLevel !== 0 &&
+			this.lightingCapabilities.MemorySpeedLevel && this.lightingCapabilities.MemoryPanelType &&
+			Array.isArray(this.lightingCapabilities.MemoryPanelType) &&
 			this.lightingCapabilities.MemoryPanelType.indexOf(
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
@@ -760,9 +762,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.supportSpeed = true;
 			}
 		} else if (
-			this.lightingCapabilities.GPUSpeedLevel &&
-			this.lightingCapabilities.GPUSpeedLevel !== 0 &&
-			this.lightingCapabilities.GPUPanelType.indexOf(
+			this.lightingCapabilities.GPUSupportSpeedList &&
+			Array.isArray(this.lightingCapabilities.GPUSupportSpeedList) &&
+			this.lightingCapabilities.GPUSupportSpeedList.indexOf(
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
@@ -789,7 +791,8 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			} else {
 				this.supportColor = false;
 			}
-		} else if (
+		} else if (this.lightingCapabilities.MemoryPanelType &&
+			Array.isArray(this.lightingCapabilities.MemoryPanelType) &&
 			this.lightingCapabilities.MemoryPanelType.indexOf(
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
@@ -799,8 +802,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			} else {
 				this.supportColor = false;
 			}
-		} else if (
-			this.lightingCapabilities.GPUPanelType.indexOf(
+		} else if (this.lightingCapabilities.GPUSupportRGBList &&
+			Array.isArray(this.lightingCapabilities.GPUSupportRGBList) &&
+			this.lightingCapabilities.GPUSupportRGBList.indexOf(
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
