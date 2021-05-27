@@ -70,6 +70,7 @@ export class ConfigService {
 		null
 	);
 	public isSmartPerformanceAvailable = false;
+	public isSmartPrivacyAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
 	private betaFeature = ['smart-performance'];
@@ -498,6 +499,10 @@ export class ConfigService {
 			this.vantageShellService.isShellAvailable && (await this.showSmartPerformance());
 		this.updateAvailability(menu, MenuID.smartPerformance, this.isSmartPerformanceAvailable);
 
+		this.isSmartPrivacyAvailable =
+			this.vantageShellService.isShellAvailable && (await this.showSmartPrivacy());
+		this.updateAvailability(menu, MenuID.smartPrivacy, this.isSmartPrivacyAvailable);
+
 		this.updateBetaService(menu);
 	}
 
@@ -523,6 +528,24 @@ export class ConfigService {
 					(error) => {
 						this.logger.error(
 							'ConfigService.showSmartPerformance: promise rejected ',
+							error
+						);
+						resolve(false);
+					}
+				);
+			}
+		});
+	}
+	public showSmartPrivacy(): Promise<boolean> {
+		return new Promise((resolve) => {
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting('SmartPrivacy').then(
+					(result) => {
+						resolve((result || '').toString().toLowerCase() === 'true');
+					},
+					(error) => {
+						this.logger.error(
+							'ConfigService.showSmartPrivacy: promise rejected ',
 							error
 						);
 						resolve(false);
