@@ -1,17 +1,17 @@
 <div class="vtr-material-menu">
 	<nav class="navbar navbar-expand-xl pr-0 menu-navbar">
-		<div class="navbar-brand h-100 p-0 border-0 border-radius-0 text-center" id="vantage_image_L" role="img">
+		<div class="navbar-brand h-100 p-0 border-0 border-radius-0 text-center" id="vantage_image_{{deviceService?.isGaming?'Y':'L'}}" role="img">
 			<img class="d-block w-100 h-100 menu-main-logo"
 				*ngIf="dashboardService.isDashboardDisplayed"
-				[src]="VantageLogo | sanitize : 'resourceUrl'"
-				alt="L"
-				id="menu-main-lnk-db-l-logo"/>
+				[src]="headerLogo | sanitize : 'resourceUrl'"
+				alt="{{deviceService?.isGaming?'Y':'L'}}"
+				id="menu-main-lnk-db-{{deviceService?.isGaming?'y':'l'}}-logo"/>
 			<button
 				mat-icon-button
 				vtrMetrics
 				*ngIf="!dashboardService.isDashboardDisplayed && items && items.length>0"
 				class="d-block w-100 h-100 border-0 m-0 rounded-0 menu-main-logo"
-				id="menu-main-lnk-l-logo"
+				id="menu-main-lnk-{{deviceService?.isGaming?'y':'l'}}-logo"
 				tabindex="1"
 				aria-label="menu-main-lnk-l-logo"
 				routerLinkActive="link-active"
@@ -19,9 +19,9 @@
 				[metricsEvent]="items[0].metricsEvent"
 				[metricsParent]="'NavBar'"
 				[metricsItem]="items[0].metricsItem"
-				routerLink="/dashboard">
-				<img [src]="VantageLogo | sanitize : 'resourceUrl'"
-					alt="L"
+				routerLink="/{{items[0].path}}">
+				<img [src]="headerLogo | sanitize : 'resourceUrl'"
+					alt="{{deviceService?.isGaming?'Y':'L'}}"
 					class="d-block w-100 h-100"/>
 			</button>
 		</div>

@@ -86,6 +86,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
+		this.dashboardService.isDashboardDisplayed = true;
 
 		if (!this.gamingAllCapabilitiesService.isGetCapabilitiesAready) {
 			this.gamingAllCapabilitiesService
@@ -98,11 +99,15 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					// Version 3.7 app search for gaming
 					this.launchProtocol();
 				})
-				.catch((err) => { });
+				.catch((err) => {});
 		} else {
 			// Version 3.8 protocol: ensure that update the desktopType and liteGaming value
-			this.desktopType = this.localCacheService.getLocalCacheValue(LocalStorageKey.desktopType);
-			this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
+			this.desktopType = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.desktopType
+			);
+			this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(
+				LocalStorageKey.liteGaming
+			);
 		}
 
 		this.dashboardService.setDefaultCMSContent();
@@ -127,11 +132,15 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 
 	ngAfterViewInit(): void {
 		this.commonService.markPerformanceNode('device-gaming');
-		this.commonService.sendNotification(PerformanceNotifications.firstPageInitialized, 'device-gaming');
+		this.commonService.sendNotification(
+			PerformanceNotifications.firstPageInitialized,
+			'device-gaming'
+		);
 		this.iframeRenderer.preloadSubApp();
 	}
 
 	ngOnDestroy() {
+		this.dashboardService.isDashboardDisplayed = false;
 		if (this.translateSubscription) {
 			this.translateSubscription.unsubscribe();
 		}
@@ -219,11 +228,11 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					this.fetchCmsContents('en');
 				}
 			},
-			(error) => { }
+			(error) => {}
 		);
 	}
 
-	onConnectivityClick($event: any) { }
+	onConnectivityClick($event: any) {}
 
 	getPreviousContent() {
 		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;
@@ -255,10 +264,15 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					return;
 				}
 
-				if (this.activatedRoute.snapshot.queryParams.action.toLowerCase() === 'thermalmode') {
+				if (
+					this.activatedRoute.snapshot.queryParams.action.toLowerCase() === 'thermalmode'
+				) {
 					setTimeout(() => {
 						this.thermalModeFlag = true;
-						this.gamingAllCapabilitiesService.sendGamingThermalModeNotification(Gaming.GamingThermalMode, true);
+						this.gamingAllCapabilitiesService.sendGamingThermalModeNotification(
+							Gaming.GamingThermalMode,
+							true
+						);
 					}, 200);
 				}
 			}
