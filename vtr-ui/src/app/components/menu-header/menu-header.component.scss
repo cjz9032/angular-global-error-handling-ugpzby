@@ -1,0 +1,178 @@
+@import '../../app.theme';
+
+.vtr-menu-header {
+	.menu-header-tab {
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		color: $light;
+		margin: 0 2rem 0.1rem;
+
+		@media #{$white-on-black} {
+			border: 0.1rem solid transparent;
+		}
+		@media #{$black-on-white} {
+			border: 0.1rem solid transparent;
+		}
+
+		@media #{$breakpoint_xl} {
+			margin: 0 1rem 0.1rem;
+		}
+		@media #{$breakpoint_sm} {
+			margin: 0 0.5rem 0.1rem;
+		}
+		@media #{$breakpoint_md} {
+			margin-right: 3.5rem !important;
+		}
+		@media #{$breakpoint_sm} {
+			margin-right: 3.5rem !important;
+		}
+		&:first-child {
+			margin-left: 0.5rem;
+		}
+		&.active,
+		&:hover {
+			opacity: 1;
+			.menu-pointer {
+				display: inline-block;
+			}
+		}
+		&.active {
+			.tab-label {
+				font-weight: $weight_600;
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
+			}
+		}
+
+		.tab-label {
+			font-size: $fontsize_lg;
+			font-weight: $weight_regular;
+			padding-bottom: 2rem;
+			cursor: pointer;
+			.icomoon {
+				height: 4rem;
+				width: 4rem;
+				font-size: 3.2rem;
+				display: none;
+			}
+			.text {
+				@include high-contrast-adjust;
+			}
+			@media #{$breakpoint_xl6} {
+				font-size: $fontsize_md;
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl5} {
+				font-size: $fontsize_md;
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl4} {
+				font-size: $fontsize_md;
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl3} {
+				font-size: $fontsize_md;
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl2} {
+				font-size: $fontsize_md;
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_xl} {
+				font-size: $fontsize_sm;
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_lg} {
+				font-size: $fontsize_sm;
+				.icomoon {
+					display: none;
+				}
+			}
+			@media #{$breakpoint_md} {
+				font-size: $fontsize_sm;
+				.text {
+					display: none;
+				}
+				.icomoon {
+					display: inline-block;
+				}
+			}
+			@media #{$breakpoint_sm} {
+				font-size: $fontsize_sm;
+				.text {
+					display: none;
+				}
+				.icomoon {
+					display: inline-block;
+				}
+			}
+			&:hover {
+				@media #{$white-on-black} {
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
+			}
+		}
+		fa-icon {
+			&.menu-pointer {
+				display: none;
+				position: absolute;
+				bottom: -1.8rem;
+				left: 50%;
+				margin-left: -1.5rem;
+				color: $shade_extralight;
+				font-size: 2.2rem;
+				transform: rotate(45deg);
+				z-index: 2;
+
+				@media #{$black-on-white} {
+					color: $light;
+				}
+				@media #{$white-on-black} {
+					color: $dark;
+				}
+
+				&::before {
+					@media #{$white-on-black} {
+						@include high-contrast-triangle;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-triangle;
+						border-left-color: $dark;
+						border-bottom-color: $dark;
+					}
+				}
+			}
+		}
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+			@media #{$white-on-black} {
+				outline: 0;
+				border: 0.1rem solid $light;
+			}
+			@media #{$black-on-white} {
+				outline: 0;
+				border: 0.1rem solid $dark;
+			}
+		}
+	}
+}
