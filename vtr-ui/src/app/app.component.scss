@@ -35,14 +35,6 @@
 	}
 }
 
-.is-gaming {
-	.vtr-app {
-		z-index: inherit;
-		top: calc(#{$menu_height} - 1px);
-		height: calc(100vh - #{$menu_height} + 1px);
-	}
-}
-
 #main-wrapper {
 	outline: none;
 	vtr-menu-main {

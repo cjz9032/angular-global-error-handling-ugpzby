@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { MenuMainComponent } from 'src/app/components/menu-main/menu-main.component';
-import { MenuMainLegacyComponent } from 'src/app/components/menu-main-legacy/menu-main-legacy.component';
 import { UiHeaderWarrantyComponent } from 'src/app/components/ui/ui-header-warranty/ui-header-warranty.component';
 import { TranslationModule } from '../translation.module';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
@@ -39,23 +38,21 @@ import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
 @NgModule({
 	declarations: [
 		MenuMainComponent,
-		MenuMainLegacyComponent,
 		MaterialMenuComponent,
 		MaterialMenuDropdownComponent,
 		MaterialHamburgerMenuComponent,
 		UiHeaderWarrantyComponent,
-		MenuHoverDirective
+		MenuHoverDirective,
 	],
 	exports: [
 		MenuMainComponent,
-		MenuMainLegacyComponent,
 		MaterialMenuComponent,
 		MaterialMenuDropdownComponent,
 		MaterialHamburgerMenuComponent,
 		UiHeaderWarrantyComponent,
 		CommonPipeModule,
 		MetricsModule,
-		NgbDropdownModule
+		NgbDropdownModule,
 	],
 	imports: [
 		CommonModule,

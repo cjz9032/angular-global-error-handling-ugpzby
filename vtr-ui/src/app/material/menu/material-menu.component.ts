@@ -45,6 +45,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
 import { RoutePath } from 'src/assets/menu/menu';
 import { MaterialMenuDropdownComponent } from './material-menu-dropdown/material-menu-dropdown.component';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-material-menu',
@@ -67,6 +68,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		M5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuN
 		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
 		`;
+	gamingLogo = 'assets/images/gaming/gaming-logo-small.png';
+	headerLogo: string;
 	machineFamilyName: string;
 	items: Array<any> = [];
 	preloadImages: string[];
@@ -104,12 +107,19 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		private viewContainerRef: ViewContainerRef,
 		private translate: TranslateService,
 		private logger: LoggerService,
+		private vantageShellService: VantageShellService,
 		@Inject(DOCUMENT) private document: Document
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
 
 	ngOnInit(): void {
+		this.headerLogo = '';
+		if (this.deviceService.isGaming) {
+			this.checkLiteGaming();
+		} else {
+			this.headerLogo = this.VantageLogo;
+		}
 		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
@@ -148,6 +158,23 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
+	}
+
+	private checkLiteGaming() {
+		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({
+			var: 'DeviceTags.System.Profile.LiteGaming',
+		});
+		if (filter) {
+			filter.then((hyp) => {
+				if (hyp !== null) {
+					this.deviceService.isLiteGaming = true;
+					this.headerLogo = this.VantageLogo;
+				} else {
+					this.deviceService.isLiteGaming = false;
+					this.headerLogo = this.gamingLogo;
+				}
+			});
+		}
 	}
 
 	onSearchMenuClosed(materialMenuDropdown: MaterialMenuDropdownComponent) {
@@ -249,8 +276,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		);
 	}
 
-
-
 	toggleMenu(event) {
 		event.stopPropagation();
 	}
@@ -289,8 +314,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		subpath
 			? this.router.navigateByUrl(`/${path}/${subpath}`)
 			: path
-				? this.router.navigateByUrl(`/${path}`)
-				: this.router.navigateByUrl(`/`);
+			? this.router.navigateByUrl(`/${path}`)
+			: this.router.navigateByUrl(`/`);
 	}
 
 	openMatMenu(menuTrigger: MenuHoverDirective) {
