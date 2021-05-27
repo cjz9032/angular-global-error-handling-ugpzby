@@ -6,6 +6,7 @@
 	(removed)="remove(tileItem)">
 	<mat-icon matChipRemove class="remove-icon text-center position-absolute m-2 align-self-end"
 		[id]="'app-remove-btn-'+tileItem.name"
+		aria-hidden="false"
 		vtrMetrics
 		metricsItem="{{tileItem.name}} removed"
 		metricsEvent="FeatureClick">
