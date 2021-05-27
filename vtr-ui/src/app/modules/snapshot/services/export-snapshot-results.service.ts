@@ -235,25 +235,25 @@ export class ExportSnapshotResultsService extends CommonExportLogService {
 		// Create elements to append in the div
 		const itemName = this.createElement({
 			elementType: 'span',
-			innerHtml: name,
+			innerHtml: name ?? "",
 			classes: ['font_weight_600', 'capitalize_text', 'item_description'],
 		});
 		const itemValue = this.createElement({
 			elementType: 'span',
-			innerHtml: value,
+			innerHtml: value ?? "",
 			classes: [classeProperty],
 		});
 
 		if (!isDifferent) {
 			itemSecondValue = this.createElement({
 				elementType: 'span',
-				innerHtml: secondValue,
+				innerHtml: secondValue ?? "",
 				classes: [classeProperty],
 			});
 		} else {
 			itemSecondValue = this.createElement({
 				elementType: 'span',
-				innerHtml: secondValue,
+				innerHtml: secondValue ?? "",
 				classes: ['details_light_blue_title', 'font_weight_600'],
 			});
 		}
