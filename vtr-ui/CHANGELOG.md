@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.15](https://bitbucket.tc.lenovo.com///compare/v1.12.14...v1.12.15) (2021-05-28)
+
+
+### Features
+
+* **auto close:** VAN-29801 tile: add autoId for remove icon btn ([88e6339](https://bitbucket.tc.lenovo.com///commit/88e6339854af0d6fa92a6e317d0995ab15ec04f3))
+* add full story script in html head ([1bf33b8](https://bitbucket.tc.lenovo.com///commit/1bf33b8b9c204eac274ffd395d9af3080157f6c9))
+* **gamint menu:** VAN-29391 update gaming menu same as non-gaming ([e656881](https://bitbucket.tc.lenovo.com///commit/e656881956a6142f70bab668778e5bd8da975a9b))
+* **micro-frontends:** remove settings feature ([4ac1ea6](https://bitbucket.tc.lenovo.com///commit/4ac1ea6aa3ecf044be7f57bfc43e95e616c56cd1))
+* **smart-privacy:** return extentions section and hide smart-privacy from menu ([258fe64](https://bitbucket.tc.lenovo.com///commit/258fe6497b17f62fccef5506ae0490dc74e3d4c8))
+
+
+### Bug Fixes
+
+* **auto close:** VAN-29276 tile: add btn keyboard event support ([d250406](https://bitbucket.tc.lenovo.com///commit/d250406732ed9d888d5b3ae4a4b0dd2556705fb2))
+* **smb:** recover menu-header ([8c8db3a](https://bitbucket.tc.lenovo.com///commit/8c8db3a3ba7ce1a4756172c72a8ffc2960674201))
+
 ### [1.12.14](https://bitbucket.tc.lenovo.com///compare/v1.12.13...v1.12.14) (2021-05-25)
 
 
