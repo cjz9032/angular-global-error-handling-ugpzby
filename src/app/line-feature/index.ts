@@ -1,15 +1,18 @@
-import { once } from 'lodash';
+import _, { isEmpty, once } from "lodash";
+import mitt from "mitt";
 import {
-	FeatureNodeStatusEnum,
-	FeatureNodeTypeEnum,
-	LongLog,
-	LongLogContainer,
-} from './log-container';
+  FeatureNodeStatusEnum,
+  FeatureNodeTypeEnum,
+  LongLog,
+  LongLogContainer,
+  FeatureEventData,
+} from "./log-container";
+import { namespaceEmitter } from "./namespace-emitter";
 
 type FeatureNodeInView = {
-	nodeName: string;
-	nodeType: FeatureNodeTypeEnum;
-	nodeDescription?: string;
+  nodeName: string;
+  nodeType: FeatureNodeTypeEnum;
+  nodeDescription?: string;
 };
 /**
  * Annotate Functions to get metrics
@@ -24,140 +27,194 @@ type FeatureNodeInView = {
 		},
 	})
  */
-export const lineFeature = (decoArgs: {
-	featureName: string | string[];
-	node: FeatureNodeInView;
-}) => (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-	const originalMethod = descriptor.value;
 
-	descriptor.value = function (...args: any[]) {
-		const { node: curNode, featureName } = decoArgs;
-		const outLineZone = initOutLineZone((zoneNodeInfo) => {
-			featureLogContainer.addLogs([
-				new LongLog({
-					...curNode,
-					featureName,
-					error: zoneNodeInfo.error,
-					spendTime: zoneNodeInfo.spendTime,
-					nodeStatus: !!zoneNodeInfo.error
-						? FeatureNodeStatusEnum.fail
-						: FeatureNodeStatusEnum.success,
-				}),
-			]);
-		});
-
-		let result: Promise<unknown> | undefined;
-		if (outLineZone) {
-			outLineZone.runGuarded(
-				function () {
-					// @ts-ignore
-					result = originalMethod.apply(this, arguments);
-					return result;
-				},
-				this,
-				args,
-				'outLineZoneRoot'
-			);
-		} else {
-			result = originalMethod.apply(this, args);
-		}
-		return result;
-	};
-};
-
-export const featureLogContainer = new LongLogContainer();
-
-interface ZoneNodeInfo {
-	spendTime: number;
-	error?: Error;
-	hasTaskState?: HasTaskState;
+interface FeatureNodeBase {
+  featureName?: string;
+  node?: FeatureNodeInView;
 }
 
-const initOutLineZone = (onFinish: (params: ZoneNodeInfo) => void): Zone | null => {
-	// Current Zone is the parent, whatever what the parent it is
-	let firstCallRes: any;
-	let isAsync: boolean;
+interface FeatureNodeFn {
+  customFeatureNode?: (args: any[]) => {
+    featureName: string;
+    node: FeatureNodeInView;
+  };
+}
 
-	// From ZoneAwarePromise
-	const Zone_symbol_prefix = '__zone_symbol__';
-	const UNRESOLVED = null;
-	const RESOLVED = true;
-	const REJECTED = false;
-	const REJECTED_NO_CATCH = 0;
-	const symbolPromiseState = Zone_symbol_prefix + 'state';
+interface FeatureNodeParams extends FeatureNodeBase, FeatureNodeFn {
+  namespace?: string;
+}
+// type Constrained<T> = "x" extends keyof T
+//   ? T extends { x: string }
+//     ? T
+//     : never
+//   : T;
 
-	const startTime = performance.now();
-	let spendTime: number;
-	const onFinishCall = once(
-		({ error, hasTaskState }: { error?: Error; hasTaskState?: HasTaskState }) => {
-			const endTime = performance.now();
-			spendTime = endTime - startTime;
-			// if( hasTaskState?.microTask  || hasTaskState?.eventTask || hasTaskState?.microTask ){
-			//   // there is some tasks running in background
-			// }
-			onFinish({
-				spendTime,
-				error,
-				hasTaskState,
-			});
-			// todo destroy?
-		}
-	);
+const featureLogContainer: {
+  [x: string]: LongLogContainer;
+} = {};
 
-	const innerZone = Zone.current.fork({
-		name: 'myOuterNg',
-		onInvoke: (
-			parentZoneDelegate: ZoneDelegate,
-			currentZone: Zone,
-			targetZone: Zone,
-			delegate: () => void,
-			applyThis: any,
-			applyArgs?: any[],
-			source?: string
-		) => {
-			const res: unknown = parentZoneDelegate.invoke(
-				targetZone,
-				delegate,
-				applyThis,
-				applyArgs,
-				source
-			);
-			if (source === 'outLineZoneRoot') {
-				firstCallRes = res;
-				isAsync =
-					firstCallRes instanceof Promise &&
-					// @ts-ignore
-					firstCallRes[symbolPromiseState] === UNRESOLVED;
-				if (!isAsync) {
-					setTimeout(() => {
-						onFinishCall({});
-					});
-				}
-			}
+// @ts-ignore
+window.__featureLogContainer = featureLogContainer;
 
-			return res;
-		},
-		onHasTask: (delegate, curr, target, hasTaskState) => {
-			if (isAsync && firstCallRes[symbolPromiseState] === RESOLVED) {
-				onFinishCall({
-					hasTaskState,
-				});
-			}
-			return delegate.hasTask(target, hasTaskState);
-		},
-		onHandleError: (
-			parentZoneDelegate: ZoneDelegate,
-			currentZone: Zone,
-			targetZone: Zone,
-			error: any
-		) => {
-			const res = parentZoneDelegate.handleError(targetZone, error);
-			// get new error
-			onFinishCall({
-				error,
-			});
-			return res;
-		},
-	});
-	return innerZone;
+export const lineFeature =
+  (decoArgs: FeatureNodeParams) =>
+  (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+    const originalMethod = descriptor.value;
+    let namespace = decoArgs.namespace ?? "root";
+    featureLogContainer[namespace] =
+      featureLogContainer[namespace] ?? new LongLogContainer(namespace);
+
+    descriptor.value = function (...args: any[]) {
+      let node = decoArgs.node;
+      let featureName = decoArgs.featureName ?? "";
+      if (decoArgs.customFeatureNode) {
+        const tmp = decoArgs.customFeatureNode(args);
+        featureName = tmp.featureName;
+        node = tmp.node;
+      }
+
+      if (!node || !featureName) {
+        return originalMethod.apply(this, args);
+      }
+      const outLineZone = initOutLineZone((zoneNodeInfo) => {
+        featureLogContainer[namespace].addLogs([
+          new LongLog({
+            nodeName: node!.nodeName,
+            nodeType: node!.nodeType,
+            nodeDescription: node!.nodeDescription,
+            featureName,
+            error: zoneNodeInfo.error,
+            spendTime: zoneNodeInfo.spendTime,
+            nodeStatus: !!zoneNodeInfo.error
+              ? FeatureNodeStatusEnum.fail
+              : FeatureNodeStatusEnum.success,
+          }),
+        ]);
+      });
+
+      let result: Promise<unknown> | undefined;
+      if (outLineZone) {
+        outLineZone.runGuarded(
+          function () {
+            // @ts-ignore
+            result = originalMethod.apply(this, arguments);
+            return result;
+          },
+          this,
+          args,
+          "outLineZoneRoot"
+        );
+      } else {
+        result = originalMethod.apply(this, args);
+      }
+      return result;
+    };
+  };
+
+export const lineFeatureEvent = {
+  on: namespaceEmitter.on,
+  off: namespaceEmitter.off,
+};
+
+interface ZoneNodeInfo {
+  spendTime: number;
+  error?: Error;
+  hasTaskState?: HasTaskState;
+}
+
+const initOutLineZone = (
+  onFinish: (params: ZoneNodeInfo) => void
+): Zone | null => {
+  // Current Zone is the parent, whatever what the parent it is
+  let firstCallRes: any;
+  let isAsync: boolean;
+
+  // From ZoneAwarePromise
+  const Zone_symbol_prefix = "__zone_symbol__";
+  const UNRESOLVED = null;
+  const RESOLVED = true;
+  const REJECTED = false;
+  const REJECTED_NO_CATCH = 0;
+  const symbolPromiseState = Zone_symbol_prefix + "state";
+
+  const startTime = performance.now();
+  let spendTime: number;
+  const onFinishCall = once(
+    ({
+      error,
+      hasTaskState,
+    }: {
+      error?: Error;
+      hasTaskState?: HasTaskState;
+    }) => {
+      const endTime = performance.now();
+      spendTime = endTime - startTime;
+      // if( hasTaskState?.microTask  || hasTaskState?.eventTask || hasTaskState?.microTask ){
+      //   // there is some tasks running in background
+      // }
+      onFinish({
+        spendTime,
+        error,
+        hasTaskState,
+      });
+      // todo destroy?
+    }
+  );
+
+  const innerZone = Zone.current.fork({
+    name: "myOuterNg",
+    onInvoke: (
+      parentZoneDelegate: ZoneDelegate,
+      currentZone: Zone,
+      targetZone: Zone,
+      delegate: () => void,
+      applyThis: any,
+      applyArgs?: any[],
+      source?: string
+    ) => {
+      const res: unknown = parentZoneDelegate.invoke(
+        targetZone,
+        delegate,
+        applyThis,
+        applyArgs,
+        source
+      );
+      if (source === "outLineZoneRoot") {
+        firstCallRes = res;
+        isAsync =
+          firstCallRes instanceof Promise &&
+          // @ts-ignore
+          firstCallRes[symbolPromiseState] === UNRESOLVED;
+        if (!isAsync) {
+          setTimeout(() => {
+            onFinishCall({});
+          });
+        }
+      }
+
+      return res;
+    },
+    onHasTask: (delegate, curr, target, hasTaskState) => {
+      if (isAsync && firstCallRes[symbolPromiseState] === RESOLVED) {
+        onFinishCall({
+          hasTaskState,
+        });
+      }
+      return delegate.hasTask(target, hasTaskState);
+    },
+    onHandleError: (
+      parentZoneDelegate: ZoneDelegate,
+      currentZone: Zone,
+      targetZone: Zone,
+      error: any
+    ) => {
+      const res = parentZoneDelegate.handleError(targetZone, error);
+      // get new error
+      onFinishCall({
+        error,
+      });
+      return res;
+    },
+  });
+  return innerZone;
 };

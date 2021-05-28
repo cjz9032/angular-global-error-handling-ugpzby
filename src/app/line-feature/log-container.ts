@@ -1,5 +1,6 @@
-import mitt from "mitt";
-import { cloneDeep, last, intersection, reduce } from "lodash";
+import mitt, { Emitter } from "mitt";
+import { cloneDeep, last, intersection, reduce, find, findLast } from "lodash";
+import { namespaceEmitter } from "./namespace-emitter";
 
 export enum FeatureNodeTypeEnum {
   start,
@@ -19,12 +20,8 @@ export enum FeatureStatusEnum {
   left,
 }
 
-export enum FeatureEventType {
-  change = "Change",
-}
-
 export interface FeatureNode {
-  featureName: string | string[];
+  featureName: string;
   nodeName: string;
   nodeType: FeatureNodeTypeEnum;
   nodeDescription?: string;
@@ -40,7 +37,10 @@ export class LongLog {
   id: string = genId().toString();
 
   constructor(
-    public nodeInfo: FeatureNode & { spendTime: number; error?: Error }
+    public nodeInfo: FeatureNode & {
+      spendTime: number;
+      error?: Error;
+    }
   ) {}
 }
 
@@ -48,7 +48,7 @@ export class Feature {
   id: string = genId().toString();
 
   constructor(
-    public featureName: string | string[],
+    public featureName: string,
     public featureStatus: FeatureStatusEnum,
     public nodeLogs: LongLog[]
   ) {}
@@ -113,39 +113,26 @@ export class Feature {
   }
 }
 
-export interface FeatureEventPayload {
-  type: "add" | "update";
+export interface FeatureEventData {
+  error?: Error;
   data: {
     feature: Feature;
+    node: LongLog | null;
   };
+  container: LongLogContainer;
 }
 
 export class LongLogContainer {
-  private emitter = mitt();
   private logs: LongLog[] = [];
   private parsedFeats: Feature[] = [];
-  constructor(private longLogLimit = 1_000) {}
+  constructor(private namespace: string, private longLogLimit = 1_000) {}
 
   private parseLog(longLogs: LongLog[]) {
     const toProcessLogs = cloneDeep(longLogs);
     while (toProcessLogs.length) {
-      const lastFeat = last(this.parsedFeats);
       const curLog = toProcessLogs.shift()!;
 
-      const calcIntersectionFeatureName = (
-        name1: string | string[],
-        name2: string | string[]
-      ) => {
-        const name1Trans: string[] = Array.isArray(name1) ? name1 : [name1];
-        const name2Trans: string[] = Array.isArray(name2) ? name2 : [name2];
-        const res = intersection(name1Trans, name2Trans);
-        if (res.length === 0) {
-          return null;
-        }
-        return res.length < 2 ? res[0] : res;
-      };
-
-      const addNextFeat = (nextLog: LongLog) => {
+      const addNewFeat = (nextLog: LongLog) => {
         if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start) {
           this.parsedFeats.push(
             new Feature(
@@ -156,50 +143,30 @@ export class LongLogContainer {
               [nextLog]
             )
           );
-          const result = last(this.parsedFeats);
-          this.emitter.emit(FeatureEventType.change, {
-            type: "add",
-            data: {
-              feature: result,
-            },
+          const result = last(this.parsedFeats)!;
+          this.emit({
+            feature: result,
+            node: nextLog,
           });
           return result;
         }
+        // not valid
+        // console.log('the node is not valid');
         return false;
       };
 
-      const resolveLastFeat = (feature: Feature) => {
-        if (feature.featureStatus !== FeatureStatusEnum.pending) {
-          return false;
-        }
+      const markFeatureLeft = (feature: Feature) => {
         feature.featureStatus = FeatureStatusEnum.left;
-        this.emitter.emit(FeatureEventType.change, {
-          type: "update",
-          data: {
-            feature: feature,
-          },
+        this.emit({
+          feature: feature,
+          node: null,
         });
         return true;
       };
 
       const continueLastFeat = (feature: Feature, nextLog: LongLog) => {
-        if (feature.featureStatus !== FeatureStatusEnum.pending) {
-          addNextFeat(curLog);
-          return false;
-        }
-        // restart same feature?
-        if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start) {
-          resolveLastFeat(feature);
-          addNextFeat(nextLog);
-          return true;
-        }
-
         feature.nodeLogs.push(curLog);
-        feature.featureName =
-          calcIntersectionFeatureName(
-            feature.featureName,
-            curLog.nodeInfo.featureName
-          ) || "";
+        feature.featureName = curLog.nodeInfo.featureName;
         feature.featureStatus =
           nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
             ? nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.middle
@@ -207,30 +174,26 @@ export class LongLogContainer {
               : FeatureStatusEnum.success
             : FeatureStatusEnum.fail;
 
-        this.emitter.emit(FeatureEventType.change, {
-          type: "update",
-          data: {
-            feature: feature,
-          },
+        this.emit({
+          feature: feature,
+          node: nextLog,
         });
         return true;
       };
 
-      if (lastFeat) {
-        if (
-          calcIntersectionFeatureName(
-            lastFeat.featureName,
-            curLog.nodeInfo.featureName
-          ) !== null
-        ) {
-          continueLastFeat(lastFeat, curLog);
+      const lastFeatNeedProcess = findLast(this.parsedFeats, function (n) {
+        return n.featureName === curLog.nodeInfo.featureName;
+      });
+      if (lastFeatNeedProcess?.featureStatus === FeatureStatusEnum.pending) {
+        if (curLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start) {
+          // it's saying should new a feature
+          markFeatureLeft(lastFeatNeedProcess);
+          addNewFeat(curLog);
         } else {
-          // resolve last, and continue it
-          resolveLastFeat(lastFeat);
-          addNextFeat(curLog);
+          continueLastFeat(lastFeatNeedProcess, curLog);
         }
       } else {
-        addNextFeat(curLog);
+        addNewFeat(curLog);
       }
     }
   }
@@ -251,13 +214,13 @@ export class LongLogContainer {
     }
   }
 
-  on(type: FeatureEventType, handler: (payload: FeatureEventPayload) => void) {
-    this.emitter.on(type, handler);
-    return this;
-  }
-  off(type: FeatureEventType, handler: (event?: any) => void) {
-    this.emitter.off(type, handler);
-    return this;
+  emit(data: { feature: Feature; node: LongLog | null }) {
+    const combineEvt: FeatureEventData = {
+      data: data,
+      container: this,
+      error: data.feature.error,
+    };
+    namespaceEmitter.emit(this.namespace, "all", combineEvt);
   }
 
   toJSON() {
@@ -278,3 +241,12 @@ export class LongLogContainer {
     };
   }
 }
+
+export const lineFeatureEvent = {
+  on: (handler: (event: FeatureEventData) => void, namespace = "root") => {
+    return namespaceEmitter.on("all", handler, namespace);
+  },
+  off: (handler: (event?: any) => void, namespace = "root") => {
+    return namespaceEmitter.on("all", handler, namespace);
+  },
+};

@@ -1,13 +1,13 @@
 
 
-# Function Metrics
+# Health System
 This simple library provides a way to annotate your functions and call metrics for them.
 Plus, we can make a user-case from observed individual functions metrics
 <br>
 <br>
 # Table of Contents
 
-- [Function Metrics](#function-metrics)
+- [Health System](#health-system)
 - [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
   - [Setup](#setup)
@@ -116,7 +116,7 @@ and it should indicate the feature info, node info.
     featureLogContainer.on(FeatureEventType.change, (event) => {
         const { feature, type } = event.data;
 
-        console.log(type) // add or upadate a feature
+        console.log(type) // 'add' or 'upadate' a feature
         
         if (feature.featureStatus === FeatureStatusEnum.fail) {
             // error occurs due to not handle error

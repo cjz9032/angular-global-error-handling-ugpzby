@@ -1,6 +1,6 @@
 import { Component, NgZone } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { lineFeature } from "./line-feature/";
+import { lineFeature, lineFeatureEvent } from "./line-feature/";
 import { FeatureNodeTypeEnum } from "./line-feature/log-container";
 
 const DoFirst = function (num: number): Promise<string> {
@@ -39,10 +39,15 @@ export class AppComponent {
   constructor(private http: HttpClient, private ngZone: NgZone) {}
 
   @lineFeature({
-    featureName: ["use-case-1", "use-case-2"],
-    node: {
-      nodeName: "startF1",
-      nodeType: FeatureNodeTypeEnum.start,
+    namespace: "123",
+    customFeatureNode: (args: any[]) => {
+      return {
+        featureName: "123",
+        node: {
+          nodeName: "startF1",
+          nodeType: FeatureNodeTypeEnum.start,
+        },
+      };
     },
   })
   public async startF1() {
@@ -55,6 +60,17 @@ export class AppComponent {
     node: {
       nodeName: "middleF1",
       nodeType: FeatureNodeTypeEnum.middle,
+    },
+    customFeatureNode: (args: any[]) => {
+      console.log(args);
+
+      return {
+        featureName: "123",
+        node: {
+          nodeName: "startF1",
+          nodeType: FeatureNodeTypeEnum.start,
+        },
+      };
     },
   })
   public async middleF1() {
@@ -156,6 +172,12 @@ export class AppComponent {
   }
 }
 
+// lineFeatureEvent.on()
+
+// node | feature
+
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license */
+
+

@@ -1,0 +1,4 @@
+{
+  "entryPoints": ["./src/index.ts", "./src/secondary-entry.ts"],
+  "out": "doc"
+}
