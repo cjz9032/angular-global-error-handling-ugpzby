@@ -39,4 +39,10 @@
 			}
 		}
 	}
+
+	&:focus {
+		.add-border {
+			@include outline-blue;
+		}
+	}
 }

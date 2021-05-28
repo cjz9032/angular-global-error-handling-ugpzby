@@ -11,8 +11,10 @@
 
 	</vtr-material-tile>
 	<mat-chip *ngIf="isShowAddBtn && !removable && !addable"
+		tabIndex="0"
 		[id]="'add-btn-'+id"
 		(click)="clickAdd()"
+		(keydown.enter)="clickAdd()"
 		class="vtr-material-tile d-flex flex-column m-0"
 		vtrMetrics
 		metricsItem="app list add icon"
