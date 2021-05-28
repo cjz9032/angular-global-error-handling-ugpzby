@@ -96,6 +96,10 @@
 							"buildOptimizer": true,
 							"serviceWorker": false,
 							"scripts": [
+								{
+									"input": "src/scripts/fullstory.js",
+									"inject": false
+								}
 							]
 						},
 						"qa": {
@@ -130,6 +134,10 @@
 							],
 							"serviceWorker": true,
 							"scripts": [
+								{
+									"input": "src/scripts/fullstory.js",
+									"inject": false
+								}
 							]
 						},
 						"stage": {
