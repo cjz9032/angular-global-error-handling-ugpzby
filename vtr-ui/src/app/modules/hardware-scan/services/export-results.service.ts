@@ -166,12 +166,12 @@ export class ExportResultsService extends CommonExportLogService {
 		const classProperties = ['font_weight_600', 'capitalize_text', 'item_description'];
 		const itemName = this.createElement({
 			elementType: 'span',
-			innerHtml: name,
+			innerHtml: name ?? '',
 			classes: classProperties,
 		});
 		const itemValue = this.createElement({
 			elementType: 'span',
-			innerHtml: value,
+			innerHtml: value ?? '',
 			classes: ['item_value'],
 		});
 		const div = this.createElement({
