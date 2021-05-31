@@ -93,3 +93,34 @@ it("should option expectResult take effect if it be seted", () => {
   anyIns.fn();
   jest.runAllTimers();
 });
+
+it("should call notity with returning a value that replace the real function returns before function executed", () => {
+  class anyClss {
+    @lineFeature({
+      namespace: "namespace3",
+      featureName: "123",
+      node: {
+        nodeName: "startF1",
+        nodeType: FeatureNodeTypeEnum.start,
+      },
+      expectResult: (arg, res) => {
+        return res === "notity-str"
+          ? FeatureNodeStatusEnum.success
+          : FeatureNodeStatusEnum.fail;
+      },
+    })
+    fn(str: string, notity?: (res: any) => void) {
+      notity && notity('notity-str')
+      return "res";
+    }
+  }
+
+  lineFeatureEvent.on((evt) => {
+    expect(evt.data.node?.nodeInfo.nodeStatus).toEqual(
+      FeatureNodeStatusEnum.success
+    );
+  }, "namespace3");
+  const anyIns = new anyClss();
+  anyIns.fn("anystr");
+  jest.runAllTimers();
+});

@@ -9,17 +9,6 @@ import {
 
 const DoFirst = function (num: number): Promise<string> {
   let p: Promise<string> = new Promise(function (r, rej) {
-    // setTimeout(() => {
-    //   // throw new Error('in other dth')
-    //   // rej(new Error("in other"));
-    //   // if (num !== 1) {
-    //   //   rej(new Error("666: " + num));
-    //   // } else {
-    //   // }
-    // }, num * 0);
-    // rej(123);
-    // rej(new Error('123'));
-    // r("1");
     r("1");
   });
   p = p.then((t) => {
@@ -60,13 +49,17 @@ export class AppComponent {
       };
     },
     expectResult: (arg, res) => {
-      return res === 666
-        ? FeatureNodeStatusEnum.fail
-        : FeatureNodeStatusEnum.success;
+      return res === 'test-notify'
+        ? FeatureNodeStatusEnum.success
+        : FeatureNodeStatusEnum.fail;
     },
   })
-  public async startF1() {
-    // @
+  public async startF1(
+    str: string,
+    lineFeatureNofify?: (notifyResult: any) => void
+  ) {
+    // early do
+    lineFeatureNofify && lineFeatureNofify('test-notify');
     this.someCode = "123";
     return new Promise((r) => {
       r(3);
@@ -144,38 +137,6 @@ export class AppComponent {
     this.someCode = "123";
   }
 
-  // public async endF2() {
-  //   this.someCode = "123";
-  //   // await 123;
-
-  //   // const abc: string = await DoFirst(1);
-  //   // this.someCode = abc;
-  //   // // debugger;
-  //   // try {
-  //   //   const abc2: string = await DoFirst(2);
-  //   //   this.someCode = abc2;
-  //   // } catch (e) {
-  //   // }
-  //   // // in bg?
-  //   // new Promise((res) => {
-  //   //   setTimeout(() => {
-  //   //     res("bg123");
-  //   //   }, 3000);
-  //   // });
-
-  //   // const abc3: string = await DoFirst(3);
-  //   // this.someCode = abc3;
-
-  //   // const res: string = await new Promise((r, rej) => {
-  //   //   // r("123");
-  //   //   rej(new Error("err"));
-  //   //   // rej("err");
-  //   // });
-  //   // this.someCode = res;
-
-  //   // debugger;
-  //   return 666;
-  // }
 
   localErrorInZone() {
     // @ts-ignore

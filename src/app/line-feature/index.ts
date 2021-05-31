@@ -78,7 +78,7 @@ export const lineFeature =
         console.warn("please check params whether set node or featureName");
         return originalMethod.apply(this, args);
       }
-      const outLineZone = initOutLineZone((zoneNodeInfo) => {
+      const onNodeComplete = (zoneNodeInfo: ZoneNodeInfo) => {
         const { expectResult } = decoArgs;
 
         featureLogContainer[namespace].addLogs([
@@ -99,7 +99,8 @@ export const lineFeature =
               : FeatureNodeStatusEnum.success,
           }),
         ]);
-      });
+      };
+      const { zone: outLineZone, notify } = initOutLineZone(onNodeComplete);
 
       let result: Promise<unknown> | undefined;
       if (outLineZone) {
@@ -110,7 +111,7 @@ export const lineFeature =
             return result;
           },
           this,
-          args,
+          args.concat(notify),
           "outLineZoneRoot"
         );
       } else {
@@ -129,7 +130,7 @@ interface ZoneNodeInfo {
 
 const initOutLineZone = (
   onFinish: (params: ZoneNodeInfo) => void
-): Zone | null => {
+): { zone: Zone | null; notify: (result: unknown) => void } => {
   // Current Zone is the parent, whatever what the parent it is
   let firstCallRes: any;
   let isAsync: boolean;
@@ -165,9 +166,14 @@ const initOutLineZone = (
         hasTaskState,
         result,
       });
-      // todo destroy?
     }
   );
+
+  const notify = (notifyResult: unknown) => {
+    onFinishCall({
+      result: notifyResult,
+    });
+  };
 
   const innerZone = Zone.current.fork({
     name: "myOuterNg",
@@ -195,9 +201,8 @@ const initOutLineZone = (
           firstCallRes[symbolPromiseState] === UNRESOLVED;
         if (!isAsync) {
           setTimeout(async () => {
-            const a = await firstCallRes
             onFinishCall({
-              result: a,
+              result: await firstCallRes,
             });
           });
         }
@@ -229,5 +234,9 @@ const initOutLineZone = (
       return res;
     },
   });
-  return innerZone;
+
+  return {
+    zone: innerZone,
+    notify,
+  };
 };
