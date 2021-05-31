@@ -41,7 +41,7 @@ export class AppComponent {
     namespace: "namespace666",
     customFeatureNode: (args: any[]) => {
       return {
-        featureName: "123",
+        featureName: "use-case-1",
         node: {
           nodeName: "startF1",
           nodeType: FeatureNodeTypeEnum.start,
@@ -56,10 +56,10 @@ export class AppComponent {
   })
   public async startF1(
     str: string,
-    lineFeatureNofify?: (notifyResult: any) => void
+    nofifyResultManully?: (notifyResult: any) => void
   ) {
-    // early do
-    lineFeatureNofify && lineFeatureNofify('test-notify');
+    // before return
+    nofifyResultManully && nofifyResultManully('test-notify');
     this.someCode = "123";
     return new Promise((r) => {
       r(3);
@@ -67,21 +67,11 @@ export class AppComponent {
   }
 
   @lineFeature({
+    namespace: "namespace666",
     featureName: "use-case-1",
     node: {
       nodeName: "middleF1",
       nodeType: FeatureNodeTypeEnum.middle,
-    },
-    customFeatureNode: (args: any[]) => {
-      console.log(args);
-
-      return {
-        featureName: "123",
-        node: {
-          nodeName: "startF1",
-          nodeType: FeatureNodeTypeEnum.start,
-        },
-      };
     },
   })
   public async middleF1() {
@@ -89,6 +79,7 @@ export class AppComponent {
   }
 
   @lineFeature({
+    namespace: "namespace666",
     featureName: "use-case-1",
     node: {
       nodeName: "endF1",

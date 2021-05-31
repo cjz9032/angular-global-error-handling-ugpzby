@@ -54,8 +54,7 @@ const featureLogContainer: {
   [x: string]: LongLogContainer;
 } = {};
 
-// @ts-ignore
-window.__featureLogContainer = featureLogContainer;
+(window as any) .__featureLogContainer = featureLogContainer;
 
 export const lineFeature =
   (decoArgs: FeatureNodeParams) =>
