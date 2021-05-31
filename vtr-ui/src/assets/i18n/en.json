@@ -2966,6 +2966,8 @@
 		"usageStatisticsDescription": "Send anonymous usage statistics to help us make Vantage better.",
 		"deviceStatistics": "Lenovo Device Statistics",
 		"deviceStatisticsDescription": "Send anonymous device data to help us improve quality, reliability, and the next generation of devices.",
+		"lenovoServiceBridgeTitle": "Lenovo Service Bridge",
+		"lenovoServiceBridgeDescription": "Enable Lenovo Service Bridge for better online experience (<a target=\"_blank\" href=\"https://support.lenovo.com/solutions/lsb-terms-condition\">Learn more</a>)",
 		"userProfile": "User profile",
 		"Note": "Note: ",
 		"settingsNotes": "Please relaunch this application to make sure all changes take effect.",

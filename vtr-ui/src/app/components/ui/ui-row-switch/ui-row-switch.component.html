@@ -25,12 +25,10 @@
 									class="left-icon"									
 									[icon]="leftIcon"
 									aria-hidden="true"></fa-icon>
-								<svg-icon *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
+								<img *ngIf="!isAdminRequired && leftIcon[0]==='svg'"
 									attr.aria-hidden="true"
-									[applyCss]="true"
-									[stretch]="true"
 									class="left-icon-svg svg-inline--fa fa-w-20  ng-fa-icon"
-									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
+									[src]="'assets/icons/'+leftIcon[1]+'.svg' | svgInline | async"/>
 								<span *ngIf="!isAdminRequired && leftIcon[0]==='icomoon'"
 									[ngClass]="'icomoon '+leftIcon[1]"
 									aria-hidden="true"></span>
