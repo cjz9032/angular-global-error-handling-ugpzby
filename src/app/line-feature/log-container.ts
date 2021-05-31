@@ -1,7 +1,15 @@
 import mitt, { Emitter } from "mitt";
-import { cloneDeep, last, intersection, reduce, find, findLast } from "lodash";
+import {
+  cloneDeep,
+  last,
+  intersection,
+  reduce,
+  find,
+  findLast,
+  isEqual,
+} from "lodash";
 import { namespaceEmitter } from "./namespace-emitter";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 
 export enum FeatureNodeTypeEnum {
   start,
@@ -27,7 +35,7 @@ export interface FeatureNode {
   nodeName: string;
   nodeType: FeatureNodeTypeEnum;
   nodeDescription?: string;
-  nodeStatus: FeatureNodeStatusEnum;
+  nodeStatus?: FeatureNodeStatusEnum;
 }
 
 const ALL_EVT_TYPE = "all";
@@ -42,8 +50,27 @@ export class LongLog {
       error?: Error;
       result?: any;
       args?: any[];
+      expectResult?: (args: any[], result: any) => FeatureNodeStatusEnum;
+      defineEnvInfo?: (args: any[], result: any) => unknown;
+      envInfo?: unknown;
     }
-  ) {}
+  ) {
+    this.nodeInfo.args = this.nodeInfo.args ?? [];
+    if (this.nodeInfo.defineEnvInfo) {
+      this.nodeInfo.envInfo = this.nodeInfo.defineEnvInfo(
+        this.nodeInfo.args,
+        this.nodeInfo.result
+      );
+    }
+
+    this.nodeInfo.nodeStatus =
+      this.nodeInfo.nodeStatus ??
+      (this.nodeInfo.error
+        ? FeatureNodeStatusEnum.fail
+        : this.nodeInfo.expectResult
+        ? this.nodeInfo.expectResult(this.nodeInfo.args, this.nodeInfo.result)
+        : FeatureNodeStatusEnum.success);
+  }
 }
 
 export class Feature {
@@ -84,6 +111,38 @@ export class Feature {
     return last(this.nodeLogs)?.nodeInfo.error;
   }
 
+  get envInfo() {
+    return this.nodeLogs[0]?.nodeInfo.envInfo;
+  }
+
+  public addNodeLog(nodeLog: LongLog) {
+    // check the envInfo
+    if (this.nodeLogs.length && this.nodeLogs[0].nodeInfo.envInfo) {
+      const isEnvInfoChanged = !isEqual(
+        this.nodeLogs[0].nodeInfo.envInfo,
+        nodeLog.nodeInfo.envInfo
+      );
+      if (isEnvInfoChanged && !nodeLog.nodeInfo.error) {
+        // the node status should to be fail
+        nodeLog.nodeInfo.error = new Error(
+          "EnvInfo changed: " + nodeLog.nodeInfo.envInfo
+        );
+        nodeLog.nodeInfo.nodeStatus = FeatureNodeStatusEnum.fail;
+      }
+    }
+    this.nodeLogs.push(nodeLog);
+    this.featureStatus =
+      nodeLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
+        ? nodeLog.nodeInfo.nodeType === FeatureNodeTypeEnum.middle
+          ? FeatureStatusEnum.pending
+          : FeatureStatusEnum.success
+        : FeatureStatusEnum.fail;
+  }
+
+  public left() {
+    this.featureStatus = FeatureStatusEnum.left;
+  }
+
   // prevent cyclic error when call JSON.stringify
   toJSON() {
     return {
@@ -98,6 +157,7 @@ export class Feature {
           },
         },
       })),
+      envInfo: this.envInfo,
       error: {
         message: this.error?.message,
         stack: this.error?.stack,
@@ -111,8 +171,8 @@ export interface FeatureEventData {
   data: {
     feature: Feature;
     node: LongLog | null;
+    container: LongLogContainer;
   };
-  container: LongLogContainer;
 }
 
 export class LongLogContainer {
@@ -150,12 +210,12 @@ export class LongLogContainer {
           return result;
         }
         // not valid
-        // console.log('the node is not valid');
+        // console.warn("not valid node", nextLog);
         return false;
       };
 
       const markFeatureLeft = (feature: Feature) => {
-        feature.featureStatus = FeatureStatusEnum.left;
+        feature.left();
         this.emit({
           feature: feature,
           node: null,
@@ -164,15 +224,7 @@ export class LongLogContainer {
       };
 
       const continueLastFeat = (feature: Feature, nextLog: LongLog) => {
-        feature.nodeLogs.push(curLog);
-        feature.featureName = curLog.nodeInfo.featureName;
-        feature.featureStatus =
-          nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
-            ? nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.middle
-              ? FeatureStatusEnum.pending
-              : FeatureStatusEnum.success
-            : FeatureStatusEnum.fail;
-
+        feature.addNodeLog(curLog);
         this.emit({
           feature: feature,
           node: nextLog,
@@ -215,8 +267,10 @@ export class LongLogContainer {
 
   emit(data: { feature: Feature; node: LongLog | null }) {
     const combineEvt: FeatureEventData = {
-      data: data,
-      container: this,
+      data: {
+        ...data,
+        container: this,
+      },
       error: data.feature.error,
     };
     return namespaceEmitter.emit(this.namespace, ALL_EVT_TYPE, combineEvt);

@@ -24,7 +24,6 @@ const DoFirst = function (num: number): Promise<string> {
 lineFeatureEvent.on((evt) => {
   console.log(evt.data.feature);
 
-  debugger;
 }, "namespace666");
 
 @Component({

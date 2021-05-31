@@ -43,12 +43,8 @@ interface FeatureNodeFn {
 interface FeatureNodeParams extends FeatureNodeBase, FeatureNodeFn {
   namespace?: string;
   expectResult?: (args: any[], result: any) => FeatureNodeStatusEnum;
+  defineEnvInfo?: (args: any[], result: any) => unknown;
 }
-// type Constrained<T> = "x" extends keyof T
-//   ? T extends { x: string }
-//     ? T
-//     : never
-//   : T;
 
 const featureLogContainer: {
   [x: string]: LongLogContainer;
@@ -78,7 +74,7 @@ export const lineFeature =
         return originalMethod.apply(this, args);
       }
       const onNodeComplete = (zoneNodeInfo: ZoneNodeInfo) => {
-        const { expectResult } = decoArgs;
+        const { expectResult, defineEnvInfo } = decoArgs;
 
         featureLogContainer[namespace].addLogs([
           new LongLog({
@@ -90,12 +86,8 @@ export const lineFeature =
             result: zoneNodeInfo.result,
             args: args,
             spendTime: zoneNodeInfo.spendTime,
-            // nodeStatus from result or error
-            nodeStatus: !!zoneNodeInfo.error
-              ? FeatureNodeStatusEnum.fail
-              : expectResult
-              ? expectResult(args, zoneNodeInfo.result)
-              : FeatureNodeStatusEnum.success,
+            expectResult,
+            defineEnvInfo,
           }),
         ]);
       };
@@ -142,7 +134,7 @@ const initOutLineZone = (
   const REJECTED_NO_CATCH = 0;
   const symbolPromiseState = Zone_symbol_prefix + "state";
   const symbolPromiseValue = Zone_symbol_prefix + "value";
-  
+
   const startTime = performance.now();
   let spendTime: number;
   const onFinishCall = once(

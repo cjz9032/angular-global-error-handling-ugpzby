@@ -110,7 +110,7 @@ it("should call notity with returning a value that replace the real function ret
       },
     })
     fn(str: string, notity?: (res: any) => void) {
-      notity && notity('notity-str')
+      notity && notity("notity-str");
       return "res";
     }
   }
@@ -122,5 +122,54 @@ it("should call notity with returning a value that replace the real function ret
   }, "namespace3");
   const anyIns = new anyClss();
   anyIns.fn("anystr");
+  jest.runAllTimers();
+});
+
+it("should turn success into failure once envInfo changed from the coming node", () => {
+  class anyClss {
+    @lineFeature({
+      namespace: "namespace4",
+      featureName: "any",
+      node: {
+        nodeName: "nodeName1",
+        nodeType: FeatureNodeTypeEnum.start,
+      },
+      defineEnvInfo: (args) => {
+        return args[0];
+      },
+    })
+    fn1(str: string) {}
+
+    @lineFeature({
+      namespace: "namespace4",
+      featureName: "any",
+      node: {
+        nodeName: "nodeName2",
+        nodeType: FeatureNodeTypeEnum.end,
+      },
+      defineEnvInfo: (args) => {
+        return "456";
+      },
+    })
+    fn2() {}
+  }
+
+  lineFeatureEvent.on((evt) => {
+    if (evt.data.node?.nodeInfo.nodeName === "nodeName1") {
+      expect(evt.data.node?.nodeInfo.nodeStatus).toEqual(
+        FeatureNodeStatusEnum.success
+      );
+      expect(evt.data.feature.featureStatus).not.toEqual(FeatureStatusEnum.fail);
+    }
+    if (evt.data.node?.nodeInfo.nodeName === "nodeName2") {
+      expect(evt.data.node?.nodeInfo.nodeStatus).toEqual(
+        FeatureNodeStatusEnum.fail
+      );
+      expect(evt.data.feature.featureStatus).toEqual(FeatureStatusEnum.fail);
+    }
+  }, "namespace4");
+  const anyIns = new anyClss();
+  anyIns.fn1("123");
+  anyIns.fn2();
   jest.runAllTimers();
 });
