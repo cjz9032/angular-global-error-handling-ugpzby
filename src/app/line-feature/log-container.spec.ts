@@ -59,7 +59,7 @@ it("should parse logs to generator new FeatureLine ", () => {
 });
 
 it("should feature to be successful from a sinlge node's success", () => {
-  const invalidNode = {
+  const node = {
     featureName: "a",
     nodeName: "b",
     nodeType: FeatureNodeTypeEnum.single,
@@ -68,16 +68,8 @@ it("should feature to be successful from a sinlge node's success", () => {
   };
 
   const logCot = new LongLogContainer("root");
-  logCot.addLogs([new LongLog(invalidNode)]);
-  // there is nothing to do
-  expect(logCot.features.length).toEqual(0);
+  logCot.addLogs([new LongLog(node)]);
 
-  logCot.addLogs([
-    new LongLog({
-      ...invalidNode,
-      nodeType: FeatureNodeTypeEnum.start,
-    }),
-  ]);
   // there is nothing to do
   expect(logCot.features.length).toEqual(1);
   expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.success);
