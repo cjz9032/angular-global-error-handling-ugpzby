@@ -22,7 +22,7 @@ it("should option customFeatureNode take effect if lineFeature be seted", () => 
     @lineFeature({
       customFeatureNode: (args: any[]) => {
         return {
-          featureName: args[0].a + customName,
+          featureName: args[0] + customName,
           node: {
             nodeName: "startF1",
             nodeType: FeatureNodeTypeEnum.start,
@@ -40,5 +40,27 @@ it("should option customFeatureNode take effect if lineFeature be seted", () => 
   anyIns.fn("str", {
     b: 123,
   });
+  jest.runAllTimers();
+});
+
+it("should namespace ", () => {
+
+  const customName = "custom-name";
+  class anyClss {
+    @lineFeature({
+      featureName: "123",
+      node: {
+        nodeName: "startF1",
+        nodeType: FeatureNodeTypeEnum.start,
+      },
+    })
+    fn() {}
+  }
+
+  lineFeatureEvent.on((evt) => {
+    expect(evt.data.feature.featureName).toEqual("123");
+  });
+  const anyIns = new anyClss();
+  anyIns.fn();
   jest.runAllTimers();
 });
