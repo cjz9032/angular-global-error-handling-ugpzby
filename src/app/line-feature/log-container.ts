@@ -1,6 +1,7 @@
 import mitt, { Emitter } from "mitt";
 import { cloneDeep, last, intersection, reduce, find, findLast } from "lodash";
 import { namespaceEmitter } from "./namespace-emitter";
+import { v4 as uuid } from 'uuid';
 
 export enum FeatureNodeTypeEnum {
   start,
@@ -29,13 +30,11 @@ export interface FeatureNode {
   nodeStatus: FeatureNodeStatusEnum;
 }
 
-let logId = 0;
-const genId = () => logId++;
 const ALL_EVT_TYPE = "all";
 // longLog
 export class LongLog {
   createtime: number = +new Date();
-  id: string = genId().toString();
+  id: string = uuid();
 
   constructor(
     public nodeInfo: FeatureNode & {
@@ -48,7 +47,7 @@ export class LongLog {
 }
 
 export class Feature {
-  id: string = genId().toString();
+  id: string = uuid();
 
   constructor(
     public featureName: string,
