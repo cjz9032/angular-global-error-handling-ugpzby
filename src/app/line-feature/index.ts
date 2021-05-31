@@ -209,11 +209,11 @@ const initOutLineZone = (
 
       return res;
     },
-    onHasTask: (delegate, curr, target, hasTaskState) => {
+    onHasTask: async (delegate, curr, target, hasTaskState) => {
       if (isAsync && firstCallRes[symbolPromiseState] === RESOLVED) {
         onFinishCall({
           hasTaskState,
-          result: firstCallRes,
+          result: await firstCallRes,
         });
       }
       return delegate.hasTask(target, hasTaskState);

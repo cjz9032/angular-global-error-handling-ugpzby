@@ -89,6 +89,7 @@ export class AppComponent {
   public async endF1() {
     await new Promise((r) => setTimeout(() => r(1), 1000));
     this.someCode = "123";
+    return 'endf1res'
   }
 
   @lineFeature({
