@@ -111,11 +111,6 @@ export const lineFeature =
     };
   };
 
-export const lineFeatureEvent = {
-  on: namespaceEmitter.on,
-  off: namespaceEmitter.off,
-};
-
 interface ZoneNodeInfo {
   spendTime: number;
   error?: Error;

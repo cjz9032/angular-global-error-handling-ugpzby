@@ -1,6 +1,6 @@
 import { Component, NgZone } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { lineFeature, lineFeatureEvent } from "./line-feature/";
+import { lineFeature } from "./line-feature/";
 import { FeatureNodeTypeEnum } from "./line-feature/log-container";
 
 const DoFirst = function (num: number): Promise<string> {

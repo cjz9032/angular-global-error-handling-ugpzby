@@ -31,7 +31,7 @@ export interface FeatureNode {
 
 let logId = 0;
 const genId = () => logId++;
-
+const ALL_EVT_TYPE = "all"
 // longLog
 export class LongLog {
   createtime: number = +new Date();
@@ -227,7 +227,7 @@ export class LongLogContainer {
       container: this,
       error: data.feature.error,
     };
-    return namespaceEmitter.emit(this.namespace, "all", combineEvt);
+    return namespaceEmitter.emit(this.namespace, ALL_EVT_TYPE, combineEvt);
   }
 
   toJSON() {
@@ -251,9 +251,9 @@ export class LongLogContainer {
 
 export const lineFeatureEvent = {
   on: (handler: (event: FeatureEventData) => void, namespace = "root") => {
-    return namespaceEmitter.on("all", handler, namespace);
+    return namespaceEmitter.on(ALL_EVT_TYPE, handler, namespace);
   },
   off: (handler: (event?: any) => void, namespace = "root") => {
-    return namespaceEmitter.on("all", handler, namespace);
+    return namespaceEmitter.on(ALL_EVT_TYPE, handler, namespace);
   },
 };
