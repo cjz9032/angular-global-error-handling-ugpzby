@@ -42,7 +42,7 @@ interface FeatureNodeFn {
 
 interface FeatureNodeParams extends FeatureNodeBase, FeatureNodeFn {
   namespace?: string;
-  expectResult?: (args: any[], result: any, error?: Error) => boolean;
+  expectResult?: (args: any[], result: any) => FeatureNodeStatusEnum;
 }
 // type Constrained<T> = "x" extends keyof T
 //   ? T extends { x: string }
@@ -92,12 +92,10 @@ export const lineFeature =
             args: args,
             spendTime: zoneNodeInfo.spendTime,
             // nodeStatus from result or error
-            nodeStatus: (
-              expectResult
-                ? !expectResult(args, zoneNodeInfo.result, zoneNodeInfo.error)
-                : !!zoneNodeInfo.error
-            )
+            nodeStatus: !!zoneNodeInfo.error
               ? FeatureNodeStatusEnum.fail
+              : expectResult
+              ? expectResult(args, zoneNodeInfo.result)
               : FeatureNodeStatusEnum.success,
           }),
         ]);
@@ -196,9 +194,10 @@ const initOutLineZone = (
           // @ts-ignore
           firstCallRes[symbolPromiseState] === UNRESOLVED;
         if (!isAsync) {
-          setTimeout(() => {
+          setTimeout(async () => {
+            const a = await firstCallRes
             onFinishCall({
-              result: firstCallRes,
+              result: a,
             });
           });
         }

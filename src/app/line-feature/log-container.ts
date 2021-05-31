@@ -56,14 +56,6 @@ export class Feature {
     public nodeLogs: LongLog[]
   ) {}
 
-  // cause featureName would update by next node
-  get originFeatureName() {
-    if (this.nodeLogs.length === 0) {
-      return "";
-    }
-    return this.nodeLogs[0].nodeInfo.featureName;
-  }
-
   get spendTimeWithoutWaiting() {
     if (this.nodeLogs.length === 0) {
       return 0;
@@ -97,7 +89,6 @@ export class Feature {
   toJSON() {
     return {
       ...this,
-      originFeatureName: this.originFeatureName,
       nodeLogs: this.nodeLogs.map((t) => ({
         ...t,
         nodeInfo: {

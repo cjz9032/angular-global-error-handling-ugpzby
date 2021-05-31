@@ -1,7 +1,11 @@
 import { Component, NgZone } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { lineFeature } from "./line-feature/";
-import { FeatureNodeTypeEnum } from "./line-feature/log-container";
+import {
+  FeatureNodeStatusEnum,
+  FeatureNodeTypeEnum,
+  lineFeatureEvent,
+} from "./line-feature/log-container";
 
 const DoFirst = function (num: number): Promise<string> {
   let p: Promise<string> = new Promise(function (r, rej) {
@@ -28,6 +32,12 @@ const DoFirst = function (num: number): Promise<string> {
   return p;
 };
 
+lineFeatureEvent.on((evt) => {
+  console.log(evt.data.feature);
+
+  debugger;
+}, "namespace666");
+
 @Component({
   selector: "app",
   templateUrl: "app.component.html",
@@ -39,7 +49,7 @@ export class AppComponent {
   constructor(private http: HttpClient, private ngZone: NgZone) {}
 
   @lineFeature({
-    namespace: "123",
+    namespace: "namespace666",
     customFeatureNode: (args: any[]) => {
       return {
         featureName: "123",
@@ -49,10 +59,18 @@ export class AppComponent {
         },
       };
     },
+    expectResult: (arg, res) => {
+      return res === 666
+        ? FeatureNodeStatusEnum.fail
+        : FeatureNodeStatusEnum.success;
+    },
   })
   public async startF1() {
+    // @
     this.someCode = "123";
-    return 666;
+    return new Promise((r) => {
+      r(3);
+    });
   }
 
   @lineFeature({
@@ -179,5 +197,3 @@ export class AppComponent {
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license */
-
-

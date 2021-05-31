@@ -73,9 +73,10 @@ it("should option expectResult take effect if it be seted", () => {
         nodeName: "startF1",
         nodeType: FeatureNodeTypeEnum.start,
       },
-      expectResult: (arg, res, error) => {
-        if (error) return false;
-        return res !== "res";
+      expectResult: (arg, res) => {
+        return res === "res"
+          ? FeatureNodeStatusEnum.fail
+          : FeatureNodeStatusEnum.success;
       },
     })
     fn() {
