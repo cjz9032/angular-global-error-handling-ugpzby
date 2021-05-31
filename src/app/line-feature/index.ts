@@ -42,6 +42,7 @@ interface FeatureNodeFn {
 
 interface FeatureNodeParams extends FeatureNodeBase, FeatureNodeFn {
   namespace?: string;
+  expectResult?: (args: any[], result: any, error?: Error) => boolean;
 }
 // type Constrained<T> = "x" extends keyof T
 //   ? T extends { x: string }
@@ -74,9 +75,12 @@ export const lineFeature =
       }
 
       if (!node || !featureName) {
+        console.warn("please check params whether set node or featureName");
         return originalMethod.apply(this, args);
       }
       const outLineZone = initOutLineZone((zoneNodeInfo) => {
+        const { expectResult } = decoArgs;
+
         featureLogContainer[namespace].addLogs([
           new LongLog({
             nodeName: node!.nodeName,
@@ -84,8 +88,15 @@ export const lineFeature =
             nodeDescription: node!.nodeDescription,
             featureName,
             error: zoneNodeInfo.error,
+            result: zoneNodeInfo.result,
+            args: args,
             spendTime: zoneNodeInfo.spendTime,
-            nodeStatus: !!zoneNodeInfo.error
+            // nodeStatus from result or error
+            nodeStatus: (
+              expectResult
+                ? !expectResult(args, zoneNodeInfo.result, zoneNodeInfo.error)
+                : !!zoneNodeInfo.error
+            )
               ? FeatureNodeStatusEnum.fail
               : FeatureNodeStatusEnum.success,
           }),
@@ -115,6 +126,7 @@ interface ZoneNodeInfo {
   spendTime: number;
   error?: Error;
   hasTaskState?: HasTaskState;
+  result: any;
 }
 
 const initOutLineZone = (
@@ -138,9 +150,11 @@ const initOutLineZone = (
     ({
       error,
       hasTaskState,
+      result,
     }: {
       error?: Error;
       hasTaskState?: HasTaskState;
+      result: any;
     }) => {
       const endTime = performance.now();
       spendTime = endTime - startTime;
@@ -151,6 +165,7 @@ const initOutLineZone = (
         spendTime,
         error,
         hasTaskState,
+        result,
       });
       // todo destroy?
     }
@@ -182,7 +197,9 @@ const initOutLineZone = (
           firstCallRes[symbolPromiseState] === UNRESOLVED;
         if (!isAsync) {
           setTimeout(() => {
-            onFinishCall({});
+            onFinishCall({
+              result: firstCallRes,
+            });
           });
         }
       }
@@ -193,6 +210,7 @@ const initOutLineZone = (
       if (isAsync && firstCallRes[symbolPromiseState] === RESOLVED) {
         onFinishCall({
           hasTaskState,
+          result: firstCallRes,
         });
       }
       return delegate.hasTask(target, hasTaskState);
@@ -207,6 +225,7 @@ const initOutLineZone = (
       // get new error
       onFinishCall({
         error,
+        result: undefined,
       });
       return res;
     },

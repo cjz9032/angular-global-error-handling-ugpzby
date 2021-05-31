@@ -31,7 +31,7 @@ export interface FeatureNode {
 
 let logId = 0;
 const genId = () => logId++;
-const ALL_EVT_TYPE = "all"
+const ALL_EVT_TYPE = "all";
 // longLog
 export class LongLog {
   createtime: number = +new Date();
@@ -41,6 +41,8 @@ export class LongLog {
     public nodeInfo: FeatureNode & {
       spendTime: number;
       error?: Error;
+      result?: any;
+      args?: any[];
     }
   ) {}
 }
