@@ -9,7 +9,6 @@ import {
   FeatureNodeStatusEnum,
   FeatureStatusEnum,
   Feature,
-  FeatureEventType,
   FeatureEventData,
 } from "./log-container";
 
@@ -22,8 +21,8 @@ it("should be a rotation log with limiting numbers items", () => {
     nodeStatus: FeatureNodeStatusEnum.success,
     spendTime: 0,
   };
-  
-  const logCot = new LongLogContainer('root', 10);
+
+  const logCot = new LongLogContainer("root", 10);
   const firstItem: LongLog = new LongLog(anyNode);
   logCot.addLogs([firstItem]);
   times(10 - 1).forEach(() => logCot.addLogs([new LongLog(anyNode)]));
@@ -43,8 +42,8 @@ it("should parse logs to generator new FeatureLine ", () => {
     nodeStatus: FeatureNodeStatusEnum.fail,
     spendTime: 0,
   };
-  
-  const logCot = new LongLogContainer('root');
+
+  const logCot = new LongLogContainer("root");
   logCot.addLogs([new LongLog(invalidNode)]);
   // there is nothing to do
   expect(logCot.features.length).toEqual(0);
@@ -59,6 +58,31 @@ it("should parse logs to generator new FeatureLine ", () => {
   expect(logCot.features.length).toEqual(1);
 });
 
+it("should feature to be successful from a sinlge node's success", () => {
+  const invalidNode = {
+    featureName: "a",
+    nodeName: "b",
+    nodeType: FeatureNodeTypeEnum.single,
+    nodeStatus: FeatureNodeStatusEnum.success,
+    spendTime: 0,
+  };
+
+  const logCot = new LongLogContainer("root");
+  logCot.addLogs([new LongLog(invalidNode)]);
+  // there is nothing to do
+  expect(logCot.features.length).toEqual(0);
+
+  logCot.addLogs([
+    new LongLog({
+      ...invalidNode,
+      nodeType: FeatureNodeTypeEnum.start,
+    }),
+  ]);
+  // there is nothing to do
+  expect(logCot.features.length).toEqual(1);
+  expect(logCot.features[0].featureStatus).toEqual(FeatureStatusEnum.success);
+});
+
 it("should avoid restarting from the same node ", () => {
   const sameStartNode = {
     featureName: "a",
@@ -68,8 +92,8 @@ it("should avoid restarting from the same node ", () => {
     nodeStatus: FeatureNodeStatusEnum.success,
     spendTime: 0,
   };
-  
-  const logCot = new LongLogContainer('root');
+
+  const logCot = new LongLogContainer("root");
   logCot.addLogs([new LongLog(sameStartNode)]);
   logCot.addLogs([new LongLog(sameStartNode)]);
   // there is nothing to do
@@ -79,8 +103,7 @@ it("should avoid restarting from the same node ", () => {
 });
 
 it("should start a new feature and last feature to be left when the nodeType is start", () => {
-  
-  const logCot = new LongLogContainer('root');
+  const logCot = new LongLogContainer("root");
   logCot.addLogs([
     new LongLog({
       featureName: "feat-1",
@@ -104,8 +127,7 @@ it("should start a new feature and last feature to be left when the nodeType is 
 });
 
 it("should all the logs are success", () => {
-  
-  const logCot = new LongLogContainer('root');
+  const logCot = new LongLogContainer("root");
   logCot.addLogs([
     new LongLog({
       featureName: "feat-1",
@@ -140,8 +162,7 @@ it("should all the logs are success", () => {
 });
 
 it("should the nodes has somesth wrong", () => {
-  
-  const logCot = new LongLogContainer('root');
+  const logCot = new LongLogContainer("root");
   logCot.addLogs([
     new LongLog({
       featureName: "feat-1",
@@ -176,8 +197,7 @@ it("should the nodes has somesth wrong", () => {
 });
 
 it("should provide existing serveral pending branch", () => {
-  
-  const logCot = new LongLogContainer('root');
+  const logCot = new LongLogContainer("root");
   logCot.addLogs([
     new LongLog({
       featureName: "feat-1",

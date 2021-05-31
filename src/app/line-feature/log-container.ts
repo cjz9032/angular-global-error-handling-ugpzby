@@ -6,6 +6,7 @@ export enum FeatureNodeTypeEnum {
   start,
   middle,
   end,
+  single,
 }
 
 export enum FeatureNodeStatusEnum {
@@ -133,12 +134,18 @@ export class LongLogContainer {
       const curLog = toProcessLogs.shift()!;
 
       const addNewFeat = (nextLog: LongLog) => {
-        if (nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.start) {
+        if (
+          [FeatureNodeTypeEnum.start, FeatureNodeTypeEnum.single].includes(
+            nextLog.nodeInfo.nodeType
+          )
+        ) {
           this.parsedFeats.push(
             new Feature(
               nextLog.nodeInfo.featureName,
               nextLog.nodeInfo.nodeStatus === FeatureNodeStatusEnum.success
-                ? FeatureStatusEnum.pending
+                ? nextLog.nodeInfo.nodeType === FeatureNodeTypeEnum.single
+                  ? FeatureStatusEnum.success
+                  : FeatureStatusEnum.pending
                 : FeatureStatusEnum.fail,
               [nextLog]
             )
@@ -220,7 +227,7 @@ export class LongLogContainer {
       container: this,
       error: data.feature.error,
     };
-    namespaceEmitter.emit(this.namespace, "all", combineEvt);
+    return namespaceEmitter.emit(this.namespace, "all", combineEvt);
   }
 
   toJSON() {

@@ -3,10 +3,6 @@ import "./polyfills";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { AppModule } from "./app/app.module";
 import { enableProdMode, NgZone } from "@angular/core";
-import {
-  FeatureEventType,
-  FeatureStatusEnum,
-} from "./app/line-feature/log-container";
 // enableProdMode();
 
 
