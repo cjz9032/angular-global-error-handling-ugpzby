@@ -54,7 +54,7 @@ const featureLogContainer: {
   [x: string]: LongLogContainer;
 } = {};
 
-(window as any) .__featureLogContainer = featureLogContainer;
+(window as any).__featureLogContainer = featureLogContainer;
 
 export const lineFeature =
   (decoArgs: FeatureNodeParams) =>
@@ -141,7 +141,8 @@ const initOutLineZone = (
   const REJECTED = false;
   const REJECTED_NO_CATCH = 0;
   const symbolPromiseState = Zone_symbol_prefix + "state";
-
+  const symbolPromiseValue = Zone_symbol_prefix + "value";
+  
   const startTime = performance.now();
   let spendTime: number;
   const onFinishCall = once(
@@ -209,11 +210,11 @@ const initOutLineZone = (
 
       return res;
     },
-    onHasTask: async (delegate, curr, target, hasTaskState) => {
+    onHasTask: (delegate, curr, target, hasTaskState) => {
       if (isAsync && firstCallRes[symbolPromiseState] === RESOLVED) {
         onFinishCall({
           hasTaskState,
-          result: await firstCallRes,
+          result: firstCallRes[symbolPromiseValue],
         });
       }
       return delegate.hasTask(target, hasTaskState);
