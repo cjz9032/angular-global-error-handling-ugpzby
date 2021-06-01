@@ -6,6 +6,10 @@ import { LoggerService } from '../logger/logger.service';
   providedIn: 'root'
 })
 export class LenovoSericeBridgeService {
+	private contractName = 'Lenovo.Service.Bridge.Addin';
+	private getStatusCommand = 'Get-Status';
+	private enableCommand = 'Enable-WebServer';
+	private disableCommand = 'Disable-WebServer';
 
   constructor(
     private shellExtension: ShellExtensionService,
@@ -14,8 +18,8 @@ export class LenovoSericeBridgeService {
 
 	public getLenovoServiceBridgeStatus() {
 		const contract = {
-			contract: 'Lenovo.Service.Bridge.Addin',
-			command: 'Get-Status',
+			contract: this.contractName,
+			command: this.getStatusCommand,
 			payload: null,
 		};
 
@@ -26,37 +30,37 @@ export class LenovoSericeBridgeService {
 			}
 			return undefined;
 		}).catch( (error: any) => {
-			this.loggerService.error(`getLenovoServiceBridgeStatus error: ${error}`);
+			this.loggerService.error('getLenovoServiceBridgeStatus error', error);
 			return undefined;
 		});
 	}
 
 	public enableLenovoServiceBridge() {
 		const contract = {
-			contract: 'Lenovo.Service.Bridge.Addin',
-			command: 'Enable-WebServer',
+			contract: this.contractName,
+			command: this.enableCommand,
 			payload: null,
 		};
 
 		return this.shellExtension.sendContract(contract)
 		.then((response: string) => response.toUpperCase() === 'TRUE')
 		.catch( (error: any) => {
-			this.loggerService.error(`enableLenovoServiceBridge error: ${error}`);
+			this.loggerService.error('enableLenovoServiceBridge error', error);
 			return false;
 		});
 	}
 
 	public disableLenovoServiceBridge() {
 		const contract = {
-			contract: 'Lenovo.Service.Bridge.Addin',
-			command: 'Disable-WebServer',
+			contract: this.contractName,
+			command: this.disableCommand,
 			payload: null,
 		};
 
 		return this.shellExtension.sendContract(contract)
 		.then((response: string) => response.toUpperCase() === 'TRUE')
 		.catch( (error: any) => {
-			this.loggerService.error(`disableLenovoServiceBridge error: ${error}`);
+			this.loggerService.error('disableLenovoServiceBridge error', error);
 			return false;
 		});
 	}
