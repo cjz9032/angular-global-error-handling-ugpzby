@@ -820,7 +820,7 @@ export class FeatureApplicableDetections {
 	private isThermalModeApplicable() {
 		const thermalModeVersion = this.localCacheService.getLocalCacheValue(LocalStorageKey.thermalModeVersion, 0);
 		const thermalModeFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.smartFanFeature, false);
-		return this.deviceService.isGaming && (thermalModeVersion === 2 || thermalModeVersion === 4) && thermalModeFeatureInfo;
+		return this.deviceService.isGaming && (thermalModeVersion === 2 || thermalModeVersion === 4 || thermalModeVersion === 1) && thermalModeFeatureInfo;
 	}
 	private isNetworkBoostApplicable() {
 		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.networkBoostFeature, false);

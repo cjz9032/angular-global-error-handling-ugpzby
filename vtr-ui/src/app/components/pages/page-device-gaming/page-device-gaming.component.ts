@@ -267,13 +267,19 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				if (
 					this.activatedRoute.snapshot.queryParams.action.toLowerCase() === 'thermalmode'
 				) {
-					setTimeout(() => {
-						this.thermalModeFlag = true;
-						this.gamingAllCapabilitiesService.sendGamingThermalModeNotification(
-							Gaming.GamingThermalMode,
-							true
-						);
-					}, 200);
+					const thermalModeVersion = this.localCacheService.getLocalCacheValue(LocalStorageKey.thermalModeVersion, 0);
+					const thermalModeFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.smartFanFeature, false);
+					if ((thermalModeVersion === 2 || thermalModeVersion === 4) && thermalModeFeatureInfo) {
+						setTimeout(() => {
+							this.thermalModeFlag = true;
+							this.gamingAllCapabilitiesService.sendGamingThermalModeNotification(
+								Gaming.GamingThermalMode,
+								true
+							);
+						}, 200);
+					} else {
+						this.location.go('/device-gaming');
+					}
 				}
 			}
 		);
