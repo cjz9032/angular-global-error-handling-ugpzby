@@ -845,25 +845,16 @@ export class FeatureApplicableDetections {
 		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.memOCFeature, false);
 	}
 	private isCPUOverClockApplicable() {
-		const hwVersionInfo = (this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuInfoVersion, 0) === 1
-			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuInfoVersion, 0) === 1) ? 1 : 0;
-		const cpuOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuOCFeature, false)
-			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.xtuService, false);
-		return this.deviceService.isGaming && hwVersionInfo === 1 && cpuOCFeatureInfo;
+		const cpuOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuOCFeature, false);
+		return this.deviceService.isGaming && cpuOCFeatureInfo;
 	}
 	private isGPUOverClockApplicable() {
-		const hwVersionInfo = (this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuInfoVersion, 0) === 1
-			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuInfoVersion, 0) === 1) ? 1 : 0;
-		const gpuOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuCoreOCFeature, false)
-			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.nvDriver, false);
-		return this.deviceService.isGaming && hwVersionInfo === 1 && gpuOCFeatureInfo;
+		const gpuOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuCoreOCFeature, false);
+		return this.deviceService.isGaming && gpuOCFeatureInfo;
 	}
 	private isVRAMOverClockApplicable() {
-		const hwVersionInfo = (this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuInfoVersion, 0) === 1
-			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuInfoVersion, 0) === 1) ? 1 : 0;
-		const vramOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuVramOCFeature, false)
-			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.nvDriver, false);
-		return this.deviceService.isGaming && hwVersionInfo === 1 && vramOCFeatureInfo;
+		const vramOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuVramOCFeature, false);
+		return this.deviceService.isGaming && vramOCFeatureInfo;
 	}
 	// gaming end
 }
