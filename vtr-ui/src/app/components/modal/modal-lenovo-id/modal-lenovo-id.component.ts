@@ -30,6 +30,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	private completeBInd: any;
 	private notificationSubscription: Subscription;
 	readonly KEYCODE_RETURN = 13;
+	private isHandlingLoginSuccessPage = false;
 
 	constructor(
 		public dialogRef: MatDialogRef<ModalLenovoIdComponent>,
@@ -174,7 +175,11 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 				const doc = parser.parseFromString(htmlContent, 'text/html');
 				const el = doc.documentElement;
 				const title = doc.getElementsByTagName('title')[0].childNodes[0].nodeValue;
-				if (title.startsWith('Login success')) {
+				if (title.startsWith('Login success') && !this.isHandlingLoginSuccessPage) {
+					this.isHandlingLoginSuccessPage = true;
+					this.devService.writeLog(
+						'onNavigationCompleted: start handling login success page'
+					);
 					const username = (el.querySelector('#username') as HTMLInputElement).value;
 					const useruad = (el.querySelector('#useruad') as HTMLInputElement).value;
 					const userid = (el.querySelector('#userid') as HTMLInputElement).value;
