@@ -20,7 +20,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-
+import { LenovoSericeBridgeService } from 'src/app/services/lenovo-service-bridge/lenovo-serice-bridge.service';
 @Component({
 	selector: 'vtr-page-settings',
 	templateUrl: './page-settings.component.html',
@@ -37,7 +37,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleUsageStatistics = false;
 	toggleDeviceStatistics = false;
 	toggleBetaProgram = false;
+	toggleLenovoServiceBridge = false;
 
+	isLenovoServiceBridgeAvailable = false;
 	isMessageSettings = false;
 	isToggleUsageStatistics = false;
 	isToggleDeviceStatistics = false;
@@ -69,6 +71,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		},
 		{
 			leftImageSource: ['fal', 'shoe-prints'],
+		},
+		{
+			leftImageSource: ['svg', 'preference-settings/icon-lenovo-service-bridge'],
 		},
 	];
 
@@ -129,6 +134,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		private localInfoService: LocalInfoService,
 		private loggerService: LoggerService,
 		private localCacheService: LocalCacheService,
+		private lenovoServiceBridgeSerivce: LenovoSericeBridgeService,
 		public smartPerformanceService: SmartPerformanceService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
@@ -207,6 +213,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	getAllToggles() {
+		this.getLenovoServiceBridgeStatus();
 		if (this.settingsService.isMessageSettings) {
 			this.toggleAppFeature = this.settingsService.toggleAppFeature;
 			this.toggleMarketing = this.settingsService.toggleMarketing;
@@ -229,6 +236,25 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.toggleBetaProgram = this.betaService.getBetaStatus() === BetaStatus.On;
 		}
 	}
+
+	private async getLenovoServiceBridgeStatus() {
+		const cachedStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.LenovoServiceBridgeStatus);
+		if (cachedStatus !== undefined) {
+			this.isLenovoServiceBridgeAvailable = cachedStatus.available;
+			this.toggleLenovoServiceBridge = cachedStatus.serviceToggle;
+		}
+		const status = await this.lenovoServiceBridgeSerivce.getLenovoServiceBridgeStatus();
+		if (status === undefined) {
+			this.isLenovoServiceBridgeAvailable = false;
+			this.toggleLenovoServiceBridge = false;
+		} else {
+			this.toggleLenovoServiceBridge = status;
+			this.isLenovoServiceBridgeAvailable = true;
+		}
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.LenovoServiceBridgeStatus,
+			{ available: this.isLenovoServiceBridgeAvailable, serviceToggle: this.toggleLenovoServiceBridge});
+	}
+
 	private getDeviceStatisticsPreference() {
 		if (this.metricsPreference) {
 			this.metricsPreference
@@ -413,6 +439,18 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.metrics.sendAsyncEx(settingUpdateMetrics, { forced: true });
 		}
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
+	}
+
+	onToggleLenovoServiceBridge(event: any) {
+		this.toggleLenovoServiceBridge = event.switchValue;
+
+		if (this.toggleLenovoServiceBridge) {
+			this.lenovoServiceBridgeSerivce.enableLenovoServiceBridge();
+		} else {
+			this.lenovoServiceBridgeSerivce.disableLenovoServiceBridge();
+		}
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.LenovoServiceBridgeStatus,
+			{ available: this.isLenovoServiceBridgeAvailable, serviceToggle: this.toggleLenovoServiceBridge});
 	}
 
 	onToggleOfBetaProgram(event: any) {

@@ -107,10 +107,10 @@
 						</div>
 
 						<div class="col-12 col-xl-6 card-col"
-							*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics || selfSelectService.userProfileEnabled">
+							*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics || isLenovoServiceBridgeAvailable || selfSelectService.userProfileEnabled">
 							<div class="card-pt"
 								id="settings-other-settings"
-								*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics">
+								*ngIf="isToggleUsageStatistics || isToggleDeviceStatistics || isLenovoServiceBridgeAvailable">
 								<vtr-container-collapsible [tabIndex]="0"
 									[headerLevel]="3"
 									name="SettingsOther"
@@ -130,6 +130,21 @@
 												[tooltipText]=""
 												[isSwitchChecked]="toggleUsageStatistics"
 												(toggleOnOff)="onToggleOfUsageStatistics($event)">
+											</vtr-ui-row-switch>
+										</li>
+
+										<li *ngIf="true">
+											<vtr-ui-row-switch [title]="'settings.lenovoServiceBridgeTitle' | translate"
+												[switchId]="'settingsLenovoServiceBridgeToggle_checkbox'"
+												id="settings-lenovoServiceBridgeToggle"
+												aria-label="settings-lenovoServiceBridgeToggle"
+												[caption]="'settings.lenovoServiceBridgeDescription' | translate"
+												[isLastChild]="!isToggleDeviceStatistics"
+												[isSwitchVisible]=true
+												[leftIcon]="otherSettings[2].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleLenovoServiceBridge"
+												(toggleOnOff)="onToggleLenovoServiceBridge($event)">
 											</vtr-ui-row-switch>
 										</li>
 

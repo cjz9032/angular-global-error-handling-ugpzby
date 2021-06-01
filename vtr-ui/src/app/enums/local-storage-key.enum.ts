@@ -346,4 +346,7 @@ export enum LocalStorageKey {
 	PerformanceBoostAvailable = '[LocalStorageKey] PerformanceBoostAvailable',
 	PerformanceBoostToggle = '[LocalStorageKey] PerformanceBoostToggle',
 	PerformanceBoostList = '[LocalStorageKey] PerformanceBoostList',
+
+	// Lenovo Service Bridge
+	LenovoServiceBridgeStatus = '[LocalStorageKey] LenovoServiceBridgeStatus',
 }
