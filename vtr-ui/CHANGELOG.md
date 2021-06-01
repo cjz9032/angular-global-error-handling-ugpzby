@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.17](https://bitbucket.tc.lenovo.com///compare/v1.12.16...v1.12.17) (2021-06-01)
+
+
+### Features
+
+* **LenovoServiceBridge:** VAN-28225 add LenovoServiceBridge toggle in Preference page ([7731dc8](https://bitbucket.tc.lenovo.com///commit/7731dc87a58a5e1399bc57522c4f4d4340cba099))
+* **LenovoServiceBridge:** VAN-28225 update for code review ([d1cd632](https://bitbucket.tc.lenovo.com///commit/d1cd6321f1967f6771e21ed43cb4d10de60a8cae))
+
 ### [1.12.16](https://bitbucket.tc.lenovo.com///compare/v1.12.15...v1.12.16) (2021-05-31)
 
 ### [1.12.15](https://bitbucket.tc.lenovo.com///compare/v1.12.14...v1.12.15) (2021-05-28)
