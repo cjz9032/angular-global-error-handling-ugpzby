@@ -16,9 +16,12 @@ Plus, we can make a user-case from observed individual functions metrics
   - [Examples](#examples)
     - [Simple](#simple)
       - [Preparing serveral functions for metrics collection.](#preparing-serveral-functions-for-metrics-collection)
-      - [Adding listeners to fetch metrics](#adding-listeners-to-fetch-metrics)
-    - [Tree Case](#tree-case)
+    - [Dynimac Feature & Node](#dynimac-feature--node)
       - [Code](#code)
+    - [Expectation Value of the Node](#expectation-value-of-the-node)
+      - [`expectResult` let you validate the function with return value](#expectresult-let-you-validate-the-function-with-return-value)
+      - [Environment Information](#environment-information)
+      - [Namespacing](#namespacing)
 
 <br>
 <br>
@@ -106,37 +109,9 @@ and it should indicate the feature info, node info.
     startCaseFoo() -> middleCaseFoo -> endCaseFoo()
 ```
 
-#### Adding listeners to fetch metrics
-
-
-```typescript
-    import { featureLogContainer } from "./libs/line-feature";
-
-    // Subscript a event
-    featureLogContainer.on(FeatureEventType.change, (event) => {
-        const { feature, type } = event.data;
-
-        console.log(type) // 'add' or 'upadate' a feature
-        
-        if (feature.featureStatus === FeatureStatusEnum.fail) {
-            // error occurs due to not handle error
-            console.log(feature.error) // display error stack track which includes async parts of
-        }
-
-        if (feature.featureStatus === FeatureStatusEnum.success) {
-            // To see "spendTime" or more details about nodes
-            console.log(feature.spendTime, feature.nodeLogs)
-        }
-        // ...other status, e.g left, pending
-    });
-
-    // Remove event handler
-    featureLogContainer.off(type, handler)
-```
-
 <br>
 
-### Tree Case
+### Dynimac Feature & Node
 In the diagram below, now we have a start node with two branchs
 ```
    [case1-start, case2-start]
@@ -151,28 +126,128 @@ In the diagram below, now we have a start node with two branchs
     case1-end     case2-end
 ```
 #### Code
-It's very similiar to [Simple](#simple) Case. There are only subtle differences: just announce the start node's featureName as list type.
+It's very similiar to [Simple](#simple) Case. There are only subtle differences: just announce them using `customFeatureNode`.
 
 ```typescript
 
-    import { lineFeature } from "./libs/line-feature/";
-    import { FeatureNodeTypeEnum } from "./libs/line-feature/log-container";
+    @lineFeature({
+        customFeatureNode: (args: any[]) => ({
+            featureName: 'case1-start' + args[0],
+            node: {
+                nodeName: "startNode" + args[0],
+                nodeType: FeatureNodeTypeEnum.start,
+            },
+        }),
+    })
+    startDynamically(caseNum) {}
+
+    ...
+    // The rest parts are same as `Simple` above
+    ...
+
+    // Passing function params
+    startDynamically(1) -> ... -> endCase1()  // case1
+    startDynamically(2) -> ... -> endCase2()  // case2
+```
+<br>
+
+### Expectation Value of the Node
+
+#### `expectResult` let you validate the function with return value
+
+```typescript
 
     @lineFeature({
-        featureName: ["case-1","case-2"], // The only difference
-        node: {
-            nodeName: "case1or2Start",
-            nodeType: FeatureNodeTypeEnum.start,
-        },
+      featureName: "feat1",
+      node: {
+        nodeName: "startF1",
+        nodeType: FeatureNodeTypeEnum.start,
+      },
+      expectResult: (arg, res) => {
+        return res === "no"
+          ? FeatureNodeStatusEnum.fail
+          : FeatureNodeStatusEnum.success;
+      },
     })
-    startCase1or2() {}
+    start() {
+      return "no";
+    }
 
-    ...
-    // The Rest methods are same as simple case's above
-    ...
-
-    // Excute them by user or others
-    startCase1or2() -> middleCase1() -> endCase1()  // case1
-    startCase1or2() -> middleCase2() -> endCase2()  // case2
+    start()
+    // Listener
+    lineFeatureEvent.on((evt) => {
+        if (evt.data.node?.nodeInfo.nodeName === "feat1") {
+            // display `true`, bacause of the expectResult
+            console.log(evt.data.node?.nodeInfo.nodeStatus === FeatureNodeStatusEnum.fail) 
+        }
+    });
 ```
 
+
+#### Environment Information
+`EnvInfo` should keep and do not change 
+```typescript
+
+    class anyClss {
+        @lineFeature({
+            featureName: "any",
+            node: {
+                nodeName: "nodeName1",
+                nodeType: FeatureNodeTypeEnum.start,
+            },
+            defineEnvInfo: (args) => {
+                return args[0];
+            },
+        })
+        fn1(str: string) {}
+
+        @lineFeature({
+            featureName: "any",
+            node: {
+                nodeName: "nodeName2",
+                nodeType: FeatureNodeTypeEnum.end,
+            },
+            defineEnvInfo: (args) => {
+                return "456";
+            },
+        })
+        fn2() {}
+    }
+
+    const anyIns = new anyClss();
+    anyIns.fn1("123");
+    anyIns.fn2();
+
+    lineFeatureEvent.on((evt) => {
+        // EnvInfo Changed: "123" !== "456"
+        if (evt.data.node?.nodeInfo.nodeName === "nodeName2") {
+            expect(evt.data.node?.nodeInfo.nodeStatus).toEqual(
+                FeatureNodeStatusEnum.fail
+            );
+            expect(evt.data.feature.featureStatus).toEqual(FeatureStatusEnum.fail);
+        }
+    });
+```
+#### Namespacing
+By default, features and listeners are registered under the root namespace,
+if you want it to be more self-contained, you can mark it as namespaced.
+```typescript
+
+    // Namespaced featureNode
+    @lineFeature({
+      namespaced: 'namespaced-1',
+      featureName: "feat1",
+      node: {
+        nodeName: "startF1",
+        nodeType: FeatureNodeTypeEnum.start,
+      }
+    })
+    start() {}
+
+    start()
+    // Namespaced listener
+    lineFeatureEvent.on((evt) => {
+        // would only receive `namespaced-1` events
+        console.log(evt.data.container) // => { namespace: 'namespaced-1' }
+    }, "namespaced-1");
+```

@@ -20,15 +20,13 @@ it("should option customFeatureNode take effect if it be seted", () => {
   const customName = "custom-name";
   class anyClss {
     @lineFeature({
-      customFeatureNode: (args: any[]) => {
-        return {
-          featureName: args[0] + customName,
-          node: {
-            nodeName: "startF1",
-            nodeType: FeatureNodeTypeEnum.start,
-          },
-        };
-      },
+      customFeatureNode: (args: any[]) => ({
+        featureName: args[0] + customName,
+        node: {
+          nodeName: "startF1",
+          nodeType: FeatureNodeTypeEnum.start,
+        },
+      }),
     })
     fn(a: string, b: { b: number }) {}
   }
@@ -159,7 +157,9 @@ it("should turn success into failure once envInfo changed from the coming node",
       expect(evt.data.node?.nodeInfo.nodeStatus).toEqual(
         FeatureNodeStatusEnum.success
       );
-      expect(evt.data.feature.featureStatus).not.toEqual(FeatureStatusEnum.fail);
+      expect(evt.data.feature.featureStatus).not.toEqual(
+        FeatureStatusEnum.fail
+      );
     }
     if (evt.data.node?.nodeInfo.nodeName === "nodeName2") {
       expect(evt.data.node?.nodeInfo.nodeStatus).toEqual(
