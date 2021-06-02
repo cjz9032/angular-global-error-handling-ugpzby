@@ -22,6 +22,7 @@ Plus, we can make a user-case from observed individual functions metrics
       - [`expectResult` let you validate the function with return value](#expectresult-let-you-validate-the-function-with-return-value)
       - [Environment Information](#environment-information)
       - [Namespacing](#namespacing)
+      - [Notify](#notify)
 
 <br>
 <br>
@@ -250,4 +251,30 @@ if you want it to be more self-contained, you can mark it as namespaced.
         // would only receive `namespaced-1` events
         console.log(evt.data.container) // => { namespace: 'namespaced-1' }
     }, "namespaced-1");
+```
+
+#### Notify 
+```typescript
+
+    class anyClss {
+        @lineFeature({
+            featureName: "any",
+            node: {
+                nodeName: "nodeName1",
+                nodeType: FeatureNodeTypeEnum.start,
+            },
+        })
+        fn1(str: string, notify?: (res: any) => void) {
+            notify && notify("notify");
+            await sleep(1_000)
+            return str;
+        }
+    }
+
+    fn1("str");
+
+    lineFeatureEvent.on((evt) => {
+        // => true
+        console.log(evt.data.node?.nodeInfo.result === 'notify')
+    });
 ```

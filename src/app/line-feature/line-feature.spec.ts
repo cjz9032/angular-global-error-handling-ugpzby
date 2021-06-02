@@ -92,7 +92,7 @@ it("should option expectResult take effect if it be seted", () => {
   jest.runAllTimers();
 });
 
-it("should call notity with returning a value that replace the real function returns before function executed", () => {
+it("should call notify with returning a value that replace the real function returns before function executed", () => {
   class anyClss {
     @lineFeature({
       namespace: "namespace3",
@@ -102,13 +102,13 @@ it("should call notity with returning a value that replace the real function ret
         nodeType: FeatureNodeTypeEnum.start,
       },
       expectResult: (arg, res) => {
-        return res === "notity-str"
+        return res === "notify-str"
           ? FeatureNodeStatusEnum.success
           : FeatureNodeStatusEnum.fail;
       },
     })
-    fn(str: string, notity?: (res: any) => void) {
-      notity && notity("notity-str");
+    fn(str: string, notify?: (res: any) => void) {
+      notify && notify("notify-str");
       return "res";
     }
   }
